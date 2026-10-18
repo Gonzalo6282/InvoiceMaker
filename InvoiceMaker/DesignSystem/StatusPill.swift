@@ -18,7 +18,8 @@ struct StatusPill: View {
                 if hasBorder { Capsule().strokeBorder(Color.line, lineWidth: 1) }
             }
             .fixedSize()
-            .accessibilityLabel(Text("Status: \(title)"))
+            .accessibilityLabel(Text("Status"))
+            .accessibilityValue(Text(title))
     }
 
     var title: LocalizedStringKey {

@@ -8,8 +8,15 @@ FAMILY="$1"
 PREFERRED="$2"
 mkdir -p build
 
-DESTS=$(xcodebuild -showdestinations -project InvoiceMaker.xcodeproj -scheme InvoiceMaker 2>/dev/null \
-  | grep "platform:iOS Simulator" | grep "name:${FAMILY}" || true)
+# -showdestinations sometimes comes back empty while CoreSimulator starts; retry.
+for attempt in 1 2 3 4; do
+  DESTS=$(xcodebuild -showdestinations -project InvoiceMaker.xcodeproj -scheme InvoiceMaker 2>/dev/null \
+    | grep "platform:iOS Simulator" | grep "name:${FAMILY}" || true)
+  [ -n "$DESTS" ] && break
+  echo "No ${FAMILY} destinations yet (attempt $attempt), retrying"
+  xcrun simctl list devices >/dev/null 2>&1 || true
+  sleep 15
+done
 echo "::notice title=${FAMILY} simulators::$(sed -E 's/.*OS:([^,]+), name:([^ }]+( [^,}]+)*).*/\2 (\1)/' <<<"$DESTS" | sort -u | tr '\n' ';')"
 
 LINE=$(grep "name:${PREFERRED} }" <<<"$DESTS" | tail -1)

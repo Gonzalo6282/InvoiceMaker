@@ -8,20 +8,23 @@ import Testing
 /// real device with iCloud. Catch it here instead.
 @MainActor
 struct CloudKitSchemaTests {
-    let model = NSManagedObjectModel.makeManagedObjectModel(for: SchemaV1.models)
+    // Optional binding works whether the API returns an optional or not.
+    let model: NSManagedObjectModel? = NSManagedObjectModel.makeManagedObjectModel(for: SchemaV1.models)
+    var entities: [NSEntityDescription] { model?.entities ?? [] }
 
     @Test func everyModelIsInTheSchema() {
-        #expect(Set(model.entities.compactMap(\.name)) == ["Business", "PaymentDetails", "TaxRateRecord", "Client", "SavedItem", "Document", "LineItem"])
+        #expect(model != nil)
+        #expect(Set(entities.compactMap(\.name)) == ["Business", "PaymentDetails", "TaxRateRecord", "Client", "SavedItem", "Document", "LineItem"])
     }
 
     @Test func noUniqueConstraints() {
-        for entity in model.entities {
+        for entity in entities {
             #expect(entity.uniquenessConstraints.isEmpty, "\(entity.name ?? "?") has a unique constraint")
         }
     }
 
     @Test func everyAttributeIsOptionalOrHasADefault() {
-        for entity in model.entities {
+        for entity in entities {
             for (name, attribute) in entity.attributesByName {
                 #expect(
                     attribute.isOptional || attribute.defaultValue != nil,
@@ -31,11 +34,11 @@ struct CloudKitSchemaTests {
     }
 
     @Test func everyRelationshipIsOptionalWithAnInverse() {
-        for entity in model.entities {
+        for entity in entities {
             for (name, relationship) in entity.relationshipsByName {
                 #expect(relationship.isOptional, "\(entity.name ?? "?").\(name) must be optional")
                 #expect(relationship.inverseRelationship != nil, "\(entity.name ?? "?").\(name) needs an inverse")
-                #expect(relationship.deleteRule != .denyDeleteRule, "\(entity.name ?? "?").\(name) can't use deny")
+                #expect(relationship.deleteRule != NSDeleteRule.denyDeleteRule, "\(entity.name ?? "?").\(name) can't use deny")
             }
         }
     }
