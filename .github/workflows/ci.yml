@@ -13,33 +13,45 @@ concurrency:
 jobs:
   test:
     runs-on: macos-26
-    timeout-minutes: 40
+    timeout-minutes: 50
     steps:
       - uses: actions/checkout@v5
 
-      - name: Select Xcode 26.1 (matches the Mac)
+      - name: Find Xcodes
         run: |
-          ls -d /Applications/Xcode*.app
-          XC=$(ls -d /Applications/Xcode_26.1*.app 2>/dev/null | sort -V | tail -1)
-          if [ -z "$XC" ]; then XC=$(ls -d /Applications/Xcode_26*.app | sort -V | head -1); echo "::warning::Xcode 26.1 not found, using $XC"; fi
-          sudo xcode-select -s "$XC/Contents/Developer"
-          echo "::notice title=Xcode::$(xcodebuild -version | tr '\n' ' ')"
-          swift --version
+          ls -d /Applications/Xcode_*.app
+          MAC=$(ls -d /Applications/Xcode_26.1*.app 2>/dev/null | sort -V | tail -1)
+          LATEST=$(ls -d /Applications/Xcode_26*.app | grep -v -i beta | sort -V | tail -1)
+          [ -z "$MAC" ] && { echo "::warning::Xcode 26.1 not found, compile check uses $LATEST"; MAC=$LATEST; }
+          echo "XC_MAC=$MAC/Contents/Developer" >> "$GITHUB_ENV"
+          echo "XC_LATEST=$LATEST/Contents/Developer" >> "$GITHUB_ENV"
+          echo "::notice title=Xcodes::compile check $(basename "$MAC"), tests $(basename "$LATEST")"
 
+      # Same Xcode as Gonzalo's Mac: everything must compile with it.
+      - name: Compile with Xcode 26.1 (as on the Mac)
+        run: |
+          export DEVELOPER_DIR="$XC_MAC"
+          swift build --package-path Packages/InvoiceKit --build-tests
+          set -o pipefail
+          xcodebuild build-for-testing -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
+            -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1 \
+            || { grep -E "error:" build-mac.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=compile 26.1::$l"; done; tail -40 build-mac.log; exit 1; }
+          echo "Compiled OK"
+
+      # Tests run on the newest Xcode, whose simulators are installed on the runner.
       - name: InvoiceKit tests
-        run: swift test --package-path Packages/InvoiceKit --enable-code-coverage
+        if: success() || failure()
+        run: |
+          export DEVELOPER_DIR="$XC_LATEST"
+          swift test --package-path Packages/InvoiceKit --enable-code-coverage 2>&1 | tee swift-test.log
+          STATUS=${PIPESTATUS[0]}
+          grep -E "✘|error:" swift-test.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=InvoiceKit::$l"; done
+          exit $STATUS
 
       - name: App tests (iPhone)
-        run: scripts/ci-xcode-test.sh iPhone "iPhone 17 Pro"
+        if: success() || failure()
+        run: DEVELOPER_DIR="$XC_LATEST" scripts/ci-xcode-test.sh iPhone "iPhone 17 Pro"
 
       - name: App tests (iPad)
         if: success() || failure()
-        run: scripts/ci-xcode-test.sh iPad "iPad Air 11-inch (M3)"
-
-      - name: Upload test results
-        if: failure()
-        uses: actions/upload-artifact@v5
-        with:
-          name: test-results
-          path: build/*.xcresult
-          retention-days: 7
+        run: DEVELOPER_DIR="$XC_LATEST" scripts/ci-xcode-test.sh iPad "iPad Air 11-inch (M3)"

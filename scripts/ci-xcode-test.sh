@@ -20,7 +20,7 @@ fi
 ID=$(sed -E 's/.*id:([^,]+),.*/\1/' <<<"$LINE")
 if [ -z "$ID" ]; then
   echo "::error::No ${FAMILY} simulator available for this Xcode"
-  xcrun simctl list runtimes | while read -r l; do echo "::notice title=runtime::$l"; done
+  xcrun simctl list devices available | head -30
   exit 1
 fi
 echo "Testing on: $LINE"
