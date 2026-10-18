@@ -52,6 +52,20 @@ final class PaywallService {
         Superwall.configure(apiKey: key, purchaseController: controller)
         controller.syncSubscriptionStatus()
         usesSuperwall = true
+        identify(userID: Purchases.shared.appUserID)
+    }
+
+    /// Superwall and RevenueCat must share the user id (RevenueCat → Superwall
+    /// revenue tracking). Called at launch and after Sign in with Apple.
+    func identify(userID: String) {
+        guard usesSuperwall, !userID.isEmpty else { return }
+        Superwall.shared.identify(userId: userID)
+    }
+
+    func resetIdentity() {
+        guard usesSuperwall else { return }
+        Superwall.shared.reset()
+        identify(userID: Purchases.shared.appUserID)
     }
 
     func updateSubscriptionStatus(isPremium: Bool) {
@@ -70,19 +84,54 @@ final class PaywallService {
             return
         }
         let handler = PaywallPresentationHandler()
+        let attempt = GateAttempt()
         handler.onPresent { info in
             let id = info.identifier
-            Task { @MainActor in AppAnalytics.shared.log(.paywallView, ["placement": placement.rawValue, "paywall_id": id]) }
+            Task { @MainActor in
+                attempt.presented = true
+                AppAnalytics.shared.log(.paywallView, ["placement": placement.rawValue, "paywall_id": id])
+            }
         }
         handler.onError { [weak self] _ in
             Task { @MainActor in self?.showNative(placement, feature) }
         }
-        Superwall.shared.register(placement: placement.rawValue, params: params, handler: handler) {
-            Task { @MainActor in feature() }
+        // No campaign for this placement yet (or a holdout): Superwall would just
+        // run the feature, so fall back to the native paywall instead.
+        handler.onSkip { [weak self] _ in
+            Task { @MainActor in self?.unlockOrShowNative(placement, feature, attempt: attempt) }
+        }
+        Superwall.shared.register(placement: placement.rawValue, params: params, handler: handler) { [weak self] in
+            Task { @MainActor in self?.unlockOrShowNative(placement, feature, attempt: attempt) }
         }
     }
 
+    /// One tap on a gated action (skip and feature callbacks can both arrive).
+    @MainActor
+    private final class GateAttempt {
+        var presented = false
+        var resolved = false
+    }
+
+    private func unlockOrShowNative(_ placement: PaywallPlacement, _ feature: @escaping () -> Void, attempt: GateAttempt) {
+        guard !attempt.resolved else { return }
+        attempt.resolved = true
+        if PurchaseManager.shared.isPremium || Self.superwallSaysActive {
+            feature()
+        } else if !attempt.presented {
+            // Nothing was shown (no campaign yet): show ours.
+            showNative(placement, feature)
+        }
+        // A Superwall paywall was shown and closed without buying: do nothing.
+    }
+
+
+    private static var superwallSaysActive: Bool {
+        if case .active = Superwall.shared.subscriptionStatus { return true }
+        return false
+    }
+
     private func showNative(_ placement: PaywallPlacement, _ feature: @escaping () -> Void) {
+        guard nativePaywall == nil else { return }
         AppAnalytics.shared.log(.paywallView, ["placement": placement.rawValue, "paywall_id": "native"])
         nativePaywall = NativePaywallRequest(placement: placement, onUnlock: feature)
     }

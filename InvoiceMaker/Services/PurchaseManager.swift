@@ -150,11 +150,13 @@ final class PurchaseManager {
     func logIn(userID: String) async {
         guard usesRevenueCat else { return }
         _ = try? await Purchases.shared.logIn(userID)
+        PaywallService.shared.identify(userID: Purchases.shared.appUserID)
     }
 
     func logOut() async {
         guard usesRevenueCat, !Purchases.shared.isAnonymous else { return }
         _ = try? await Purchases.shared.logOut()
+        PaywallService.shared.resetIdentity()
     }
 }
 
