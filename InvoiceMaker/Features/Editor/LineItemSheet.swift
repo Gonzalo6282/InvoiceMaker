@@ -28,7 +28,7 @@ struct LineItemSheet: View {
                             .accessibilityIdentifier("lineDescription")
                         RowDivider()
                         FieldRow(label: "Quantity") {
-                            TextField("1", value: decimal(\.quantity), format: .number).keyboardType(.decimalPad)
+                            DecimalField("1", value: decimal(\.quantity))
                         }
                         RowDivider()
                         FieldRow(label: "Unit") {
@@ -36,14 +36,13 @@ struct LineItemSheet: View {
                         }
                         RowDivider()
                         FieldRow(label: "Rate") {
-                            TextField("0.00", value: decimal(\.rate).zeroAsEmpty, format: .number)
-                                .keyboardType(.decimalPad)
+                            DecimalField("0.00", value: decimal(\.rate))
                                 .accessibilityIdentifier("lineRate")
                         }
                         RowDivider()
                         FieldRow(label: "Discount") {
                             HStack(spacing: 8) {
-                                TextField("0", value: decimal(\.discountValue).zeroAsEmpty, format: .number).keyboardType(.decimalPad)
+                                DecimalField("0", value: decimal(\.discountValue))
                                 ChoiceChip(title: "%", isOn: line.discountIsPercent) { line.discountIsPercent = true }
                                 ChoiceChip(title: document.currencyCode, isOn: !line.discountIsPercent) { line.discountIsPercent = false }
                             }

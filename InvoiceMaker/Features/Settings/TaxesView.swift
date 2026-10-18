@@ -60,8 +60,7 @@ private struct TaxRow: View {
     var body: some View {
         HStack(spacing: 8) {
             TextField("Name", text: $record.name).frame(maxWidth: .infinity)
-            TextField("0", value: $record.rate, format: .number)
-                .keyboardType(.decimalPad).multilineTextAlignment(.trailing).frame(width: 64)
+            DecimalField("0", value: $record.rate).multilineTextAlignment(.trailing).frame(width: 64)
             Text("%").foregroundStyle(Color.ink2)
             if isDefault {
                 Text("Default").font(.system(size: 12, weight: .semibold)).foregroundStyle(Color.brand)

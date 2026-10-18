@@ -86,7 +86,7 @@ struct SavedItemSheet: View {
                     FieldRow(label: "Unit") { TextField("hour, day, item…", text: $item.unit) }
                     RowDivider()
                     FieldRow(label: "Price") {
-                        TextField("0.00", value: $item.rate.zeroAsEmpty, format: .number).keyboardType(.decimalPad)
+                        DecimalField("0.00", value: $item.rate)
                     }
                 }
                 GroupedSection(header: "Tax") {

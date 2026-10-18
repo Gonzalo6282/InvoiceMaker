@@ -15,6 +15,7 @@ struct DocumentEditorView: View {
 
     @Environment(\.modelContext) private var context
     @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.horizontalSizeClass) private var sizeClass
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @State private var editingLine: LineItem?
     @State private var showingClientPicker = false
@@ -26,7 +27,7 @@ struct DocumentEditorView: View {
     /// Taxes offered in pickers (archived ones are hidden).
     private var pickerTaxes: [TaxRate] { taxRecords.filter { !$0.isArchived }.map(\.taxRate) }
 
-    var body: some View {
+    private var form: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 EditorHeader(document: document)
@@ -44,12 +45,31 @@ struct DocumentEditorView: View {
             }
             .padding(.bottom, 24)
         }
+    }
+
+    var body: some View {
+        GeometryReader { geo in
+            if sizeClass == .regular, geo.size.width >= 820 {
+                // iPad landscape: editor (440pt) + live PDF (design-system.md).
+                HStack(spacing: 0) {
+                    form.frame(width: 440)
+                    Rectangle().fill(Color.line).frame(width: 1)
+                    LivePDFPanel(document: document, business: business, taxes: taxes)
+                }
+            } else {
+                form
+            }
+        }
         .scrollDismissesKeyboard(.interactively)
         .background(Color.canvas)
         .navigationTitle(business.title(for: document.kind))
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) { actionBar }
         .toolbar {
+            ToolbarItem(placement: .secondaryAction) {
+                Button("Save", systemImage: "square.and.arrow.down") { save() }
+                    .keyboardShortcut("s", modifiers: .command)
+            }
             ToolbarItem(placement: .primaryAction) {
                 EditorMoreMenu(
                     document: document, business: business, actions: actions, open: open, close: close,

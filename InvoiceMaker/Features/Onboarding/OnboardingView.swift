@@ -262,7 +262,7 @@ private struct FirstLineFields: View {
             }
             VStack(alignment: .leading, spacing: 6) {
                 Text("Price").font(.system(size: 13, weight: .medium)).foregroundStyle(Color.ink2)
-                TextField("0.00", value: $line.rate.zeroAsEmpty, format: .number).keyboardType(.decimalPad)
+                DecimalField("0.00", value: $line.rate)
                     .padding(12).background(Color.surface, in: RoundedRectangle(cornerRadius: 12))
                     .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.line))
             }

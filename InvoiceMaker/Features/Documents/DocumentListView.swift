@@ -78,6 +78,10 @@ struct DocumentListView: View {
                 }
                 .accessibilityIdentifier("newDocument")
             }
+            ToolbarItem(placement: .secondaryAction) {
+                Button("New invoice", systemImage: "doc.badge.plus") { create(.invoice) }
+                    .keyboardShortcut("n", modifiers: .command)
+            }
         }
         .onChange(of: kind) { filter = .all }
     }

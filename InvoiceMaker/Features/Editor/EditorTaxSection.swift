@@ -41,23 +41,20 @@ struct EditorTaxSection: View {
             RowDivider()
             FieldRow(label: "Discount") {
                 HStack(spacing: 8) {
-                    TextField("0", value: discountValue.zeroAsEmpty, format: .number)
-                        .keyboardType(.decimalPad)
+                    DecimalField("0", value: discountValue)
                     ChoiceChip(title: "%", isOn: document.discountIsPercent) { change { document.discountIsPercent = true } }
                     ChoiceChip(title: document.currencyCode, isOn: !document.discountIsPercent) { change { document.discountIsPercent = false } }
                 }
             }
             RowDivider()
             FieldRow(label: "Shipping") {
-                TextField("0.00", value: money(\.shipping).zeroAsEmpty, format: .number)
-                    .keyboardType(.decimalPad)
+                DecimalField("0.00", value: money(\.shipping))
             }
             ForEach(document.fees.indices, id: \.self) { index in
                 RowDivider()
                 HStack(spacing: 8) {
                     TextField("Fee name", text: feeName(index))
-                    TextField("0.00", value: feeAmount(index).zeroAsEmpty, format: .number)
-                        .keyboardType(.decimalPad)
+                    DecimalField("0.00", value: feeAmount(index))
                         .multilineTextAlignment(.trailing)
                         .frame(maxWidth: 110)
                     Button {

@@ -49,7 +49,7 @@ struct NumberingView: View {
                 GroupedSection(header: "Numbering", footer: "Numbers go up by one with each new document. Next: \(business.numbering.peek(.invoice)).") {
                     FieldRow(label: "Invoice prefix") { TextField("INV-", text: $business.invoicePrefix).autocorrectionDisabled() }
                     RowDivider()
-                    FieldRow(label: "Next invoice number") { TextField("1", value: positive(\.nextInvoiceNumber), format: .number).keyboardType(.numberPad) }
+                    FieldRow(label: "Next invoice number") { IntField("1", value: positive(\.nextInvoiceNumber)) }
                     RowDivider()
                     FieldRow(label: LocalizedStringKey(String(localized: "\(business.title(for: .estimate)) prefix"))) {
                         TextField("EST-", text: $business.estimatePrefix).autocorrectionDisabled()
@@ -58,7 +58,7 @@ struct NumberingView: View {
                     FieldRow(label: "Receipt prefix") { TextField("REC-", text: $business.receiptPrefix).autocorrectionDisabled() }
                 }
                 GroupedSection(header: "Defaults") {
-                    FieldRow(label: "Payment due in (days)") { TextField("14", value: positive(\.dueDays), format: .number).keyboardType(.numberPad) }
+                    FieldRow(label: "Payment due in (days)") { IntField("14", value: positive(\.dueDays)) }
                     RowDivider()
                     TextField("Notes on new documents", text: $business.defaultNotes, axis: .vertical)
                         .lineLimit(2...6).padding(14)
