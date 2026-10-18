@@ -14,7 +14,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [ ] T1.2 `TaxRate`, tax added vs included, per item vs on total, several named taxes
 - [ ] T1.3 `Calculator.totals` with shipping + fees; the mockup's 3 cases (£273.00, £237.00, CA GST+PST £89.60)
 - [ ] T1.4 `TaxPresets` UK / AU / CA (by province) / US
-- [ ] T1.5 `DocumentNumber` (INV / EST or QTE / RCT, padding, next number)
+- [ ] T1.5 `DocumentNumbering` (INV- / EST- / REC-, padding, next number; "Quote" title in the UK)
 - [ ] T1.6 `DocumentStatus` + overdue rule + month paid/owed totals
 - [ ] T1.7 `CurrencyDisplay` (symbol / code / none) + `PaperSize.for(country:)`
 - [ ] T1.8 `CSVWriter` with escaping
