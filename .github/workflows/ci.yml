@@ -74,7 +74,7 @@ jobs:
             DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results tests --path "$r" > "$OUT/$n-tests.json" 2>&1 || true
             DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results summary --path "$r" > "$OUT/$n-summary.json" 2>&1 || true
           done
-          find ~/Library/Logs/DiagnosticReports -name "InvoiceMaker*" -newer build -exec cp {} "$OUT"/ \; 2>/dev/null || true
+          find ~/Library/Logs/DiagnosticReports -mmin -90 \( -name "*.ips" -o -name "*.crash" \) -exec cp {} "$OUT"/ \; 2>/dev/null || true
           cd "$OUT"
           git init -q -b ci-logs
           git config user.name "CI"; git config user.email "ci@users.noreply.github.com"

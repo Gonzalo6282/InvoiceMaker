@@ -283,7 +283,8 @@ struct DocumentActionsTests {
 
     #if DEBUG
         @Test func demoDataSeeds() throws {
-            let demo = DemoData.container().mainContext
+            let container = DemoData.container()  // keep it alive: contexts don't retain their container
+            let demo = container.mainContext
             #expect(try demo.fetchCount(FetchDescriptor<Business>()) == 1)
             #expect(try demo.fetchCount(FetchDescriptor<Document>()) == 6)
             #expect(try demo.fetchCount(FetchDescriptor<Client>()) == 3)
