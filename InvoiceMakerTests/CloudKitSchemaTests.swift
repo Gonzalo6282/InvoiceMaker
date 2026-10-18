@@ -51,3 +51,14 @@ struct CloudKitSchemaTests {
         #expect(try context.fetchCount(FetchDescriptor<Business>()) == 1)
     }
 }
+
+@MainActor
+struct ModelContainerFactoryTests {
+    @Test func testsGetAnInMemoryStore() throws {
+        let result = ModelContainerFactory.forApp(arguments: ["-uiTesting"], environment: [:])
+        let container = try result.get()
+        #expect(container.configurations.first?.isStoredInMemoryOnly == true)
+        let unit = try ModelContainerFactory.forApp(arguments: [], environment: ["XCTestConfigurationFilePath": "x"]).get()
+        #expect(unit.configurations.first?.isStoredInMemoryOnly == true)
+    }
+}

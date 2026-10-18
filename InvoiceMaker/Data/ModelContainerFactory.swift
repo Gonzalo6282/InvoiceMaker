@@ -29,25 +29,22 @@ enum ModelContainerFactory {
     }
 
     /// The app's container: CloudKit, falling back to local storage so the app
-    /// always opens. UI tests pass `-uiTesting` to get a clean in-memory store.
-    static func forApp(arguments: [String] = ProcessInfo.processInfo.arguments) -> ModelContainer {
-        if arguments.contains("-uiTesting") {
-            return (try? make(.inMemory)) ?? fatalContainer()
+    /// always opens. Tests get a clean in-memory store: UI tests pass
+    /// `-uiTesting`; unit tests are detected by XCTest's environment variable
+    /// (CI builds are unsigned, and CloudKit needs the iCloud entitlement).
+    static func forApp(
+        arguments: [String] = ProcessInfo.processInfo.arguments,
+        environment: [String: String] = ProcessInfo.processInfo.environment
+    ) -> Result<ModelContainer, Error> {
+        let log = Logger(subsystem: "uk.slice-of-life.invoicemaker", category: "data")
+        if arguments.contains("-uiTesting") || environment["XCTestConfigurationFilePath"] != nil {
+            return Result { try make(.inMemory) }
         }
         do {
-            return try make(.cloudKit)
+            return .success(try make(.cloudKit))
         } catch {
-            Logger(subsystem: "uk.slice-of-life.invoicemaker", category: "data")
-                .error("CloudKit store failed, using local store: \(error.localizedDescription)")
-            return (try? make(.local)) ?? fatalContainer()
+            log.error("CloudKit store failed, using local store: \(error.localizedDescription)")
+            return Result { try make(.local) }
         }
-    }
-
-    private static func fatalContainer() -> ModelContainer {
-        // Last resort so the app still opens (data won't persist this session).
-        guard let container = try? make(.inMemory) else {
-            preconditionFailure("Could not create any SwiftData store")
-        }
-        return container
     }
 }
