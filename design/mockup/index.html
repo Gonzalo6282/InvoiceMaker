@@ -1,0 +1,1708 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Invoice Maker Mockup</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:wght@400;600;700&display=swap">
+<style>
+/* Layout: control rail on the left, a real-size device frame (iPhone / iPad) scaled to fit on the right.
+   Design system "Ledger Indigo": Stripe colour discipline (indigo action, midnight ink, frost hairlines),
+   Wise elements (pill buttons, heavy display figures, 28pt hero cards, tinted status tags), Apple HIG structure. */
+:root{
+  --ink:#061b31;          /* midnight ink: primary text */
+  --ink-2:#50617a;        /* steel: secondary text */
+  --ink-3:#7d8ca3;        /* tertiary, placeholders */
+  --line:#e3e9f2;         /* frost hairline */
+  --canvas:#f3f6fa;       /* grouped background */
+  --surface:#ffffff;      /* rows, cards */
+  --surface-2:#f8fafd;    /* mist: inset fields */
+  --brand:#533afd;        /* indigo ink: the single action colour */
+  --brand-press:#4128e0;
+  --brand-wash:#eceaff;   /* periwinkle wash */
+  --brand-edge:#b9b9f9;   /* lavender ghost border */
+  --navy:#0a2540;         /* hero money card */
+  --navy-ink:#ffffff;
+  --paid:#9fe870;         /* lime: money arrived */
+  --paid-ink:#163300;
+  --paid-wash:#e2f6d5;
+  --paid-text:#163300;    /* paid-coloured text/icons on paid-wash */
+  --item-tile:#ffe4c4;    /* saved-item tiles: pastel peach */
+  --item-ink:#c4610f;     /* deeper orange tag */
+  --chip-bg:var(--brand-wash);  /* violet icon chips (client initials, empty-state icons) */
+  --chip-ink:var(--brand);
+  --due:#df1b41;          /* overdue */
+  --due-wash:#ffe6eb;
+  --warn:#b25e09;
+  --warn-wash:#fff1dc;
+  --teal:#0fb5c8;
+  --frame:#0c0f16;
+  --rail:#ffffff;
+  --rail-bg:#eef2f7;
+  --shadow:0 1px 0 rgba(6,27,49,.04);
+  --sheet-dim:rgba(6,27,49,.32);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,"Segoe UI",sans-serif;
+  --font-display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter",system-ui,"Segoe UI",sans-serif;
+  --font-serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paid-text:#9fe870;
+  --item-tile:#ffb870;--item-ink:#3b2a17;
+  --chip-bg:#8f82ff;--chip-ink:#15123a;
+  --ink:#eef2f8;--ink-2:#a7b3c6;--ink-3:#6f7d93;--line:#1e2a3d;--canvas:#05090f;--surface:#0f1726;--surface-2:#141e30;
+  --brand:#7b6bff;--brand-press:#6a58ff;--brand-wash:#1c1a45;--brand-edge:#3b3680;--navy:#111d36;--navy-ink:#ffffff;
+  --paid-wash:#1b2e12;--due:#ff5d7a;--due-wash:#3a0f19;--warn:#f0a646;--warn-wash:#33230c;--rail:#0e1522;--rail-bg:#070b12;
+  --sheet-dim:rgba(0,0,0,.55);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paid-text:#9fe870;
+  --item-tile:#ffb870;--item-ink:#3b2a17;
+  --chip-bg:#8f82ff;--chip-ink:#15123a;
+  --ink:#eef2f8;--ink-2:#a7b3c6;--ink-3:#6f7d93;--line:#1e2a3d;--canvas:#05090f;--surface:#0f1726;--surface-2:#141e30;
+  --brand:#7b6bff;--brand-press:#6a58ff;--brand-wash:#1c1a45;--brand-edge:#3b3680;--navy:#111d36;--navy-ink:#ffffff;
+  --paid-wash:#1b2e12;--due:#ff5d7a;--due-wash:#3a0f19;--warn:#f0a646;--warn-wash:#33230c;--rail:#0e1522;--rail-bg:#070b12;
+  --sheet-dim:rgba(0,0,0,.55);color-scheme:dark}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{background:var(--rail-bg);color:var(--ink);font-family:var(--font);font-size:15px;-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- page shell ---------- */
+.shell{display:grid;grid-template-columns:300px minmax(0,1fr);gap:20px;max-width:1640px;margin:0 auto;padding-block:16px}
+.rail{background:var(--rail);border:1px solid var(--line);border-radius:20px;padding:18px;align-self:start;position:sticky;top:16px;max-height:calc(100vh - 32px);overflow:auto}
+.rail h1{font-family:var(--font-display);font-size:19px;font-weight:800;letter-spacing:-.02em;margin:0 0 2px}
+.rail .sub{color:var(--ink-2);font-size:13px;margin:0 0 14px;line-height:1.4}
+.rail h2{font-size:12px;font-weight:600;color:var(--ink-2);margin:18px 0 8px}
+.seg{display:flex;background:var(--canvas);border-radius:999px;padding:3px;gap:2px}
+.seg button{flex:1;padding:7px 8px;border-radius:999px;font-size:13px;font-weight:500;color:var(--ink-2);white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(6,27,49,.12)}
+.jump{display:flex;flex-wrap:wrap;gap:6px}
+.jump button{font-size:12.5px;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.jump button:hover{border-color:var(--brand-edge);color:var(--brand)}
+.tog{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:6px 0;font-size:13.5px}
+.events{font-size:12px;color:var(--ink-2);display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.events li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding:4px 0}
+.events code{font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--ink);font-size:11.5px}
+.stage{min-width:0;display:flex;justify-content:center;align-items:flex-start}
+.stage-box{position:relative}
+.stage-note{color:var(--ink-2);font-size:12.5px;text-align:center;margin-top:10px}
+
+/* switch */
+.sw{position:relative;width:46px;height:28px;flex:none;border-radius:999px;background:#c8d1de;transition:background .2s}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.2);transition:transform .2s}
+.sw[aria-checked="true"]{background:#34c759}
+.sw[aria-checked="true"]::after{transform:translateX(18px)}
+
+/* ---------- device ---------- */
+.device{transform-origin:top left;background:var(--frame);position:relative}
+.device.iphone{width:402px;height:874px;border-radius:62px;padding:11px}
+.device.ipad-l{width:1210px;height:850px;border-radius:40px;padding:15px}
+.device.ipad-p{width:850px;height:1210px;border-radius:40px;padding:15px}
+.screen{position:relative;width:100%;height:100%;overflow:hidden;background:var(--canvas);border-radius:52px;isolation:isolate;container-type:size}
+.device.ipad-l .screen,.device.ipad-p .screen{border-radius:26px}
+.island{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:124px;height:36px;border-radius:20px;background:#000;z-index:60}
+.statusbar{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 34px 0 46px;font-weight:600;font-size:16px;z-index:50;pointer-events:none}
+.device.ipad-l .statusbar,.device.ipad-p .statusbar{height:28px;padding:2px 22px 0;font-size:13px}
+.statusbar .sys{display:flex;gap:6px;align-items:center}
+.homebar{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:140px;height:5px;border-radius:3px;background:var(--ink);opacity:.85;z-index:80;pointer-events:none}
+
+/* ---------- iOS screen anatomy ---------- */
+.scr{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--canvas)}
+.nav{flex:none;padding:54px 16px 0;background:var(--canvas)}
+.ipad .nav{padding-top:30px}
+.navrow{height:44px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.navrow .title{font-weight:600;font-size:17px;text-align:center;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.navbtn{color:var(--brand);font-size:17px;display:inline-flex;align-items:center;gap:2px;min-width:44px;min-height:44px}
+.navbtn.r{justify-content:flex-end}
+.navbtn.strong{font-weight:600}
+.iconbtn{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--brand);border:1px solid var(--line)}
+.large{font-family:var(--font-display);font-size:34px;font-weight:800;letter-spacing:-.025em;margin:2px 0 10px}
+.body{flex:1;overflow:auto;padding:0 0 24px;overscroll-behavior:contain}
+.body.pad{padding:0 16px 24px}
+.readable{max-width:680px;margin:0 auto;width:100%}
+.tabbar{flex:none;height:84px;display:flex;border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(20px);padding:7px 6px 30px}
+.tabbar button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:10.5px;font-weight:500;color:var(--ink-3)}
+.tabbar button[aria-current="page"]{color:var(--brand)}
+.tabbar svg{width:26px;height:26px}
+
+.section-h{font-size:13px;color:var(--ink-2);margin:22px 16px 7px;font-weight:500}
+.section-f{font-size:12.5px;color:var(--ink-2);margin:7px 16px 0;line-height:1.4}
+.group{background:var(--surface);border-radius:14px;margin:0 16px;overflow:hidden;border:1px solid var(--line)}
+.row{display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 14px;width:100%;text-align:left;position:relative}
+.row + .row::before{content:"";position:absolute;top:0;left:14px;right:0;border-top:1px solid var(--line)}
+.row .grow{flex:1;min-width:0}
+.row .lbl{font-size:16px}
+.row .meta{font-size:13px;color:var(--ink-2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .val{color:var(--ink-2);font-size:15px;text-align:right;white-space:nowrap}
+.row .chev{color:var(--ink-3);flex:none}
+.row.danger .lbl{color:var(--due)}
+.row.link .lbl{color:var(--brand)}
+.row input,.row select,.row textarea{border:0;background:transparent;outline:0;font-size:16px;text-align:right;min-width:0;flex:1;padding:0}
+.row textarea{text-align:left;resize:none;min-height:60px;line-height:1.4}
+.row input::placeholder,.row textarea::placeholder{color:var(--ink-3)}
+.row .k{font-size:16px;flex:none;color:var(--ink)}
+.sicon{width:30px;height:30px;border-radius:8px;display:grid;place-items:center;color:#fff;flex:none}
+.sicon svg{width:18px;height:18px}
+.avatar{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--chip-bg);color:var(--chip-ink);flex:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 24px;border-radius:999px;font-size:17px;font-weight:600;width:100%;transition:transform .08s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.primary:hover{background:var(--brand-press)}
+.btn.ghost{border:1.5px solid var(--brand-edge);color:var(--brand);background:var(--surface)}
+.btn.plain{color:var(--brand);height:44px}
+.btn.dark{background:#000;color:#fff}
+.btn.danger{background:var(--due);color:#fff}
+.btn.sm{height:36px;font-size:15px;padding:0 14px;width:auto}
+.btn[disabled]{opacity:.45;pointer-events:none}
+
+/* status pills */
+.pill{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font-size:12px;font-weight:600;white-space:nowrap}
+.pill.draft{background:var(--canvas);color:var(--ink-2);border:1px solid var(--line)}
+.pill.sent{background:var(--brand-wash);color:var(--brand)}
+.pill.paid{background:var(--paid);color:var(--paid-ink)}
+.pill.overdue{background:var(--due-wash);color:var(--due)}
+.pill.accepted{background:var(--paid-wash);color:var(--paid-ink)}
+:root[data-theme="dark"] .pill.accepted{color:var(--paid)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .pill.accepted{color:var(--paid)}}
+.pill.converted{background:var(--canvas);color:var(--ink-3);border:1px solid var(--line)}
+
+/* home hero */
+.money{margin:4px 16px 0;background:var(--navy);color:var(--navy-ink);border-radius:28px;padding:20px 20px 18px;display:grid;gap:14px}
+.money .lab{font-size:13px;opacity:.72}
+.money .big{font-family:var(--font-display);font-size:40px;font-weight:900;letter-spacing:-.035em;line-height:1}
+.money .split{display:grid;grid-template-columns:1fr 1fr;gap:10px;border-top:1px solid rgba(255,255,255,.14);padding-top:12px}
+.money .mid{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.02em}
+.money .mid.lime{color:var(--paid)}
+.money .mid.red{color:#ff8fa3}
+.money .foot{font-size:12px;opacity:.6}
+
+.tabs{display:flex;gap:8px;padding:12px 16px 4px;overflow-x:auto;scrollbar-width:none}
+.tabs button{height:34px;padding:0 14px;border-radius:999px;font-size:14px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);white-space:nowrap}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--canvas);border-color:var(--ink)}
+.typeseg{margin:0 16px;display:flex;background:color-mix(in srgb,var(--ink) 8%,transparent);border-radius:10px;padding:2px}
+.typeseg button{flex:1;height:32px;border-radius:8px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+.typeseg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 3px rgba(6,27,49,.12)}
+.search{margin:0 16px 4px;display:flex;align-items:center;gap:8px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--ink) 7%,transparent);padding:0 10px;color:var(--ink-3)}
+.search input{border:0;background:transparent;outline:0;flex:1;font-size:16px;color:var(--ink)}
+.docrow{display:flex;gap:12px;align-items:center;padding:12px 14px;width:100%;text-align:left;position:relative}
+.docrow + .docrow::before{content:"";position:absolute;top:0;left:64px;right:0;border-top:1px solid var(--line)}
+.docrow .amt{font-weight:700;font-size:16px;text-align:right}
+.docrow .r{display:grid;justify-items:end;gap:4px}
+.docrow[aria-current="true"]{background:var(--brand-wash)}
+
+.empty{display:grid;justify-items:center;text-align:center;gap:10px;padding:48px 32px}
+.empty h3{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-.02em;margin:6px 0 0}
+.empty p{color:var(--ink-2);margin:0;line-height:1.45;max-width:300px}
+.banner{margin:10px 16px 0;border-radius:14px;padding:12px 14px;display:flex;gap:10px;align-items:flex-start;font-size:13.5px;line-height:1.4}
+.banner.warn{background:var(--warn-wash);color:var(--warn)}
+.banner.info{background:var(--brand-wash);color:var(--brand)}
+.banner.ok{background:var(--paid-wash);color:var(--paid-ink)}
+:root[data-theme="dark"] .banner.ok{color:var(--paid)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .banner.ok{color:var(--paid)}}
+.banner.err{background:var(--due-wash);color:var(--due)}
+.banner b{font-weight:600}
+.banner .act{margin-left:auto;font-weight:600;white-space:nowrap;text-decoration:underline}
+
+/* editor */
+.ed-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin:2px 16px 0}
+.ed-head .no{font-family:var(--font-display);font-size:28px;font-weight:800;letter-spacing:-.025em}
+.saved{font-size:12.5px;color:var(--ink-3);display:inline-flex;align-items:center;gap:4px}
+.line{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;width:100%;text-align:left;position:relative}
+.line + .line::before{content:"";position:absolute;top:0;left:14px;right:0;border-top:1px solid var(--line)}
+.line .d{font-size:16px;font-weight:500}
+.line .m{font-size:13px;color:var(--ink-2);margin-top:3px}
+.line .t{font-weight:600;font-size:16px;margin-left:auto;white-space:nowrap}
+.totals{padding:6px 14px 12px}
+.totals .tr{display:flex;justify-content:space-between;padding:5px 0;font-size:15px;color:var(--ink-2)}
+.totals .tr.total{color:var(--ink);font-size:17px;font-weight:700;border-top:1px solid var(--line);margin-top:6px;padding-top:11px}
+.totals .tr.total .num{font-family:var(--font-display);font-size:24px;font-weight:900;letter-spacing:-.03em}
+.ed-actions{flex:none;display:flex;gap:10px;padding:10px 16px 30px;background:color-mix(in srgb,var(--canvas) 92%,transparent);backdrop-filter:blur(18px);border-top:1px solid var(--line)}
+.ipad .ed-actions{padding-bottom:14px}
+.ed-actions .btn{height:50px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{height:30px;padding:0 12px;border-radius:999px;border:1px solid var(--line);font-size:13.5px;font-weight:500;background:var(--surface-2);color:var(--ink-2);display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{background:var(--brand-wash);border-color:var(--brand-edge);color:var(--brand)}
+.err-text{color:var(--due);font-size:13px;margin:8px 16px 0}
+
+/* ---------- invoice paper (stand-in for the UIGraphicsPDFRenderer templates) ---------- */
+.paperwrap{container-type:inline-size;width:100%}
+.paper{--acc:#533afd;position:relative;background:#fff;color:#14202e;aspect-ratio:1/1.4142;width:100%;border-radius:4px;box-shadow:0 1px 2px rgba(6,27,49,.08),0 8px 28px rgba(6,27,49,.10);padding:6.5cqw 6.5cqw 5cqw;font-family:"Inter",var(--font);font-size:2.05cqw;line-height:1.38;overflow:hidden;display:flex;flex-direction:column}
+.paper *{color:inherit}
+.paper .p-top{display:flex;justify-content:space-between;align-items:flex-start;gap:4cqw}
+.paper .p-logo{width:11cqw;height:11cqw;border-radius:2.2cqw;background:var(--acc);color:#fff;display:grid;place-items:center;font-weight:800;font-size:4cqw;letter-spacing:-.04em;overflow:hidden;flex:none}
+.paper .p-logo img{width:100%;height:100%;object-fit:contain;background:#fff}
+.paper .p-title{font-weight:800;font-size:5.6cqw;letter-spacing:-.03em;line-height:1;color:var(--acc);text-align:right}
+.paper .p-sub{color:#5b6878;text-align:right;margin-top:1cqw}
+.paper .p-meta{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3cqw;margin-top:5cqw}
+.paper .p-k{font-size:1.65cqw;color:#7a8696;font-weight:600;margin-bottom:.6cqw}
+.paper .p-b{font-weight:600}
+.paper table{width:100%;border-collapse:collapse;margin-top:5cqw;font-variant-numeric:tabular-nums}
+.paper th{font-size:1.65cqw;color:#7a8696;font-weight:600;text-align:left;padding:1.2cqw 0;border-bottom:.25cqw solid #14202e}
+.paper td{padding:1.6cqw 0;border-bottom:.15cqw solid #e6ebf1;vertical-align:top}
+.paper th.n,.paper td.n{text-align:right;padding-left:2cqw}
+.paper .p-sumwrap{display:flex;justify-content:flex-end;margin-top:2.5cqw}
+.paper .p-sum{width:48%;font-variant-numeric:tabular-nums}
+.paper .p-sum div{display:flex;justify-content:space-between;padding:.7cqw 0;color:#4d5a6a}
+.paper .p-sum .p-tot{color:#14202e;font-weight:800;font-size:3.1cqw;letter-spacing:-.02em;border-top:.25cqw solid #14202e;margin-top:1cqw;padding-top:1.6cqw}
+.paper .p-pay{margin-top:auto;display:flex;gap:4cqw;align-items:flex-end;border-top:.15cqw solid #e6ebf1;padding-top:3cqw}
+.paper .p-btns{display:flex;flex-wrap:wrap;gap:1.2cqw;margin-top:1.4cqw}
+.paper .p-btn{background:var(--acc);color:#fff;border-radius:99cqw;padding:.9cqw 2.4cqw;font-weight:700;font-size:1.75cqw}
+.paper .p-qr{width:14cqw;height:14cqw;flex:none}
+.paper .p-notes{color:#5b6878;margin-top:3cqw}
+.paper .p-sig{height:6cqw;margin-top:1cqw}
+.paper .p-sig img,.paper .p-sig svg{height:100%;width:auto}
+.paper .stamp{position:absolute;top:30%;right:8%;transform:rotate(-14deg);border:.6cqw solid #3d8a1b;color:#3d8a1b;font-weight:900;font-size:8cqw;letter-spacing:.06em;padding:.5cqw 3cqw;border-radius:2cqw;opacity:.85;mix-blend-mode:multiply}
+.paper .wm{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.paper .wm span{transform:rotate(-30deg);font-size:15cqw;font-weight:900;letter-spacing:.08em;color:rgba(83,58,253,.08)}
+/* template variations */
+.paper.t-bold{padding-top:0}
+.paper.t-bold .p-band{background:var(--acc);color:#fff;margin:0 -6.5cqw;padding:6cqw 6.5cqw 5cqw;display:flex;justify-content:space-between;align-items:flex-end}
+.paper.t-bold .p-band .p-title{color:#fff;font-size:7cqw}
+.paper.t-bold .p-band .p-sub{color:rgba(255,255,255,.8)}
+.paper.t-bold .p-logo{background:#fff;color:var(--acc)}
+.paper.t-ledger table td,.paper.t-ledger table th{border:.15cqw solid #d5dde7;padding:1.3cqw 1.6cqw}
+.paper.t-ledger table th{background:color-mix(in srgb,var(--acc) 10%,#fff);color:#14202e}
+.paper.t-ledger .p-title{color:#14202e}
+.paper.t-studio .p-title{font-size:11cqw;font-weight:900;letter-spacing:-.06em;color:#14202e;text-align:left}
+.paper.t-studio .p-top{flex-direction:column-reverse;align-items:stretch}
+.paper.t-studio .p-sub{text-align:left}
+.paper.t-studio th{border-bottom-color:var(--acc)}
+.paper.t-classic{font-family:var(--font-serif)}
+.paper.t-classic .p-title{font-family:var(--font-serif);font-weight:700;color:#14202e;letter-spacing:0;text-transform:none;font-size:6cqw}
+.paper.t-classic .p-top{border-bottom:.3cqw double #14202e;padding-bottom:3cqw}
+.paper.t-trades .p-job{margin-top:3cqw;background:color-mix(in srgb,var(--acc) 9%,#fff);border-left:.8cqw solid var(--acc);padding:2cqw 2.6cqw;display:flex;justify-content:space-between;gap:2cqw}
+.paper.t-split{padding-left:30cqw}
+.paper.t-split .p-side{position:absolute;left:0;top:0;bottom:0;width:24cqw;background:var(--acc);color:#fff;padding:6.5cqw 4cqw;display:flex;flex-direction:column;gap:3cqw}
+.paper.t-split .p-side .p-k{color:rgba(255,255,255,.7)}
+.paper.t-split .p-side .p-logo{background:#fff;color:var(--acc);width:12cqw;height:12cqw}
+.paper.t-split .p-title{text-align:left;color:#14202e}
+
+/* thumbnails */
+.tpl-strip{display:flex;gap:10px;overflow-x:auto;padding:4px 16px 8px;scrollbar-width:thin}
+.tpl{flex:none;width:96px;display:grid;gap:6px;justify-items:center;font-size:12.5px;font-weight:500;color:var(--ink-2)}
+.tpl .thumb{width:96px;border-radius:6px;outline:2px solid transparent;outline-offset:2px;position:relative}
+.tpl[aria-pressed="true"] .thumb{outline-color:var(--brand)}
+.tpl[aria-pressed="true"]{color:var(--brand)}
+.tpl .lock{position:absolute;top:4px;right:4px;background:var(--ink);color:var(--canvas);border-radius:999px;font-size:10px;font-weight:700;padding:2px 6px;z-index:2}
+.swatches{display:flex;gap:10px;padding:4px 16px}
+.swatch{width:34px;height:34px;border-radius:50%;outline:2px solid transparent;outline-offset:2px}
+.swatch[aria-pressed="true"]{outline-color:var(--ink)}
+
+/* ---------- sheets ---------- */
+.dim{position:absolute;inset:0;background:var(--sheet-dim);z-index:100;animation:fade .2s ease}
+.sheet{position:absolute;left:0;right:0;bottom:0;max-height:94%;background:var(--canvas);border-radius:14px 14px 0 0;z-index:101;display:flex;flex-direction:column;animation:up .28s cubic-bezier(.2,.8,.2,1)}
+.sheet.full{top:54px;max-height:none}
+.sheet.tall{top:54px;max-height:none}
+.sheet .grab{width:36px;height:5px;border-radius:3px;background:var(--ink-3);opacity:.5;margin:6px auto 0}
+.sheet .navrow{padding:0 16px}
+.sheet .body{padding-bottom:34px}
+.ipad .sheet{left:50%;right:auto;top:50%;bottom:auto;transform:translate(-50%,-50%);width:560px;max-height:86%;border-radius:18px;animation:pop .22s cubic-bezier(.2,.8,.2,1)}
+.ipad .sheet.full,.ipad .sheet.tall{height:min(760px,86%)}
+.ipad .sheet.paywall-sheet{width:620px;height:min(780px,92%)}
+.ipad .sheet .body{padding-bottom:18px}
+.popover{position:absolute;z-index:101;width:340px;background:var(--canvas);border-radius:16px;box-shadow:0 18px 50px rgba(6,27,49,.3);border:1px solid var(--line);animation:pop .18s ease;top:96px;right:24px}
+.popover::before{content:"";position:absolute;top:-8px;right:56px;width:16px;height:16px;background:var(--canvas);transform:rotate(45deg);border-left:1px solid var(--line);border-top:1px solid var(--line)}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes pop{from{opacity:0;transform:translate(-50%,-48%) scale(.97)}to{opacity:1}}
+.popover{animation:none}
+@keyframes fade{from{opacity:0}}
+.actionsheet{position:absolute;left:8px;right:8px;bottom:30px;z-index:101;display:grid;gap:8px;animation:up .25s cubic-bezier(.2,.8,.2,1)}
+.ipad .actionsheet{left:50%;right:auto;bottom:auto;top:50%;width:380px;transform:translate(-50%,-50%);animation:none}
+.actionsheet .grp{background:color-mix(in srgb,var(--surface) 96%,transparent);border-radius:14px;overflow:hidden}
+.actionsheet .hd{padding:14px 16px;text-align:center;font-size:13px;color:var(--ink-2);line-height:1.4;border-bottom:1px solid var(--line)}
+.actionsheet .hd b{display:block;color:var(--ink);font-size:14px;margin-bottom:3px}
+.actionsheet button{display:block;width:100%;height:56px;font-size:19px;color:var(--brand);border-top:1px solid var(--line)}
+.actionsheet button:first-child{border-top:0}
+.actionsheet button.d{color:var(--due)}
+.actionsheet button.c{font-weight:600}
+
+.toast{position:absolute;left:50%;top:60px;transform:translateX(-50%);z-index:200;background:var(--ink);color:var(--canvas);border-radius:999px;padding:10px 16px;font-size:14px;font-weight:600;display:flex;gap:8px;align-items:center;white-space:nowrap;animation:tin .25s ease;max-width:92%;overflow:hidden;text-overflow:ellipsis}
+.ipad .toast{top:36px}
+@keyframes tin{from{opacity:0;transform:translate(-50%,-8px)}}
+
+/* share sheet */
+.share-apps{display:flex;gap:16px;padding:16px;overflow-x:auto}
+.share-apps button{display:grid;justify-items:center;gap:6px;font-size:11.5px;width:64px;flex:none}
+.share-apps .ai{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;color:#fff}
+.share-file{display:flex;gap:12px;align-items:center;padding:12px 16px 4px}
+.share-file .mini{width:44px;flex:none}
+
+/* paywall */
+.pw{display:flex;flex-direction:column;height:100%}
+.pw-top{position:relative;padding:20px 22px 0;flex:none}
+.pw-close{position:absolute;top:14px;right:16px;width:32px;height:32px;border-radius:50%;background:color-mix(in srgb,var(--ink) 8%,transparent);display:grid;place-items:center;color:var(--ink-2)}
+.pw h2{font-family:var(--font-display);font-size:30px;font-weight:900;letter-spacing:-.035em;line-height:1.02;margin:22px 0 8px;max-width:300px;text-wrap:balance}
+.pw .freeline{font-size:14px;color:var(--ink-2);margin:0 0 14px;line-height:1.45}
+.pw .freeline b{color:var(--ink);font-weight:600}
+.pw-list{display:grid;gap:9px;margin:0 0 16px;padding:0;list-style:none}
+.pw-list li{display:flex;gap:10px;align-items:center;font-size:15px}
+.pw-list .ck{width:22px;height:22px;border-radius:50%;background:var(--paid);color:var(--paid-ink);display:grid;place-items:center;flex:none}
+.plans{display:grid;gap:10px;padding:0 22px}
+.plan{border:1.5px solid var(--line);background:var(--surface);border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:12px;text-align:left;width:100%;position:relative}
+.plan[aria-checked="true"]{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+.plan .rad{width:22px;height:22px;border-radius:50%;border:2px solid var(--ink-3);flex:none;display:grid;place-items:center}
+.plan[aria-checked="true"] .rad{border-color:var(--brand);background:var(--brand)}
+.plan[aria-checked="true"] .rad::after{content:"";width:8px;height:8px;border-radius:50%;background:#fff}
+.plan .pn{font-weight:700;font-size:16px}
+.plan .pd{font-size:13px;color:var(--ink-2);margin-top:2px}
+.plan .pp{margin-left:auto;text-align:right;font-weight:700;font-size:16px}
+.plan .pp small{display:block;font-weight:500;font-size:12px;color:var(--ink-2)}
+.plan .tag{position:absolute;top:-10px;right:14px;background:var(--paid);color:var(--paid-ink);font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 9px}
+.pw-bottom{margin-top:auto;padding:14px 22px 30px;display:grid;gap:10px}
+.pw-terms{font-size:11.5px;color:var(--ink-2);line-height:1.45;text-align:center}
+.pw-links{display:flex;justify-content:center;gap:18px;font-size:12.5px;color:var(--ink-2)}
+.pw-links button{text-decoration:underline}
+.trialrow{display:flex;justify-content:space-between;align-items:center;padding:0 22px;margin-top:12px;font-size:14px}
+
+/* onboarding */
+.onb{position:absolute;inset:0;display:flex;flex-direction:column;background:var(--canvas)}
+.onb .inner{flex:1;overflow:auto;padding:70px 24px 12px;display:flex;flex-direction:column}
+.ipad .onb .inner{max-width:620px;margin:0 auto;width:100%;padding-top:70px}
+.onb .dots{display:flex;gap:6px;justify-content:center;margin-bottom:6px}
+.onb .dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.onb .dots i.on{background:var(--brand);width:20px;border-radius:4px}
+.onb h1{font-family:var(--font-display);font-size:34px;font-weight:900;letter-spacing:-.04em;line-height:1.02;margin:14px 0 10px;text-wrap:balance}
+.onb p.lead{font-size:16px;color:var(--ink-2);line-height:1.45;margin:0 0 18px}
+.onb .foot{flex:none;padding:12px 24px 34px;display:grid;gap:6px}
+.ipad .onb .foot{max-width:620px;margin:0 auto;width:100%}
+.choice{display:flex;gap:14px;align-items:center;padding:16px;border-radius:18px;background:var(--surface);border:1.5px solid var(--line);text-align:left;width:100%}
+.choice[aria-checked="true"]{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+.choice .ci{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--chip-bg);color:var(--chip-ink);flex:none}
+.choice b{display:block;font-size:16px}
+.choice span{font-size:13.5px;color:var(--ink-2)}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-size:13px;font-weight:600;color:var(--ink-2)}
+.field input,.field select,.field textarea{height:50px;border-radius:12px;border:1px solid var(--line);background:var(--surface);padding:0 14px;font-size:17px;outline:0;width:100%}
+.field textarea{height:auto;min-height:110px;padding:12px 14px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand)}
+.logo-drop{display:flex;align-items:center;gap:14px;padding:14px;border-radius:16px;border:1.5px dashed var(--brand-edge);background:var(--surface);width:100%;text-align:left}
+.logo-drop .lg{width:56px;height:56px;border-radius:14px;background:var(--chip-bg);color:var(--chip-ink);display:grid;place-items:center;overflow:hidden;flex:none}
+.logo-drop .lg img{width:100%;height:100%;object-fit:contain}
+.peek{margin-top:6px;border-radius:18px;padding:16px;background:linear-gradient(160deg,var(--brand-wash),transparent 70%)}
+.sigpad{display:block;width:100%;height:180px;background:#fff;border-radius:14px;border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.sigline{font-size:12.5px;color:var(--ink-3);text-align:center;margin-top:6px}
+
+/* iPad split */
+.splitview{position:absolute;inset:0;display:flex}
+.col{position:relative;display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--line);background:var(--canvas)}
+.col.side{width:230px;flex:none;background:var(--surface-2)}
+.col.list{width:340px;flex:none}
+.col.detail{flex:1;border-right:0}
+.col .nav{padding-top:30px}
+.sidebar-items{display:grid;gap:2px;padding:4px 10px}
+.sidebar-items button{display:flex;align-items:center;gap:10px;height:42px;padding:0 10px;border-radius:10px;font-size:16px;font-weight:500;text-align:left}
+.sidebar-items button svg{color:var(--brand);width:22px;height:22px}
+.sidebar-items button[aria-current="page"]{background:var(--brand);color:#fff}
+.sidebar-items button[aria-current="page"] svg{color:#fff}
+.sidebar-items .count{margin-left:auto;font-size:13px;opacity:.7}
+.edsplit{flex:1;display:flex;min-height:0}
+.edsplit .edcol{width:440px;flex:none;display:flex;flex-direction:column;border-right:1px solid var(--line);min-height:0}
+.edsplit .pvcol{flex:1;overflow:auto;padding:24px 28px;background:color-mix(in srgb,var(--ink) 4%,var(--canvas));display:flex;flex-direction:column;align-items:center;gap:14px}
+.edsplit .pvcol .paperwrap{max-width:560px}
+.placeholder{flex:1;display:grid;place-items:center;text-align:center;color:var(--ink-2);padding:40px}
+.kbd{font-family:ui-monospace,Menlo,monospace;font-size:12px;border:1px solid var(--line);border-radius:6px;padding:1px 6px;background:var(--surface)}
+
+/* responsive page */
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  .rail{position:static;max-height:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="shell">
+  <aside class="rail" id="rail" aria-label="Mockup controls"></aside>
+  <main class="stage" id="stage"><div class="stage-box" id="stagebox"><div id="device"></div><p class="stage-note" id="note"></p></div></main>
+</div>
+
+<script>
+/* =========================================================================
+   Invoice Maker v1.0 clickable mockup. Slice of Life Ltd.
+   Plain JS, no build. State lives in memory; nothing leaves the browser.
+   ========================================================================= */
+const TODAY = '2026-10-17';
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const uid = () => Math.random().toString(36).slice(2, 9);
+const clone = o => JSON.parse(JSON.stringify(o));
+const addDays = (iso, n) => { const d = new Date(iso + 'T12:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); };
+const daysBetween = (a, b) => Math.round((new Date(b + 'T12:00:00Z') - new Date(a + 'T12:00:00Z')) / 864e5);
+
+/* ---------------- icons (SF Symbols stand-ins) ---------------- */
+const P = {
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  back:'<path d="M15 5l-7 7 7 7"/>',
+  chev:'<path d="M9 6l6 6-6 6"/>',
+  doc:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
+  person:'<circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/>',
+  people:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.6-5.5 6.5-5.5s5.5 2 6.5 5.5"/><circle cx="17" cy="9" r="2.8"/><path d="M16 14.6c2.6.1 4.6 2 5.5 5"/>',
+  tag:'<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.4"/>',
+  gear:'<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
+  share:'<path d="M12 3v12M7.5 7.5L12 3l4.5 4.5"/><path d="M5 11v9h14v-9"/>',
+  eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  more:'<circle cx="5" cy="12" r="1.6" fill="currentColor"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/><circle cx="19" cy="12" r="1.6" fill="currentColor"/>',
+  check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',
+  x:'<path d="M6 6l12 12M18 6L6 18"/>',
+  trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14"/>',
+  copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V4H4v12h4"/>',
+  send:'<path d="M3 11.5L21 3l-6.5 18-3-7.5z"/><path d="M11.5 13.5L21 3"/>',
+  pen:'<path d="M3 21c3-1 5-3 7-6s4-7 6-9 4 0 2 2-6 5-8 9"/><path d="M14 21h7"/>',
+  qr:'<rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 20h2M20 14v2"/>',
+  lock:'<rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/>',
+  cloud:'<path d="M7 18h10.5a4.5 4.5 0 00.6-8.96A6 6 0 006.2 10.5 3.75 3.75 0 007 18z"/>',
+  search:'<circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/>',
+  photo:'<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.8"/><path d="M21 16l-5-5-8 8"/>',
+  convert:'<path d="M4 8h13l-3.5-3.5M20 16H7l3.5 3.5"/>',
+  print:'<path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+  folder:'<path d="M3 6h7l2 2h9v11H3z"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+  msg:'<path d="M4 5h16v11H9l-5 4z"/>',
+  bank:'<path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/>',
+  percent:'<path d="M19 5L5 19"/><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="17" r="2.5"/>',
+  paint:'<circle cx="12" cy="12" r="9"/><circle cx="8" cy="10" r="1.3" fill="currentColor"/><circle cx="12" cy="7.5" r="1.3" fill="currentColor"/><circle cx="16" cy="10" r="1.3" fill="currentColor"/><path d="M12 21c-1.5-2 0-4 2-4h2a3 3 0 003-3"/>',
+  hash:'<path d="M5 9h15M4 15h15M10 3L8 21M16 3l-2 18"/>',
+  money:'<rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.8"/>',
+  help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 114 2c-1 .6-1.5 1.2-1.5 2.5"/><circle cx="12" cy="17" r=".8" fill="currentColor"/>',
+  shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>',
+  chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  apple:'<path d="M16.4 12.6c0-2.4 2-3.5 2-3.6-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.9-.9-3.1-.8C6.8 7.3 5.3 8.2 4.5 9.6c-1.7 2.9-.4 7.2 1.2 9.6.8 1.2 1.7 2.4 2.9 2.4 1.2-.1 1.6-.8 3-.8s1.8.8 3.1.7c1.3 0 2.1-1.2 2.8-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.4-.9-2.4-3.9zM14.2 5.6c.6-.8 1.1-1.8 1-2.9-.9 0-2.1.6-2.7 1.4-.6.7-1.1 1.8-1 2.8 1 .1 2.1-.5 2.7-1.3z" fill="currentColor" stroke="none"/>',
+  sidebar:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/>',
+  receipt:'<path d="M6 3h12v18l-2-1.5-2 1.5-2-1.5-2 1.5-2-1.5L6 21z"/><path d="M9 8h6M9 12h6"/>',
+  estimate:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/><path d="M9.5 15l2 2 3.5-4"/>',
+  contacts:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M7.5 17.5c1-2 2.6-3 4.5-3s3.5 1 4.5 3"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+  bell:'<path d="M6 16V11a6 6 0 0112 0v5l2 2H4z"/><path d="M10 20a2 2 0 004 0"/>',
+  download:'<path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 20h14"/>',
+  wifi:'<path d="M2 9a15 15 0 0120 0M5.5 12.5a10 10 0 0113 0M9 16a5 5 0 016 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/>'
+};
+const ic = (n, s = 22, w = 1.8) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n] || ''}</svg>`;
+
+/* ---------------- tax presets (Build Doc: Taxes and payments) ---------------- */
+const PRESETS = {
+  UK: { label:'United Kingdom', currency:'GBP', locale:'en-GB', taxIdLabel:'VAT number', taxes:[['VAT',20],['VAT',5],['VAT',0]], note:'Only VAT-registered businesses add VAT and show a VAT number.' },
+  AU: { label:'Australia', currency:'AUD', locale:'en-AU', taxIdLabel:'ABN', taxes:[['GST',10]], note:'GST-registered businesses title the document "Tax invoice" and show their ABN.' },
+  CA: { label:'Canada', currency:'CAD', locale:'en-CA', taxIdLabel:'GST/HST number', taxes:[['GST',5],['PST',7],['QST',9.975],['HST',13],['HST',15]], note:'Rates depend on the province. You can add two taxes to one invoice (GST plus PST or QST).' },
+  US: { label:'United States', currency:'USD', locale:'en-US', taxIdLabel:'EIN', taxes:[['Sales tax',8.875]], note:'US sales tax depends on state, county and city. Type your rate once and it is saved.' }
+};
+const TEMPLATES = [
+  { id:'clean', name:'Clean', premium:false }, { id:'bold', name:'Bold', premium:false }, { id:'ledger', name:'Ledger', premium:false },
+  { id:'studio', name:'Studio', premium:true }, { id:'trades', name:'Trades', premium:true }, { id:'classic', name:'Classic', premium:true }, { id:'split', name:'Split', premium:true }
+];
+const COLOURS = ['#533afd','#0a2540','#0e8a6a','#0fb5c8','#d9480f','#c2185b','#14202e'];
+
+/* ---------------- demo data ---------------- */
+function seed() {
+  const biz = {
+    name:'Kestrel Joinery', role:'contractor', country:'UK', email:'hello@kestreljoinery.co.uk', phone:'07700 900418',
+    address:'Unit 4, Mill Yard\nBristol BS3 4AQ', taxId:'GB 284 1937 62', taxRegistered:true, currency:'GBP', currencyDisplay:'symbol',
+    defaultTax:'vat20', logo:null, brand:'#533afd', template:'clean', dueDays:14, prefix:{invoice:'INV-',estimate:'EST-',receipt:'REC-'},
+    next:{invoice:13,estimate:4,receipt:3}, notes:'Thank you for your business. Payment within 14 days, please.',
+    pay:{ bankName:'Kestrel Joinery Ltd', sort:'04-00-04', account:'31926819', iban:'', paypal:'paypal.me/kestreljoinery', venmo:'', cashapp:'', zelle:'', link:'https://buy.stripe.com/kestrel-joinery', qr:true },
+    signature:null
+  };
+  const taxes = [ {id:'vat20',name:'VAT',rate:20}, {id:'vat5',name:'VAT',rate:5}, {id:'vat0',name:'VAT',rate:0} ];
+  const clients = [
+    {id:'c1',name:'Marlow & Finch Architects',contact:'Priya Marlow',email:'priya@marlowfinch.co.uk',phone:'0117 496 0712',address:'22 Queen Square\nBristol BS1 4ND',currency:'GBP',taxId:''},
+    {id:'c2',name:'Ostara Café',contact:'Jonas Berg',email:'jonas@ostaracafe.co.uk',phone:'0117 496 0388',address:'8 Gloucester Road\nBristol BS7 8AE',currency:'GBP',taxId:''},
+    {id:'c3',name:'Halden Lettings',contact:'Chris Halden',email:'accounts@haldenlettings.co.uk',phone:'0117 496 0950',address:'41 Whiteladies Road\nBristol BS8 2NT',currency:'GBP',taxId:'GB 771 2093 18'},
+    {id:'c4',name:'Fern & Co. Interiors',contact:'Aoife Fernandes',email:'aoife@fernandco.ie',phone:'+353 1 555 0172',address:'12 Camden Row\nDublin D08 R9CP',currency:'EUR',taxId:'IE 3284171NH'},
+    {id:'c5',name:'Bondi Fit Studio',contact:'Mia Tran',email:'mia@bondifit.com.au',phone:'+61 2 5550 1234',address:'3/88 Campbell Parade\nBondi Beach NSW 2026',currency:'AUD',taxId:''},
+    {id:'c6',name:'Ruth Adeyemi',contact:'',email:'ruth.adeyemi@mail.co.uk',phone:'07700 900671',address:'17 Cotham Brow\nBristol BS6 6AS',currency:'GBP',taxId:''}
+  ];
+  const items = [
+    {id:'i1',desc:'Labour',unit:'hour',rate:45,tax:'vat20'},
+    {id:'i2',desc:'Oak worktop fitting',unit:'metre',rate:85,tax:'vat20'},
+    {id:'i3',desc:'Kitchen cabinet installation',unit:'unit',rate:120,tax:'vat20'},
+    {id:'i4',desc:'Bespoke shelving unit',unit:'item',rate:640,tax:'vat20'},
+    {id:'i5',desc:'Skirting board replacement',unit:'metre',rate:18,tax:'vat20'},
+    {id:'i6',desc:'Door hanging',unit:'door',rate:75,tax:'vat20'},
+    {id:'i7',desc:'Call-out fee',unit:'visit',rate:60,tax:'vat20'},
+    {id:'i8',desc:'Materials (at cost)',unit:'lot',rate:0,tax:'vat20'}
+  ];
+  const L = (desc, qty, rate, unit, extra = {}) => ({ id:uid(), desc, qty, rate, unit, disc:0, discType:'%', taxIds:['vat20'], detail:'', ...extra });
+  const D = (o) => ({ id:uid(), taxMode:'excl', taxWhere:'item', totalTaxIds:[], discount:{type:'%',value:0}, shipping:0, fees:[], notes:biz.notes, template:'clean', color:'#533afd', job:'', clientSig:null, signedName:'', sentAt:null, paidOn:null, ...o });
+  const docs = [
+    D({type:'invoice',number:'INV-0012',clientId:'c6',issue:'2026-10-16',due:'2026-10-30',status:'draft',job:'17 Cotham Brow, kitchen',items:[L('Oak worktop fitting',4.2,85,'metre'),L('Kitchen cabinet installation',9,120,'unit'),L('Labour',6,45,'hour')]}),
+    D({type:'invoice',number:'INV-0011',clientId:'c1',issue:'2026-10-10',due:'2026-10-24',status:'sent',sentAt:'2026-10-10',items:[L('Bespoke shelving unit',2,640,'item'),L('Labour',8,45,'hour')]}),
+    D({type:'invoice',number:'INV-0010',clientId:'c3',issue:'2026-09-26',due:'2026-10-10',status:'sent',sentAt:'2026-09-26',items:[L('Door hanging',6,75,'door'),L('Skirting board replacement',32,18,'metre'),L('Call-out fee',1,60,'visit')]}),
+    D({type:'invoice',number:'INV-0009',clientId:'c2',issue:'2026-09-30',due:'2026-10-14',status:'paid',paidOn:'2026-10-08',sentAt:'2026-09-30',items:[L('Counter front panelling',1,980,'item'),L('Labour',12,45,'hour')]}),
+    D({type:'invoice',number:'INV-0008',clientId:'c1',issue:'2026-09-18',due:'2026-10-02',status:'paid',paidOn:'2026-10-03',sentAt:'2026-09-18',items:[L('Oak worktop fitting',6,85,'metre'),L('Labour',5,45,'hour')]}),
+    D({type:'invoice',number:'INV-0007',clientId:'c4',issue:'2026-10-02',due:'2026-11-01',status:'sent',sentAt:'2026-10-02',taxMode:'excl',items:[L('Shop-fit design consultation',1,1450,'job',{taxIds:['vat0']}),L('Joinery drawings',1,600,'set',{taxIds:['vat0']})],notes:'Reverse charge: customer to account for VAT.'}),
+    D({type:'invoice',number:'INV-0006',clientId:'c5',issue:'2026-09-01',due:'2026-09-15',status:'paid',paidOn:'2026-09-12',sentAt:'2026-09-01',items:[L('Equipment rack, oak',2,1150,'item',{taxIds:['vat0']})]}),
+    D({type:'estimate',number:'EST-0003',clientId:'c6',issue:'2026-10-14',due:'2026-11-13',status:'sent',sentAt:'2026-10-14',job:'Built-in wardrobe, main bedroom',items:[L('Built-in wardrobe, painted MDF',1,2350,'item'),L('Labour',16,45,'hour')]}),
+    D({type:'estimate',number:'EST-0002',clientId:'c2',issue:'2026-09-20',due:'2026-10-20',status:'accepted',signedName:'Jonas Berg',sentAt:'2026-09-20',items:[L('Counter front panelling',1,980,'item'),L('Labour',12,45,'hour')]}),
+    D({type:'estimate',number:'EST-0001',clientId:'c1',issue:'2026-09-05',due:'2026-10-05',status:'converted',sentAt:'2026-09-05',items:[L('Oak worktop fitting',6,85,'metre'),L('Labour',5,45,'hour')]}),
+    D({type:'receipt',number:'REC-0002',clientId:'c2',issue:'2026-10-08',due:'2026-10-08',status:'paid',paidOn:'2026-10-08',items:[L('Counter front panelling',1,980,'item'),L('Labour',12,45,'hour')],notes:'Paid by bank transfer on 8 Oct 2026. Thank you.'}),
+    D({type:'receipt',number:'REC-0001',clientId:'c1',issue:'2026-10-03',due:'2026-10-03',status:'paid',paidOn:'2026-10-03',items:[L('Oak worktop fitting',6,85,'metre'),L('Labour',5,45,'hour')],notes:'Paid by bank transfer on 3 Oct 2026. Thank you.'})
+  ];
+  return { biz, taxes, clients, items, docs };
+}
+
+/* ---------------- state ---------------- */
+const S = {
+  device: 'iphone', data: seed(), pro:false, signedIn:false, empty:false, icloudOff:false, buyFails:false, offline:false,
+  analytics:null, onb:null, onbData:{}, tab:'docs', docType:'invoice', filter:'all', q:'', cq:'',
+  stack:[], sheet:null, sheets:[], toast:null, events:[], lastPlacement:'–', ipadSidebar:true, errors:{}
+};
+const cur = () => S.stack[S.stack.length - 1];
+const D = () => S.data;
+const docById = id => D().docs.find(d => d.id === id);
+const clientById = id => D().clients.find(c => c.id === id);
+const taxById = id => D().taxes.find(t => t.id === id);
+const isPad = () => S.device !== 'iphone';
+const visibleDocs = () => S.empty ? [] : D().docs;
+const visibleClients = () => S.empty ? [] : D().clients;
+const visibleItems = () => S.empty ? [] : D().items;
+
+function track(name, params = {}) {
+  S.events.unshift({ name, params, t: new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'}) });
+  S.events = S.events.slice(0, 14);
+}
+
+/* ---------------- money + maths ---------------- */
+const LOCALE = () => (PRESETS[D().biz.country] || PRESETS.UK).locale;
+function money(n, ccy) {
+  ccy = ccy || D().biz.currency;
+  const mode = D().biz.currencyDisplay;
+  const v = Math.round((n + Number.EPSILON) * 100) / 100;
+  if (mode === 'none') return new Intl.NumberFormat(LOCALE(), {minimumFractionDigits:2, maximumFractionDigits:2}).format(v);
+  return new Intl.NumberFormat(LOCALE(), {style:'currency', currency:ccy, currencyDisplay: mode === 'code' ? 'code' : 'narrowSymbol'}).format(v);
+}
+const fdate = (iso, opts = {day:'numeric',month:'short',year:'numeric'}) => iso ? new Intl.DateTimeFormat(LOCALE(), opts).format(new Date(iso + 'T12:00:00Z')) : '';
+const r2 = n => Math.round((n + Number.EPSILON) * 100) / 100;
+
+/* The same arithmetic the Swift InvoiceCalculator will implement (and unit-test). */
+function calc(doc) {
+  const taxes = D().taxes;
+  const lines = doc.items.map(it => {
+    const gross = (+it.qty || 0) * (+it.rate || 0);
+    const d = it.discType === '%' ? gross * (+it.disc || 0) / 100 : Math.min(+it.disc || 0, gross);
+    return { ...it, gross, net: gross - d, lineDisc: d };
+  });
+  const sub = lines.reduce((a, l) => a + l.net, 0);
+  const dv = +doc.discount.value || 0;
+  const docDisc = doc.discount.type === '%' ? sub * dv / 100 : Math.min(dv, sub);
+  const factor = sub ? (sub - docDisc) / sub : 0;
+  const bucket = {};
+  const addTax = (ids, base) => {
+    const rs = ids.map(id => taxes.find(t => t.id === id)).filter(Boolean);
+    const sumR = rs.reduce((a, t) => a + t.rate, 0) / 100;
+    rs.forEach(t => {
+      const amt = doc.taxMode === 'incl' ? base * (t.rate / 100) / (1 + sumR) : base * t.rate / 100;
+      const k = t.id; bucket[k] = bucket[k] || { name:t.name, rate:t.rate, amount:0, base:0 };
+      bucket[k].amount += amt; bucket[k].base += base;
+    });
+  };
+  if (doc.taxWhere === 'item') lines.forEach(l => addTax(l.taxIds || [], l.net * factor));
+  else addTax(doc.totalTaxIds || [], sub - docDisc);
+  const taxList = Object.values(bucket).filter(t => t.rate > 0 || t.base > 0).map(t => ({ ...t, amount: r2(t.amount) }));
+  const taxSum = taxList.reduce((a, t) => a + t.amount, 0);
+  const fees = (doc.fees || []).reduce((a, f) => a + (+f.amount || 0), 0);
+  const ship = +doc.shipping || 0;
+  const afterDisc = r2(sub - docDisc);
+  const total = r2(doc.taxMode === 'incl' ? afterDisc + ship + fees : afterDisc + taxSum + ship + fees);
+  return { lines, sub: r2(sub), docDisc: r2(docDisc), taxList, taxSum: r2(taxSum), ship, fees, total };
+}
+window.__calc = calc; // exposed for the arithmetic test
+
+function statusOf(doc) {
+  if (doc.type === 'invoice' && doc.status === 'sent' && doc.due < TODAY) return 'overdue';
+  return doc.status;
+}
+const STATUS_LABEL = { draft:'Draft', sent:'Sent', paid:'Paid', overdue:'Overdue', accepted:'Accepted', converted:'Invoiced' };
+function dueText(doc) {
+  const st = statusOf(doc);
+  if (doc.type === 'receipt') return 'Paid ' + fdate(doc.paidOn, {day:'numeric',month:'short'});
+  if (st === 'paid') return 'Paid ' + fdate(doc.paidOn, {day:'numeric',month:'short'});
+  if (st === 'overdue') { const n = daysBetween(doc.due, TODAY); return `Overdue by ${n} day${n === 1 ? '' : 's'}`; }
+  if (doc.type === 'estimate') return st === 'accepted' ? 'Signed by ' + (doc.signedName || 'client') : st === 'converted' ? 'Turned into an invoice' : 'Valid until ' + fdate(doc.due, {day:'numeric',month:'short'});
+  if (st === 'draft') return 'Not sent yet';
+  const n = daysBetween(TODAY, doc.due);
+  return n === 0 ? 'Due today' : `Due in ${n} day${n === 1 ? '' : 's'}`;
+}
+const clientCcy = doc => (clientById(doc.clientId) || {}).currency || D().biz.currency;
+const docTitle = doc => {
+  if (doc.type === 'estimate') return D().biz.country === 'UK' ? 'Quote' : 'Estimate';
+  if (doc.type === 'receipt') return 'Receipt';
+  return (D().biz.country === 'AU' && D().biz.taxRegistered) ? 'Tax invoice' : 'Invoice';
+};
+
+/* ---------------- pseudo QR (visual stand-in; the app uses CIQRCodeGenerator) ---------------- */
+function qrSVG(text) {
+  const n = 25; let h = 2166136261;
+  for (const ch of text) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619) >>> 0; }
+  const rnd = () => { h ^= h << 13; h >>>= 0; h ^= h >> 17; h ^= h << 5; h >>>= 0; return h / 4294967296; };
+  let r = '';
+  const finder = (x, y) => `<rect x="${x}" y="${y}" width="7" height="7" fill="#14202e"/><rect x="${x+1}" y="${y+1}" width="5" height="5" fill="#fff"/><rect x="${x+2}" y="${y+2}" width="3" height="3" fill="#14202e"/>`;
+  for (let y = 0; y < n; y++) for (let x = 0; x < n; x++) {
+    const inF = (x < 8 && y < 8) || (x > n - 9 && y < 8) || (x < 8 && y > n - 9);
+    if (!inF && rnd() > .52) r += `<rect x="${x}" y="${y}" width="1" height="1"/>`;
+  }
+  return `<svg viewBox="-1 -1 ${n+2} ${n+2}" class="p-qr" shape-rendering="crispEdges"><rect x="-1" y="-1" width="${n+2}" height="${n+2}" fill="#fff"/><g fill="#14202e">${r}</g>${finder(0,0)}${finder(n-7,0)}${finder(0,n-7)}</svg>`;
+}
+const DEFAULT_SIG = '<svg viewBox="0 0 200 60"><path d="M8 44c12-26 22-34 26-28s-10 30-4 30 14-30 22-30-6 26 2 26 12-18 18-18 0 14 6 14 10-10 16-10 2 8 8 8 14-6 22-12M120 40c10-2 30-4 70-6" fill="none" stroke="#1b2b4a" stroke-width="2.4" stroke-linecap="round"/></svg>';
+
+/* ---------------- invoice paper ---------------- */
+function paper(doc, opt = {}) {
+  const b = D().biz, c = clientById(doc.clientId) || {};
+  const ccy = c.currency || b.currency;
+  const k = calc(doc);
+  const tpl = opt.template || doc.template || b.template;
+  const acc = opt.color || doc.color || b.brand;
+  const title = docTitle(doc);
+  const initials = b.name.split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase();
+  const logo = `<div class="p-logo">${b.logo ? `<img src="${b.logo}" alt="">` : esc(initials)}</div>`;
+  const st = statusOf(doc);
+  const head = `<div class="p-title">${esc(title)}</div><div class="p-sub">${esc(doc.number)}</div>`;
+  const from = `<div><div class="p-k">From</div><div class="p-b">${esc(b.name)}</div><div>${esc(b.address).replace(/\n/g,'<br>')}</div>${b.taxRegistered && b.taxId ? `<div>${esc((PRESETS[b.country]||PRESETS.UK).taxIdLabel)} ${esc(b.taxId)}</div>` : ''}</div>`;
+  const to = `<div><div class="p-k">${doc.type === 'estimate' ? 'For' : 'Bill to'}</div><div class="p-b">${esc(c.name || 'Client name')}</div><div>${esc(c.address || '').replace(/\n/g,'<br>')}</div></div>`;
+  const dates = `<div><div class="p-k">${doc.type === 'receipt' ? 'Paid on' : 'Issued'}</div><div>${fdate(doc.type === 'receipt' ? doc.paidOn : doc.issue)}</div>${doc.type === 'receipt' ? '' : `<div class="p-k" style="margin-top:1.6cqw">${doc.type === 'estimate' ? 'Valid until' : 'Due'}</div><div class="p-b">${fdate(doc.due)}</div>`}</div>`;
+  const showTaxCol = doc.taxWhere === 'item' && k.taxList.length > 0;
+  const rows = k.lines.map(l => `<tr><td>${esc(l.desc || 'Item')}${l.lineDisc ? `<div style="color:#7a8696">Discount ${l.discType === '%' ? l.disc + '%' : money(l.disc, ccy)}</div>` : ''}</td><td class="n">${+l.qty} ${esc(l.unit || '')}</td><td class="n">${money(+l.rate || 0, ccy)}</td>${showTaxCol ? `<td class="n">${(l.taxIds||[]).map(id => (taxById(id)||{}).rate).filter(v => v !== undefined).join(' + ') || '0'}%</td>` : ''}<td class="n">${money(l.net, ccy)}</td></tr>`).join('');
+  const sum = `<div class="p-sumwrap"><div class="p-sum">
+      <div><span>Subtotal${doc.taxMode === 'incl' ? ' (incl. tax)' : ''}</span><span>${money(k.sub, ccy)}</span></div>
+      ${k.docDisc ? `<div><span>Discount</span><span>−${money(k.docDisc, ccy)}</span></div>` : ''}
+      ${k.taxList.map(t => `<div><span>${doc.taxMode === 'incl' ? 'Includes ' : ''}${esc(t.name)} ${t.rate}%</span><span>${money(t.amount, ccy)}</span></div>`).join('')}
+      ${k.ship ? `<div><span>Shipping</span><span>${money(k.ship, ccy)}</span></div>` : ''}
+      ${(doc.fees||[]).filter(f => +f.amount).map(f => `<div><span>${esc(f.name || 'Fee')}</span><span>${money(+f.amount, ccy)}</span></div>`).join('')}
+      <div class="p-tot"><span>${doc.type === 'receipt' ? 'Paid' : doc.type === 'estimate' ? 'Estimate total' : 'Total due'}</span><span>${money(k.total, ccy)}</span></div>
+    </div></div>`;
+  const p = b.pay;
+  const payBtns = [p.link && 'Pay online', p.paypal && 'PayPal', p.venmo && 'Venmo', p.cashapp && 'Cash App', p.zelle && 'Zelle'].filter(Boolean);
+  const pay = doc.type === 'invoice' ? `<div class="p-pay"><div style="flex:1">
+      <div class="p-k">How to pay</div>
+      ${p.account ? `<div>Bank transfer · ${esc(p.bankName)} · Sort code ${esc(p.sort)} · Account ${esc(p.account)}</div>` : ''}
+      ${payBtns.length ? `<div class="p-btns">${payBtns.map(x => `<span class="p-btn">${x}</span>`).join('')}</div>` : ''}
+      <div class="p-notes">${esc(doc.notes || '')}</div>
+      <div style="display:flex;gap:6cqw;align-items:flex-end"><div><div class="p-sig">${b.signature ? `<img src="${b.signature}" alt="">` : DEFAULT_SIG}</div></div>
+      ${doc.clientSig ? `<div><div class="p-k">Client signature</div><div class="p-sig" style="height:9cqw"><img src="${doc.clientSig}" alt=""></div><div>${esc(doc.signedName)} · ${fdate(doc.signedOn)}</div></div>` : ''}</div>
+    </div>${p.qr && (p.link || p.paypal) ? qrSVG(p.link || p.paypal) : ''}</div>`
+    : `<div class="p-pay"><div style="flex:1"><div class="p-notes" style="margin-top:0">${esc(doc.notes || '')}</div>
+      ${doc.type === 'estimate' ? `<div style="display:flex;gap:6cqw;margin-top:2cqw"><div><div class="p-k">Client signature</div><div class="p-sig">${doc.clientSig ? `<img src="${doc.clientSig}" alt="">` : (doc.status === 'accepted' ? DEFAULT_SIG : '<div style="border-bottom:.2cqw solid #b8c2cf;width:30cqw;height:100%"></div>')}</div>${doc.signedName ? `<div>${esc(doc.signedName)}</div>` : ''}</div></div>` : ''}
+    </div></div>`;
+  const job = doc.job ? (tpl === 'trades' ? `<div class="p-job"><div><div class="p-k">Job site</div><div class="p-b">${esc(doc.job)}</div></div></div>` : `<div style="margin-top:3cqw"><span class="p-k">Job </span>${esc(doc.job)}</div>`) : '';
+  let top;
+  if (tpl === 'bold') top = `<div class="p-band">${logo}<div>${head}</div></div><div class="p-meta">${from}${to}${dates}</div>`;
+  else if (tpl === 'split') top = `<div class="p-side">${logo}${from.replace('<div><div class="p-k">From','<div><div class="p-k">From')}</div><div class="p-top"><div>${head.replace('p-title','p-title')}</div></div><div class="p-meta" style="grid-template-columns:1fr 1fr">${to}${dates}</div>`;
+  else top = `<div class="p-top">${logo}<div>${head}</div></div><div class="p-meta">${from}${to}${dates}</div>`;
+  const stamp = (doc.type === 'invoice' && st === 'paid') || doc.type === 'receipt' ? '<div class="stamp">PAID</div>' : '';
+  const wm = opt.watermark ? '<div class="wm"><span>PREVIEW</span></div>' : '';
+  return `<div class="paperwrap"><div class="paper t-${tpl}" style="--acc:${acc}">${top}${job}
+    <table><thead><tr><th>Description</th><th class="n">Qty</th><th class="n">Rate</th>${showTaxCol ? '<th class="n">Tax</th>' : ''}<th class="n">Amount</th></tr></thead><tbody>${rows || '<tr><td colspan="5" style="color:#9aa5b3">No items yet</td></tr>'}</tbody></table>
+    ${sum}${pay}${stamp}${wm}</div></div>`;
+}
+
+/* ---------------- UI helpers ---------------- */
+const nav = ({ title = '', left = '', right = '', large = '', sub = '' } = {}) =>
+  `<div class="nav"><div class="navrow">${left || '<span style="min-width:44px"></span>'}<div class="title">${large ? '' : esc(title)}</div>${right || '<span style="min-width:44px"></span>'}</div>${large ? `<div class="large">${esc(large)}</div>` : ''}${sub}</div>`;
+const backBtn = (label = 'Back') => `<button class="navbtn" data-act="back">${ic('back', 22, 2.2)}${esc(label)}</button>`;
+const sw = (on, act, arg = '', label = '') => `<button class="sw" role="switch" aria-checked="${!!on}" aria-label="${esc(label)}" data-act="${act}" data-arg="${esc(arg)}"></button>`;
+const row = ({ icon, color, ink, lbl, meta, val, chev = true, act, arg, cls = '' }) =>
+  `<button class="row ${cls}" ${act ? `data-act="${act}" data-arg="${esc(arg ?? '')}"` : ''}>${icon ? `<span class="sicon" style="background:${color || 'var(--brand)'}${ink ? ';color:' + ink : ''}">${ic(icon)}</span>` : ''}<span class="grow"><div class="lbl">${lbl}</div>${meta ? `<div class="meta">${meta}</div>` : ''}</span>${val !== undefined ? `<span class="val">${val}</span>` : ''}${chev ? `<span class="chev">${ic('chev', 18, 2.2)}</span>` : ''}</button>`;
+const inRow = (k, bind, value, { type = 'text', ph = '', mode = '', id = '' } = {}) =>
+  `<label class="row"><span class="k">${esc(k)}</span><input id="${id || 'f-' + bind.replace(/[^a-z0-9]/gi, '-')}" type="${type}" ${mode ? `inputmode="${mode}"` : ''} placeholder="${esc(ph)}" value="${esc(value)}" data-in="${esc(bind)}"></label>`;
+const avatar = (name) => `<span class="avatar">${esc((name || '?').split(/\s+/).map(w => w[0]).join('').slice(0, 2).toUpperCase())}</span>`;
+
+/* ===================================================================
+   SCREENS
+   =================================================================== */
+function scrDocs() {
+  const all = visibleDocs().filter(d => d.type === S.docType);
+  const q = S.q.trim().toLowerCase();
+  let list = all.filter(d => !q || d.number.toLowerCase().includes(q) || (clientById(d.clientId)?.name || '').toLowerCase().includes(q));
+  const f = S.filter;
+  if (f === 'unpaid') list = list.filter(d => ['sent','overdue'].includes(statusOf(d)));
+  if (f === 'paid') list = list.filter(d => ['paid','accepted'].includes(statusOf(d)));
+  if (f === 'draft') list = list.filter(d => d.status === 'draft');
+  if (f === 'overdue') list = list.filter(d => statusOf(d) === 'overdue');
+  const b = D().biz;
+  const inv = visibleDocs().filter(d => d.type === 'invoice');
+  const own = inv.filter(d => clientCcy(d) === b.currency);
+  const owed = own.filter(d => ['sent','overdue'].includes(statusOf(d))).reduce((a, d) => a + calc(d).total, 0);
+  const overdue = own.filter(d => statusOf(d) === 'overdue').reduce((a, d) => a + calc(d).total, 0);
+  const paidMonth = own.filter(d => d.status === 'paid' && d.paidOn && d.paidOn.slice(0, 7) === TODAY.slice(0, 7)).reduce((a, d) => a + calc(d).total, 0);
+  const other = inv.filter(d => clientCcy(d) !== b.currency && ['sent','overdue'].includes(statusOf(d)));
+  const typeName = { invoice:'Invoices', estimate: b.country === 'UK' ? 'Quotes' : 'Estimates', receipt:'Receipts' };
+  const hero = S.docType === 'invoice' && !S.empty ? `<div class="money">
+      <div><div class="lab">Owed to you</div><div class="big num">${money(owed)}</div></div>
+      <div class="split"><div><div class="lab">Paid in ${fdate(TODAY,{month:'long'})}</div><div class="mid lime num">${money(paidMonth)}</div></div><div><div class="lab">Overdue</div><div class="mid ${overdue ? 'red' : ''} num">${money(overdue)}</div></div></div>
+      ${other.length ? `<div class="foot">Plus ${other.map(d => money(calc(d).total, clientCcy(d))).join(', ')} owed in other currencies</div>` : ''}
+    </div>` : '';
+  const filters = S.docType === 'invoice' ? [['all','All'],['unpaid','Unpaid'],['overdue','Overdue'],['paid','Paid'],['draft','Drafts']] : S.docType === 'estimate' ? [['all','All'],['draft','Drafts'],['paid','Accepted']] : [];
+  const rows = list.map(d => {
+    const c = clientById(d.clientId) || {};
+    const st = statusOf(d);
+    const sel = isPad() && cur() && cur().id === d.id;
+    return `<button class="docrow" data-act="openDoc" data-arg="${d.id}" ${sel ? 'aria-current="true"' : ''}>${avatar(c.name)}<span class="grow" style="flex:1;min-width:0"><div class="lbl" style="font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(c.name || 'No client')}</div><div class="meta" style="font-size:13px;color:var(--ink-2)">${esc(d.number)} · ${esc(dueText(d))}</div></span><span class="r"><span class="amt num">${money(calc(d).total, clientCcy(d))}</span><span class="pill ${st}">${STATUS_LABEL[st]}</span></span></button>`;
+  }).join('');
+  const emptyAll = all.length === 0;
+  const emptyMsg = emptyAll ? `<div class="empty"><span class="avatar" style="width:64px;height:64px">${ic(S.docType === 'receipt' ? 'receipt' : S.docType === 'estimate' ? 'estimate' : 'doc', 30)}</span>
+      <h3>${S.docType === 'invoice' ? 'Create your first invoice' : S.docType === 'estimate' ? 'No ' + typeName.estimate.toLowerCase() + ' yet' : 'No receipts yet'}</h3>
+      <p>${S.docType === 'receipt' ? 'Mark an invoice as paid and send a receipt. It appears here.' : 'It takes about a minute. Creating and previewing is free; sending needs Premium.'}</p>
+      ${S.docType !== 'receipt' ? `<button class="btn primary" style="width:auto;margin-top:6px" data-act="newDoc" data-arg="${S.docType}">${ic('plus', 20, 2.4)}New ${S.docType === 'estimate' ? typeName.estimate.toLowerCase().replace(/s$/, '') : 'invoice'}</button>` : ''}</div>`
+    : (list.length ? '' : `<div class="empty"><p>Nothing matches. Try another filter or search.</p></div>`);
+  const right = `<button class="iconbtn" data-act="newMenu" aria-label="New">${ic('plus', 20, 2.4)}</button>`;
+  return `<div class="scr" data-scroll="docs">${nav({ large: typeName[S.docType], right })}
+    <div class="body" data-scroll-el="docs">
+      <div class="typeseg" role="group" aria-label="Document type">${['invoice','estimate','receipt'].map(t => `<button aria-pressed="${S.docType === t}" data-act="docType" data-arg="${t}">${typeName[t]}</button>`).join('')}</div>
+      ${S.icloudOff ? `<div class="banner warn">${ic('cloud', 20)}<div><b>iCloud backup is off.</b> Your invoices are only on this iPhone. Turn on iCloud for Invoice Maker in Settings so a new phone gets them back.</div></div>` : ''}
+      <div style="height:12px"></div>${hero}
+      ${!emptyAll ? `<div style="height:12px"></div><label class="search">${ic('search', 18)}<input id="search-docs" placeholder="Search clients or numbers" value="${esc(S.q)}" data-in="ui:q"></label>
+      ${filters.length ? `<div class="tabs" role="group" aria-label="Filter">${filters.map(([k, l]) => `<button aria-pressed="${S.filter === k}" data-act="filter" data-arg="${k}">${l}</button>`).join('')}</div>` : ''}
+      <div style="height:8px"></div>${list.length ? `<div class="group">${rows}</div>` : ''}` : ''}
+      ${emptyMsg}
+    </div></div>`;
+}
+
+function editorBody(doc) {
+  const c = clientById(doc.clientId);
+  const ccy = clientCcy(doc);
+  const k = calc(doc);
+  const st = statusOf(doc);
+  const err = S.errors[doc.id] || {};
+  const typeLbl = doc.type === 'estimate' ? docTitle(doc).toLowerCase() : doc.type;
+  const banners = [];
+  if (doc.type === 'invoice' && st === 'paid') banners.push(`<div class="banner ok">${ic('check', 20, 2.4)}<div><b>Paid on ${fdate(doc.paidOn)}.</b> Send a receipt so your client has proof.</div><button class="act" data-act="makeReceipt">Send receipt</button></div>`);
+  else if (doc.status === 'sent' && doc.sentAt) banners.push(`<div class="banner info">${ic('send', 20)}<div><b>Sent on ${fdate(doc.sentAt)}.</b> Changes save automatically. Send again so ${esc(c?.contact || c?.name || 'your client')} has the latest version.</div></div>`);
+  if (doc.type === 'estimate' && doc.status === 'accepted') banners.push(`<div class="banner ok">${ic('pen', 20)}<div><b>Accepted.</b> Signed by ${esc(doc.signedName || 'your client')}.</div><button class="act" data-act="convert">Turn into invoice</button></div>`);
+  if (doc.type === 'invoice' && doc.clientSig) banners.push(`<div class="banner ok">${ic('pen', 20)}<div><b>Signed by ${esc(doc.signedName || 'your client')}</b> on ${fdate(doc.signedOn)}. The signature is on the PDF.</div></div>`);
+  if (doc.type === 'estimate' && doc.status === 'converted') banners.push(`<div class="banner info">${ic('convert', 20)}<div>This ${esc(typeLbl)} was turned into an invoice.</div></div>`);
+  const lines = k.lines.map(l => `<button class="line" data-act="editLine" data-arg="${l.id}"><span style="flex:1;min-width:0"><div class="d">${esc(l.desc || 'Untitled item')}</div><div class="m num">${+l.qty} ${esc(l.unit || '')} × ${money(+l.rate || 0, ccy)}${l.lineDisc ? ` · −${l.discType === '%' ? l.disc + '%' : money(+l.disc, ccy)}` : ''}${(l.taxIds||[]).length ? ' · ' + l.taxIds.map(id => { const t = taxById(id); return t ? `${t.name} ${t.rate}%` : ''; }).join(' + ') : ' · No tax'}</div></span><span class="t num">${money(l.net, ccy)}</span></button>`).join('');
+  return `
+    <div class="ed-head"><div><div class="saved" data-live="saved">${ic('check', 14, 2.6)} Saved</div><div class="no">${esc(doc.number)}</div></div><span class="pill ${st}" style="margin-bottom:6px">${STATUS_LABEL[st]}</span></div>
+    ${banners.join('')}
+    <div class="section-h">${doc.type === 'estimate' ? 'For' : 'Bill to'}</div>
+    <div class="group">${c ? row({ lbl: esc(c.name), meta: esc([c.email, c.currency !== D().biz.currency ? 'Billed in ' + c.currency : ''].filter(Boolean).join(' · ')), act:'pickClient' }) : row({ icon:'person', lbl:'Add client', act:'pickClient', cls:'link' })}</div>
+    ${err.client ? `<div class="err-text">Add a client before sending.</div>` : ''}
+    <div class="section-h">Details</div>
+    <div class="group">
+      ${inRow('Number', 'doc:number', doc.number)}
+      <label class="row"><span class="k">${doc.type === 'receipt' ? 'Paid on' : 'Issued'}</span><input id="f-issue" type="date" value="${doc.type === 'receipt' ? doc.paidOn : doc.issue}" data-in="doc:${doc.type === 'receipt' ? 'paidOn' : 'issue'}"></label>
+      ${doc.type !== 'receipt' ? `<label class="row"><span class="k">${doc.type === 'estimate' ? 'Valid until' : 'Due'}</span><input id="f-due" type="date" value="${doc.due}" data-in="doc:due"></label>` : ''}
+      ${inRow('Job or site', 'doc:job', doc.job, { ph:'Optional' })}
+    </div>
+    <div class="section-h">Items</div>
+    <div class="group">${lines}${row({ icon:'plus', lbl:'Add item', act:'addLine', cls:'link', chev:false })}${visibleItems().length ? row({ icon:'tag', color:'var(--item-tile)', ink:'var(--item-ink)', lbl:'Add from saved items', act:'pickSaved', cls:'link' }) : ''}</div>
+    ${err.items ? `<div class="err-text">Add at least one item with a price.</div>` : ''}
+    <div class="section-h">Tax and discount</div>
+    <div class="group">
+      <div class="row"><span class="k grow">Prices</span><div class="chips"><button class="chip" aria-pressed="${doc.taxMode === 'excl'}" data-act="taxMode" data-arg="excl">Tax added</button><button class="chip" aria-pressed="${doc.taxMode === 'incl'}" data-act="taxMode" data-arg="incl">Tax included</button></div></div>
+      <div class="row"><span class="k grow">Apply tax</span><div class="chips"><button class="chip" aria-pressed="${doc.taxWhere === 'item'}" data-act="taxWhere" data-arg="item">Per item</button><button class="chip" aria-pressed="${doc.taxWhere === 'total'}" data-act="taxWhere" data-arg="total">On total</button></div></div>
+      ${doc.taxWhere === 'total' ? `<div class="row" style="flex-wrap:wrap"><span class="k" style="width:100%">Taxes on the total</span><div class="chips">${D().taxes.map(t => `<button class="chip" aria-pressed="${doc.totalTaxIds.includes(t.id)}" data-act="toggleTotalTax" data-arg="${t.id}">${esc(t.name)} ${t.rate}%</button>`).join('')}</div></div>` : ''}
+      <label class="row"><span class="k">Discount</span><input id="f-disc" inputmode="decimal" value="${doc.discount.value || ''}" placeholder="0" data-in="doc:discount.value"><div class="chips" style="flex:none"><button class="chip" aria-pressed="${doc.discount.type === '%'}" data-act="discType" data-arg="%">%</button><button class="chip" aria-pressed="${doc.discount.type === 'amt'}" data-act="discType" data-arg="amt">${ccy}</button></div></label>
+      ${inRow('Shipping', 'doc:shipping', doc.shipping || '', { ph:'0.00', mode:'decimal' })}
+      ${(doc.fees || []).map((f, i) => `<div class="row"><input id="f-feename-${i}" style="text-align:left" value="${esc(f.name)}" placeholder="Fee name" data-in="fee:${i}:name"><input id="f-feeamt-${i}" inputmode="decimal" style="max-width:110px" value="${f.amount || ''}" placeholder="0.00" data-in="fee:${i}:amount"><button aria-label="Remove fee" data-act="rmFee" data-arg="${i}" style="color:var(--due)">${ic('x', 18, 2.2)}</button></div>`).join('')}
+      ${row({ icon:'plus', lbl:'Add a fee', act:'addFee', cls:'link', chev:false })}
+    </div>
+    <div class="group" style="margin-top:12px" data-live="totals">${totalsHTML(doc)}</div>
+    <div class="section-h">Notes</div>
+    <div class="group"><label class="row"><textarea id="f-notes" rows="3" data-in="doc:notes" placeholder="Payment terms, thank-you note">${esc(doc.notes)}</textarea></label></div>
+    ${doc.type === 'invoice' ? `<div class="section-h">Getting paid</div><div class="group">${row({ icon:'qr', color:'#0a2540', lbl:'Payment details on this invoice', meta: esc(paySummary()), act:'push', arg:'set-pay' })}</div><div class="section-f">Your bank details, links and a QR code appear on the PDF. Clients pay you directly; mark the invoice paid when the money arrives.</div>` : ''}
+    <div class="section-h">Look</div>
+    <div class="group">${row({ icon:'paint', color:'#c2185b', lbl:'Template and colour', val: esc(TEMPLATES.find(t => t.id === doc.template)?.name), act:'preview' })}</div>
+    <div style="height:20px"></div>`;
+}
+function totalsHTML(doc) {
+  const k = calc(doc), ccy = clientCcy(doc);
+  return `<div class="totals num">
+    <div class="tr"><span>Subtotal${doc.taxMode === 'incl' ? ' (incl. tax)' : ''}</span><span>${money(k.sub, ccy)}</span></div>
+    ${k.docDisc ? `<div class="tr"><span>Discount</span><span>−${money(k.docDisc, ccy)}</span></div>` : ''}
+    ${k.taxList.map(t => `<div class="tr"><span>${doc.taxMode === 'incl' ? 'Includes ' : ''}${esc(t.name)} ${t.rate}%</span><span>${money(t.amount, ccy)}</span></div>`).join('')}
+    ${k.ship ? `<div class="tr"><span>Shipping</span><span>${money(k.ship, ccy)}</span></div>` : ''}
+    ${k.fees ? `<div class="tr"><span>Fees</span><span>${money(k.fees, ccy)}</span></div>` : ''}
+    <div class="tr total"><span>Total</span><span class="num">${money(k.total, ccy)}</span></div></div>`;
+}
+const paySummary = () => { const p = D().biz.pay; return [p.account && 'Bank', p.paypal && 'PayPal', p.venmo && 'Venmo', p.cashapp && 'Cash App', p.zelle && 'Zelle', p.link && 'Pay link', p.qr && 'QR'].filter(Boolean).join(', ') || 'None added'; };
+
+function edActions(doc) {
+  const sendLbl = doc.type === 'receipt' ? 'Send receipt' : doc.status === 'sent' || doc.status === 'accepted' ? 'Send again' : 'Send';
+  return `<div class="ed-actions">
+    ${isPad() ? '' : `<button class="btn ghost" style="width:auto;flex:none;padding:0 18px" data-act="preview">${ic('eye', 20)}Preview</button>`}
+    <button class="btn primary" data-act="send" id="sendbtn">${S.pro ? '' : ic('lock', 18, 2.2)}${sendLbl}</button></div>`;
+}
+function scrEditor(doc) {
+  const more = `<button class="iconbtn" data-act="docMore" aria-label="More actions">${ic('more', 20)}</button>`;
+  if (isPad()) {
+    const left = S.device === 'ipad-p' ? backBtn(doc.type === 'estimate' ? docTitle(doc) + 's' : doc.type === 'receipt' ? 'Receipts' : 'Invoices') : `<button class="navbtn" data-act="toggleSidebar" aria-label="${S.ipadSidebar ? 'Hide sidebar' : 'Show sidebar'}">${ic('sidebar', 22)}</button>`;
+    return `<div class="scr">${nav({ title:'', left, right: `<div style="display:flex;gap:8px;align-items:center"><span style="font-size:12.5px;color:var(--ink-3)"><span class="kbd">⌘S</span> save <span class="kbd">⌘P</span> print</span>${more}</div>` })}
+      <div class="edsplit"><div class="edcol"><div class="body" data-scroll-el="ed">${editorBody(doc)}</div>${edActions(doc)}</div>
+      <div class="pvcol" data-scroll-el="pv"><div class="tpl-strip" style="padding:0;max-width:560px;width:100%">${tplStrip(doc, 64)}</div><div data-live="paper" style="width:100%;max-width:560px">${paper(doc, { watermark: !S.pro })}</div><p style="font-size:12.5px;color:var(--ink-3);margin:0">${S.pro ? 'Live PDF preview' : 'Live PDF preview. The "Preview" mark disappears with Premium.'}</p></div></div></div>`;
+  }
+  return `<div class="scr">${nav({ left: backBtn(S.docType === 'estimate' ? docTitle(doc) + 's' : doc.type === 'receipt' ? 'Receipts' : 'Invoices'), right: more })}
+    <div class="body" data-scroll-el="ed">${editorBody(doc)}</div>${edActions(doc)}</div>`;
+}
+function tplStrip(doc, w = 96) {
+  return TEMPLATES.map(t => `<button class="tpl" style="width:${w}px" aria-pressed="${doc.template === t.id}" data-act="tpl" data-arg="${t.id}"><span class="thumb" style="width:${w}px">${t.premium && !S.pro ? '<span class="lock">PRO</span>' : ''}${paper(doc, { template:t.id })}</span>${t.name}</button>`).join('');
+}
+function scrPreview(doc) {
+  return `<div class="scr">${nav({ title:'Preview', left: backBtn('Edit'), right:`<button class="iconbtn" data-act="docMore" aria-label="More actions">${ic('more', 20)}</button>` })}
+    <div class="body" data-scroll-el="pv">
+      <div style="padding:6px 22px 14px" data-live="paper">${paper(doc, { watermark: !S.pro })}</div>
+      ${S.pro ? '' : `<p style="text-align:center;font-size:12.5px;color:var(--ink-2);margin:0 24px 8px">The "Preview" mark is removed when you send with Premium.</p>`}
+      <div class="section-h">Template</div><div class="tpl-strip">${tplStrip(doc)}</div>
+      <div class="section-h">Colour</div><div class="swatches">${COLOURS.map(c => `<button class="swatch" style="background:${c}" aria-label="Colour ${c}" aria-pressed="${doc.color === c}" data-act="color" data-arg="${c}"></button>`).join('')}</div>
+      <div style="height:16px"></div>
+    </div>${edActions(doc)}</div>`;
+}
+
+function scrClients() {
+  const q = S.cq.trim().toLowerCase();
+  const list = visibleClients().filter(c => !q || c.name.toLowerCase().includes(q) || (c.contact || '').toLowerCase().includes(q));
+  const right = `<button class="iconbtn" data-act="clientAdd" aria-label="Add client">${ic('plus', 20, 2.4)}</button>`;
+  if (!visibleClients().length) return `<div class="scr">${nav({ large:'Clients', right })}<div class="body"><div class="empty"><span class="avatar" style="width:64px;height:64px">${ic('people', 30)}</span><h3>Add your first client</h3><p>Type their details or pick them from your Contacts. Invoice Maker only sees the contact you choose.</p><button class="btn primary" style="width:auto" data-act="contactPicker">${ic('contacts', 20)}Import from Contacts</button><button class="btn plain" style="width:auto" data-act="newClient">Type details</button></div></div></div>`;
+  return `<div class="scr">${nav({ large:'Clients', right })}<div class="body" data-scroll-el="cl">
+    <label class="search">${ic('search', 18)}<input id="search-clients" placeholder="Search clients" value="${esc(S.cq)}" data-in="ui:cq"></label><div style="height:10px"></div>
+    <div class="group">${list.map(c => {
+      const owed = visibleDocs().filter(d => d.clientId === c.id && d.type === 'invoice' && ['sent','overdue'].includes(statusOf(d))).reduce((a, d) => a + calc(d).total, 0);
+      const sel = isPad() && cur()?.screen === 'client' && cur().id === c.id;
+      return `<button class="docrow" data-act="openClient" data-arg="${c.id}" ${sel ? 'aria-current="true"' : ''}>${avatar(c.name)}<span style="flex:1;min-width:0"><div style="font-weight:600">${esc(c.name)}</div><div style="font-size:13px;color:var(--ink-2)">${esc(c.contact || c.email)}${c.currency !== D().biz.currency ? ' · ' + c.currency : ''}</div></span><span class="r">${owed ? `<span class="amt num" style="font-size:15px">${money(owed, c.currency)}</span><span style="font-size:12px;color:var(--ink-2)">owed</span>` : ''}</span></button>`;
+    }).join('') || '<div class="empty"><p>No client matches that search.</p></div>'}</div></div></div>`;
+}
+function scrClient(c) {
+  if (!c) return placeholder('Pick a client');
+  const docs = visibleDocs().filter(d => d.clientId === c.id);
+  return `<div class="scr">${nav({ title: isPad() ? '' : c.name, left: isPad() ? '' : backBtn('Clients') })}<div class="body" data-scroll-el="cd"><div class="readable">
+    <div style="display:flex;gap:14px;align-items:center;margin:4px 16px 0">${avatar(c.name).replace('class="avatar"', 'class="avatar" style="width:56px;height:56px;font-size:20px"')}<div><div style="font-family:var(--font-display);font-weight:800;font-size:24px;letter-spacing:-.02em">${esc(c.name)}</div><div style="color:var(--ink-2);font-size:14px">${docs.length} document${docs.length === 1 ? '' : 's'}</div></div></div>
+    <div style="display:flex;gap:10px;margin:14px 16px 0"><button class="btn primary" data-act="newDocFor" data-arg="${c.id}">${ic('plus', 20, 2.4)}New invoice</button><button class="btn ghost" data-act="newEstFor" data-arg="${c.id}">New ${docTitle({type:'estimate'}).toLowerCase()}</button></div>
+    <div class="section-h">Details</div><div class="group">
+      ${inRow('Name', `client:${c.id}:name`, c.name)}${inRow('Contact', `client:${c.id}:contact`, c.contact, { ph:'Person' })}${inRow('Email', `client:${c.id}:email`, c.email, { type:'email', ph:'name@company.com' })}${inRow('Phone', `client:${c.id}:phone`, c.phone, { type:'tel' })}
+      <label class="row" style="align-items:flex-start"><span class="k">Address</span><textarea id="f-caddr" rows="2" style="text-align:right" data-in="client:${c.id}:address">${esc(c.address)}</textarea></label>
+      ${inRow('Tax ID', `client:${c.id}:taxId`, c.taxId, { ph:'Optional' })}
+      <label class="row"><span class="k grow">Currency</span><select id="f-cccy" data-in="client:${c.id}:currency" style="text-align:right;flex:none">${['GBP','EUR','USD','AUD','CAD','NZD','CHF','JPY'].map(x => `<option ${x === c.currency ? 'selected' : ''}>${x}</option>`).join('')}</select></label>
+    </div><div class="section-f">New invoices for ${esc(c.name)} use ${esc(c.currency)}.</div>
+    ${docs.length ? `<div class="section-h">Documents</div><div class="group">${docs.map(d => `<button class="docrow" data-act="openDoc" data-arg="${d.id}"><span style="flex:1"><div style="font-weight:600">${esc(d.number)}</div><div style="font-size:13px;color:var(--ink-2)">${esc(dueText(d))}</div></span><span class="r"><span class="amt num" style="font-size:15px">${money(calc(d).total, c.currency)}</span><span class="pill ${statusOf(d)}">${STATUS_LABEL[statusOf(d)]}</span></span></button>`).join('')}</div>` : ''}
+    <div style="height:18px"></div><div class="group">${row({ lbl:'Delete client', cls:'danger', chev:false, act:'delClient', arg:c.id })}</div>
+    <div class="section-f">Invoices already made for this client stay as they are.</div>
+  </div></div></div>`;
+}
+function scrItems() {
+  const right = `<button class="iconbtn" data-act="newItem" aria-label="Add item">${ic('plus', 20, 2.4)}</button>`;
+  const its = visibleItems();
+  if (!its.length) return `<div class="scr">${nav({ large:'Items', right })}<div class="body"><div class="empty"><span class="avatar" style="width:64px;height:64px">${ic('tag', 30)}</span><h3>Save what you charge for</h3><p>Add services and products once, with their price and tax. Then add them to any invoice in one tap.</p><button class="btn primary" style="width:auto" data-act="newItem">${ic('plus', 20, 2.4)}Add item</button></div></div></div>`;
+  return `<div class="scr">${nav({ large:'Items', right })}<div class="body" data-scroll-el="it"><div class="group">${its.map(i => `<button class="docrow" data-act="editItem" data-arg="${i.id}"><span class="avatar" style="border-radius:10px;background:var(--item-tile);color:var(--item-ink)">${ic('tag', 18, 2.2)}</span><span style="flex:1;min-width:0"><div style="font-weight:600">${esc(i.desc)}</div><div style="font-size:13px;color:var(--ink-2)">per ${esc(i.unit)} · ${(() => { const t = taxById(i.tax); return t ? esc(t.name + ' ' + t.rate + '%') : 'No tax'; })()}</div></span><span class="amt num" style="font-weight:600">${i.rate ? money(i.rate) : 'At cost'}</span></button>`).join('')}</div>
+    <div class="section-f">Prices are in ${D().biz.currency}. On an invoice in another currency, check the price before sending.</div></div></div>`;
+}
+
+/* ---------------- settings ---------------- */
+function scrSettings() {
+  const b = D().biz;
+  const prem = S.pro ? `<div class="money" style="margin-top:4px"><div><div class="lab">Premium</div><div class="mid" style="font-size:22px">Yearly plan · ${S.trial ? 'free until ' + fdate(addDays(TODAY, 3)) : 'renews ' + fdate(addDays(TODAY, 365))}</div></div><button class="btn sm" style="background:rgba(255,255,255,.14);color:#fff;justify-self:start" data-act="push" data-arg="set-sub">Manage</button></div>`
+    : `<button class="money" style="margin-top:4px;text-align:left;width:calc(100% - 32px)" data-act="paywall" data-arg="settings_upgrade"><div class="lab">Free plan</div><div class="mid" style="font-size:22px">Create and preview free. Send with Premium.</div><span class="btn sm" style="background:var(--paid);color:var(--paid-ink);justify-self:start">See plans</span></button>`;
+  return `<div class="scr">${nav({ large:'Settings' })}<div class="body" data-scroll-el="st"><div class="readable">${prem}
+    <div class="section-h">Your business</div><div class="group">
+      ${row({ icon:'doc', lbl:'Business profile', meta: esc(b.name), act:'push', arg:'set-biz' })}
+      ${row({ icon:'percent', color:'#d9480f', lbl:'Taxes', meta: esc(D().taxes.map(t => `${t.name} ${t.rate}%`).join(', ')), act:'push', arg:'set-tax' })}
+      ${row({ icon:'qr', color:'#0a2540', lbl:'Payment details', meta: esc(paySummary()), act:'push', arg:'set-pay' })}
+      ${row({ icon:'paint', color:'#c2185b', lbl:'Invoice look', meta: esc(TEMPLATES.find(t => t.id === b.template).name + ' template'), act:'push', arg:'set-look' })}
+      ${row({ icon:'pen', color:'#0e8a6a', lbl:'My signature', val: b.signature ? 'Added' : 'Sample', act:'push', arg:'set-sig' })}
+      ${row({ icon:'hash', color:'#64748d', lbl:'Numbers and defaults', meta: `Next ${b.prefix.invoice}${String(b.next.invoice).padStart(4, '0')} · due in ${b.dueDays} days`, act:'push', arg:'set-num' })}
+      ${row({ icon:'money', color:'#0fb5c8', lbl:'Currency display', val: { symbol:'Symbol', code:'Code', none:'Hidden' }[b.currencyDisplay], act:'push', arg:'set-ccy' })}
+    </div>
+    <div class="section-h">Your data</div><div class="group">
+      ${row({ icon:'cloud', color: S.icloudOff ? '#b25e09' : '#2f80ed', lbl:'iCloud backup', val: S.icloudOff ? 'Off' : 'On', act:'push', arg:'set-backup' })}
+      ${row({ icon:'download', color:'#2f80ed', lbl:'Export everything', meta:'PDFs in a ZIP and all data as CSV. Free.', act:'exportAll' })}
+    </div>
+    <div class="section-h">Account</div><div class="group">
+      ${S.signedIn ? row({ icon:'apple', color:'#000', lbl:'Signed in with Apple', meta:'sam.okafor@privaterelay.appleid.com', chev:false }) : row({ icon:'apple', color:'#000', lbl:'Sign in with Apple', meta:'Keeps your subscription if you change phone', act:'signin', arg:'settings' })}
+      ${row({ icon:'lock', color:'#64748d', lbl:'Subscription', val: S.pro ? 'Premium' : 'Free', act:'push', arg:'set-sub' })}
+      ${S.signedIn ? row({ lbl:'Delete account', cls:'danger', chev:false, act:'delAccount' }) : ''}
+    </div>
+    <div class="section-h">Help</div><div class="group">
+      ${row({ icon:'help', color:'#533afd', lbl:'Help and support', meta:'Replies within 24 hours', act:'push', arg:'set-help' })}
+      ${row({ icon:'mail', color:'#0e8a6a', lbl:'Report a problem', act:'push', arg:'set-report' })}
+    </div>
+    <div class="section-h">Privacy and legal</div><div class="group">
+      <div class="row"><span class="sicon" style="background:#64748d">${ic('chart')}</span><span class="grow"><div class="lbl">Anonymous analytics</div><div class="meta">Helps us fix what's slow or confusing</div></span>${sw(S.analytics, 'toggleAnalytics', '', 'Anonymous analytics')}</div>
+      ${row({ icon:'shield', color:'#64748d', lbl:'Privacy Policy', meta:'slice-of-life.uk/invoice/privacy', act:'legal', arg:'privacy' })}
+      ${row({ icon:'doc', color:'#64748d', lbl:'Terms of Use', meta:'slice-of-life.uk/invoice/terms', act:'legal', arg:'terms' })}
+    </div>
+    <div class="section-f">Tax rates are set by you. This app doesn't give tax advice.</div>
+    <p style="text-align:center;color:var(--ink-3);font-size:12.5px;margin:22px 0 0">Invoice Maker 1.0 (1) · Slice of Life Ltd</p>
+  </div></div></div>`;
+}
+function subPage(title, inner, backLabel = 'Settings') {
+  return `<div class="scr">${nav({ title, left: isPad() ? '' : backBtn(backLabel) })}<div class="body" data-scroll-el="sub"><div class="readable">${isPad() ? `<div class="large" style="margin:0 16px 6px">${esc(title)}</div>` : ''}${inner}<div style="height:24px"></div></div></div></div>`;
+}
+function scrSet(id) {
+  const b = D().biz, p = b.pay, pre = PRESETS[b.country];
+  switch (id) {
+    case 'set-biz': return subPage('Business profile', `
+      <div style="margin:6px 16px 0"><button class="logo-drop" data-act="pickLogo"><span class="lg">${b.logo ? `<img src="${b.logo}" alt="Logo">` : ic('photo', 26)}</span><span><b style="display:block">${b.logo ? 'Change logo' : 'Add your logo'}</b><span style="font-size:13px;color:var(--ink-2)">From Photos or Files. JPEG, PNG or HEIC.</span></span></button></div>
+      <div class="section-h">Business</div><div class="group">${inRow('Name', 'biz:name', b.name)}${inRow('Email', 'biz:email', b.email, { type:'email' })}${inRow('Phone', 'biz:phone', b.phone, { type:'tel' })}
+      <label class="row" style="align-items:flex-start"><span class="k">Address</span><textarea id="f-baddr" rows="2" style="text-align:right" data-in="biz:address">${esc(b.address)}</textarea></label></div>
+      <div class="section-h">Country and tax</div><div class="group">
+      <label class="row"><span class="k grow">Country</span><select id="f-country" data-in="biz:country" style="flex:none;text-align:right">${Object.entries(PRESETS).map(([k, v]) => `<option value="${k}" ${k === b.country ? 'selected' : ''}>${v.label}</option>`).join('')}</select></label>
+      <div class="row"><span class="grow"><div class="lbl">${b.country === 'US' ? 'I collect sales tax' : b.country === 'UK' ? 'VAT registered' : 'GST registered'}</div></div>${sw(b.taxRegistered, 'toggleBiz', 'taxRegistered', 'Tax registered')}</div>
+      ${b.taxRegistered ? inRow(pre.taxIdLabel, 'biz:taxId', b.taxId) : ''}
+      <label class="row"><span class="k grow">Default currency</span><select id="f-bccy" data-in="biz:currency" style="flex:none;text-align:right">${['GBP','EUR','USD','AUD','CAD','NZD'].map(x => `<option ${x === b.currency ? 'selected' : ''}>${x}</option>`).join('')}</select></label>
+      <label class="row"><span class="k grow">Default tax</span><select id="f-btax" data-in="biz:defaultTax" style="flex:none;text-align:right"><option value="">None</option>${D().taxes.map(t => `<option value="${t.id}" ${t.id === b.defaultTax ? 'selected' : ''}>${esc(t.name)} ${t.rate}%</option>`).join('')}</select></label>
+      </div><div class="section-f">${esc(pre.note)}</div>`);
+    case 'set-tax': return subPage('Taxes', `
+      <div class="banner info" style="margin-top:4px">${ic('percent', 20)}<div>Presets for <b>${esc(pre.label)}</b>. Edit any rate or add your own. ${esc(pre.note)}</div></div>
+      <div class="section-h">Saved rates</div><div class="group">${D().taxes.map(t => `<div class="row"><input id="f-tn-${t.id}" style="text-align:left;flex:1.4" value="${esc(t.name)}" data-in="tax:${t.id}:name" aria-label="Tax name"><input id="f-tr-${t.id}" inputmode="decimal" style="max-width:80px" value="${t.rate}" data-in="tax:${t.id}:rate" aria-label="Rate"><span class="k" style="color:var(--ink-2)">%</span>${t.id === b.defaultTax ? '<span class="pill sent">Default</span>' : `<button class="chip" data-act="defTax" data-arg="${t.id}">Make default</button>`}<button aria-label="Delete ${esc(t.name)}" data-act="rmTax" data-arg="${t.id}" style="color:var(--due)">${ic('trash', 18)}</button></div>`).join('')}${row({ icon:'plus', lbl:'Add a tax', act:'addTax', cls:'link', chev:false })}</div>
+      <div class="section-f">Canada: add GST and PST or QST to one invoice, or a single HST. US: sales tax depends on state, county and city, so type your own rate.</div>
+      <div style="margin:16px"><button class="btn ghost" data-act="resetTax">Restore ${esc(pre.label)} presets</button></div>`);
+    case 'set-pay': return subPage('Payment details', `
+      <div class="banner info" style="margin-top:4px">${ic('qr', 20)}<div>These show on your invoices as buttons and a QR code. Clients pay you directly. Invoice Maker never touches the money.</div></div>
+      <div class="section-h">Bank transfer</div><div class="group">${inRow('Account name', 'pay:bankName', p.bankName)}${inRow(b.country === 'UK' ? 'Sort code' : b.country === 'AU' ? 'BSB' : 'Routing number', 'pay:sort', p.sort)}${inRow('Account number', 'pay:account', p.account)}${inRow('IBAN', 'pay:iban', p.iban, { ph:'Optional' })}</div>
+      <div class="section-h">Links</div><div class="group">${inRow('PayPal.me', 'pay:paypal', p.paypal, { ph:'paypal.me/you' })}${inRow('Venmo', 'pay:venmo', p.venmo, { ph:'@username' })}${inRow('Cash App', 'pay:cashapp', p.cashapp, { ph:'$cashtag' })}${inRow('Zelle', 'pay:zelle', p.zelle, { ph:'Email or phone' })}${inRow('Stripe or Square link', 'pay:link', p.link, { ph:'https://' })}</div>
+      <div class="section-f">A general payment link can't know the invoice total, so your client types the amount.</div>
+      <div class="section-h">QR code</div><div class="group"><div class="row"><span class="grow"><div class="lbl">Show a QR code</div><div class="meta">Opens your payment link when scanned</div></span>${sw(p.qr, 'toggleQR', '', 'Show QR')}</div></div>`);
+    case 'set-look': return subPage('Invoice look', `
+      <div class="section-h">Default template</div><div class="tpl-strip">${TEMPLATES.map(t => `<button class="tpl" aria-pressed="${b.template === t.id}" data-act="bizTpl" data-arg="${t.id}"><span class="thumb">${t.premium && !S.pro ? '<span class="lock">PRO</span>' : ''}${paper(D().docs[0] || seed().docs[0], { template:t.id, color:b.brand })}</span>${t.name}</button>`).join('')}</div>
+      <div class="section-h">Brand colour</div><div class="swatches">${COLOURS.map(c => `<button class="swatch" style="background:${c}" aria-label="Colour ${c}" aria-pressed="${b.brand === c}" data-act="bizColor" data-arg="${c}"></button>`).join('')}</div>
+      <div class="section-f">New invoices use this template and colour. You can change them on any invoice.</div>
+      <div class="section-h">Logo</div><div style="margin:0 16px"><button class="logo-drop" data-act="pickLogo"><span class="lg">${b.logo ? `<img src="${b.logo}" alt="Logo">` : ic('photo', 26)}</span><span><b style="display:block">${b.logo ? 'Change logo' : 'Add your logo'}</b><span style="font-size:13px;color:var(--ink-2)">Shown whole, never cropped.</span></span></button></div>`);
+    case 'set-sig': return subPage('My signature', `
+      <p class="section-f" style="margin-top:8px">Draw once. It goes on every invoice you send.</p>
+      <div style="margin:12px 16px 0"><canvas class="sigpad" data-sig="biz" width="700" height="360" aria-label="Signature pad"></canvas><div class="sigline">Sign above with your finger or Apple Pencil</div></div>
+      <div style="display:flex;gap:10px;margin:16px"><button class="btn ghost" data-act="sigClear" data-arg="biz">Clear</button><button class="btn primary" data-act="sigSave" data-arg="biz">Save signature</button></div>`);
+    case 'set-num': return subPage('Numbers and defaults', `
+      <div class="section-h">Numbering</div><div class="group">${inRow('Invoice prefix', 'prefix:invoice', b.prefix.invoice)}${inRow('Next invoice number', 'next:invoice', b.next.invoice, { mode:'numeric' })}${inRow(docTitle({type:'estimate'}) + ' prefix', 'prefix:estimate', b.prefix.estimate)}${inRow('Receipt prefix', 'prefix:receipt', b.prefix.receipt)}</div>
+      <div class="section-f">Numbers go up by one with each new document. Next: ${esc(b.prefix.invoice + String(b.next.invoice).padStart(4, '0'))}.</div>
+      <div class="section-h">Defaults</div><div class="group">${inRow('Payment due in (days)', 'biz:dueDays', b.dueDays, { mode:'numeric' })}<label class="row" style="align-items:flex-start"><span class="k">Notes</span><textarea id="f-bnotes" rows="3" style="text-align:right" data-in="biz:notes">${esc(b.notes)}</textarea></label></div>`);
+    case 'set-ccy': return subPage('Currency display', `
+      <div class="section-h">Show amounts as</div><div class="group">${[['symbol','Symbol','£1,250.00'],['code','Code','GBP 1,250.00'],['none','Hidden','1,250.00']].map(([k, l, ex]) => `<button class="row" data-act="ccyDisp" data-arg="${k}"><span class="grow"><div class="lbl">${l}</div><div class="meta">${ex}</div></span>${b.currencyDisplay === k ? `<span style="color:var(--brand)">${ic('check', 22, 2.6)}</span>` : ''}</button>`).join('')}</div>
+      <div class="section-f">Applies in the app and on your PDFs. Each client can have their own currency in their details.</div>`);
+    case 'set-backup': return subPage('iCloud backup', S.icloudOff
+      ? `<div class="banner warn" style="margin-top:4px">${ic('cloud', 20)}<div><b>iCloud is off for Invoice Maker.</b> Open the Settings app, tap your name, then iCloud, and turn on Invoice Maker. Until then your invoices are only on this iPhone.</div></div><div style="margin:16px"><button class="btn primary" data-act="fixIcloud">Open Settings</button></div>`
+      : `<div class="banner ok" style="margin-top:4px">${ic('check', 20, 2.4)}<div><b>Backed up to iCloud.</b> Last backup 2 minutes ago. ${visibleDocs().length} documents, ${visibleClients().length} clients, your logo and settings.</div></div>
+        <div class="section-f" style="margin-top:14px;line-height:1.5">Your invoices are saved on this iPhone and in your own iCloud, which only you can read. A new iPhone or iPad signed in to the same Apple ID gets everything back. If your subscription ends you can still open and download every invoice. Only you can delete your data.</div>`);
+    case 'set-sub': return subPage('Subscription', S.pro
+      ? `<div class="money" style="margin-top:4px"><div><div class="lab">Premium · Yearly</div><div class="big num" style="font-size:34px">$99.99<span style="font-size:16px;font-weight:600;opacity:.7"> / year</span></div></div><div class="foot">${S.trial ? 'Free trial until ' + fdate(addDays(TODAY, 3)) + '. We remind you the day before.' : 'Renews ' + fdate(addDays(TODAY, 365))}</div></div>
+        <div style="margin:16px;display:grid;gap:10px"><button class="btn ghost" data-act="manageSub">Manage subscription</button><button class="btn plain" data-act="restore">Restore purchases</button></div>
+        <div class="section-f" style="line-height:1.5">Payments are handled by Apple. To cancel, open Settings &gt; [your name] &gt; Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription.</div>`
+      : `<div style="margin:6px 16px"><button class="btn primary" data-act="paywall" data-arg="settings_upgrade">See Premium plans</button></div><div style="margin:0 16px"><button class="btn plain" data-act="restore">Restore purchases</button></div>
+        <div class="section-f" style="line-height:1.5">Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs.</div>`);
+    case 'set-help': return subPage('Help and support', `
+      <div class="group" style="margin-top:4px">${row({ icon:'mail', lbl:'Email us', meta:'slice.of.life.ltd@gmail.com', act:'copyEmail', chev:false })}${row({ icon:'msg', color:'#0e8a6a', lbl:'Report a problem', meta:'Sends your message and app version', act:'push', arg:'set-report' })}</div>
+      <div class="section-f">We reply within 24 hours, every day.</div>
+      <div class="section-h">Common questions</div><div class="group">
+        ${faq('Is Invoice Maker free?', 'Creating, editing and previewing is free with no limits. Sending, printing and saving PDFs needs Premium.')}
+        ${faq('How do I cancel?', 'Payments are handled by Apple. Open Settings, tap your name, then Subscriptions. Deleting the app does not cancel the subscription.')}
+        ${faq('Where are my invoices stored?', 'On your iPhone and in your own iCloud. We never upload them to our servers.')}
+        ${faq('How do clients pay me?', 'Add your bank details or payment links in Payment details. They appear on every invoice with a QR code.')}
+      </div>`);
+    case 'set-report': return subPage('Report a problem', `
+      <div style="padding:6px 16px 0"><div class="field"><label for="rp-topic">What's it about?</label><select id="rp-topic"><option>Sending or PDFs</option><option>Subscription or billing</option><option>Backup and sync</option><option>Something else</option></select></div>
+      <div class="field"><label for="rp-msg">What happened?</label><textarea id="rp-msg" placeholder="Tell us what you tapped and what you expected"></textarea></div>
+      <div class="field"><label for="rp-mail">Reply to</label><input id="rp-mail" type="email" value="${esc(b.email)}"></div>
+      <label class="tog" style="padding:0 0 14px"><span>Include app version and device model</span>${sw(true, 'noop', '', 'Include diagnostics')}</label>
+      <button class="btn primary" data-act="sendReport">Send report</button>
+      <p class="section-f" style="margin:10px 0 0">We reply within 24 hours. Your invoices are not attached.</p></div>`, 'Back');
+    default: return placeholder('');
+  }
+}
+const faq = (q, a) => `<details class="row" style="display:block"><summary style="font-size:16px;cursor:pointer">${esc(q)}</summary><p style="color:var(--ink-2);font-size:14px;line-height:1.5;margin:8px 0 2px">${esc(a)}</p></details>`;
+const placeholder = (t) => `<div class="scr"><div class="nav"><div class="navrow"></div></div><div class="placeholder"><div><div style="opacity:.4">${ic('doc', 48, 1.4)}</div><p style="margin:10px 0 0">${esc(t)}</p></div></div></div>`;
+
+/* ---------------- onboarding ---------------- */
+const ROLES = [
+  ['freelancer','Freelancer','Design, writing, consulting, photography','person'],
+  ['contractor','Contractor or trades','Builders, plumbers, cleaners, electricians','tag'],
+  ['shop','Small shop','Retail, food, products','money'],
+  ['other','Something else','Any other business','doc']
+];
+const SAMPLE_ITEMS = {
+  freelancer: [['Logo design', 1, 650, 'project'], ['Brand guidelines', 1, 400, 'project'], ['Revisions', 3, 60, 'hour']],
+  contractor: [['Labour', 6, 45, 'hour'], ['Materials', 1, 180, 'lot'], ['Call-out fee', 1, 60, 'visit']],
+  shop: [['Gift hamper, large', 4, 55, 'item'], ['Delivery', 1, 12, 'trip']],
+  other: [['Service', 2, 120, 'hour'], ['Materials', 1, 40, 'lot']]
+};
+function onbScreen() {
+  const step = S.onb, o = S.onbData;
+  const dots = n => `<div class="dots" aria-hidden="true">${[1,2,3,4].map(i => `<i class="${i === n ? 'on' : ''}"></i>`).join('')}</div>`;
+  if (step === 'consent') return `<div class="onb"><div class="inner" style="justify-content:center">
+      <span class="avatar" style="width:64px;height:64px;border-radius:18px">${ic('chart', 30)}</span>
+      <h1>Allow anonymous analytics?</h1>
+      <p class="lead">We count things like "invoice created" to see what's slow or confusing. No names, no invoice contents, no tracking across other apps. You can change this any time in Settings.</p></div>
+      <div class="foot"><button class="btn primary" data-act="consent" data-arg="yes">Allow</button><button class="btn ghost" data-act="consent" data-arg="no">Don't allow</button></div></div>`;
+  if (step === 'welcome') {
+    const demo = sampleDoc('contractor', 'Kestrel Joinery', 'Ruth Adeyemi');
+    return `<div class="onb"><div class="inner">${dots(1)}
+      <div class="peek" style="padding:18px 30px 6px;transform:rotate(-2deg);margin-top:4px">${paper(demo, {})}</div>
+      <h1>Create and send an invoice in 60 seconds</h1>
+      <p class="lead">Invoices, ${docTitle({type:'estimate'}).toLowerCase()}s and receipts with your logo. Create free. Send with Premium.</p></div>
+      <div class="foot"><button class="btn primary" data-act="onbNext" data-arg="role">Get started</button></div></div>`;
+  }
+  if (step === 'role') return `<div class="onb"><div class="inner">${dots(2)}
+      <h1>What do you do?</h1><p class="lead">We'll pick a template and sample items to start you off.</p>
+      <div style="display:grid;gap:10px" role="radiogroup">${ROLES.map(([k, l, d, i]) => `<button class="choice" role="radio" aria-checked="${o.role === k}" data-act="onbRole" data-arg="${k}"><span class="ci">${ic(i, 24)}</span><span><b>${l}</b><span>${d}</span></span></button>`).join('')}</div></div>
+      <div class="foot"><button class="btn primary" data-act="onbNext" data-arg="biz" ${o.role ? '' : 'disabled'}>Continue</button><button class="btn plain" data-act="onbBack" data-arg="welcome">Back</button></div></div>`;
+  if (step === 'biz') return `<div class="onb"><div class="inner">${dots(3)}
+      <h1>Your business</h1><p class="lead">This goes at the top of every invoice. You can change it later.</p>
+      <div class="field"><label for="onb-name">Business name</label><input id="onb-name" value="${esc(o.name || '')}" placeholder="e.g. Kestrel Joinery" data-in="onb:name" autocomplete="organization"></div>
+      <div class="field"><label for="onb-country">Country</label><select id="onb-country" data-in="onb:country">${Object.entries(PRESETS).map(([k, v]) => `<option value="${k}" ${k === (o.country || 'UK') ? 'selected' : ''}>${v.label}</option>`).join('')}</select></div>
+      <button class="logo-drop" data-act="pickLogo" data-arg="onb"><span class="lg">${D().biz.logo ? `<img src="${D().biz.logo}" alt="Logo">` : ic('photo', 26)}</span><span><b style="display:block">${D().biz.logo ? 'Logo added' : 'Add your logo'}</b><span style="font-size:13px;color:var(--ink-2)">Optional. From Photos or Files.</span></span></button></div>
+      <div class="foot"><button class="btn primary" data-act="onbNext" data-arg="first">Continue</button><button class="btn plain" data-act="onbNext" data-arg="first" data-skip="1">Skip for now</button></div></div>`;
+  if (step === 'first') {
+    const d = o.doc;
+    return `<div class="onb"><div class="inner">${dots(4)}
+      <h1 style="font-size:28px">Here's your first invoice</h1><p class="lead" style="margin-bottom:12px">We filled in examples. Change anything; the preview updates as you type.</p>
+      <div class="field"><label for="onb-client">Client</label><input id="onb-client" value="${esc(o.client)}" data-in="onb:client"></div>
+      <div style="display:grid;grid-template-columns:1fr 100px;gap:10px"><div class="field"><label for="onb-item">First item</label><input id="onb-item" value="${esc(d.items[0].desc)}" data-in="onb:item"></div><div class="field"><label for="onb-price">Price</label><input id="onb-price" inputmode="decimal" value="${d.items[0].rate}" data-in="onb:price"></div></div>
+      <div data-live="paper" style="padding:4px 4px 0">${paper(d, { watermark:true })}</div></div>
+      <div class="foot"><button class="btn primary" data-act="onbFinish">Looks good</button></div></div>`;
+  }
+  return '';
+}
+function sampleDoc(role, bizName, client) {
+  const its = SAMPLE_ITEMS[role] || SAMPLE_ITEMS.other;
+  const t = D().biz.defaultTax;
+  return { id:'sample', type:'invoice', number: D().biz.prefix.invoice + String(D().biz.next.invoice).padStart(4, '0'), clientId:'__sample', issue:TODAY, due:addDays(TODAY, 14), status:'draft', taxMode:'excl', taxWhere:'item', totalTaxIds:[], discount:{type:'%',value:0}, shipping:0, fees:[], notes:'Thank you for your business.', template: role === 'contractor' ? 'trades' : role === 'freelancer' ? 'studio' : 'clean', color:D().biz.brand, job:'', clientSig:null, items: its.map(([desc, qty, rate, unit]) => ({ id:uid(), desc, qty, rate, unit, disc:0, discType:'%', taxIds: t ? [t] : [] })), _client:client };
+}
+
+/* ---------------- sheets ---------------- */
+function sheetHTML(sh) {
+  const head = (title, { left = '', right = '' } = {}) => `<div class="grab" aria-hidden="true"></div><div class="navrow">${left || '<span style="min-width:60px"></span>'}<div class="title">${esc(title)}</div>${right || '<span style="min-width:60px"></span>'}</div>`;
+  const done = (lbl = 'Done', act = 'closeSheet') => `<button class="navbtn r strong" data-act="${act}">${lbl}</button>`;
+  const cancel = `<button class="navbtn" data-act="closeSheet">Cancel</button>`;
+  switch (sh.type) {
+    case 'paywall': return `<div class="dim" data-act="${sh.hard ? 'noop' : 'closeSheet'}"></div><div class="sheet full paywall-sheet" role="dialog" aria-label="Premium plans">${paywallHTML(sh)}</div>`;
+    case 'buying': return `<div class="dim"></div><div class="sheet" role="dialog" aria-label="App Store"><div class="grab"></div><div style="padding:16px 20px 34px;display:grid;gap:12px">
+      <div style="display:flex;align-items:center;gap:10px"><span style="font-weight:700;font-size:17px;flex:1">App Store</span><button class="navbtn r" data-act="closeSheet">Cancel</button></div>
+      <div class="group" style="margin:0"><div class="row"><span class="sicon" style="background:linear-gradient(135deg,#533afd,#0fb5c8)">${ic('doc')}</span><span class="grow"><div class="lbl">Invoice Maker Premium</div><div class="meta">${sh.plan === 'yearly' ? (sh.trial ? '3-day free trial, then $99.99 a year' : '$99.99 a year') : '$12.99 a month'}</div></span></div><div class="row"><span class="grow meta">Account</span><span class="val">sam.okafor@icloud.com</span></div></div>
+      <p style="font-size:12px;color:var(--ink-2);margin:0;text-align:center">Sandbox. Renews automatically until cancelled.</p>
+      <button class="btn dark" data-act="confirmBuy">${ic('apple', 20)}Confirm with Side Button</button></div></div>`;
+    case 'signin': return `<div class="dim" data-act="closeSheet"></div><div class="sheet" role="dialog" aria-label="Sign in"><div class="grab"></div><div style="padding:20px 24px 34px;display:grid;gap:12px;text-align:center;justify-items:center">
+      <span class="avatar" style="width:60px;height:60px;border-radius:16px">${ic('shield', 28)}</span>
+      <h3 style="font-family:var(--font-display);font-size:24px;font-weight:800;letter-spacing:-.02em;margin:4px 0 0">Keep everything safe</h3>
+      <p style="color:var(--ink-2);margin:0 0 6px;line-height:1.45">Sign in to keep your subscription and invoices safe if you change phone. Apple can hide your email from us.</p>
+      ${sh.error ? `<div class="banner err" style="margin:0;width:100%;text-align:left">${ic('wifi', 20)}<div>Couldn't reach Apple. Check your connection and try again. You can still send this invoice without signing in.</div></div>` : ''}
+      <button class="btn dark" data-act="doSignin">${ic('apple', 20)}Sign in with Apple</button>
+      <button class="btn plain" data-act="skipSignin">Not now</button></div></div>`;
+    case 'share': {
+      const doc = docById(sh.docId), c = clientById(doc.clientId) || {};
+      const inner = `<div class="share-file"><div class="mini">${paper(doc, {})}</div><div style="min-width:0"><div style="font-weight:600">${esc(doc.number)} ${esc(c.name || '')}.pdf</div><div style="font-size:13px;color:var(--ink-2)">PDF document · ${money(calc(doc).total, clientCcy(doc))}</div></div><button class="iconbtn" style="margin-left:auto;flex:none" data-act="closeSheet" aria-label="Close">${ic('x', 18, 2.2)}</button></div>
+        ${S.offline ? `<div class="banner warn" style="margin:10px 16px 0">${ic('wifi', 20)}<div><b>You're offline.</b> Mail and WhatsApp will send this as soon as you have signal. Messages may ask you to tap Resend.</div></div>` : ''}
+        <div class="share-apps">${[['Mail','mail','#2f80ed'],['Messages','msg','#34c759'],['WhatsApp','msg','#25d366'],['Gmail','mail','#d93025'],['Outlook','mail','#0a64d0']].map(([n, i, col]) => `<button data-act="shareVia" data-arg="${n}"><span class="ai" style="background:${col}">${ic(i, 28)}</span>${n}</button>`).join('')}</div>
+        <div class="group" style="margin:0 16px 20px">${row({ icon:'copy', color:'#64748d', lbl:'Copy', chev:false, act:'shareVia', arg:'Copy' })}${row({ icon:'folder', color:'#2f80ed', lbl:'Save to Files', chev:false, act:'shareVia', arg:'Files' })}${row({ icon:'print', color:'#64748d', lbl:'Print', chev:false, act:'shareVia', arg:'Print' })}</div>`;
+      if (isPad()) return `<div class="dim" style="background:transparent" data-act="closeSheet"></div><div class="popover" role="dialog" aria-label="Share">${inner}</div>`;
+      return `<div class="dim" data-act="closeSheet"></div><div class="sheet" role="dialog" aria-label="Share">${inner}</div>`;
+    }
+    case 'print': return `<div class="dim" data-act="closeSheet"></div><div class="sheet" role="dialog" aria-label="Print options">${head('Print options', { left: cancel, right: done('Print', 'doPrint') })}<div class="body" style="padding-top:8px"><div class="group">${row({ lbl:'Printer', val:'HP OfficeJet (Office)' })}<div class="row"><span class="k grow">Copies</span><span class="val">1</span></div><div class="row"><span class="k grow">Paper</span><span class="val">${D().biz.country === 'US' || D().biz.country === 'CA' ? 'US Letter' : 'A4'}</span></div></div><div style="padding:16px 60px">${paper(docById(sh.docId), {})}</div></div></div>`;
+    case 'line': {
+      const doc = docById(sh.docId), it = doc.items.find(i => i.id === sh.lineId);
+      if (!it) return '';
+      const ccy = clientCcy(doc);
+      return `<div class="dim" data-act="closeLine"></div><div class="sheet tall" role="dialog" aria-label="Item">${head(sh.isNew ? 'New item' : 'Edit item', { left:`<button class="navbtn" data-act="delLine" style="color:var(--due)">Delete</button>`, right: done('Done', 'closeLine') })}
+        <div class="body" style="padding-top:6px"><div class="group">${inRow('Description', `line:${it.id}:desc`, it.desc, { ph:'e.g. Labour', id:'line-desc' })}<label class="row" style="align-items:flex-start"><span class="k">Details</span><textarea id="line-detail" rows="2" style="text-align:right" placeholder="Optional" data-in="line:${it.id}:detail">${esc(it.detail || '')}</textarea></label></div>
+        <div class="section-h">Price</div><div class="group">${inRow('Quantity', `line:${it.id}:qty`, it.qty, { mode:'decimal', id:'line-qty' })}${inRow('Unit', `line:${it.id}:unit`, it.unit, { ph:'hour, item, metre', id:'line-unit' })}${inRow(`Rate (${ccy})`, `line:${it.id}:rate`, it.rate, { mode:'decimal', id:'line-rate' })}
+          <label class="row"><span class="k">Discount</span><input id="line-disc" inputmode="decimal" value="${it.disc || ''}" placeholder="0" data-in="line:${it.id}:disc"><div class="chips" style="flex:none"><button class="chip" aria-pressed="${it.discType === '%'}" data-act="lineDiscType" data-arg="%">%</button><button class="chip" aria-pressed="${it.discType === 'amt'}" data-act="lineDiscType" data-arg="amt">${ccy}</button></div></label></div>
+        <div class="section-h">Tax on this item</div><div class="group"><div class="row"><div class="chips">${D().taxes.map(t => `<button class="chip" aria-pressed="${(it.taxIds || []).includes(t.id)}" data-act="lineTax" data-arg="${t.id}">${esc(t.name)} ${t.rate}%</button>`).join('')}<button class="chip" aria-pressed="${!(it.taxIds || []).length}" data-act="lineTax" data-arg="">No tax</button></div></div></div>
+        <div class="section-f">You can add more than one tax, such as GST plus PST in Canada.</div>
+        <div class="group" style="margin-top:14px" data-live="lineTotal">${lineTotalHTML(doc, it)}</div>
+        <div class="group" style="margin-top:14px"><div class="row"><span class="grow"><div class="lbl">Save to my items</div><div class="meta">Reuse it on other invoices</div></span>${sw(sh.saveItem, 'toggleSaveItem', '', 'Save to my items')}</div></div>
+        </div></div>`;
+    }
+    case 'saved': return `<div class="dim" data-act="closeSheet"></div><div class="sheet tall" role="dialog" aria-label="Saved items">${head('Saved items', { left: cancel })}<div class="body" style="padding-top:6px"><div class="group">${visibleItems().map(i => `<button class="docrow" data-act="useSaved" data-arg="${i.id}"><span style="flex:1"><div style="font-weight:600">${esc(i.desc)}</div><div style="font-size:13px;color:var(--ink-2)">per ${esc(i.unit)}</div></span><span class="amt num">${i.rate ? money(i.rate) : 'At cost'}</span></button>`).join('')}</div></div></div>`;
+    case 'clientPick': return `<div class="dim" data-act="closeSheet"></div><div class="sheet tall" role="dialog" aria-label="Choose client">${head('Choose client', { left: cancel })}<div class="body" style="padding-top:6px">
+      <div class="group">${row({ icon:'contacts', color:'#64748d', lbl:'Import from Contacts', act:'contactPicker' })}${row({ icon:'plus', lbl:'New client', act:'newClient', arg:'pick' })}</div><div style="height:12px"></div>
+      ${visibleClients().length ? `<div class="group">${visibleClients().map(c => `<button class="docrow" data-act="setClient" data-arg="${c.id}">${avatar(c.name)}<span style="flex:1"><div style="font-weight:600">${esc(c.name)}</div><div style="font-size:13px;color:var(--ink-2)">${esc(c.email)} · ${c.currency}</div></span></button>`).join('')}</div>` : '<div class="empty"><p>No clients yet. Import one from Contacts or type their details.</p></div>'}</div></div>`;
+    case 'contacts': return `<div class="dim" data-act="closeSheet"></div><div class="sheet tall" role="dialog" aria-label="Contacts">${head('Contacts', { left: cancel })}<div class="body" style="padding-top:6px"><p class="section-f" style="margin:0 16px 10px">Invoice Maker only receives the contact you tap.</p><div class="group">${[['Amelia Hart','amelia@hartdental.co.uk','07700 900233'],['Dev Patel','dev@pateleats.com','07700 900877'],['Greenway Estates','office@greenwayestates.co.uk','0117 496 0123'],['Tom Whitlock','tom.whitlock@mail.com','07700 900561']].map(([n, e, p]) => `<button class="docrow" data-act="importContact" data-arg="${esc(n + '|' + e + '|' + p)}">${avatar(n)}<span style="flex:1"><div style="font-weight:600">${esc(n)}</div><div style="font-size:13px;color:var(--ink-2)">${esc(e)}</div></span></button>`).join('')}</div></div></div>`;
+    case 'newClient': return `<div class="dim" data-act="closeSheet"></div><div class="sheet tall" role="dialog" aria-label="New client">${head('New client', { left: cancel, right: done('Add', 'saveNewClient') })}<div class="body" style="padding:6px 16px 30px">
+      <div class="field"><label for="nc-name">Name</label><input id="nc-name" placeholder="Company or person" value="${esc(sh.name || '')}" data-in="nc:name"></div>
+      ${sh.err ? '<div class="err-text" style="margin:-8px 0 10px">Add a name for this client.</div>' : ''}
+      <div class="field"><label for="nc-email">Email</label><input id="nc-email" type="email" placeholder="name@company.com" data-in="nc:email"></div>
+      <div class="field"><label for="nc-phone">Phone</label><input id="nc-phone" type="tel" data-in="nc:phone"></div>
+      <div class="field"><label for="nc-addr">Address</label><textarea id="nc-addr" data-in="nc:address" style="min-height:80px"></textarea></div>
+      <div class="field"><label for="nc-ccy">Currency</label><select id="nc-ccy" data-in="nc:currency">${['GBP','EUR','USD','AUD','CAD','NZD'].map(x => `<option ${x === D().biz.currency ? 'selected' : ''}>${x}</option>`).join('')}</select></div></div></div>`;
+    case 'item': {
+      const i = sh.item;
+      return `<div class="dim" data-act="closeSheet"></div><div class="sheet tall" role="dialog" aria-label="Saved item">${head(sh.isNew ? 'New item' : 'Edit item', { left: sh.isNew ? cancel : `<button class="navbtn" style="color:var(--due)" data-act="delItem">Delete</button>`, right: done(sh.isNew ? 'Add' : 'Done', 'saveItem') })}<div class="body" style="padding-top:6px"><div class="group">${inRow('Description', 'item:desc', i.desc, { ph:'e.g. Labour', id:'it-desc' })}${inRow('Unit', 'item:unit', i.unit, { ph:'hour', id:'it-unit' })}${inRow('Price (' + D().biz.currency + ')', 'item:rate', i.rate, { mode:'decimal', id:'it-rate' })}</div>
+        <div class="section-h">Tax</div><div class="group"><div class="row"><div class="chips">${D().taxes.map(t => `<button class="chip" aria-pressed="${i.tax === t.id}" data-act="itemTax" data-arg="${t.id}">${esc(t.name)} ${t.rate}%</button>`).join('')}<button class="chip" aria-pressed="${!i.tax}" data-act="itemTax" data-arg="">No tax</button></div></div></div></div></div>`;
+    }
+    case 'newMenu': return `<div class="dim" data-act="closeSheet"></div><div class="actionsheet" role="dialog" aria-label="Create"><div class="grp"><button data-act="newDoc" data-arg="invoice">New invoice</button><button data-act="newDoc" data-arg="estimate">New ${docTitle({type:'estimate'}).toLowerCase()}</button><button data-act="newDoc" data-arg="receipt">New receipt</button></div><div class="grp"><button class="c" data-act="closeSheet">Cancel</button></div></div>`;
+    case 'clientAdd': return `<div class="dim" data-act="closeSheet"></div><div class="actionsheet" role="dialog" aria-label="Add client"><div class="grp"><button data-act="contactPicker">Import from Contacts</button><button data-act="newClient">Type details</button></div><div class="grp"><button class="c" data-act="closeSheet">Cancel</button></div></div>`;
+    case 'docMore': {
+      const doc = docById(sh.docId), st = statusOf(doc);
+      const b = [];
+      if (doc.type === 'estimate' && !['converted'].includes(doc.status)) { b.push(['convert', 'Turn into invoice']); if (doc.status !== 'accepted') b.push(['clientSign', 'Client signs now']); }
+      if (doc.type === 'invoice') b.push(['clientSign', doc.clientSig ? 'Client signs again' : 'Client signs now']);
+      if (doc.type === 'invoice') b.push(st === 'paid' ? ['markUnpaid', 'Mark as unpaid'] : ['markPaid', 'Mark as paid']);
+      if (doc.type === 'invoice' && st === 'paid') b.push(['makeReceipt', 'Send receipt']);
+      b.push(['duplicate', 'Duplicate'], ['savePdf', 'Save PDF to Files'], ['printDoc', 'Print']);
+      return `<div class="dim" data-act="closeSheet"></div><div class="actionsheet" role="dialog" aria-label="More"><div class="grp">${b.map(([a, l]) => `<button data-act="${a}">${l}</button>`).join('')}<button class="d" data-act="askDelete">Delete ${esc(doc.type === 'estimate' ? docTitle(doc).toLowerCase() : doc.type)}</button></div><div class="grp"><button class="c" data-act="closeSheet">Cancel</button></div></div>`;
+    }
+    case 'confirm': return `<div class="dim" data-act="closeSheet"></div><div class="actionsheet" role="alertdialog" aria-label="${esc(sh.title)}"><div class="grp"><div class="hd"><b>${esc(sh.title)}</b>${esc(sh.text)}</div><button class="d" data-act="${sh.yes}" data-arg="${esc(sh.arg || '')}">${esc(sh.yesLabel)}</button></div><div class="grp"><button class="c" data-act="closeSheet">Cancel</button></div></div>`;
+    case 'clientSign': {
+      const doc = docById(sh.docId);
+      const isInv = doc.type === 'invoice';
+      return `<div class="dim"></div><div class="sheet full" role="dialog" aria-label="Client signature">${head(isInv ? 'Client signature' : 'Sign to accept', { left: cancel, right: done(isInv ? 'Save' : 'Accept', 'acceptSign') })}<div class="body" style="padding:6px 16px 30px">
+        <div class="group" style="margin:0"><div class="row"><span class="grow"><div class="lbl">${esc(doc.number)} · ${esc(clientById(doc.clientId)?.name || '')}</div><div class="meta">${esc(doc.job || doc.items.map(i => i.desc).join(', '))}</div></span><span class="val num" style="color:var(--ink);font-weight:700">${money(calc(doc).total, clientCcy(doc))}</span></div></div>
+        <p style="color:var(--ink-2);font-size:14px;line-height:1.45">${isInv ? 'By signing, you confirm the work on this invoice was done and you agree to its total.' : `By signing, you accept this ${esc(docTitle(doc).toLowerCase())} and its total.`}</p>
+        <div class="field"><label for="cs-name">Your name</label><input id="cs-name" value="${esc(sh.name || clientById(doc.clientId)?.contact || clientById(doc.clientId)?.name || '')}" data-in="cs:name"></div>
+        <canvas class="sigpad" data-sig="client" width="700" height="360" aria-label="Signature pad"></canvas><div class="sigline">Sign above</div>
+        ${sh.err ? `<div class="err-text" style="margin:8px 0 0">Sign in the box to ${isInv ? 'save' : 'accept'}.</div>` : ''}
+        <button class="btn plain" data-act="sigClear" data-arg="client">Clear signature</button></div></div>`;
+    }
+    case 'export': return `<div class="dim" data-act="closeSheet"></div><div class="sheet" role="dialog" aria-label="Export everything">${head('Export everything', { left: cancel })}<div class="body" style="padding-top:8px"><div class="group">${row({ icon:'folder', color:'#2f80ed', lbl:'All PDFs as a ZIP', meta: `${visibleDocs().length} documents · about ${Math.max(1, Math.round(visibleDocs().length * 0.09 * 10) / 10)} MB`, act:'exportGo', arg:'zip' })}${row({ icon:'doc', color:'#0e8a6a', lbl:'All data as CSV', meta:'Documents, line items, clients, saved items', act:'exportGo', arg:'csv' })}</div><div class="section-f">Free on every plan. Your data stays yours.</div></div></div>`;
+    case 'manage': return `<div class="dim" data-act="closeSheet"></div><div class="sheet" role="dialog" aria-label="Manage subscription">${head('Subscriptions', { right: done() })}<div class="body" style="padding-top:8px"><div class="group"><div class="row"><span class="sicon" style="background:linear-gradient(135deg,#533afd,#0fb5c8)">${ic('doc')}</span><span class="grow"><div class="lbl">Invoice Maker Premium</div><div class="meta">Yearly · $99.99 · ${S.trial ? 'trial ends ' + fdate(addDays(TODAY, 3)) : 'renews ' + fdate(addDays(TODAY, 365))}</div></span></div>${row({ lbl:'Monthly · $12.99', chev:false, act:'noop' })}${row({ lbl:'Cancel subscription', cls:'danger', chev:false, act:'cancelSub' })}</div><div class="section-f">This is Apple's own subscription screen (shown here as a stand-in). You keep Premium until the end of the period you've paid for.</div></div></div>`;
+    case 'legal': return `<div class="dim" data-act="closeSheet"></div><div class="sheet full" role="dialog" aria-label="${sh.which === 'terms' ? 'Terms of Use' : 'Privacy Policy'}">${head(sh.which === 'terms' ? 'Terms of Use' : 'Privacy Policy', { right: done() })}<div class="body" style="padding:8px 20px 30px;line-height:1.55;font-size:15px;color:var(--ink-2)">
+      <p style="color:var(--ink);font-weight:600">slice-of-life.uk/invoice/${sh.which}</p>
+      ${sh.which === 'terms' ? `<p>Invoice Maker is made by Slice of Life Ltd. Apple's Standard Licence Agreement covers the app itself; these terms add how Premium works.</p><p><b style="color:var(--ink)">What's free:</b> creating, editing, previewing, backing up and exporting your documents. <b style="color:var(--ink)">Premium:</b> sending, printing and saving PDFs.</p><p>Premium renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings &gt; [your name] &gt; Subscriptions.</p><p>Tax rates are set by you. This app doesn't give tax advice. You are responsible for the amounts on your invoices.</p><p>If your subscription ends, you keep access to every document you made.</p>`
+      : `<p>Your invoices, clients, items and logo stay on your device and in your own iCloud. We can't read them.</p><p>We collect: your Apple account ID if you sign in (to keep your subscription), purchase history (RevenueCat), anonymous usage counts if you allow them (Firebase Analytics, Google) and crash reports (Firebase Crashlytics). Paywalls are shown by Superwall.</p><p>We don't track you across other apps and don't use the advertising ID.</p><p>Delete your account any time in Settings. Contact: slice.of.life.ltd@gmail.com</p>`}
+      <p style="font-size:12.5px">Mockup copy. Final text goes on slice-of-life.uk in Phase 5.</p></div></div>`;
+    default: return '';
+  }
+}
+function lineTotalHTML(doc, it) {
+  const g = (+it.qty || 0) * (+it.rate || 0);
+  const d = it.discType === '%' ? g * (+it.disc || 0) / 100 : Math.min(+it.disc || 0, g);
+  return `<div class="totals num"><div class="tr total" style="border:0;margin:0;padding-top:6px"><span>Line total</span><span class="num">${money(g - d, clientCcy(doc))}</span></div></div>`;
+}
+function paywallHTML(sh) {
+  const yearly = sh.plan === 'yearly';
+  const trialEnd = fdate(addDays(TODAY, 3));
+  const remind = fdate(addDays(TODAY, 2), {day:'numeric',month:'short'});
+  const why = { invoice_send:'Send this invoice', estimate_send:'Send this ' + docTitle({type:'estimate'}).toLowerCase(), invoice_export_pdf:'Save and print your PDFs', template_premium:'Unlock every template', onboarding_end:'Send invoices that get paid', settings_upgrade:'Send invoices that get paid' }[sh.placement] || 'Go Premium';
+  return `<div class="pw"><div class="body" style="padding:0">
+    <div class="pw-top">${sh.hard ? `<button class="pw-close" data-act="closeSheet" aria-label="Back to editing">${ic('back', 18, 2.4)}</button>` : `<button class="pw-close" data-act="closeSheet" aria-label="Close">${ic('x', 18, 2.4)}</button>`}
+      <h2>${esc(why)}</h2>
+      <p class="freeline"><b>Free:</b> create, edit and preview as many invoices as you like. <b>Premium:</b> send, print and save PDFs.</p>
+      <ul class="pw-list">${['Send by email, Messages or WhatsApp','No "Preview" mark on your PDFs','All 7 templates with your logo','Payment buttons and QR code on invoices'].map(x => `<li><span class="ck">${ic('check', 14, 3)}</span>${x}</li>`).join('')}</ul></div>
+    <div class="plans" role="radiogroup">
+      <button class="plan" role="radio" aria-checked="${yearly}" data-act="plan" data-arg="yearly"><span class="tag">Save 36%</span><span class="rad"></span><span><div class="pn">Yearly</div><div class="pd">${sh.trial ? `3 days free, then $99.99 a year` : '$99.99 a year'}</div></span><span class="pp num">$8.33<small>a month</small></span></button>
+      <button class="plan" role="radio" aria-checked="${!yearly}" data-act="plan" data-arg="monthly"><span class="rad"></span><span><div class="pn">Monthly</div><div class="pd">Billed monthly, cancel any time</div></span><span class="pp num">$12.99<small>a month</small></span></button>
+    </div>
+    ${yearly ? `<div class="trialrow"><span>Free trial</span>${sw(sh.trial, 'toggleTrial', '', 'Free trial')}</div>` : ''}
+    ${S.buyFails && sh.failed ? `<div class="banner err" style="margin:12px 22px 0">${ic('x', 20, 2.4)}<div>The payment didn't go through and you weren't charged. Check your payment method in the App Store and try again.</div></div>` : ''}
+    </div>
+    <div class="pw-bottom">
+      <button class="btn primary" data-act="buy">${yearly && sh.trial ? 'Start 3-day free trial' : 'Continue'}</button>
+      <div class="pw-terms">${yearly && sh.trial ? `Free until ${trialEnd}, then $99.99 a year. We'll remind you on ${remind}, the day before the trial ends. ` : yearly ? '$99.99 a year. ' : '$12.99 a month. '}Renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings &gt; [your name] &gt; Subscriptions.</div>
+      <div class="pw-links"><button data-act="restore">Restore</button><button data-act="legal" data-arg="terms">Terms</button><button data-act="legal" data-arg="privacy">Privacy</button></div>
+    </div></div>`;
+}
+
+/* ===================================================================
+   RENDER
+   =================================================================== */
+function tabbar() {
+  const t = [['docs','Invoices','doc'],['clients','Clients','people'],['items','Items','tag'],['settings','Settings','gear']];
+  return `<nav class="tabbar">${t.map(([k, l, i]) => `<button data-act="tab" data-arg="${k}" ${S.tab === k ? 'aria-current="page"' : ''}>${ic(i, 26, 1.7)}${l}</button>`).join('')}</nav>`;
+}
+function screenFor(top) {
+  if (!top) return null;
+  if (top.screen === 'doc') { const d = docById(top.id); return d ? scrEditor(d) : null; }
+  if (top.screen === 'preview') { const d = docById(top.id); return d ? scrPreview(d) : null; }
+  if (top.screen === 'client') return scrClient(clientById(top.id));
+  if (top.screen && top.screen.startsWith('set-')) return scrSet(top.screen);
+  return null;
+}
+function rootFor(tab) { return { docs:scrDocs, clients:scrClients, items:scrItems, settings:scrSettings }[tab](); }
+
+function phoneHTML() {
+  if (S.onb) return onbScreen();
+  const top = cur();
+  const scr = screenFor(top);
+  if (scr) return scr;
+  return `<div class="scr" style="padding-bottom:0">${rootFor(S.tab).replace(/^<div class="scr"[^>]*>/, '<div style="flex:1;display:flex;flex-direction:column;min-height:0">')}${tabbar()}</div>`;
+}
+function padHTML() {
+  if (S.onb) return onbScreen();
+  const top = cur();
+  const sideItems = [['docs:invoice','Invoices','doc'],['docs:estimate', docTitle({type:'estimate'}) + 's','estimate'],['docs:receipt','Receipts','receipt'],['clients','Clients','people'],['items','Items','tag'],['settings','Settings','gear']];
+  const count = k => k.startsWith('docs:') ? visibleDocs().filter(d => d.type === k.split(':')[1]).length : k === 'clients' ? visibleClients().length : k === 'items' ? visibleItems().length : '';
+  const side = `<div class="col side"><div class="nav" style="background:transparent"><div class="navrow"><span style="font-weight:800;font-family:var(--font-display);font-size:20px;letter-spacing:-.02em">Invoice Maker</span><button class="navbtn r" data-act="toggleSidebar" aria-label="Hide sidebar">${ic('sidebar', 22)}</button></div></div>
+    <div class="sidebar-items">${sideItems.map(([k, l, i]) => { const on = k.startsWith('docs:') ? (S.tab === 'docs' && S.docType === k.split(':')[1]) : S.tab === k; return `<button data-act="side" data-arg="${k}" ${on ? 'aria-current="page"' : ''}>${ic(i)}${l}<span class="count">${count(k)}</span></button>`; }).join('')}</div>
+    <div style="margin-top:auto;padding:16px;font-size:12px;color:var(--ink-3);line-height:1.6"><span class="kbd">⌘N</span> new invoice</div></div>`;
+  const editing = top && (top.screen === 'doc' || top.screen === 'preview');
+  let listCol = rootFor(S.tab);
+  listCol = `<div class="col list">${listCol.replace(/^<div class="scr"[^>]*>/, '<div style="position:absolute;inset:0;display:flex;flex-direction:column">')}</div>`;
+  let detail = screenFor(top && top.screen === 'preview' ? { ...top, screen:'doc' } : top) || placeholder(S.tab === 'docs' ? 'Choose an invoice, or press ⌘N to create one' : S.tab === 'clients' ? 'Choose a client' : S.tab === 'settings' ? 'Choose a setting' : 'Tap an item to edit it');
+  detail = `<div class="col detail">${detail.replace(/^<div class="scr"[^>]*>/, '<div style="position:absolute;inset:0;display:flex;flex-direction:column">')}</div>`;
+  const portrait = S.device === 'ipad-p';
+  // Browsing: sidebar + list + detail. Editing in landscape: list + editor + live PDF (sidebar tucks away; its button brings it back).
+  // Editing in portrait: editor + live PDF full width, with a back button.
+  let cols;
+  if (editing) cols = portrait ? detail : (S.ipadSidebar ? side + detail : listCol + detail);
+  else cols = (S.ipadSidebar ? side : '') + listCol + detail;
+  return `<div class="splitview">${cols}</div>`;
+}
+
+function captureScroll() {
+  const m = {};
+  document.querySelectorAll('[data-scroll-el]').forEach(el => m[el.dataset.scrollEl] = el.scrollTop);
+  return m;
+}
+function render() {
+  const sc = captureScroll();
+  const af = document.activeElement && document.activeElement.id;
+  const devCls = { iphone:'iphone', 'ipad-l':'ipad-l', 'ipad-p':'ipad-p' }[S.device];
+  const inner = S.device === 'iphone' ? phoneHTML() : padHTML();
+  const sheets = S.sheets.map(sheetHTML).join('');
+  $('#device').innerHTML = `<div class="device ${devCls} ${isPad() ? 'ipad' : ''}" id="dev"><div class="screen ${isPad() ? 'ipad' : ''}">
+      ${S.device === 'iphone' ? '<div class="island"></div>' : ''}
+      <div class="statusbar"><span>9:41</span><span class="sys">${S.offline ? `<span style="opacity:.3" aria-label="No connection">${ic('wifi', 17, 2.2)}</span>` : ic('wifi', 17, 2.2)}<svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="currentColor" opacity=".4"/><rect x="2" y="2" width="16" height="8" rx="1.6" fill="currentColor"/><rect x="22.5" y="4" width="1.6" height="4" rx=".8" fill="currentColor" opacity=".4"/></svg></span></div>
+      ${inner}${sheets}
+      ${S.toast ? `<div class="toast" role="status">${ic('check', 16, 2.6)}${esc(S.toast)}</div>` : ''}
+      <div class="homebar"></div></div></div>`;
+  document.querySelectorAll('[data-scroll-el]').forEach(el => { if (sc[el.dataset.scrollEl] != null) el.scrollTop = sc[el.dataset.scrollEl]; });
+  if (af) { const el = document.getElementById(af); if (el && el.matches('input,textarea')) { el.focus({ preventScroll:true }); try { const v = el.value; if (el.type !== 'date' && el.type !== 'email' && el.type !== 'number') el.setSelectionRange(v.length, v.length); } catch (e) {} } }
+  initSigPads();
+  renderRail();
+  fit();
+}
+function refreshLive() {
+  const top = cur();
+  let doc = top && docById(top.id);
+  if (S.onb === 'first') doc = S.onbData.doc;
+  document.querySelectorAll('[data-live]').forEach(el => {
+    const k = el.dataset.live;
+    if (!doc) return;
+    if (k === 'paper') el.innerHTML = paper(doc, { watermark: !S.pro || S.onb });
+    if (k === 'totals') el.innerHTML = totalsHTML(doc);
+    if (k === 'saved') { el.innerHTML = `${ic('check', 14, 2.6)} Saved`; el.animate([{ opacity:.3 }, { opacity:1 }], { duration:300 }); }
+    if (k === 'lineTotal') { const sh = S.sheets.find(s => s.type === 'line'); const it = sh && doc.items.find(i => i.id === sh.lineId); if (it) el.innerHTML = lineTotalHTML(doc, it); }
+  });
+  if (isPad()) {
+    // keep the list column's amounts current while typing
+    const listScroll = document.querySelector('.col.list .body');
+    const st = listScroll ? listScroll.scrollTop : 0;
+    const lc = document.querySelector('.col.list');
+    if (lc && S.tab === 'docs' && !lc.contains(document.activeElement)) { lc.innerHTML = rootFor(S.tab).replace(/^<div class="scr"[^>]*>/, '<div style="position:absolute;inset:0;display:flex;flex-direction:column">'); const nb = lc.querySelector('.body'); if (nb) nb.scrollTop = st; }
+  }
+}
+let toastTimer;
+function toast(msg) { S.toast = msg; render(); clearTimeout(toastTimer); toastTimer = setTimeout(() => { S.toast = null; render(); }, 2200); }
+
+/* ---------------- device scaling ---------------- */
+function fit() {
+  const dev = $('#dev'); if (!dev) return;
+  const stage = $('#stage');
+  const w = dev.offsetWidth, h = dev.offsetHeight;
+  const narrow = window.innerWidth <= 900;
+  const aw = stage.clientWidth - 8;
+  const ah = narrow ? Infinity : window.innerHeight - 70;
+  const s = Math.min(1, aw / w, ah / h);
+  dev.style.transform = `scale(${s})`;
+  $('#device').style.width = (w * s) + 'px';
+  $('#device').style.height = (h * s) + 'px';
+}
+window.addEventListener('resize', fit);
+
+/* ---------------- control rail ---------------- */
+function renderRail() {
+  const t = document.documentElement.dataset.theme || 'system';
+  const tg = (key, label) => `<div class="tog"><span>${label}</span>${sw(S[key], 'railToggle', key, label)}</div>`;
+  $('#rail').innerHTML = `
+    <h1>Invoice Maker</h1><p class="sub">Clickable mockup of every v1.0 screen. Everything works: type, tap, send. Nothing leaves this page.</p>
+    <h2>Device</h2><div class="seg" role="group" aria-label="Device">${[['iphone','iPhone'],['ipad-l','iPad ⟷'],['ipad-p','iPad ↕']].map(([k, l]) => `<button aria-pressed="${S.device === k}" data-act="device" data-arg="${k}">${l}</button>`).join('')}</div>
+    <h2>Appearance</h2><div class="seg" role="group" aria-label="Appearance">${[['system','System'],['light','Light'],['dark','Dark']].map(([k, l]) => `<button aria-pressed="${t === k}" data-act="theme" data-arg="${k}">${l}</button>`).join('')}</div>
+    <h2>Onboarding</h2><div class="jump"><button data-act="jump" data-arg="onb">First launch</button><button data-act="jump" data-arg="onbFirst">First invoice</button><button data-act="jump" data-arg="pwSoft">Soft paywall</button></div>
+    <h2>Main screens</h2><div class="jump">${[['home','Invoices'],['editor','Invoice editor'],['line','Line item'],['preview','Preview + templates'],['send','Send (gate)'],['share','Share sheet'],['estimate','Estimate'],['sign','Client signs quote'],['signInv','Client signs invoice'],['receipt','Receipt'],['clients','Clients'],['client','Client detail'],['items','Items'],['settings','Settings'],['taxes','Taxes'],['payments','Payment details'],['backup','Backup'],['help','Help']].map(([k, l]) => `<button data-act="jump" data-arg="${k}">${l}</button>`).join('')}</div>
+    <h2>States to test</h2>
+    ${tg('pro','Premium active')}${tg('signedIn','Signed in with Apple')}${tg('empty','New user (no data)')}${tg('icloudOff','iCloud backup off')}${tg('buyFails','Purchase fails')}${tg('offline','No connection')}
+    <div class="jump" style="margin-top:8px"><button data-act="resetAll">Reset demo</button></div>
+    <h2>Analytics events (Firebase)</h2>
+    <ul class="events">${S.events.length ? S.events.map(e => `<li><code>${esc(e.name)}</code><span>${esc(Object.values(e.params).join(' · '))}</span></li>`).join('') : '<li>Tap around to see events fire</li>'}</ul>
+    <p class="sub" style="margin-top:10px">Last paywall placement: <code>${esc(S.lastPlacement)}</code></p>
+    <h2>Keyboard (iPad)</h2><p class="sub"><span class="kbd">⌘/Ctrl N</span> new invoice · <span class="kbd">S</span> save · <span class="kbd">P</span> print</p>`;
+  $('#note').textContent = S.device === 'iphone' ? 'iPhone 17 Pro · 402 × 874 pt' : S.device === 'ipad-l' ? 'iPad Air 11-inch · landscape 1180 × 820 pt' : 'iPad Air 11-inch · portrait 820 × 1180 pt';
+}
+
+/* ===================================================================
+   ACTIONS
+   =================================================================== */
+const pushSheet = sh => { S.sheets.push(sh); render(); };
+const topSheet = () => S.sheets[S.sheets.length - 1];
+const closeSheet = () => { S.sheets.pop(); render(); };
+function nextNumber(type) { const b = D().biz; const n = b.next[type]++; return b.prefix[type] + String(n).padStart(4, '0'); }
+function newDocument(type, clientId = null, opts = {}) {
+  const b = D().biz;
+  const doc = { id:uid(), type, number: nextNumber(type), clientId, issue:TODAY, due: addDays(TODAY, type === 'estimate' ? 30 : type === 'receipt' ? 0 : b.dueDays), status: type === 'receipt' ? 'paid' : 'draft', paidOn: type === 'receipt' ? TODAY : null,
+    taxMode:'excl', taxWhere:'item', totalTaxIds:[], discount:{type:'%',value:0}, shipping:0, fees:[], notes:b.notes, template:b.template, color:b.brand, job:'', clientSig:null, signedName:'', sentAt:null, items:[], ...opts };
+  if (S.empty) { S.empty = false; D().docs = []; D().clients = D().clients.filter(c => c.id === clientId); }
+  D().docs.unshift(doc);
+  track(type + '_created', { type });
+  return doc;
+}
+function openDoc(id) {
+  const d = docById(id); if (!d) return;
+  S.tab = 'docs'; S.docType = d.type;
+  S.stack = [{ screen:'doc', id }];
+  if (isPad() && S.device === 'ipad-l') S.ipadSidebar = false;
+}
+function requireReady(doc) {
+  const e = {};
+  if (!doc.clientId) e.client = true;
+  if (!doc.items.length || !doc.items.some(i => +i.rate > 0 || i.desc)) e.items = true;
+  S.errors[doc.id] = e;
+  return !e.client && !e.items;
+}
+function openPaywall(placement, hard, then) {
+  S.lastPlacement = placement;
+  track('paywall_view', { placement });
+  pushSheet({ type:'paywall', placement, hard, plan:'yearly', trial:true, then });
+}
+function gate(placement, then) {
+  if (S.pro) return then();
+  openPaywall(placement, true, then);
+}
+function doSendFlow(doc) {
+  if (!requireReady(doc)) { render(); toast(!doc.clientId ? 'Add a client first' : 'Add an item first'); return; }
+  const placement = doc.type === 'estimate' ? 'estimate_send' : 'invoice_send';
+  gate(placement, () => {
+    if (!S.signedIn && !S.signinAsked) { S.signinAsked = true; pushSheet({ type:'signin', then: () => pushSheet({ type:'share', docId:doc.id }) }); return; }
+    pushSheet({ type:'share', docId:doc.id });
+  });
+}
+function curDoc() { const t = cur(); return t && docById(t.id); }
+
+const ACT = {
+  noop() {},
+  tab(k) { S.tab = k; S.stack = []; render(); },
+  side(k) { if (k.startsWith('docs:')) { S.tab = 'docs'; S.docType = k.split(':')[1]; S.filter = 'all'; } else S.tab = k; S.stack = []; render(); },
+  toggleSidebar() { S.ipadSidebar = !S.ipadSidebar; render(); },
+  docType(t) { S.docType = t; S.filter = 'all'; render(); },
+  filter(f) { S.filter = f; render(); },
+  back() { S.stack.pop(); render(); },
+  push(screen) { if (S.sheets.length) S.sheets = []; if (screen.startsWith('set-') && S.tab !== 'settings' && !isPad()) { S.stack.push({ screen }); } else { if (screen.startsWith('set-') && isPad()) { S.tab = 'settings'; S.stack = [{ screen }]; } else S.stack.push({ screen }); } render(); },
+  openDoc(id) { openDoc(id); render(); },
+  openClient(id) { S.tab = 'clients'; S.stack = [{ screen:'client', id }]; render(); },
+  newMenu() { pushSheet({ type:'newMenu' }); },
+  newDoc(type) { S.sheets = []; const d = newDocument(type || 'invoice'); openDoc(d.id); render(); if (!isPad()) setTimeout(() => ACT.pickClient(), 220); },
+  newDocFor(cid) { const d = newDocument('invoice', cid); openDoc(d.id); render(); },
+  newEstFor(cid) { const d = newDocument('estimate', cid); openDoc(d.id); render(); },
+  pickClient() { pushSheet({ type:'clientPick' }); },
+  setClient(id) { const d = curDoc(); d.clientId = id; if (S.errors[d.id]) S.errors[d.id].client = false; S.sheets = []; render(); },
+  contactPicker() { pushSheet({ type:'contacts' }); },
+  importContact(v) {
+    const [name, email, phone] = v.split('|');
+    if (S.empty) { S.empty = false; D().docs = []; D().clients = []; }
+    const c = { id:uid(), name, contact:'', email, phone, address:'', currency:D().biz.currency, taxId:'' };
+    D().clients.push(c);
+    const d = curDoc();
+    S.sheets = [];
+    if (d && S.tab === 'docs') { d.clientId = c.id; if (S.errors[d.id]) S.errors[d.id].client = false; render(); toast('Added ' + name + ' from Contacts'); }
+    else { S.tab = 'clients'; S.stack = isPad() ? [{ screen:'client', id:c.id }] : [{ screen:'client', id:c.id }]; render(); toast('Added from Contacts'); }
+  },
+  clientAdd() { pushSheet({ type:'clientAdd' }); },
+  newClient(from) { S.sheets = S.sheets.filter(s => s.type === 'clientPick'); pushSheet({ type:'newClient', from, data:{ currency:D().biz.currency } }); },
+  saveNewClient() {
+    const sh = topSheet(); const dd = sh.data;
+    if (!dd.name || !dd.name.trim()) { sh.err = true; render(); return; }
+    if (S.empty) { S.empty = false; D().docs = []; D().clients = []; }
+    const c = { id:uid(), name:dd.name.trim(), contact:'', email:dd.email || '', phone:dd.phone || '', address:dd.address || '', currency:dd.currency || D().biz.currency, taxId:'' };
+    D().clients.push(c);
+    const d = curDoc(); S.sheets = [];
+    if (d && S.tab === 'docs') d.clientId = c.id; else { S.tab = 'clients'; S.stack = [{ screen:'client', id:c.id }]; }
+    render(); toast('Client added');
+  },
+  delClient(id) { pushSheet({ type:'confirm', title:'Delete this client?', text:'Invoices already made for them stay as they are.', yes:'delClientYes', yesLabel:'Delete client', arg:id }); },
+  delClientYes(id) { D().clients = D().clients.filter(c => c.id !== id); S.sheets = []; S.stack = []; render(); toast('Client deleted'); },
+
+  addLine() {
+    const d = curDoc(); const t = D().biz.defaultTax;
+    const it = { id:uid(), desc:'', qty:1, rate:0, unit:'', disc:0, discType:'%', taxIds: t ? [t] : [], detail:'' };
+    d.items.push(it); if (S.errors[d.id]) S.errors[d.id].items = false;
+    pushSheet({ type:'line', docId:d.id, lineId:it.id, isNew:true, saveItem:false });
+    setTimeout(() => { const el = document.getElementById('line-desc'); el && el.focus(); }, 300);
+  },
+  editLine(id) { const d = curDoc(); pushSheet({ type:'line', docId:d.id, lineId:id, saveItem:false }); },
+  closeLine() {
+    const sh = topSheet(); const d = docById(sh.docId); const it = d.items.find(i => i.id === sh.lineId);
+    if (it && !it.desc && !(+it.rate)) d.items = d.items.filter(i => i !== it);
+    else if (it && sh.saveItem && it.desc) { D().items.push({ id:uid(), desc:it.desc, unit:it.unit || 'item', rate:+it.rate || 0, tax:(it.taxIds || [])[0] || '' }); S.toastNext = 'Saved to your items'; }
+    S.sheets.pop(); render();
+    if (S.toastNext) { const m = S.toastNext; S.toastNext = null; toast(m); }
+  },
+  delLine() { const sh = topSheet(); const d = docById(sh.docId); d.items = d.items.filter(i => i.id !== sh.lineId); S.sheets.pop(); render(); toast('Item deleted'); },
+  lineDiscType(t) { const sh = topSheet(); const it = docById(sh.docId).items.find(i => i.id === sh.lineId); it.discType = t; render(); },
+  lineTax(id) { const sh = topSheet(); const it = docById(sh.docId).items.find(i => i.id === sh.lineId); if (!id) it.taxIds = []; else it.taxIds = it.taxIds.includes(id) ? it.taxIds.filter(x => x !== id) : [...it.taxIds, id]; render(); },
+  toggleSaveItem() { const sh = topSheet(); sh.saveItem = !sh.saveItem; render(); },
+  pickSaved() { pushSheet({ type:'saved' }); },
+  useSaved(id) { const s = D().items.find(i => i.id === id); const d = curDoc(); d.items.push({ id:uid(), desc:s.desc, qty:1, rate:s.rate, unit:s.unit, disc:0, discType:'%', taxIds: s.tax ? [s.tax] : [], detail:'' }); if (S.errors[d.id]) S.errors[d.id].items = false; S.sheets = []; render(); toast('Added ' + s.desc); },
+  taxMode(m) { curDoc().taxMode = m; render(); },
+  taxWhere(m) { const d = curDoc(); d.taxWhere = m; if (m === 'total' && !d.totalTaxIds.length && D().biz.defaultTax) d.totalTaxIds = [D().biz.defaultTax]; render(); },
+  toggleTotalTax(id) { const d = curDoc(); d.totalTaxIds = d.totalTaxIds.includes(id) ? d.totalTaxIds.filter(x => x !== id) : [...d.totalTaxIds, id]; render(); },
+  discType(t) { curDoc().discount.type = t; render(); },
+  addFee() { curDoc().fees.push({ name:'', amount:0 }); render(); const i = curDoc().fees.length - 1; setTimeout(() => document.getElementById('f-feename-' + i)?.focus(), 30); },
+  rmFee(i) { curDoc().fees.splice(+i, 1); render(); },
+  preview() { const d = curDoc(); if (isPad()) return; S.stack.push({ screen:'preview', id:d.id }); render(); },
+  tpl(id) {
+    const d = curDoc(); const t = TEMPLATES.find(x => x.id === id);
+    if (t.premium && !S.pro) { const prev = d.template; d.template = id; S.lastPlacement = 'template_premium'; track('paywall_view', { placement:'template_premium' }); pushSheet({ type:'paywall', placement:'template_premium', hard:false, plan:'yearly', trial:true, revert: () => { d.template = prev; } }); return; }
+    d.template = id; render();
+  },
+  color(c) { curDoc().color = c; render(); },
+  docMore() { pushSheet({ type:'docMore', docId:curDoc().id }); },
+  send() { const d = curDoc(); doSendFlow(d); },
+  shareVia(how) {
+    const sh = topSheet(); const d = docById(sh.docId);
+    if (how === 'Print') { S.sheets.pop(); pushSheet({ type:'print', docId:d.id }); return; }
+    if (how === 'Files' || how === 'Copy') { track('pdf_exported', { via:how }); S.sheets = []; render(); toast(how === 'Files' ? `Saved ${d.number}.pdf to Files` : 'PDF copied'); return; }
+    if (d.status === 'draft') { d.status = d.type === 'receipt' ? 'paid' : 'sent'; }
+    d.sentAt = TODAY;
+    track(d.type === 'estimate' ? 'estimate_sent' : 'invoice_sent', { via:how });
+    S.sheets = []; render(); toast(S.offline ? `${d.number} waiting in ${how}: sends when you have signal` : `${d.number} sent by ${how}`);
+  },
+  doPrint() { track('pdf_exported', { via:'Print' }); S.sheets = []; render(); toast('Sent to HP OfficeJet'); },
+  savePdf() { const d = curDoc(); S.sheets = []; gate('invoice_export_pdf', () => { track('pdf_exported', { via:'Files' }); render(); toast(`Saved ${d.number}.pdf to Files`); }); render(); },
+  printDoc() { const d = curDoc(); S.sheets = []; render(); gate('invoice_export_pdf', () => pushSheet({ type:'print', docId:d.id })); },
+  markPaid() { const d = curDoc(); d.status = 'paid'; d.paidOn = TODAY; S.sheets = []; render(); toast(d.number + ' marked as paid'); },
+  markUnpaid() { const d = curDoc(); d.status = d.sentAt ? 'sent' : 'draft'; d.paidOn = null; S.sheets = []; render(); toast('Marked as unpaid'); },
+  makeReceipt() {
+    const inv = curDoc(); S.sheets = [];
+    const r = newDocument('receipt', inv.clientId, { items: clone(inv.items).map(i => ({ ...i, id:uid() })), taxMode:inv.taxMode, taxWhere:inv.taxWhere, totalTaxIds:[...inv.totalTaxIds], discount:{ ...inv.discount }, shipping:inv.shipping, fees:clone(inv.fees), paidOn: inv.paidOn || TODAY, notes:`Payment received for ${inv.number}. Thank you.`, template:inv.template, color:inv.color });
+    openDoc(r.id); render(); toast('Receipt ' + r.number + ' ready to send');
+  },
+  duplicate() {
+    const d = curDoc(); S.sheets = [];
+    const copy = newDocument(d.type, d.clientId, { items: clone(d.items).map(i => ({ ...i, id:uid() })), taxMode:d.taxMode, taxWhere:d.taxWhere, totalTaxIds:[...d.totalTaxIds], discount:{ ...d.discount }, shipping:d.shipping, fees:clone(d.fees), notes:d.notes, template:d.template, color:d.color, job:d.job });
+    openDoc(copy.id); render(); toast(`Duplicated as ${copy.number}`);
+  },
+  convert() {
+    const e = curDoc(); S.sheets = [];
+    e.status = 'converted';
+    const inv = newDocument('invoice', e.clientId, { items: clone(e.items).map(i => ({ ...i, id:uid() })), taxMode:e.taxMode, taxWhere:e.taxWhere, totalTaxIds:[...e.totalTaxIds], discount:{ ...e.discount }, shipping:e.shipping, fees:clone(e.fees), job:e.job, template:e.template, color:e.color, fromEstimate:e.number });
+    openDoc(inv.id); render(); toast(`${e.number} is now invoice ${inv.number}`);
+  },
+  clientSign() { const d = curDoc(); S.sheets = []; pushSheet({ type:'clientSign', docId:d.id }); },
+  acceptSign() {
+    const sh = topSheet(); const d = docById(sh.docId);
+    const cv = document.querySelector('canvas[data-sig="client"]');
+    if (!cv || !cv._drawn) { sh.err = true; render(); return; }
+    d.clientSig = cv.toDataURL('image/png'); d.signedName = sh.name || clientById(d.clientId)?.contact || clientById(d.clientId)?.name || ''; d.signedOn = TODAY;
+    if (d.type === 'estimate') d.status = 'accepted';
+    S.sheets = []; render(); toast(d.type === 'estimate' ? 'Accepted and signed' : 'Signed by ' + d.signedName);
+  },
+  askDelete() { const d = curDoc(); S.sheets = []; pushSheet({ type:'confirm', title:`Delete ${d.number}?`, text:'This removes it from this iPhone and from iCloud. You can\'t undo this.', yes:'deleteDoc', yesLabel:'Delete', arg:d.id }); },
+  deleteDoc(id) { D().docs = D().docs.filter(x => x.id !== id); S.sheets = []; S.stack = []; S.ipadSidebar = true; render(); toast('Deleted'); },
+
+  /* paywall */
+  plan(p) { topSheet().plan = p; render(); },
+  toggleTrial() { const s = topSheet(); s.trial = !s.trial; render(); },
+  buy() {
+    const s = topSheet();
+    if (S.offline) { toast('No connection. Try again when you\'re online.'); return; }
+    pushSheet({ type:'buying', plan:s.plan, trial:s.plan === 'yearly' && s.trial });
+  },
+  confirmBuy() {
+    const b = topSheet(); S.sheets.pop();
+    const pw = topSheet();
+    if (S.buyFails) { pw.failed = true; render(); return; }
+    S.pro = true; S.trial = b.trial;
+    track(b.trial ? 'trial_start' : 'purchase', { plan:b.plan });
+    const then = pw && pw.then; S.sheets.pop();
+    if (pw && pw.placement === 'onboarding_end') { S.onb = null; S.stack = []; S.tab = 'docs'; }
+    render(); toast(b.trial ? 'Premium trial started' : 'Premium is on');
+    if (then) setTimeout(then, 350);
+    if (!S.signedIn && !then) setTimeout(() => pushSheet({ type:'signin' }), 600);
+  },
+  restore() { if (S.sheets.length && topSheet().type === 'paywall') S.sheets.pop(); render(); toast(S.pro ? 'Premium restored' : 'No purchases to restore on this Apple ID'); },
+  closeSheet() {
+    const s = topSheet();
+    if (s && s.type === 'paywall' && s.revert) s.revert();
+    if (s && s.type === 'signin' && s.then) { S.sheets.pop(); s.then(); return; }
+    S.sheets.pop();
+    if (s && s.type === 'paywall' && s.placement === 'onboarding_end') { S.onb = null; S.stack = []; S.tab = 'docs'; }
+    render();
+  },
+  signin(from) { pushSheet({ type:'signin' }); },
+  doSignin() {
+    const s = topSheet();
+    if (S.offline) { s.error = true; render(); return; }
+    S.signedIn = true; S.sheets.pop(); track('login', { method:'apple' }); render(); toast('Signed in with Apple');
+    if (s.then) setTimeout(s.then, 300);
+  },
+  skipSignin() { const s = topSheet(); S.sheets.pop(); render(); if (s.then) setTimeout(s.then, 200); },
+  paywall(placement) { openPaywall(placement, false); },
+
+  /* settings */
+  toggleAnalytics() { S.analytics = !S.analytics; render(); },
+  legal(which) { pushSheet({ type:'legal', which }); },
+  toggleBiz(k) { D().biz[k] = !D().biz[k]; render(); },
+  toggleQR() { D().biz.pay.qr = !D().biz.pay.qr; render(); },
+  defTax(id) { D().biz.defaultTax = id; render(); },
+  rmTax(id) { D().taxes = D().taxes.filter(t => t.id !== id); if (D().biz.defaultTax === id) D().biz.defaultTax = D().taxes[0]?.id || ''; render(); },
+  addTax() { const id = uid(); D().taxes.push({ id, name:'Tax', rate:0 }); render(); setTimeout(() => document.getElementById('f-tn-' + id)?.select(), 30); },
+  resetTax() { applyPreset(D().biz.country); render(); toast('Presets restored'); },
+  bizTpl(id) { const t = TEMPLATES.find(x => x.id === id); if (t.premium && !S.pro) { openPaywall('template_premium', false); return; } D().biz.template = id; render(); },
+  bizColor(c) { D().biz.brand = c; render(); },
+  ccyDisp(k) { D().biz.currencyDisplay = k; render(); },
+  fixIcloud() { S.icloudOff = false; render(); toast('iCloud backup is on'); },
+  exportAll() { pushSheet({ type:'export' }); },
+  exportGo(k) { S.sheets = []; render(); toast(k === 'zip' ? 'Invoices.zip saved to Files' : 'InvoiceMaker-data.csv saved to Files'); },
+  manageSub() { pushSheet({ type:'manage' }); },
+  cancelSub() { S.sheets = []; track('cancel', {}); S.pro = false; render(); toast('Cancelled. Your invoices stay yours.'); },
+  delAccount() { pushSheet({ type:'confirm', title:'Delete your account?', text:'This removes your sign-in from our servers. Your invoices stay on this iPhone and in your iCloud until you delete them. It does not cancel your subscription; do that in Settings > Subscriptions.', yes:'delAccountYes', yesLabel:'Delete account' }); },
+  delAccountYes() { S.signedIn = false; S.sheets = []; render(); toast('Account deleted'); },
+  copyEmail() { const t = 'slice.of.life.ltd@gmail.com'; navigator.clipboard?.writeText(t).then(() => toast('Email copied'), () => toast(t)); },
+  sendReport() { const m = document.getElementById('rp-msg'); if (!m.value.trim()) { m.focus(); m.style.borderColor = 'var(--due)'; return; } S.stack.pop(); render(); toast('Sent. We reply within 24 hours.'); },
+  sigClear(which) { const cv = document.querySelector(`canvas[data-sig="${which}"]`); if (cv) { cv.getContext('2d').clearRect(0, 0, cv.width, cv.height); cv._drawn = false; } },
+  sigSave() { const cv = document.querySelector('canvas[data-sig="biz"]'); if (!cv._drawn) { toast('Draw your signature first'); return; } D().biz.signature = cv.toDataURL('image/png'); S.stack.pop(); render(); toast('Signature saved'); },
+  pickLogo(from) { const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*,.heic,.heif'; inp.onchange = () => { const f = inp.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { D().biz.logo = r.result; render(); toast('Logo added'); }; r.onerror = () => toast('That file couldn\'t be read. Try a JPEG or PNG.'); r.readAsDataURL(f); }; inp.click(); },
+  newItem() { pushSheet({ type:'item', isNew:true, item:{ id:uid(), desc:'', unit:'hour', rate:'', tax:D().biz.defaultTax } }); },
+  editItem(id) { const i = D().items.find(x => x.id === id); pushSheet({ type:'item', isNew:false, item:i }); },
+  itemTax(id) { topSheet().item.tax = id; render(); },
+  saveItem() { const s = topSheet(); if (!s.item.desc.trim()) { document.getElementById('it-desc')?.focus(); return; } s.item.rate = +s.item.rate || 0; if (s.isNew) { if (S.empty) { S.empty = false; D().items = []; } D().items.push(s.item); } S.sheets.pop(); render(); toast(s.isNew ? 'Item added' : 'Item saved'); },
+  delItem() { const s = topSheet(); D().items = D().items.filter(i => i.id !== s.item.id); S.sheets.pop(); render(); toast('Item deleted'); },
+
+  /* onboarding */
+  consent(v) { S.analytics = v === 'yes'; track('onboarding_step', { step:'consent' }); S.onb = 'welcome'; render(); },
+  onbNext(step, el) {
+    if (S.onb === 'role' && !S.onbData.role) return;
+    if (step === 'first') {
+      const o = S.onbData;
+      if (o.name) D().biz.name = o.name;
+      if (o.country && o.country !== D().biz.country) { D().biz.country = o.country; applyPreset(o.country); }
+      o.client = o.client || (o.role === 'shop' ? 'Corner Deli' : 'Ruth Adeyemi');
+      o.doc = sampleDoc(o.role || 'other', D().biz.name, o.client);
+    }
+    track('onboarding_step', { step });
+    S.onb = step; render();
+  },
+  onbBack(step) { S.onb = step; render(); },
+  onbRole(r) { S.onbData.role = r; render(); },
+  onbFinish() {
+    const o = S.onbData;
+    if (S.empty) { S.empty = false; D().docs = []; D().clients = []; }
+    let c = D().clients.find(x => x.name === o.client);
+    if (!c) { c = { id:uid(), name:o.client, contact:'', email:'', phone:'', address:'', currency:D().biz.currency, taxId:'' }; D().clients.push(c); }
+    const d = { ...o.doc, id:uid(), clientId:c.id, number: nextNumber('invoice') };
+    delete d._client;
+    D().docs.unshift(d);
+    track('invoice_created', { source:'onboarding' }); track('onboarding_complete', { role:o.role });
+    S.tab = 'docs'; S.docType = 'invoice'; S.stack = [{ screen:'doc', id:d.id }];
+    openPaywall('onboarding_end', false);
+    S.sheets[S.sheets.length - 1].afterOnb = true;
+  },
+
+  /* rail */
+  device(k) { S.device = k; S.sheets = S.sheets.filter(s => s.type !== 'share'); if (k !== 'ipad-l') S.ipadSidebar = true; render(); },
+  theme(k) { if (k === 'system') delete document.documentElement.dataset.theme; else document.documentElement.dataset.theme = k; render(); },
+  railToggle(k) { S[k] = !S[k]; if (k === 'empty') { S.stack = []; S.sheets = []; } render(); },
+  resetAll() { const dev = S.device; Object.assign(S, { data:seed(), pro:false, signedIn:false, empty:false, icloudOff:false, buyFails:false, offline:false, onb:null, onbData:{}, tab:'docs', docType:'invoice', filter:'all', q:'', cq:'', stack:[], sheets:[], events:[], signinAsked:false, ipadSidebar:true, errors:{} }); S.device = dev; render(); toast('Demo reset'); },
+  jump(k) {
+    S.sheets = []; S.onb = null; S.ipadSidebar = true;
+    const inv = D().docs.find(d => d.type === 'invoice' && d.status === 'draft') || D().docs.find(d => d.type === 'invoice');
+    const est = D().docs.find(d => d.type === 'estimate' && d.status === 'sent') || D().docs.find(d => d.type === 'estimate');
+    const rec = D().docs.find(d => d.type === 'receipt');
+    switch (k) {
+      case 'onb': S.onbData = {}; S.onb = S.analytics === null || true ? 'consent' : 'welcome'; break;
+      case 'onbFirst': S.onbData = { role:'contractor', name:D().biz.name }; ACT.onbNext('first'); return;
+      case 'pwSoft': S.stack = []; S.tab = 'docs'; render(); openPaywall('onboarding_end', false); return;
+      case 'home': S.tab = 'docs'; S.docType = 'invoice'; S.stack = []; break;
+      case 'editor': openDoc(inv.id); break;
+      case 'line': openDoc(inv.id); render(); ACT.editLine(inv.items[0].id); return;
+      case 'preview': openDoc(inv.id); if (!isPad()) S.stack.push({ screen:'preview', id:inv.id }); break;
+      case 'send': openDoc(inv.id); render(); ACT.send(); return;
+      case 'share': openDoc(inv.id); render(); pushSheet({ type:'share', docId:inv.id }); return;
+      case 'estimate': openDoc(est.id); break;
+      case 'sign': openDoc(est.id); render(); pushSheet({ type:'clientSign', docId:est.id }); return;
+      case 'signInv': openDoc(inv.id); render(); pushSheet({ type:'clientSign', docId:inv.id }); return;
+      case 'receipt': openDoc(rec.id); break;
+      case 'clients': S.tab = 'clients'; S.stack = []; break;
+      case 'client': S.tab = 'clients'; S.stack = [{ screen:'client', id:D().clients[0].id }]; break;
+      case 'items': S.tab = 'items'; S.stack = []; break;
+      case 'settings': S.tab = 'settings'; S.stack = []; break;
+      case 'taxes': S.tab = 'settings'; S.stack = [{ screen:'set-tax' }]; break;
+      case 'payments': S.tab = 'settings'; S.stack = [{ screen:'set-pay' }]; break;
+      case 'backup': S.tab = 'settings'; S.stack = [{ screen:'set-backup' }]; break;
+      case 'help': S.tab = 'settings'; S.stack = [{ screen:'set-help' }]; break;
+    }
+    render();
+  }
+};
+function applyPreset(country) {
+  const p = PRESETS[country];
+  D().taxes = p.taxes.map(([name, rate]) => ({ id: (name + rate).toLowerCase().replace(/[^a-z0-9]/g, ''), name, rate }));
+  D().biz.defaultTax = D().taxes[0].id;
+  D().biz.currency = p.currency;
+}
+
+/* ---------------- event wiring ---------------- */
+document.addEventListener('click', e => {
+  const t = e.target.closest('[data-act]');
+  if (!t) return;
+  if (t.tagName === 'DIV' && t.classList.contains('dim') && e.target !== t) return;
+  e.preventDefault();
+  const fn = ACT[t.dataset.act];
+  if (fn) fn(t.dataset.arg, t, e);
+});
+document.addEventListener('input', e => {
+  const el = e.target; const b = el.dataset && el.dataset.in; if (!b) return;
+  const v = el.value;
+  const [kind, a, c] = b.split(':');
+  const num = x => x === '' ? '' : (isNaN(+x) ? x : +x);
+  const d = curDoc();
+  let full = false;
+  switch (kind) {
+    case 'ui': S[a] = v; full = true; break;
+    case 'doc':
+      if (a === 'discount.value') d.discount.value = num(v);
+      else if (a === 'shipping') d.shipping = num(v);
+      else d[a] = v;
+      break;
+    case 'fee': d.fees[+a][c] = c === 'amount' ? num(v) : v; break;
+    case 'line': { const sh = topSheet(); const it = docById(sh.docId).items.find(i => i.id === a); it[c] = ['qty','rate','disc'].includes(c) ? num(v) : v; break; }
+    case 'client': { const cl = clientById(a); cl[c] = v; if (c === 'currency') full = true; break; }
+    case 'biz': D().biz[a] = a === 'dueDays' ? (+v || 0) : v; if (a === 'country') { applyPreset(v); full = true; } if (a === 'currency' || a === 'defaultTax') full = true; break;
+    case 'pay': D().biz.pay[a] = v; break;
+    case 'prefix': D().biz.prefix[a] = v; break;
+    case 'next': D().biz.next[a] = Math.max(1, +v || 1); break;
+    case 'tax': { const t = taxById(a); t[c] = c === 'rate' ? (+v || 0) : v; break; }
+    case 'nc': topSheet().data[a] = v; break;
+    case 'item': topSheet().item[a] = v; break;
+    case 'cs': topSheet().name = v; break;
+    case 'onb': {
+      const o = S.onbData;
+      if (a === 'name') o.name = v;
+      if (a === 'country') o.country = v;
+      if (a === 'client') o.client = v;
+      if (a === 'item' && o.doc) o.doc.items[0].desc = v;
+      if (a === 'price' && o.doc) o.doc.items[0].rate = num(v);
+      break;
+    }
+  }
+  if (kind === 'onb' && S.onb === 'first') {
+    // the sample client is not a stored client; show the typed name on the preview
+    const fake = { id:'__sample', name:S.onbData.client, address:'', currency:D().biz.currency };
+    const real = D().clients; D().clients = [...real, fake]; refreshLive(); D().clients = real; return;
+  }
+  if (full) { if (kind === 'ui') { render(); } else render(); }
+  else refreshLive();
+});
+document.addEventListener('change', e => { const el = e.target; if (el.dataset && el.dataset.in && (el.tagName === 'SELECT' || el.type === 'date')) render(); });
+document.addEventListener('keydown', e => {
+  if (!(e.metaKey || e.ctrlKey)) return;
+  const k = e.key.toLowerCase();
+  if (k === 'n') { e.preventDefault(); ACT.newDoc('invoice'); }
+  if (k === 's') { e.preventDefault(); if (curDoc()) toast('Saved'); }
+  if (k === 'p') { e.preventDefault(); if (curDoc()) ACT.printDoc(); }
+});
+
+/* signature pads */
+function initSigPads() {
+  document.querySelectorAll('canvas[data-sig]').forEach(cv => {
+    if (cv._init) return; cv._init = true;
+    const ctx = cv.getContext('2d'); ctx.lineWidth = 9; ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.strokeStyle = '#1b2b4a';
+    let drawing = false, last = null;
+    const pt = ev => { const r = cv.getBoundingClientRect(); return { x:(ev.clientX - r.left) * cv.width / r.width, y:(ev.clientY - r.top) * cv.height / r.height }; };
+    cv.addEventListener('pointerdown', ev => { drawing = true; last = pt(ev); cv.setPointerCapture(ev.pointerId); });
+    cv.addEventListener('pointermove', ev => { if (!drawing) return; const p = pt(ev); ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke(); last = p; cv._drawn = true; });
+    const end = () => { drawing = false; };
+    cv.addEventListener('pointerup', end); cv.addEventListener('pointercancel', end);
+  });
+}
+
+/* boot: first launch for a UK user starts at the analytics choice */
+S.onb = 'consent';
+render();
+</script>
+
+</body>
+</html>
