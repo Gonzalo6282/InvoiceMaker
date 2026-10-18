@@ -10,10 +10,14 @@ public enum CSVWriter {
 
     static func field(_ raw: String) -> String {
         var value = raw
-        if let first = value.first, "=+-@\t\r".contains(first), !isPlainNumber(value) {
+        if let first = value.unicodeScalars.first, "=+-@\t\r".unicodeScalars.contains(first), !isPlainNumber(value) {
             value = "'" + value
         }
-        let needsQuotes = value.contains { ",\"\r\n".contains($0) } || value.first == " " || value.last == " "
+        // Check scalars, not Characters: in Swift "\r\n" is one Character, so a
+        // Character check would miss a lone "\n".
+        let special: Set<Unicode.Scalar> = [",", "\"", "\r", "\n"]
+        let needsQuotes =
+            value.unicodeScalars.contains(where: special.contains) || value.first == " " || value.last == " "
         return needsQuotes ? "\"" + value.replacingOccurrences(of: "\"", with: "\"\"") + "\"" : value
     }
 

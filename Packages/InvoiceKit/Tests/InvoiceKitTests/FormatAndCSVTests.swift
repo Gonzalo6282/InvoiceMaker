@@ -45,6 +45,8 @@ struct CSVTests {
         ("Smith, Jones & Co", "\"Smith, Jones & Co\""),
         ("6\" pipe", "\"6\"\" pipe\""),
         ("Unit 4\nMill Yard", "\"Unit 4\nMill Yard\""),
+        ("Unit 4\r\nMill Yard", "\"Unit 4\r\nMill Yard\""),
+        ("\r\nx", "\"'\r\nx\""),
         (" padded ", "\" padded \""),
         ("", ""),
         ("Café Ostara", "Café Ostara"),
