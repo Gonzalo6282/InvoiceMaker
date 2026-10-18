@@ -53,8 +53,8 @@ private struct PaymentFields: View {
             GroupedSection(header: "QR code") {
                 Toggle(isOn: $payment.showsQRCode) {
                     VStack(alignment: .leading, spacing: 2) {
-                        Text("Show a QR code").font(.system(size: 16))
-                        Text("Opens your payment link when scanned").font(.system(size: 13)).foregroundStyle(Color.ink2)
+                        Text("Show a QR code").font(.callout)
+                        Text("Opens your payment link when scanned").font(.footnote).foregroundStyle(Color.ink2)
                     }
                 }
                 .padding(.horizontal, 14).padding(.vertical, 10)

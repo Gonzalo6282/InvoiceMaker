@@ -43,20 +43,20 @@ struct NativePaywallView: View {
             HStack {
                 Spacer()
                 Button { dismiss() } label: {
-                    Image(systemName: "xmark").font(.system(size: 15, weight: .bold)).foregroundStyle(.white.opacity(0.8))
+                    Image(systemName: "xmark").font(.subheadline.weight(.bold)).foregroundStyle(.white.opacity(0.8))
                         .frame(width: 32, height: 32).background(.white.opacity(0.12), in: Circle())
                 }
                 .accessibilityLabel("Close")
             }
             Text(placement.headline).textStyle(.paywallHeadline).foregroundStyle(.white)
             Text("**Free:** create, edit and preview as many invoices as you like. **Premium:** send, print and save PDFs.")
-                .font(.system(size: 15)).foregroundStyle(.white.opacity(0.8))
+                .font(.subheadline).foregroundStyle(.white.opacity(0.8))
             VStack(alignment: .leading, spacing: 10) {
                 ForEach(benefits, id: \.self) { text in
                     HStack(spacing: 10) {
                         Image(systemName: "checkmark").font(.system(size: 11, weight: .heavy)).foregroundStyle(Color.paidInk)
                             .frame(width: 20, height: 20).background(Color.paid, in: Circle())
-                        Text(text).font(.system(size: 15)).foregroundStyle(.white)
+                        Text(text).font(.subheadline).foregroundStyle(.white)
                     }
                 }
             }
@@ -89,15 +89,15 @@ struct NativePaywallView: View {
     private func planRow(_ plan: PurchaseManager.Plan) -> some View {
         let on = plan.id == selected?.id
         return HStack(spacing: 12) {
-            Image(systemName: on ? "largecircle.fill.circle" : "circle").font(.system(size: 22)).foregroundStyle(on ? Color.brand : Color.ink3)
+            Image(systemName: on ? "largecircle.fill.circle" : "circle").font(.title2).foregroundStyle(on ? Color.brand : Color.ink3)
             VStack(alignment: .leading, spacing: 2) {
-                Text(plan.isYearly ? "Yearly" : "Monthly").font(.system(size: 17, weight: .bold)).foregroundStyle(Color.ink)
-                Text(detail(plan)).font(.system(size: 13)).foregroundStyle(Color.ink2)
+                Text(plan.isYearly ? "Yearly" : "Monthly").font(.body.weight(.bold)).foregroundStyle(Color.ink)
+                Text(detail(plan)).font(.footnote).foregroundStyle(Color.ink2)
             }
             Spacer()
             VStack(alignment: .trailing, spacing: 0) {
-                Text(plan.monthlyPrice ?? plan.price).font(.system(size: 17, weight: .heavy)).monospacedDigit().foregroundStyle(Color.ink)
-                Text("a month").font(.system(size: 12)).foregroundStyle(Color.ink2)
+                Text(plan.monthlyPrice ?? plan.price).font(.body.weight(.heavy)).monospacedDigit().foregroundStyle(Color.ink)
+                Text("a month").font(.caption).foregroundStyle(Color.ink2)
             }
         }
         .padding(16)
@@ -121,13 +121,13 @@ struct NativePaywallView: View {
             .buttonStyle(.primary)
             .disabled(busy || selected == nil)
             .accessibilityIdentifier("paywallBuy")
-            Text(terms).font(.system(size: 11.5)).foregroundStyle(Color.ink2).multilineTextAlignment(.center)
+            Text(terms).font(.caption2).foregroundStyle(Color.ink2).multilineTextAlignment(.center)
             HStack(spacing: 22) {
                 Button("Restore", action: restore)
                 Button("Terms") { openURL(AppLinks.terms) }
                 Button("Privacy") { openURL(AppLinks.privacy) }
             }
-            .font(.system(size: 13, weight: .semibold))
+            .font(.footnote.weight(.semibold))
             .foregroundStyle(Color.brand)
         }
         .padding(.horizontal, 22).padding(.top, 12).padding(.bottom, 10)

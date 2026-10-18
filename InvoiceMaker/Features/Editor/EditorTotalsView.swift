@@ -19,7 +19,7 @@ struct EditorTotalsView: View {
             if totals.fees != 0 { line(String(localized: "Fees"), totals.fees) }
             Rectangle().fill(Color.line).frame(height: 1).padding(.top, 6)
             HStack(alignment: .firstTextBaseline) {
-                Text("Total").font(.system(size: 17, weight: .bold)).foregroundStyle(Color.ink)
+                Text("Total").font(.body.weight(.bold)).foregroundStyle(Color.ink)
                 Spacer()
                 Text(business.money(totals.total, currency: document.currencyCode))
                     .textStyle(.total)
@@ -42,7 +42,7 @@ struct EditorTotalsView: View {
             Spacer()
             Text(business.money(amount, currency: document.currencyCode)).monospacedDigit()
         }
-        .font(.system(size: 15))
+        .font(.subheadline)
         .foregroundStyle(Color.ink2)
         .padding(.vertical, 5)
     }

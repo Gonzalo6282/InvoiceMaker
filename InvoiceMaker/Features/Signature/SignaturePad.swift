@@ -60,7 +60,7 @@ struct SignatureSheet: View {
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 16) {
-                Text(explanation).foregroundStyle(Color.ink2).font(.system(size: 15))
+                Text(explanation).foregroundStyle(Color.ink2).font(.subheadline)
                 if case .client = purpose {
                     TextField("Client's full name", text: $name)
                         .textContentType(.name)

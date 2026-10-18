@@ -59,8 +59,8 @@ struct OnboardingView: View {
                     HStack(spacing: 14) {
                         IconChip(systemName: r.icon, size: 44)
                         VStack(alignment: .leading, spacing: 2) {
-                            Text(r.title).font(.system(size: 17, weight: .semibold)).foregroundStyle(Color.ink)
-                            Text(r.detail).font(.system(size: 14)).foregroundStyle(Color.ink2)
+                            Text(r.title).font(.body.weight(.semibold)).foregroundStyle(Color.ink)
+                            Text(r.detail).font(.subheadline).foregroundStyle(Color.ink2)
                         }
                         Spacer()
                     }
@@ -91,13 +91,13 @@ struct OnboardingView: View {
                         if let logoData, let image = UIImage(data: logoData) {
                             Image(uiImage: image).resizable().scaledToFit().padding(4).background(.white)
                         } else {
-                            Image(systemName: "photo").font(.system(size: 24)).foregroundStyle(Color.brand)
+                            Image(systemName: "photo").font(.title2).foregroundStyle(Color.brand)
                         }
                     }
                     .frame(width: 56, height: 56).background(Color.brandWash, in: RoundedRectangle(cornerRadius: 12))
                     VStack(alignment: .leading) {
-                        Text(logoData == nil ? "Add your logo" : "Logo added").font(.system(size: 16, weight: .semibold)).foregroundStyle(Color.ink)
-                        Text("Optional. From Photos.").font(.system(size: 13)).foregroundStyle(Color.ink2)
+                        Text(logoData == nil ? "Add your logo" : "Logo added").font(.callout.weight(.semibold)).foregroundStyle(Color.ink)
+                        Text("Optional. From Photos.").font(.footnote).foregroundStyle(Color.ink2)
                     }
                     Spacer()
                 }
@@ -111,7 +111,7 @@ struct OnboardingView: View {
                 Task { logoData = (try? await logoItem.loadTransferable(type: Data.self)).flatMap { LogoImage.prepare($0) } }
             }
         case .first:
-            Text("Here's your first invoice").font(.system(size: 28, weight: .heavy)).foregroundStyle(Color.ink)
+            Text("Here's your first invoice").font(.title.weight(.heavy)).foregroundStyle(Color.ink)
             lead("We filled in examples. Change anything; the preview updates as you type.")
             if let draft, let business { FirstInvoiceFields(document: draft, business: business) }
         }
@@ -192,12 +192,12 @@ struct OnboardingView: View {
     }
 
     private func lead(_ text: LocalizedStringKey) -> some View {
-        Text(text).font(.system(size: 17)).foregroundStyle(Color.ink2).fixedSize(horizontal: false, vertical: true)
+        Text(text).font(.body).foregroundStyle(Color.ink2).fixedSize(horizontal: false, vertical: true)
     }
 
     private func field<F: View>(_ label: LocalizedStringKey, @ViewBuilder content: () -> F) -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text(label).font(.system(size: 13, weight: .medium)).foregroundStyle(Color.ink2)
+            Text(label).font(.footnote.weight(.medium)).foregroundStyle(Color.ink2)
             content()
                 .padding(12)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -242,7 +242,7 @@ private struct ClientNameField: View {
     @Bindable var client: Client
     var body: some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("Client").font(.system(size: 13, weight: .medium)).foregroundStyle(Color.ink2)
+            Text("Client").font(.footnote.weight(.medium)).foregroundStyle(Color.ink2)
             TextField("Client name", text: $client.name)
                 .padding(12).background(Color.surface, in: RoundedRectangle(cornerRadius: 12))
                 .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.line))
@@ -255,13 +255,13 @@ private struct FirstLineFields: View {
     var body: some View {
         HStack(alignment: .bottom, spacing: 10) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("First item").font(.system(size: 13, weight: .medium)).foregroundStyle(Color.ink2)
+                Text("First item").font(.footnote.weight(.medium)).foregroundStyle(Color.ink2)
                 TextField("Item", text: $line.itemDescription)
                     .padding(12).background(Color.surface, in: RoundedRectangle(cornerRadius: 12))
                     .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.line))
             }
             VStack(alignment: .leading, spacing: 6) {
-                Text("Price").font(.system(size: 13, weight: .medium)).foregroundStyle(Color.ink2)
+                Text("Price").font(.footnote.weight(.medium)).foregroundStyle(Color.ink2)
                 DecimalField("0.00", value: $line.rate)
                     .padding(12).background(Color.surface, in: RoundedRectangle(cornerRadius: 12))
                     .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.line))

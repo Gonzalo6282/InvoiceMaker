@@ -120,15 +120,15 @@ struct LogoPickerRow: View {
                     if let data = business.logoData, let image = UIImage(data: data) {
                         Image(uiImage: image).resizable().scaledToFit().padding(4).background(.white)
                     } else {
-                        Image(systemName: "photo").font(.system(size: 24)).foregroundStyle(Color.brand)
+                        Image(systemName: "photo").font(.title2).foregroundStyle(Color.brand)
                     }
                 }
                 .frame(width: 64, height: 64)
                 .background(Color.brandWash, in: RoundedRectangle(cornerRadius: 14))
                 .clipShape(RoundedRectangle(cornerRadius: 14))
                 VStack(alignment: .leading, spacing: 2) {
-                    Text(business.logoData == nil ? "Add your logo" : "Change logo").font(.system(size: 16, weight: .semibold)).foregroundStyle(Color.ink)
-                    Text("From Photos. JPEG, PNG or HEIC. Shown whole, never cropped.").font(.system(size: 13)).foregroundStyle(Color.ink2)
+                    Text(business.logoData == nil ? "Add your logo" : "Change logo").font(.callout.weight(.semibold)).foregroundStyle(Color.ink)
+                    Text("From Photos. JPEG, PNG or HEIC. Shown whole, never cropped.").font(.footnote).foregroundStyle(Color.ink2)
                 }
                 Spacer()
             }

@@ -17,7 +17,7 @@ struct LivePDFPanel: View {
                 .shadow(color: .black.opacity(0.1), radius: 14, y: 8)
                 .frame(maxWidth: 560)
             Text(purchases.isPremium ? "Live PDF preview" : "Live PDF preview. The \"Preview\" mark disappears with Premium.")
-                .font(.system(size: 12.5)).foregroundStyle(Color.ink3)
+                .font(.caption).foregroundStyle(Color.ink3)
         }
         .padding(24)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

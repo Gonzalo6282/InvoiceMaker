@@ -140,7 +140,7 @@ struct DocumentEditorView: View {
         GroupedSection(header: "Notes") {
             TextField("Payment terms, thank-you note", text: $document.notes, axis: .vertical)
                 .lineLimit(3...8)
-                .font(.system(size: 16))
+                .font(.callout)
                 .padding(14)
                 .onChange(of: document.notes) { actions.touch(document) }
         }
@@ -165,7 +165,7 @@ struct DocumentEditorView: View {
                 sendFlow.send(document, business: business, taxes: taxes, context: context)
             } label: {
                 HStack(spacing: 6) {
-                    if !PurchaseManager.shared.isPremium { Image(systemName: "lock.fill").font(.system(size: 14, weight: .bold)) }
+                    if !PurchaseManager.shared.isPremium { Image(systemName: "lock.fill").font(.subheadline.weight(.bold)) }
                     Text(sendTitle)
                 }
             }
@@ -179,7 +179,7 @@ struct DocumentEditorView: View {
     }
 
     private func errorText(_ text: LocalizedStringKey) -> some View {
-        Text(text).font(.system(size: 13)).foregroundStyle(Color.due).padding(.horizontal, 20).padding(.top, 6)
+        Text(text).font(.footnote).foregroundStyle(Color.due).padding(.horizontal, 20).padding(.top, 6)
             .accessibilityIdentifier("sendError")
     }
 

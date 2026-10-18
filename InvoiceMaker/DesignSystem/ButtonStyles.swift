@@ -10,7 +10,7 @@ struct PrimaryButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 17, weight: .semibold))
+            .font(.body.weight(.semibold))
             .foregroundStyle(.white)
             .frame(maxWidth: .infinity, minHeight: 52)
             .padding(.horizontal, 24)
@@ -34,7 +34,7 @@ struct PrimaryButtonStyle: ButtonStyle {
 struct GhostButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 17, weight: .semibold))
+            .font(.body.weight(.semibold))
             .foregroundStyle(Color.brand)
             .frame(maxWidth: .infinity, minHeight: 52)
             .padding(.horizontal, 24)
@@ -52,7 +52,7 @@ struct SmallButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 15, weight: .semibold))
+            .font(.subheadline.weight(.semibold))
             .foregroundStyle(prominent ? Color.white : Color.brand)
             .padding(.horizontal, 14)
             .frame(minHeight: 36)

@@ -9,7 +9,7 @@ struct ChoiceChip: View {
     var body: some View {
         Button(action: action) {
             Text(title)
-                .font(.system(size: 13.5, weight: isOn ? .semibold : .medium))
+                .font(.footnote.weight(isOn ? .semibold : .medium))
                 .foregroundStyle(isOn ? Color.brand : Color.ink2)
                 .padding(.horizontal, 12)
                 .frame(minHeight: 30)
@@ -33,11 +33,11 @@ struct Banner: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
-            Image(systemName: systemImage).font(.system(size: 17, weight: .semibold))
-            text.font(.system(size: 13.5)).frame(maxWidth: .infinity, alignment: .leading)
+            Image(systemName: systemImage).font(.body.weight(.semibold))
+            text.font(.footnote).frame(maxWidth: .infinity, alignment: .leading)
             if let actionTitle, let action {
                 Button(actionTitle, action: action)
-                    .font(.system(size: 13.5, weight: .semibold))
+                    .font(.footnote.weight(.semibold))
                     .underline()
                     .buttonStyle(.plain)
             }
@@ -76,9 +76,9 @@ struct FieldRow<Field: View>: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            Text(label).font(.system(size: 16)).foregroundStyle(Color.ink)
+            Text(label).font(.callout).foregroundStyle(Color.ink)
             field
-                .font(.system(size: 16))
+                .font(.callout)
                 .multilineTextAlignment(.trailing)
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }

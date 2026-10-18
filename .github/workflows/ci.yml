@@ -127,6 +127,11 @@ jobs:
           fi
           if grep -q "\*\* TEST BUILD SUCCEEDED \*\*" build-mac.log; then
             echo "Compiled OK with $(xcodebuild -version | head -1)"
+            # The App Store build must compile too (catches debug-only code).
+            xcodebuild build -project InvoiceMaker.xcodeproj -scheme InvoiceMaker -configuration Release \
+              -destination 'generic/platform=iOS' -clonedSourcePackagesDirPath .spm CODE_SIGNING_ALLOWED=NO > build-release.log 2>&1 \
+              || { grep -E "error:" build-release.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=release build::$l"; done; tail -30 build-release.log; exit 1; }
+            echo "Release configuration compiled OK"
           else
             grep -E "error:" build-mac.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=compile 26.1::$l"; done
             tail -40 build-mac.log; exit 1

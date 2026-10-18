@@ -17,11 +17,11 @@ struct Row<Trailing: View>: View {
             if let icon { IconChip(systemName: icon, tint: iconTint) }
             VStack(alignment: .leading, spacing: 2) {
                 title
-                    .font(.system(size: 16))
+                    .font(.callout)
                     .foregroundStyle(titleColor)
                 if let meta, !meta.isEmpty {
                     Text(meta)
-                        .font(.system(size: 13))
+                        .font(.footnote)
                         .foregroundStyle(Color.ink2)
                         .lineLimit(1)
                 }
@@ -29,7 +29,7 @@ struct Row<Trailing: View>: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             if let value {
                 Text(value)
-                    .font(.system(size: 15))
+                    .font(.subheadline)
                     .foregroundStyle(Color.ink2)
                     .monospacedDigit()
                     .lineLimit(1)
@@ -37,7 +37,7 @@ struct Row<Trailing: View>: View {
             trailing
             if showsChevron {
                 Image(systemName: "chevron.right")
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(.footnote.weight(.semibold))
                     .foregroundStyle(Color.ink3)
             }
         }

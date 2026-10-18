@@ -14,18 +14,18 @@ struct DocumentRow: View {
             Avatar(name: document.client?.name ?? "")
             VStack(alignment: .leading, spacing: 2) {
                 Text(document.client?.name ?? String(localized: "No client"))
-                    .font(.system(size: 16, weight: .semibold))
+                    .font(.callout.weight(.semibold))
                     .foregroundStyle(Color.ink)
                     .lineLimit(1)
                 Text("\(document.number) · \(document.dueText(business: business))")
-                    .font(.system(size: 13))
+                    .font(.footnote)
                     .foregroundStyle(status == .overdue ? Color.due : Color.ink2)
                     .lineLimit(1)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             VStack(alignment: .trailing, spacing: 4) {
                 Text(business.money(total, currency: document.currencyCode))
-                    .font(.system(size: 16, weight: .bold))
+                    .font(.callout.weight(.bold))
                     .monospacedDigit()
                     .foregroundStyle(Color.ink)
                 StatusPill(status: status)

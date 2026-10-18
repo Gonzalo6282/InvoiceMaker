@@ -63,7 +63,7 @@ private struct TaxRow: View {
             DecimalField("0", value: $record.rate).multilineTextAlignment(.trailing).frame(width: 64)
             Text("%").foregroundStyle(Color.ink2)
             if isDefault {
-                Text("Default").font(.system(size: 12, weight: .semibold)).foregroundStyle(Color.brand)
+                Text("Default").font(.caption.weight(.semibold)).foregroundStyle(Color.brand)
                     .padding(.horizontal, 9).frame(height: 22).background(Color.brandWash, in: Capsule()).fixedSize()
             } else {
                 ChoiceChip(title: String(localized: "Make default"), isOn: false, action: makeDefault)
@@ -72,7 +72,7 @@ private struct TaxRow: View {
                 .buttonStyle(.plain)
                 .accessibilityLabel(Text("Delete \(record.name)"))
         }
-        .font(.system(size: 16))
+        .font(.callout)
         .padding(.horizontal, 14)
         .frame(minHeight: 48)
     }

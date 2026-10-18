@@ -107,7 +107,7 @@ struct SignInOfferSheet: View {
             IconChip(systemName: "person.crop.circle.badge.checkmark", size: 56)
             Text("Keep Premium on every device").textStyle(.total).foregroundStyle(Color.ink)
             Text("Sign in with Apple so your subscription follows you to a new iPhone or iPad. Optional: your invoices stay on your device and iCloud either way.")
-                .font(.system(size: 15)).foregroundStyle(Color.ink2)
+                .font(.subheadline).foregroundStyle(Color.ink2)
             SignInWithAppleButton(.signIn) { AccountService.shared.prepare($0) } onCompletion: { result in
                 Task {
                     do {

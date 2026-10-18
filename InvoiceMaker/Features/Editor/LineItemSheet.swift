@@ -22,7 +22,7 @@ struct LineItemSheet: View {
                 VStack(alignment: .leading, spacing: 0) {
                     GroupedSection {
                         TextField("Description", text: $line.itemDescription, axis: .vertical)
-                            .font(.system(size: 16))
+                            .font(.callout)
                             .focused($focused)
                             .padding(14)
                             .accessibilityIdentifier("lineDescription")

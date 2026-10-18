@@ -29,7 +29,7 @@ struct DocumentPreviewView: View {
                     .accessibilityLabel(Text("PDF preview of \(document.number)"))
                 if !isPremium {
                     Text("The \"Preview\" mark is removed when you send with Premium.")
-                        .font(.system(size: 12.5))
+                        .font(.caption)
                         .foregroundStyle(Color.ink2)
                         .multilineTextAlignment(.center)
                         .frame(maxWidth: .infinity)
@@ -73,7 +73,7 @@ struct DocumentPreviewView: View {
 
     private func sectionHeader(_ title: LocalizedStringKey) -> some View {
         Text(title)
-            .font(.system(size: 13, weight: .medium))
+            .font(.footnote.weight(.medium))
             .foregroundStyle(Color.ink2)
             .padding(.horizontal, 16)
             .padding(.top, 22)
@@ -116,7 +116,7 @@ struct DocumentPreviewView: View {
                     }
                 }
                 Text(template.displayName)
-                    .font(.system(size: 13, weight: selected ? .semibold : .regular))
+                    .font(.footnote.weight(selected ? .semibold : .regular))
                     .foregroundStyle(selected ? Color.brand : Color.ink2)
             }
         }

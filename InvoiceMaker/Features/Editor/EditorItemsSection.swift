@@ -57,16 +57,16 @@ private struct LineRow: View {
         HStack(alignment: .top, spacing: 10) {
             VStack(alignment: .leading, spacing: 3) {
                 Text(line.itemDescription.isEmpty ? String(localized: "Untitled item") : line.itemDescription)
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.callout.weight(.medium))
                     .foregroundStyle(line.itemDescription.isEmpty ? Color.ink3 : Color.ink)
                 Text(meta(input))
-                    .font(.system(size: 13))
+                    .font(.footnote)
                     .foregroundStyle(Color.ink2)
                     .monospacedDigit()
             }
             Spacer(minLength: 8)
             Text(business.money(input.net, currency: document.currencyCode))
-                .font(.system(size: 16, weight: .semibold))
+                .font(.callout.weight(.semibold))
                 .monospacedDigit()
                 .foregroundStyle(Color.ink)
         }

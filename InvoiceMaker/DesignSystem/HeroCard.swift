@@ -12,7 +12,7 @@ struct HeroCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Owed to you").font(.system(size: 13)).opacity(0.72)
+                Text("Owed to you").font(.footnote).opacity(0.72)
                 Text(owed).textStyle(.moneyDisplay).lineLimit(1).minimumScaleFactor(0.6)
             }
             Rectangle().fill(.white.opacity(0.14)).frame(height: 1)
@@ -21,7 +21,7 @@ struct HeroCard: View {
                 figure(label: Text("Overdue"), value: overdue, color: hasOverdue ? Color(red: 1, green: 0.56, blue: 0.64) : .white)
             }
             if let footnote {
-                Text(footnote).font(.system(size: 12)).opacity(0.6)
+                Text(footnote).font(.caption).opacity(0.6)
             }
         }
         .foregroundStyle(.white)
@@ -35,9 +35,9 @@ struct HeroCard: View {
 
     private func figure(label: Text, value: String, color: Color) -> some View {
         VStack(alignment: .leading, spacing: 4) {
-            label.font(.system(size: 13)).opacity(0.72)
+            label.font(.footnote).opacity(0.72)
             Text(value)
-                .font(.system(size: 20, weight: .heavy))
+                .font(.title3.weight(.heavy))
                 .tracking(-0.4)
                 .monospacedDigit()
                 .foregroundStyle(color)

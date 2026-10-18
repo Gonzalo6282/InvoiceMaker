@@ -76,14 +76,14 @@ struct ClientsView: View {
             Avatar(name: client.name)
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: client.name.isEmpty ? String(localized: "New client") : client.name)
-                    .font(.system(size: 16, weight: .semibold)).foregroundStyle(Color.ink)
-                if !meta.isEmpty { Text(verbatim: meta).font(.system(size: 13)).foregroundStyle(Color.ink2).lineLimit(1) }
+                    .font(.callout.weight(.semibold)).foregroundStyle(Color.ink)
+                if !meta.isEmpty { Text(verbatim: meta).font(.footnote).foregroundStyle(Color.ink2).lineLimit(1) }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             if owed > 0 {
                 VStack(alignment: .trailing, spacing: 2) {
-                    Text(business.money(owed, currency: client.currencyCode)).font(.system(size: 15, weight: .bold)).monospacedDigit()
-                    Text("owed").font(.system(size: 12)).foregroundStyle(Color.ink2)
+                    Text(business.money(owed, currency: client.currencyCode)).font(.subheadline.weight(.bold)).monospacedDigit()
+                    Text("owed").font(.caption).foregroundStyle(Color.ink2)
                 }
             }
         }

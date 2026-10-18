@@ -8,7 +8,7 @@ struct EditorHeader: View {
         HStack(alignment: .bottom, spacing: 12) {
             VStack(alignment: .leading, spacing: 2) {
                 Label("Saved", systemImage: "checkmark")
-                    .font(.system(size: 12, weight: .semibold))
+                    .font(.caption.weight(.semibold))
                     .foregroundStyle(Color.ink3)
                 Text(document.number.isEmpty ? " " : document.number)
                     .textStyle(.docNumber)

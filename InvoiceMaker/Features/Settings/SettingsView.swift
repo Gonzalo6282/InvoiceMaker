@@ -60,8 +60,8 @@ struct SettingsView: View {
                         HStack(spacing: 12) {
                             IconChip(systemName: "chart.bar.fill", tint: .neutral)
                             VStack(alignment: .leading, spacing: 2) {
-                                Text("Anonymous analytics").font(.system(size: 16)).foregroundStyle(Color.ink)
-                                Text("Helps us fix what's slow or confusing").font(.system(size: 13)).foregroundStyle(Color.ink2)
+                                Text("Anonymous analytics").font(.callout).foregroundStyle(Color.ink)
+                                Text("Helps us fix what's slow or confusing").font(.footnote).foregroundStyle(Color.ink2)
                             }
                         }
                     }
@@ -79,7 +79,7 @@ struct SettingsView: View {
                     GroupedSection(header: "Debug") { link(.designSystem, icon: "swatchpalette", title: "Design system") }
                 #endif
                 Text("Duly \(AppInfo.version) (\(AppInfo.build)) · Slice of Life Ltd")
-                    .font(.system(size: 12.5)).foregroundStyle(Color.ink3)
+                    .font(.caption).foregroundStyle(Color.ink3)
                     .frame(maxWidth: .infinity).padding(.top, 22)
             }
             .padding(.bottom, 24)
@@ -97,11 +97,11 @@ struct SettingsView: View {
             PaywallService.shared.gate(.settingsUpgrade) {}
         } label: {
             VStack(alignment: .leading, spacing: 10) {
-                Text(isPremium ? "Premium" : "Free plan").font(.system(size: 13)).opacity(0.72)
+                Text(isPremium ? "Premium" : "Free plan").font(.footnote).opacity(0.72)
                 Text(isPremium ? "Sending, printing and PDFs unlocked." : "Create and preview free. Send with Premium.")
-                    .font(.system(size: 22, weight: .heavy)).multilineTextAlignment(.leading)
+                    .font(.title2.weight(.heavy)).multilineTextAlignment(.leading)
                 if !isPremium {
-                    Text("See plans").font(.system(size: 15, weight: .semibold))
+                    Text("See plans").font(.subheadline.weight(.semibold))
                         .foregroundStyle(Color.paidInk).padding(.horizontal, 14).frame(height: 36)
                         .background(Color.paid, in: Capsule())
                 }

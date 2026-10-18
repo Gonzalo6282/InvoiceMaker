@@ -11,7 +11,7 @@ struct GroupedSection<Content: View>: View {
         VStack(alignment: .leading, spacing: 0) {
             if let header {
                 Text(header)
-                    .font(.system(size: 13, weight: .medium))
+                    .font(.footnote.weight(.medium))
                     .foregroundStyle(Color.ink2)
                     .padding(.horizontal, 16)
                     .padding(.top, 22)
@@ -24,7 +24,7 @@ struct GroupedSection<Content: View>: View {
             .padding(.horizontal, 16)
             if let footer {
                 Text(footer)
-                    .font(.system(size: 12.5))
+                    .font(.caption)
                     .foregroundStyle(Color.ink2)
                     .padding(.horizontal, 16)
                     .padding(.top, 7)

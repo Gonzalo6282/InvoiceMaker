@@ -25,7 +25,7 @@ struct EditorTaxSection: View {
             if document.taxPlacement == .onTotal {
                 RowDivider()
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Taxes on the total").font(.system(size: 16)).foregroundStyle(Color.ink)
+                    Text("Taxes on the total").font(.callout).foregroundStyle(Color.ink)
                     FlowChips(taxes: taxes, selected: document.totalTaxIDs) { id in
                         change {
                             if document.totalTaxIDs.contains(id) {
@@ -79,11 +79,19 @@ struct EditorTaxSection: View {
     }
 
     private func chipRow<Chips: View>(_ label: LocalizedStringKey, @ViewBuilder chips: () -> Chips) -> some View {
-        HStack {
-            Text(label).font(.system(size: 16)).foregroundStyle(Color.ink)
-            Spacer()
-            HStack(spacing: 6) { chips() }
+        // Side by side normally; stacked at large text sizes.
+        ViewThatFits(in: .horizontal) {
+            HStack {
+                Text(label).font(.callout).foregroundStyle(Color.ink)
+                Spacer()
+                HStack(spacing: 6) { chips() }
+            }
+            VStack(alignment: .leading, spacing: 8) {
+                Text(label).font(.callout).foregroundStyle(Color.ink)
+                HStack(spacing: 6) { chips() }
+            }
         }
+        .padding(.vertical, 6)
         .padding(.horizontal, 14)
         .frame(minHeight: 48)
     }

@@ -79,3 +79,20 @@ final class SendFlowTests: XCTestCase {
         XCTAssertTrue(app.buttons["Privacy"].exists)
     }
 }
+
+final class AccessibilityTests: XCTestCase {
+    @MainActor
+    func testLargestTextSizeStillWorks() throws {
+        let app = XCUIApplication()
+        app.launchArguments = [
+            "-uiTesting", "-skipOnboarding",
+            "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXXXL",
+        ]
+        app.launch()
+        XCTAssertTrue(app.staticTexts["Create your first invoice"].waitForExistence(timeout: 10))
+        app.buttons["New invoice"].firstMatch.tap()
+        XCTAssertTrue(app.staticTexts["INV-0001"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.buttons["send"].exists)
+        XCTAssertTrue(app.buttons["addItem"].firstMatch.exists)
+    }
+}

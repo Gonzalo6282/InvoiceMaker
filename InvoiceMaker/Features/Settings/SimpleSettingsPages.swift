@@ -89,7 +89,7 @@ struct CurrencyDisplayView: View {
                         Row(verbatim: option.title,
                             meta: MoneyFormat.string(1250, currencyCode: business.currencyCode, display: option, locale: business.locale)) {
                             if business.currencyDisplay == option {
-                                Image(systemName: "checkmark").font(.system(size: 17, weight: .bold)).foregroundStyle(Color.brand)
+                                Image(systemName: "checkmark").font(.body.weight(.bold)).foregroundStyle(Color.brand)
                             }
                         }
                     }
@@ -123,7 +123,7 @@ struct BackupView: View {
                     .buttonStyle(.primary).padding(16)
                 }
                 Text("Your invoices are saved on this device and in your own iCloud, which only you can read. A new iPhone or iPad signed in to the same Apple ID gets everything back. If your subscription ends you can still open and export every invoice. Only you can delete your data.")
-                    .font(.system(size: 13.5)).foregroundStyle(Color.ink2).padding(16)
+                    .font(.footnote).foregroundStyle(Color.ink2).padding(16)
             }
         }
         .background(Color.canvas)
@@ -144,8 +144,8 @@ struct SubscriptionView: View {
             VStack(alignment: .leading, spacing: 12) {
                 if purchases.isPremium {
                     VStack(alignment: .leading, spacing: 6) {
-                        Text("Premium").font(.system(size: 13)).opacity(0.72)
-                        Text("Sending, printing and PDFs are unlocked.").font(.system(size: 22, weight: .heavy))
+                        Text("Premium").font(.footnote).opacity(0.72)
+                        Text("Sending, printing and PDFs are unlocked.").font(.title2.weight(.heavy))
                     }
                     .foregroundStyle(.white).padding(20).frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.navy, in: RoundedRectangle(cornerRadius: 28))
@@ -163,11 +163,11 @@ struct SubscriptionView: View {
                 }
                 .disabled(restoring)
                 .frame(maxWidth: .infinity)
-                if let restoreMessage { Text(restoreMessage).font(.system(size: 14)).foregroundStyle(Color.ink2).frame(maxWidth: .infinity) }
+                if let restoreMessage { Text(restoreMessage).font(.subheadline).foregroundStyle(Color.ink2).frame(maxWidth: .infinity) }
                 Text("Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs.")
-                    .font(.system(size: 14)).foregroundStyle(Color.ink2).padding(.top, 8)
+                    .font(.subheadline).foregroundStyle(Color.ink2).padding(.top, 8)
                 Text("Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription. If your subscription ends you keep every document.")
-                    .font(.system(size: 13)).foregroundStyle(Color.ink3)
+                    .font(.footnote).foregroundStyle(Color.ink3)
             }
             .padding(16)
         }
@@ -212,9 +212,9 @@ struct HelpView: View {
 
     private func faq(_ question: LocalizedStringKey, _ answer: LocalizedStringKey) -> some View {
         DisclosureGroup {
-            Text(answer).font(.system(size: 14)).foregroundStyle(Color.ink2).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 4)
+            Text(answer).font(.subheadline).foregroundStyle(Color.ink2).frame(maxWidth: .infinity, alignment: .leading).padding(.top, 4)
         } label: {
-            Text(question).font(.system(size: 16)).foregroundStyle(Color.ink)
+            Text(question).font(.callout).foregroundStyle(Color.ink)
         }
         .padding(14)
         .tint(Color.ink3)
@@ -251,7 +251,7 @@ struct ReportProblemView: View {
                 Button("Send report", action: send).buttonStyle(.primary).padding(16)
                     .disabled(message.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
                 Text("We reply within 24 hours. Your invoices are not attached.")
-                    .font(.system(size: 12.5)).foregroundStyle(Color.ink2).padding(.horizontal, 16)
+                    .font(.caption).foregroundStyle(Color.ink2).padding(.horizontal, 16)
             }
             .padding(.bottom, 24)
         }

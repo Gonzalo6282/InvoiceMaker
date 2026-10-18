@@ -25,7 +25,7 @@ struct InvoiceLookView: View {
                                 VStack(spacing: 6) {
                                     TemplateThumbnail(template: template, accentHex: business.brandColorHex, locked: template.isPremium && !isPremium)
                                         .overlay(RoundedRectangle(cornerRadius: 3).strokeBorder(selected ? Color.brand : Color.line, lineWidth: selected ? 2 : 1))
-                                    Text(template.displayName).font(.system(size: 13, weight: selected ? .semibold : .regular))
+                                    Text(template.displayName).font(.footnote.weight(selected ? .semibold : .regular))
                                         .foregroundStyle(selected ? Color.brand : Color.ink2)
                                 }
                             }
@@ -47,7 +47,7 @@ struct InvoiceLookView: View {
                 }
                 .padding(.horizontal, 20)
                 Text("New invoices use this template and colour. You can change them on any invoice.")
-                    .font(.system(size: 12.5)).foregroundStyle(Color.ink2).padding(.horizontal, 16).padding(.top, 10)
+                    .font(.caption).foregroundStyle(Color.ink2).padding(.horizontal, 16).padding(.top, 10)
                 header("Logo")
                 LogoPickerRow(business: business).padding(.horizontal, 16)
             }
@@ -59,7 +59,7 @@ struct InvoiceLookView: View {
     }
 
     private func header(_ title: LocalizedStringKey) -> some View {
-        Text(title).font(.system(size: 13, weight: .medium)).foregroundStyle(Color.ink2)
+        Text(title).font(.footnote.weight(.medium)).foregroundStyle(Color.ink2)
             .padding(.horizontal, 16).padding(.top, 22).padding(.bottom, 7)
     }
 }

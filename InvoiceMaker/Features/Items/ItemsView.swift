@@ -51,12 +51,12 @@ struct ItemsView: View {
             IconChip(systemName: "tag.fill", tint: .item, size: 38)
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: item.itemDescription.isEmpty ? String(localized: "Untitled item") : item.itemDescription)
-                    .font(.system(size: 16, weight: .semibold)).foregroundStyle(Color.ink)
-                Text(verbatim: meta).font(.system(size: 13)).foregroundStyle(Color.ink2)
+                    .font(.callout.weight(.semibold)).foregroundStyle(Color.ink)
+                Text(verbatim: meta).font(.footnote).foregroundStyle(Color.ink2)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             Text(item.rate == 0 ? String(localized: "At cost") : business.money(item.rate))
-                .font(.system(size: 16, weight: .semibold)).monospacedDigit().foregroundStyle(Color.ink)
+                .font(.callout.weight(.semibold)).monospacedDigit().foregroundStyle(Color.ink)
         }
         .padding(.horizontal, 14).padding(.vertical, 12)
         .contentShape(Rectangle())

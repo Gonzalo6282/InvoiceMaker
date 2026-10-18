@@ -21,9 +21,9 @@ struct ClientDetailView: View {
                     Avatar(name: client.name, size: 56)
                     VStack(alignment: .leading) {
                         Text(verbatim: client.name.isEmpty ? String(localized: "New client") : client.name)
-                            .font(.system(size: 24, weight: .heavy)).foregroundStyle(Color.ink)
+                            .font(.title2.weight(.heavy)).foregroundStyle(Color.ink)
                         Text(docs.count == 1 ? String(localized: "1 document") : String(localized: "\(docs.count) documents"))
-                            .font(.system(size: 14)).foregroundStyle(Color.ink2)
+                            .font(.subheadline).foregroundStyle(Color.ink2)
                     }
                 }
                 .padding(.horizontal, 16).padding(.top, 4)

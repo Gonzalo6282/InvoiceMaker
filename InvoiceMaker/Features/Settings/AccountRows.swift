@@ -19,7 +19,7 @@ struct AccountRows: View {
                 Button { confirmingDelete = true } label: { Row(title: "Delete account", titleColor: .due) }.buttonStyle(.plain)
             } else {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Keeps your subscription if you change phone. Optional.").font(.system(size: 13)).foregroundStyle(Color.ink2)
+                    Text("Keeps your subscription if you change phone. Optional.").font(.footnote).foregroundStyle(Color.ink2)
                     SignInWithAppleButton(.signIn) { account.prepare($0) } onCompletion: { result in
                         Task {
                             do { try await account.complete(result) } catch { self.error = error.localizedDescription }
@@ -52,8 +52,8 @@ private struct DeleteAccountSheet: View {
         VStack(alignment: .leading, spacing: 16) {
             Text("Delete your account?").textStyle(.total).foregroundStyle(Color.ink)
             Text("This deletes your sign-in and unlinks your subscription from it. Your invoices stay on this device and in your iCloud; delete the app to remove them. To stop paying, cancel the subscription in Settings > [your name] > Subscriptions.")
-                .font(.system(size: 15)).foregroundStyle(Color.ink2)
-            Text("Confirm with Apple to finish:").font(.system(size: 15, weight: .semibold))
+                .font(.subheadline).foregroundStyle(Color.ink2)
+            Text("Confirm with Apple to finish:").font(.subheadline.weight(.semibold))
             SignInWithAppleButton(.continue) { account.prepare($0) } onCompletion: { result in
                 Task {
                     do {

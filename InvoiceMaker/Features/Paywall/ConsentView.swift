@@ -11,7 +11,7 @@ struct ConsentView: View {
                 IconChip(systemName: "chart.bar.fill", size: 64)
                 Text("Allow anonymous analytics?").textStyle(.largeTitle).foregroundStyle(Color.ink)
                 Text("We count things like \"invoice created\" to see what's slow or confusing. No names, no invoice contents, no tracking across other apps. You can change this any time in Settings.")
-                    .font(.system(size: 17)).foregroundStyle(Color.ink2)
+                    .font(.body).foregroundStyle(Color.ink2)
             }
             .padding(.horizontal, 24)
             Spacer()

@@ -104,7 +104,7 @@ struct DocumentListView: View {
                 HStack(spacing: 8) {
                     ForEach(options) { option in
                         Button(option.title) { filter = option }
-                            .font(.system(size: 14, weight: .semibold))
+                            .font(.subheadline.weight(.semibold))
                             .foregroundStyle(filter == option ? Color.brand : Color.ink2)
                             .padding(.horizontal, 14)
                             .frame(height: 34)
