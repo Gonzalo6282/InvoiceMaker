@@ -6,7 +6,7 @@ import Foundation
 import StoreKit
 
 /// Firebase Analytics + Crashlytics + Remote Config, behind the user's consent.
-/// Nothing is collected until `consentGiven` is true (UK/EEA users are asked;
+/// Nothing is collected until the user allows it (UK/EEA users are asked;
 /// elsewhere it defaults to on with a switch in Settings). No advertising ID.
 @MainActor
 final class AppAnalytics {
@@ -14,6 +14,16 @@ final class AppAnalytics {
 
     private(set) var isConfigured = false
     private var country = ""
+
+    func configure() {
+        guard AppKeys.hasFirebase, FirebaseApp.app() == nil else { return }
+        FirebaseApp.configure()
+        isConfigured = true
+        RemoteConfig.remoteConfig().setDefaults(RemoteFlags.defaults)
+        RemoteConfig.remoteConfig().fetchAndActivate { _, _ in }
+        Task { country = await Storefront.current?.countryCode ?? "" }
+        apply(enabled: Self.isEnabled)
+    }
 
     /// One stored setting for the consent screen and the Settings switch; nil = never decided.
     static var stored: Bool? { UserDefaults.standard.object(forKey: AppPreferences.analyticsKey) as? Bool }
