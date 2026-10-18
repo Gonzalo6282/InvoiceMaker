@@ -2,7 +2,7 @@ import XCTest
 
 final class LaunchTests: XCTestCase {
     @MainActor
-    func testLaunchShowsAppName() throws {
+    func testFirstRunCreatesAnInvoice() throws {
         let app = XCUIApplication()
         app.launchArguments = ["-uiTesting"]
         app.launch()
@@ -10,6 +10,9 @@ final class LaunchTests: XCTestCase {
         if storeError.waitForExistence(timeout: 2) {
             XCTFail("Store failed to open: \(storeError.label)")
         }
-        XCTAssertTrue(app.staticTexts["Duly"].waitForExistence(timeout: 5))
+        // First run: empty invoices list with the call to action.
+        XCTAssertTrue(app.staticTexts["Create your first invoice"].waitForExistence(timeout: 10))
+        app.buttons["New invoice"].firstMatch.tap()
+        XCTAssertTrue(app.staticTexts["INV-0001"].waitForExistence(timeout: 5))
     }
 }

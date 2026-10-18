@@ -1,28 +1,33 @@
 import InvoiceKit
+import SwiftData
 import SwiftUI
 
-/// Placeholder until the app shell (T4.1) replaces it.
+/// Waits for the business to exist, then shows the app shell.
 struct RootView: View {
+    @Query(sort: \Business.createdAt) private var businesses: [Business]
+    @Environment(\.modelContext) private var context
+
     var body: some View {
-        NavigationStack {
-            VStack(spacing: 8) {
-                Text("Duly")
-                    .textStyle(.largeTitle)
-                    .foregroundStyle(Color.ink)
-                Text("InvoiceKit \(InvoiceKit.version)")
-                    .font(.footnote)
-                    .foregroundStyle(Color.ink2)
-                #if DEBUG
-                    NavigationLink("Design system") { DesignGalleryView() }
-                        .padding(.top, 16)
-                #endif
+        Group {
+            if let business = businesses.first {
+                AppShell(business: business)
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.canvas)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color.canvas)
+        }
+        .task(id: businesses.isEmpty) {
+            // Until onboarding (M8) exists: start a business for the device's region.
+            guard businesses.isEmpty else { return }
+            let code = Locale.current.region?.identifier ?? "GB"
+            BusinessSetup.create(name: "", region: Region.resolve(countryCode: code), countryCode: code, in: context)
         }
     }
 }
 
-#Preview {
-    RootView()
-}
+#if DEBUG
+    #Preview {
+        RootView().modelContainer(DemoData.container())
+    }
+#endif
