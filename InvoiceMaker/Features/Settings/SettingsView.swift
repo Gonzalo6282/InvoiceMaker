@@ -12,10 +12,12 @@ enum SettingsPage: Hashable {
 /// Settings root (mockup scrSettings). Account rows arrive with Sign in with Apple (M6).
 struct SettingsView: View {
     let business: Business
-    var isPremium = false
+    @State private var purchases = PurchaseManager.shared
+    @State private var account = AccountService.shared
+    private var isPremium: Bool { purchases.isPremium }
 
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
-    @AppStorage(AppPreferences.analyticsKey) private var analyticsOn = true
+    @AppStorage(AppPreferences.analyticsKey) private var analyticsOn = false
     @Environment(\.openURL) private var openURL
 
     var body: some View {
@@ -43,7 +45,9 @@ struct SettingsView: View {
                     RowDivider()
                     ExportRow(business: business)
                 }
-                GroupedSection(header: "Subscription") {
+                GroupedSection(header: "Account") {
+                    AccountRows(account: account)
+                    RowDivider()
                     link(.subscription, icon: "lock.fill", tint: .neutral, title: "Subscription", value: isPremium ? String(localized: "Premium") : String(localized: "Free"))
                 }
                 GroupedSection(header: "Help") {
@@ -83,12 +87,15 @@ struct SettingsView: View {
         .background(Color.canvas)
         .navigationTitle("Settings")
         .navigationDestination(for: SettingsPage.self) { page in destination(page) }
+        .onChange(of: analyticsOn) { AppAnalytics.shared.setConsent(analyticsOn) }
     }
 
     private var activeTaxes: [TaxRate] { taxRecords.filter { !$0.isArchived }.map(\.taxRate) }
 
     private var planCard: some View {
-        NavigationLink(value: SettingsPage.subscription) {
+        Button {
+            PaywallService.shared.gate(.settingsUpgrade) {}
+        } label: {
             VStack(alignment: .leading, spacing: 10) {
                 Text(isPremium ? "Premium" : "Free plan").font(.system(size: 13)).opacity(0.72)
                 Text(isPremium ? "Sending, printing and PDFs unlocked." : "Create and preview free. Send with Premium.")
@@ -122,12 +129,12 @@ struct SettingsView: View {
         case .business: BusinessProfileView(business: business)
         case .taxes: TaxesView(business: business)
         case .payment: PaymentDetailsView(business: business)
-        case .look: InvoiceLookView(business: business, isPremium: isPremium)
+        case .look: InvoiceLookView(business: business)
         case .signature: MySignatureView(business: business)
         case .numbering: NumberingView(business: business)
         case .currency: CurrencyDisplayView(business: business)
         case .backup: BackupView()
-        case .subscription: SubscriptionView(isPremium: isPremium)
+        case .subscription: SubscriptionView()
         case .help: HelpView()
         case .report: ReportProblemView(business: business)
         #if DEBUG
