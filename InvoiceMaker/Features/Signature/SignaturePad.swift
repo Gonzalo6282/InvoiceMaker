@@ -39,8 +39,10 @@ extension PKDrawing {
     func signaturePNG() -> Data? {
         guard !strokes.isEmpty else { return nil }
         let rect = bounds.insetBy(dx: -8, dy: -8)
-        let image = UITraitCollection(userInterfaceStyle: .light).performAsCurrent { self.image(from: rect, scale: 3) }
-        return image.pngData()
+        var image: UIImage?
+        // Light traits so PencilKit doesn't invert the ink in dark mode.
+        UITraitCollection(userInterfaceStyle: .light).performAsCurrent { image = self.image(from: rect, scale: 3) }
+        return image?.pngData()
     }
 }
 
