@@ -15,7 +15,7 @@ jobs:
     runs-on: macos-26
     timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Select Xcode 26.1 (matches the Mac)
         run: |
@@ -23,7 +23,7 @@ jobs:
           XC=$(ls -d /Applications/Xcode_26.1*.app 2>/dev/null | sort -V | tail -1)
           if [ -z "$XC" ]; then XC=$(ls -d /Applications/Xcode_26*.app | sort -V | head -1); echo "::warning::Xcode 26.1 not found, using $XC"; fi
           sudo xcode-select -s "$XC/Contents/Developer"
-          xcodebuild -version
+          echo "::notice title=Xcode::$(xcodebuild -version | tr '\n' ' ')"
           swift --version
 
       - name: InvoiceKit tests
@@ -33,11 +33,12 @@ jobs:
         run: scripts/ci-xcode-test.sh iPhone "iPhone 17 Pro"
 
       - name: App tests (iPad)
+        if: success() || failure()
         run: scripts/ci-xcode-test.sh iPad "iPad Air 11-inch (M3)"
 
       - name: Upload test results
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: test-results
           path: build/*.xcresult
