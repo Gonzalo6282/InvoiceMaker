@@ -3,7 +3,7 @@ import SwiftData
 
 extension SchemaV1 {
     @Model
-    final class Client {
+    nonisolated final class Client {
         var name: String = ""
         var contactName: String = ""
         var email: String = ""
@@ -26,7 +26,7 @@ extension SchemaV1 {
 
     /// An item or service saved for reuse.
     @Model
-    final class SavedItem {
+    nonisolated final class SavedItem {
         var itemDescription: String = ""
         var unit: String = ""
         var rate: Decimal = 0

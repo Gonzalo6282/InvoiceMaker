@@ -5,7 +5,7 @@ import SwiftData
 extension SchemaV1 {
     /// The user's business. One per user in 1.0.
     @Model
-    final class Business {
+    nonisolated final class Business {
         var name: String = ""
         /// "freelancer", "contractor", "shop" from onboarding.
         var role: String = ""
@@ -77,7 +77,7 @@ extension SchemaV1 {
 
     /// How clients can pay: shown as buttons and a QR code on the invoice.
     @Model
-    final class PaymentDetails {
+    nonisolated final class PaymentDetails {
         var bankName: String = ""
         var sortCode: String = ""
         var accountNumber: String = ""
@@ -97,7 +97,7 @@ extension SchemaV1 {
 
     /// A tax the user has set up (seeded from the region preset).
     @Model
-    final class TaxRateRecord {
+    nonisolated final class TaxRateRecord {
         /// Stable id referenced by line items and documents, e.g. "uk-vat20".
         var taxID: String = ""
         var name: String = ""

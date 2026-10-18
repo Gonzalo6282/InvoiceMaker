@@ -5,7 +5,7 @@ import SwiftData
 extension SchemaV1 {
     /// An invoice, estimate (quote) or receipt.
     @Model
-    final class Document {
+    nonisolated final class Document {
         var kindRaw: String = DocumentKind.invoice.rawValue
         var number: String = ""
         var statusRaw: String = DocumentStatus.draft.rawValue
@@ -83,7 +83,7 @@ extension SchemaV1 {
     }
 
     @Model
-    final class LineItem {
+    nonisolated final class LineItem {
         var position: Int = 0
         var itemDescription: String = ""
         var unit: String = ""

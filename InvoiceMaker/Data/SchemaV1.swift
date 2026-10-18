@@ -4,6 +4,8 @@ import SwiftData
 /// Version 1 of the data model. CloudKit rules (checked by `CloudKitSchemaTests`):
 /// every attribute is optional or has a default, nothing is unique, every
 /// relationship is optional and has an inverse. Enums are stored as raw strings.
+/// Models are `nonisolated`: SwiftData uses them off the main thread, and the
+/// target's main-actor default would otherwise make that a runtime trap.
 /// After the first TestFlight build, add `SchemaV2` + a migration stage instead
 /// of editing these (ask Gonzalo first, per the spec).
 enum SchemaV1: VersionedSchema {

@@ -49,5 +49,20 @@ if [ $STATUS -ne 0 ]; then
     | grep -v -E "^\s*$|Test case '.*' failed on" | awk '!seen[$0]++' | head -9 \
     | while IFS= read -r l; do echo "::error title=${FAMILY}::${l:0:900}"; done
   tail -4 "build/${FAMILY}.log" | while IFS= read -r l; do echo "::notice title=${FAMILY} tail::${l}"; done
+  # Failure messages (incl. crashes) live in the result bundle, not always in the log.
+  xcrun xcresulttool get test-results summary --path "build/${FAMILY}.xcresult" --compact 2>/dev/null > "build/${FAMILY}-summary.json" || true
+  python3 - "build/${FAMILY}-summary.json" "$FAMILY" <<'PY' || true
+import json, sys
+try:
+    data = json.load(open(sys.argv[1]))
+except Exception as e:
+    print(f"::warning::no xcresult summary ({e})"); sys.exit()
+seen = set()
+for f in data.get("testFailures", [])[:8]:
+    msg = (f.get("failureText") or "").replace("\n", " ")[:700]
+    if msg in seen: continue
+    seen.add(msg)
+    print(f"::error title={sys.argv[2]} {f.get('testName','')}::{msg}")
+PY
 fi
 exit $STATUS
