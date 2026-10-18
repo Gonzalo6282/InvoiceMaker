@@ -5,13 +5,15 @@ import SwiftUI
 /// Tabs on iPhone (and iPad in a narrow window); sidebar + list + detail on iPad.
 struct AppShell: View {
     let business: Business
+    /// Opened right away (the invoice made during onboarding).
+    var initialDocument: PersistentIdentifier?
     @Environment(\.horizontalSizeClass) private var sizeClass
 
     var body: some View {
         if sizeClass == .regular {
-            SplitShell(business: business)
+            SplitShell(business: business, documentID: initialDocument)
         } else {
-            TabShell(business: business)
+            TabShell(business: business, path: initialDocument.map { [$0] } ?? [])
         }
     }
 }
@@ -29,7 +31,7 @@ private struct TabShell: View {
     let business: Business
     @State private var tab: Tab = .documents
     @State private var kind: DocumentKind = .invoice
-    @State private var path: [PersistentIdentifier] = []
+    @State var path: [PersistentIdentifier] = []
     @State private var clientPath: [PersistentIdentifier] = []
 
     enum Tab { case documents, clients, items, settings }
@@ -82,7 +84,7 @@ private struct SplitShell: View {
     let business: Business
     @State private var section: AppSection? = .documents(.invoice)
     @State private var kind: DocumentKind = .invoice
-    @State private var documentID: PersistentIdentifier?
+    @State var documentID: PersistentIdentifier?
     @State private var clientID: PersistentIdentifier?
     @State private var visibility: NavigationSplitViewVisibility = .all
 
