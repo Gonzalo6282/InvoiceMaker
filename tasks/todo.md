@@ -52,20 +52,20 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] ✅ Export ZIP + CSV tested on CI · [ ] you: export to Files on the Mac/device
 
 ## M6 analytics + purchases + account  (needs your keys)
-- [ ] T6.1 Add Firebase 12.x, RevenueCat 5.x, SuperwallKit 4.18.x packages; `Secrets.xcconfig` template
-- [ ] T6.2 Analytics: `AnalyticsEvent`, consent screen (UK/EEA), Consent Mode, Crashlytics, Remote Config defaults
-- [ ] T6.3 Purchases: RevenueCat setup, `pro` entitlement state, StoreKit config file, restore, manage subscription
-- [ ] T6.4 Superwall placements + RevenueCat purchase controller + native fallback paywall
-- [ ] T6.5 Account: Sign in with Apple via Firebase, UID → RevenueCat, delete account
+- [x] T6.1 Add Firebase 12.x, RevenueCat 5.x, SuperwallKit 4.18.x packages; `Secrets.xcconfig` template
+- [x] T6.2 Analytics: `AnalyticsEvent`, consent screen (UK/EEA), Consent Mode, Crashlytics, Remote Config defaults
+- [x] T6.3 Purchases: RevenueCat setup, `pro` entitlement state, StoreKit config file, restore, manage subscription
+- [x] T6.4 Superwall placements + RevenueCat purchase controller + native fallback paywall
+- [x] T6.5 Account: Sign in with Apple via Firebase, UID → RevenueCat, delete account
 - [ ] ✅ Sandbox purchase unlocks `pro`
 
 ## M7 sending
-- [ ] T7.1 Validation + Premium gate + sign-in offer at first send
-- [ ] T7.2 Share sheet / Files / print (anchored on iPad), offline note, status → sent, events
+- [x] T7.1 Validation + Premium gate + sign-in offer at first send
+- [x] T7.2 Share sheet / Files / print (anchored on iPad), offline note, status → sent, events
 - [ ] ✅ Send after sandbox purchase
 
 ## M8 onboarding
-- [ ] T8.1 Consent → welcome → role → business → first invoice (live preview) → soft paywall
+- [x] T8.1 Consent → welcome → role → business → first invoice (live preview) → soft paywall
 - [ ] ✅ Fresh-install walk-through
 
 ## M9 iPad + release checks
