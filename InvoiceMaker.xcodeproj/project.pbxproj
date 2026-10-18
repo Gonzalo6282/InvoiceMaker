@@ -38,7 +38,7 @@
 		1A0000000000000000000011 /* InvoiceMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoiceMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0000000000000000000012 /* InvoiceMakerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoiceMakerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0000000000000000000099 /* App.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = App.xcconfig; sourceTree = "<group>"; };
-		1A000000000000000000009B /* InvoiceMaker.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = InvoiceMaker.storekit; sourceTree = "<group>"; };
+		1A000000000000000000009B /* InvoiceMaker.storekit */ = {isa = PBXFileReference; path = InvoiceMaker.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */

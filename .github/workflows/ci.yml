@@ -80,6 +80,8 @@ jobs:
             n=$(basename "$r" .xcresult)
             DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results tests --path "$r" > "$OUT/$n-tests.json" 2>&1 || true
             DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results summary --path "$r" > "$OUT/$n-summary.json" 2>&1 || true
+            mkdir -p "$OUT/$n-attachments"
+            DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool export attachments --path "$r" --output-path "$OUT/$n-attachments" --only-failures > /dev/null 2>&1 || true
           done
           find ~/Library/Logs/DiagnosticReports -mmin -90 \( -name "*.ips" -o -name "*.crash" \) -exec cp {} "$OUT"/ \; 2>/dev/null || true
           cd "$OUT"
