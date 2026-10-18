@@ -6,6 +6,9 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
@@ -36,11 +39,48 @@ jobs:
 
       - name: App tests (iPhone)
         if: success() || failure()
+        env:
+          TEST_RUNNER_SNAPSHOT_DIR: ${{ runner.temp }}/snapshots
         run: DEVELOPER_DIR="$XC_LATEST" scripts/ci-xcode-test.sh iPhone "iPhone 17 Pro"
+
+      # PDF page images from the tests, pushed to the ci-snapshots branch for review.
+      - name: Publish PDF snapshots
+        if: (success() || failure()) && github.event_name == 'push'
+        run: |
+          DIR="${{ runner.temp }}/snapshots"
+          ls "$DIR"/*.png >/dev/null 2>&1 || { echo "No snapshots"; exit 0; }
+          cd "$DIR"
+          git init -q -b ci-snapshots
+          git config user.name "CI"; git config user.email "ci@users.noreply.github.com"
+          echo "Snapshots from ${GITHUB_SHA}" > README.md
+          git add -A && git commit -q -m "Snapshots for ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-snapshots
+          echo "::notice title=Snapshots::$(ls *.png | wc -l | tr -d ' ') images on branch ci-snapshots"
 
       - name: App tests (iPad)
         if: success() || failure()
         run: DEVELOPER_DIR="$XC_LATEST" scripts/ci-xcode-test.sh iPad "iPad Air 11-inch (M3)"
+
+      # Full logs + xcresult failure summaries on the ci-logs branch (the raw
+      # Actions logs can't be downloaded from the cloud workspace).
+      - name: Publish logs
+        if: (success() || failure()) && github.event_name == 'push'
+        run: |
+          OUT="${{ runner.temp }}/logs"; mkdir -p "$OUT"
+          cp build/*.log build/*-summary.json swift-test.log "$OUT"/ 2>/dev/null || true
+          for r in build/*.xcresult; do
+            [ -d "$r" ] || continue
+            n=$(basename "$r" .xcresult)
+            DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results tests --path "$r" > "$OUT/$n-tests.json" 2>&1 || true
+            DEVELOPER_DIR="$XC_LATEST" xcrun xcresulttool get test-results summary --path "$r" > "$OUT/$n-summary.json" 2>&1 || true
+          done
+          find ~/Library/Logs/DiagnosticReports -name "InvoiceMaker*" -newer build -exec cp {} "$OUT"/ \; 2>/dev/null || true
+          cd "$OUT"
+          git init -q -b ci-logs
+          git config user.name "CI"; git config user.email "ci@users.noreply.github.com"
+          echo "Logs from ${GITHUB_SHA}" > README.md
+          git add -A && git commit -q -m "Logs for ${GITHUB_SHA}"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-logs
 
   # Same Xcode as Gonzalo's Mac (26.1.1): everything must compile with it.
   # The runner lacks the iOS 26.1 platform, so it is downloaded first.

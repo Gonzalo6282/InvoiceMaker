@@ -41,7 +41,8 @@ xcodebuild test \
 # (TEST_RUNNER_SNAPSHOT_DIR, if set, reaches the tests as SNAPSHOT_DIR.)
 STATUS=$?
 
-if command -v xcbeautify >/dev/null; then xcbeautify < "build/${FAMILY}.log"; else cat "build/${FAMILY}.log"; fi
+# Plain renderer: its GitHub annotations would use up the 10-per-step limit.
+if command -v xcbeautify >/dev/null; then xcbeautify --renderer terminal < "build/${FAMILY}.log"; else cat "build/${FAMILY}.log"; fi
 
 if [ $STATUS -ne 0 ]; then
   # Most useful first: compiler errors and test issue details (file:line + message).
