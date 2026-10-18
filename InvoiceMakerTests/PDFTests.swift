@@ -275,3 +275,34 @@ enum SnapshotExport {
         try? data.write(to: url)
     }
 }
+
+@MainActor
+struct ExportTests {
+    @Test func zipContainsPDFsAndCSVs() throws {
+        let container = DemoData.container()
+        let context = container.mainContext
+        let business = try #require(try BusinessSetup.current(in: context))
+        let dir = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+        try FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        defer { try? FileManager.default.removeItem(at: dir) }
+
+        let exporter = DataExporter(context: context, business: business)
+        let folder = try exporter.makeFolder(in: dir)
+        let pdfs = try FileManager.default.contentsOfDirectory(atPath: folder.appendingPathComponent("PDFs").path)
+        #expect(pdfs.count == 6)
+        #expect(pdfs.allSatisfy { $0.hasSuffix(".pdf") })
+        let documents = try String(contentsOf: folder.appendingPathComponent("documents.csv"), encoding: .utf8)
+        #expect(documents.hasPrefix("Type,Number,Status,Client"))
+        #expect(documents.contains("INV-0007,sent,Marlow & Finch Architects"))
+        #expect(documents.contains(",273.00,"))
+        let clients = try String(contentsOf: folder.appendingPathComponent("clients.csv"), encoding: .utf8)
+        #expect(clients.contains("Lund Design Studio"))
+        let lines = try String(contentsOf: folder.appendingPathComponent("line-items.csv"), encoding: .utf8)
+        #expect(lines.contains("INV-0007,1,\"Bespoke shelving, installed\",2,,87.50"))
+
+        let zip = try exporter.makeZip(in: dir)
+        let size = try #require(try FileManager.default.attributesOfItem(atPath: zip.path)[.size] as? Int)
+        #expect(zip.pathExtension == "zip")
+        #expect(size > 5_000)
+    }
+}
