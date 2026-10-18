@@ -68,7 +68,7 @@ private struct TabShell: View {
                 .tabItem { Label("Items", systemImage: "tag") }
                 .tag(Tab.items)
 
-            NavigationStack { SectionPlaceholder(title: "Settings", message: "Coming in the next build step.") }
+            NavigationStack { SettingsView(business: business) }
                 .tabItem { Label("Settings", systemImage: "gearshape") }
                 .tag(Tab.settings)
         }
@@ -106,7 +106,7 @@ private struct SplitShell: View {
             case .items:
                 ItemsView(business: business)
             case .settings:
-                SectionPlaceholder(title: "Settings", message: "Coming in the next build step.")
+                NavigationStack { SettingsView(business: business) }
             }
         } detail: {
             detail
