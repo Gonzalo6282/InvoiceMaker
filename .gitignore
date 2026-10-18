@@ -7,3 +7,4 @@ build/
 *.xcarchive
 Secrets.xcconfig
 GoogleService-Info.plist
+.swiftpm/
