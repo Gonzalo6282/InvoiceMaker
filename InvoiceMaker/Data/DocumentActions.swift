@@ -118,8 +118,12 @@ struct DocumentActions {
     }
 
     func moveLineItems(in doc: Document, from source: IndexSet, to destination: Int) {
+        // Same semantics as SwiftUI's move(fromOffsets:toOffset:), without importing SwiftUI here.
         var ordered = doc.sortedItems
-        ordered.move(fromOffsets: source, toOffset: destination)
+        let moving = source.map { ordered[$0] }
+        for index in source.sorted(by: >) { ordered.remove(at: index) }
+        let insertAt = destination - source.filter { $0 < destination }.count
+        ordered.insert(contentsOf: moving, at: min(max(insertAt, 0), ordered.count))
         for (index, item) in ordered.enumerated() { item.position = index }
         touch(doc)
     }

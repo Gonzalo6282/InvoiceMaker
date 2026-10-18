@@ -92,6 +92,12 @@ struct DocumentActionsTests {
 
         actions.moveLineItems(in: doc, from: [1], to: 0)
         #expect(doc.sortedItems.map(\.itemDescription) == ["C", "A"])
+        let d = actions.addLineItem(to: doc)
+        d.itemDescription = "D"
+        actions.moveLineItems(in: doc, from: [0], to: 3)  // C to the end
+        #expect(doc.sortedItems.map(\.itemDescription) == ["A", "D", "C"])
+        actions.moveLineItems(in: doc, from: [0, 2], to: 1)  // A and C before D
+        #expect(doc.sortedItems.map(\.itemDescription) == ["A", "C", "D"])
     }
 
     @Test func addFromSavedItem() {
