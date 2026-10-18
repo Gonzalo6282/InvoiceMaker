@@ -9,12 +9,17 @@ struct EditorMoreMenu: View {
     let actions: DocumentActions
     let open: (Document) -> Void
     let close: () -> Void
+    let print: () -> Void
+    let savePDF: () -> Void
 
     @State private var showingSignature = false
     @State private var confirmingDelete = false
 
     var body: some View {
         Menu {
+            Button("Print", systemImage: "printer", action: print).keyboardShortcut("p", modifiers: .command)
+            Button("Save PDF to Files", systemImage: "folder", action: savePDF)
+            Divider()
             Button("Duplicate", systemImage: "plus.square.on.square") {
                 open(actions.duplicate(document, business: business))
             }

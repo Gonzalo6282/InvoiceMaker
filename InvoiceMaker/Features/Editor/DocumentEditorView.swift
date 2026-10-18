@@ -1,4 +1,5 @@
 import InvoiceKit
+import UniformTypeIdentifiers
 import SwiftData
 import SwiftUI
 
@@ -18,6 +19,7 @@ struct DocumentEditorView: View {
     @State private var editingLine: LineItem?
     @State private var showingClientPicker = false
     @State private var showingPreview = false
+    @State private var sendFlow = SendFlow()
 
     private var actions: DocumentActions { DocumentActions(context: context) }
     private var taxes: [TaxRate] { taxRecords.map(\.taxRate) }
@@ -30,8 +32,10 @@ struct DocumentEditorView: View {
                 EditorHeader(document: document)
                 EditorBanners(document: document, business: business, actions: actions, open: open)
                 clientSection
+                if sendFlow.issues.contains(.missingClient) { errorText("Add a client before sending.") }
                 EditorDetailsSection(document: document, business: business)
                 EditorItemsSection(document: document, business: business, taxes: taxes, actions: actions, edit: { editingLine = $0 })
+                if sendFlow.issues.contains(.missingItems) { errorText("Add at least one item with a price.") }
                 EditorTaxSection(document: document, business: business, taxes: pickerTaxes)
                 EditorTotalsView(totals: document.totals(taxes: taxes), document: document, business: business)
                     .padding(.top, 12)
@@ -47,7 +51,10 @@ struct DocumentEditorView: View {
         .safeAreaInset(edge: .bottom) { actionBar }
         .toolbar {
             ToolbarItem(placement: .primaryAction) {
-                EditorMoreMenu(document: document, business: business, actions: actions, open: open, close: close)
+                EditorMoreMenu(
+                    document: document, business: business, actions: actions, open: open, close: close,
+                    print: { sendFlow.print(document, business: business, taxes: taxes) },
+                    savePDF: { sendFlow.savePDF(document, business: business, taxes: taxes) })
             }
         }
         .sheet(item: $editingLine) { line in
@@ -63,6 +70,30 @@ struct DocumentEditorView: View {
         .navigationDestination(isPresented: $showingPreview) {
             DocumentPreviewView(document: document, business: business)
         }
+        .sheet(item: $sendFlow.sharing) { pdf in
+            ShareSheet(items: [PDFActivityItem(url: pdf.url, title: sendFlow.shareTitle(for: pdf))]) { completed, activity in
+                sendFlow.finished(document, completed: completed, activity: activity, context: context)
+            }
+            .ignoresSafeArea()
+        }
+        .sheet(isPresented: $sendFlow.offeringSignIn, onDismiss: { sendFlow.continueAfterSignInOffer() }) {
+            SignInOfferSheet()
+        }
+        .fileExporter(
+            isPresented: Binding(get: { sendFlow.exporting != nil }, set: { if !$0 { sendFlow.exporting = nil } }),
+            document: sendFlow.exporting, contentType: .pdf, defaultFilename: document.number
+        ) { result in
+            if case .success = result {
+                AppAnalytics.shared.log(.pdfExported, ["method": "files", "document_type": document.kind.rawValue])
+            }
+        }
+        .alert("Something went wrong", isPresented: Binding(get: { sendFlow.errorMessage != nil }, set: { if !$0 { sendFlow.errorMessage = nil } })) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(sendFlow.errorMessage ?? "")
+        }
+        .onChange(of: document.client) { if !sendFlow.issues.isEmpty { sendFlow.issues = SendValidation.check(document) } }
+        .onChange(of: document.items?.count) { if !sendFlow.issues.isEmpty { sendFlow.issues = SendValidation.check(document) } }
         .onChange(of: scenePhase) { if scenePhase != .active { save() } }
         .onDisappear { save() }
     }
@@ -110,10 +141,13 @@ struct DocumentEditorView: View {
                 .buttonStyle(.ghost)
                 .fixedSize()
             Button {
-                // Sending (Premium gate, share sheet) arrives in M7.
-                showingPreview = true
+                save()
+                sendFlow.send(document, business: business, taxes: taxes, context: context)
             } label: {
-                Text(sendTitle)
+                HStack(spacing: 6) {
+                    if !PurchaseManager.shared.isPremium { Image(systemName: "lock.fill").font(.system(size: 14, weight: .bold)) }
+                    Text(sendTitle)
+                }
             }
             .buttonStyle(.primary)
             .accessibilityIdentifier("send")
@@ -122,6 +156,11 @@ struct DocumentEditorView: View {
         .padding(.top, 10)
         .padding(.bottom, 8)
         .background(.bar)
+    }
+
+    private func errorText(_ text: LocalizedStringKey) -> some View {
+        Text(text).font(.system(size: 13)).foregroundStyle(Color.due).padding(.horizontal, 20).padding(.top, 6)
+            .accessibilityIdentifier("sendError")
     }
 
     private var sendTitle: String {
