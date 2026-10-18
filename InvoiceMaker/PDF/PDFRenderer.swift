@@ -1,5 +1,6 @@
 import CoreImage.CIFilterBuiltins
 import CoreText
+import InvoiceKit
 import UIKit
 
 /// Draws an `InvoicePDFModel` as a PDF. Sizes follow the mockup's `.paper`
