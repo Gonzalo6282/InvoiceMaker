@@ -30,6 +30,7 @@ private struct TabShell: View {
     @State private var tab: Tab = .documents
     @State private var kind: DocumentKind = .invoice
     @State private var path: [PersistentIdentifier] = []
+    @State private var clientPath: [PersistentIdentifier] = []
 
     enum Tab { case documents, clients, items, settings }
 
@@ -47,11 +48,23 @@ private struct TabShell: View {
             .tabItem { Label("Invoices", systemImage: "doc.text") }
             .tag(Tab.documents)
 
-            NavigationStack { SectionPlaceholder(title: "Clients", message: "Coming in the next build step.") }
-                .tabItem { Label("Clients", systemImage: "person.2") }
-                .tag(Tab.clients)
+            NavigationStack(path: $clientPath) {
+                ClientsView(business: business, openClient: { clientPath = [$0.persistentModelID] })
+                    .navigationDestination(for: PersistentIdentifier.self) { id in
+                        ClientDetailHost(
+                            id: id, business: business,
+                            openDocument: { doc in
+                                kind = doc.kind
+                                path = [doc.persistentModelID]
+                                tab = .documents
+                            },
+                            close: { clientPath = [] })
+                    }
+            }
+            .tabItem { Label("Clients", systemImage: "person.2") }
+            .tag(Tab.clients)
 
-            NavigationStack { SectionPlaceholder(title: "Items", message: "Coming in the next build step.") }
+            NavigationStack { ItemsView(business: business) }
                 .tabItem { Label("Items", systemImage: "tag") }
                 .tag(Tab.items)
 
@@ -69,7 +82,8 @@ private struct SplitShell: View {
     let business: Business
     @State private var section: AppSection? = .documents(.invoice)
     @State private var kind: DocumentKind = .invoice
-    @State private var selectedID: PersistentIdentifier?
+    @State private var documentID: PersistentIdentifier?
+    @State private var clientID: PersistentIdentifier?
     @State private var visibility: NavigationSplitViewVisibility = .all
 
     var body: some View {
@@ -86,26 +100,16 @@ private struct SplitShell: View {
         } content: {
             switch section {
             case .documents, .none:
-                DocumentListView(business: business, kind: $kind, open: { selectedID = $0.persistentModelID }, selectedID: selectedID)
+                DocumentListView(business: business, kind: $kind, open: { documentID = $0.persistentModelID }, selectedID: documentID)
             case .clients:
-                SectionPlaceholder(title: "Clients", message: "Coming in the next build step.")
+                ClientsView(business: business, openClient: { clientID = $0.persistentModelID }, selectedID: clientID)
             case .items:
-                SectionPlaceholder(title: "Items", message: "Coming in the next build step.")
+                ItemsView(business: business)
             case .settings:
                 SectionPlaceholder(title: "Settings", message: "Coming in the next build step.")
             }
         } detail: {
-            if let selectedID {
-                NavigationStack {
-                    DocumentDetailHost(
-                        id: selectedID, business: business,
-                        open: { self.selectedID = $0.persistentModelID },
-                        close: { self.selectedID = nil })
-                }
-                .id(selectedID)
-            } else {
-                SectionPlaceholder(title: "", message: String(localized: "Choose an invoice, or press ⌘N to create one"))
-            }
+            detail
         }
         .navigationSplitViewStyle(.balanced)
         .tint(Color.brand)
@@ -114,6 +118,40 @@ private struct SplitShell: View {
         }
         .onChange(of: kind) {
             if case .documents = section { section = .documents(kind) }
+        }
+    }
+
+    @ViewBuilder private var detail: some View {
+        switch section {
+        case .clients:
+            if let clientID {
+                NavigationStack {
+                    ClientDetailHost(
+                        id: clientID, business: business,
+                        openDocument: { doc in
+                            documentID = doc.persistentModelID
+                            section = .documents(doc.kind)
+                        },
+                        close: { self.clientID = nil })
+                }
+                .id(clientID)
+            } else {
+                SectionPlaceholder(title: "", message: String(localized: "Choose a client"))
+            }
+        case .documents, .none:
+            if let documentID {
+                NavigationStack {
+                    DocumentDetailHost(
+                        id: documentID, business: business,
+                        open: { self.documentID = $0.persistentModelID },
+                        close: { self.documentID = nil })
+                }
+                .id(documentID)
+            } else {
+                SectionPlaceholder(title: "", message: String(localized: "Choose an invoice, or press ⌘N to create one"))
+            }
+        case .items, .settings:
+            SectionPlaceholder(title: "", message: "")
         }
     }
 
@@ -141,6 +179,22 @@ struct DocumentDetailHost: View {
             DocumentEditorView(document: doc, business: business, open: open, close: close)
         } else {
             SectionPlaceholder(title: "", message: String(localized: "This document was deleted."))
+        }
+    }
+}
+
+struct ClientDetailHost: View {
+    let id: PersistentIdentifier
+    let business: Business
+    let openDocument: (Document) -> Void
+    let close: () -> Void
+    @Environment(\.modelContext) private var context
+
+    var body: some View {
+        if let client = context.model(for: id) as? Client, !client.isDeleted {
+            ClientDetailView(client: client, business: business, openDocument: openDocument, close: close)
+        } else {
+            SectionPlaceholder(title: "", message: String(localized: "Choose a client"))
         }
     }
 }
