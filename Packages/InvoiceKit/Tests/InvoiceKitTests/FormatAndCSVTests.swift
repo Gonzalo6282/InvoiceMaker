@@ -74,6 +74,9 @@ struct CSVTests {
         cal.timeZone = TimeZone(identifier: "UTC")!
         let date = cal.date(from: DateComponents(year: 2026, month: 3, day: 7))!
         #expect(CSVWriter.date(date, calendar: cal) == "2026-03-07")
+        var tokyo = Calendar(identifier: .gregorian)
+        tokyo.timeZone = TimeZone(identifier: "Asia/Tokyo")!
+        #expect(CSVWriter.date(cal.date(from: DateComponents(year: 2026, month: 3, day: 7, hour: 20))!, calendar: tokyo) == "2026-03-08")
         #expect(CSVWriter.date(nil) == "")
     }
 }

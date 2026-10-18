@@ -34,8 +34,7 @@ public enum CSVWriter {
     /// Dates for CSV: ISO 8601 day, e.g. 2026-10-18.
     public static func date(_ value: Date?, calendar: Calendar = .current) -> String {
         guard let value else { return "" }
-        let c = calendar.dateComponents([.year, .month, .day], from: value)
-        return String(format: "%04d-%02d-%02d", c.year ?? 0, c.month ?? 0, c.day ?? 0)
+        return value.formatted(Date.ISO8601FormatStyle(timeZone: calendar.timeZone).year().month().day())
     }
 
     private static let posix = Locale(identifier: "en_US_POSIX")

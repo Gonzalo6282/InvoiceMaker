@@ -37,6 +37,9 @@ struct StatusTests {
 
     @Test func daysOverdue() {
         #expect(StatusRules.daysOverdue(due: day("2026-10-15"), today: today, calendar: calendar) == 3)
+        // Across the clock change on 25 Oct 2026 (a 25-hour day in London).
+        #expect(StatusRules.daysOverdue(due: day("2026-10-24"), today: day("2026-10-27"), calendar: calendar) == 3)
+        #expect(StatusRules.daysOverdue(due: day("2026-03-28"), today: day("2026-03-30", hour: 0), calendar: calendar) == 2)
         #expect(StatusRules.daysOverdue(due: day("2026-10-20"), today: today, calendar: calendar) == 0)
     }
 

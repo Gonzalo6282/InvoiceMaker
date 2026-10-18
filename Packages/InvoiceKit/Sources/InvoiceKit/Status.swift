@@ -26,13 +26,20 @@ public enum StatusRules {
         {
             return .overdue
         }
-        return DisplayStatus(rawValue: status.rawValue) ?? .draft
+        switch status {
+        case .draft: return .draft
+        case .sent: return .sent
+        case .paid: return .paid
+        case .accepted: return .accepted
+        case .converted: return .converted
+        }
     }
 
     /// Whole days past due (0 if not overdue).
     public static func daysOverdue(due: Date, today: Date, calendar: Calendar = .current) -> Int {
-        let days = calendar.dateComponents([.day], from: calendar.startOfDay(for: due), to: calendar.startOfDay(for: today)).day ?? 0
-        return max(days, 0)
+        // Midnight to midnight; rounding absorbs the 23/25-hour days at clock changes.
+        let seconds = calendar.startOfDay(for: today).timeIntervalSince(calendar.startOfDay(for: due))
+        return max(Int((seconds / 86_400).rounded()), 0)
     }
 }
 
