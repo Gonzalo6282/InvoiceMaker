@@ -455,6 +455,9 @@ private struct PageLayout {
         let size = (text as NSString).size(withAttributes: attrs)
         let box = CGRect(x: -size.width / 2 - 3 * u, y: -size.height / 2 - 0.5 * u, width: size.width + 6 * u, height: size.height + 1 * u)
         cg.saveGState()
+        // Multiply + transparency like ink on paper, so text under the stamp stays readable.
+        cg.setBlendMode(.multiply)
+        cg.setAlpha(0.7)
         cg.translateBy(x: bounds.width * 0.92 - box.width / 2, y: bounds.height * 0.30 + box.height / 2)
         cg.rotate(by: -14 * .pi / 180)
         let path = UIBezierPath(roundedRect: box, cornerRadius: 2 * u)
