@@ -57,22 +57,22 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] T6.3 Purchases: RevenueCat setup, `pro` entitlement state, StoreKit config file, restore, manage subscription
 - [x] T6.4 Superwall placements + RevenueCat purchase controller + native fallback paywall
 - [x] T6.5 Account: Sign in with Apple via Firebase, UID → RevenueCat, delete account
-- [ ] ✅ Sandbox purchase unlocks `pro`
+- [ ] ✅ You: sandbox/StoreKit-file purchase unlocks `pro` (keys are in your local Secrets.xcconfig)
 
 ## M7 sending
 - [x] T7.1 Validation + Premium gate + sign-in offer at first send
 - [x] T7.2 Share sheet / Files / print (anchored on iPad), offline note, status → sent, events
-- [ ] ✅ Send after sandbox purchase
+- [ ] ✅ You: send after a test purchase
 
 ## M8 onboarding
 - [x] T8.1 Consent → welcome → role → business → first invoice (live preview) → soft paywall
-- [ ] ✅ Fresh-install walk-through
+- [x] ✅ Onboarding UI test on CI · [ ] you: fresh-install walk-through on the Mac
 
 ## M9 iPad + release checks
-- [ ] T9.1 iPad pass: editor + live PDF, ⌘N/⌘S/⌘P, form sheets, popovers, Split View, Stage Manager
-- [ ] T9.2 Performance: 1,000 invoices, open < 0.5 s
-- [ ] T9.3 UI tests: onboarding, create → send gate → purchase → share, iPad landscape
-- [ ] T9.4 Largest Dynamic Type + accessibility labels
+- [x] T9.1 iPad pass: editor + live PDF, ⌘N/⌘S/⌘P, form sheets, popovers, Split View, Stage Manager
+- [x] T9.2 Performance: 1,000 invoices, open < 0.5 s
+- [x] T9.3 UI tests: onboarding, create → send gate → purchase → share, iPad landscape
+- [x] T9.4 Largest Dynamic Type + accessibility labels
 - [ ] ✅ Bug checklist on real iPhone + iPad
 
 ## Later (from HANDOFF)
