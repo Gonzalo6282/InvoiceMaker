@@ -19,9 +19,10 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 18 Oct 2026 | T4.1–T4.2 Shell + list | iPhone tabs (Invoices, Clients, Items, Settings); iPad sidebar + list + detail. List: type picker, "Owed to you" card, search, filters, rows with due text and pills, empty states, context menu (duplicate, mark paid, delete). UI test: first run → new invoice |
 | 18 Oct 2026 | T4.3–T4.8 Core app | Editor (autosave, banners, client, dates, items, tax/discount/fees, totals, notes, look), line-item sheet, saved-item picker, PDF preview with template strip (PRO tags) + colours, more menu (duplicate, paid/unpaid, receipt, convert, client signs, delete), PencilKit signature sheet, Clients (list with owed, detail, Contacts picker, currency per client), Items. UI test caught "typing 50 gave 500" (zero shown in money fields) — fixed |
 | 18 Oct 2026 | Tax safety | Sent/paid documents freeze the tax rates they used; deleting a tax archives it. Editing a rate never changes an issued document. Schema v1 gained `Document.frozenTaxes`, `TaxRateRecord.isArchived` (before first TestFlight, so no migration) |
+| 18 Oct 2026 | T5.1–T5.3 Settings + export | Settings root (plan card, business, data, subscription, help, privacy/legal, analytics switch) and pages: business profile with logo (PhotosPicker, downscaled PNG), taxes (edit, default, add, archive, restore presets), payment details, invoice look (template thumbnails, colours), my signature, numbering/defaults, currency display, iCloud status, help/FAQ, report a problem (Mail). Export everything: PDFs + documents/line-items/clients CSV zipped with `NSFileCoordinator`, shared via the share sheet. Tested on CI |
 
 ## Current state
-- Waiting for: Gonzalo to make this repo public (so CI minutes are free), reset the Mac copy, set the signing team (checkpoint M0).
-- Next: M5 Settings (T5.1–T5.2), then export (T5.3).
+- Waiting for: Gonzalo to set the signing team on the Mac (checkpoint M0) and the M6 accounts/keys (see below).
+- Next: M6 analytics, purchases, account. Code is built against keys in an untracked `Secrets.xcconfig`; without keys the app runs with those services off.
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls.
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`). Never copy pricing or keywords into this public repo.

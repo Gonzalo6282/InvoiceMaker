@@ -46,10 +46,10 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] ✅ Create → add item → total, on CI (iPhone + iPad) · [ ] you: try it on the Mac
 
 ## M5 settings + export
-- [ ] T5.1 Settings: business profile (PhotosPicker logo), taxes, payment details, invoice look, signature, numbering/defaults, currency display
-- [ ] T5.2 Settings: backup status (iCloud on/off), help, report a problem, legal links
-- [ ] T5.3 Export: PDFs as ZIP, data as CSV (free)
-- [ ] ✅ Export to Files works
+- [x] T5.1 Settings: business profile (PhotosPicker logo), taxes, payment details, invoice look, signature, numbering/defaults, currency display
+- [x] T5.2 Settings: backup status (iCloud on/off), help, report a problem, legal links
+- [x] T5.3 Export: PDFs as ZIP, data as CSV (free)
+- [x] ✅ Export ZIP + CSV tested on CI · [ ] you: export to Files on the Mac/device
 
 ## M6 analytics + purchases + account  (needs your keys)
 - [ ] T6.1 Add Firebase 12.x, RevenueCat 5.x, SuperwallKit 4.18.x packages; `Secrets.xcconfig` template
