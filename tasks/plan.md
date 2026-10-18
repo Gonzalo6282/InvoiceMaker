@@ -1,13 +1,12 @@
 # Build plan: Duly (Invoice Maker) v1.0
 
-Source: `docs/SPEC.md` (approved, all questions resolved), `docs/design-system.md`, `design/mockup/index.html`, Build Doc 1. Build order follows the spec's capability map. Every task ends with: tests green → `docs/PROGRESS.md` updated → commit + push to `main`.
+Source: `SPEC.md` in the private docs repo (approved, all questions resolved), `docs/design-system.md`, `design/mockup/index.html`, Build Doc 1. Build order follows the spec's capability map. Every task ends with: tests green → `docs/PROGRESS.md` updated → commit + push to `main`.
 
 ## How the work runs
 
 - **Where code is written:** a cloud clone of `github.com/Gonzalo6282/InvoiceMaker`. Each task is pushed to `main`; the Mac folder (`~/Desktop/InvoiceMaker`) gets it with **Source Control → Pull** in Xcode (or `git pull`).
-- **What can't run from here:** there is no Swift toolchain or Xcode in the cloud workspace, and this session has no shell on the Mac. So `swift test` / `xcodebuild test` run **on the Mac**. Two options:
-  1. *(Preferred)* Turn on the Claude desktop app's shell access for this folder, so I can run `swift test` and `xcodebuild` on the Mac myself before every commit, as the spec requires.
-  2. Otherwise I push, you press ⌘U in Xcode at checkpoints (marked ✅ in todo.md) and paste any errors back.
+- **Tests:** GitHub Actions (`.github/workflows/ci.yml`, macOS 26 runner, Xcode 26.1) runs `swift test` and `xcodebuild test` on iPhone and iPad simulators after every push; I read the result and fix failures before moving on. The repo is public so these minutes are free; strategy docs are in the private `InvoiceMaker-docs` repo.
+- **On the Mac (✅ checkpoints):** signing, iCloud, real-device checks and looking at the UI.
 - **Xcode project:** written by hand in Xcode 16+ format with **folder-synchronised groups**, so new Swift files appear in Xcode automatically and the project file almost never changes (fewer merge problems).
 
 ## Milestones
@@ -63,10 +62,10 @@ Packages are added at M6, not M0, so the early milestones build fast and don't n
 |---|---|
 | M0 | Open the project once, pick your signing team (Signing & Capabilities), add the iCloud container `iCloud.uk.slice-of-life.invoicemaker` if Xcode asks |
 | M6 | Firebase `GoogleService-Info.plist` (drop in `InvoiceMaker/Resources/`, never committed), RevenueCat and Superwall API keys (go in untracked `Secrets.xcconfig`), App Store Connect products created |
-| Each ✅ | Pull, ⌘U, tell me pass/fail (unless shell access is on) |
+| Each ✅ | Pull, run it, look at it |
 
 ## Risks
 
-- **Compile errors found late** because nothing compiles in the cloud workspace. Mitigation: small tasks, checkpoints after every module, shell access if possible.
+- **Compile errors** can't be caught in the cloud workspace itself. Mitigation: CI on every push; small tasks.
 - **SwiftData + CloudKit** schema rules: enforced by a test that checks every model property is optional/defaulted.
 - **Superwall paywall** depends on the web editor; the native fallback paywall keeps the send gate working regardless.

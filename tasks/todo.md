@@ -1,12 +1,13 @@
 # To-do: Duly v1.0
 
-One line = one task = one commit + push. ✅ = checkpoint where the Mac runs the tests (you, or me with shell access).
+One line = one task = one commit + push. Every push is tested by GitHub Actions (iPhone + iPad simulators). ✅ = checkpoint where you look at it on the Mac.
 
 ## M0 Project skeleton
 - [x] T0.1 `tasks/plan.md`, `tasks/todo.md`, `docs/PROGRESS.md` (approved 18 Oct)
 - [x] T0.2 Xcode project `InvoiceMaker.xcodeproj`: app target (iOS 17, universal, Swift 6 strict concurrency, bundle `uk.slice-of-life.invoicemaker`, display name "Duly"), unit + UI test targets, shared scheme, folder layout from SPEC, Assets, empty String Catalog, entitlements (iCloud/CloudKit, Sign in with Apple), `.gitignore` (Secrets.xcconfig, GoogleService-Info.plist, build/, DerivedData)
 - [x] T0.3 `Packages/InvoiceKit` (Swift tools 6.0, Swift Testing) linked to the app
-- [ ] ✅ You: open project, set signing team, ⌘R on iPhone sim, ⌘U
+- [ ] T0.4 Split repos (strategy docs → private `InvoiceMaker-docs`), make this repo public, GitHub Actions CI green
+- [ ] ✅ You: open project, set signing team, ⌘R on iPhone sim
 
 ## M1 invoice-kit (test-first)
 - [ ] T1.1 Rounding + `Discount` (% / amount) + `LineItemInput.net`

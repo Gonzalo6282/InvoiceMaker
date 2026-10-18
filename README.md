@@ -1,16 +1,18 @@
 # Invoice Maker (Slice of Life Ltd)
 
-App 1 of 6 in Plan C. Built phase by phase from *Build Doc 1: Invoice Maker*.
+iOS + iPad invoice, estimate and receipt maker by Slice of Life Ltd. The spec and strategy docs live in a private repo.
 
 ## Status
 
-- [x] Phase 1: research refresh (docs/phase1-research.md)
-- [x] Phase 2: design system (docs/design-system.md) and clickable mockup (design/mockup/). **Waiting for your approval.**
-- [ ] Phase 3: Swift/SwiftUI app, version 1.0. Spec drafted (docs/SPEC.md), waiting for approval. Code is written on the Mac (Xcode 26.1.1, Firebase 12.x)
+- [x] Phase 1: research refresh
+- [x] Phase 2: design system (docs/design-system.md) and clickable mockup (design/mockup/).
+- [ ] Phase 3: Swift/SwiftUI app, version 1.0. In progress, see `tasks/todo.md` and `docs/PROGRESS.md`. Xcode 26.1.1, Firebase 12.x
 - [ ] Phase 4: App Store icon, screenshots, listing
 - [ ] Phase 5: landing page (slice-of-life.uk/invoice)
 - [ ] Phase 6: launch video
 - [ ] Phase 7: submit
+
+[![CI](https://github.com/Gonzalo6282/InvoiceMaker/actions/workflows/ci.yml/badge.svg)](https://github.com/Gonzalo6282/InvoiceMaker/actions/workflows/ci.yml)
 
 ## Test the mockup
 
