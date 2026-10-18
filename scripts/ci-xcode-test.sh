@@ -38,14 +38,16 @@ xcodebuild test \
   -destination "id=${ID}" \
   -resultBundlePath "build/${FAMILY}.xcresult" \
   CODE_SIGNING_ALLOWED=NO > "build/${FAMILY}.log" 2>&1
+# (TEST_RUNNER_SNAPSHOT_DIR, if set, reaches the tests as SNAPSHOT_DIR.)
 STATUS=$?
 
 if command -v xcbeautify >/dev/null; then xcbeautify < "build/${FAMILY}.log"; else cat "build/${FAMILY}.log"; fi
 
 if [ $STATUS -ne 0 ]; then
-  grep -E "error:|\*\* .* FAILED \*\*|failed|Test Case .* failed|✘|xcodebuild: error" "build/${FAMILY}.log" \
-    | grep -v "^\s*$" | sort -u | head -9 \
-    | while IFS= read -r l; do echo "::error title=${FAMILY}::${l}"; done
-  tail -8 "build/${FAMILY}.log" | while IFS= read -r l; do echo "::notice title=${FAMILY} tail::${l}"; done
+  # Most useful first: compiler errors and test issue details (file:line + message).
+  grep -E "error:|Caught error|Expectation failed|recorded an issue|Issue recorded|XCTAssert|failed -|Fatal error|fatal error|crashed|signal|Incorrect actor|precondition|Thread [0-9]+ Crashed" "build/${FAMILY}.log" \
+    | grep -v -E "^\s*$|Test case '.*' failed on" | awk '!seen[$0]++' | head -9 \
+    | while IFS= read -r l; do echo "::error title=${FAMILY}::${l:0:900}"; done
+  tail -4 "build/${FAMILY}.log" | while IFS= read -r l; do echo "::notice title=${FAMILY} tail::${l}"; done
 fi
 exit $STATUS
