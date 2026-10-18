@@ -56,13 +56,24 @@ jobs:
           echo "DEVELOPER_DIR=$MAC/Contents/Developer" >> "$GITHUB_ENV"
           echo "::notice title=Compile check::$(basename "$MAC")"
 
-      - name: Download iOS platform for Xcode 26.1
-        run: xcodebuild -downloadPlatform iOS
-
       - name: Compile app, tests and InvoiceKit
         run: |
           swift build --package-path Packages/InvoiceKit --build-tests
-          xcodebuild build-for-testing -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
-            -destination 'generic/platform=iOS Simulator' CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1 \
-            || { grep -E "error:" build-mac.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=compile 26.1::$l"; done; tail -40 build-mac.log; exit 1; }
-          echo "Compiled OK with $(xcodebuild -version | head -1)"
+          build() {
+            xcodebuild build-for-testing -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
+              -sdk iphonesimulator -arch arm64 CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1
+          }
+          if ! build; then
+            if grep -q "is not installed" build-mac.log; then
+              echo "::notice::iOS platform missing for this Xcode; downloading it"
+              xcodebuild -downloadPlatform iOS > download.log 2>&1 \
+                || { tail -6 download.log | while IFS= read -r l; do echo "::error title=downloadPlatform::$l"; done; exit 1; }
+              build || true
+            fi
+          fi
+          if grep -q "\*\* TEST BUILD SUCCEEDED \*\*" build-mac.log; then
+            echo "Compiled OK with $(xcodebuild -version | head -1)"
+          else
+            grep -E "error:" build-mac.log | sort -u | head -9 | while IFS= read -r l; do echo "::error title=compile 26.1::$l"; done
+            tail -40 build-mac.log; exit 1
+          fi
