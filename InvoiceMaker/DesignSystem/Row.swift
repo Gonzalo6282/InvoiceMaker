@@ -5,7 +5,7 @@ import SwiftUI
 struct Row<Trailing: View>: View {
     var icon: String?
     var iconTint: IconChip.Tint = .brand
-    let title: LocalizedStringKey
+    let title: Text
     var meta: String?
     var value: String?
     var titleColor: Color = .ink
@@ -16,10 +16,10 @@ struct Row<Trailing: View>: View {
         HStack(spacing: 12) {
             if let icon { IconChip(systemName: icon, tint: iconTint) }
             VStack(alignment: .leading, spacing: 2) {
-                Text(title)
+                title
                     .font(.system(size: 16))
                     .foregroundStyle(titleColor)
-                if let meta {
+                if let meta, !meta.isEmpty {
                     Text(meta)
                         .font(.system(size: 13))
                         .foregroundStyle(Color.ink2)
@@ -48,14 +48,46 @@ struct Row<Trailing: View>: View {
     }
 }
 
+extension Row {
+    /// Localized title with trailing content.
+    init(
+        icon: String? = nil, iconTint: IconChip.Tint = .brand, title: LocalizedStringKey, meta: String? = nil,
+        value: String? = nil, titleColor: Color = .ink, showsChevron: Bool = false,
+        @ViewBuilder trailing: () -> Trailing
+    ) {
+        self.init(
+            icon: icon, iconTint: iconTint, title: Text(title), meta: meta, value: value, titleColor: titleColor,
+            showsChevron: showsChevron, trailing: trailing)
+    }
+
+    /// User-entered title (shown as typed, never looked up as a translation key).
+    init(
+        icon: String? = nil, iconTint: IconChip.Tint = .brand, verbatim: String, meta: String? = nil,
+        value: String? = nil, titleColor: Color = .ink, showsChevron: Bool = false,
+        @ViewBuilder trailing: () -> Trailing
+    ) {
+        self.init(
+            icon: icon, iconTint: iconTint, title: Text(verbatim: verbatim), meta: meta, value: value,
+            titleColor: titleColor, showsChevron: showsChevron, trailing: trailing)
+    }
+}
+
 extension Row where Trailing == EmptyView {
     init(
         icon: String? = nil, iconTint: IconChip.Tint = .brand, title: LocalizedStringKey, meta: String? = nil,
         value: String? = nil, titleColor: Color = .ink, showsChevron: Bool = false
     ) {
         self.init(
-            icon: icon, iconTint: iconTint, title: title, meta: meta, value: value, titleColor: titleColor,
-            showsChevron: showsChevron
-        ) { EmptyView() }
+            icon: icon, iconTint: iconTint, title: Text(title), meta: meta, value: value, titleColor: titleColor,
+            showsChevron: showsChevron) { EmptyView() }
+    }
+
+    init(
+        icon: String? = nil, iconTint: IconChip.Tint = .brand, verbatim: String, meta: String? = nil,
+        value: String? = nil, titleColor: Color = .ink, showsChevron: Bool = false
+    ) {
+        self.init(
+            icon: icon, iconTint: iconTint, title: Text(verbatim: verbatim), meta: meta, value: value,
+            titleColor: titleColor, showsChevron: showsChevron) { EmptyView() }
     }
 }

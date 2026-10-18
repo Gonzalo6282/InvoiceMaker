@@ -21,7 +21,7 @@
                     }
 
                     GroupedSection(header: "Rows", footer: "Hairlines inset 14pt, no shadows.") {
-                        Row(title: "Marlow & Finch Architects", meta: "INV-0012 · Due 1 Nov", value: "£1,450.00") {
+                        Row(verbatim: "Marlow & Finch Architects", meta: "INV-0012 · Due 1 Nov", value: "£1,450.00") {
                             StatusPill(status: .sent)
                         }
                         RowDivider()
@@ -31,7 +31,7 @@
                         RowDivider()
                         Row(icon: "trash", iconTint: .due, title: "Delete", titleColor: .due)
                         RowDivider()
-                        Row(title: "Ostara Café", meta: "jonas@ostaracafe.co.uk") { Avatar(name: "Ostara Café") }
+                        Row(verbatim: "Ostara Café", meta: "jonas@ostaracafe.co.uk") { Avatar(name: "Ostara Café") }
                     }
 
                     VStack(spacing: 12) {
