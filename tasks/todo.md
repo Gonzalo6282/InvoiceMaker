@@ -6,19 +6,19 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] T0.1 `tasks/plan.md`, `tasks/todo.md`, `docs/PROGRESS.md` (approved 18 Oct)
 - [x] T0.2 Xcode project `InvoiceMaker.xcodeproj`: app target (iOS 17, universal, Swift 6 strict concurrency, bundle `uk.slice-of-life.invoicemaker`, display name "Duly"), unit + UI test targets, shared scheme, folder layout from SPEC, Assets, empty String Catalog, entitlements (iCloud/CloudKit, Sign in with Apple), `.gitignore` (Secrets.xcconfig, GoogleService-Info.plist, build/, DerivedData)
 - [x] T0.3 `Packages/InvoiceKit` (Swift tools 6.0, Swift Testing) linked to the app
-- [ ] T0.4 Split repos (strategy docs → private `InvoiceMaker-docs`), make this repo public, GitHub Actions CI green
+- [x] T0.4 Split repos (strategy docs → private `InvoiceMaker-docs`), make this repo public, GitHub Actions CI green
 - [ ] ✅ You: open project, set signing team, ⌘R on iPhone sim
 
 ## M1 invoice-kit (test-first)
-- [ ] T1.1 Rounding + `Discount` (% / amount) + `LineItemInput.net`
-- [ ] T1.2 `TaxRate`, tax added vs included, per item vs on total, several named taxes
-- [ ] T1.3 `Calculator.totals` with shipping + fees; the mockup's 3 cases (£273.00, £237.00, CA GST+PST £89.60)
-- [ ] T1.4 `TaxPresets` UK / AU / CA (by province) / US
-- [ ] T1.5 `DocumentNumbering` (INV- / EST- / REC-, padding, next number; "Quote" title in the UK)
-- [ ] T1.6 `DocumentStatus` + overdue rule + month paid/owed totals
-- [ ] T1.7 `CurrencyDisplay` (symbol / code / none) + `PaperSize.for(country:)`
-- [ ] T1.8 `CSVWriter` with escaping
-- [ ] ✅ `swift test --package-path Packages/InvoiceKit` green, 100% coverage
+- [x] T1.1 Rounding + `Discount` (% / amount) + `LineItemInput.net`
+- [x] T1.2 `TaxRate`, tax added vs included, per item vs on total, several named taxes
+- [x] T1.3 `Calculator.totals` with shipping + fees; the mockup's 3 cases (£273.00, £237.00, CA GST+PST £89.60)
+- [x] T1.4 `TaxPresets` UK / AU / CA (by province) / US
+- [x] T1.5 `DocumentNumbering` (INV- / EST- / REC-, padding, next number; "Quote" title in the UK)
+- [x] T1.6 `DocumentStatus` + overdue rule + month paid/owed totals
+- [x] T1.7 `CurrencyDisplay` (symbol / code / none) + `PaperSize.for(country:)`
+- [x] T1.8 `CSVWriter` with escaping
+- [ ] ✅ `swift test --package-path Packages/InvoiceKit` green, 100% coverage (CI enforces 100%)
 
 ## M2 design-system + data-store
 - [ ] T2.1 Colour tokens (asset catalog, light/dark) + typography modifiers
