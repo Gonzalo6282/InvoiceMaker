@@ -34,6 +34,9 @@ extension SchemaV1 {
         var fromEstimateNumber: String?
         /// Set on an estimate after it was turned into an invoice.
         var convertedToNumber: String?
+        /// The tax rates as they were when the document was sent or paid, so
+        /// editing or deleting a tax later never changes an issued document.
+        var frozenTaxes: [TaxRate] = []
         var createdAt: Date = Date.now
         var updatedAt: Date = Date.now
 

@@ -11,7 +11,8 @@ struct InvoicePDFModelBuilder {
     var today: Date = .now
     var calendar: Calendar = .current
 
-    func build(document doc: Document, business: Business, taxes: [TaxRate]) -> InvoicePDFModel {
+    func build(document doc: Document, business: Business, taxes allTaxes: [TaxRate]) -> InvoicePDFModel {
+        let taxes = doc.effectiveTaxes(allTaxes)
         let region = business.region
         let locale = Locale(identifier: region.preset.localeIdentifier)
         let money = { (amount: Decimal) in

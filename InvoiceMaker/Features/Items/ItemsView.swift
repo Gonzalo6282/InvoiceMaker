@@ -40,7 +40,7 @@ struct ItemsView: View {
             }
         }
         .sheet(item: $editing) { item in
-            SavedItemSheet(item: item, business: business, taxes: taxRecords.map(\.taxRate))
+            SavedItemSheet(item: item, business: business, taxes: taxRecords.filter { !$0.isArchived }.map(\.taxRate))
         }
     }
 

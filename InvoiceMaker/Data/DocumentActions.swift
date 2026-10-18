@@ -63,6 +63,7 @@ struct DocumentActions {
     }
 
     func markPaid(_ doc: Document, on date: Date? = nil) {
+        freeze(doc)
         doc.status = .paid
         doc.paidOn = date ?? now()
         touch(doc)
@@ -75,6 +76,7 @@ struct DocumentActions {
     }
 
     func markSent(_ doc: Document) {
+        freeze(doc)
         if doc.status == .draft { doc.status = .sent }
         doc.sentAt = doc.sentAt ?? now()
         touch(doc)
@@ -130,6 +132,10 @@ struct DocumentActions {
 
     func delete(_ doc: Document) {
         context.delete(doc)
+    }
+
+    private func freeze(_ doc: Document) {
+        doc.freezeTaxes((try? BusinessSetup.taxes(in: context, includingArchived: true)) ?? [])
     }
 
     func touch(_ doc: Document) {

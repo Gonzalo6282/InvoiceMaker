@@ -291,3 +291,59 @@ struct DocumentActionsTests {
         }
     #endif
 }
+
+@MainActor
+struct FrozenTaxTests {
+    let container: ModelContainer
+    let context: ModelContext
+    let business: Business
+    let actions: DocumentActions
+
+    init() throws {
+        container = try ModelContainerFactory.make(.inMemory)
+        context = container.mainContext
+        business = BusinessSetup.create(name: "K", region: .uk, countryCode: "GB", in: context)
+        actions = DocumentActions(context: context)
+    }
+
+    private func vat20() throws -> TaxRateRecord {
+        try #require(try context.fetch(FetchDescriptor<TaxRateRecord>()).first { $0.taxID == "uk-vat20" })
+    }
+
+    @Test func sentInvoiceKeepsItsTaxWhenTheRateIsEdited() throws {
+        let sent = actions.create(.invoice, business: business)
+        actions.addLineItem(to: sent, defaultTaxID: "uk-vat20").rate = 100
+        let draft = actions.create(.invoice, business: business)
+        actions.addLineItem(to: draft, defaultTaxID: "uk-vat20").rate = 100
+        actions.markSent(sent)
+        #expect(sent.frozenTaxes.map(\.id) == ["uk-vat20"])
+
+        try vat20().rate = 17.5
+        let taxes = try BusinessSetup.taxes(in: context)
+        #expect(sent.totals(taxes: taxes).total == 120)  // frozen at 20%
+        #expect(draft.totals(taxes: taxes).total == Decimal(string: "117.5")!)  // drafts follow the edit
+    }
+
+    @Test func archivedTaxStillCountsButIsHiddenFromPickers() throws {
+        let draft = actions.create(.invoice, business: business)
+        actions.addLineItem(to: draft, defaultTaxID: "uk-vat20").rate = 100
+        try vat20().isArchived = true
+        #expect(try BusinessSetup.taxes(in: context, includingArchived: false).map(\.id) == ["uk-vat5", "uk-vat0"])
+        #expect(draft.totals(taxes: try BusinessSetup.taxes(in: context)).total == 120)
+    }
+
+    @Test func restorePresetsArchivesCustomTaxes() throws {
+        context.insert(TaxRateRecord(taxID: "custom", name: "Eco levy", rate: 2, sortIndex: 9))
+        try vat20().rate = 99
+        try BusinessSetup.restorePresets(for: .uk, business: business, in: context)
+        #expect(try BusinessSetup.taxes(in: context, includingArchived: false).map(\.label) == ["VAT 20%", "VAT 5%", "VAT 0%"])
+        #expect(try BusinessSetup.taxes(in: context).count == 4)
+    }
+
+    @Test func duplicateDoesNotCarryFrozenTaxes() {
+        let sent = actions.create(.invoice, business: business)
+        actions.addLineItem(to: sent, defaultTaxID: "uk-vat20")
+        actions.markSent(sent)
+        #expect(actions.duplicate(sent, business: business).frozenTaxes.isEmpty)
+    }
+}

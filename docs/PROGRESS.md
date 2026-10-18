@@ -17,9 +17,11 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 18 Oct 2026 | CI diagnostics | Full logs, xcresult summaries and crash reports are pushed to the `ci-logs` branch; PDF snapshot PNGs to `ci-snapshots` |
 | 18 Oct 2026 | T3.1–T3.4 PDF | `InvoicePDFModelBuilder` (all text formatted, unit-tested) + `PDFRenderer` (`UIGraphicsPDFRenderer`): 7 templates per the mockup CSS, A4/Letter, multi-page with repeated table header, logo fit (wide logos get more width), clickable pay buttons + QR, signatures, PAID stamp, PREVIEW watermark. Snapshot PNGs reviewed via the `ci-snapshots` branch |
 | 18 Oct 2026 | T4.1–T4.2 Shell + list | iPhone tabs (Invoices, Clients, Items, Settings); iPad sidebar + list + detail. List: type picker, "Owed to you" card, search, filters, rows with due text and pills, empty states, context menu (duplicate, mark paid, delete). UI test: first run → new invoice |
+| 18 Oct 2026 | T4.3–T4.8 Core app | Editor (autosave, banners, client, dates, items, tax/discount/fees, totals, notes, look), line-item sheet, saved-item picker, PDF preview with template strip (PRO tags) + colours, more menu (duplicate, paid/unpaid, receipt, convert, client signs, delete), PencilKit signature sheet, Clients (list with owed, detail, Contacts picker, currency per client), Items. UI test caught "typing 50 gave 500" (zero shown in money fields) — fixed |
+| 18 Oct 2026 | Tax safety | Sent/paid documents freeze the tax rates they used; deleting a tax archives it. Editing a rate never changes an issued document. Schema v1 gained `Document.frozenTaxes`, `TaxRateRecord.isArchived` (before first TestFlight, so no migration) |
 
 ## Current state
 - Waiting for: Gonzalo to make this repo public (so CI minutes are free), reset the Mac copy, set the signing team (checkpoint M0).
-- Next: T4.3–T4.5 editor, line-item sheet, preview (pushed, CI running).
+- Next: M5 Settings (T5.1–T5.2), then export (T5.3).
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls.
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`). Never copy pricing or keywords into this public repo.

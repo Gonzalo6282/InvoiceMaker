@@ -37,13 +37,13 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 ## M4 documents + clients-items
 - [x] T4.1 App shell: tabs (iPhone) / split view (iPad), router, AppState
 - [x] T4.2 Documents list: filters, search, month totals hero card, empty state
-- [ ] T4.3 Editor: client, dates, number, notes, autosave
-- [ ] T4.4 Line-item sheet + saved items + tax/discount/fees sheets
-- [ ] T4.5 Preview + template picker (Premium templates marked)
-- [ ] T4.6 More menu: duplicate, mark paid, make receipt, convert estimate, delete
-- [ ] T4.7 Signatures: draw mine (PencilKit), client signs quote/invoice
-- [ ] T4.8 Clients: list, detail, Contacts import, currency per client; saved items list
-- [ ] ✅ Create → edit → preview end to end
+- [x] T4.3 Editor: client, dates, number, notes, autosave
+- [x] T4.4 Line-item sheet + saved items + tax/discount/fees sheets
+- [x] T4.5 Preview + template picker (Premium templates marked)
+- [x] T4.6 More menu: duplicate, mark paid, make receipt, convert estimate, delete
+- [x] T4.7 Signatures: draw mine (PencilKit), client signs quote/invoice
+- [x] T4.8 Clients: list, detail, Contacts import, currency per client; saved items list
+- [x] ✅ Create → add item → total, on CI (iPhone + iPad) · [ ] you: try it on the Mac
 
 ## M5 settings + export
 - [ ] T5.1 Settings: business profile (PhotosPicker logo), taxes, payment details, invoice look, signature, numbering/defaults, currency display

@@ -19,10 +19,29 @@ enum BusinessSetup {
         return business
     }
 
-    /// The taxes as InvoiceKit values, in the user's order.
-    static func taxes(in context: ModelContext) throws -> [TaxRate] {
+    /// The taxes as InvoiceKit values, in the user's order. Archived taxes are
+    /// left out of pickers but still count for documents that use them.
+    static func taxes(in context: ModelContext, includingArchived: Bool = true) throws -> [TaxRate] {
         let records = try context.fetch(FetchDescriptor<TaxRateRecord>(sortBy: [SortDescriptor(\.sortIndex)]))
-        return records.map(\.taxRate)
+        return records.filter { includingArchived || !$0.isArchived }.map(\.taxRate)
+    }
+
+    /// Replaces the user's taxes with the region preset (old ones are archived).
+    static func restorePresets(for region: Region, business: Business, in context: ModelContext) throws {
+        let records = try context.fetch(FetchDescriptor<TaxRateRecord>())
+        let presetIDs = Set(region.preset.taxes.map(\.id))
+        for record in records where !presetIDs.contains(record.taxID) { record.isArchived = true }
+        for (index, tax) in region.preset.taxes.enumerated() {
+            if let existing = records.first(where: { $0.taxID == tax.id }) {
+                existing.name = tax.name
+                existing.rate = tax.rate
+                existing.sortIndex = index
+                existing.isArchived = false
+            } else {
+                context.insert(TaxRateRecord(taxID: tax.id, name: tax.name, rate: tax.rate, sortIndex: index))
+            }
+        }
+        business.defaultTaxID = region.preset.defaultTax?.id
     }
 
     /// The one business (1.0 has a single business). Nil before onboarding.

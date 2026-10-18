@@ -21,6 +21,8 @@ struct DocumentEditorView: View {
 
     private var actions: DocumentActions { DocumentActions(context: context) }
     private var taxes: [TaxRate] { taxRecords.map(\.taxRate) }
+    /// Taxes offered in pickers (archived ones are hidden).
+    private var pickerTaxes: [TaxRate] { taxRecords.filter { !$0.isArchived }.map(\.taxRate) }
 
     var body: some View {
         ScrollView {
@@ -30,7 +32,7 @@ struct DocumentEditorView: View {
                 clientSection
                 EditorDetailsSection(document: document, business: business)
                 EditorItemsSection(document: document, business: business, taxes: taxes, actions: actions, edit: { editingLine = $0 })
-                EditorTaxSection(document: document, business: business, taxes: taxes)
+                EditorTaxSection(document: document, business: business, taxes: pickerTaxes)
                 EditorTotalsView(totals: document.totals(taxes: taxes), document: document, business: business)
                     .padding(.top, 12)
                 notesSection
@@ -49,7 +51,7 @@ struct DocumentEditorView: View {
             }
         }
         .sheet(item: $editingLine) { line in
-            LineItemSheet(line: line, document: document, business: business, taxes: taxes, actions: actions)
+            LineItemSheet(line: line, document: document, business: business, taxes: pickerTaxes, actions: actions)
         }
         .sheet(isPresented: $showingClientPicker) {
             ClientPickerSheet(selected: document.client) { client in

@@ -103,6 +103,9 @@ extension SchemaV1 {
         var name: String = ""
         var rate: Decimal = 0
         var sortIndex: Int = 0
+        /// "Deleted" taxes are archived: hidden from pickers but kept so
+        /// drafts that use them still add up.
+        var isArchived: Bool = false
 
         init(taxID: String, name: String, rate: Decimal, sortIndex: Int) {
             self.taxID = taxID
