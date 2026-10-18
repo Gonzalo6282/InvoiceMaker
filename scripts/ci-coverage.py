@@ -13,7 +13,10 @@ for f in data["data"][0]["files"]:
     covered += lines["covered"]
     total += lines["count"]
     if lines["covered"] < lines["count"]:
-        gaps.append(f'{f["filename"].split("/Sources/InvoiceKit/")[1]} {lines["covered"]}/{lines["count"]}')
+        # llvm-cov segments: [line, col, count, hasCount, isRegionEntry, isGapRegion]
+        zero = sorted({s[0] for s in f.get("segments", []) if s[3] and s[4] and not s[5] and s[2] == 0})
+        name = f["filename"].split("/Sources/InvoiceKit/")[1]
+        gaps.append(f'{name} {lines["covered"]}/{lines["count"]}, lines {zero}')
 pct = 100.0 * covered / total if total else 100.0
 print(f"::notice title=InvoiceKit coverage::{pct:.1f}% of {total} lines")
 for g in gaps[:9]:

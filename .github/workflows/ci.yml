@@ -61,10 +61,10 @@ jobs:
           swift build --package-path Packages/InvoiceKit --build-tests
           build() {
             xcodebuild build-for-testing -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
-              -sdk iphonesimulator -arch arm64 CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1
+              -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1
           }
           if ! build; then
-            if grep -q "is not installed" build-mac.log; then
+            if grep -q -E "is not installed|No simulator runtime" build-mac.log; then
               echo "::notice::iOS platform missing for this Xcode; downloading it"
               xcodebuild -downloadPlatform iOS > download.log 2>&1 \
                 || { tail -6 download.log | while IFS= read -r l; do echo "::error title=downloadPlatform::$l"; done; exit 1; }

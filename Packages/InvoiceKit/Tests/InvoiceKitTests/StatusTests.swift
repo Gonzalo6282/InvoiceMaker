@@ -61,6 +61,14 @@ struct StatusTests {
         #expect(s.owedInOtherCurrencies == ["EUR": 42])
     }
 
+    @Test func defaultCalendarOverloads() {
+        let now = Date()
+        let threeDaysAgo = Calendar.current.date(byAdding: .day, value: -3, to: now)!
+        #expect(StatusRules.display(kind: .invoice, status: .sent, due: threeDaysAgo, today: now) == .overdue)
+        #expect(StatusRules.daysOverdue(due: threeDaysAgo, today: now) == 3)
+        #expect(MoneySummary(documents: [], currencyCode: "GBP", today: now).owed == 0)
+    }
+
     @Test func allStatusesHaveDisplayEquivalents() {
         for status in DocumentStatus.allCases {
             #expect(DisplayStatus(rawValue: status.rawValue) != nil)
