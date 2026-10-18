@@ -23,9 +23,9 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 ## M2 design-system + data-store
 - [x] T2.1 Colour tokens (asset catalog, light/dark) + typography modifiers
 - [x] T2.2 Buttons, pills, rows, hero card, icon tiles + debug gallery screen
-- [ ] T2.3 SwiftData models v1 (CloudKit-safe) + `ModelContainer` (CloudKit / in-memory)
-- [ ] T2.4 `Document → DocumentInput` mapping, demo data, CloudKit-safety test, CRUD integration tests
-- [ ] ✅ ⌘U green; gallery vs mockup
+- [x] T2.3 SwiftData models v1 (CloudKit-safe) + `ModelContainer` (CloudKit / in-memory)
+- [x] T2.4 `Document → DocumentInput` mapping, demo data, CloudKit-safety test, CRUD integration tests
+- [x] ✅ Tests green on CI (iPhone + iPad) · [ ] you: look at the Design system gallery vs the mockup
 
 ## M3 pdf-render
 - [ ] T3.1 Renderer core: paper size, layout helpers, logo fit, QR, payment buttons, signatures
