@@ -5,6 +5,14 @@ import SwiftUI
 struct InvoiceMakerApp: App {
     private let store = ModelContainerFactory.forApp()
 
+    init() {
+        // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
+        AppAnalytics.shared.configure()
+        PurchaseManager.shared.configure()
+        PaywallService.shared.configure()
+        AccountService.shared.start()
+    }
+
     var body: some Scene {
         WindowGroup {
             switch store {

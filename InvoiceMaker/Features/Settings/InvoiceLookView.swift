@@ -4,7 +4,8 @@ import SwiftUI
 /// Default template, brand colour and logo for new documents.
 struct InvoiceLookView: View {
     @Bindable var business: Business
-    var isPremium = false
+    @State private var purchases = PurchaseManager.shared
+    private var isPremium: Bool { purchases.isPremium }
 
     var body: some View {
         ScrollView {
@@ -14,7 +15,13 @@ struct InvoiceLookView: View {
                     HStack(spacing: 12) {
                         ForEach(InvoiceTemplate.allCases) { template in
                             let selected = InvoiceTemplate(id: business.templateID) == template
-                            Button { business.templateID = template.rawValue } label: {
+                            Button {
+                                if template.isPremium {
+                                    PaywallService.shared.gate(.templatePremium) { business.templateID = template.rawValue }
+                                } else {
+                                    business.templateID = template.rawValue
+                                }
+                            } label: {
                                 VStack(spacing: 6) {
                                     TemplateThumbnail(template: template, accentHex: business.brandColorHex, locked: template.isPremium && !isPremium)
                                         .overlay(RoundedRectangle(cornerRadius: 3).strokeBorder(selected ? Color.brand : Color.line, lineWidth: selected ? 2 : 1))

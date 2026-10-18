@@ -6,6 +6,8 @@ import SwiftUI
 struct RootView: View {
     @Query(sort: \Business.createdAt) private var businesses: [Business]
     @Environment(\.modelContext) private var context
+    @State private var paywalls = PaywallService.shared
+    @State private var askConsent = false
 
     var body: some View {
         Group {
@@ -15,6 +17,23 @@ struct RootView: View {
                 ProgressView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .background(Color.canvas)
+            }
+        }
+        .sheet(item: $paywalls.nativePaywall) { request in
+            NativePaywallView(placement: request.placement, onUnlock: request.onUnlock)
+        }
+        .fullScreenCover(isPresented: $askConsent) {
+            ConsentView { granted in
+                AppAnalytics.shared.setConsent(granted)
+                askConsent = false
+            }
+        }
+        .task {
+            guard !ProcessInfo.processInfo.arguments.contains("-uiTesting") else { return }
+            if await AppAnalytics.needsConsentPrompt() {
+                askConsent = true
+            } else {
+                await AppAnalytics.shared.enableByDefaultIfNotAsked()
             }
         }
         .task(id: businesses.isEmpty) {

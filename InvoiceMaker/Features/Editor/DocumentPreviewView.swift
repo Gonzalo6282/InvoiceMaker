@@ -8,7 +8,8 @@ import SwiftUI
 struct DocumentPreviewView: View {
     @Bindable var document: Document
     let business: Business
-    var isPremium = false
+    @State private var purchases = PurchaseManager.shared
+    private var isPremium: Bool { purchases.isPremium }
 
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @State private var thumbnails: [InvoiceTemplate: UIImage] = [:]
@@ -82,8 +83,15 @@ struct DocumentPreviewView: View {
     private func templateButton(_ template: InvoiceTemplate) -> some View {
         let selected = InvoiceTemplate(id: document.templateID) == template
         return Button {
-            document.templateID = template.rawValue
-            document.updatedAt = .now
+            let choose = {
+                document.templateID = template.rawValue
+                document.updatedAt = .now
+            }
+            if template.isPremium {
+                PaywallService.shared.gate(.templatePremium, feature: choose)
+            } else {
+                choose()
+            }
         } label: {
             VStack(spacing: 6) {
                 ZStack(alignment: .topTrailing) {
