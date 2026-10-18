@@ -131,16 +131,41 @@ struct BackupView: View {
     }
 }
 
-/// Plan details. Purchases and restore arrive with RevenueCat (M6).
+/// Plan status, restore, manage (Apple handles cancelling).
 struct SubscriptionView: View {
-    var isPremium = false
+    @State private var purchases = PurchaseManager.shared
+    @State private var managing = false
+    @State private var restoring = false
+    @State private var restoreMessage: String?
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 12) {
-                Text(isPremium ? "You have Premium." : "Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs.")
-                    .font(.system(size: 15)).foregroundStyle(Color.ink2)
-                Text("Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. Deleting the app does not cancel the subscription.")
+                if purchases.isPremium {
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("Premium").font(.system(size: 13)).opacity(0.72)
+                        Text("Sending, printing and PDFs are unlocked.").font(.system(size: 22, weight: .heavy))
+                    }
+                    .foregroundStyle(.white).padding(20).frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.navy, in: RoundedRectangle(cornerRadius: 28))
+                    Button("Manage subscription") { managing = true }.buttonStyle(.ghost)
+                } else {
+                    Button("See Premium plans") { PaywallService.shared.gate(.settingsUpgrade) {} }.buttonStyle(.primary)
+                }
+                Button(restoring ? String(localized: "Restoring…") : String(localized: "Restore purchases")) {
+                    restoring = true
+                    Task {
+                        let ok = await purchases.restore()
+                        restoring = false
+                        restoreMessage = ok ? String(localized: "Premium restored.") : String(localized: "No active subscription found for this Apple ID.")
+                    }
+                }
+                .disabled(restoring)
+                .frame(maxWidth: .infinity)
+                if let restoreMessage { Text(restoreMessage).font(.system(size: 14)).foregroundStyle(Color.ink2).frame(maxWidth: .infinity) }
+                Text("Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs.")
+                    .font(.system(size: 14)).foregroundStyle(Color.ink2).padding(.top, 8)
+                Text("Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription. If your subscription ends you keep every document.")
                     .font(.system(size: 13)).foregroundStyle(Color.ink3)
             }
             .padding(16)
@@ -148,6 +173,7 @@ struct SubscriptionView: View {
         .background(Color.canvas)
         .navigationTitle("Subscription")
         .navigationBarTitleDisplayMode(.inline)
+        .manageSubscriptionsSheet(isPresented: $managing)
     }
 }
 
