@@ -27,6 +27,7 @@ struct EditorBanners: View {
     let document: Document
     let business: Business
     let actions: DocumentActions
+    let open: (Document) -> Void
 
     var body: some View {
         let status = document.displayStatus()
@@ -35,7 +36,7 @@ struct EditorBanners: View {
             Banner(
                 tone: .ok, systemImage: "checkmark.circle.fill",
                 text: Text("**Paid on \(business.mediumDate(document.paidOn ?? .now)).** Send a receipt so your client has proof."),
-                actionTitle: String(localized: "Make receipt"), action: { actions.makeReceipt(for: document, business: business) })
+                actionTitle: String(localized: "Make receipt"), action: { open(actions.makeReceipt(for: document, business: business)) })
         } else if document.status == .sent, let sentAt = document.sentAt {
             Banner(
                 tone: .info, systemImage: "paperplane.fill",
@@ -45,7 +46,7 @@ struct EditorBanners: View {
             Banner(
                 tone: .ok, systemImage: "signature",
                 text: Text("**Accepted.** Signed by \(document.signedName.isEmpty ? clientName : document.signedName)."),
-                actionTitle: String(localized: "Turn into invoice"), action: { actions.convertToInvoice(document, business: business) })
+                actionTitle: String(localized: "Turn into invoice"), action: { open(actions.convertToInvoice(document, business: business)) })
         }
         if document.kind == .invoice, document.clientSignatureData != nil {
             Banner(

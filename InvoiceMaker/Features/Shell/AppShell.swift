@@ -38,7 +38,10 @@ private struct TabShell: View {
             NavigationStack(path: $path) {
                 DocumentListView(business: business, kind: $kind, open: { path = [$0.persistentModelID] })
                     .navigationDestination(for: PersistentIdentifier.self) { id in
-                        DocumentDetailHost(id: id, business: business)
+                        DocumentDetailHost(
+                            id: id, business: business,
+                            open: { path = [$0.persistentModelID] },
+                            close: { path = [] })
                     }
             }
             .tabItem { Label("Invoices", systemImage: "doc.text") }
@@ -94,7 +97,10 @@ private struct SplitShell: View {
         } detail: {
             if let selectedID {
                 NavigationStack {
-                    DocumentDetailHost(id: selectedID, business: business)
+                    DocumentDetailHost(
+                        id: selectedID, business: business,
+                        open: { self.selectedID = $0.persistentModelID },
+                        close: { self.selectedID = nil })
                 }
                 .id(selectedID)
             } else {
@@ -126,11 +132,13 @@ private struct SplitShell: View {
 struct DocumentDetailHost: View {
     let id: PersistentIdentifier
     let business: Business
+    var open: (Document) -> Void = { _ in }
+    var close: () -> Void = {}
     @Environment(\.modelContext) private var context
 
     var body: some View {
         if let doc = context.model(for: id) as? Document, !doc.isDeleted {
-            DocumentEditorView(document: doc, business: business)
+            DocumentEditorView(document: doc, business: business, open: open, close: close)
         } else {
             SectionPlaceholder(title: "", message: String(localized: "This document was deleted."))
         }

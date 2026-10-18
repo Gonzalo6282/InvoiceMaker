@@ -7,6 +7,10 @@ import SwiftUI
 struct DocumentEditorView: View {
     @Bindable var document: Document
     let business: Business
+    /// Show another document (after duplicate, receipt, convert).
+    var open: (Document) -> Void = { _ in }
+    /// Leave the editor (after delete).
+    var close: () -> Void = {}
 
     @Environment(\.modelContext) private var context
     @Environment(\.scenePhase) private var scenePhase
@@ -22,7 +26,7 @@ struct DocumentEditorView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
                 EditorHeader(document: document)
-                EditorBanners(document: document, business: business, actions: actions)
+                EditorBanners(document: document, business: business, actions: actions, open: open)
                 clientSection
                 EditorDetailsSection(document: document, business: business)
                 EditorItemsSection(document: document, business: business, taxes: taxes, actions: actions, edit: { editingLine = $0 })
@@ -39,6 +43,11 @@ struct DocumentEditorView: View {
         .navigationTitle(business.title(for: document.kind))
         .navigationBarTitleDisplayMode(.inline)
         .safeAreaInset(edge: .bottom) { actionBar }
+        .toolbar {
+            ToolbarItem(placement: .primaryAction) {
+                EditorMoreMenu(document: document, business: business, actions: actions, open: open, close: close)
+            }
+        }
         .sheet(item: $editingLine) { line in
             LineItemSheet(line: line, document: document, business: business, taxes: taxes, actions: actions)
         }
