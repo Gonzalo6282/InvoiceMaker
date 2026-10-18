@@ -18,11 +18,11 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] T1.6 `DocumentStatus` + overdue rule + month paid/owed totals
 - [x] T1.7 `CurrencyDisplay` (symbol / code / none) + `PaperSize.for(country:)`
 - [x] T1.8 `CSVWriter` with escaping
-- [ ] ✅ `swift test --package-path Packages/InvoiceKit` green, 100% coverage (CI enforces 100%)
+- [x] ✅ `swift test --package-path Packages/InvoiceKit` green, 100% coverage (CI enforces 100%)
 
 ## M2 design-system + data-store
-- [ ] T2.1 Colour tokens (asset catalog, light/dark) + typography modifiers
-- [ ] T2.2 Buttons, pills, rows, hero card, icon tiles + debug gallery screen
+- [x] T2.1 Colour tokens (asset catalog, light/dark) + typography modifiers
+- [x] T2.2 Buttons, pills, rows, hero card, icon tiles + debug gallery screen
 - [ ] T2.3 SwiftData models v1 (CloudKit-safe) + `ModelContainer` (CloudKit / in-memory)
 - [ ] T2.4 `Document → DocumentInput` mapping, demo data, CloudKit-safety test, CRUD integration tests
 - [ ] ✅ ⌘U green; gallery vs mockup
