@@ -21,6 +21,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .spm
+          key: spm-${{ hashFiles('InvoiceMaker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'InvoiceMaker.xcodeproj/project.pbxproj') }}
+          restore-keys: spm-
+
       - name: Find newest Xcode
         run: |
           LATEST=$(ls -d /Applications/Xcode_26*.app | grep -v -i beta | sort -V | tail -1)
@@ -90,6 +97,13 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .spm
+          key: spm-${{ hashFiles('InvoiceMaker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'InvoiceMaker.xcodeproj/project.pbxproj') }}
+          restore-keys: spm-
+
       - name: Select Xcode 26.1
         run: |
           MAC=$(ls -d /Applications/Xcode_26.1*.app | sort -V | tail -1)
@@ -101,7 +115,7 @@ jobs:
           swift build --package-path Packages/InvoiceKit --build-tests
           build() {
             xcodebuild build-for-testing -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
-              -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1
+              -destination 'generic/platform=iOS' -clonedSourcePackagesDirPath .spm CODE_SIGNING_ALLOWED=NO > build-mac.log 2>&1
           }
           if ! build; then
             if grep -q -E "is not installed|No simulator runtime" build-mac.log; then

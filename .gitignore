@@ -8,3 +8,4 @@ build/
 Secrets.xcconfig
 GoogleService-Info.plist
 .swiftpm/
+.spm/

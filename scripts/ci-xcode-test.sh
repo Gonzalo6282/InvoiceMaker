@@ -10,7 +10,7 @@ mkdir -p build
 
 # -showdestinations sometimes comes back empty while CoreSimulator starts; retry.
 for attempt in 1 2 3 4; do
-  DESTS=$(xcodebuild -showdestinations -project InvoiceMaker.xcodeproj -scheme InvoiceMaker 2>/dev/null \
+  DESTS=$(xcodebuild -showdestinations -project InvoiceMaker.xcodeproj -scheme InvoiceMaker -clonedSourcePackagesDirPath .spm 2>/dev/null \
     | grep "platform:iOS Simulator" | grep "name:${FAMILY}" || true)
   [ -n "$DESTS" ] && break
   echo "No ${FAMILY} destinations yet (attempt $attempt), retrying"
@@ -36,6 +36,7 @@ xcodebuild test \
   -project InvoiceMaker.xcodeproj \
   -scheme InvoiceMaker \
   -destination "id=${ID}" \
+  -clonedSourcePackagesDirPath .spm \
   -resultBundlePath "build/${FAMILY}.xcresult" \
   CODE_SIGNING_ALLOWED=NO > "build/${FAMILY}.log" 2>&1
 # (TEST_RUNNER_SNAPSHOT_DIR, if set, reaches the tests as SNAPSHOT_DIR.)

@@ -15,7 +15,7 @@ final class OnboardingTests: XCTestCase {
         app.buttons["onboardingNext"].tap()
 
         XCTAssertTrue(app.staticTexts["What do you do?"].waitForExistence(timeout: 3))
-        app.buttons["Contractor or trades"].firstMatch.tap()
+        app.buttons["role-contractor"].firstMatch.tap()
         app.buttons["onboardingNext"].tap()
 
         let name = app.textFields["onboardingBusinessName"]

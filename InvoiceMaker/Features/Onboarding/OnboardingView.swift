@@ -69,6 +69,7 @@ struct OnboardingView: View {
                     .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(role == r ? Color.brand : Color.line, lineWidth: role == r ? 2 : 1))
                 }
                 .buttonStyle(.plain)
+                .accessibilityIdentifier("role-\(r.rawValue)")
                 .accessibilityAddTraits(role == r ? .isSelected : [])
             }
         case .business:
