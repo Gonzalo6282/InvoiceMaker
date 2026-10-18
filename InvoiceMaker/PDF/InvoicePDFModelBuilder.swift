@@ -56,7 +56,8 @@ struct InvoicePDFModelBuilder {
             summary: summaryRows(doc, totals: totals, money: money, locale: locale),
             totalLabel: totalLabel(kind, region: region),
             totalValue: money(totals.total),
-            showsPayment: kind == .invoice,
+            showsPayment: kind == .invoice
+                && (bankLine(business.payment) != nil || !payButtons(business.payment).isEmpty),
             bankLine: bankLine(business.payment),
             payButtons: payButtons(business.payment),
             qrPayload: qrPayload(business.payment),

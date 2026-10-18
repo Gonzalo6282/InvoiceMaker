@@ -70,7 +70,9 @@ struct PDFModelBuilderTests {
         #expect(m.summary.map(\.value) == ["£227.50", "£45.50"])
         #expect(m.totalLabel == "Total due")
         #expect(m.totalValue == "£273.00")
-        #expect(m.showsPayment)
+        #expect(!m.showsPayment)  // no payment details yet: no empty "How to pay"
+        business.payment?.accountNumber = "31926819"
+        #expect(try build(mockupInvoice()).showsPayment)
         #expect(!m.paidStamp)
         #expect(!m.watermark)
     }
@@ -204,6 +206,26 @@ struct PDFRenderTests {
         let image = try #require(PDFRenderer(model: model).renderFirstPageImage(width: 600))
         #expect(image.size.width == 600)
         SnapshotExport.write(image, name: "\(template.rawValue)-invoice")
+    }
+
+    @Test func receiptAndQuoteSnapshots() throws {
+        let container = DemoData.container()
+        let context = container.mainContext
+        let business = try #require(try BusinessSetup.current(in: context))
+        let taxes = try BusinessSetup.taxes(in: context)
+        let docs = try context.fetch(FetchDescriptor<Document>())
+        let actions = DocumentActions(context: context)
+        let paid = try #require(docs.first { $0.status == .paid })
+        let receipt = actions.makeReceipt(for: paid, business: business)
+        let r = InvoicePDFModelBuilder(templateOverride: .classic).build(document: receipt, business: business, taxes: taxes)
+        #expect(r.paidStamp)
+        SnapshotExport.write(try #require(PDFRenderer(model: r).renderFirstPageImage(width: 600)), name: "classic-receipt")
+
+        let quote = try #require(docs.first { $0.kind == .estimate })
+        quote.job = "Ostara Café, 8 Gloucester Road — bar refit"
+        quote.discount = .percent(10)
+        let q = InvoicePDFModelBuilder(templateOverride: .trades, watermark: true).build(document: quote, business: business, taxes: taxes)
+        SnapshotExport.write(try #require(PDFRenderer(model: q).renderFirstPageImage(width: 600)), name: "trades-quote-watermark")
     }
 
     @Test func longInvoiceFlowsOntoMorePages() throws {

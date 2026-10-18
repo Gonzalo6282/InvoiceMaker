@@ -121,7 +121,7 @@ private struct PageLayout {
 
     private mutating func drawStandardHeader() {
         let top = y
-        drawLogo(in: CGRect(x: left, y: top, width: 11 * u, height: 11 * u), tile: accent, text: .white)
+        drawLogo(in: CGRect(x: left, y: top, width: logoWidth(height: 11 * u), height: 11 * u), tile: accent, text: .white)
         let titleFont = template.serif ? font(6, .bold) : font(5.6, .heavy)
         let titleColor = template.accentTitle ? accent : ink
         var ty = top
@@ -158,7 +158,7 @@ private struct PageLayout {
         y += 1 * u
         y += drawText(model.number, font: body, color: muted, rect: CGRect(x: left, y: y, width: width, height: 5 * u), align: .left)
         y += 3 * u
-        drawLogo(in: CGRect(x: left, y: y, width: 11 * u, height: 11 * u), tile: accent, text: .white)
+        drawLogo(in: CGRect(x: left, y: y, width: logoWidth(height: 11 * u), height: 11 * u), tile: accent, text: .white)
         y += 11 * u
     }
 
@@ -399,7 +399,10 @@ private struct PageLayout {
                     let path = UIBezierPath(roundedRect: frame, cornerRadius: frame.height / 2)
                     accent.setFill()
                     path.fill()
-                    drawText(button.label, font: buttonFont, color: .white, rect: frame.insetBy(dx: 2.4 * u, dy: 0.9 * u), align: .center)
+                    // Single line, centred (wrapping a measured label can split it by a pixel).
+                    let attrs: [NSAttributedString.Key: Any] = [.font: buttonFont, .foregroundColor: UIColor.white]
+                    let size = (button.label as NSString).size(withAttributes: attrs)
+                    (button.label as NSString).draw(at: CGPoint(x: frame.midX - size.width / 2, y: frame.midY - size.height / 2), withAttributes: attrs)
                     if let url = button.url { context.setURL(url, for: frame) }
                 }
                 fy += buttonRowsHeight(width: w)
@@ -475,6 +478,12 @@ private struct PageLayout {
         cg.rotate(by: -30 * .pi / 180)
         (text as NSString).draw(at: CGPoint(x: -size.width / 2, y: -size.height / 2), withAttributes: attrs)
         cg.restoreGState()
+    }
+
+    /// Wide logos get up to 26 units of width so they stay readable.
+    private func logoWidth(height: CGFloat) -> CGFloat {
+        guard let data = model.logo, let image = UIImage(data: data), image.size.height > 0 else { return height }
+        return min(max(height, height * image.size.width / image.size.height), 26 * u)
     }
 
     /// Logo is always "fit", never cropped. Without a logo: initials on a tile.
