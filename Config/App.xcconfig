@@ -1,0 +1,7 @@
+// Build settings for the app target. Keys live in the untracked
+// Secrets.xcconfig next to this file (copy Secrets.example.xcconfig).
+// Without it the app builds and runs with purchases/paywalls switched off.
+REVENUECAT_API_KEY =
+SUPERWALL_API_KEY =
+
+#include? "Secrets.xcconfig"
