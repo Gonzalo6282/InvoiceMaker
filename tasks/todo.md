@@ -28,15 +28,15 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] ✅ Tests green on CI (iPhone + iPad) · [ ] you: look at the Design system gallery vs the mockup
 
 ## M3 pdf-render
-- [ ] T3.1 Renderer core: paper size, layout helpers, logo fit, QR, payment buttons, signatures
-- [ ] T3.2 Free templates: Clean, Bold, Ledger
-- [ ] T3.3 Premium templates: Studio, Trades, Classic, Split; Preview watermark; PAID stamp
-- [ ] T3.4 Snapshot tests (7 × invoice/quote/receipt × A4/Letter), HEIC logo
-- [ ] ✅ Check sample PDFs
+- [x] T3.1 Renderer core: paper size, layout helpers, logo fit, QR, payment buttons, signatures
+- [x] T3.2 Free templates: Clean, Bold, Ledger
+- [x] T3.3 Premium templates: Studio, Trades, Classic, Split; Preview watermark; PAID stamp
+- [x] T3.4 Snapshot tests (7 × invoice/quote/receipt × A4/Letter), HEIC logo
+- [x] ✅ Sample PDFs reviewed from CI snapshots (fixed pay-button wrap, empty payment block, stamp blend)
 
 ## M4 documents + clients-items
-- [ ] T4.1 App shell: tabs (iPhone) / split view (iPad), router, AppState
-- [ ] T4.2 Documents list: filters, search, month totals hero card, empty state
+- [x] T4.1 App shell: tabs (iPhone) / split view (iPad), router, AppState
+- [x] T4.2 Documents list: filters, search, month totals hero card, empty state
 - [ ] T4.3 Editor: client, dates, number, notes, autosave
 - [ ] T4.4 Line-item sheet + saved items + tax/discount/fees sheets
 - [ ] T4.5 Preview + template picker (Premium templates marked)

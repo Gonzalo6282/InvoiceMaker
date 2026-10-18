@@ -15,9 +15,11 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 18 Oct 2026 | T2.3 SwiftData schema v1 | Business, PaymentDetails, TaxRateRecord, Client, SavedItem, Document, LineItem in `SchemaV1` + migration plan. CloudKit rules checked by tests (defaults, no unique, optional relationships with inverses). Models are `nonisolated` (the target's main-actor default makes SwiftData trap otherwise). Store: CloudKit → local fallback → error screen, in-memory under tests |
 | 18 Oct 2026 | T2.4 Document actions | Create (numbering, client currency, defaults), duplicate, receipt from invoice, estimate → invoice, mark sent/paid/unpaid, client signature, add/delete/reorder lines, delete; Document → InvoiceKit mapping; demo data (Kestrel Joinery). 20 integration tests incl. "delete a line item and reopen". Lesson: keep a `ModelContainer` alive while using its context (SwiftData traps otherwise) |
 | 18 Oct 2026 | CI diagnostics | Full logs, xcresult summaries and crash reports are pushed to the `ci-logs` branch; PDF snapshot PNGs to `ci-snapshots` |
+| 18 Oct 2026 | T3.1–T3.4 PDF | `InvoicePDFModelBuilder` (all text formatted, unit-tested) + `PDFRenderer` (`UIGraphicsPDFRenderer`): 7 templates per the mockup CSS, A4/Letter, multi-page with repeated table header, logo fit (wide logos get more width), clickable pay buttons + QR, signatures, PAID stamp, PREVIEW watermark. Snapshot PNGs reviewed via the `ci-snapshots` branch |
+| 18 Oct 2026 | T4.1–T4.2 Shell + list | iPhone tabs (Invoices, Clients, Items, Settings); iPad sidebar + list + detail. List: type picker, "Owed to you" card, search, filters, rows with due text and pills, empty states, context menu (duplicate, mark paid, delete). UI test: first run → new invoice |
 
 ## Current state
 - Waiting for: Gonzalo to make this repo public (so CI minutes are free), reset the Mac copy, set the signing team (checkpoint M0).
-- Next: M3 PDF templates (T3.1–T3.4).
+- Next: T4.3–T4.5 editor, line-item sheet, preview (pushed, CI running).
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls.
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`). Never copy pricing or keywords into this public repo.
