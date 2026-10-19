@@ -6,6 +6,8 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSContactsUsageDescription</key>
+	<string>Duly uses your contacts only to fill in a client's name, email, phone and address when you choose to add a client from Contacts.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Duly uses your photos only to add your business logo to invoices, estimates and receipts.</string>
 	<key>RevenueCatAPIKey</key>

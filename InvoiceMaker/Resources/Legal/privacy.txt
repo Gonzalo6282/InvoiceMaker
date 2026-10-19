@@ -18,7 +18,7 @@ For any question about this Policy, contact us at info@slice-of-life.uk.
 ## Information That Stays on Your Device and in Your iCloud
 The documents you create and everything in them, your business profile, logo, signature, payment details, tax rates, clients (including client names, emails, phone numbers and addresses), saved items, client signatures and app settings are stored on your device. If iCloud is turned on, they are also stored in your private iCloud database, which Apple provides to you. We do not have access to this data. Apple's handling of iCloud data is described in Apple's Privacy Policy.
 
-When you add a client from Contacts, the App receives only the contact you pick. When you add a logo, the App asks for permission to access your photos and uses only the image you choose. When you send a document, it leaves the App only through the share option you pick (for example Mail, Messages, WhatsApp, AirDrop, Files or Print).
+When you add a client from Contacts, the App asks for permission to access your contacts and uses only the contact you pick. When you add a logo, the App asks for permission to access your photos and uses only the image you choose. When you send a document, it leaves the App only through the share option you pick (for example Mail, Messages, WhatsApp, AirDrop, Files or Print).
 
 ## Information We Process
 
@@ -46,8 +46,8 @@ If you contact us or use "Report a problem", we receive your email address, your
 
 We do not use your information for advertising, we do not sell it, and we do not share it for cross-context behavioural advertising.
 
-## Legal Basis (UK and EU)
-We process Personal Information to perform our contract with you (providing the App and subscriptions); with your consent (analytics, crash reports, photo access); for our legitimate interests (security, fraud prevention and improving the App); and to comply with legal obligations. You can withdraw consent at any time in Settings.
+## Legal Basis for Processing
+We process Personal Information to perform our contract with you (providing the App and subscriptions); with your consent (analytics, crash reports, photo and contacts access); for our legitimate interests (security, fraud prevention and improving the App); and to comply with legal obligations. You can withdraw consent at any time in Settings.
 
 ## Who We Share Information With
 We share Personal Information only with service providers that help us run the App and are bound to protect it: Apple (App Store purchases, Sign in with Apple, iCloud), Google Firebase (authentication, analytics, crash reports, remote configuration), RevenueCat (subscription management) and Superwall (purchase screens). We may also share information with professional advisers, with authorities when the law requires it, or with a successor if our business is sold or merged.

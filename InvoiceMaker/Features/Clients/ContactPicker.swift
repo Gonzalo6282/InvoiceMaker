@@ -54,3 +54,14 @@ extension Client {
         }
     }
 }
+
+/// The iOS Contacts permission pop-up, before the contact picker opens.
+enum ContactAccess {
+    static func request() async -> Bool {
+        let status = CNContactStore.authorizationStatus(for: .contacts)
+        if status == .authorized { return true }
+        if #available(iOS 18, *), status == .limited { return true }
+        guard status == .notDetermined else { return false }
+        return (try? await CNContactStore().requestAccess(for: .contacts)) ?? false
+    }
+}

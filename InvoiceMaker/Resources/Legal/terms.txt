@@ -48,7 +48,7 @@ Your documents are stored on your device and, if iCloud is turned on, in your ow
 You agree not to: use the App unlawfully or to create false, misleading or fraudulent documents; use the App to impersonate another person or business; interfere with or disrupt the App; attempt unauthorised access to our systems; reverse engineer the App except where the law allows; or use the App to infringe the rights of others.
 
 ## Photos, Contacts and Device Features
-If you add a logo, the App asks for permission to access your photos and uses only the image you choose. If you add a client from Contacts, the App receives only the contact you pick. Signatures are drawn on your device. These items stay on your device and in your iCloud unless you choose to send or share a document.
+If you add a logo, the App asks for permission to access your photos and uses only the image you choose. If you add a client from Contacts, the App asks for permission to access your contacts and uses only the contact you pick. Signatures are drawn on your device. These items stay on your device and in your iCloud unless you choose to send or share a document.
 
 ## Intellectual Property
 The App, its design, templates and content (excluding your content and third-party materials) are owned by Slice of Life Ltd or its licensors. Duly and its branding are our property. We give you a limited, personal, revocable, non-transferable licence to use the App under these Terms and Apple's Licensed Application End User License Agreement. Your documents, logo and data belong to you.

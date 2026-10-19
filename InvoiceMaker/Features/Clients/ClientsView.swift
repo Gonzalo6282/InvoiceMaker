@@ -13,6 +13,15 @@ struct ClientsView: View {
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @State private var search = ""
     @State private var showingContacts = false
+    @State private var contactsDenied = false
+    @Environment(\.openURL) private var openURL
+
+    /// Asks for Contacts access with the iOS pop-up first; denied → explain + Settings.
+    private func importFromContacts() {
+        Task {
+            if await ContactAccess.request() { showingContacts = true } else { contactsDenied = true }
+        }
+    }
 
     var body: some View {
         ScrollView {
@@ -22,7 +31,7 @@ struct ClientsView: View {
                     Text("Add your first client").textStyle(.total).foregroundStyle(Color.ink)
                     Text("Type their details or pick them from your Contacts. Duly only sees the contact you choose.")
                         .foregroundStyle(Color.ink2).multilineTextAlignment(.center).frame(maxWidth: 300)
-                    Button { showingContacts = true } label: { Label("Import from Contacts", systemImage: "person.crop.circle.badge.plus") }
+                    Button { importFromContacts() } label: { Label("Import from Contacts", systemImage: "person.crop.circle.badge.plus") }
                         .buttonStyle(.primary).fixedSize()
                     Button("Type details", action: addNew).foregroundStyle(Color.brand)
                 }
@@ -47,9 +56,17 @@ struct ClientsView: View {
             ToolbarItem(placement: .primaryAction) {
                 Menu {
                     Button("Type details", systemImage: "square.and.pencil", action: addNew)
-                    Button("Import from Contacts", systemImage: "person.crop.circle.badge.plus") { showingContacts = true }
+                    Button("Import from Contacts", systemImage: "person.crop.circle.badge.plus") { importFromContacts() }
                 } label: { Label("Add client", systemImage: "plus") }
             }
+        }
+        .alert("Allow access to Contacts", isPresented: $contactsDenied) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) { openURL(url) }
+            }
+            Button("Not now", role: .cancel) {}
+        } message: {
+            Text("Duly needs access to your contacts to add a client from them. You can allow it in Settings, or type the client's details instead.")
         }
         .background(ContactPicker(isPresented: $showingContacts) { contact in
             let client = Client(currencyCode: business.currencyCode)
