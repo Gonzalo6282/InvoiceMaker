@@ -10,6 +10,7 @@ struct EditorItemsSection: View {
     let edit: (LineItem) -> Void
 
     @Query(sort: \SavedItem.itemDescription) private var savedItems: [SavedItem]
+    @Environment(\.modelContext) private var context
     @State private var showingSaved = false
 
     var body: some View {
@@ -23,7 +24,12 @@ struct EditorItemsSection: View {
                 RowDivider()
             }
             Button {
-                edit(actions.addLineItem(to: document, defaultTaxID: business.defaultTaxID))
+                let line = actions.addLineItem(to: document, defaultTaxID: business.defaultTaxID)
+                // Save first so the line's ID is permanent before its sheet opens.
+                // Otherwise autosave swaps the temporary ID a moment later and
+                // `.sheet(item:)` closes and reopens (device bug, 19 Oct).
+                try? context.save()
+                edit(line)
             } label: {
                 Row(icon: "plus", title: "Add item", titleColor: .brand)
             }
