@@ -28,6 +28,7 @@ enum AppSection: Hashable {
 // MARK: - iPhone
 
 private struct TabShell: View {
+    @Environment(\.modelContext) private var context
     let business: Business
     @State private var tab: Tab = .documents
     @State private var kind: DocumentKind = .invoice
@@ -39,11 +40,11 @@ private struct TabShell: View {
     var body: some View {
         TabView(selection: $tab) {
             NavigationStack(path: $path) {
-                DocumentListView(business: business, kind: $kind, open: { path = [$0.persistentModelID] })
+                DocumentListView(business: business, kind: $kind, open: { path = [stableID($0, in: context)] })
                     .navigationDestination(for: PersistentIdentifier.self) { id in
                         DocumentDetailHost(
                             id: id, business: business,
-                            open: { path = [$0.persistentModelID] },
+                            open: { path = [stableID($0, in: context)] },
                             close: { path = [] })
                     }
             }
@@ -51,13 +52,13 @@ private struct TabShell: View {
             .tag(Tab.documents)
 
             NavigationStack(path: $clientPath) {
-                ClientsView(business: business, openClient: { clientPath = [$0.persistentModelID] })
+                ClientsView(business: business, openClient: { clientPath = [stableID($0, in: context)] })
                     .navigationDestination(for: PersistentIdentifier.self) { id in
                         ClientDetailHost(
                             id: id, business: business,
                             openDocument: { doc in
                                 kind = doc.kind
-                                path = [doc.persistentModelID]
+                                path = [stableID(doc, in: context)]
                                 tab = .documents
                             },
                             close: { clientPath = [] })
@@ -81,6 +82,7 @@ private struct TabShell: View {
 // MARK: - iPad
 
 private struct SplitShell: View {
+    @Environment(\.modelContext) private var context
     let business: Business
     @State private var section: AppSection? = .documents(.invoice)
     @State private var kind: DocumentKind = .invoice
@@ -102,9 +104,9 @@ private struct SplitShell: View {
         } content: {
             switch section {
             case .documents, .none:
-                DocumentListView(business: business, kind: $kind, open: { documentID = $0.persistentModelID }, selectedID: documentID)
+                DocumentListView(business: business, kind: $kind, open: { documentID = stableID($0, in: context) }, selectedID: documentID)
             case .clients:
-                ClientsView(business: business, openClient: { clientID = $0.persistentModelID }, selectedID: clientID)
+                ClientsView(business: business, openClient: { clientID = stableID($0, in: context) }, selectedID: clientID)
             case .items:
                 ItemsView(business: business)
             case .settings:
@@ -131,7 +133,7 @@ private struct SplitShell: View {
                     ClientDetailHost(
                         id: clientID, business: business,
                         openDocument: { doc in
-                            documentID = doc.persistentModelID
+                            documentID = stableID(doc, in: context)
                             section = .documents(doc.kind)
                         },
                         close: { self.clientID = nil })
@@ -145,7 +147,7 @@ private struct SplitShell: View {
                 NavigationStack {
                     DocumentDetailHost(
                         id: documentID, business: business,
-                        open: { self.documentID = $0.persistentModelID },
+                        open: { self.documentID = stableID($0, in: context) },
                         close: { self.documentID = nil })
                 }
                 .id(documentID)
@@ -213,5 +215,16 @@ struct SectionPlaceholder: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.canvas)
             .navigationTitle(title)
+    }
+}
+
+extension View {
+    /// The ID to keep for navigation. A just-created model has a temporary ID
+    /// that SwiftData swaps for a permanent one on the next save, after which
+    /// the temporary ID points at nothing (crash on iPad, 19 Oct); save first.
+    @MainActor
+    func stableID(_ model: some PersistentModel, in context: ModelContext) -> PersistentIdentifier {
+        if context.hasChanges { try? context.save() }
+        return model.persistentModelID
     }
 }
