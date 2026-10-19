@@ -6,8 +6,8 @@ import Foundation
 import StoreKit
 
 /// Firebase Analytics + Crashlytics + Remote Config, behind the user's consent.
-/// Nothing is collected until the user allows it (UK/EEA users are asked;
-/// elsewhere it defaults to on with a switch in Settings). No advertising ID.
+/// Off by default for everyone: nothing is collected until the user taps
+/// Allow (first-launch question or the Settings switch). No advertising ID.
 @MainActor
 final class AppAnalytics {
     static let shared = AppAnalytics()
@@ -29,21 +29,12 @@ final class AppAnalytics {
     static var stored: Bool? { UserDefaults.standard.object(forKey: AppPreferences.analyticsKey) as? Bool }
     static var isEnabled: Bool { stored ?? false }
 
-    /// Whether to show the consent screen (UK/EEA, never answered).
-    static func needsConsentPrompt() async -> Bool {
-        guard stored == nil else { return false }
-        return ConsentPolicy.mustAsk(storefrontCountry: await Storefront.current?.countryCode)
-    }
+    /// Ask once, on first launch, until the user answers.
+    static var needsConsentPrompt: Bool { stored == nil }
 
     func setConsent(_ granted: Bool) {
         UserDefaults.standard.set(granted, forKey: AppPreferences.analyticsKey)
         apply(enabled: granted)
-    }
-
-    /// Outside UK/EEA analytics is on by default, with a switch in Settings.
-    func enableByDefaultIfNotAsked() async {
-        guard Self.stored == nil, !(await Self.needsConsentPrompt()) else { return }
-        setConsent(true)
     }
 
     func apply(enabled: Bool) {

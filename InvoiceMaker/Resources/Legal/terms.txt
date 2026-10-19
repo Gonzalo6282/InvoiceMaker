@@ -1,0 +1,89 @@
+# Terms of Use
+
+Last updated: 19 October 2026
+
+## Acceptance of Terms
+By downloading, installing or using the Duly: Invoice Maker & Estimate mobile application (the "App"), you agree to these Terms of Use (the "Terms"). If you do not agree, do not use the App.
+
+These Terms are a binding agreement between you and Slice of Life Ltd, a company registered in the United Kingdom ("Company", "we", "our" or "us"), regarding your use of the App and related services.
+
+## Who the App Is For
+The App is a business tool for freelancers, sole traders, contractors and small businesses. By using it, you confirm that you are at least 18 years old (or the age of majority where you live) and that you use the App for your trade, business or profession. If you use the App on behalf of a company, you confirm that you are authorised to accept these Terms for it.
+
+## Description of Service
+Duly lets you create, edit, preview and send invoices, estimates (called quotes in some regions) and receipts. The App may include: client and saved-item lists, named tax rates (for example VAT, GST, PST, HST and sales tax) that you set yourself, discounts, shipping and fees, invoice templates, your business logo and signature, client signatures, payment details, payment links and QR codes printed on your documents, status tracking (draft, sent, paid, overdue), conversion of estimates into invoices, receipts from paid invoices, export of PDFs and CSV data, backup through your own iCloud account, optional Sign in with Apple, and paid Premium features. Features may change, and not all features are available on all devices or in all regions.
+
+## Free and Premium Features
+Creating, editing and previewing documents, saving clients and items, iCloud backup and exporting your data are free, with no limits. Sending, printing and saving documents as PDF files, premium templates and documents without the "Preview" mark require a Premium subscription. We will tell you clearly in the App which features need Premium before you pay.
+
+## Subscriptions, Free Trials and Payments
+Premium is sold as an auto-renewing subscription through Apple's App Store. Prices are shown in the App and in the App Store before you buy, in your local currency, and may include local taxes.
+
+Where a free trial is offered, it is shown on the purchase screen together with the date it ends. Unless you cancel at least 24 hours before the end of the trial, it converts into a paid subscription and you are charged on that date.
+
+Subscriptions renew automatically at the end of each period unless cancelled at least 24 hours before the period ends. Payment is charged to your Apple ID account. You can manage or cancel your subscription in your device's Settings > [your name] > Subscriptions. Deleting the App does not cancel a subscription.
+
+Purchases, renewals, cancellations and refunds are handled by Apple under Apple's terms. We cannot issue refunds directly; you can request one from Apple at reportaproblem.apple.com. Use "Restore purchases" in Settings or on the purchase screen if you reinstall the App or change device.
+
+If a subscription ends, you keep full access to everything you created. Your documents, clients and items are never deleted or locked; only Premium features stop working until you subscribe again.
+
+## Your Documents and Your Responsibility
+You are solely responsible for the content of the documents you create and send, including names, addresses, amounts, descriptions, dates, document numbers, payment details and tax information.
+
+The App calculates totals from the prices, quantities, discounts and tax rates that you enter. Tax rates are set by you; the App's suggested rates are a starting point only and may be out of date or not apply to you.
+
+## Not Tax, Legal or Accounting Advice
+The App is a document tool. It does not give tax, legal, accounting or financial advice, and it does not check whether your documents meet the legal requirements of your country, such as invoice content, tax registration numbers, numbering rules or e-invoicing obligations. You are responsible for meeting your own tax, invoicing and record-keeping obligations. If you are unsure, ask a qualified accountant or tax adviser.
+
+## Payments Between You and Your Clients
+The App does not process, hold or transfer money. Payment details, payment links and QR codes on your documents are entered by you and lead to your own bank or payment providers. We are not a party to any transaction between you and your clients and are not responsible for whether, when or how your clients pay you, or for the services of any bank or payment provider.
+
+## Account and Sign in with Apple
+You can use the App without an account. Sign in with Apple is optional and is used to link your account and subscription across devices. You can delete your account at any time in Settings > Account. Deleting your account does not delete documents stored on your device or in your iCloud, and it does not cancel a subscription.
+
+## Backup and Data Loss
+Your documents are stored on your device and, if iCloud is turned on, in your own private iCloud storage provided by Apple. We do not have access to them and cannot restore them. Keep iCloud turned on and export your data regularly. To the extent permitted by law, we are not responsible for data lost through device loss or damage, iCloud being turned off or full, deleting the App, or problems with Apple's services.
+
+## Acceptable Use
+You agree not to: use the App unlawfully or to create false, misleading or fraudulent documents; use the App to impersonate another person or business; interfere with or disrupt the App; attempt unauthorised access to our systems; reverse engineer the App except where the law allows; or use the App to infringe the rights of others.
+
+## Photos, Contacts and Device Features
+If you add a logo, the App asks for permission to access your photos and uses only the image you choose. If you add a client from Contacts, the App receives only the contact you pick. Signatures are drawn on your device. These items stay on your device and in your iCloud unless you choose to send or share a document.
+
+## Intellectual Property
+The App, its design, templates and content (excluding your content and third-party materials) are owned by Slice of Life Ltd or its licensors. Duly and its branding are our property. We give you a limited, personal, revocable, non-transferable licence to use the App under these Terms and Apple's Licensed Application End User License Agreement. Your documents, logo and data belong to you.
+
+## Privacy
+Our Privacy Policy explains how we handle personal information and forms part of these Terms.
+
+## Disclaimers
+THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, TO THE FULLEST EXTENT PERMITTED BY LAW. WE DO NOT GUARANTEE THAT THE APP WILL BE UNINTERRUPTED OR ERROR-FREE, THAT CALCULATIONS WILL SUIT YOUR TAX POSITION, OR THAT YOUR CLIENTS WILL PAY YOU.
+
+## Limitation of Liability
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE ARE NOT LIABLE FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR FOR LOSS OF PROFITS, REVENUE, BUSINESS, GOODWILL OR DATA, INCLUDING LOSSES CAUSED BY ERRORS IN DOCUMENTS YOU CREATE, TAX PENALTIES OR LATE OR MISSED PAYMENTS. OUR TOTAL LIABILITY FOR ALL CLAIMS RELATING TO THE APP IS LIMITED TO THE AMOUNT YOU PAID FOR THE APP IN THE TWELVE MONTHS BEFORE THE CLAIM. Nothing in these Terms limits liability that cannot be limited by law, including for death or personal injury caused by negligence, or for fraud.
+
+## Indemnification
+To the extent permitted by law, you agree to indemnify and hold harmless Slice of Life Ltd from claims arising from the documents you create or send, your dealings with your clients, or your breach of these Terms.
+
+## Termination
+You may stop using the App at any time and delete your account in Settings. We may suspend or end access to the App for serious or repeated breaches of these Terms or where the law requires it.
+
+## Apple
+These Terms are between you and Slice of Life Ltd, not Apple. Apple is not responsible for the App or its content, has no obligation to provide maintenance or support, and is not responsible for any claims relating to the App. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.
+
+## Governing Law and Disputes
+These Terms are governed by the laws of England and Wales. The courts of England and Wales have jurisdiction, subject to any mandatory consumer or business protections that apply where you live.
+
+## Changes to These Terms
+We may update these Terms. We will tell you about material changes in the App or by other reasonable means. Continuing to use the App after a change takes effect means you accept the updated Terms, where the law allows.
+
+## Severability
+If any part of these Terms is found unenforceable, the rest remains in effect.
+
+## Entire Agreement
+These Terms and our Privacy Policy are the entire agreement between you and Slice of Life Ltd about the App.
+
+## Contact
+Slice of Life Ltd
+Email: info@slice-of-life.uk
+Website: https://slice-of-life.uk

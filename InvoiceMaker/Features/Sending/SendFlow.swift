@@ -61,18 +61,22 @@ final class SendFlow {
     }
 
     /// After the share sheet closes.
-    func finished(_ doc: Document, completed: Bool, activity: UIActivity.ActivityType?, context: ModelContext) {
+    /// Returns true when the document was actually sent (not printed or saved).
+    @discardableResult
+    func finished(_ doc: Document, completed: Bool, activity: UIActivity.ActivityType?, context: ModelContext) -> Bool {
         sharing = nil
-        guard completed else { return }
+        guard completed else { return false }
         let fileActivities: Set<String> = [
             UIActivity.ActivityType.print.rawValue, UIActivity.ActivityType.saveToCameraRoll.rawValue,
             "com.apple.DocumentManagerUICore.SaveToFiles",
         ]
         if let activity, fileActivities.contains(activity.rawValue) {
             AppAnalytics.shared.log(.pdfExported, ["method": activity.rawValue, "document_type": doc.kind.rawValue])
+            return false
         } else {
             DocumentActions(context: context).markSent(doc)
             AppAnalytics.shared.log(.invoiceSent, ["method": activity?.rawValue ?? "unknown", "document_type": doc.kind.rawValue])
+            return true
         }
     }
 
@@ -124,5 +128,17 @@ struct SignInOfferSheet: View {
         }
         .padding(24)
         .presentationDetents([.medium])
+    }
+}
+
+/// Asks for an App Store rating once, after the first document is sent.
+enum ReviewPrompt {
+    static let askedKey = "reviewPromptShown"
+
+    /// True the first time only; records that it was asked.
+    static func shouldAskAfterSend(defaults: UserDefaults = .standard) -> Bool {
+        guard !defaults.bool(forKey: askedKey) else { return false }
+        defaults.set(true, forKey: askedKey)
+        return true
     }
 }

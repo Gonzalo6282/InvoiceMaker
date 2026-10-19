@@ -38,20 +38,16 @@ struct RootView: View {
         .sheet(item: $paywalls.nativePaywall) { request in
             NativePaywallView(placement: request.placement, onUnlock: request.onUnlock)
         }
-        .fullScreenCover(isPresented: $askConsent) {
-            ConsentView { granted in
-                AppAnalytics.shared.setConsent(granted)
-                askConsent = false
-            }
+        .alert(AnalyticsConsentText.title, isPresented: $askConsent) {
+            Button(AnalyticsConsentText.allow) { AppAnalytics.shared.setConsent(true) }
+            Button(AnalyticsConsentText.deny, role: .cancel) { AppAnalytics.shared.setConsent(false) }
+        } message: {
+            Text(AnalyticsConsentText.message)
         }
         .task {
             decidePhase()
             guard !arguments.contains("-uiTesting") else { return }
-            if await AppAnalytics.needsConsentPrompt() {
-                askConsent = true
-            } else {
-                await AppAnalytics.shared.enableByDefaultIfNotAsked()
-            }
+            askConsent = AppAnalytics.needsConsentPrompt
         }
         .task(id: businesses.isEmpty) {
             // UI tests that skip onboarding start with a business for the device's region.

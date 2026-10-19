@@ -1,17 +1,26 @@
+import Foundation
 import Testing
 
 @testable import InvoiceMaker
 
 struct ServicesTests {
-    @Test func consentAskedInUKAndEEAOnly() {
-        #expect(ConsentPolicy.mustAsk(storefrontCountry: "GBR"))
-        #expect(ConsentPolicy.mustAsk(storefrontCountry: "deu"))
-        #expect(ConsentPolicy.mustAsk(storefrontCountry: "NOR"))
-        #expect(ConsentPolicy.mustAsk(storefrontCountry: nil))
-        #expect(!ConsentPolicy.mustAsk(storefrontCountry: "USA"))
-        #expect(!ConsentPolicy.mustAsk(storefrontCountry: "AUS"))
-        #expect(!ConsentPolicy.mustAsk(storefrontCountry: "CAN"))
-        #expect(ConsentPolicy.askCountries.count == 31)  // UK + 27 EU + Iceland, Liechtenstein, Norway
+    @Test func legalTextsShipInTheApp() {
+        let terms = LegalDocument.terms.blocks
+        let privacy = LegalDocument.privacy.blocks
+        #expect(terms.first == .title("Terms of Use"))
+        #expect(terms.contains(.heading("Subscriptions, Free Trials and Payments")))
+        #expect(privacy.first == .title("Privacy Policy"))
+        #expect(privacy.contains(.subheading("Analytics and Crash Reports (only with your permission)")))
+    }
+
+    @Test @MainActor func reviewIsAskedOnlyAfterTheFirstSend() throws {
+        let defaults = try #require(UserDefaults(suiteName: "review-\(UUID().uuidString)"))
+        #expect(ReviewPrompt.shouldAskAfterSend(defaults: defaults))
+        #expect(!ReviewPrompt.shouldAskAfterSend(defaults: defaults))
+    }
+
+    @Test func legalTextParsing() {
+        #expect(LegalBlock.parse("# T\n\n## H\n### S\n- b\ntext\n") == [.title("T"), .heading("H"), .subheading("S"), .bullet("b"), .paragraph("text")])
     }
 
     @Test func eventNamesMatchTheBuildDoc() {

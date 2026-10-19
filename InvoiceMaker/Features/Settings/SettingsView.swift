@@ -3,7 +3,7 @@ import SwiftData
 import SwiftUI
 
 enum SettingsPage: Hashable {
-    case business, taxes, payment, look, signature, numbering, currency, backup, subscription, help, report
+    case business, taxes, payment, look, signature, numbering, currency, backup, subscription, help, report, terms, privacy
     #if DEBUG
         case designSystem
     #endif
@@ -18,7 +18,13 @@ struct SettingsView: View {
 
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @AppStorage(AppPreferences.analyticsKey) private var analyticsOn = false
+    @State private var askingAnalytics = false
     @Environment(\.openURL) private var openURL
+
+    /// Turning analytics on asks first; turning it off doesn't.
+    private var analyticsToggle: Binding<Bool> {
+        Binding(get: { analyticsOn }, set: { on in if on { askingAnalytics = true } else { analyticsOn = false } })
+    }
 
     var body: some View {
         ScrollView {
@@ -54,9 +60,15 @@ struct SettingsView: View {
                     link(.help, icon: "questionmark.circle.fill", title: "Help and support", meta: String(localized: "Replies within 24 hours"))
                     RowDivider()
                     link(.report, icon: "envelope.fill", tint: .paid, title: "Report a problem")
+                    RowDivider()
+                    Button { openURL(AppLinks.writeReview) } label: {
+                        Row(icon: "star.fill", iconTint: .warn, title: "Rate Duly", meta: String(localized: "Leave a review on the App Store"))
+                    }
+                    .buttonStyle(.plain)
+                    .accessibilityIdentifier("rateApp")
                 }
                 GroupedSection(header: "Privacy and legal", footer: "Tax rates are set by you. This app doesn't give tax advice.") {
-                    Toggle(isOn: $analyticsOn) {
+                    Toggle(isOn: analyticsToggle) {
                         HStack(spacing: 12) {
                             IconChip(systemName: "chart.bar.fill", tint: .neutral)
                             VStack(alignment: .leading, spacing: 2) {
@@ -67,13 +79,9 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 14).padding(.vertical, 10)
                     RowDivider()
-                    Button { openURL(AppLinks.privacy) } label: {
-                        Row(icon: "hand.raised.fill", iconTint: .neutral, title: "Privacy Policy", meta: AppLinks.privacy.host() ?? "")
-                    }.buttonStyle(.plain)
+                    link(.privacy, icon: "hand.raised.fill", tint: .neutral, title: "Privacy Policy")
                     RowDivider()
-                    Button { openURL(AppLinks.terms) } label: {
-                        Row(icon: "doc.text.fill", iconTint: .neutral, title: "Terms of Use", meta: AppLinks.terms.host() ?? "")
-                    }.buttonStyle(.plain)
+                    link(.terms, icon: "doc.text.fill", tint: .neutral, title: "Terms of Use")
                 }
                 #if DEBUG
                     GroupedSection(header: "Debug") { link(.designSystem, icon: "swatchpalette", title: "Design system") }
@@ -88,6 +96,12 @@ struct SettingsView: View {
         .navigationTitle("Settings")
         .navigationDestination(for: SettingsPage.self) { page in destination(page) }
         .onChange(of: analyticsOn) { AppAnalytics.shared.setConsent(analyticsOn) }
+        .alert(AnalyticsConsentText.title, isPresented: $askingAnalytics) {
+            Button(AnalyticsConsentText.allow) { analyticsOn = true }
+            Button(AnalyticsConsentText.deny, role: .cancel) {}
+        } message: {
+            Text(AnalyticsConsentText.message)
+        }
     }
 
     private var activeTaxes: [TaxRate] { taxRecords.filter { !$0.isArchived }.map(\.taxRate) }
@@ -137,6 +151,8 @@ struct SettingsView: View {
         case .subscription: SubscriptionView()
         case .help: HelpView()
         case .report: ReportProblemView(business: business)
+        case .terms: LegalView(document: .terms)
+        case .privacy: LegalView(document: .privacy)
         #if DEBUG
             case .designSystem: DesignGalleryView()
         #endif
@@ -174,8 +190,10 @@ enum AppPreferences {
 
 enum AppLinks {
     // Static, known-good URLs.
-    static let privacy = URL(string: "https://slice-of-life.uk/invoice/privacy")!  // swiftlint:disable:this force_unwrapping
-    static let terms = URL(string: "https://slice-of-life.uk/invoice/terms")!  // swiftlint:disable:this force_unwrapping
+    static let privacy = URL(string: "https://slice-of-life.uk/duly-privacy/")!  // swiftlint:disable:this force_unwrapping
+    static let terms = URL(string: "https://slice-of-life.uk/duly-terms/")!  // swiftlint:disable:this force_unwrapping
+    /// App Store "Write a Review" page (App Store ID 6824285908).
+    static let writeReview = URL(string: "https://apps.apple.com/app/id6824285908?action=write-review")!  // swiftlint:disable:this force_unwrapping
     static let supportEmail = "slice.of.life.ltd@gmail.com"
 }
 
@@ -187,4 +205,14 @@ enum AppInfo {
 enum CloudStatus {
     /// True when the user is signed in to iCloud (the store then syncs).
     static var isAvailable: Bool { FileManager.default.ubiquityIdentityToken != nil }
+}
+
+/// The analytics question (first launch and the Settings switch).
+enum AnalyticsConsentText {
+    static var title: String { String(localized: "Help improve Duly?") }
+    static var message: String {
+        String(localized: "Share anonymous usage data and crash reports so we can fix problems and make Duly better. Your invoices and client details are never included. You can change this any time in Settings.")
+    }
+    static var allow: String { String(localized: "Allow") }
+    static var deny: String { String(localized: "Don't Allow") }
 }

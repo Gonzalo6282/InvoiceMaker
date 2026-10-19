@@ -1,0 +1,80 @@
+# Privacy Policy
+
+Last updated: 19 October 2026
+
+## Introduction
+This Privacy Policy explains how Slice of Life Ltd ("we", "us" or "our") handles information relating to an identified or identifiable individual ("Personal Information") when you use Duly: Invoice Maker & Estimate (the "App").
+
+Slice of Life Ltd, a company registered in the United Kingdom, is the controller of the Personal Information described in this Policy. "Personal Information" has the meaning given under the UK GDPR, the UK Data Protection Act 2018, the EU General Data Protection Regulation (GDPR), the California Consumer Privacy Act (CCPA) and other applicable laws.
+
+For any question about this Policy, contact us at info@slice-of-life.uk.
+
+## The Short Version
+- Your invoices, estimates, receipts, clients, items, logo, signatures and payment details stay on your device and in your own private iCloud. We never upload them to our servers and we cannot see them.
+- An account is optional. If you sign in with Apple, we keep only what is needed to link your account and subscription.
+- Anonymous analytics and crash reports are off until you allow them, and you can turn them off at any time in Settings.
+- We do not show ads, we do not collect the advertising identifier (IDFA), and we do not sell or share your Personal Information for advertising.
+
+## Information That Stays on Your Device and in Your iCloud
+The documents you create and everything in them, your business profile, logo, signature, payment details, tax rates, clients (including client names, emails, phone numbers and addresses), saved items, client signatures and app settings are stored on your device. If iCloud is turned on, they are also stored in your private iCloud database, which Apple provides to you. We do not have access to this data. Apple's handling of iCloud data is described in Apple's Privacy Policy.
+
+When you add a client from Contacts, the App receives only the contact you pick. When you add a logo, the App asks for permission to access your photos and uses only the image you choose. When you send a document, it leaves the App only through the share option you pick (for example Mail, Messages, WhatsApp, AirDrop, Files or Print).
+
+## Information We Process
+
+### Account (optional)
+If you use Sign in with Apple, we process a user identifier and, if you choose to share it, your email address (which may be an Apple private relay address). This is handled through Firebase Authentication (Google) and is used only to link your account and subscription across your devices.
+
+### Purchases and Subscriptions
+Purchases are processed by Apple. We do not receive your payment card details. To check your subscription status, the App uses RevenueCat, which receives an anonymous app user ID, your purchase and subscription history, your App Store country and device information. If you sign in, your account ID is linked to this record.
+
+### Purchase Screens
+Purchase screens are provided by Superwall, which receives an anonymous user ID, device and app information and events such as when a purchase screen is shown, closed or results in a purchase. This is used to show the right purchase screen and to measure whether it works.
+
+### Analytics and Crash Reports (only with your permission)
+If you allow it, we use Firebase Analytics and Firebase Crashlytics (Google) to understand how the App is used and to fix problems. This includes app events (for example "invoice created" or "invoice sent", without any document content), app version, device model, operating system, App Store country and crash logs. We do not collect the advertising identifier, and advertising features are turned off. You can turn this off at any time in Settings > Privacy and legal. We also use Firebase Remote Config to change some App settings without an update.
+
+### Support
+If you contact us or use "Report a problem", we receive your email address, your message, and the app version and device details included in it.
+
+## How We Use Information
+- To provide the App and its features, including linking your account and subscription across devices
+- To process and restore subscriptions and show purchase screens
+- To understand usage and fix crashes and errors, when you have allowed analytics
+- To answer support requests
+- To keep the App secure, prevent fraud and meet our legal obligations
+
+We do not use your information for advertising, we do not sell it, and we do not share it for cross-context behavioural advertising.
+
+## Legal Basis (UK and EU)
+We process Personal Information to perform our contract with you (providing the App and subscriptions); with your consent (analytics, crash reports, photo access); for our legitimate interests (security, fraud prevention and improving the App); and to comply with legal obligations. You can withdraw consent at any time in Settings.
+
+## Who We Share Information With
+We share Personal Information only with service providers that help us run the App and are bound to protect it: Apple (App Store purchases, Sign in with Apple, iCloud), Google Firebase (authentication, analytics, crash reports, remote configuration), RevenueCat (subscription management) and Superwall (purchase screens). We may also share information with professional advisers, with authorities when the law requires it, or with a successor if our business is sold or merged.
+
+## International Transfers
+Our service providers may process Personal Information outside the UK and the European Economic Area, including in the United States. Where required, transfers are protected by appropriate safeguards such as the UK International Data Transfer Agreement or Addendum, EU Standard Contractual Clauses or adequacy regulations.
+
+## Data Retention
+Documents and data stored on your device and in your iCloud are kept until you delete them, delete the App or remove them from iCloud. We keep account information until you delete your account in Settings > Account; deleting your account removes your sign-in and revokes the link with Apple. Subscription records are kept by Apple and RevenueCat as long as needed for purchases, tax and legal obligations. Analytics data is kept for up to 14 months and crash reports for up to 90 days.
+
+## Security
+We use appropriate technical and organisational measures to protect Personal Information, and your documents never pass through our servers. No method of storage or transmission is completely secure.
+
+## Your Rights
+UK and EU: you have the right to access, correct, delete, restrict or object to the processing of your Personal Information, the right to data portability and the right to withdraw consent. You can also complain to the UK Information Commissioner's Office (ico.org.uk) or your local data protection authority.
+
+California: you have the right to know, access, correct and delete your Personal Information, and the right not to be discriminated against for using these rights. We do not sell or share Personal Information as defined by the CCPA.
+
+You can export all your documents and data at any time in Settings > Export. To use any of your rights, contact info@slice-of-life.uk. We will reply within the time the law requires.
+
+## Children
+The App is a business tool and is not directed to children. We do not knowingly collect Personal Information from anyone under 16. If you believe a child has given us Personal Information, contact us and we will delete it.
+
+## Changes to This Policy
+We may update this Policy. We will tell you about material changes in the App or by other reasonable means, and the date at the top will always show the latest version.
+
+## Contact
+Slice of Life Ltd
+Email: info@slice-of-life.uk
+Website: https://slice-of-life.uk
