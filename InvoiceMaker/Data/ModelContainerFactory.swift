@@ -14,6 +14,16 @@ enum ModelContainerFactory {
         case inMemory
     }
 
+    /// In-memory store for unit tests, with autosave off: its timer could fire
+    /// after a test has released the container and trap (flaky CI, 19 Oct).
+    /// Tests save explicitly.
+    @MainActor
+    static func makeForTests() throws -> ModelContainer {
+        let container = try make(.inMemory)
+        container.mainContext.autosaveEnabled = false
+        return container
+    }
+
     static func make(_ storage: Storage) throws -> ModelContainer {
         let schema = Schema(versionedSchema: SchemaV1.self)
         let configuration: ModelConfiguration =

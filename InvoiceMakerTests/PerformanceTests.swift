@@ -9,7 +9,7 @@ import Testing
 @MainActor
 struct PerformanceTests {
     @Test func thousandInvoices() throws {
-        let container = try ModelContainerFactory.make(.inMemory)
+        let container = try ModelContainerFactory.makeForTests()
         let context = container.mainContext
         let business = BusinessSetup.create(name: "Kestrel Joinery", region: .uk, countryCode: "GB", in: context)
         let actions = DocumentActions(context: context)

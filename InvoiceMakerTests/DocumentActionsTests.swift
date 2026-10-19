@@ -15,7 +15,7 @@ struct DocumentActionsTests {
     let calendar: Calendar
 
     init() throws {
-        container = try ModelContainerFactory.make(.inMemory)
+        container = try ModelContainerFactory.makeForTests()
         context = container.mainContext
         var cal = Calendar(identifier: .gregorian)
         cal.timeZone = TimeZone(identifier: "Europe/London")!
@@ -300,7 +300,7 @@ struct FrozenTaxTests {
     let actions: DocumentActions
 
     init() throws {
-        container = try ModelContainerFactory.make(.inMemory)
+        container = try ModelContainerFactory.makeForTests()
         context = container.mainContext
         business = BusinessSetup.create(name: "K", region: .uk, countryCode: "GB", in: context)
         actions = DocumentActions(context: context)

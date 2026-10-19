@@ -44,7 +44,7 @@ struct CloudKitSchemaTests {
     }
 
     @Test func inMemoryContainerOpens() throws {
-        let container = try ModelContainerFactory.make(.inMemory)
+        let container = try ModelContainerFactory.makeForTests()
         let context = container.mainContext
         context.insert(Business(name: "Kestrel Joinery"))
         try context.save()

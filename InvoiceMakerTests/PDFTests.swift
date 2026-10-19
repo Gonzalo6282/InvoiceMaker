@@ -16,7 +16,7 @@ struct PDFModelBuilderTests {
     let calendar: Calendar
 
     init() throws {
-        container = try ModelContainerFactory.make(.inMemory)
+        container = try ModelContainerFactory.makeForTests()
         context = container.mainContext
         var cal = Calendar(identifier: .gregorian)
         cal.timeZone = TimeZone(identifier: "Europe/London")!
@@ -229,7 +229,7 @@ struct PDFRenderTests {
     }
 
     @Test func longInvoiceFlowsOntoMorePages() throws {
-        let container = try ModelContainerFactory.make(.inMemory)
+        let container = try ModelContainerFactory.makeForTests()
         let context = container.mainContext
         let business = BusinessSetup.create(name: "Kestrel Joinery", region: .uk, countryCode: "GB", in: context)
         let actions = DocumentActions(context: context)
@@ -247,7 +247,7 @@ struct PDFRenderTests {
     }
 
     @Test func logoIsFittedAndHEICWorks() throws {
-        let container = try ModelContainerFactory.make(.inMemory)
+        let container = try ModelContainerFactory.makeForTests()
         let context = container.mainContext
         let business = BusinessSetup.create(name: "Wide Logo Co", region: .us, countryCode: "US", in: context)
         let wide = UIGraphicsImageRenderer(size: CGSize(width: 400, height: 100)).image { ctx in
