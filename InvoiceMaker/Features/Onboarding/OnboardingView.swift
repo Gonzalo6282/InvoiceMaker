@@ -184,7 +184,8 @@ struct OnboardingView: View {
         OnboardingState.markDone()
         finish(draft)
         // Soft paywall: closable; Premium isn't needed to keep going.
-        PaywallService.shared.gate(.onboardingEnd) {}
+        // The analytics question waits until this paywall has closed.
+        PaywallService.shared.gate(.onboardingEnd, onFinished: { ConsentPrompt.shared.askIfNeeded() }) {}
     }
 
     private func title(_ text: LocalizedStringKey) -> some View {

@@ -8,7 +8,7 @@ struct RootView: View {
     @Query private var documents: [Document]
     @Environment(\.modelContext) private var context
     @State private var paywalls = PaywallService.shared
-    @State private var askConsent = false
+    @State private var consent = ConsentPrompt.shared
     @State private var phase: Phase?
     @State private var firstDocument: PersistentIdentifier?
 
@@ -37,8 +37,9 @@ struct RootView: View {
         }
         .sheet(item: $paywalls.nativePaywall) { request in
             NativePaywallView(placement: request.placement, onUnlock: request.onUnlock)
+                .onDisappear { request.onClose() }
         }
-        .alert(AnalyticsConsentText.title, isPresented: $askConsent) {
+        .alert(AnalyticsConsentText.title, isPresented: $consent.isShowing) {
             Button(AnalyticsConsentText.allow) { AppAnalytics.shared.setConsent(true) }
             Button(AnalyticsConsentText.deny, role: .cancel) { AppAnalytics.shared.setConsent(false) }
         } message: {
@@ -47,7 +48,9 @@ struct RootView: View {
         .task {
             decidePhase()
             guard !arguments.contains("-uiTesting") else { return }
-            askConsent = AppAnalytics.needsConsentPrompt
+            // New users are asked after onboarding and its paywall (see
+            // OnboardingView.complete); everyone else when the app opens.
+            if phase == .app { consent.askIfNeeded() }
         }
         .task(id: businesses.isEmpty) {
             // UI tests that skip onboarding start with a business for the device's region.

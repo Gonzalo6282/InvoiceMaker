@@ -41,6 +41,8 @@ final class PaywallService {
         let id = UUID()
         let placement: PaywallPlacement
         let onUnlock: () -> Void
+        /// Called when the sheet closes (bought or not).
+        var onClose: () -> Void = {}
     }
 
     private var purchaseController: RCPurchaseController?
@@ -74,17 +76,24 @@ final class PaywallService {
 
     /// Runs `feature` if the user has Premium; otherwise shows a paywall and
     /// runs it after a purchase. Free features never come through here.
-    func gate(_ placement: PaywallPlacement, params: [String: Any] = [:], feature: @escaping () -> Void) {
+    /// `onFinished` runs once, after any paywall shown for this tap has closed
+    /// (or straight away when none was needed).
+    func gate(
+        _ placement: PaywallPlacement, params: [String: Any] = [:], onFinished: (() -> Void)? = nil,
+        feature: @escaping () -> Void
+    ) {
+        let attempt = GateAttempt()
+        attempt.onFinished = onFinished
         if PurchaseManager.shared.isPremium {
             feature()
+            attempt.finish()
             return
         }
         guard usesSuperwall else {
-            showNative(placement, feature)
+            showNative(placement, feature, attempt: attempt)
             return
         }
         let handler = PaywallPresentationHandler()
-        let attempt = GateAttempt()
         handler.onPresent { info in
             let id = info.identifier
             Task { @MainActor in
@@ -92,8 +101,11 @@ final class PaywallService {
                 AppAnalytics.shared.log(.paywallView, ["placement": placement.rawValue, "paywall_id": id])
             }
         }
+        handler.onDismiss { _, _ in
+            Task { @MainActor in attempt.finish() }
+        }
         handler.onError { [weak self] _ in
-            Task { @MainActor in self?.showNative(placement, feature) }
+            Task { @MainActor in self?.showNative(placement, feature, attempt: attempt) }
         }
         // No campaign for this placement yet (or a holdout): Superwall would just
         // run the feature, so fall back to the native paywall instead.
@@ -110,6 +122,13 @@ final class PaywallService {
     private final class GateAttempt {
         var presented = false
         var resolved = false
+        var onFinished: (() -> Void)?
+
+        func finish() {
+            let done = onFinished
+            onFinished = nil
+            done?()
+        }
     }
 
     private func unlockOrShowNative(_ placement: PaywallPlacement, _ feature: @escaping () -> Void, attempt: GateAttempt) {
@@ -117,9 +136,10 @@ final class PaywallService {
         attempt.resolved = true
         if PurchaseManager.shared.isPremium || Self.superwallSaysActive {
             feature()
+            if !attempt.presented { attempt.finish() }  // shown: onDismiss finishes
         } else if !attempt.presented {
             // Nothing was shown (no campaign yet): show ours.
-            showNative(placement, feature)
+            showNative(placement, feature, attempt: attempt)
         }
         // A Superwall paywall was shown and closed without buying: do nothing.
     }
@@ -130,10 +150,10 @@ final class PaywallService {
         return false
     }
 
-    private func showNative(_ placement: PaywallPlacement, _ feature: @escaping () -> Void) {
-        guard nativePaywall == nil else { return }
+    private func showNative(_ placement: PaywallPlacement, _ feature: @escaping () -> Void, attempt: GateAttempt) {
+        guard nativePaywall == nil else { return attempt.finish() }
         AppAnalytics.shared.log(.paywallView, ["placement": placement.rawValue, "paywall_id": "native"])
-        nativePaywall = NativePaywallRequest(placement: placement, onUnlock: feature)
+        nativePaywall = NativePaywallRequest(placement: placement, onUnlock: feature, onClose: { attempt.finish() })
     }
 }
 

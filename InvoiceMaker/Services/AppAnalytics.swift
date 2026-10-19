@@ -3,6 +3,7 @@ import FirebaseCore
 import FirebaseCrashlytics
 import FirebaseRemoteConfig
 import Foundation
+import Observation
 import StoreKit
 
 /// Firebase Analytics + Crashlytics + Remote Config, behind the user's consent.
@@ -64,5 +65,23 @@ enum RemoteFlags {
 
     static var defaults: [String: NSObject] {
         [showNativePaywallOnSuperwallError: true as NSNumber, onboardingSoftPaywall: true as NSNumber]
+    }
+}
+
+/// Shows the native analytics question once, when the user is in the app with
+/// nothing else on screen (never during onboarding or over a paywall).
+@MainActor
+@Observable
+final class ConsentPrompt {
+    static let shared = ConsentPrompt()
+    var isShowing = false
+
+    func askIfNeeded() {
+        guard AppAnalytics.needsConsentPrompt, !isShowing else { return }
+        Task {
+            // Let a closing paywall or sheet finish its animation first.
+            try? await Task.sleep(for: .milliseconds(700))
+            if AppAnalytics.needsConsentPrompt { isShowing = true }
+        }
     }
 }
