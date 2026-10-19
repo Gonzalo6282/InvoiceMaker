@@ -5,6 +5,9 @@ import StoreKit
 
 /// Premium state and buying. RevenueCat when its key is set (entitlement `pro`),
 /// otherwise StoreKit 2 directly (StoreKit config file / sandbox testing).
+/// Premium is active when RevenueCat's entitlement OR Apple's own verified
+/// transactions say so, so a purchase unlocks even if RevenueCat lags or its
+/// products aren't set up yet.
 @MainActor
 @Observable
 final class PurchaseManager {
@@ -16,6 +19,8 @@ final class PurchaseManager {
 
     private(set) var isPremium = false
     private(set) var usesRevenueCat = false
+    private var revenueCatPremium = false
+    private var storeKitPremium = false
     /// Plans for the native paywall.
     private(set) var plans: [Plan] = []
     /// Optional override from UI tests (`-premium`).
@@ -44,6 +49,8 @@ final class PurchaseManager {
             Purchases.shared.attribution.enableAdServicesAttributionTokenCollection()
             usesRevenueCat = true
             Task { await listenToRevenueCat() }
+            // RevenueCat finishes transactions; we only read Apple's current entitlements.
+            Task { await refreshStoreKitEntitlement() }
         } else {
             Task { await listenToStoreKit() }
         }
@@ -54,7 +61,8 @@ final class PurchaseManager {
 
     private func listenToRevenueCat() async {
         for await info in Purchases.shared.customerInfoStream {
-            update(premium: info.entitlements[Self.entitlement]?.isActive == true)
+            revenueCatPremium = info.entitlements[Self.entitlement]?.isActive == true
+            await refreshStoreKitEntitlement()
         }
     }
 
@@ -66,18 +74,22 @@ final class PurchaseManager {
         }
     }
 
-    private func refreshStoreKitEntitlement() async {
+    /// Apple's verified, unrevoked, unexpired subscriptions for our products.
+    func refreshStoreKitEntitlement() async {
         var active = false
         for await result in Transaction.currentEntitlements {
-            if case .verified(let t) = result, [Self.monthlyID, Self.yearlyID].contains(t.productID), t.revocationDate == nil {
+            if case .verified(let t) = result, [Self.monthlyID, Self.yearlyID].contains(t.productID), t.revocationDate == nil,
+                (t.expirationDate ?? .distantFuture) > .now
+            {
                 active = true
             }
         }
-        update(premium: active)
+        storeKitPremium = active
+        recompute()
     }
 
-    private func update(premium: Bool) {
-        isPremium = premium || forcedPremium
+    private func recompute() {
+        isPremium = revenueCatPremium || storeKitPremium || forcedPremium
         PaywallService.shared.updateSubscriptionStatus(isPremium: isPremium)
     }
 
@@ -114,6 +126,8 @@ final class PurchaseManager {
         do {
             if let package = plan.rcPackage {
                 let result = try await Purchases.shared.purchase(package: package)
+                revenueCatPremium = result.customerInfo.entitlements[Self.entitlement]?.isActive == true
+                await refreshStoreKitEntitlement()
                 return result.userCancelled ? .cancelled : .purchased
             }
             guard let product = plan.skProduct else { return .failed(String(localized: "This plan isn't available right now.")) }
@@ -137,11 +151,11 @@ final class PurchaseManager {
     func restore() async -> Bool {
         if usesRevenueCat {
             let info = try? await Purchases.shared.restorePurchases()
-            update(premium: info?.entitlements[Self.entitlement]?.isActive == true)
+            revenueCatPremium = info?.entitlements[Self.entitlement]?.isActive == true
         } else {
             try? await AppStore.sync()
-            await refreshStoreKitEntitlement()
         }
+        await refreshStoreKitEntitlement()
         return isPremium
     }
 

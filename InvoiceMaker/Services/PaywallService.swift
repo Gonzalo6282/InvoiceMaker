@@ -52,8 +52,8 @@ final class PaywallService {
         let controller = RCPurchaseController()
         purchaseController = controller
         Superwall.configure(apiKey: key, purchaseController: controller)
-        controller.syncSubscriptionStatus()
         usesSuperwall = true
+        updateSubscriptionStatus(isPremium: PurchaseManager.shared.isPremium)
         identify(userID: Purchases.shared.appUserID)
     }
 
@@ -70,8 +70,11 @@ final class PaywallService {
         identify(userID: Purchases.shared.appUserID)
     }
 
+    /// Superwall's status follows PurchaseManager (RevenueCat or Apple's transactions).
     func updateSubscriptionStatus(isPremium: Bool) {
-        // With Superwall on, RCPurchaseController keeps the status in sync.
+        guard usesSuperwall else { return }
+        Superwall.shared.subscriptionStatus =
+            isPremium ? .active([Entitlement(id: PurchaseManager.entitlement)]) : .inactive
     }
 
     /// Runs `feature` if the user has Premium; otherwise shows a paywall and
@@ -164,21 +167,11 @@ nonisolated final class RCPurchaseController: PurchaseController, @unchecked Sen
         var errorDescription: String? { "Superwall didn't pass a StoreKit 2 product." }
     }
 
-    func syncSubscriptionStatus() {
-        Task {
-            for await info in Purchases.shared.customerInfoStream {
-                let entitlements = info.entitlements.activeInCurrentEnvironment.keys.map { Entitlement(id: $0) }
-                await MainActor.run {
-                    Superwall.shared.subscriptionStatus = entitlements.isEmpty ? .inactive : .active(Set(entitlements))
-                }
-            }
-        }
-    }
-
     func purchase(product: SuperwallKit.StoreProduct) async -> PurchaseResult {
         do {
             guard let sk2 = product.sk2Product else { throw PurchasingError.productNotFound }
             let result = try await Purchases.shared.purchase(product: RevenueCat.StoreProduct(sk2Product: sk2))
+            if !result.userCancelled { await PurchaseManager.shared.refreshStoreKitEntitlement() }
             return result.userCancelled ? .cancelled : .purchased
         } catch let error as RevenueCat.ErrorCode {
             return error == .paymentPendingError ? .pending : .failed(error)
@@ -190,6 +183,7 @@ nonisolated final class RCPurchaseController: PurchaseController, @unchecked Sen
     func restorePurchases() async -> RestorationResult {
         do {
             _ = try await Purchases.shared.restorePurchases()
+            await PurchaseManager.shared.refreshStoreKitEntitlement()
             return .restored
         } catch {
             return .failed(error)
