@@ -106,6 +106,10 @@ struct DocumentActions {
         context.insert(item)
         item.document = doc
         touch(doc)
+        // Save now so the item's ID is permanent before a sheet opens for it.
+        // Otherwise autosave swaps the temporary ID a moment later and
+        // `.sheet(item:)` closes and reopens.
+        try? context.save()
         return item
     }
 

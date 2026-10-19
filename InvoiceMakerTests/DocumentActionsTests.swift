@@ -68,6 +68,17 @@ struct DocumentActionsTests {
 
     // MARK: Line items (bug checklist: delete a line item and reopen)
 
+    /// Device bug (19 Oct): the line-item sheet closed and reopened on its own,
+    /// because autosave swapped the new line's temporary ID for a permanent one.
+    @Test func newLineItemKeepsItsIDAfterSaving() throws {
+        let doc = actions.create(.invoice, business: business)
+        let line = actions.addLineItem(to: doc)
+        let idWhenPresented = line.persistentModelID
+        line.itemDescription = "Labour"
+        try context.save()
+        #expect(line.persistentModelID == idWhenPresented)
+    }
+
     @Test func addDeleteAndReorderLineItems() throws {
         let doc = actions.create(.invoice, business: business)
         let a = actions.addLineItem(to: doc, defaultTaxID: "uk-vat20")

@@ -65,6 +65,8 @@ struct ItemsView: View {
     private func addNew() {
         let item = SavedItem(taxID: business.defaultTaxID)
         context.insert(item)
+        // Permanent ID before presenting (see DocumentActions.addLineItem).
+        try? context.save()
         editing = item
     }
 }
