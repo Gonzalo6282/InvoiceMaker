@@ -29,7 +29,8 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 - Waiting for: Gonzalo to set the signing team on the Mac (checkpoint M0) and the M6 accounts/keys (see below).
 - Code for v1.0 (M0–M9) is done and green on CI. Remaining are the manual checks on real devices (bug checklist) and the App Store side (products, Superwall paywall/campaign, screenshots: Phase 4).
 - Watch: one iPad UI-test run failed once (item sheet didn't appear) and passed on the next run; if it repeats, look at the screenshots in `ci-logs`.
-- Keys: RevenueCat `appl_` key is in Gonzalo's local `Config/Secrets.xcconfig` (written via the Mac bridge); Superwall `pk_` and `GoogleService-Info.plist` still to come. Superwall paywall + trial reminder (Delay = 1 day) are set up in Superwall's dashboard.
+- Keys: RevenueCat `appl_` key, Superwall `pk_` key and `GoogleService-Info.plist` are on Gonzalo's Mac (never committed).
+- Superwall (19 Oct): paywall "Duly Premium" (from the "Single-Page | Two Plans" template: yearly primary + monthly, trial timeline, benefits for no-trial users, Restore / Terms / Privacy links, fake review block removed) and campaign "Premium gate" with all 6 placements, audience = unsubscribed users, paywall 100%. Trial reminder: 1 day 12 hours before the trial ends (Apple needs cancellation 24 h before renewal). Still to do in Superwall: Apple App ID in Settings (clears "Missing App ID"), brand colours on the paywall.
 - Risk to check at release: on a reinstall, onboarding could run before iCloud has synced the business (would create a second business).
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls.
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`). Never copy pricing or keywords into this public repo.
