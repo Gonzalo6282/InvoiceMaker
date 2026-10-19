@@ -7,6 +7,8 @@ struct AccountRows: View {
     @State private var confirmingDelete = false
     @State private var deleting = false
     @State private var error: String?
+    @State private var restoring = false
+    @State private var restoreMessage: String?
 
     var body: some View {
         Group {
@@ -19,7 +21,7 @@ struct AccountRows: View {
                 Button { confirmingDelete = true } label: { Row(title: "Delete account", titleColor: .due) }.buttonStyle(.plain)
             } else {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text("Keeps your subscription if you change phone. Optional.").font(.footnote).foregroundStyle(Color.ink2)
+                    Text("Sign in to link your account across devices. Optional.").font(.footnote).foregroundStyle(Color.ink2)
                     SignInWithAppleButton(.signIn) { account.prepare($0) } onCompletion: { result in
                         Task {
                             do { try await account.complete(result) } catch { self.error = error.localizedDescription }
@@ -30,6 +32,20 @@ struct AccountRows: View {
                 }
                 .padding(14)
             }
+            RowDivider()
+            // Always visible: Apple expects a Restore button wherever purchases are tied to an account.
+            Button(action: restore) {
+                Row(icon: "arrow.clockwise", iconTint: .brand, title: "Restore purchases",
+                    value: restoring ? String(localized: "Checking…") : nil)
+            }
+            .buttonStyle(.plain)
+            .disabled(restoring)
+            .accessibilityIdentifier("restorePurchases")
+        }
+        .alert("Restore purchases", isPresented: Binding(get: { restoreMessage != nil }, set: { if !$0 { restoreMessage = nil } })) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(restoreMessage ?? "")
         }
         .sheet(isPresented: $confirmingDelete) {
             DeleteAccountSheet(account: account) { error = $0 }
@@ -38,6 +54,19 @@ struct AccountRows: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(error ?? "")
+        }
+    }
+}
+
+extension AccountRows {
+    fileprivate func restore() {
+        restoring = true
+        Task {
+            let premium = await PurchaseManager.shared.restore()
+            restoring = false
+            restoreMessage = premium
+                ? String(localized: "Premium is active on this device.")
+                : String(localized: "No active subscription found for this Apple ID.")
         }
     }
 }
