@@ -85,7 +85,7 @@ struct OnboardingView: View {
                 }
                 .labelsHidden()
             }
-            PhotosPicker(selection: $logoItem, matching: .images) {
+            Group {
                 HStack(spacing: 14) {
                     Group {
                         if let logoData, let image = UIImage(data: logoData) {
@@ -105,7 +105,7 @@ struct OnboardingView: View {
                 .background(Color.surface, in: RoundedRectangle(cornerRadius: 14))
                 .overlay(RoundedRectangle(cornerRadius: 14).strokeBorder(Color.line, style: StrokeStyle(lineWidth: 1, dash: [5, 4])))
             }
-            .buttonStyle(.plain)
+            .logoPhotoPicker(selection: $logoItem)
             .onChange(of: logoItem) {
                 guard let logoItem else { return }
                 Task { logoData = (try? await logoItem.loadTransferable(type: Data.self)).flatMap { LogoImage.prepare($0) } }

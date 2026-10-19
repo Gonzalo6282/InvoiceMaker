@@ -6,6 +6,8 @@
 	<array>
 		<string>remote-notification</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Duly uses your photos only to add your business logo to invoices, estimates and receipts.</string>
 	<key>RevenueCatAPIKey</key>
 	<string>$(REVENUECAT_API_KEY)</string>
 	<key>SuperwallAPIKey</key>

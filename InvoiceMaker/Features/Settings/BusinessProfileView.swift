@@ -114,7 +114,7 @@ struct LogoPickerRow: View {
     @State private var item: PhotosPickerItem?
 
     var body: some View {
-        PhotosPicker(selection: $item, matching: .images) {
+        Group {
             HStack(spacing: 14) {
                 Group {
                     if let data = business.logoData, let image = UIImage(data: data) {
@@ -136,7 +136,7 @@ struct LogoPickerRow: View {
             .background(Color.surface, in: RoundedRectangle(cornerRadius: 14))
             .overlay(RoundedRectangle(cornerRadius: 14).strokeBorder(Color.line, style: StrokeStyle(lineWidth: 1, dash: [5, 4])))
         }
-        .buttonStyle(.plain)
+        .logoPhotoPicker(selection: $item)
         .contextMenu {
             if business.logoData != nil {
                 Button("Remove logo", systemImage: "trash", role: .destructive) { business.logoData = nil }
