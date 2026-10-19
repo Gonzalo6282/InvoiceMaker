@@ -3,7 +3,7 @@ import SwiftUI
 
 /// Terms of Use and Privacy Policy, shown inside the app. The text lives in
 /// Resources/Legal/*.txt (the same text is published on slice-of-life.uk).
-enum LegalDocument: String, Hashable {
+nonisolated enum LegalDocument: String, Hashable, Sendable {
     case terms, privacy
 
     var title: String {
@@ -23,7 +23,7 @@ enum LegalDocument: String, Hashable {
 }
 
 /// "# Title", "## Heading", "### Subheading", "- bullet", plain paragraphs.
-enum LegalBlock: Hashable {
+nonisolated enum LegalBlock: Hashable, Sendable {
     case title(String), heading(String), subheading(String), bullet(String), paragraph(String)
 
     static func parse(_ text: String) -> [LegalBlock] {
