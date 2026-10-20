@@ -208,6 +208,9 @@ final class PurchaseManager {
         guard usesRevenueCat, !Purchases.shared.isAnonymous else { return }
         _ = try? await Purchases.shared.logOut()
         PaywallService.shared.resetIdentity()
+        // The subscription belongs to the Apple ID, not the account: keep
+        // Premium after sign-out / delete if Apple still says it's active.
+        await refreshStoreKitEntitlement()
     }
 }
 
