@@ -159,6 +159,38 @@ final class PurchaseManager {
         return isPremium
     }
 
+    // MARK: Diagnostics (debug builds)
+
+    /// What each source says right now, for the debug panel and the console.
+    func diagnostics() async -> [String] {
+        var lines = ["Premium (app): \(isPremium)  RevenueCat: \(revenueCatPremium)  Apple: \(storeKitPremium)"]
+        if usesRevenueCat, let info = try? await Purchases.shared.customerInfo() {
+            lines.append("RevenueCat user: \(Purchases.shared.appUserID)")
+            lines.append("RevenueCat active entitlements: \(info.entitlements.active.keys.sorted())")
+            lines.append("RevenueCat all entitlements: \(info.entitlements.all.keys.sorted())")
+            lines.append("RevenueCat active subscriptions: \(info.activeSubscriptions.sorted())")
+            lines.append("RevenueCat purchased products: \(info.allPurchasedProductIdentifiers.sorted())")
+        } else {
+            lines.append("RevenueCat: \(usesRevenueCat ? "customerInfo failed" : "not configured")")
+        }
+        var current = 0
+        for await result in Transaction.currentEntitlements {
+            current += 1
+            switch result {
+            case .verified(let t):
+                lines.append("Apple entitlement ✓ \(t.productID) env=\(t.environment.rawValue) expires=\(t.expirationDate?.formatted() ?? "-") revoked=\(t.revocationDate != nil)")
+            case .unverified(let t, let error):
+                lines.append("Apple entitlement ✗ UNVERIFIED \(t.productID): \(error)")
+            }
+        }
+        var all = 0
+        for await _ in Transaction.all { all += 1 }
+        lines.append("Apple current entitlements: \(current), all transactions: \(all)")
+        lines.append("Superwall status: \(PaywallService.shared.statusDescription)")
+        for line in lines { print("[Duly purchases] \(line)") }
+        return lines
+    }
+
     // MARK: Account link
 
     func logIn(userID: String) async {

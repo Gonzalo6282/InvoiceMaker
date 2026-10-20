@@ -70,6 +70,10 @@ final class PaywallService {
         identify(userID: Purchases.shared.appUserID)
     }
 
+    var statusDescription: String {
+        usesSuperwall ? String(describing: Superwall.shared.subscriptionStatus) : "not configured"
+    }
+
     /// Superwall's status follows PurchaseManager (RevenueCat or Apple's transactions).
     func updateSubscriptionStatus(isPremium: Bool) {
         guard usesSuperwall else { return }

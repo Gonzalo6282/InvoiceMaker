@@ -168,6 +168,9 @@ struct SubscriptionView: View {
                     .font(.subheadline).foregroundStyle(Color.ink2).padding(.top, 8)
                 Text("Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription. If your subscription ends you keep every document.")
                     .font(.footnote).foregroundStyle(Color.ink3)
+                #if DEBUG
+                    PurchaseDiagnosticsView()
+                #endif
             }
             .padding(16)
         }
@@ -272,3 +275,27 @@ struct ReportProblemView: View {
         if let url = components.url { openURL(url) }
     }
 }
+
+#if DEBUG
+    /// Debug-only: what RevenueCat, Apple and Superwall each report.
+    private struct PurchaseDiagnosticsView: View {
+        @State private var lines: [String] = []
+
+        var body: some View {
+            VStack(alignment: .leading, spacing: 6) {
+                HStack {
+                    Text(verbatim: "Purchase status (debug)").font(.footnote.weight(.semibold))
+                    Spacer()
+                    Button(String("Refresh")) { Task { lines = await PurchaseManager.shared.diagnostics() } }.font(.footnote)
+                }
+                ForEach(Array(lines.enumerated()), id: \.offset) { _, line in
+                    Text(verbatim: line).font(.caption2.monospaced()).foregroundStyle(Color.ink2).textSelection(.enabled)
+                }
+            }
+            .padding(12)
+            .background(Color.surface, in: RoundedRectangle(cornerRadius: 12))
+            .padding(.top, 12)
+            .task { lines = await PurchaseManager.shared.diagnostics() }
+        }
+    }
+#endif
