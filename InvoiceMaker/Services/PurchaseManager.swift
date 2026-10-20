@@ -13,15 +13,11 @@ import StoreKit
 final class PurchaseManager {
     static let shared = PurchaseManager()
 
-    /// Superwall's entitlement name (its products are tagged `pro`).
+    /// Premium entitlement: same identifier in RevenueCat and Superwall.
     static let entitlement = "pro"
-    /// RevenueCat entitlement identifiers that mean Premium (the dashboard's is
-    /// `duly_pro`, display name "Duly Pro"; `pro` kept for safety).
-    static let revenueCatEntitlements: Set<String> = ["duly_pro", "pro"]
 
     static func hasPremium(_ info: CustomerInfo?) -> Bool {
-        guard let info else { return false }
-        return !revenueCatEntitlements.isDisjoint(with: info.entitlements.active.keys)
+        info?.entitlements.active[entitlement] != nil
     }
     static let monthlyID = "im_standard_monthly"
     static let yearlyID = "im_standard_yearly"
