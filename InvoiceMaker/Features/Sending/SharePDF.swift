@@ -27,7 +27,9 @@ struct SharedPDF: Identifiable {
 
 /// The PDF as a share-sheet item. The header line shows the offline note
 /// when there's no connection (spec U10).
-final class PDFActivityItem: NSObject, UIActivityItemSource {
+/// `nonisolated`: iOS asks for the item on a background thread; a main-actor
+/// class traps there (the freeze after "Send").
+nonisolated final class PDFActivityItem: NSObject, UIActivityItemSource, Sendable {
     let url: URL
     let title: String
 
