@@ -13,7 +13,16 @@ import StoreKit
 final class PurchaseManager {
     static let shared = PurchaseManager()
 
+    /// Superwall's entitlement name (its products are tagged `pro`).
     static let entitlement = "pro"
+    /// RevenueCat entitlement identifiers that mean Premium (the dashboard's is
+    /// `duly_pro`, display name "Duly Pro"; `pro` kept for safety).
+    static let revenueCatEntitlements: Set<String> = ["duly_pro", "pro"]
+
+    static func hasPremium(_ info: CustomerInfo?) -> Bool {
+        guard let info else { return false }
+        return !revenueCatEntitlements.isDisjoint(with: info.entitlements.active.keys)
+    }
     static let monthlyID = "im_standard_monthly"
     static let yearlyID = "im_standard_yearly"
 
@@ -61,7 +70,7 @@ final class PurchaseManager {
 
     private func listenToRevenueCat() async {
         for await info in Purchases.shared.customerInfoStream {
-            revenueCatPremium = info.entitlements[Self.entitlement]?.isActive == true
+            revenueCatPremium = Self.hasPremium(info)
             await refreshStoreKitEntitlement()
         }
     }
@@ -126,7 +135,7 @@ final class PurchaseManager {
         do {
             if let package = plan.rcPackage {
                 let result = try await Purchases.shared.purchase(package: package)
-                revenueCatPremium = result.customerInfo.entitlements[Self.entitlement]?.isActive == true
+                revenueCatPremium = Self.hasPremium(result.customerInfo)
                 await refreshStoreKitEntitlement()
                 return result.userCancelled ? .cancelled : .purchased
             }
@@ -151,7 +160,7 @@ final class PurchaseManager {
     func restore() async -> Bool {
         if usesRevenueCat {
             let info = try? await Purchases.shared.restorePurchases()
-            revenueCatPremium = info?.entitlements[Self.entitlement]?.isActive == true
+            revenueCatPremium = Self.hasPremium(info)
         } else {
             try? await AppStore.sync()
         }
