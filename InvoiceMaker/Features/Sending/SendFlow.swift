@@ -118,7 +118,7 @@ struct SignInOfferSheet: View {
                         try await AccountService.shared.complete(result)
                         dismiss()
                     } catch {
-                        self.error = error.localizedDescription
+                        self.error = AccountService.report(error, step: "Sign in (first send)")
                     }
                 }
             }

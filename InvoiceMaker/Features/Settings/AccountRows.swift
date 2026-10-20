@@ -24,7 +24,7 @@ struct AccountRows: View {
                     Text("Sign in to link your account across devices. Optional.").font(.footnote).foregroundStyle(Color.ink2)
                     SignInWithAppleButton(.signIn) { account.prepare($0) } onCompletion: { result in
                         Task {
-                            do { try await account.complete(result) } catch { self.error = error.localizedDescription }
+                            do { try await account.complete(result) } catch { self.error = AccountService.report(error, step: "Sign in") }
                         }
                     }
                     .signInWithAppleButtonStyle(.black)
@@ -88,7 +88,7 @@ private struct DeleteAccountSheet: View {
                     do {
                         try await account.deleteAccount(with: result)
                     } catch {
-                        failed(error.localizedDescription)
+                        failed(AccountService.report(error, step: "Delete account"))
                     }
                     dismiss()
                 }

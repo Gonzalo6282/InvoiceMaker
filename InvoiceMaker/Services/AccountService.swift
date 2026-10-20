@@ -76,6 +76,30 @@ final class AccountService {
         await PurchaseManager.shared.logOut()
     }
 
+    /// The full error (domain, code, Firebase's server reason, underlying
+    /// errors), printed to the Xcode console as "[Duly account]". Debug builds
+    /// also show it in the alert.
+    static func report(_ error: Error, step: String) -> String {
+        let detail = describe(error as NSError)
+        print("[Duly account] \(step) failed: \(detail)")
+        #if DEBUG
+            return error.localizedDescription + "\n\n" + detail
+        #else
+            return error.localizedDescription
+        #endif
+    }
+
+    nonisolated static func describe(_ error: NSError, depth: Int = 0) -> String {
+        var parts = ["\(error.domain) \(error.code)"]
+        for (key, value) in error.userInfo where key != NSUnderlyingErrorKey {
+            parts.append("\(key)=\(value)")
+        }
+        if depth < 3, let underlying = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+            parts.append("underlying: " + describe(underlying, depth: depth + 1))
+        }
+        return parts.joined(separator: " | ")
+    }
+
     enum AccountError: LocalizedError {
         case missingToken
         var errorDescription: String? { String(localized: "Sign in with Apple didn't finish. Please try again.") }

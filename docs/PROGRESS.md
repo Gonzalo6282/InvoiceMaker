@@ -29,6 +29,7 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 19 Oct 2026 | Permissions, paywall, fixes | Contacts permission pop-up before the picker. Analytics question waits until the onboarding paywall has closed (`gate(onFinished:)`). Superwall paywall redesigned: navy header with green ticks and the Free/Premium line, plans in a light panel, one layout for both plans, privacy line. iPad crash fixed: navigation keeps a permanent model ID (save before storing it) |
 | 20 Oct 2026 | Premium unlock | Subscribed users stayed locked: the app checked RevenueCat entitlement `pro` while the dashboard's was `duly_pro`. Dashboard now uses `pro` (same as Superwall) with both products, current offering `Duly_offering`; app checks `pro` only |
 | 20 Oct 2026 | Send freeze | App froze after choosing Send: iOS asks the share-sheet PDF item for its file on a background thread and the item was main-actor (Swift 6 default), so it trapped. `PDFActivityItem` is now `nonisolated`. Sign in with Apple "internal error" is the Firebase console (Apple provider), not code |
+| 20 Oct 2026 | Reinstall + account errors | After a reinstall, onboarding showed although the data was in iCloud (the store starts empty and iCloud imports later). Launch now waits up to 6 s for the first iCloud import (or synced data) before choosing onboarding. Sign-in/delete errors print the full reason to the Xcode console as `[Duly account]` (and in the alert in Debug) |
 
 ## Current state
 - Waiting for: Gonzalo to set the signing team on the Mac (checkpoint M0) and the M6 accounts/keys (see below).
@@ -36,6 +37,6 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 - Watch: one iPad UI-test run failed once (item sheet didn't appear) and passed on the next run; if it repeats, look at the screenshots in `ci-logs`.
 - Keys: RevenueCat `appl_` key, Superwall `pk_` key and `GoogleService-Info.plist` are on Gonzalo's Mac (never committed).
 - Superwall (19 Oct): paywall "Duly Premium" (from the "Single-Page | Two Plans" template: yearly primary + monthly, trial timeline, benefits for no-trial users, Restore / Terms / Privacy links, fake review block removed) and campaign "Premium gate" with all 6 placements, audience = unsubscribed users, paywall 100%. Trial reminder: 1 day 12 hours before the trial ends (Apple needs cancellation 24 h before renewal). Still to do in Superwall: Apple App ID in Settings (clears "Missing App ID"), brand colours on the paywall.
-- Risk to check at release: on a reinstall, onboarding could run before iCloud has synced the business (would create a second business).
+- Reinstall: launch waits up to 6 s for iCloud; if data arrives later, onboarding reuses the existing business (no second business) but adds its sample client/draft.
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls.
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`). Never copy pricing or keywords into this public repo.

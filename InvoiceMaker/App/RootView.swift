@@ -46,7 +46,7 @@ struct RootView: View {
             Text(AnalyticsConsentText.message)
         }
         .task {
-            decidePhase()
+            await decidePhase()
             guard !arguments.contains("-uiTesting") else { return }
             // New users are asked after onboarding and its paywall (see
             // OnboardingView.complete); everyone else when the app opens.
@@ -65,16 +65,26 @@ struct RootView: View {
     }
 
     /// New users onboard; a business that synced from iCloud (named, or with
-    /// documents) goes straight in.
-    private func decidePhase() {
+    /// documents) goes straight in. After a reinstall the local store starts
+    /// empty, so when iCloud is on we first wait (briefly) for its data.
+    private func decidePhase() async {
         guard phase == nil else { return }
         if skipOnboarding { phase = .app; return }
-        let done = OnboardingState.isDone && !arguments.contains("-uiTesting")
-        if let business = businesses.first {
-            phase = (!done && business.name.isEmpty && documents.isEmpty) ? .onboarding : .app
-        } else {
-            phase = .onboarding
+        let uiTesting = arguments.contains("-uiTesting")
+        let watcher = CloudImportWatcher.shared
+        if !uiTesting, !OnboardingState.isDone, !hasSyncedData, watcher.iCloudAvailable {
+            await watcher.wait(timeout: .seconds(6)) { hasSyncedData }
         }
+        let done = OnboardingState.isDone && !uiTesting
+        phase = (done || hasSyncedData) ? .app : .onboarding
+        if phase == .app, businesses.isEmpty, done {
+            phase = .onboarding  // flag set but no data at all: start again
+        }
+    }
+
+    /// A named business or any document means this isn't a new user.
+    private var hasSyncedData: Bool {
+        businesses.contains { !$0.name.isEmpty } || !documents.isEmpty
     }
 }
 

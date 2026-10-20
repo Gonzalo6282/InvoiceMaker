@@ -3,9 +3,11 @@ import SwiftUI
 
 @main
 struct InvoiceMakerApp: App {
-    private let store = ModelContainerFactory.forApp()
+    private let store: Result<ModelContainer, Error>
 
     init() {
+        CloudImportWatcher.shared.start()
+        store = ModelContainerFactory.forApp()
         // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
         AppAnalytics.shared.configure()
         PurchaseManager.shared.configure()
