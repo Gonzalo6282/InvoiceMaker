@@ -11,5 +11,6 @@ nonisolated enum AnalyticsEvent: String, CaseIterable, Sendable {
     case paywallView = "paywall_view"
     case invoiceSent = "invoice_sent"
     case pdfExported = "pdf_exported"
+    case shareAppTapped = "share_app_tapped"
 }
 

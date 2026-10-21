@@ -26,8 +26,12 @@ struct ServicesTests {
     @Test func eventNamesMatchTheBuildDoc() {
         #expect(AnalyticsEvent.allCases.map(\.rawValue) == [
             "onboarding_step", "onboarding_complete", "invoice_created", "estimate_created", "paywall_view",
-            "invoice_sent", "pdf_exported",
+            "invoice_sent", "pdf_exported", "share_app_tapped",
         ])
+    }
+
+    @Test func shareDulyMessageHasTheAppStoreLink() {
+        #expect(ShareDuly.message == "I send my invoices with Duly. Try it: https://apps.apple.com/app/id6824285908")
     }
 
     @Test func placementsMatchTheSpec() {

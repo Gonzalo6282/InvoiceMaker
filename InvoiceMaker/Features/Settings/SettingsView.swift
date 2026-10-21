@@ -66,6 +66,13 @@ struct SettingsView: View {
                     }
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("rateApp")
+                    RowDivider()
+                    ShareLink(item: ShareDuly.message) {
+                        Row(icon: "square.and.arrow.up", iconTint: .brand, title: "Share Duly", meta: String(localized: "Tell a friend about the app"))
+                    }
+                    .buttonStyle(.plain)
+                    .simultaneousGesture(TapGesture().onEnded { AppAnalytics.shared.log(.shareAppTapped) })
+                    .accessibilityIdentifier("shareApp")
                 }
                 GroupedSection(header: "Privacy and legal", footer: "Tax rates are set by you. This app doesn't give tax advice.") {
                     Toggle(isOn: analyticsToggle) {
@@ -193,6 +200,7 @@ enum AppLinks {
     static let privacy = URL(string: "https://slice-of-life.uk/duly-privacy/")!  // swiftlint:disable:this force_unwrapping
     static let terms = URL(string: "https://slice-of-life.uk/duly-terms/")!  // swiftlint:disable:this force_unwrapping
     /// App Store "Write a Review" page (App Store ID 6824285908).
+    static let appStore = URL(string: "https://apps.apple.com/app/id6824285908")!  // swiftlint:disable:this force_unwrapping
     static let writeReview = URL(string: "https://apps.apple.com/app/id6824285908?action=write-review")!  // swiftlint:disable:this force_unwrapping
     static let supportEmail = "slice.of.life.ltd@gmail.com"
 }
@@ -215,4 +223,9 @@ enum AnalyticsConsentText {
     }
     static var allow: String { String(localized: "Allow") }
     static var deny: String { String(localized: "Don't Allow") }
+}
+
+/// "Share Duly" in Settings: the share sheet's ready-made message.
+nonisolated enum ShareDuly {
+    static let message = "I send my invoices with Duly. Try it: https://apps.apple.com/app/id6824285908"
 }
