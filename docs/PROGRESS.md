@@ -32,6 +32,7 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 20 Oct 2026 | Reinstall + account errors | After a reinstall, onboarding showed although the data was in iCloud (the store starts empty and iCloud imports later). Launch now waits up to 6 s for the first iCloud import (or synced data) before choosing onboarding. Sign-in/delete errors print the full reason to the Xcode console as `[Duly account]` (and in the alert in Debug) |
 | 21 Oct 2026 | Phase 3 done · App icon | Real-device checks passed (purchases, send, sign in / delete account, reinstall from iCloud). Phase 4 started: app icon D (green "D" with a navy tick on navy) with light, dark and tinted versions in `AppIcon.appiconset`; source `docs/icon/duly-icon.svg` |
 | 21 Oct 2026 | Share Duly | Settings → Help: "Share Duly" row under "Rate Duly" opens the share sheet with "I send my invoices with Duly. Try it: <App Store link>"; each tap logs `share_app_tapped` (only when analytics is allowed) |
+| 21 Oct 2026 | iCloud sync status | TestFlight reinstall showed onboarding and no records reached iCloud Production (schema deployed, iCloud space freed). Settings → iCloud backup now shows where data is saved (iCloud or device only, with the reason) and the last setup/upload/download result with its error, in every build. App Store screenshots: capture test + Screenshots workflow (drafts made, not final) |
 
 ## Current state
 - Waiting for: Gonzalo to set the signing team on the Mac (checkpoint M0) and the M6 accounts/keys (see below).

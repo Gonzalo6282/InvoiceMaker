@@ -51,9 +51,13 @@ enum ModelContainerFactory {
             return Result { try make(.inMemory) }
         }
         do {
-            return .success(try make(.cloudKit))
+            let container = try make(.cloudKit)
+            Task { @MainActor in CloudImportWatcher.shared.storeDescription = String(localized: "iCloud") }
+            return .success(container)
         } catch {
             log.error("CloudKit store failed, using local store: \(error.localizedDescription)")
+            let reason = (error as NSError).localizedDescription
+            Task { @MainActor in CloudImportWatcher.shared.storeDescription = String(localized: "This device only: \(reason)") }
             return Result { try make(.local) }
         }
     }

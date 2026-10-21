@@ -104,6 +104,40 @@ struct CurrencyDisplayView: View {
     }
 }
 
+/// What the last iCloud sync did, so problems (full iCloud, not signed in,
+/// server errors) can be seen without Xcode.
+struct SyncStatusSection: View {
+    @State private var watcher = CloudImportWatcher.shared
+
+    var body: some View {
+        GroupedSection(header: "Sync status") {
+            VStack(alignment: .leading, spacing: 8) {
+                line("Saved to", watcher.storeDescription, ok: watcher.storeDescription == String(localized: "iCloud"))
+                ForEach(["Setup", "Upload", "Download"], id: \.self) { kind in
+                    if let result = watcher.lastResults[kind] {
+                        line(LocalizedStringKey(kind),
+                             result.error ?? String(localized: "OK at \(result.date.formatted(date: .omitted, time: .shortened))"),
+                             ok: result.error == nil)
+                    } else {
+                        line(LocalizedStringKey(kind), String(localized: "Not yet"), ok: nil)
+                    }
+                }
+            }
+            .padding(14)
+            .textSelection(.enabled)
+        }
+    }
+
+    private func line(_ title: LocalizedStringKey, _ value: String, ok: Bool?) -> some View {
+        HStack(alignment: .firstTextBaseline) {
+            Text(title).font(.footnote.weight(.semibold)).foregroundStyle(Color.ink)
+            Spacer()
+            Text(value).font(.footnote).multilineTextAlignment(.trailing)
+                .foregroundStyle(ok == false ? Color.due : Color.ink2)
+        }
+    }
+}
+
 /// iCloud status and what backup means.
 struct BackupView: View {
     @Environment(\.openURL) private var openURL
@@ -124,6 +158,7 @@ struct BackupView: View {
                 }
                 Text("Your invoices are saved on this device and in your own iCloud, which only you can read. A new iPhone or iPad signed in to the same Apple ID gets everything back. If your subscription ends you can still open and export every invoice. Only you can delete your data.")
                     .font(.footnote).foregroundStyle(Color.ink2).padding(16)
+                SyncStatusSection()
             }
         }
         .background(Color.canvas)
