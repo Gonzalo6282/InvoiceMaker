@@ -2,6 +2,7 @@
     import Foundation
     import InvoiceKit
     import SwiftData
+    import UIKit
 
     /// The mockup's demo business (Kestrel Joinery, Bristol) for previews and
     /// screenshots. Debug builds only.
@@ -16,7 +17,9 @@
             return container
         }
 
-        static func seed(_ context: ModelContext, today: Date = .now) {
+        /// `screenshots`: adds a logo, signatures, an accepted estimate and a
+        /// receipt for the App Store screenshots (UI test, `-demoData`).
+        static func seed(_ context: ModelContext, today: Date = .now, screenshots: Bool = false) {
             let cal = Calendar.current
             func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
 
@@ -74,6 +77,51 @@
 
             let e = actions.create(.estimate, business: biz, client: ostara)
             actions.addLineItem(to: e, defaultTaxID: "uk-vat20").configure("New bar top", qty: 1, rate: 1850)
+
+            guard screenshots else { return }
+            biz.logoData = DemoArt.logo()
+            biz.signatureData = DemoArt.signature()
+            e.job = "Ostara Café, 8 Gloucester Road — bar refit"
+            actions.recordClientSignature(e, image: DemoArt.signature(), name: "Jonas Berg")
+            _ = actions.makeReceipt(for: c, business: biz)
+        }
+    }
+
+    /// Drawn demo artwork (no image files in the repo).
+    enum DemoArt {
+        static func logo() -> Data? {
+            UIGraphicsImageRenderer(size: CGSize(width: 360, height: 360)).image { _ in
+                let navy = UIColor(red: 0.04, green: 0.15, blue: 0.25, alpha: 1)
+                navy.setFill()
+                UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 360, height: 360), cornerRadius: 80).fill()
+                // A kestrel's wing: two strokes.
+                let wing = UIBezierPath()
+                wing.move(to: CGPoint(x: 70, y: 210))
+                wing.addQuadCurve(to: CGPoint(x: 290, y: 120), controlPoint: CGPoint(x: 170, y: 90))
+                wing.addQuadCurve(to: CGPoint(x: 180, y: 230), controlPoint: CGPoint(x: 230, y: 200))
+                wing.close()
+                UIColor(red: 0.85, green: 0.55, blue: 0.25, alpha: 1).setFill()
+                wing.fill()
+                let text = NSAttributedString(string: "KJ", attributes: [
+                    .font: UIFont.systemFont(ofSize: 96, weight: .heavy), .foregroundColor: UIColor.white,
+                ])
+                text.draw(at: CGPoint(x: 112, y: 222))
+            }.pngData()
+        }
+
+        static func signature() -> Data? {
+            UIGraphicsImageRenderer(size: CGSize(width: 600, height: 200)).image { _ in
+                let path = UIBezierPath()
+                path.move(to: CGPoint(x: 30, y: 140))
+                path.addCurve(to: CGPoint(x: 160, y: 60), controlPoint1: CGPoint(x: 60, y: 20), controlPoint2: CGPoint(x: 120, y: 180))
+                path.addCurve(to: CGPoint(x: 300, y: 120), controlPoint1: CGPoint(x: 200, y: 10), controlPoint2: CGPoint(x: 240, y: 170))
+                path.addCurve(to: CGPoint(x: 450, y: 80), controlPoint1: CGPoint(x: 350, y: 60), controlPoint2: CGPoint(x: 400, y: 150))
+                path.addCurve(to: CGPoint(x: 570, y: 110), controlPoint1: CGPoint(x: 490, y: 30), controlPoint2: CGPoint(x: 530, y: 140))
+                path.lineWidth = 7
+                path.lineCapStyle = .round
+                UIColor(red: 0.06, green: 0.1, blue: 0.3, alpha: 1).setStroke()
+                path.stroke()
+            }.pngData()
         }
     }
 

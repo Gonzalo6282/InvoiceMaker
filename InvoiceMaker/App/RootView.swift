@@ -53,6 +53,13 @@ struct RootView: View {
             if phase == .app { consent.askIfNeeded() }
         }
         .task(id: businesses.isEmpty) {
+            #if DEBUG
+                // App Store screenshots: the demo business with sample documents.
+                if businesses.isEmpty, arguments.contains("-demoData") {
+                    DemoData.seed(context, screenshots: true)
+                    return
+                }
+            #endif
             // UI tests that skip onboarding start with a business for the device's region.
             guard businesses.isEmpty, skipOnboarding else { return }
             let code = Locale.current.region?.identifier ?? "GB"

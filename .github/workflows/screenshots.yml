@@ -1,0 +1,77 @@
+name: Screenshots
+
+# Captures the App Store screens (UI test AppStoreScreenshots, demo data) on
+# one simulator and pushes the PNGs to the ci-screenshots branch,
+# in a folder named after the device. Run by hand.
+on:
+  workflow_dispatch:
+    inputs:
+      device:
+        description: Simulator name
+        default: iPhone 17 Pro Max
+
+permissions:
+  contents: write
+
+concurrency:
+  group: screenshots-${{ inputs.device }}
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Cache Swift packages
+        uses: actions/cache@v4
+        with:
+          path: .spm
+          key: spm-${{ hashFiles('InvoiceMaker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'InvoiceMaker.xcodeproj/project.pbxproj') }}
+          restore-keys: spm-
+
+      - name: Capture
+        env:
+          DEVICE: ${{ inputs.device }}
+        run: |
+          LATEST=$(ls -d /Applications/Xcode_26*.app | grep -v -i beta | sort -V | tail -1)
+          export DEVELOPER_DIR="$LATEST/Contents/Developer"
+          ID=$(xcrun simctl list devices available -j | python3 -c "
+          import json, os, sys
+          name = os.environ['DEVICE']
+          devices = [d for runtime, ds in sorted(json.load(sys.stdin)['devices'].items()) if 'iOS' in runtime for d in ds if d['name'] == name]
+          print(devices[-1]['udid'] if devices else '')")
+          [ -n "$ID" ] || { echo "::error::No simulator named $DEVICE"; xcrun simctl list devices available | head -40; exit 1; }
+          echo "::notice title=Device::$DEVICE ($ID) with $(basename "$LATEST")"
+          xcrun simctl boot "$ID" || true
+          xcrun simctl bootstatus "$ID" -b
+          xcrun simctl status_bar "$ID" override --time "9:41" --dataNetwork wifi --wifiMode active --wifiBars 3 \
+            --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
+          OUT="$RUNNER_TEMP/shots/${DEVICE// /-}"
+          mkdir -p "$OUT" build
+          TEST_RUNNER_SCREENSHOT_DIR="$OUT" xcodebuild test \
+            -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
+            -destination "id=$ID" -clonedSourcePackagesDirPath .spm \
+            -only-testing:InvoiceMakerUITests/AppStoreScreenshots \
+            -resultBundlePath build/shots.xcresult \
+            CODE_SIGNING_ALLOWED=NO > build/shots.log 2>&1 || {
+              grep -E "error:|failed|Failed|XCTAssert" build/shots.log | awk '!s[$0]++' | head -9 | while IFS= read -r l; do echo "::error::${l:0:800}"; done
+              tail -20 build/shots.log
+            }
+          ls -la "$OUT"
+          echo "::notice title=Captured::$(ls "$OUT"/*.png 2>/dev/null | wc -l | tr -d ' ') screens"
+
+      - name: Publish
+        if: always()
+        run: |
+          cd "$RUNNER_TEMP/shots"
+          ls */*.png >/dev/null 2>&1 || { echo "No screenshots"; exit 1; }
+          git init -q -b ci-screenshots
+          git config user.name "CI"; git config user.email "ci@users.noreply.github.com"
+          git fetch -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" ci-screenshots 2>/dev/null \
+            && { git reset -q --soft FETCH_HEAD; git read-tree FETCH_HEAD; } || true
+          echo "App Store screens from ${GITHUB_SHA}" > README.md
+          # Keep other devices' folders from earlier runs.
+          git add --ignore-removal . && git commit -q -m "Screens (${{ inputs.device }}) for ${GITHUB_SHA}"
+          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:ci-screenshots
