@@ -30,6 +30,7 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 20 Oct 2026 | Premium unlock | Subscribed users stayed locked: the app checked RevenueCat entitlement `pro` while the dashboard's was `duly_pro`. Dashboard now uses `pro` (same as Superwall) with both products, current offering `Duly_offering`; app checks `pro` only |
 | 20 Oct 2026 | Send freeze | App froze after choosing Send: iOS asks the share-sheet PDF item for its file on a background thread and the item was main-actor (Swift 6 default), so it trapped. `PDFActivityItem` is now `nonisolated`. Sign in with Apple "internal error" is the Firebase console (Apple provider), not code |
 | 20 Oct 2026 | Reinstall + account errors | After a reinstall, onboarding showed although the data was in iCloud (the store starts empty and iCloud imports later). Launch now waits up to 6 s for the first iCloud import (or synced data) before choosing onboarding. Sign-in/delete errors print the full reason to the Xcode console as `[Duly account]` (and in the alert in Debug) |
+| 21 Oct 2026 | Phase 3 done · App icon | Real-device checks passed (purchases, send, sign in / delete account, reinstall from iCloud). Phase 4 started: app icon D (green "D" with a navy tick on navy) with light, dark and tinted versions in `AppIcon.appiconset`; source `docs/icon/duly-icon.svg` |
 
 ## Current state
 - Waiting for: Gonzalo to set the signing team on the Mac (checkpoint M0) and the M6 accounts/keys (see below).
