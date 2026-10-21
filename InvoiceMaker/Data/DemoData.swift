@@ -82,7 +82,7 @@
             biz.logoData = DemoArt.logo()
             biz.signatureData = DemoArt.signature()
             e.job = "Ostara Café, 8 Gloucester Road — bar refit"
-            actions.recordClientSignature(e, image: DemoArt.signature(), name: "Jonas Berg")
+            if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: "Jonas Berg") }
             _ = actions.makeReceipt(for: c, business: biz)
         }
     }
