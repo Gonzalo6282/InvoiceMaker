@@ -46,8 +46,17 @@ enum BusinessSetup {
 
     /// The one business (1.0 has a single business). Nil before onboarding.
     static func current(in context: ModelContext) throws -> Business? {
-        var descriptor = FetchDescriptor<Business>(sortBy: [SortDescriptor(\.createdAt)])
-        descriptor.fetchLimit = 1
-        return try context.fetch(descriptor).first
+        primary(try context.fetch(FetchDescriptor<Business>(sortBy: [SortDescriptor(\.createdAt)])))
+    }
+
+    /// With more than one business (onboarding ran before iCloud had synced),
+    /// use the one with a name, then with a logo, then the oldest.
+    static func primary(_ businesses: [Business]) -> Business? {
+        businesses.enumerated().min { a, b in
+            func rank(_ x: (offset: Int, element: Business)) -> (Int, Int, Int) {
+                (x.element.name.isEmpty ? 1 : 0, x.element.logoData == nil ? 1 : 0, x.offset)
+            }
+            return rank(a) < rank(b)
+        }?.element
     }
 }

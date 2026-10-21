@@ -11,6 +11,7 @@ struct RootView: View {
     @State private var consent = ConsentPrompt.shared
     @State private var phase: Phase?
     @State private var firstDocument: PersistentIdentifier?
+    @State private var checkingICloud = false
 
     enum Phase { case onboarding, app }
 
@@ -26,7 +27,7 @@ struct RootView: View {
                     phase = .app
                 }
             case .app:
-                if let business = businesses.first {
+                if let business = BusinessSetup.primary(businesses) {
                     AppShell(business: business, initialDocument: firstDocument)
                 } else {
                     loading
@@ -34,6 +35,11 @@ struct RootView: View {
             case nil:
                 loading
             }
+        }
+        .onChange(of: hasSyncedData) { _, synced in
+            // iCloud data arrived while onboarding was showing and the user
+            // hadn't created anything yet: go straight to their invoices.
+            if synced, phase == .onboarding, !OnboardingState.createdData { phase = .app }
         }
         .sheet(item: $paywalls.nativePaywall) { request in
             NativePaywallView(placement: request.placement, onUnlock: request.onUnlock)
@@ -68,7 +74,13 @@ struct RootView: View {
     }
 
     private var loading: some View {
-        ProgressView().frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.canvas)
+        VStack(spacing: 14) {
+            ProgressView()
+            if checkingICloud {
+                Text("Looking for your invoices in iCloud…").font(.subheadline).foregroundStyle(Color.ink2)
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity).background(Color.canvas)
     }
 
     /// New users onboard; a business that synced from iCloud (named, or with
@@ -80,7 +92,11 @@ struct RootView: View {
         let uiTesting = arguments.contains("-uiTesting")
         let watcher = CloudImportWatcher.shared
         if !uiTesting, !OnboardingState.isDone, !hasSyncedData, watcher.iCloudAvailable {
-            await watcher.wait(timeout: .seconds(6)) { hasSyncedData }
+            // Real iCloud can take 10–20 s on a fresh install; if data turns up
+            // later, the onChange above still leaves onboarding.
+            checkingICloud = true
+            await watcher.wait(timeout: .seconds(20)) { hasSyncedData }
+            checkingICloud = false
         }
         let done = OnboardingState.isDone && !uiTesting
         phase = (done || hasSyncedData) ? .app : .onboarding

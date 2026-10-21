@@ -143,8 +143,10 @@ struct OnboardingView: View {
 
     private func makeBusinessAndDraft() {
         let biz: Business
+        let isNew: Bool
         if let existing = business ?? (try? BusinessSetup.current(in: context)) {
             biz = existing
+            isNew = false
             if existing.region != region {
                 existing.countryCode = region.isoCode
                 existing.currencyCode = region.preset.currencyCode
@@ -152,13 +154,16 @@ struct OnboardingView: View {
             }
         } else {
             biz = BusinessSetup.create(name: name, region: region, countryCode: region.isoCode, in: context)
+            isNew = true
         }
-        biz.name = name
+        // A business restored from iCloud keeps what it has: only fill in, never blank out.
+        if !name.isEmpty || biz.name.isEmpty { biz.name = name }
+        if let logoData { biz.logoData = logoData }
         biz.role = (role ?? .other).rawValue
-        biz.logoData = logoData
-        biz.templateID = (role ?? .other).template.rawValue
-        biz.defaultNotes = String(localized: "Thank you for your business.")
+        if isNew { biz.templateID = (role ?? .other).template.rawValue }
+        if biz.defaultNotes.isEmpty { biz.defaultNotes = String(localized: "Thank you for your business.") }
         business = biz
+        OnboardingState.createdData = true
         if draft == nil {
             let client = Client(name: (role ?? .other).sampleClient, currencyCode: biz.currencyCode)
             context.insert(client)
@@ -276,4 +281,6 @@ enum OnboardingState {
     static let key = "onboardingDone"
     static var isDone: Bool { UserDefaults.standard.bool(forKey: key) }
     static func markDone() { UserDefaults.standard.set(true, forKey: key) }
+    /// Set once onboarding has made its business and first invoice (this launch).
+    @MainActor static var createdData = false
 }

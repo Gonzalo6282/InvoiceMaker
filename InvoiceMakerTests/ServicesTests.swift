@@ -1,4 +1,5 @@
 import Foundation
+import SwiftData
 import Testing
 
 @testable import InvoiceMaker
@@ -52,5 +53,24 @@ struct ServicesTests {
         #expect(AppKeys.revenueCat == nil)
         #expect(AppKeys.superwall == nil)
         #expect(!AppKeys.hasFirebase)
+    }
+}
+
+@MainActor
+struct BusinessChoiceTests {
+    /// After a reinstall, onboarding may have made an empty business before
+    /// iCloud delivered the real one: the named one (then with a logo) wins.
+    @Test func namedBusinessWinsOverAnEmptyDuplicate() throws {
+        let container = try ModelContainerFactory.makeForTests()
+        let context = container.mainContext
+        let empty = Business()
+        let logoOnly = Business()
+        logoOnly.logoData = Data([1, 2, 3])
+        let named = Business(name: "Kestrel Joinery")
+        [empty, logoOnly, named].forEach(context.insert)
+        #expect(BusinessSetup.primary([empty, logoOnly, named]) === named)
+        #expect(BusinessSetup.primary([empty, logoOnly]) === logoOnly)
+        #expect(BusinessSetup.primary([empty]) === empty)
+        #expect(BusinessSetup.primary([]) == nil)
     }
 }
