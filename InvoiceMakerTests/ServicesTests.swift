@@ -73,4 +73,12 @@ struct BusinessChoiceTests {
         #expect(BusinessSetup.primary([empty]) === empty)
         #expect(BusinessSetup.primary([]) == nil)
     }
+
+    @Test func backupTimesReadNaturally() {
+        let now = Date(timeIntervalSince1970: 1_792_000_000)
+        let calendar = Calendar(identifier: .gregorian)
+        #expect(SyncStatusSection.when(now.addingTimeInterval(-60), now: now, calendar: calendar).hasPrefix("Today at "))
+        #expect(SyncStatusSection.when(now.addingTimeInterval(-86_400), now: now, calendar: calendar).hasPrefix("Yesterday at "))
+        #expect(!SyncStatusSection.when(now.addingTimeInterval(-5 * 86_400), now: now, calendar: calendar).hasPrefix("Today"))
+    }
 }

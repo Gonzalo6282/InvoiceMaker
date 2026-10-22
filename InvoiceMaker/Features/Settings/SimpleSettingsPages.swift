@@ -110,22 +110,35 @@ struct SyncStatusSection: View {
     @State private var watcher = CloudImportWatcher.shared
 
     var body: some View {
-        GroupedSection(header: "Sync status") {
+        GroupedSection(header: "Backup status") {
             VStack(alignment: .leading, spacing: 8) {
                 line("Saved to", watcher.storeDescription, ok: watcher.storeDescription == String(localized: "iCloud"))
-                ForEach(["Setup", "Upload", "Download"], id: \.self) { kind in
-                    if let result = watcher.lastResults[kind] {
-                        line(LocalizedStringKey(kind),
-                             result.error ?? String(localized: "OK at \(result.date.formatted(date: .omitted, time: .shortened))"),
-                             ok: result.error == nil)
-                    } else {
-                        line(LocalizedStringKey(kind), String(localized: "Not yet"), ok: nil)
-                    }
+                // Setup is only worth showing when it failed.
+                if let setup = watcher.lastResults["Setup"], let error = setup.error {
+                    line("iCloud setup", error, ok: false)
                 }
+                result("Last backup", watcher.lastResults["Upload"])
+                result("Last restore", watcher.lastResults["Download"])
             }
             .padding(14)
             .textSelection(.enabled)
         }
+    }
+
+    private func result(_ title: LocalizedStringKey, _ result: CloudImportWatcher.SyncResult?) -> some View {
+        guard let result else { return line(title, String(localized: "Not yet"), ok: nil) }
+        if let error = result.error { return line(title, error, ok: false) }
+        return line(title, Self.when(result.date), ok: true)
+    }
+
+    /// "Today at 22:29", "Yesterday at 09:10" or "21 Oct at 22:29".
+    static func when(_ date: Date, now: Date = .now, calendar: Calendar = .current) -> String {
+        let time = date.formatted(date: .omitted, time: .shortened)
+        if calendar.isDate(date, inSameDayAs: now) { return String(localized: "Today at \(time)") }
+        if let yesterday = calendar.date(byAdding: .day, value: -1, to: now), calendar.isDate(date, inSameDayAs: yesterday) {
+            return String(localized: "Yesterday at \(time)")
+        }
+        return String(localized: "\(date.formatted(.dateTime.day().month(.abbreviated))) at \(time)")
     }
 
     private func line(_ title: LocalizedStringKey, _ value: String, ok: Bool?) -> some View {
