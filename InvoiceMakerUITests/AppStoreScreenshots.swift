@@ -19,7 +19,7 @@ final class AppStoreScreenshots: XCTestCase {
     @MainActor
     func testCaptureAppStoreScreens() {
         // 1. Invoice list: statuses and the owed total.
-        launch()
+        launch(hideSidebar: true)
         shot("01-list")
 
         // 2–3. A finished invoice, then its PDF with the template strip.
@@ -29,21 +29,21 @@ final class AppStoreScreenshots: XCTestCase {
         shot("03-templates")
 
         // 4. Paid invoice: banner, then the PDF.
-        launch()
+        launch(hideSidebar: true)
         open("INV-0009")
         shot("04-paid-editor")
         tapPreview()
         shot("05-paid-pdf")
 
         // 5. Send: the share sheet over the PDF.
-        launch()
+        launch(hideSidebar: true)
         open("INV-0007")
         app.buttons["send"].firstMatch.tap()
         sleep(3)
         shot("06-share")
 
         // 6. Estimate (Quote in the UK) accepted, ready to turn into an invoice.
-        launch()
+        launch(hideSidebar: true)
         segment(1)
         shot("07-quotes-list")
         tapFirstRow()
@@ -52,7 +52,7 @@ final class AppStoreScreenshots: XCTestCase {
         shot("09-quote-pdf")
 
         // 7. Receipt.
-        launch()
+        launch(hideSidebar: true)
         segment(2)
         tapFirstRow()
         tapPreview()
@@ -60,13 +60,13 @@ final class AppStoreScreenshots: XCTestCase {
 
         // 8. Clients.
         launch()
-        app.buttons["Clients"].firstMatch.tap()
+        goTo("Clients")
         sleep(1)
         shot("11-clients")
 
         // 9. Invoice look (templates and colours) in Settings.
         launch()
-        app.buttons["Settings"].firstMatch.tap()
+        goTo("Settings")
         let look = app.staticTexts["Invoice look"].firstMatch
         if look.waitForExistence(timeout: 5) { look.tap() }
         sleep(1)
@@ -76,19 +76,27 @@ final class AppStoreScreenshots: XCTestCase {
     // MARK: Helpers
 
     @MainActor
-    private func launch() {
+    private func launch(hideSidebar: Bool = false) {
         app?.terminate()
         app = XCUIApplication()
         // SCREENSHOT_REGION: US (default, $ and estimates) or UK (£ and quotes).
         let us = (ProcessInfo.processInfo.environment["SCREENSHOT_REGION"] ?? "US").uppercased() != "UK"
         app.launchArguments = [
-            "-uiTesting", "-skipOnboarding", "-demoData", "-premium",
+            "-uiTesting", "-skipOnboarding", "-demoData", "-premium", hideSidebar ? "-hideSidebar" : "-showSidebar",
             "-demoRegion", us ? "US" : "GB",
             "-AppleLanguages", us ? "(en-US)" : "(en-GB)", "-AppleLocale", us ? "en_US" : "en_GB",
         ]
         app.launch()
         let client = us ? "Oakridge Landscaping" : "Marlow & Finch Architects"
         XCTAssertTrue(app.staticTexts[client].firstMatch.waitForExistence(timeout: 20))
+        sleep(1)
+    }
+
+    /// Tab on iPhone, sidebar row on iPad.
+    @MainActor
+    private func goTo(_ name: String) {
+        let tab = app.tabBars.buttons[name]
+        if tab.exists { tab.tap() } else { app.staticTexts[name].firstMatch.tap() }
         sleep(1)
     }
 

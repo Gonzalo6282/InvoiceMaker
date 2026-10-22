@@ -88,7 +88,9 @@ private struct SplitShell: View {
     @State private var kind: DocumentKind = .invoice
     @State var documentID: PersistentIdentifier?
     @State private var clientID: PersistentIdentifier?
-    @State private var visibility: NavigationSplitViewVisibility = .all
+    /// `-hideSidebar` (App Store screenshots): start with list + detail only.
+    @State private var visibility: NavigationSplitViewVisibility =
+        ProcessInfo.processInfo.arguments.contains("-hideSidebar") ? .doubleColumn : .all
 
     var body: some View {
         NavigationSplitView(columnVisibility: $visibility) {
