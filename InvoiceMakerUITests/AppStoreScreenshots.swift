@@ -90,6 +90,14 @@ final class AppStoreScreenshots: XCTestCase {
         let client = us ? "Oakridge Landscaping" : "Marlow & Finch Architects"
         XCTAssertTrue(app.staticTexts[client].firstMatch.waitForExistence(timeout: 20))
         sleep(1)
+        // iPad: hide the sidebar so the list and the document get the room.
+        if hideSidebar {
+            let toggle = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'sidebar'")).firstMatch
+            if toggle.exists, app.staticTexts["Settings"].firstMatch.isHittable {
+                toggle.tap()
+                sleep(1)
+            }
+        }
     }
 
     /// Tab on iPhone, sidebar row on iPad.
