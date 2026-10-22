@@ -42,7 +42,16 @@ enum OnboardingRole: String, CaseIterable, Identifiable {
         }
     }
 
-    var sampleClient: String { self == .shop ? "Corner Deli" : "Ruth Adeyemi" }
+    /// The sample invoice's client: a business that reads as local and
+    /// ordinary, so it's glanced at and passed over (no personal names).
+    static func sampleClient(for region: Region) -> String {
+        switch region {
+        case .uk: "Marlow & Finch Ltd"
+        case .us: "Oakridge Landscaping"
+        case .au: "Harbourside Café Pty Ltd"
+        case .ca: "Maple Ridge Builders"
+        }
+    }
 
     /// (description, quantity, rate, unit)
     var sampleItems: [(String, Decimal, Decimal, String)] {

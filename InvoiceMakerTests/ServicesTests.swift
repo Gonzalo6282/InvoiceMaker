@@ -1,4 +1,5 @@
 import Foundation
+import InvoiceKit
 import SwiftData
 import Testing
 
@@ -80,5 +81,13 @@ struct BusinessChoiceTests {
         #expect(SyncStatusSection.when(now.addingTimeInterval(-60), now: now, calendar: calendar).hasPrefix("Today at "))
         #expect(SyncStatusSection.when(now.addingTimeInterval(-86_400), now: now, calendar: calendar).hasPrefix("Yesterday at "))
         #expect(!SyncStatusSection.when(now.addingTimeInterval(-5 * 86_400), now: now, calendar: calendar).hasPrefix("Today"))
+    }
+
+    @Test func sampleInvoiceUsesALocalBusinessAndYourName() {
+        #expect(OnboardingRole.sampleClient(for: .us) == "Oakridge Landscaping")
+        #expect(OnboardingRole.sampleClient(for: .uk) == "Marlow & Finch Ltd")
+        #expect(Region.allCases.allSatisfy { !OnboardingRole.sampleClient(for: $0).isEmpty })
+        #expect(InvoicePDFModelBuilder.displayName(Business(name: "  ")) == "Your Business")
+        #expect(InvoicePDFModelBuilder.displayName(Business(name: "Summit Electric Co.")) == "Summit Electric Co.")
     }
 }

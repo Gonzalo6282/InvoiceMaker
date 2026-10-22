@@ -165,7 +165,7 @@ struct OnboardingView: View {
         business = biz
         OnboardingState.createdData = true
         if draft == nil {
-            let client = Client(name: (role ?? .other).sampleClient, currencyCode: biz.currencyCode)
+            let client = Client(name: OnboardingRole.sampleClient(for: biz.region), currencyCode: biz.currencyCode)
             context.insert(client)
             let actions = DocumentActions(context: context)
             let doc = actions.create(.invoice, business: biz, client: client)

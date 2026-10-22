@@ -19,7 +19,12 @@
 
         /// `screenshots`: adds a logo, signatures, an accepted estimate and a
         /// receipt for the App Store screenshots (UI test, `-demoData`).
-        static func seed(_ context: ModelContext, today: Date = .now, screenshots: Bool = false) {
+        /// `region: .us` seeds a US electrician ($, sales tax, estimates) for the US App Store set.
+        static func seed(_ context: ModelContext, today: Date = .now, screenshots: Bool = false, region: Region = .uk) {
+            if region == .us {
+                seedUS(context, today: today, screenshots: screenshots)
+                return
+            }
             let cal = Calendar.current
             func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
 
@@ -79,7 +84,7 @@
             actions.addLineItem(to: e, defaultTaxID: "uk-vat20").configure("New bar top", qty: 1, rate: 1850)
 
             guard screenshots else { return }
-            biz.logoData = DemoArt.logo()
+            biz.logoData = DemoArt.logo(initials: "KJ")
             biz.signatureData = DemoArt.signature()
             e.job = "Ostara Café, 8 Gloucester Road — bar refit"
             if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: "Jonas Berg") }
@@ -87,9 +92,78 @@
         }
     }
 
+    extension DemoData {
+        /// Summit Electric Co., Austin TX: the US screenshot business.
+        static func seedUS(_ context: ModelContext, today: Date, screenshots: Bool) {
+            let cal = Calendar.current
+            func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
+
+            let biz = BusinessSetup.create(name: "Summit Electric Co.", region: .us, countryCode: "US", in: context)
+            biz.role = "contractor"
+            biz.email = "hello@summitelectric.co"
+            biz.phone = "(512) 555-0148"
+            biz.address = "4120 Burnet Rd\nAustin, TX 78756"
+            biz.taxRegistered = true
+            biz.defaultNotes = "Thank you for your business. Payment due within 14 days."
+            biz.nextInvoiceNumber = 7
+            biz.nextEstimateNumber = 3
+            biz.payment?.payPalMe = "paypal.me/summitelectric"
+            biz.payment?.venmo = "@summit-electric"
+            biz.payment?.zelle = "pay@summitelectric.co"
+            let tax = biz.defaultTaxID ?? "us-sales"
+
+            let oakridge = Client(name: "Oakridge Landscaping", currencyCode: "USD")
+            oakridge.contactName = "Dana Ruiz"
+            oakridge.email = "dana@oakridgelandscaping.com"
+            oakridge.address = "88 Riverside Dr\nAustin, TX 78704"
+            let harbor = Client(name: "Harbor Street Café", currencyCode: "USD")
+            harbor.contactName = "Mateo Silva"
+            harbor.email = "mateo@harborstreetcafe.com"
+            let lund = Client(name: "Lund Design Studio", currencyCode: "EUR")
+            lund.email = "hej@lunddesign.dk"
+            [oakridge, harbor, lund].forEach(context.insert)
+
+            context.insert(SavedItem(itemDescription: "Electrician labor", unit: "hour", rate: 95, taxID: tax))
+            context.insert(SavedItem(itemDescription: "Panel upgrade, 200A", unit: "job", rate: 1850, taxID: tax))
+
+            let actions = DocumentActions(context: context, now: { today })
+            let a = actions.create(.invoice, business: biz, client: oakridge)
+            actions.addLineItem(to: a, defaultTaxID: tax).configure("EV charger, installed", qty: 1, rate: 1250)
+            actions.addLineItem(to: a, defaultTaxID: tax).configure("Permit and inspection", qty: 1, rate: 175)
+            actions.markSent(a)
+
+            let b = actions.create(.invoice, business: biz, client: harbor)
+            b.issueDate = day(-30)
+            b.dueDate = day(-16)
+            actions.addLineItem(to: b, defaultTaxID: tax).configure("Lighting repair", qty: 1, rate: 480)
+            actions.markSent(b)
+
+            let c = actions.create(.invoice, business: biz, client: oakridge)
+            actions.addLineItem(to: c, defaultTaxID: tax).configure("Outdoor lighting design", qty: 1, rate: 600)
+            actions.markSent(c)
+            actions.markPaid(c, on: today)
+
+            let d = actions.create(.invoice, business: biz, client: lund)
+            actions.addLineItem(to: d, defaultTaxID: nil).configure("Shop-fit consultation", qty: 1, rate: 1200)
+            actions.markSent(d)
+
+            actions.create(.invoice, business: biz, client: harbor)
+
+            let e = actions.create(.estimate, business: biz, client: harbor)
+            actions.addLineItem(to: e, defaultTaxID: tax).configure("Kitchen rewiring", qty: 1, rate: 3400)
+
+            guard screenshots else { return }
+            biz.logoData = DemoArt.logo(initials: "SE")
+            biz.signatureData = DemoArt.signature()
+            e.job = "Harbor Street Café, 214 Harbor St — kitchen rewiring"
+            if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: "Mateo Silva") }
+            _ = actions.makeReceipt(for: c, business: biz)
+        }
+    }
+
     /// Drawn demo artwork (no image files in the repo).
     enum DemoArt {
-        static func logo() -> Data? {
+        static func logo(initials: String) -> Data? {
             UIGraphicsImageRenderer(size: CGSize(width: 360, height: 360)).image { _ in
                 let navy = UIColor(red: 0.04, green: 0.15, blue: 0.25, alpha: 1)
                 navy.setFill()
@@ -102,7 +176,7 @@
                 wing.close()
                 UIColor(red: 0.85, green: 0.55, blue: 0.25, alpha: 1).setFill()
                 wing.fill()
-                let text = NSAttributedString(string: "KJ", attributes: [
+                let text = NSAttributedString(string: initials, attributes: [
                     .font: UIFont.systemFont(ofSize: 96, weight: .heavy), .foregroundColor: UIColor.white,
                 ])
                 text.draw(at: CGPoint(x: 112, y: 222))

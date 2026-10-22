@@ -62,7 +62,8 @@ struct RootView: View {
             #if DEBUG
                 // App Store screenshots: the demo business with sample documents.
                 if businesses.isEmpty, arguments.contains("-demoData") {
-                    DemoData.seed(context, screenshots: true)
+                    let code = arguments.firstIndex(of: "-demoRegion").flatMap { i in arguments.indices.contains(i + 1) ? arguments[i + 1] : nil }
+                    DemoData.seed(context, screenshots: true, region: code.flatMap { Region(countryCode: $0) } ?? .uk)
                     return
                 }
             #endif

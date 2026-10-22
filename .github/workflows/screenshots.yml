@@ -9,12 +9,15 @@ on:
       device:
         description: Simulator name
         default: iPhone 17 Pro Max
+      region:
+        description: US ($, estimates) or UK (£, quotes)
+        default: US
 
 permissions:
   contents: write
 
 concurrency:
-  group: screenshots-${{ inputs.device }}
+  group: screenshots-${{ inputs.device }}-${{ inputs.region }}
   cancel-in-progress: true
 
 jobs:
@@ -34,6 +37,7 @@ jobs:
       - name: Capture
         env:
           DEVICE: ${{ inputs.device }}
+          REGION: ${{ inputs.region }}
         run: |
           LATEST=$(ls -d /Applications/Xcode_26*.app | grep -v -i beta | sort -V | tail -1)
           export DEVELOPER_DIR="$LATEST/Contents/Developer"
@@ -48,9 +52,9 @@ jobs:
           xcrun simctl bootstatus "$ID" -b
           xcrun simctl status_bar "$ID" override --time "9:41" --dataNetwork wifi --wifiMode active --wifiBars 3 \
             --cellularMode active --cellularBars 4 --batteryState charged --batteryLevel 100
-          OUT="$RUNNER_TEMP/shots/${DEVICE// /-}"
+          OUT="$RUNNER_TEMP/shots/${REGION}-${DEVICE// /-}"
           mkdir -p "$OUT" build
-          TEST_RUNNER_SCREENSHOT_DIR="$OUT" xcodebuild test \
+          TEST_RUNNER_SCREENSHOT_DIR="$OUT" TEST_RUNNER_SCREENSHOT_REGION="$REGION" xcodebuild test \
             -project InvoiceMaker.xcodeproj -scheme InvoiceMaker \
             -destination "id=$ID" -clonedSourcePackagesDirPath .spm \
             -only-testing:InvoiceMakerUITests/AppStoreScreenshots \
@@ -73,5 +77,5 @@ jobs:
             && { git reset -q --soft FETCH_HEAD; git read-tree FETCH_HEAD; } || true
           echo "App Store screens from ${GITHUB_SHA}" > README.md
           # Keep other devices' folders from earlier runs.
-          git add --ignore-removal . && git commit -q -m "Screens (${{ inputs.device }}) for ${GITHUB_SHA}"
+          git add --ignore-removal . && git commit -q -m "Screens (${{ inputs.region }} ${{ inputs.device }}) for ${GITHUB_SHA}"
           git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:ci-screenshots

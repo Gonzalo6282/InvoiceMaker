@@ -25,7 +25,7 @@ final class OnboardingTests: XCTestCase {
         app.buttons["onboardingNext"].tap()
 
         XCTAssertTrue(app.staticTexts["Here's your first invoice"].waitForExistence(timeout: 5))
-        XCTAssertTrue(app.textFields["Ruth Adeyemi"].exists || app.textFields.element(boundBy: 0).exists)
+        XCTAssertTrue(app.textFields["Oakridge Landscaping"].exists || app.textFields.element(boundBy: 0).exists)
         app.buttons["onboardingDone"].tap()
 
         // Soft paywall over the new invoice; closing it keeps the invoice.

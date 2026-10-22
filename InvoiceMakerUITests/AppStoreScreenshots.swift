@@ -79,12 +79,16 @@ final class AppStoreScreenshots: XCTestCase {
     private func launch() {
         app?.terminate()
         app = XCUIApplication()
+        // SCREENSHOT_REGION: US (default, $ and estimates) or UK (£ and quotes).
+        let us = (ProcessInfo.processInfo.environment["SCREENSHOT_REGION"] ?? "US").uppercased() != "UK"
         app.launchArguments = [
             "-uiTesting", "-skipOnboarding", "-demoData", "-premium",
-            "-AppleLanguages", "(en-GB)", "-AppleLocale", "en_GB",
+            "-demoRegion", us ? "US" : "GB",
+            "-AppleLanguages", us ? "(en-US)" : "(en-GB)", "-AppleLocale", us ? "en_US" : "en_GB",
         ]
         app.launch()
-        XCTAssertTrue(app.staticTexts["Marlow & Finch Architects"].firstMatch.waitForExistence(timeout: 20))
+        let client = us ? "Oakridge Landscaping" : "Marlow & Finch Architects"
+        XCTAssertTrue(app.staticTexts[client].firstMatch.waitForExistence(timeout: 20))
         sleep(1)
     }
 

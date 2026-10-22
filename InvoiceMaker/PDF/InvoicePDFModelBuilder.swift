@@ -46,7 +46,7 @@ struct InvoicePDFModelBuilder {
             title: region.title(for: kind, taxRegistered: business.taxRegistered),
             number: doc.number,
             logo: business.logoData,
-            initials: Avatar.initials(for: business.name),
+            initials: Avatar.initials(for: Self.displayName(business)),
             from: fromParty(business),
             to: toParty(doc),
             dates: dateBlocks(doc, locale: locale),
@@ -75,7 +75,13 @@ struct InvoicePDFModelBuilder {
         if business.taxRegistered, !business.taxID.isEmpty {
             lines.append("\(business.region.preset.taxIDLabel) \(business.taxID)")
         }
-        return .init(label: String(localized: "From"), name: business.name, lines: lines)
+        return .init(label: String(localized: "From"), name: Self.displayName(business), lines: lines)
+    }
+
+    /// The business name on documents; "Your Business" until one is entered.
+    static func displayName(_ business: Business) -> String {
+        let name = business.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        return name.isEmpty ? String(localized: "Your Business") : name
     }
 
     private func toParty(_ doc: Document) -> InvoicePDFModel.Party {
