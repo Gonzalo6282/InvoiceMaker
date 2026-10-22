@@ -1,0 +1,871 @@
+{
+  "devices" : [
+    {
+      "architecture" : "arm64",
+      "deviceId" : "E839A11B-51B4-4AD3-ACF4-A53B95B7C957",
+      "deviceName" : "iPhone 17 Pro",
+      "modelName" : "iPhone 17 Pro",
+      "osBuildNumber" : "23F77",
+      "osVersion" : "26.5",
+      "platform" : "iOS Simulator"
+    }
+  ],
+  "testNodes" : [
+    {
+      "children" : [
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "26s",
+                  "durationInSeconds" : 26.98609709739685,
+                  "name" : "testLargestTextSizeStillWorks()",
+                  "nodeIdentifier" : "AccessibilityTests/testLargestTextSizeStillWorks()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/AccessibilityTests/testLargestTextSizeStillWorks",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "AccessibilityTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/AccessibilityTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "name" : "Test skipped - SCREENSHOT_DIR not set",
+                      "nodeType" : "Failure Message"
+                    }
+                  ],
+                  "duration" : "1s",
+                  "durationInSeconds" : 1.2643909454345703,
+                  "name" : "testCaptureAppStoreScreens()",
+                  "nodeIdentifier" : "AppStoreScreenshots/testCaptureAppStoreScreens()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/AppStoreScreenshots/testCaptureAppStoreScreens",
+                  "nodeType" : "Test Case",
+                  "result" : "Skipped"
+                }
+              ],
+              "name" : "AppStoreScreenshots",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/AppStoreScreenshots",
+              "nodeType" : "Test Suite",
+              "result" : "Skipped"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "48s",
+                  "durationInSeconds" : 48.81689500808716,
+                  "name" : "testFirstRunCreatesAnInvoiceWithAnItem()",
+                  "nodeIdentifier" : "LaunchTests/testFirstRunCreatesAnInvoiceWithAnItem()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/LaunchTests/testFirstRunCreatesAnInvoiceWithAnItem",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "LaunchTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/LaunchTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "26s",
+                  "durationInSeconds" : 26.742817044258118,
+                  "name" : "testOnboardingCreatesFirstInvoiceThenSoftPaywall()",
+                  "nodeIdentifier" : "OnboardingTests/testOnboardingCreatesFirstInvoiceThenSoftPaywall()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/OnboardingTests/testOnboardingCreatesFirstInvoiceThenSoftPaywall",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "OnboardingTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/OnboardingTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "36s",
+                  "durationInSeconds" : 36.824164032936096,
+                  "name" : "testSendNeedsClientAndItemThenShowsPaywall()",
+                  "nodeIdentifier" : "SendFlowTests/testSendNeedsClientAndItemThenShowsPaywall()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/SendFlowTests/testSendNeedsClientAndItemThenShowsPaywall",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "SendFlowTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests/SendFlowTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "InvoiceMakerUITests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerUITests",
+          "nodeType" : "UI test bundle",
+          "result" : "Passed"
+        },
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "duration" : "0.000043s",
+                      "durationInSeconds" : 4.291534423828125e-05,
+                      "name" : "\"  \", \"?\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "0.0011s",
+                      "durationInSeconds" : 0.0010919570922851562,
+                      "name" : "\"\", \"?\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "0.000038s",
+                      "durationInSeconds" : 3.814697265625e-05,
+                      "name" : "\"4 Seasons Ltd\", \"4S\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "0.0011s",
+                      "durationInSeconds" : 0.001094818115234375,
+                      "name" : "\"jonas\", \"J\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "0.0024s",
+                      "durationInSeconds" : 0.002398967742919922,
+                      "name" : "\"Marlow & Finch Architects\", \"MF\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "0.0024s",
+                      "durationInSeconds" : 0.002384185791015625,
+                      "name" : "\"Ostara Café\", \"OC\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "0.0011s",
+                      "durationInSeconds" : 0.0010879039764404297,
+                      "name" : "\"Ünal Öztürk\", \"ÜÖ\"",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    }
+                  ],
+                  "duration" : "0.0012s",
+                  "durationInSeconds" : 0.0011626992906842912,
+                  "name" : "avatarInitials(name:expected:)",
+                  "nodeIdentifier" : "DesignSystemTests/avatarInitials(name:expected:)",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DesignSystemTests/avatarInitials(name:expected:)",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "DesignSystemTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DesignSystemTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.71113109588623,
+                  "name" : "zipContainsPDFsAndCSVs()",
+                  "nodeIdentifier" : "ExportTests/zipContainsPDFsAndCSVs()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ExportTests/zipContainsPDFsAndCSVs()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "ExportTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ExportTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.69000792503357,
+                  "name" : "testsGetAnInMemoryStore()",
+                  "nodeIdentifier" : "ModelContainerFactoryTests/testsGetAnInMemoryStore()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ModelContainerFactoryTests/testsGetAnInMemoryStore()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "ModelContainerFactoryTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ModelContainerFactoryTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.689759016036987,
+                  "name" : "receiptAndQuoteSnapshots()",
+                  "nodeIdentifier" : "PDFRenderTests/receiptAndQuoteSnapshots()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFRenderTests/receiptAndQuoteSnapshots()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.689898014068604,
+                  "name" : "logoIsFittedAndHEICWorks()",
+                  "nodeIdentifier" : "PDFRenderTests/logoIsFittedAndHEICWorks()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFRenderTests/logoIsFittedAndHEICWorks()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.68893313407898,
+                  "name" : "longInvoiceFlowsOntoMorePages()",
+                  "nodeIdentifier" : "PDFRenderTests/longInvoiceFlowsOntoMorePages()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFRenderTests/longInvoiceFlowsOntoMorePages()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "children" : [
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.681262969970703,
+                      "name" : ".bold",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.670289993286133,
+                      "name" : ".classic",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.681277990341187,
+                      "name" : ".clean",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.68124485015869,
+                      "name" : ".ledger",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.670238971710205,
+                      "name" : ".split",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.670390844345093,
+                      "name" : ".studio",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    },
+                    {
+                      "duration" : "17s",
+                      "durationInSeconds" : 17.670326948165894,
+                      "name" : ".trades",
+                      "nodeType" : "Arguments",
+                      "result" : "Passed"
+                    }
+                  ],
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.675004652568273,
+                  "name" : "everyTemplateRendersOnePage(template:)",
+                  "nodeIdentifier" : "PDFRenderTests/everyTemplateRendersOnePage(template:)",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFRenderTests/everyTemplateRendersOnePage(template:)",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "PDFRenderTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFRenderTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.925218105316162,
+                  "name" : "taxOnTotalHidesTaxColumn()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/taxOnTotalHidesTaxColumn()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/taxOnTotalHidesTaxColumn()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.925276041030884,
+                  "name" : "paymentDetails()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/paymentDetails()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/paymentDetails()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.924779891967773,
+                  "name" : "australianTaxInvoiceOnLetterForUS()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/australianTaxInvoiceOnLetterForUS()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/australianTaxInvoiceOnLetterForUS()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.924774885177612,
+                  "name" : "invoiceContent()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/invoiceContent()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/invoiceContent()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.924747943878174,
+                  "name" : "ukEstimateIsAQuoteWithSignatureLine()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/ukEstimateIsAQuoteWithSignatureLine()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/ukEstimateIsAQuoteWithSignatureLine()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.924756050109863,
+                  "name" : "templateFromDocumentAndWatermark()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/templateFromDocumentAndWatermark()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/templateFromDocumentAndWatermark()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.924750089645386,
+                  "name" : "currencyDisplayFollowsSetting()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/currencyDisplayFollowsSetting()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/currencyDisplayFollowsSetting()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.924736976623535,
+                  "name" : "receiptAndPaidInvoiceGetTheStamp()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/receiptAndPaidInvoiceGetTheStamp()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/receiptAndPaidInvoiceGetTheStamp()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.97920799255371,
+                  "name" : "includedTaxDiscountShippingAndFees()",
+                  "nodeIdentifier" : "PDFModelBuilderTests/includedTaxDiscountShippingAndFees()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests/includedTaxDiscountShippingAndFees()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "PDFModelBuilderTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PDFModelBuilderTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.688956022262573,
+                  "name" : "backupTimesReadNaturally()",
+                  "nodeIdentifier" : "BusinessChoiceTests/backupTimesReadNaturally()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/BusinessChoiceTests/backupTimesReadNaturally()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.68892502784729,
+                  "name" : "sampleInvoiceUsesALocalBusinessAndYourName()",
+                  "nodeIdentifier" : "BusinessChoiceTests/sampleInvoiceUsesALocalBusinessAndYourName()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/BusinessChoiceTests/sampleInvoiceUsesALocalBusinessAndYourName()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.690582990646362,
+                  "name" : "namedBusinessWinsOverAnEmptyDuplicate()",
+                  "nodeIdentifier" : "BusinessChoiceTests/namedBusinessWinsOverAnEmptyDuplicate()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/BusinessChoiceTests/namedBusinessWinsOverAnEmptyDuplicate()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "BusinessChoiceTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/BusinessChoiceTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.03s",
+                  "durationInSeconds" : 0.030353784561157227,
+                  "name" : "links()",
+                  "nodeIdentifier" : "PaymentLinksTests/links()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PaymentLinksTests/links()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "PaymentLinksTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PaymentLinksTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.77011203765869,
+                  "name" : "sentInvoiceKeepsItsTaxWhenTheRateIsEdited()",
+                  "nodeIdentifier" : "FrozenTaxTests/sentInvoiceKeepsItsTaxWhenTheRateIsEdited()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/FrozenTaxTests/sentInvoiceKeepsItsTaxWhenTheRateIsEdited()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.883908987045288,
+                  "name" : "archivedTaxStillCountsButIsHiddenFromPickers()",
+                  "nodeIdentifier" : "FrozenTaxTests/archivedTaxStillCountsButIsHiddenFromPickers()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/FrozenTaxTests/archivedTaxStillCountsButIsHiddenFromPickers()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.77019500732422,
+                  "name" : "duplicateDoesNotCarryFrozenTaxes()",
+                  "nodeIdentifier" : "FrozenTaxTests/duplicateDoesNotCarryFrozenTaxes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/FrozenTaxTests/duplicateDoesNotCarryFrozenTaxes()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.770304918289185,
+                  "name" : "restorePresetsArchivesCustomTaxes()",
+                  "nodeIdentifier" : "FrozenTaxTests/restorePresetsArchivesCustomTaxes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/FrozenTaxTests/restorePresetsArchivesCustomTaxes()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "FrozenTaxTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/FrozenTaxTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.03s",
+                  "durationInSeconds" : 0.030169010162353516,
+                  "name" : "displaysWithoutZero()",
+                  "nodeIdentifier" : "DecimalFieldTests/displaysWithoutZero()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DecimalFieldTests/displaysWithoutZero()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.03s",
+                  "durationInSeconds" : 0.03022599220275879,
+                  "name" : "parsesTyping()",
+                  "nodeIdentifier" : "DecimalFieldTests/parsesTyping()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DecimalFieldTests/parsesTyping()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "DecimalFieldTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DecimalFieldTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.046s",
+                  "durationInSeconds" : 0.04575991630554199,
+                  "name" : "invoiceKitIsLinked()",
+                  "nodeIdentifier" : "AppSmokeTests/invoiceKitIsLinked()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/AppSmokeTests/invoiceKitIsLinked()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "AppSmokeTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/AppSmokeTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.71164298057556,
+                  "name" : "thousandInvoices()",
+                  "nodeIdentifier" : "PerformanceTests/thousandInvoices()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PerformanceTests/thousandInvoices()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "PerformanceTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/PerformanceTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "0.046s",
+                  "durationInSeconds" : 0.045732975006103516,
+                  "name" : "placementsMatchTheSpec()",
+                  "nodeIdentifier" : "ServicesTests/placementsMatchTheSpec()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/placementsMatchTheSpec()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.046s",
+                  "durationInSeconds" : 0.04567098617553711,
+                  "name" : "noncesAreRandomAndHashed()",
+                  "nodeIdentifier" : "ServicesTests/noncesAreRandomAndHashed()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/noncesAreRandomAndHashed()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.03s",
+                  "durationInSeconds" : 0.029674053192138672,
+                  "name" : "shareDulyMessageHasTheAppStoreLink()",
+                  "nodeIdentifier" : "ServicesTests/shareDulyMessageHasTheAppStoreLink()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/shareDulyMessageHasTheAppStoreLink()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.045s",
+                  "durationInSeconds" : 0.045456886291503906,
+                  "name" : "legalTextsShipInTheApp()",
+                  "nodeIdentifier" : "ServicesTests/legalTextsShipInTheApp()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/legalTextsShipInTheApp()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.045s",
+                  "durationInSeconds" : 0.0454401969909668,
+                  "name" : "keysAreOffWithoutSecrets()",
+                  "nodeIdentifier" : "ServicesTests/keysAreOffWithoutSecrets()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/keysAreOffWithoutSecrets()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.045s",
+                  "durationInSeconds" : 0.045439958572387695,
+                  "name" : "reviewIsAskedOnlyAfterTheFirstSend()",
+                  "nodeIdentifier" : "ServicesTests/reviewIsAskedOnlyAfterTheFirstSend()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/reviewIsAskedOnlyAfterTheFirstSend()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.045s",
+                  "durationInSeconds" : 0.04502701759338379,
+                  "name" : "legalTextParsing()",
+                  "nodeIdentifier" : "ServicesTests/legalTextParsing()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/legalTextParsing()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "0.045s",
+                  "durationInSeconds" : 0.04501485824584961,
+                  "name" : "eventNamesMatchTheBuildDoc()",
+                  "nodeIdentifier" : "ServicesTests/eventNamesMatchTheBuildDoc()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests/eventNamesMatchTheBuildDoc()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "ServicesTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/ServicesTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.769881010055542,
+                  "name" : "inMemoryContainerOpens()",
+                  "nodeIdentifier" : "CloudKitSchemaTests/inMemoryContainerOpens()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/CloudKitSchemaTests/inMemoryContainerOpens()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.769854068756104,
+                  "name" : "everyRelationshipIsOptionalWithAnInverse()",
+                  "nodeIdentifier" : "CloudKitSchemaTests/everyRelationshipIsOptionalWithAnInverse()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/CloudKitSchemaTests/everyRelationshipIsOptionalWithAnInverse()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.769771099090576,
+                  "name" : "everyModelIsInTheSchema()",
+                  "nodeIdentifier" : "CloudKitSchemaTests/everyModelIsInTheSchema()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/CloudKitSchemaTests/everyModelIsInTheSchema()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.770004987716675,
+                  "name" : "everyAttributeIsOptionalOrHasADefault()",
+                  "nodeIdentifier" : "CloudKitSchemaTests/everyAttributeIsOptionalOrHasADefault()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/CloudKitSchemaTests/everyAttributeIsOptionalOrHasADefault()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.769936084747314,
+                  "name" : "noUniqueConstraints()",
+                  "nodeIdentifier" : "CloudKitSchemaTests/noUniqueConstraints()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/CloudKitSchemaTests/noUniqueConstraints()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "CloudKitSchemaTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/CloudKitSchemaTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            },
+            {
+              "children" : [
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.770225048065186,
+                  "name" : "totalsMatchTheMockupCase()",
+                  "nodeIdentifier" : "DocumentActionsTests/totalsMatchTheMockupCase()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/totalsMatchTheMockupCase()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.770310878753662,
+                  "name" : "enumWrappersFallBackSafely()",
+                  "nodeIdentifier" : "DocumentActionsTests/enumWrappersFallBackSafely()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/enumWrappersFallBackSafely()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.770304918289185,
+                  "name" : "addDeleteAndReorderLineItems()",
+                  "nodeIdentifier" : "DocumentActionsTests/addDeleteAndReorderLineItems()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/addDeleteAndReorderLineItems()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.882377862930298,
+                  "name" : "receiptFromPaidInvoice()",
+                  "nodeIdentifier" : "DocumentActionsTests/receiptFromPaidInvoice()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/receiptFromPaidInvoice()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.88211989402771,
+                  "name" : "duplicateCopiesContentWithNewNumberAndDates()",
+                  "nodeIdentifier" : "DocumentActionsTests/duplicateCopiesContentWithNewNumberAndDates()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/duplicateCopiesContentWithNewNumberAndDates()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.88230609893799,
+                  "name" : "deletingDocumentDeletesItsLinesButNotTheClient()",
+                  "nodeIdentifier" : "DocumentActionsTests/deletingDocumentDeletesItsLinesButNotTheClient()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/deletingDocumentDeletesItsLinesButNotTheClient()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.882248878479004,
+                  "name" : "deletingClientKeepsItsDocuments()",
+                  "nodeIdentifier" : "DocumentActionsTests/deletingClientKeepsItsDocuments()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/deletingClientKeepsItsDocuments()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.88252878189087,
+                  "name" : "convertEstimateToInvoice()",
+                  "nodeIdentifier" : "DocumentActionsTests/convertEstimateToInvoice()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/convertEstimateToInvoice()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.882528066635132,
+                  "name" : "createUsesNextNumberDefaultsAndClientCurrency()",
+                  "nodeIdentifier" : "DocumentActionsTests/createUsesNextNumberDefaultsAndClientCurrency()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/createUsesNextNumberDefaultsAndClientCurrency()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.882585048675537,
+                  "name" : "clientSignatureAcceptsEstimateButNotInvoiceStatus()",
+                  "nodeIdentifier" : "DocumentActionsTests/clientSignatureAcceptsEstimateButNotInvoiceStatus()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/clientSignatureAcceptsEstimateButNotInvoiceStatus()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.88255500793457,
+                  "name" : "sentPaidUnpaidAndOverdue()",
+                  "nodeIdentifier" : "DocumentActionsTests/sentPaidUnpaidAndOverdue()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/sentPaidUnpaidAndOverdue()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.8825900554657,
+                  "name" : "demoDataSeeds()",
+                  "nodeIdentifier" : "DocumentActionsTests/demoDataSeeds()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/demoDataSeeds()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.88261103630066,
+                  "name" : "addFromSavedItem()",
+                  "nodeIdentifier" : "DocumentActionsTests/addFromSavedItem()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/addFromSavedItem()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.925337076187134,
+                  "name" : "numberingRoundTripsThroughBusiness()",
+                  "nodeIdentifier" : "DocumentActionsTests/numberingRoundTripsThroughBusiness()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/numberingRoundTripsThroughBusiness()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.925255060195923,
+                  "name" : "receiptIsCreatedPaid()",
+                  "nodeIdentifier" : "DocumentActionsTests/receiptIsCreatedPaid()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/receiptIsCreatedPaid()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.925395011901855,
+                  "name" : "monthSummaryFromStoredDocuments()",
+                  "nodeIdentifier" : "DocumentActionsTests/monthSummaryFromStoredDocuments()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/monthSummaryFromStoredDocuments()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "17s",
+                  "durationInSeconds" : 17.925337076187134,
+                  "name" : "businessGetsRegionPresets()",
+                  "nodeIdentifier" : "DocumentActionsTests/businessGetsRegionPresets()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests/businessGetsRegionPresets()",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "DocumentActionsTests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests/DocumentActionsTests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "InvoiceMakerTests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/InvoiceMaker/InvoiceMakerTests",
+          "nodeType" : "Unit test bundle",
+          "result" : "Passed"
+        }
+      ],
+      "name" : "InvoiceMaker",
+      "nodeType" : "Test Plan",
+      "result" : "Passed"
+    }
+  ],
+  "testPlanConfigurations" : [
+    {
+      "configurationId" : "1",
+      "configurationName" : "Test Scheme Action"
+    }
+  ]
+}
