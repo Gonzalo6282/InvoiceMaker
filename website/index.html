@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Duly: Invoice Maker &amp; Estimate for iPhone and iPad</title>
+<meta name="description" content="Make invoices, estimates and receipts on your iPhone in under a minute. Add your logo, put PayPal, Venmo and Zelle links on every invoice, and send it as a PDF before you leave the job.">
+<meta name="apple-itunes-app" content="app-id=6824285908">
+<meta property="og:title" content="Duly: Invoice Maker & Estimate">
+<meta property="og:description" content="Send the invoice before you leave the job.">
+<meta property="og:image" content="assets/icon-512.png">
+<link rel="icon" href="assets/icon-64.png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* Hero */
+.hero { padding: clamp(40px, 7vw, 96px) 0 clamp(56px, 8vw, 112px); }
+.hero .wrap { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+.hero h1 { max-width: 9.6em; }
+.hero .lead { margin: 24px 0 32px; }
+.hero .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero .small { margin-top: 18px; }
+
+/* The invoice that writes itself */
+.stage { position: relative; display: grid; place-items: center; min-height: 600px; }
+.paper {
+  position: relative; width: min(100%, 470px); background: #fff; border-radius: 6px;
+  padding: 34px 34px 30px; color: var(--ink);
+  box-shadow: 0 1px 2px rgb(6 27 49 / 0.06), 0 24px 60px -18px rgb(6 27 49 / 0.28);
+  transform: rotate(-1.2deg); font-size: 13px; line-height: 1.45;
+}
+.paper .top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 26px; }
+.logo { width: 46px; height: 46px; border-radius: 11px; background: var(--navy); display: grid; place-items: center; color: #fff; font: 800 15px/1 var(--display); position: relative; overflow: hidden; }
+.logo::before { content: ""; position: absolute; width: 60px; height: 26px; background: #d98c40; border-radius: 0 60px 0 60px; transform: rotate(-24deg) translate(-4px, -14px); }
+.logo span { position: relative; margin-top: 14px; }
+.doc-title { text-align: right; }
+.doc-title b { display: block; font: 800 26px/1 var(--display); letter-spacing: -0.03em; color: var(--brand); }
+.doc-title span { color: var(--ink3); font-size: 12px; }
+.parties { display: grid; grid-template-columns: 1fr 1fr 0.8fr; gap: 14px; margin-bottom: 22px; }
+.parties small { display: block; color: var(--ink3); font-size: 10.5px; margin-bottom: 3px; }
+.parties p { margin: 0; font-size: 12px; }
+.typed { white-space: nowrap; overflow: hidden; display: inline-block; vertical-align: bottom; max-width: 0; }
+.lines { border-top: 1.5px solid var(--ink); }
+.line { display: grid; grid-template-columns: 1fr 70px 80px; gap: 8px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 12.5px; }
+.line .r { text-align: right; }
+.line.head { color: var(--ink3); font-size: 10.5px; padding: 7px 0; }
+.totals { margin: 16px 0 0 auto; width: 62%; font-size: 12.5px; }
+.totals div { display: flex; justify-content: space-between; padding: 3px 0; color: var(--ink2); }
+.totals .grand { border-top: 1.5px solid var(--ink); margin-top: 6px; padding-top: 9px; color: var(--ink); font: 800 19px/1.2 var(--display); letter-spacing: -0.02em; }
+.pay { display: flex; gap: 6px; margin-top: 22px; align-items: center; }
+.pay em { font-style: normal; color: var(--ink3); font-size: 10.5px; margin-right: 4px; }
+.pay span { background: var(--brand); color: #fff; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 999px; }
+.status { position: absolute; top: -14px; left: 28px; padding: 6px 14px; border-radius: 999px; font: 600 13px/1 var(--text); background: #fff; border: 1.5px solid var(--line); color: var(--ink2); box-shadow: 0 6px 16px -8px rgb(6 27 49 / 0.25); }
+.status.sent { background: var(--brand-wash); border-color: var(--brand-wash); color: var(--brand); }
+.status.paid { background: var(--paid-ink); border-color: var(--paid-ink); color: var(--paid); }
+.stamp {
+  position: absolute; right: 30px; bottom: 96px; padding: 8px 18px; border: 4px solid #3f9a1f; color: #3f9a1f;
+  font: 900 40px/1 var(--display); letter-spacing: 0.02em; border-radius: 10px; background: rgb(159 232 112 / 0.28);
+  transform: rotate(-14deg) scale(2.4); opacity: 0; pointer-events: none;
+}
+.replay { position: absolute; bottom: 4px; right: 8px; background: none; border: 0; color: var(--ink3); font: 500 14px/1 var(--text); cursor: pointer; padding: 8px; }
+.replay:hover { color: var(--brand); }
+.notify {
+  position: absolute; top: 14px; right: -6px; width: 270px; display: flex; gap: 10px; align-items: center;
+  background: rgb(255 255 255 / 0.94); backdrop-filter: blur(10px); border-radius: 18px; padding: 11px 13px;
+  box-shadow: 0 18px 40px -16px rgb(6 27 49 / 0.35); font-size: 13px; line-height: 1.35; opacity: 0; transform: translateY(-14px);
+}
+.notify img { width: 34px; height: 34px; border-radius: 8px; }
+.notify b { display: block; font-size: 13px; }
+
+/* Animation states, driven by classes the script adds */
+.step-in { transition: opacity 0.45s ease, transform 0.45s ease; }
+[data-hide] { opacity: 0; transform: translateY(8px); }
+.paper.go [data-hide].on { opacity: 1; transform: none; }
+.paper.go .typed.on { max-width: 260px; transition: max-width 0.9s steps(26, end); }
+.stamp.on { animation: stamp 0.42s cubic-bezier(0.2, 1.6, 0.4, 1) forwards; }
+@keyframes stamp { to { opacity: 1; transform: rotate(-14deg) scale(1); } }
+.notify.on { opacity: 1; transform: none; transition: opacity 0.4s, transform 0.5s cubic-bezier(0.2, 1.3, 0.4, 1); }
+.stage.static [data-hide] { opacity: 1; transform: none; }
+.stage.static .typed { max-width: 260px; }
+.stage.static .stamp { opacity: 1; transform: rotate(-14deg); }
+
+/* Sections */
+section { padding: clamp(64px, 9vw, 128px) 0; }
+.section-head { max-width: 640px; margin-bottom: clamp(36px, 5vw, 64px); }
+.section-head p { margin: 18px 0 0; }
+
+/* The job, step by step: sticky phone that follows the reading */
+.journey .wrap { display: grid; grid-template-columns: 1fr 420px; gap: clamp(32px, 6vw, 96px); }
+.steps { list-style: none; margin: 0; padding: 0; counter-reset: step; }
+.steps li { min-height: 62vh; display: flex; flex-direction: column; justify-content: center; counter-increment: step; padding: 24px 0; }
+.steps li::before { content: counter(step); font: 800 15px/1 var(--display); color: var(--brand); width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--brand-wash); margin-bottom: 18px; transition: background 0.25s, color 0.25s; }
+.steps li.active::before { background: var(--brand); color: #fff; }
+.steps h3 { font-size: clamp(26px, 2.6vw, 34px); letter-spacing: -0.03em; margin-bottom: 12px; }
+.steps p { margin: 0; color: var(--ink2); max-width: 30em; }
+.steps .inline-shot { display: none; }
+.phone-col { position: relative; }
+.phone { position: sticky; top: 96px; width: 340px; margin-left: auto; aspect-ratio: 1320 / 2868; border-radius: 52px; background: #04080f; padding: 11px; box-shadow: 0 40px 80px -36px rgb(6 27 49 / 0.55); }
+.phone .screen { position: relative; width: 100%; height: 100%; border-radius: 42px; overflow: hidden; background: var(--canvas); }
+.phone .screen img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.45s ease; }
+.phone .screen img.show { opacity: 1; }
+
+/* Money band */
+.money { background: var(--navy); color: #fff; border-radius: 28px; margin: 0 var(--gutter); padding: clamp(48px, 7vw, 96px) 0; }
+.money .wrap { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.money h2 { color: #fff; }
+.money p.lead { color: #c7d0db; }
+.owed small { display: block; color: #aab6c6; font-size: 16px; margin-bottom: 6px; }
+.owed .big { font: 900 clamp(64px, 9vw, 120px)/0.95 var(--display); letter-spacing: -0.05em; }
+.owed .split { display: flex; gap: 40px; margin-top: 26px; }
+.owed .split small { font-size: 14px; }
+.owed .split b { font: 800 30px/1 var(--display); letter-spacing: -0.03em; }
+.owed .in { color: var(--paid); }
+.owed .late { color: #ff7d96; }
+.money .shot { justify-self: center; width: 300px; border-radius: 40px; background: #04080f; padding: 9px; transform: rotate(3deg); }
+.money .shot img { border-radius: 32px; }
+
+/* Everything else: a two-column list, not a card grid */
+.more dl { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 64px; margin: 0; }
+.more dl div { padding: 22px 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 210px 1fr; gap: 20px; }
+.more dt { font: 700 18px/1.35 var(--display); letter-spacing: -0.015em; }
+.more dd { margin: 0; color: var(--ink2); }
+
+/* iPad */
+.ipad figure { margin: 0; border-radius: 34px; background: #04080f; padding: 14px; box-shadow: 0 50px 90px -40px rgb(6 27 49 / 0.5); max-width: 980px; }
+.ipad figure img { border-radius: 22px; }
+.ipad .wrap { display: grid; gap: 40px; }
+
+/* Plans */
+.plans .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.plan { border-radius: 28px; padding: 36px; }
+.plan.free { background: var(--surface); border: 1px solid var(--line); }
+.plan.pro { background: var(--navy); color: #fff; }
+.plan.pro h3 { color: #fff; }
+.plan ul { list-style: none; padding: 0; margin: 22px 0 0; display: grid; gap: 12px; }
+.plan li { display: grid; grid-template-columns: 22px 1fr; gap: 10px; }
+.plan li::before { content: ""; width: 20px; height: 20px; border-radius: 50%; margin-top: 3px; background: var(--brand-wash) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.2l3 3 6-6.4' fill='none' stroke='%23533afd' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/20px no-repeat; }
+.plan.pro li::before { background-color: var(--paid); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.2l3 3 6-6.4' fill='none' stroke='%23163300' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.plan.pro p { color: #c7d0db; }
+.plan .note { margin-top: 26px; font-size: 14px; }
+
+/* FAQ */
+.faq details { border-top: 1px solid var(--line); padding: 20px 0; }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { cursor: pointer; font: 700 19px/1.35 var(--display); letter-spacing: -0.015em; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: var(--brand); font-size: 24px; line-height: 1; transition: transform 0.2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 12px 0 0; color: var(--ink2); max-width: 44em; }
+.faq .wrap { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; }
+
+.closing { text-align: center; }
+.closing .wrap { display: grid; justify-items: center; gap: 22px; }
+.closing img { width: 96px; border-radius: 22px; box-shadow: 0 20px 40px -18px rgb(6 27 49 / 0.45); }
+
+@media (max-width: 960px) {
+  .hero .wrap, .money .wrap, .faq .wrap { grid-template-columns: 1fr; }
+  .stage { min-height: 0; padding: 20px 0 10px; }
+  .journey .wrap { grid-template-columns: 1fr; }
+  .phone-col { display: none; }
+  .steps li { min-height: 0; padding: 28px 0; }
+  .steps .inline-shot { display: block; width: min(300px, 78vw); margin-top: 24px; border-radius: 36px; background: #04080f; padding: 8px; }
+  .steps .inline-shot img { border-radius: 29px; }
+  .more dl { grid-template-columns: 1fr; }
+  .plans .grid { grid-template-columns: 1fr; }
+  .money .shot { display: none; }
+}
+@media (max-width: 560px) {
+  .paper { padding: 26px 20px 24px; transform: none; }
+  .parties { grid-template-columns: 1fr 1fr; }
+  .parties .dates { display: none; }
+  .notify { right: 4px; width: 230px; }
+  .more dl div { grid-template-columns: 1fr; gap: 6px; }
+  .owed .split { gap: 24px; }
+  .plan { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/icon-64.png" alt="">Duly</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#plans">Plans</a>
+      <a href="duly-support/">Support</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6824285908">Get the app</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Send the invoice before you leave the job.</h1>
+        <p class="lead">Duly makes invoices, estimates and receipts on your iPhone in under a minute, with your logo, your prices and your payment links on every one.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/app/id6824285908">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.1-1.7-2.9-1.9-3.5-1.9-1.5-.2-2.9.9-3.7.9-.8 0-1.9-.9-3.2-.8-1.6 0-3.1 1-4 2.4-1.7 3-.4 7.4 1.2 9.8.8 1.2 1.8 2.5 3.1 2.4 1.2 0 1.7-.8 3.2-.8s1.9.8 3.2.8c1.3 0 2.2-1.2 3-2.4.9-1.4 1.3-2.7 1.3-2.8-.1 0-2.6-1-2.7-3.9zM14 5.5c.7-.8 1.1-1.9 1-3-1 0-2.1.7-2.8 1.5-.6.7-1.2 1.8-1 2.9 1.1.1 2.1-.6 2.8-1.4z"/></svg>
+            Get Duly on the App Store
+          </a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <p class="small">Create and preview as much as you like without paying. Send with Premium.</p>
+      </div>
+
+      <div class="stage" id="stage" aria-label="An invoice being written, sent and paid">
+        <div class="notify" data-n="notify">
+          <img src="assets/icon-64.png" alt="">
+          <div><b>INV-0007 paid</b>Oakridge Landscaping paid $1,551.47</div>
+        </div>
+        <div class="paper">
+          <div class="status" data-n="status">Draft</div>
+          <div class="top">
+            <div class="logo step-in" data-hide data-n="logo"><span>SE</span></div>
+            <div class="doc-title"><b>Invoice</b><span class="num">INV-0007</span></div>
+          </div>
+          <div class="parties">
+            <div><small>From</small><p>Summit Electric Co.<br>4120 Burnet Rd<br>Austin, TX 78756</p></div>
+            <div><small>Bill to</small><p><span class="typed" data-n="client">Oakridge Landscaping</span><br><span class="step-in" data-hide data-n="addr">88 Riverside Dr<br>Austin, TX 78704</span></p></div>
+            <div class="dates"><small>Due</small><p class="num">Nov 5, 2026</p></div>
+          </div>
+          <div class="lines">
+            <div class="line head"><span>Description</span><span class="r">Qty</span><span class="r">Amount</span></div>
+            <div class="line step-in" data-hide data-n="l1"><span>EV charger, installed</span><span class="r num">1</span><span class="r num">$1,250.00</span></div>
+            <div class="line step-in" data-hide data-n="l2"><span>Permit and inspection</span><span class="r num">1</span><span class="r num">$175.00</span></div>
+          </div>
+          <div class="totals">
+            <div><span>Subtotal</span><span class="num" data-n="sub">$1,425.00</span></div>
+            <div><span>Sales tax 8.875%</span><span class="num" data-n="tax">$126.47</span></div>
+            <div class="grand"><span>Total due</span><span class="num" data-n="total">$1,551.47</span></div>
+          </div>
+          <div class="pay step-in" data-hide data-n="pay"><em>Pay with</em><span>PayPal</span><span>Venmo</span><span>Zelle</span></div>
+          <div class="stamp" data-n="stamp" aria-hidden="true">PAID</div>
+        </div>
+        <button class="replay" type="button" id="replay" hidden>Play again</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="journey" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div>
+        <div class="section-head">
+          <h2 id="how-title">From the estimate to the receipt, on one phone</h2>
+          <p class="lead">Everything happens where the work happens. No laptop, no evening paperwork.</p>
+        </div>
+        <ol class="steps">
+          <li data-shot="0">
+            <h3>Quote the job on site</h3>
+            <p>Write an estimate in front of the customer, let them sign it on your iPhone, and turn it into an invoice with one tap when the work is done.</p>
+            <div class="inline-shot"><img src="assets/screens/08-quote-editor.webp" alt="An accepted estimate signed by the client, with a Turn into invoice button" loading="lazy"></div>
+          </li>
+          <li data-shot="1">
+            <h3>Fill in the invoice in a minute</h3>
+            <p>Pick a saved client and saved items, and Duly works out the tax, discounts and total. Everything saves as you type.</p>
+            <div class="inline-shot"><img src="assets/screens/02-editor.webp" alt="The invoice editor with two items and the total" loading="lazy"></div>
+          </li>
+          <li data-shot="2">
+            <h3>Make it look like your business</h3>
+            <p>Your logo, your brand colour, your signature and seven templates. See the PDF exactly as your customer will.</p>
+            <div class="inline-shot"><img src="assets/screens/03-templates.webp" alt="The PDF preview with template and colour choices" loading="lazy"></div>
+          </li>
+          <li data-shot="3">
+            <h3>Get paid without chasing</h3>
+            <p>PayPal, Venmo, Zelle, Cash App, a payment link and your bank details go on every invoice, with a QR code your customer can scan.</p>
+            <div class="inline-shot"><img src="assets/screens/05-paid-pdf.webp" alt="A paid invoice with payment buttons and a PAID stamp" loading="lazy"></div>
+          </li>
+          <li data-shot="4">
+            <h3>Send a receipt as proof</h3>
+            <p>Mark the invoice paid and make a receipt from it in one tap, so your customer has it for their records.</p>
+            <div class="inline-shot"><img src="assets/screens/10-receipt-pdf.webp" alt="A receipt with a PAID stamp" loading="lazy"></div>
+          </li>
+        </ol>
+      </div>
+      <div class="phone-col" aria-hidden="true">
+        <div class="phone"><div class="screen">
+          <img class="show" src="assets/screens/08-quote-editor.webp" alt="">
+          <img src="assets/screens/02-editor.webp" alt="">
+          <img src="assets/screens/03-templates.webp" alt="">
+          <img src="assets/screens/05-paid-pdf.webp" alt="">
+          <img src="assets/screens/10-receipt-pdf.webp" alt="">
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="money" aria-labelledby="money-title">
+    <div class="wrap">
+      <div>
+        <h2 id="money-title">Know what you're owed</h2>
+        <p class="lead">Paid, unpaid and overdue at a glance, across every client and currency. Overdue invoices stand out, so you know who to call.</p>
+        <div class="owed" id="owed">
+          <small>Owed to you</small>
+          <div class="big num" data-count="2074.07">$2,074.07</div>
+          <div class="split">
+            <div><small>Paid in October</small><b class="num in" data-count="653.25">$653.25</b></div>
+            <div><small>Overdue</small><b class="num late" data-count="522.60">$522.60</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="shot"><img src="assets/screens/01-list.webp" alt="The invoice list with paid, sent and overdue invoices" loading="lazy"></div>
+    </div>
+  </div>
+
+  <section class="more" id="features" aria-labelledby="more-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="more-title">Built for real jobs</h2>
+        <p class="lead">The details that matter when you invoice for a living.</p>
+      </div>
+      <dl>
+        <div><dt>Taxes your way</dt><dd>Sales tax, VAT or GST, per item or on the total. Sent invoices keep the rate they were sent with.</dd></div>
+        <div><dt>Discounts and fees</dt><dd>Percentage or fixed discounts, shipping and extra fees, all in the total.</dd></div>
+        <div><dt>Any currency</dt><dd>Set a currency for each client. Totals for other currencies are kept separate.</dd></div>
+        <div><dt>Clients and items</dt><dd>Save them once, or bring clients in from Contacts, and reuse them on every invoice.</dd></div>
+        <div><dt>Signatures</dt><dd>Sign your invoices, and let customers sign estimates on your screen.</dd></div>
+        <div><dt>Send it anywhere</dt><dd>Email, Messages, WhatsApp or AirDrop. Print it or save the PDF to Files.</dd></div>
+        <div><dt>Works offline</dt><dd>Write and send without signal. Mail goes out as soon as you're back online.</dd></div>
+        <div><dt>Backed up to iCloud</dt><dd>Your invoices sync to your own iCloud and come back on a new iPhone.</dd></div>
+        <div><dt>Your data, your exit</dt><dd>Export every PDF and a CSV of your documents, clients and items at any time.</dd></div>
+        <div><dt>No account, no ads</dt><dd>Start without signing up. Sign in with Apple only if you want your subscription on another device.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="ipad" aria-labelledby="ipad-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="ipad-title">Room to work on iPad</h2>
+        <p class="lead">Your invoices on the left, the document on the right. Keyboard shortcuts for new, save and print.</p>
+      </div>
+      <figure><img src="assets/ipad/03-templates.webp" alt="Duly on iPad: the invoice list next to the PDF preview" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section class="plans" id="plans" aria-labelledby="plans-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="plans-title">Create first. Pay when you send.</h2>
+        <p class="lead">Try everything on your own invoices before you subscribe. If you stop, every document stays yours.</p>
+      </div>
+      <div class="grid">
+        <div class="plan free">
+          <h3>Without paying</h3>
+          <ul>
+            <li>Unlimited invoices, estimates and receipts</li>
+            <li>Preview the PDF with your logo</li>
+            <li>Clients, items and taxes</li>
+            <li>iCloud backup and full export</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <h3>Duly Premium</h3>
+          <ul>
+            <li>Send by email, text or WhatsApp</li>
+            <li>Print and save PDFs</li>
+            <li>All seven templates</li>
+            <li>Documents without the preview mark</li>
+          </ul>
+          <p class="note">Monthly or yearly. The yearly plan starts with a 3-day free trial. Prices are shown in the app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title">Questions</h2>
+      <div>
+        <details><summary>Do I need an account?</summary><p>No. Duly works as soon as you open it. You can sign in with Apple later if you want your subscription on another iPhone or iPad.</p></details>
+        <details><summary>Where are my invoices stored?</summary><p>On your device and in your own iCloud. We never upload them to our servers, and we can't see them.</p></details>
+        <details><summary>How do my customers pay me?</summary><p>Add your payment links and bank details once in Settings. They appear on every invoice with a QR code. The money goes straight to you; Duly takes no cut.</p></details>
+        <details><summary>What happens if I cancel?</summary><p>You keep every invoice, estimate and receipt, and you can still open and export them. Only sending, printing and saving PDFs stop until you subscribe again.</p></details>
+        <details><summary>How do I cancel?</summary><p>Payments are handled by Apple. Open Settings on your iPhone, tap your name, then Subscriptions. Deleting the app does not cancel it.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="closing-title">
+    <div class="wrap">
+      <img src="assets/icon-180.png" alt="Duly app icon" width="96" height="96">
+      <h2 id="closing-title">Your next invoice takes a minute</h2>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6824285908">Get Duly on the App Store</a>
+      <p class="small">For iPhone and iPad.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="./"><img src="assets/icon-64.png" alt="">Duly</a>
+      <p>Made by Slice of Life Ltd, a company registered in the United Kingdom.</p>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="duly-support/">Support</a></li>
+        <li><a href="mailto:slice.of.life.ltd@gmail.com">slice.of.life.ltd@gmail.com</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="duly-privacy/">Privacy Policy</a></li>
+        <li><a href="duly-terms/">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js"></script>
+</body>
+</html>

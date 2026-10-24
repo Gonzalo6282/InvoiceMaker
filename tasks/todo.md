@@ -75,5 +75,9 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] T9.4 Largest Dynamic Type + accessibility labels
 - [ ] ✅ Bug checklist on real iPhone + iPad
 
+## v1.0.1 (after App Review approves 1.0, before v2)
+- [ ] Paywall yearly card (Superwall "Duly Premium"): 1.0 shows **$99.99/year** bold on the right and "Only $8.33/month" under "Yearly" (24 Oct, for review: Apple 3.1.2 wants the billed amount to be the most prominent price). Gonzalo wants to try the monthly breakdown in the main price spot again. Before changing: re-check Apple's current 3.1.2 wording; consider testing it as a Superwall A/B rather than a switch for everyone
+- [ ] Screen 2 of the App Store screenshots: replace the small preview photo with the licensed full-size original (iPhone + iPad)
+
 ## Later (from HANDOFF)
 - [ ] "Continue the build" skill + scheduled task to resume after usage-limit resets
