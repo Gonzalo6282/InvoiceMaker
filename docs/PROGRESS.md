@@ -37,13 +37,11 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 22 Oct 2026 | iCloud reinstall confirmed · friendlier backup status | TestFlight: delete + reinstall waits on "Looking for your invoices in iCloud…" and opens with the business intact. Settings → iCloud backup: "Backup status" shows Saved to, Last backup and Last restore ("Today at 22:29"); iCloud setup appears only when it failed |
 | 22 Oct 2026 | US screenshot demo · onboarding sample | `-demoRegion US` seeds Summit Electric Co. (Austin TX, $, sales tax, estimates) for the US App Store set; the Screenshots workflow takes a region (US default). Onboarding's sample invoice now goes to a local business by country (US Oakridge Landscaping, UK Marlow & Finch Ltd, AU Harbourside Café Pty Ltd, CA Maple Ridge Builders) instead of a person; documents show "Your Business" until a name is entered |
 | 24 Oct 2026 | Paywall prices for review | Superwall "Duly Premium": yearly card shows **$99.99/year** (bold, right) with "Only $8.33/month" under "Yearly"; monthly card **$12.99/month** bold. Apple 3.1.2: the billed amount must be the most prominent price. Published to the Premium gate campaign. Revisit in v1.0.1 (tasks/todo.md) |
+| 24 Oct 2026 | Submitted | v1.0 submitted for App Review; landing page done; launch video (Phase 6) not needed for now. Next-version work listed in `tasks/todo.md` (v1.0.1, v1.1, v1.2, later) |
 
 ## Current state
-- Waiting for: Gonzalo to set the signing team on the Mac (checkpoint M0) and the M6 accounts/keys (see below).
-- Code for v1.0 (M0–M9) is done and green on CI. Remaining are the manual checks on real devices (bug checklist) and the App Store side (products, Superwall paywall/campaign, screenshots: Phase 4).
-- Watch: one iPad UI-test run failed once (item sheet didn't appear) and passed on the next run; if it repeats, look at the screenshots in `ci-logs`.
+- v1.0 is with App Review (submitted 24 Oct 2026). Phases 1–5 and 7 done; Phase 6 (launch video) not needed for now.
+- Next: whatever App Review asks for, then v1.0.1 and v1.1 from `tasks/todo.md`.
+- How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls. App Store screenshots: run the "Screenshots" workflow (device + region), frames are composed from the `ci-screenshots` branch.
 - Keys: RevenueCat `appl_` key, Superwall `pk_` key and `GoogleService-Info.plist` are on Gonzalo's Mac (never committed).
-- Superwall (19 Oct): paywall "Duly Premium" (from the "Single-Page | Two Plans" template: yearly primary + monthly, trial timeline, benefits for no-trial users, Restore / Terms / Privacy links, fake review block removed) and campaign "Premium gate" with all 6 placements, audience = unsubscribed users, paywall 100%. Trial reminder: 1 day 12 hours before the trial ends (Apple needs cancellation 24 h before renewal). Still to do in Superwall: Apple App ID in Settings (clears "Missing App ID"), brand colours on the paywall.
-- Reinstall: launch waits up to 6 s for iCloud; if data arrives later, onboarding reuses the existing business (no second business) but adds its sample client/draft.
-- How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls.
-- Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`). Never copy pricing or keywords into this public repo.
+- Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`, `listing/`). Never copy pricing or keywords into this public repo.
