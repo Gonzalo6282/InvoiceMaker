@@ -76,7 +76,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] ✅ Bug checklist on real iPhone + iPad
 
 ## v1.0.1 (after App Review approves 1.0, before v2)
-- [ ] Paywall yearly card (Superwall "Duly Premium"): 1.0 shows **$99.99/year** bold on the right and "Only $8.33/month" under "Yearly" (24 Oct, for review: Apple 3.1.2 wants the billed amount to be the most prominent price). Gonzalo wants to try the monthly breakdown in the main price spot again. Before changing: re-check Apple's current 3.1.2 wording; consider testing it as a Superwall A/B rather than a switch for everyone
+- [ ] Paywall price layout (Superwall): revisit the yearly card; details in the private docs repo (`HANDOFF.md`, "After launch")
 - [ ] Screen 2 of the App Store screenshots: replace the small preview photo with the licensed full-size original (iPhone + iPad)
 
 - [ ] UK App Store set: screenshots with the UK demo (£, "Quotes") and an en-GB listing
@@ -84,8 +84,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [ ] Delete account: when Apple's sign-in returns error 1000 / AKAuthenticationError -7071, explain the fix (Settings > [name] > Sign-In & Security > Sign in with Apple > Duly > Stop Using) instead of the raw error
 - [ ] Launch log "default Firebase app has not yet been configured": find what touches Firebase before `configure()` and move it after
 - [ ] Rating badge on screenshot 1 once the app has ratings
-- [ ] After ~30 days: check keyword results (swap "handyman" for "payment,tracker" if weak) and the paywall numbers (trial and pay rates)
-- [ ] Superwall test: $9.99 save offer when someone closes the paywall or taps Manage subscription
+- [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
 ## v1.1 (Build Doc)
 - [ ] Recurring invoices (weekly, monthly, yearly; app prepares the next one and reminds the user)
@@ -96,7 +95,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [ ] German and French templates and listings
 
 ## v1.2 (Build Doc: payments)
-- [ ] Connect Stripe in Settings; "Pay now" button and hosted link for the exact amount (card, Apple Pay, Google Pay, US bank); 1% application fee
+- [ ] Connect Stripe in Settings; "Pay now" button and hosted link for the exact amount (card, Apple Pay, Google Pay, US bank)
 - [ ] Invoices marked paid automatically (Stripe webhook + push)
 - [ ] Pass the processing fee on (US); partial payments and deposits
 - [ ] Automatic reminder emails to clients
