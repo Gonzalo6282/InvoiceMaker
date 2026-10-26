@@ -38,6 +38,7 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 22 Oct 2026 | US screenshot demo · onboarding sample | `-demoRegion US` seeds Summit Electric Co. (Austin TX, $, sales tax, estimates) for the US App Store set; the Screenshots workflow takes a region (US default). Onboarding's sample invoice now goes to a local business by country (US Oakridge Landscaping, UK Marlow & Finch Ltd, AU Harbourside Café Pty Ltd, CA Maple Ridge Builders) instead of a person; documents show "Your Business" until a name is entered |
 | 24 Oct 2026 | Paywall prices for review | Superwall "Duly Premium": each card shows the billed price in bold on the right; the yearly card's per-month figure moved under "Yearly" in regular weight. Apple 3.1.2: the billed amount must be the most prominent price. Published to the Premium gate campaign. Revisit in v1.0.1 (tasks/todo.md) |
 | 24 Oct 2026 | Submitted | v1.0 submitted for App Review; landing page done; launch video (Phase 6) not needed for now. Next-version work listed in `tasks/todo.md` (v1.0.1, v1.1, v1.2, later) |
+| 26 Oct 2026 | v1.0.1 prep (no code) | UK App Store screenshots captured with the Screenshots workflow (region UK, iPhone 17 Pro Max + iPad Pro 13") and framed with UK wording (Quotes, Personalise, bank details); en-GB listing text and What's New draft in the private docs repo |
 
 ## Current state
 - v1.0 is with App Review (submitted 24 Oct 2026). Phases 1–5 and 7 done; Phase 6 (launch video) not needed for now.
