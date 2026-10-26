@@ -52,7 +52,9 @@ struct ServicesTests {
         #expect(us["Labour"] == "Labor")
         #expect(us["Street, town, postcode"] == "Street, city, ZIP code")
         // UK, Australia, Canada and others keep the source (UK) spelling.
-        #expect(Bundle.preferredLocalizations(from: Bundle.main.localizations, forPreferences: ["en-GB"]).first == "en")
+        for other in ["en-GB", "en-AU", "en-CA", "en-IE"] {
+            #expect(Bundle.preferredLocalizations(from: Bundle.main.localizations, forPreferences: [other]).first == "en", "\(other) in \(Bundle.main.localizations)")
+        }
         #expect(Bundle.preferredLocalizations(from: Bundle.main.localizations, forPreferences: ["en-US"]).first == "en-US")
     }
 

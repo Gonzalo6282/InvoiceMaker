@@ -4,6 +4,12 @@
     "Brand colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand colour"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -15,6 +21,12 @@
     "Call-out fee" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call-out fee"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -26,6 +38,12 @@
     "Colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colour"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -37,6 +55,12 @@
     "Colour %@" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colour %@"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -48,6 +72,12 @@
     "Labour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Labour"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -59,6 +89,12 @@
     "New invoices use this template and colour. You can change them on any invoice." : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New invoices use this template and colour. You can change them on any invoice."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -70,6 +106,12 @@
     "Renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions." : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions."
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -81,6 +123,12 @@
     "Street, town, postcode" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Street, town, postcode"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -92,6 +140,12 @@
     "Template and colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Template and colour"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
@@ -103,6 +157,12 @@
     "e.g. Labour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. Labour"
+          }
+        },
         "en-US" : {
           "stringUnit" : {
             "state" : "translated",
