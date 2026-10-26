@@ -75,16 +75,26 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] T9.4 Largest Dynamic Type + accessibility labels
 - [x] ✅ Bug checklist on real iPhone + iPad
 
-## v1.0.1 (after App Review approves 1.0, before v2)
-- [ ] Paywall price layout (Superwall): revisit the yearly card; details in the private docs repo (`HANDOFF.md`, "After launch")
-- [ ] Screen 2 of the App Store screenshots: replace the small preview photo with the licensed full-size original (iPhone + iPad)
+## v1.0.1 (after App Review approves 1.0, or in a resubmission build if 1.0 is rejected)
 
-- [ ] UK App Store set: screenshots with the UK demo (£, "Quotes") and an en-GB listing (images and text ready 26 Oct; upload with v1.0.1)
-- [ ] "What's New" text for v1.0.1 (draft ready in the private docs repo; finalise when the fixes are in)
-- [x] US English in the app for US users ("Color", not "Colour"): add an en-US string variant or neutral wording
-- [x] Delete account: when Apple's sign-in returns error 1000 / AKAuthenticationError -7071, explain the fix (Settings > [name] > Sign-In & Security > Sign in with Apple > Duly > Stop Using) instead of the raw error
-- [x] Launch log "default Firebase app has not yet been configured": find what touches Firebase before `configure()` and move it after
+### Done (26 Oct, on `main`, CI green)
+- [x] US English in the app for US users ("Color", "Canceled", "Labor", "ZIP code", "Service call fee"); UK, AU, CA and IE keep UK spelling
+- [x] Delete account: Apple error 1000 / AKAuthenticationError -7071 explains the fix (Settings > [name] > Sign-In & Security > Sign in with Apple > Duly > Stop Using Apple ID); cancelling Apple's sheet shows no error
+- [x] Launch log "default Firebase app has not yet been configured" removed
+- [x] UK App Store screenshots, iPhone 6.9" + 6.3" and iPad 13" (£, "Quotes", bank details and PayPal)
+- [x] en-GB listing text: name, subtitle, keywords, promotional text, description (private docs repo, `listing/app-store-en-GB.md`)
+- [x] "What's New" draft (private docs repo, `listing/whats-new.md`)
+
+### You (on the Mac / App Store Connect)
+- [ ] Check spelling on the iPhone: English (US) shows "Brand color"; English (UK) shows "Brand colour"
+- [ ] New build: raise the build number, archive, upload
+- [ ] App Store Connect: add English (U.K.) localisation, paste the en-GB text, upload the UK screenshots
+- [ ] Finalise "What's New" (drop any line that didn't ship)
+
+### Still to do
 - [ ] Rating prompt: also ask on the first invoice marked paid (≥30 days after the first ask) and at the 10th sent (≥90 days later); never after an error or paywall, max once per version
+- [ ] Paywall price layout (Superwall): revisit the yearly card; details in the private docs repo (`HANDOFF.md`, "After launch")
+- [ ] Screen 2 of the App Store screenshots: licensed full-size photo (US + UK, iPhone + iPad)
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 

@@ -43,7 +43,8 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 
 ## Current state
 - v1.0 is with App Review (submitted 24 Oct 2026). Phases 1–5 and 7 done; Phase 6 (launch video) not needed for now.
-- Next: whatever App Review asks for, then v1.0.1 and v1.1 from `tasks/todo.md`.
+- v1.0.1 (26 Oct): US spelling, clearer Delete account error, Firebase launch log fixed (CI green); UK screenshots, en-GB listing and What's New draft ready. Waiting on: Gonzalo's spelling check, then a new build.
+- Next: whatever App Review asks for, then the rest of v1.0.1 and v1.1 from `tasks/todo.md`.
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls. App Store screenshots: run the "Screenshots" workflow (device + region), frames are composed from the `ci-screenshots` branch.
 - Keys: RevenueCat `appl_` key, Superwall `pk_` key and `GoogleService-Info.plist` are on Gonzalo's Mac (never committed).
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`, `listing/`). Never copy pricing or keywords into this public repo.
