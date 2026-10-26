@@ -17,7 +17,8 @@ final class AppAnalytics {
     private var country = ""
 
     func configure() {
-        guard AppKeys.hasFirebase, FirebaseApp.app() == nil else { return }
+        // A flag, not FirebaseApp.app(): asking Firebase before configure() logs "not yet been configured".
+        guard AppKeys.hasFirebase, !isConfigured else { return }
         FirebaseApp.configure()
         isConfigured = true
         RemoteConfig.remoteConfig().setDefaults(RemoteFlags.defaults)

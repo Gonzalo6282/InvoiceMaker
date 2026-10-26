@@ -241,6 +241,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"en-US",
 				Base,
 			);
 			mainGroup = 1A0000000000000000000002;

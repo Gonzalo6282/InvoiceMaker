@@ -18,7 +18,7 @@ final class AccountService {
     private var currentNonce: String?
     private var listener: AuthStateDidChangeListenerHandle?
 
-    var isAvailable: Bool { FirebaseApp.app() != nil }
+    var isAvailable: Bool { AppAnalytics.shared.isConfigured }
     var isSignedIn: Bool { userID != nil }
 
     func start() {
@@ -76,18 +76,33 @@ final class AccountService {
         await PurchaseManager.shared.logOut()
     }
 
-    /// The full error (domain, code, Firebase's server reason, underlying
-    /// errors), printed to the Xcode console as "[Duly account]". Debug builds
-    /// also show it in the alert.
-    static func report(_ error: Error, step: String) -> String {
-        let detail = describe(error as NSError)
+    /// The message for the alert, or nil when the user cancelled Apple's sheet
+    /// (nothing to show). The full error (domain, code, Firebase's server
+    /// reason, underlying errors) is printed to the Xcode console as
+    /// "[Duly account]"; debug builds also show it in the alert.
+    static func report(_ error: Error, step: String) -> String? {
+        let ns = error as NSError
+        let detail = describe(ns)
         print("[Duly account] \(step) failed: \(detail)")
+        let message: String
+        switch (ns.domain, ns.code) {
+        case (ASAuthorizationError.errorDomain, ASAuthorizationError.canceled.rawValue):
+            return nil
+        case (ASAuthorizationError.errorDomain, ASAuthorizationError.unknown.rawValue):
+            // Error 1000 (often AKAuthenticationError -7071): Apple's link to Duly needs resetting.
+            message = appleResetHelp
+        default:
+            message = error.localizedDescription
+        }
         #if DEBUG
-            return error.localizedDescription + "\n\n" + detail
+            return message + "\n\n" + detail
         #else
-            return error.localizedDescription
+            return message
         #endif
     }
+
+    static let appleResetHelp = String(
+        localized: "Apple couldn't confirm it's you. On your iPhone, open Settings > [your name] > Sign-In & Security > Sign in with Apple > Duly and tap Stop Using Apple ID. Then come back to Duly and try again.")
 
     nonisolated static func describe(_ error: NSError, depth: Int = 0) -> String {
         var parts = ["\(error.domain) \(error.code)"]

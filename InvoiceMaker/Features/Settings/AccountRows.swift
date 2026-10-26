@@ -88,7 +88,7 @@ private struct DeleteAccountSheet: View {
                     do {
                         try await account.deleteAccount(with: result)
                     } catch {
-                        failed(AccountService.report(error, step: "Delete account"))
+                        if let message = AccountService.report(error, step: "Delete account") { failed(message) }
                     }
                     dismiss()
                 }

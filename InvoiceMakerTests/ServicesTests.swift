@@ -36,6 +36,26 @@ struct ServicesTests {
         #expect(ShareDuly.message == "I send my invoices with Duly. Try it: https://apps.apple.com/app/id6824285908")
     }
 
+    @Test @MainActor func appleSignInErrorsReadClearly() throws {
+        let domain = "com.apple.AuthenticationServices.AuthorizationError"
+        #expect(AccountService.report(NSError(domain: domain, code: 1001), step: "test") == nil)
+        let reset = try #require(AccountService.report(NSError(domain: domain, code: 1000), step: "test"))
+        #expect(reset.hasPrefix(AccountService.appleResetHelp))
+        #expect(reset.contains("Stop Using Apple ID"))
+    }
+
+    @Test func usEnglishUsesUSSpelling() throws {
+        let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: "en-US"))
+        let us = try #require(NSDictionary(contentsOfFile: path) as? [String: String])
+        #expect(us["Brand colour"] == "Brand color")
+        #expect(us["Template and colour"] == "Template and color")
+        #expect(us["Labour"] == "Labor")
+        #expect(us["Street, town, postcode"] == "Street, city, ZIP code")
+        // UK, Australia, Canada and others keep the source (UK) spelling.
+        #expect(Bundle.preferredLocalizations(from: Bundle.main.localizations, forPreferences: ["en-GB"]).first == "en")
+        #expect(Bundle.preferredLocalizations(from: Bundle.main.localizations, forPreferences: ["en-US"]).first == "en-US")
+    }
+
     @Test func placementsMatchTheSpec() {
         #expect(PaywallPlacement.allCases.map(\.rawValue) == [
             "onboarding_end", "invoice_send", "invoice_export_pdf", "estimate_send", "template_premium", "settings_upgrade",

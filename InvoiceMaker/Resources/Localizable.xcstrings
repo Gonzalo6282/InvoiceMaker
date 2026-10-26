@@ -1,7 +1,116 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-
+    "Brand colour" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brand color"
+          }
+        }
+      }
+    },
+    "Call-out fee" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Service call fee"
+          }
+        }
+      }
+    },
+    "Colour" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        }
+      }
+    },
+    "Colour %@" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color %@"
+          }
+        }
+      }
+    },
+    "Labour" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Labor"
+          }
+        }
+      }
+    },
+    "New invoices use this template and colour. You can change them on any invoice." : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "New invoices use this template and color. You can change them on any invoice."
+          }
+        }
+      }
+    },
+    "Renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions." : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renews automatically unless canceled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions."
+          }
+        }
+      }
+    },
+    "Street, town, postcode" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Street, city, ZIP code"
+          }
+        }
+      }
+    },
+    "Template and colour" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Template and color"
+          }
+        }
+      }
+    },
+    "e.g. Labour" : {
+      "comment" : "UK spelling in the source; US English variant for US users.",
+      "localizations" : {
+        "en-US" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "e.g. Labor"
+          }
+        }
+      }
+    }
   },
   "version" : "1.0"
 }
