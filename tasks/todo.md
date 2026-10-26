@@ -81,9 +81,9 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 
 - [ ] UK App Store set: screenshots with the UK demo (£, "Quotes") and an en-GB listing (images and text ready 26 Oct; upload with v1.0.1)
 - [ ] "What's New" text for v1.0.1 (draft ready in the private docs repo; finalise when the fixes are in)
-- [ ] US English in the app for US users ("Color", not "Colour"): add an en-US string variant or neutral wording
-- [ ] Delete account: when Apple's sign-in returns error 1000 / AKAuthenticationError -7071, explain the fix (Settings > [name] > Sign-In & Security > Sign in with Apple > Duly > Stop Using) instead of the raw error
-- [ ] Launch log "default Firebase app has not yet been configured": find what touches Firebase before `configure()` and move it after
+- [x] US English in the app for US users ("Color", not "Colour"): add an en-US string variant or neutral wording
+- [x] Delete account: when Apple's sign-in returns error 1000 / AKAuthenticationError -7071, explain the fix (Settings > [name] > Sign-In & Security > Sign in with Apple > Duly > Stop Using) instead of the raw error
+- [x] Launch log "default Firebase app has not yet been configured": find what touches Firebase before `configure()` and move it after
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
