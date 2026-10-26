@@ -84,6 +84,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] US English in the app for US users ("Color", not "Colour"): add an en-US string variant or neutral wording
 - [x] Delete account: when Apple's sign-in returns error 1000 / AKAuthenticationError -7071, explain the fix (Settings > [name] > Sign-In & Security > Sign in with Apple > Duly > Stop Using) instead of the raw error
 - [x] Launch log "default Firebase app has not yet been configured": find what touches Firebase before `configure()` and move it after
+- [ ] Rating prompt: also ask on the first invoice marked paid (≥30 days after the first ask) and at the 10th sent (≥90 days later); never after an error or paywall, max once per version
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
