@@ -8,12 +8,22 @@ struct AppShell: View {
     /// Opened right away (the invoice made during onboarding).
     var initialDocument: PersistentIdentifier?
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.modelContext) private var context
 
     var body: some View {
-        if sizeClass == .regular {
-            SplitShell(business: business, documentID: initialDocument)
-        } else {
-            TabShell(business: business, path: initialDocument.map { [$0] } ?? [])
+        Group {
+            if sizeClass == .regular {
+                SplitShell(business: business, documentID: initialDocument)
+            } else {
+                TabShell(business: business, path: initialDocument.map { [$0] } ?? [])
+            }
+        }
+        .onChange(of: scenePhase, initial: true) { _, phase in
+            // Opening: prepare recurring invoices that are due. Opening or
+            // closing: rebuild the reminders from the current data.
+            if phase == .active { RecurringInvoices(context: context).prepareDue(business: business) }
+            if phase != .inactive { Reminders.reschedule(context: context, business: business) }
         }
     }
 }

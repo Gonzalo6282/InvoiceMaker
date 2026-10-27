@@ -52,7 +52,8 @@ struct ServicesTests {
     @Test func eventNamesMatchTheBuildDoc() {
         #expect(AnalyticsEvent.allCases.map(\.rawValue) == [
             "onboarding_step", "onboarding_complete", "invoice_created", "estimate_created", "paywall_view",
-            "invoice_sent", "pdf_exported", "share_app_tapped",
+            "invoice_sent", "pdf_exported", "share_app_tapped", "recurring_set", "reports_viewed", "report_exported",
+            "reminders_changed", "photo_added",
         ])
     }
 
@@ -85,6 +86,7 @@ struct ServicesTests {
     @Test func placementsMatchTheSpec() {
         #expect(PaywallPlacement.allCases.map(\.rawValue) == [
             "onboarding_end", "invoice_send", "invoice_export_pdf", "estimate_send", "template_premium", "settings_upgrade",
+            "recurring_invoice", "reports",
         ])
     }
 

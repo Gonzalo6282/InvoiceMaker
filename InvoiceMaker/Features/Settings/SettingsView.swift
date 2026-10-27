@@ -46,6 +46,9 @@ struct SettingsView: View {
                     RowDivider()
                     link(.currency, icon: "dollarsign.circle.fill", title: "Currency display", value: business.currencyDisplay.title)
                 }
+                GroupedSection(header: "Reminders") {
+                    RemindersRow(business: business)
+                }
                 GroupedSection(header: "Your data") {
                     link(.backup, icon: "icloud.fill", title: "iCloud backup", value: CloudStatus.isAvailable ? String(localized: "On") : String(localized: "Off"))
                     RowDivider()
