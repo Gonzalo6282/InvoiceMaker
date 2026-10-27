@@ -130,15 +130,3 @@ struct SignInOfferSheet: View {
         .presentationDetents([.medium])
     }
 }
-
-/// Asks for an App Store rating once, after the first document is sent.
-enum ReviewPrompt {
-    static let askedKey = "reviewPromptShown"
-
-    /// True the first time only; records that it was asked.
-    static func shouldAskAfterSend(defaults: UserDefaults = .standard) -> Bool {
-        guard !defaults.bool(forKey: askedKey) else { return false }
-        defaults.set(true, forKey: askedKey)
-        return true
-    }
-}

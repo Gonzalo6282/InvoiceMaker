@@ -30,7 +30,7 @@ struct EditorMoreMenu: View {
                         open(actions.makeReceipt(for: document, business: business))
                     }
                 } else {
-                    Button("Mark as paid", systemImage: "checkmark.circle") { actions.markPaid(document) }
+                    Button("Mark as paid", systemImage: "checkmark.circle") { actions.markPaid(document); ReviewPrompt.ask(after: .markedPaid) }
                 }
             }
             if document.kind == .estimate, document.status != .converted {

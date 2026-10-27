@@ -17,7 +17,6 @@ struct DocumentEditorView: View {
     @Environment(\.modelContext) private var context
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.horizontalSizeClass) private var sizeClass
-    @Environment(\.requestReview) private var requestReview
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @State private var editingLine: LineItem?
     @State private var showingClientPicker = false
@@ -95,13 +94,7 @@ struct DocumentEditorView: View {
         .sheet(item: $sendFlow.sharing) { pdf in
             ShareSheet(items: [PDFActivityItem(url: pdf.url, title: sendFlow.shareTitle(for: pdf))]) { completed, activity in
                 let sent = sendFlow.finished(document, completed: completed, activity: activity, context: context)
-                if sent, ReviewPrompt.shouldAskAfterSend() {
-                    // Let the share sheet finish closing first.
-                    Task {
-                        try? await Task.sleep(for: .seconds(1))
-                        requestReview()
-                    }
-                }
+                if sent { ReviewPrompt.ask(after: .sent) }
             }
             .ignoresSafeArea()
         }

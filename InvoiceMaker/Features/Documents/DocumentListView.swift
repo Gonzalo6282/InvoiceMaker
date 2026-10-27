@@ -143,7 +143,7 @@ struct DocumentListView: View {
         let actions = DocumentActions(context: context)
         Button("Duplicate", systemImage: "plus.square.on.square") { open(actions.duplicate(doc, business: business)) }
         if doc.kind == .invoice, doc.status != .paid {
-            Button("Mark as paid", systemImage: "checkmark.circle") { actions.markPaid(doc) }
+            Button("Mark as paid", systemImage: "checkmark.circle") { actions.markPaid(doc); ReviewPrompt.ask(after: .markedPaid) }
         }
         Button("Delete", systemImage: "trash", role: .destructive) { actions.delete(doc) }
     }

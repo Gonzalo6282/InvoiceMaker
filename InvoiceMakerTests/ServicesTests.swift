@@ -15,10 +15,34 @@ struct ServicesTests {
         #expect(privacy.contains(.subheading("Analytics and Crash Reports (only with your permission)")))
     }
 
-    @Test @MainActor func reviewIsAskedOnlyAfterTheFirstSend() throws {
+    @Test @MainActor func reviewIsAskedAtSpacedHappyMoments() throws {
         let defaults = try #require(UserDefaults(suiteName: "review-\(UUID().uuidString)"))
-        #expect(ReviewPrompt.shouldAskAfterSend(defaults: defaults))
-        #expect(!ReviewPrompt.shouldAskAfterSend(defaults: defaults))
+        let day0 = Date(timeIntervalSince1970: 1_800_000_000)
+        func day(_ n: Double) -> Date { day0.addingTimeInterval(n * 86_400) }
+        func ask(_ m: ReviewPrompt.Moment, _ d: Double, _ v: String) -> Bool {
+            ReviewPrompt.shouldAsk(after: m, now: day(d), version: v, defaults: defaults)
+        }
+        #expect(!ask(.markedPaid, 0, "1.0.1"))  // ask 1 is the first send
+        #expect(ask(.sent, 0, "1.0.1"))  // 1st sent
+        #expect(!ask(.sent, 1, "1.0.1"))
+        #expect(!ask(.markedPaid, 40, "1.0.1"))  // same version
+        #expect(!ask(.markedPaid, 20, "1.0.2"))  // under 30 days
+        #expect(!ask(.sent, 40, "1.0.2"))  // ask 2 is marked paid
+        #expect(ask(.markedPaid, 40, "1.0.2"))
+        for d in 0..<6 { #expect(!ask(.sent, 50 + Double(d), "1.1")) }  // 4th–9th sent, under 90 days
+        #expect(!ask(.sent, 100, "1.1"))  // 10th sent but only 60 days after ask 2
+        #expect(ask(.sent, 140, "1.1"))  // 11th sent, 100 days
+        #expect(!ask(.sent, 400, "1.2"))  // three asks is the limit
+        #expect(!ask(.markedPaid, 400, "1.2"))
+    }
+
+    @Test @MainActor func reviewCountsTheV1FirstSendAsk() throws {
+        let defaults = try #require(UserDefaults(suiteName: "review-\(UUID().uuidString)"))
+        defaults.set(true, forKey: ReviewPrompt.legacyAskedKey)
+        let now = Date(timeIntervalSince1970: 1_800_000_000)
+        #expect(!ReviewPrompt.shouldAsk(after: .sent, now: now, version: "1.0.1", defaults: defaults))
+        #expect(!ReviewPrompt.shouldAsk(after: .markedPaid, now: now.addingTimeInterval(10 * 86_400), version: "1.0.1", defaults: defaults))
+        #expect(ReviewPrompt.shouldAsk(after: .markedPaid, now: now.addingTimeInterval(31 * 86_400), version: "1.0.1", defaults: defaults))
     }
 
     @Test func legalTextParsing() {
