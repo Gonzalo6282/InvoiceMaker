@@ -1,3 +1,4 @@
+import Contacts
 import Foundation
 import InvoiceKit
 import SwiftData
@@ -67,6 +68,20 @@ struct ServicesTests {
         let reset = try #require(AccountService.report(NSError(domain: domain, code: 1000), step: "test"))
         #expect(reset.hasPrefix(AccountService.appleResetHelp))
         #expect(reset.contains("Stop Using Apple ID"))
+    }
+
+    @Test func pickedAddressesDropTheHomeCountry() {
+        let address = CNMutablePostalAddress()
+        address.street = "22 Queen Square"
+        address.city = "Bristol"
+        address.postalCode = "BS1 4ND"
+        address.country = "United Kingdom"
+        address.isoCountryCode = "gb"
+        let home = AddressCompleter.format(address, homeCountry: "GB")
+        #expect(!home.contains("United Kingdom"))
+        #expect(home.hasPrefix("22 Queen Square\n"))
+        #expect(!home.contains("\n\n"))
+        #expect(AddressCompleter.format(address, homeCountry: "US").hasSuffix("United Kingdom"))
     }
 
     @Test func usEnglishUsesUSSpelling() throws {

@@ -45,7 +45,7 @@ struct ClientDetailView: View {
                     RowDivider()
                     FieldRow(label: "Phone") { TextField("Optional", text: $client.phone).keyboardType(.phonePad) }
                     RowDivider()
-                    FieldRow(label: "Address") { TextField("Street, town, postcode", text: $client.address, axis: .vertical).lineLimit(1...4) }
+                    AddressField(text: $client.address, homeCountry: business.countryCode)
                     RowDivider()
                     FieldRow(label: "Tax ID") { TextField("Optional", text: $client.taxID) }
                     RowDivider()

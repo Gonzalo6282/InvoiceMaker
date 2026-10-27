@@ -22,7 +22,7 @@ struct BusinessProfileView: View {
                     RowDivider()
                     FieldRow(label: "Phone") { TextField("Optional", text: $business.phone).keyboardType(.phonePad) }
                     RowDivider()
-                    FieldRow(label: "Address") { TextField("Street, town, postcode", text: $business.address, axis: .vertical).lineLimit(1...4) }
+                    AddressField(text: $business.address, homeCountry: business.countryCode)
                 }
                 GroupedSection(header: "Country and tax", footer: LocalizedStringKey(note)) {
                     FieldRow(label: "Country") {
