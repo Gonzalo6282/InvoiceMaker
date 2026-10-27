@@ -2,7 +2,7 @@ import Foundation
 import InvoiceKit
 import SwiftData
 
-extension SchemaV1 {
+extension SchemaV2 {
     /// The user's business. One per user in 1.0.
     @Model
     nonisolated final class Business {
