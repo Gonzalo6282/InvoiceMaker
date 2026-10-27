@@ -35,6 +35,12 @@ public struct Report: Equatable, Sendable {
         public let month: Int
         public let invoiced: Decimal
         public let paid: Decimal
+
+        public init(month: Int, invoiced: Decimal, paid: Decimal) {
+            self.month = month
+            self.invoiced = invoiced
+            self.paid = paid
+        }
     }
 
     public struct ClientTotal: Equatable, Sendable {
@@ -43,6 +49,14 @@ public struct Report: Equatable, Sendable {
         public let invoiced: Decimal
         public let paid: Decimal
         public let unpaid: Decimal
+
+        public init(name: String, invoices: Int, invoiced: Decimal, paid: Decimal, unpaid: Decimal) {
+            self.name = name
+            self.invoices = invoices
+            self.invoiced = invoiced
+            self.paid = paid
+            self.unpaid = unpaid
+        }
     }
 
     public let year: Int

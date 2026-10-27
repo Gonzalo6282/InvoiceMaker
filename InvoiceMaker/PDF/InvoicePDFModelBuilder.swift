@@ -43,7 +43,7 @@ struct InvoicePDFModelBuilder {
             template: template,
             paper: PaperSize.for(countryCode: business.countryCode),
             accentHex: accentOverride ?? doc.brandColorHex,
-            title: region.title(for: kind, taxRegistered: business.taxRegistered),
+            title: business.title(for: kind),
             number: doc.number,
             logo: business.logoData,
             initials: Avatar.initials(for: Self.displayName(business)),
@@ -74,7 +74,7 @@ struct InvoicePDFModelBuilder {
     private func fromParty(_ business: Business) -> InvoicePDFModel.Party {
         var lines = splitLines(business.address)
         if business.taxRegistered, !business.taxID.isEmpty {
-            lines.append("\(business.region.preset.taxIDLabel) \(business.taxID)")
+            lines.append("\(business.taxIDLabel) \(business.taxID)")
         }
         return .init(label: String(localized: "From"), name: Self.displayName(business), lines: lines)
     }
@@ -138,7 +138,7 @@ struct InvoicePDFModelBuilder {
     private func totalLabel(_ kind: DocumentKind, region: Region) -> String {
         switch kind {
         case .receipt: String(localized: "Paid")
-        case .estimate: String(localized: "\(region.estimateTitle) total")
+        case .estimate: region == .uk ? String(localized: "Quote total") : String(localized: "Estimate total")
         case .invoice: String(localized: "Total due")
         }
     }

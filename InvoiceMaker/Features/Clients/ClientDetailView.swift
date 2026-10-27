@@ -29,7 +29,7 @@ struct ClientDetailView: View {
                 .padding(.horizontal, 16).padding(.top, 4)
                 HStack(spacing: 10) {
                     Button { create(.invoice) } label: { Label("New invoice", systemImage: "plus") }.buttonStyle(.primary)
-                    Button(String(localized: "New \(business.title(for: .estimate).lowercased())")) { create(.estimate) }.buttonStyle(.ghost)
+                    Button(business.newTitle(for: .estimate)) { create(.estimate) }.buttonStyle(.ghost)
                 }
                 .padding(.horizontal, 16).padding(.top, 14)
 

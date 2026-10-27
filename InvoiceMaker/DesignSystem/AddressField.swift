@@ -65,7 +65,7 @@ struct AddressField: View {
 /// Apple Maps address search (MKLocalSearchCompleter). No location permission needed.
 @MainActor
 @Observable
-final class AddressCompleter: NSObject, MKLocalSearchCompleterDelegate {
+final class AddressCompleter: NSObject {
     nonisolated struct Suggestion: Identifiable, Hashable, Sendable {
         let id = UUID()
         let title: String
@@ -92,17 +92,8 @@ final class AddressCompleter: NSObject, MKLocalSearchCompleterDelegate {
         suggestions = []
     }
 
-    nonisolated func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
-        let items = completer.results.prefix(4).map { Suggestion(title: $0.title, subtitle: $0.subtitle) }
-        Task { @MainActor in self.suggestions = Array(items) }
-    }
-
-    nonisolated func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: any Error) {
-        Task { @MainActor in self.suggestions = [] }
-    }
-
     /// The full postal address for a suggestion, one line per part.
-    nonisolated static func resolve(_ suggestion: Suggestion, homeCountry: String) async -> String {
+    static func resolve(_ suggestion: Suggestion, homeCountry: String) async -> String {
         let fallback = [suggestion.title, suggestion.subtitle].filter { !$0.isEmpty }.joined(separator: "\n")
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = [suggestion.title, suggestion.subtitle].joined(separator: ", ")
@@ -121,5 +112,16 @@ final class AddressCompleter: NSObject, MKLocalSearchCompleterDelegate {
         return CNPostalAddressFormatter.string(from: address, style: .mailingAddress)
             .split(separator: "\n").map { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty }
             .joined(separator: "\n")
+    }
+}
+
+/// MapKit calls the delegate on the main thread.
+extension AddressCompleter: @preconcurrency MKLocalSearchCompleterDelegate {
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        suggestions = completer.results.prefix(4).map { Suggestion(title: $0.title, subtitle: $0.subtitle) }
+    }
+
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: any Error) {
+        suggestions = []
     }
 }

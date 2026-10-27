@@ -12,7 +12,7 @@ struct RemindersRow: View {
     @State private var denied = false
 
     var body: some View {
-        Toggle(isOn: Binding(get: { remindersOn }, set: change)) {
+        Toggle(isOn: Binding(get: { remindersOn }, set: { change($0) })) {
             HStack(spacing: 12) {
                 IconChip(systemName: "bell.fill", tint: .warn)
                 VStack(alignment: .leading, spacing: 2) {

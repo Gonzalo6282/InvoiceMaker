@@ -84,6 +84,15 @@ struct ServicesTests {
         #expect(AddressCompleter.format(address, homeCountry: "US").hasSuffix("United Kingdom"))
     }
 
+    @Test(arguments: [("de", "Neue Rechnung", "Angebot"), ("fr", "Nouvelle facture", "Devis")])
+    func germanAndFrenchShipInTheApp(language: String, newInvoice: String, quote: String) throws {
+        let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: language))
+        let table = try #require(NSDictionary(contentsOfFile: path) as? [String: String])
+        #expect(table["New invoice"] == newInvoice)
+        #expect(table["Quote"] == quote)  // looked up at run time from InvoiceKit
+        #expect(table.count > 400)
+    }
+
     @Test func usEnglishUsesUSSpelling() throws {
         let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: "en-US"))
         let us = try #require(NSDictionary(contentsOfFile: path) as? [String: String])

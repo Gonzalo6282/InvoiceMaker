@@ -51,7 +51,7 @@ struct ReportsView: View {
         }
     }
 
-    private func report(_ inputs: [ReportInput]) -> Report {
+    private func makeReport(_ inputs: [ReportInput]) -> Report {
         Report(documents: inputs, year: year, currencyCode: currency ?? business.currencyCode)
     }
 
@@ -75,7 +75,7 @@ struct ReportsView: View {
                 description: Text("Your totals by month and by client appear here once you send invoices."))
                 .padding(.top, 60)
         } else {
-            let report = report(inputs)
+            let report = makeReport(inputs)
             VStack(alignment: .leading, spacing: 0) {
                 pickers(inputs)
                 summary(report)
@@ -202,7 +202,7 @@ struct ReportsView: View {
     // MARK: Export
 
     private func export() {
-        let report = report(inputs)
+        let report = makeReport(inputs)
         let name = String(localized: "Duly report \(String(report.year)) \(report.currencyCode)") + ".csv"
         let url = FileManager.default.temporaryDirectory.appendingPathComponent(name)
         do {

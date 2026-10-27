@@ -61,10 +61,19 @@ enum Reminders {
                     : String(localized: "For \(client). Open Duly to check it and send it.")
                 planned.append(Planned(
                     id: "\(idPrefix)recurring.\(doc.number)", date: nine(next),
-                    title: String(localized: "Your \(recurrence.title.lowercased()) invoice is ready"), body: body))
+                    title: readyTitle(recurrence), body: body))
             }
         }
         return Array(planned.filter { $0.date > now }.sorted { $0.date < $1.date }.prefix(limit))
+    }
+
+    /// Whole sentences, so each language can word them its own way.
+    static func readyTitle(_ recurrence: Recurrence) -> String {
+        switch recurrence {
+        case .weekly: String(localized: "Your weekly invoice is ready")
+        case .monthly: String(localized: "Your monthly invoice is ready")
+        case .yearly: String(localized: "Your yearly invoice is ready")
+        }
     }
 
     /// Replaces our pending notifications with the current plan.
