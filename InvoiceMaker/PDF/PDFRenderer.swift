@@ -90,6 +90,32 @@ private struct PageLayout {
         drawJob()
         drawTable()
         drawSummaryAndFooter()
+        drawPhotos()
+    }
+
+    /// Job photos: a new page, two per row, each shown whole (never cropped).
+    mutating func drawPhotos() {
+        let images = model.photos.compactMap(UIImage.init(data:))
+        guard !images.isEmpty else { return }
+        beginPage()
+        drawText(String(localized: "Job photos"), font: font(2.6, .bold), color: ink, rect: CGRect(x: left, y: y, width: width, height: 6 * u))
+        y += 6 * u
+        let gap = 3 * u
+        let cell = CGSize(width: (width - gap) / 2, height: (width - gap) / 2 * 0.75)
+        for (index, image) in images.enumerated() {
+            let column = index % 2
+            if column == 0, index > 0 { y += cell.height + gap }
+            if y + cell.height > bottom {
+                beginPage()
+            }
+            let rect = CGRect(x: left + CGFloat(column) * (cell.width + gap), y: y, width: cell.width, height: cell.height)
+            let fitted = aspectFit(image.size, in: rect, alignLeft: false)
+            let path = UIBezierPath(roundedRect: fitted, cornerRadius: 1 * u)
+            UIGraphicsGetCurrentContext()?.saveGState()
+            path.addClip()
+            image.draw(in: fitted)
+            UIGraphicsGetCurrentContext()?.restoreGState()
+        }
     }
 
     mutating func beginPage() {

@@ -41,6 +41,7 @@ struct DocumentEditorView: View {
                 EditorTaxSection(document: document, business: business, taxes: pickerTaxes)
                 EditorTotalsView(totals: document.totals(taxes: taxes), document: document, business: business)
                     .padding(.top, 12)
+                EditorPhotosSection(document: document)
                 notesSection
                 lookSection
             }

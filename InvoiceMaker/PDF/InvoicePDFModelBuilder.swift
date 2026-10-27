@@ -65,7 +65,8 @@ struct InvoicePDFModelBuilder {
             notes: doc.notes,
             signatures: signatures(doc, business: business, locale: locale),
             paidStamp: kind == .receipt || (kind == .invoice && doc.status == .paid),
-            watermark: watermark)
+            watermark: watermark,
+            photos: doc.sortedPhotos.compactMap(\.imageData))
     }
 
     // MARK: Blocks

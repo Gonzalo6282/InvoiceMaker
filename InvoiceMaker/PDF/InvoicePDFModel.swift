@@ -68,6 +68,8 @@ struct InvoicePDFModel: Sendable {
     var signatures: [Signature]
     var paidStamp: Bool
     var watermark: Bool
+    /// Job photos (JPEG), on their own page(s) after the document.
+    var photos: [Data] = []
 
     /// Column headings.
     var headings: (description: String, quantity: String, rate: String, tax: String, amount: String) {
