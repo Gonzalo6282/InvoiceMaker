@@ -92,13 +92,13 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [ ] Finalise "What's New" (drop any line that didn't ship)
 
 ### Still to do
-- [ ] Rating prompt: also ask on the first invoice marked paid (≥30 days after the first ask) and at the 10th sent (≥90 days later); never after an error or paywall, max once per version
+- [x] Rating prompt: also ask on the first invoice marked paid (≥30 days after the first ask) and at the 10th sent (≥90 days later); never after an error or paywall, max once per version
 - [ ] Paywall price layout (Superwall): revisit the yearly card; details in the private docs repo (`HANDOFF.md`, "After launch")
 - [ ] Screen 2 of the App Store screenshots: licensed full-size photo (US + UK, iPhone + iPad)
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
-## v1.1 (Build Doc)
+## v1.1 (Build Doc) — being built on branch `v1.1` (PR #1); see the to-do there
 - [ ] Recurring invoices (weekly, monthly, yearly; app prepares the next one and reminds the user)
 - [ ] Due-date reminders to the user (local notifications)
 - [ ] Job photos on invoices

@@ -40,11 +40,13 @@ Updated after every task. Plan: `tasks/plan.md`. Task list: `tasks/todo.md`.
 | 24 Oct 2026 | Submitted | v1.0 submitted for App Review; landing page done; launch video (Phase 6) not needed for now. Next-version work listed in `tasks/todo.md` (v1.0.1, v1.1, v1.2, later) |
 | 26 Oct 2026 | v1.0.1 prep (no code) | UK App Store screenshots captured with the Screenshots workflow (region UK, iPhone 17 Pro Max + iPad Pro 13") and framed with UK wording (Quotes, Personalise, bank details); en-GB listing text and What's New draft in the private docs repo |
 | 26 Oct 2026 | v1.0.1 fixes | US spelling for en-US (Color, Canceled, Labor, ZIP code, Service call fee) via Localizable.xcstrings, UK/AU/CA keep UK spelling; Apple error 1000 on Delete account explains "Stop Using Apple ID", cancelling Apple's sheet shows nothing; Firebase "not yet configured" launch log removed (flag instead of FirebaseApp.app()). CI green |
+| 27 Oct 2026 | v1.0.1 + v1.1 work | main: spaced rating prompts (first send, first paid 30+ days later, 10th send 90+ days later), website Help guide page. Branch `v1.1` (PR #1, CI green): recurring invoices, payment reminders, Reports tab, job photos, address autocomplete, Germany/France presets, German and French text, data model v2 with migration. Private repo: support reply templates, de/fr listings |
 
 ## Current state
 - v1.0 is with App Review (submitted 24 Oct 2026). Phases 1–5 and 7 done; Phase 6 (launch video) not needed for now.
 - v1.0.1 (26 Oct): US spelling, clearer Delete account error, Firebase launch log fixed (CI green); UK screenshots, en-GB listing and What's New draft ready. Waiting on: Gonzalo's spelling check, then a new build.
-- Next: whatever App Review asks for, then the rest of v1.0.1 and v1.1 from `tasks/todo.md`.
+- v1.1 is built on branch `v1.1` (PR #1), not merged: `main` stays ready for a v1.0 resubmission or v1.0.1.
+- Next: whatever App Review asks for, then the rest of v1.0.1; v1.1 release checklist is in the branch's `tasks/todo.md`.
 - How work flows: code is written in a cloud clone and pushed to `main`; GitHub Actions runs every test; the Mac pulls. App Store screenshots: run the "Screenshots" workflow (device + region), frames are composed from the `ci-screenshots` branch.
 - Keys: RevenueCat `appl_` key, Superwall `pk_` key and `GoogleService-Info.plist` are on Gonzalo's Mac (never committed).
 - Spec and strategy: private repo `Gonzalo6282/InvoiceMaker-docs` (`HANDOFF.md`, `SPEC.md`, `listing/`). Never copy pricing or keywords into this public repo.
