@@ -4907,6 +4907,22 @@
         }
       }
     },
+    "PAID" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BEZAHLT"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAYÉE"
+          }
+        }
+      }
+    },
     "PDF preview" : {
       "localizations" : {
         "de" : {
