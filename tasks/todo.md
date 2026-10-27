@@ -98,13 +98,23 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
-## v1.1 (Build Doc)
-- [ ] Recurring invoices (weekly, monthly, yearly; app prepares the next one and reminds the user)
-- [ ] Due-date reminders to the user (local notifications)
-- [ ] Job photos on invoices
-- [ ] Reports: totals by client and by month, CSV export
-- [ ] Client address autocomplete (Apple Maps)
-- [ ] German and French templates and listings
+## v1.1 (Build Doc) — built on branch `v1.1` (PR #1, CI green), not merged
+- [x] Recurring invoices: Repeat (weekly / monthly / yearly) on an invoice; the app prepares a draft copy on schedule and sends a "ready" notification (Premium, placement `recurring_invoice`)
+- [x] Due-date reminders: Settings > Reminders > Payment reminders (3 days before and on the due date); permission asked only when turned on
+- [x] Reports tab: by month and by client, chart, CSV export (Premium, placement `reports`)
+- [x] Job photos on invoices: up to 10, printed on a page after the invoice
+- [x] Client and business address autocomplete (Apple Maps)
+- [x] Germany and France: tax presets (MwSt. 19/7/0, TVA 20/10/5.5/0), EUR, IBAN/BIC payment details, sample clients
+- [x] German and French app text (draft, ~500 strings) and App Store listings (private docs repo)
+- [x] German and French demo businesses for screenshots (Screenshots workflow, region DE / FR, ref v1.1)
+- [x] Data model v2 with lightweight migration from v1 (test: a v1.0 store opens with its data)
+
+### Before releasing v1.1 (you)
+- [ ] Decide: recurring invoices and reports in today's Premium, or the later higher tier (spec: "Premium Level 1")
+- [ ] Superwall: add the placements `recurring_invoice` and `reports` to the campaign (until then the app's own paywall shows)
+- [ ] Native speakers check the German and French app text and listings
+- [ ] Run a Debug build on your iPhone once, then CloudKit Console > Deploy Schema Changes to Production (new fields: recurring, job photos)
+- [ ] Test on device: recurring copy appears, reminders arrive, photos in the PDF, address suggestions, German and French
 
 ## v1.2 (Build Doc: payments)
 - [ ] Connect Stripe in Settings; "Pay now" button and hosted link for the exact amount (card, Apple Pay, Google Pay, US bank)
