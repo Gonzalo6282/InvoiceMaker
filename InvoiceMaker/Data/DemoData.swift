@@ -25,6 +25,10 @@
                 seedUS(context, today: today, screenshots: screenshots)
                 return
             }
+            if region == .de || region == .fr {
+                seedEU(context, region: region, today: today, screenshots: screenshots)
+                return
+            }
             let cal = Calendar.current
             func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
 
@@ -157,6 +161,87 @@
             biz.signatureData = DemoArt.signature()
             e.job = "Harbor Street Café, 214 Harbor St — kitchen rewiring"
             if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: "Mateo Silva") }
+            _ = actions.makeReceipt(for: c, business: biz)
+        }
+    }
+
+    extension DemoData {
+        /// German and French screenshot businesses (v1.1): a joiner in Hamburg
+        /// or Lyon, euros, local VAT, IBAN and PayPal, local numbering.
+        static func seedEU(_ context: ModelContext, region: Region, today: Date, screenshots: Bool) {
+            let cal = Calendar.current
+            func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
+            let german = region == .de
+            let biz = BusinessSetup.create(
+                name: german ? "Tischlerei Falk" : "Menuiserie Martin", region: region,
+                countryCode: german ? "DE" : "FR", in: context)
+            biz.role = "contractor"
+            biz.email = german ? "info@tischlerei-falk.de" : "contact@menuiserie-martin.fr"
+            biz.phone = german ? "040 5550 1234" : "04 72 55 01 23"
+            biz.address = german ? "Holstenstraße 12\n22767 Hamburg" : "12 rue Paul Bert\n69003 Lyon"
+            biz.taxID = german ? "DE 123 456 789" : "FR 12 345678901"
+            biz.taxRegistered = true
+            biz.defaultNotes = german
+                ? "Vielen Dank für Ihren Auftrag. Bitte zahlen Sie innerhalb von 14 Tagen."
+                : "Merci pour votre confiance. Paiement à 14 jours."
+            biz.invoicePrefix = german ? "RE-" : "FAC-"
+            biz.estimatePrefix = german ? "AN-" : "DEV-"
+            biz.receiptPrefix = german ? "QU-" : "REC-"
+            biz.nextInvoiceNumber = 7
+            biz.nextEstimateNumber = 3
+            biz.payment?.bankName = german ? "Tischlerei Falk" : "Menuiserie Martin"
+            biz.payment?.iban = german ? "DE89 3704 0044 0532 0130 00" : "FR76 3000 6000 0112 3456 7890 189"
+            biz.payment?.swift = german ? "COBADEFFXXX" : "AGRIFRPP"
+            biz.payment?.payPalMe = german ? "paypal.me/tischlereifalk" : "paypal.me/menuiseriemartin"
+            let tax = biz.defaultTaxID
+
+            let first = Client(name: OnboardingRole.sampleClient(for: region), currencyCode: "EUR")
+            first.contactName = german ? "Anna Weber" : "Claire Morel"
+            first.email = german ? "anna.weber@lindenhof-gartenbau.de" : "claire@boulangerie-tilleuls.fr"
+            first.address = german ? "Lindenallee 4\n22299 Hamburg" : "8 place des Tilleuls\n69006 Lyon"
+            let cafe = Client(name: german ? "Café Elbblick" : "Café du Rhône", currencyCode: "EUR")
+            cafe.contactName = german ? "Lukas Brandt" : "Julien Faure"
+            cafe.email = german ? "lukas@cafe-elbblick.de" : "julien@cafedurhone.fr"
+            let uk = Client(name: "Marlow & Finch Ltd", currencyCode: "GBP")
+            uk.email = "priya@marlowfinch.co.uk"
+            [first, cafe, uk].forEach(context.insert)
+
+            let hour = german ? "Stunde" : "heure"
+            context.insert(SavedItem(itemDescription: german ? "Arbeitszeit" : "Main-d'œuvre", unit: hour, rate: 55, taxID: tax))
+            context.insert(SavedItem(itemDescription: german ? "Eichenplatte, montiert" : "Plan de travail chêne, posé", unit: "m", rate: 190, taxID: tax))
+
+            let actions = DocumentActions(context: context, now: { today })
+            let a = actions.create(.invoice, business: biz, client: first)
+            actions.addLineItem(to: a, defaultTaxID: tax)
+                .configure(german ? "Einbauschrank nach Maß, montiert" : "Placard sur mesure, posé", qty: 1, rate: 1180)
+            actions.addLineItem(to: a, defaultTaxID: tax).configure(german ? "Aufmaß vor Ort" : "Prise de mesures sur place", qty: 1, rate: 65)
+            actions.markSent(a)
+
+            let b = actions.create(.invoice, business: biz, client: cafe)
+            b.issueDate = day(-30)
+            b.dueDate = day(-16)
+            actions.addLineItem(to: b, defaultTaxID: tax).configure(german ? "Reparatur Tresen" : "Réparation du comptoir", qty: 1, rate: 540)
+            actions.markSent(b)
+
+            let c = actions.create(.invoice, business: biz, client: first)
+            actions.addLineItem(to: c, defaultTaxID: tax).configure(german ? "Planung Gartenhaus" : "Plans de l'abri de jardin", qty: 1, rate: 600)
+            actions.markSent(c)
+            actions.markPaid(c, on: today)
+
+            let d = actions.create(.invoice, business: biz, client: uk)
+            actions.addLineItem(to: d, defaultTaxID: nil).configure(german ? "Beratung Ladenbau" : "Conseil agencement de boutique", qty: 1, rate: 1200)
+            actions.markSent(d)
+
+            actions.create(.invoice, business: biz, client: cafe)
+
+            let e = actions.create(.estimate, business: biz, client: cafe)
+            actions.addLineItem(to: e, defaultTaxID: tax).configure(german ? "Neuer Tresen aus Eiche" : "Nouveau comptoir en chêne", qty: 1, rate: 2350)
+
+            guard screenshots else { return }
+            biz.logoData = DemoArt.logo(initials: german ? "TF" : "MM")
+            biz.signatureData = DemoArt.signature()
+            e.job = german ? "Café Elbblick, Elbchaussee 20 — Tresen" : "Café du Rhône, 3 quai Augagneur — comptoir"
+            if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: german ? "Lukas Brandt" : "Julien Faure") }
             _ = actions.makeReceipt(for: c, business: biz)
         }
     }
