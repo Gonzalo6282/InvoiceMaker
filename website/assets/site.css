@@ -100,3 +100,8 @@ h3 { font-size: 22px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02e
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+.doc .toc { background: #f4f7fb; border: 1px solid #e3e9f1; border-radius: 14px; padding: 14px 18px; margin: 0 0 8px; }
+.doc .toc ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 24px; }
+.doc .toc li { margin: 0 0 8px; break-inside: avoid; }
+.doc h2[id] { scroll-margin-top: 90px; }
+@media (max-width: 560px) { .doc .toc ul { columns: 1; } }
