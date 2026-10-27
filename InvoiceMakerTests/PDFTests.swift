@@ -57,7 +57,8 @@ struct PDFModelBuilderTests {
             UIColor.orange.setFill()
             ctx.fill(CGRect(x: 0, y: 0, width: 3000, height: 2000))
         }
-        let jpeg = try #require(JobPhotoImage.prepare(try #require(big.pngData())))
+        let png = try #require(big.pngData())
+        let jpeg = try #require(JobPhotoImage.prepare(png))
         let resized = try #require(UIImage(data: jpeg))
         #expect(max(resized.size.width, resized.size.height) == 1600)
         for position in 0..<7 {

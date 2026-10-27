@@ -16,15 +16,18 @@ public enum Recurrence: String, CaseIterable, Sendable, Codable {
             case .monthly: (.month, 1)
             case .yearly: (.year, 1)
             }
-        // Adding days, months or years to a valid date always gives a date in the Gregorian-style calendars we use.
-        return calendar.date(byAdding: component, value: step * count, to: anchor) ?? anchor
+        // Adding days, months or years to a valid date always gives a date in the calendars we use.
+        var result = anchor
+        if let date = calendar.date(byAdding: component, value: step * count, to: anchor) { result = date }
+        return result
     }
 
     /// The first occurrence strictly after `date` (never the anchor itself).
     public func next(after date: Date, anchor: Date, calendar: Calendar = .current) -> Date {
         var count = 1
         // Jump close first so a weekly invoice opened after years doesn't loop for long.
-        let days = max(0, calendar.dateComponents([.day], from: anchor, to: date).day ?? 0)
+        var days = 0
+        if let gap = calendar.dateComponents([.day], from: anchor, to: date).day { days = max(0, gap) }
         let approximateDays = switch self {
         case .weekly: 7
         case .monthly: 28

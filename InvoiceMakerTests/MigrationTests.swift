@@ -1,4 +1,5 @@
 import Foundation
+import InvoiceKit
 import SwiftData
 import Testing
 
