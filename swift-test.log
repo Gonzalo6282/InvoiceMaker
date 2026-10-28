@@ -1,0 +1,208 @@
+Building for debugging...
+[0/7] /Users/runner/work/InvoiceMaker/InvoiceMaker/Packages/InvoiceKit/.build/arm64-apple-macosx/debug/InvoiceKitPackageTests.derived/runner.swift
+[1/7] Write sources
+[4/7] Write swift-version-7974D3F7F03D5E95.txt
+[6/16] Emitting module InvoiceKit
+[7/19] Compiling InvoiceKit Rounding.swift
+[8/19] Compiling InvoiceKit Status.swift
+[9/19] Compiling InvoiceKit Tax.swift
+[10/19] Compiling InvoiceKit CSV.swift
+[11/19] Compiling InvoiceKit Calculator.swift
+[12/19] Compiling InvoiceKit Discount.swift
+[13/19] Compiling InvoiceKit InvoiceKit.swift
+[14/19] Compiling InvoiceKit LineItemInput.swift
+[15/19] Compiling InvoiceKit MoneyFormat.swift
+[16/19] Compiling InvoiceKit Numbering.swift
+[17/19] Compiling InvoiceKit Region.swift
+[18/24] Emitting module InvoiceKitTests
+[19/26] Compiling InvoiceKitTests RoundingAndDiscountTests.swift
+[20/26] Compiling InvoiceKitTests StatusTests.swift
+[21/26] Compiling InvoiceKitTests InvoiceKitTests.swift
+[22/26] Compiling InvoiceKitTests RegionTests.swift
+[23/26] Compiling InvoiceKitTests CalculatorTests.swift
+[24/26] Compiling InvoiceKitTests FormatAndCSVTests.swift
+[25/28] Emitting module InvoiceKitPackageTests
+[26/28] Compiling InvoiceKitPackageTests runner.swift
+[26/28] Write Objects.LinkFileList
+[27/28] Linking InvoiceKitPackageTests
+Build complete! (27.90s)
+Test Suite 'All tests' started at 2026-10-28 15:50:21.368.
+Test Suite 'All tests' passed at 2026-10-28 15:50:21.377.
+	 Executed 0 tests, with 0 failures (0 unexpected) in 0.000 (0.010) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+◇ Suite RoundingTests started.
+◇ Suite RegionTests started.
+◇ Suite LineItemTests started.
+◇ Suite CalculatorTests started.
+◇ Suite MoneyFormatTests started.
+◇ Suite MockupCases started.
+◇ Suite InvoiceKitTests started.
+◇ Suite CSVTests started.
+◇ Suite StatusTests started.
+◇ Suite DiscountTests started.
+◇ Suite TaxRateTests started.
+◇ Suite NumberingTests started.
+◇ Test roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test roundsToOtherScales() started.
+◇ Test fractionalQuantity() started.
+◇ Test amountDiscountWithTaxOnTotal() started.
+◇ Test symbol() started.
+◇ Test emptyDocumentIsAllZero() started.
+◇ Test amountDiscountCappedAtLineGross() started.
+◇ Test roundsHalfUpBeforeFormatting() started.
+◇ Test code() started.
+◇ Test grossDiscountAndNet() started.
+◇ Test allCases() started.
+◇ Test includedTaxAfterDocumentDiscount() started.
+◇ Test unknownTaxIDsAreIgnored() started.
+◇ Test taxesKeepOrderOfFirstAppearanceAndAggregate() started.
+◇ Test presets() started.
+◇ Test shippingAndFeesAreNotTaxed() started.
+◇ Test shippingAndFeesAddedWithTaxIncludedToo() started.
+◇ Test noCurrency() started.
+◇ Test documentDiscountIsSpreadBeforePerItemTax() started.
+◇ Test totalsAreRoundedToPence() started.
+◇ Test parsesCountryCodes(code:region:) started.
+◇ Test includedTaxSplitBetweenTwoTaxes() started.
+◇ Test documentTitles() started.
+◇ Test paperSizes() started.
+◇ Test onTotalIgnoresLineTaxes() started.
+◇ Test eachTaxIsSummedThenRoundedOnce() started.
+◇ Test ukTaxIncluded237() started.
+◇ Test unknownCountryHasNoPresetAndResolvesToUK() started.
+◇ Test zeroRateTaxShowsOnlyWhenItAppliedToSomething() started.
+◇ Test canadaGstPlusPst89_60() started.
+◇ Test formulaWithCommaIsDefusedAndQuoted() started.
+◇ Test versionIsSet() started.
+◇ Test plainRows() started.
+◇ Test formulaInjectionIsDefused(raw:expected:) started.
+◇ Test escaping(raw:expected:) started.
+◇ Test amountsAndDates() started.
+◇ Test ukTaxAdded273() started.
+◇ Test codableRoundTrip() started.
+◇ Test isZero() started.
+◇ Test noneAndNegativeValuesGiveZero() started.
+◇ Test amountDiscountIsCappedAtBase() started.
+◇ Test labels() started.
+◇ Test enumsCoverAllCases() started.
+◇ Test percentDiscount() started.
+◇ Test dueTodayIsNotOverdueEvenLateInTheDay() started.
+◇ Test daysOverdue() started.
+◇ Test percentOverHundredIsCapped() started.
+◇ Test onlySentInvoicesGoOverdue() started.
+◇ Test allStatusesHaveDisplayEquivalents() started.
+◇ Test defaultCalendarOverloads() started.
+◇ Test moneySummary() started.
+◇ Test defaultsStartAtOne() started.
+◇ Test codableRoundTrip() started.
+◇ Test sentInvoicePastDueIsOverdue() started.
+◇ Test case passing 2 arguments input → "1.005", expected → "1.01" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test customPrefixPaddingAndOverflow() started.
+◇ Test case passing 2 arguments input → "1.004", expected → "1" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test continuesFromStoredCounter() started.
+◇ Test case passing 2 arguments input → "0.125", expected → "0.13" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test case passing 2 arguments input → "2.5", expected → "2.5" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test case passing 2 arguments input → "-1.005", expected → "-1.01" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test case passing 2 arguments input → "0", expected → "0" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test case passing 2 arguments input → "39.499999", expected → "39.5" to roundsHalfUpToTwoPlaces(input:expected:) started.
+◇ Test case passing 2 arguments code → "GBR", region → .uk to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "GB", region → .uk to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "uk", region → .uk to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "AU", region → .au to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "AUS", region → .au to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "CA", region → .ca to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "CAN", region → .ca to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "US", region → .us to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments code → "usa", region → .us to parsesCountryCodes(code:region:) started.
+◇ Test case passing 2 arguments raw → "=SUM(A1:A9)", expected → "'=SUM(A1:A9)" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "+44 7700", expected → "'+44 7700" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "@cmd", expected → "'@cmd" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "6" pipe", expected → ""6"" pipe"" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "Smith, Jones & Co", expected → ""Smith, Jones & Co"" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "-1+2", expected → "'-1+2" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "Unit 4
+Mill Yard", expected → ""Unit 4
+Mill Yard"" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "-12.50", expected → "-12.50" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "Unit 4
+Mill Yard", expected → ""Unit 4
+Mill Yard"" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "-", expected → "'-" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "	x", expected → "'	x" to formulaInjectionIsDefused(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "
+x", expected → ""'
+x"" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → " padded ", expected → "" padded "" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "", expected → "" to escaping(raw:expected:) started.
+◇ Test case passing 2 arguments raw → "Café Ostara", expected → "Café Ostara" to escaping(raw:expected:) started.
+✔ Test roundsHalfUpToTwoPlaces(input:expected:) with 7 test cases passed after 0.016 seconds.
+✔ Test roundsToOtherScales() passed after 0.016 seconds.
+✔ Test fractionalQuantity() passed after 0.016 seconds.
+✔ Test emptyDocumentIsAllZero() passed after 0.016 seconds.
+✔ Test amountDiscountWithTaxOnTotal() passed after 0.016 seconds.
+✔ Test amountDiscountCappedAtLineGross() passed after 0.016 seconds.
+✔ Test symbol() passed after 0.016 seconds.
+✔ Test grossDiscountAndNet() passed after 0.016 seconds.
+✔ Test allCases() passed after 0.016 seconds.
+✔ Test code() passed after 0.017 seconds.
+✔ Test includedTaxAfterDocumentDiscount() passed after 0.017 seconds.
+✔ Test roundsHalfUpBeforeFormatting() passed after 0.017 seconds.
+✔ Test taxesKeepOrderOfFirstAppearanceAndAggregate() passed after 0.017 seconds.
+✔ Test presets() passed after 0.017 seconds.
+✔ Test shippingAndFeesAreNotTaxed() passed after 0.017 seconds.
+✔ Test documentDiscountIsSpreadBeforePerItemTax() passed after 0.017 seconds.
+✔ Test shippingAndFeesAddedWithTaxIncludedToo() passed after 0.017 seconds.
+✔ Test totalsAreRoundedToPence() passed after 0.017 seconds.
+✔ Test unknownTaxIDsAreIgnored() passed after 0.017 seconds.
+✔ Test noCurrency() passed after 0.017 seconds.
+✔ Test includedTaxSplitBetweenTwoTaxes() passed after 0.017 seconds.
+✔ Test parsesCountryCodes(code:region:) with 9 test cases passed after 0.017 seconds.
+✔ Test paperSizes() passed after 0.017 seconds.
+✔ Test documentTitles() passed after 0.017 seconds.
+✔ Test onTotalIgnoresLineTaxes() passed after 0.017 seconds.
+✔ Test unknownCountryHasNoPresetAndResolvesToUK() passed after 0.017 seconds.
+✔ Test zeroRateTaxShowsOnlyWhenItAppliedToSomething() passed after 0.017 seconds.
+✔ Test ukTaxIncluded237() passed after 0.017 seconds.
+✔ Test canadaGstPlusPst89_60() passed after 0.017 seconds.
+✔ Test versionIsSet() passed after 0.017 seconds.
+✔ Test plainRows() passed after 0.018 seconds.
+✔ Test eachTaxIsSummedThenRoundedOnce() passed after 0.018 seconds.
+✔ Test formulaInjectionIsDefused(raw:expected:) with 7 test cases passed after 0.018 seconds.
+✔ Test formulaWithCommaIsDefusedAndQuoted() passed after 0.018 seconds.
+✔ Test escaping(raw:expected:) with 8 test cases passed after 0.018 seconds.
+✔ Test ukTaxAdded273() passed after 0.018 seconds.
+✔ Test isZero() passed after 0.018 seconds.
+✔ Test amountDiscountIsCappedAtBase() passed after 0.018 seconds.
+✔ Test noneAndNegativeValuesGiveZero() passed after 0.018 seconds.
+✔ Test percentDiscount() passed after 0.018 seconds.
+✔ Test enumsCoverAllCases() passed after 0.018 seconds.
+✔ Test labels() passed after 0.018 seconds.
+✔ Test codableRoundTrip() passed after 0.018 seconds.
+✔ Test dueTodayIsNotOverdueEvenLateInTheDay() passed after 0.018 seconds.
+✔ Test percentOverHundredIsCapped() passed after 0.018 seconds.
+✔ Test daysOverdue() passed after 0.018 seconds.
+✔ Test onlySentInvoicesGoOverdue() passed after 0.018 seconds.
+✔ Test moneySummary() passed after 0.018 seconds.
+✔ Test allStatusesHaveDisplayEquivalents() passed after 0.018 seconds.
+✔ Test defaultsStartAtOne() passed after 0.018 seconds.
+✔ Test codableRoundTrip() passed after 0.019 seconds.
+✔ Test sentInvoicePastDueIsOverdue() passed after 0.019 seconds.
+✔ Test customPrefixPaddingAndOverflow() passed after 0.019 seconds.
+✔ Test continuesFromStoredCounter() passed after 0.017 seconds.
+✔ Suite RoundingTests passed after 0.021 seconds.
+✔ Suite LineItemTests passed after 0.021 seconds.
+✔ Suite CalculatorTests passed after 0.021 seconds.
+✔ Suite MoneyFormatTests passed after 0.021 seconds.
+✔ Suite RegionTests passed after 0.021 seconds.
+✔ Suite InvoiceKitTests passed after 0.021 seconds.
+✔ Suite MockupCases passed after 0.021 seconds.
+✔ Suite DiscountTests passed after 0.021 seconds.
+✔ Suite TaxRateTests passed after 0.021 seconds.
+✔ Suite NumberingTests passed after 0.021 seconds.
+✔ Test amountsAndDates() passed after 0.020 seconds.
+✔ Suite CSVTests passed after 0.021 seconds.
+✔ Test defaultCalendarOverloads() passed after 0.020 seconds.
+✔ Suite StatusTests passed after 0.022 seconds.
+✔ Test run with 56 tests in 12 suites passed after 0.023 seconds.
