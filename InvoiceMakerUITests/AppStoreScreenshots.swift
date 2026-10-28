@@ -23,21 +23,21 @@ final class AppStoreScreenshots: XCTestCase {
         shot("01-list")
 
         // 2–3. A finished invoice, then its PDF with the template strip.
-        open("INV-0007")
+        open(lang.invoice(7))
         shot("02-editor")
         tapPreview()
         shot("03-templates")
 
         // 4. Paid invoice: banner, then the PDF.
         launch(hideSidebar: true)
-        open("INV-0009")
+        open(lang.invoice(9))
         shot("04-paid-editor")
         tapPreview()
         shot("05-paid-pdf")
 
         // 5. Send: the share sheet over the PDF.
         launch(hideSidebar: true)
-        open("INV-0007")
+        open(lang.invoice(7))
         app.buttons["send"].firstMatch.tap()
         sleep(3)
         shot("06-share")
@@ -60,14 +60,14 @@ final class AppStoreScreenshots: XCTestCase {
 
         // 8. Clients.
         launch()
-        goTo("Clients")
+        goTo(lang.clients)
         sleep(1)
         shot("11-clients")
 
         // 9. Invoice look (templates and colours) in Settings.
         launch()
-        goTo("Settings")
-        let look = app.staticTexts["Invoice look"].firstMatch
+        goTo(lang.settings)
+        let look = app.staticTexts[lang.invoiceLook].firstMatch
         if look.waitForExistence(timeout: 5) { look.tap() }
         sleep(1)
         shot("12-invoice-look")
@@ -75,25 +75,76 @@ final class AppStoreScreenshots: XCTestCase {
 
     // MARK: Helpers
 
+    /// SCREENSHOT_REGION: US (default, $ and estimates), UK (£ and quotes),
+    /// AU (A$, GST, quotes), CA (C$, HST, estimates), DE or FR (euros, German or French app text).
+    struct Language {
+        let demoRegion: String
+        let languages: String
+        let locale: String
+        let firstClient: String
+        let invoicePrefix: String
+        let clients: String
+        let settings: String
+        let invoiceLook: String
+        let preview: String
+        let sidebarWords: [String]
+
+        func invoice(_ n: Int) -> String { invoicePrefix + String(format: "%04d", n) }
+
+        static var current: Language {
+            switch (ProcessInfo.processInfo.environment["SCREENSHOT_REGION"] ?? "US").uppercased() {
+            case "UK":
+                Language(
+                    demoRegion: "GB", languages: "(en-GB)", locale: "en_GB", firstClient: "Marlow & Finch Architects",
+                    invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
+                    preview: "Preview", sidebarWords: ["sidebar"])
+            case "AU":
+                Language(
+                    demoRegion: "AU", languages: "(en-AU)", locale: "en_AU", firstClient: "Harbourside Café Pty Ltd",
+                    invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
+                    preview: "Preview", sidebarWords: ["sidebar"])
+            case "CA":
+                Language(
+                    demoRegion: "CA", languages: "(en-CA)", locale: "en_CA", firstClient: "Maple Ridge Builders",
+                    invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
+                    preview: "Preview", sidebarWords: ["sidebar"])
+            case "DE":
+                Language(
+                    demoRegion: "DE", languages: "(de)", locale: "de_DE", firstClient: "Lindenhof Gartenbau GmbH",
+                    invoicePrefix: "RE-", clients: "Kunden", settings: "Einstellungen", invoiceLook: "Rechnungsdesign",
+                    preview: "Vorschau", sidebarWords: ["Seitenleiste", "sidebar"])
+            case "FR":
+                Language(
+                    demoRegion: "FR", languages: "(fr)", locale: "fr_FR", firstClient: "Boulangerie des Tilleuls SARL",
+                    invoicePrefix: "FAC-", clients: "Clients", settings: "Réglages", invoiceLook: "Apparence des factures",
+                    preview: "Aperçu", sidebarWords: ["barre latérale", "sidebar"])
+            default:
+                Language(
+                    demoRegion: "US", languages: "(en-US)", locale: "en_US", firstClient: "Oakridge Landscaping",
+                    invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
+                    preview: "Preview", sidebarWords: ["sidebar"])
+            }
+        }
+    }
+
+    private let lang = Language.current
+
     @MainActor
     private func launch(hideSidebar: Bool = false) {
         app?.terminate()
         app = XCUIApplication()
-        // SCREENSHOT_REGION: US (default, $ and estimates) or UK (£ and quotes).
-        let us = (ProcessInfo.processInfo.environment["SCREENSHOT_REGION"] ?? "US").uppercased() != "UK"
         app.launchArguments = [
             "-uiTesting", "-skipOnboarding", "-demoData", "-premium", hideSidebar ? "-hideSidebar" : "-showSidebar",
-            "-demoRegion", us ? "US" : "GB",
-            "-AppleLanguages", us ? "(en-US)" : "(en-GB)", "-AppleLocale", us ? "en_US" : "en_GB",
+            "-demoRegion", lang.demoRegion, "-AppleLanguages", lang.languages, "-AppleLocale", lang.locale,
         ]
         app.launch()
-        let client = us ? "Oakridge Landscaping" : "Marlow & Finch Architects"
-        XCTAssertTrue(app.staticTexts[client].firstMatch.waitForExistence(timeout: 20))
+        XCTAssertTrue(app.staticTexts[lang.firstClient].firstMatch.waitForExistence(timeout: 20))
         sleep(1)
         // iPad: hide the sidebar so the list and the document get the room.
         if hideSidebar {
-            let toggle = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'sidebar'")).firstMatch
-            if toggle.exists, app.staticTexts["Settings"].firstMatch.isHittable {
+            let words = lang.sidebarWords.map { "label CONTAINS[c] '\($0)'" }.joined(separator: " OR ")
+            let toggle = app.buttons.matching(NSPredicate(format: words)).firstMatch
+            if toggle.exists, app.staticTexts[lang.settings].firstMatch.isHittable {
                 toggle.tap()
                 sleep(1)
             }
@@ -133,7 +184,7 @@ final class AppStoreScreenshots: XCTestCase {
 
     @MainActor
     private func tapPreview() {
-        let preview = app.buttons["Preview"].firstMatch
+        let preview = app.buttons[lang.preview].firstMatch
         if preview.waitForExistence(timeout: 5) { preview.tap() }
         sleep(3)
     }

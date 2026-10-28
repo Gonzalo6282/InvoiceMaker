@@ -37,6 +37,8 @@ struct RegionTests {
     @Test func documentTitles() {
         #expect(Region.uk.title(for: .estimate, taxRegistered: true) == "Quote")
         #expect(Region.us.title(for: .estimate, taxRegistered: false) == "Estimate")
+        #expect(Region.au.title(for: .estimate, taxRegistered: false) == "Quote")
+        #expect(Region.ca.title(for: .estimate, taxRegistered: false) == "Estimate")
         #expect(Region.au.title(for: .invoice, taxRegistered: true) == "Tax invoice")
         #expect(Region.au.title(for: .invoice, taxRegistered: false) == "Invoice")
         #expect(Region.uk.title(for: .invoice, taxRegistered: true) == "Invoice")

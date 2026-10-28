@@ -10,7 +10,7 @@ on:
         description: Simulator name
         default: iPhone 17 Pro Max
       region:
-        description: US ($, estimates) or UK (£, quotes)
+        description: US, UK, AU, CA (or DE, FR on the v1.1 branch)
         default: US
 
 permissions:
