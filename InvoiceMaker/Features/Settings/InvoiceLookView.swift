@@ -5,6 +5,7 @@ import SwiftUI
 struct InvoiceLookView: View {
     @Bindable var business: Business
     @State private var purchases = PurchaseManager.shared
+    @AppStorage(MadeWithDuly.key) private var madeWithOn = true
     private var isPremium: Bool { purchases.isPremium }
 
     var body: some View {
@@ -50,6 +51,22 @@ struct InvoiceLookView: View {
                     .font(.caption).foregroundStyle(Color.ink2).padding(.horizontal, 16).padding(.top, 10)
                 header("Logo")
                 LogoPickerRow(business: business).padding(.horizontal, 16)
+                header("Footer")
+                Toggle(isOn: Binding(get: { madeWithOn }, set: { on in
+                    madeWithOn = on
+                    AppAnalytics.shared.log(.madeWithChanged, ["on": on ? "true" : "false"])
+                })) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Show \"Made with Duly\" on PDFs").font(.callout).foregroundStyle(Color.ink)
+                        Text("A small line at the bottom of the page. Thanks for helping others find Duly.")
+                            .font(.footnote).foregroundStyle(Color.ink2)
+                    }
+                }
+                .padding(.horizontal, 14).padding(.vertical, 10)
+                .background(Color.surface, in: RoundedRectangle(cornerRadius: 14))
+                .overlay(RoundedRectangle(cornerRadius: 14).strokeBorder(Color.line, lineWidth: 1))
+                .padding(.horizontal, 16)
+                .accessibilityIdentifier("madeWithDuly")
             }
             .padding(.bottom, 24)
         }

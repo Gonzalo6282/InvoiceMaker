@@ -75,7 +75,10 @@ final class SendFlow {
             return false
         } else {
             DocumentActions(context: context).markSent(doc)
-            AppAnalytics.shared.log(.invoiceSent, ["method": activity?.rawValue ?? "unknown", "document_type": doc.kind.rawValue])
+            AppAnalytics.shared.log(.invoiceSent, [
+                "method": activity?.rawValue ?? "unknown", "document_type": doc.kind.rawValue,
+                "made_with": MadeWithDuly.isOn() ? "on" : "off",
+            ])
             return true
         }
     }

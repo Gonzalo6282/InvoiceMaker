@@ -365,6 +365,17 @@ private struct PageLayout {
 
         if model.paidStamp { drawPaidStamp() }
         drawFooter(height: footerH)
+        drawMadeWith()
+    }
+
+    /// Small grey line in the bottom margin of the last page, linking to the App Store.
+    private func drawMadeWith() {
+        guard let text = model.madeWith else { return }
+        let f = UIFont.systemFont(ofSize: 1.45 * u, weight: .medium)
+        let size = (text as NSString).size(withAttributes: [.font: f])
+        let rect = CGRect(x: left + (width - size.width) / 2, y: bounds.height - 3.3 * u, width: size.width, height: size.height)
+        drawText(text, font: f, color: label, rect: rect, align: .center)
+        context.setURL(MadeWithDuly.url, for: rect.insetBy(dx: -1 * u, dy: -0.5 * u))
     }
 
     private var qrSize: CGFloat { 14 * u }

@@ -70,6 +70,26 @@ struct PDFModelBuilderTests {
         #expect(m.photos.count == 7)
         #expect(PDFPageImage.pageCount(of: PDFRenderer(model: m).render()) == 3)  // invoice, 6 photos, 1 photo
         #expect(PDFPageImage.pageCount(of: PDFRenderer(model: try build(mockupInvoice())).render()) == 1)
+    @Test func madeWithDulyIsOnByDefaultAndCanBeTurnedOff() throws {
+        let defaults = try #require(UserDefaults(suiteName: "madewith-\(UUID().uuidString)"))
+        #expect(MadeWithDuly.isOn(defaults))
+        defaults.set(false, forKey: MadeWithDuly.key)
+        #expect(!MadeWithDuly.isOn(defaults))
+        let doc = mockupInvoice()
+        let on = InvoicePDFModelBuilder(showsMadeWith: true, today: today, calendar: calendar)
+            .build(document: doc, business: business, taxes: try BusinessSetup.taxes(in: context))
+        #expect(on.madeWith == "Made with Duly")
+        let off = InvoicePDFModelBuilder(showsMadeWith: false, today: today, calendar: calendar)
+            .build(document: doc, business: business, taxes: try BusinessSetup.taxes(in: context))
+        #expect(off.madeWith == nil)
+        // The line sits in the bottom margin: it never adds a page, on any template or paper size.
+        for template in InvoiceTemplate.allCases {
+            var model = on
+            model.template = template
+            #expect(PDFPageImage.pageCount(of: PDFRenderer(model: model).render()) == 1, "\(template)")
+            model.paper = .letter
+            #expect(PDFPageImage.pageCount(of: PDFRenderer(model: model).render()) == 1, "\(template) letter")
+        }
     }
 
     @Test func invoiceContent() throws {

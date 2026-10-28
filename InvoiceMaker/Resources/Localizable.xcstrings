@@ -353,6 +353,22 @@
         }
       }
     },
+    "A small line at the bottom of the page. Thanks for helping others find Duly." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eine kleine Zeile unten auf der Seite. Danke, dass Sie anderen helfen, Duly zu finden."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une petite ligne en bas de page. Merci d'aider d'autres personnes à découvrir Duly."
+          }
+        }
+      }
+    },
     "ABN" : {
       "localizations" : {
         "de" : {
@@ -2731,6 +2747,22 @@
         }
       }
     },
+    "Footer" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fußzeile"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pied de page"
+          }
+        }
+      }
+    },
     "For" : {
       "localizations" : {
         "de" : {
@@ -3832,6 +3864,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "C'est parfait"
+          }
+        }
+      }
+    },
+    "Made with Duly" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Erstellt mit Duly"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créé avec Duly"
           }
         }
       }
@@ -6648,6 +6696,22 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Livraison"
+          }
+        }
+      }
+    },
+    "Show \"Made with Duly\" on PDFs" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "„Erstellt mit Duly“ auf PDFs zeigen"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher « Créé avec Duly » sur les PDF"
           }
         }
       }
