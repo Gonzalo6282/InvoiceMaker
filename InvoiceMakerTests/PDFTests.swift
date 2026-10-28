@@ -70,6 +70,8 @@ struct PDFModelBuilderTests {
         #expect(m.photos.count == 7)
         #expect(PDFPageImage.pageCount(of: PDFRenderer(model: m).render()) == 3)  // invoice, 6 photos, 1 photo
         #expect(PDFPageImage.pageCount(of: PDFRenderer(model: try build(mockupInvoice())).render()) == 1)
+    }
+
     @Test func madeWithDulyIsOnByDefaultAndCanBeTurnedOff() throws {
         let defaults = try #require(UserDefaults(suiteName: "madewith-\(UUID().uuidString)"))
         #expect(MadeWithDuly.isOn(defaults))
