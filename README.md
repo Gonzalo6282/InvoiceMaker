@@ -1,1 +1,1 @@
-App Store screens from 6287a4e70af174f216fec00d19f37f4064ed8488
+App Store screens from 8c196f41f6904248c75cc00122034a3a6b1689d1
