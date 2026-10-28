@@ -95,6 +95,9 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] Rating prompt: also ask on the first invoice marked paid (≥30 days after the first ask) and at the 10th sent (≥90 days later); never after an error or paywall, max once per version
 - [ ] Paywall price layout (Superwall): revisit the yearly card; details in the private docs repo (`HANDOFF.md`, "After launch")
 - [ ] Screen 2 of the App Store screenshots: licensed full-size photo (US + UK, iPhone + iPad)
+- [x] "Made with Duly" line on PDFs (on by default; Settings > Invoice look > Footer to turn off)
+- [x] Share Duly events renamed to share_app_tap, plus share_app_completed (Build Doc, 27 Oct)
+- [ ] Help guide: add "How do I remove Made with Duly?" once the build with it is live
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
