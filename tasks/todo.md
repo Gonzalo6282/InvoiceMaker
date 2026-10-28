@@ -98,6 +98,8 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [x] "Made with Duly" line on PDFs (on by default; Settings > Invoice look > Footer to turn off)
 - [x] Share Duly events renamed to share_app_tap, plus share_app_completed (Build Doc, 27 Oct)
 - [ ] Help guide: add "How do I remove Made with Duly?" once the build with it is live
+- [ ] App Store Connect with v1.0.1: add Spanish (Mexico), English (Australia) and English (Canada) pages (text in the private docs repo, `listing/`; screenshots ready 28 Oct). Ireland uses the U.K. page; New Zealand uses the Australian one
+- [x] Australia calls estimates "Quotes" (like the UK)
 - [ ] Rating badge on screenshot 1 once the app has ratings
 - [ ] After ~30 days: listing and paywall checks (private docs repo, `HANDOFF.md`, "After launch")
 
