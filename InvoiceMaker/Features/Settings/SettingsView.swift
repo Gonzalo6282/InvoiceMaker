@@ -19,6 +19,7 @@ struct SettingsView: View {
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @AppStorage(AppPreferences.analyticsKey) private var analyticsOn = false
     @State private var askingAnalytics = false
+    @State private var sharingApp = false
     @Environment(\.openURL) private var openURL
 
     /// Turning analytics on asks first; turning it off doesn't.
@@ -67,11 +68,13 @@ struct SettingsView: View {
                     .buttonStyle(.plain)
                     .accessibilityIdentifier("rateApp")
                     RowDivider()
-                    ShareLink(item: ShareDuly.message) {
+                    Button {
+                        AppAnalytics.shared.log(.shareAppTapped)
+                        sharingApp = true
+                    } label: {
                         Row(icon: "square.and.arrow.up", iconTint: .brand, title: "Share Duly", meta: String(localized: "Tell a friend about the app"))
                     }
                     .buttonStyle(.plain)
-                    .simultaneousGesture(TapGesture().onEnded { AppAnalytics.shared.log(.shareAppTapped) })
                     .accessibilityIdentifier("shareApp")
                 }
                 GroupedSection(header: "Privacy and legal", footer: "Tax rates are set by you. This app doesn't give tax advice.") {
@@ -102,6 +105,13 @@ struct SettingsView: View {
         .background(Color.canvas)
         .navigationTitle("Settings")
         .navigationDestination(for: SettingsPage.self) { page in destination(page) }
+        .sheet(isPresented: $sharingApp) {
+            // The share sheet reports whether a share actually went out.
+            ShareSheet(items: [ShareDuly.message]) { completed, activity in
+                if completed { AppAnalytics.shared.log(.shareAppCompleted, ["method": activity?.rawValue ?? "unknown"]) }
+            }
+            .ignoresSafeArea()
+        }
         .onChange(of: analyticsOn) { AppAnalytics.shared.setConsent(analyticsOn) }
         .alert(AnalyticsConsentText.title, isPresented: $askingAnalytics) {
             Button(AnalyticsConsentText.allow) { analyticsOn = true }

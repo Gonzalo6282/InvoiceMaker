@@ -68,6 +68,8 @@ struct InvoicePDFModel: Sendable {
     var signatures: [Signature]
     var paidStamp: Bool
     var watermark: Bool
+    /// "Made with Duly" at the bottom of the last page (nil when turned off).
+    var madeWith: String?
 
     /// Column headings.
     var headings: (description: String, quantity: String, rate: String, tax: String, amount: String) {

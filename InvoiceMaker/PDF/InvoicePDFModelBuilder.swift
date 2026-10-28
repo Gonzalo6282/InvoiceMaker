@@ -8,6 +8,8 @@ struct InvoicePDFModelBuilder {
     var accentOverride: String?
     /// "PREVIEW" across the page (non-Premium users previewing a Premium template).
     var watermark = false
+    /// The "Made with Duly" line (Settings > Invoice look).
+    var showsMadeWith = MadeWithDuly.isOn()
     var today: Date = .now
     var calendar: Calendar = .current
 
@@ -65,7 +67,8 @@ struct InvoicePDFModelBuilder {
             notes: doc.notes,
             signatures: signatures(doc, business: business, locale: locale),
             paidStamp: kind == .receipt || (kind == .invoice && doc.status == .paid),
-            watermark: watermark)
+            watermark: watermark,
+            madeWith: showsMadeWith ? MadeWithDuly.text : nil)
     }
 
     // MARK: Blocks

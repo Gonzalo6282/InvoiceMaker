@@ -52,7 +52,7 @@ struct ServicesTests {
     @Test func eventNamesMatchTheBuildDoc() {
         #expect(AnalyticsEvent.allCases.map(\.rawValue) == [
             "onboarding_step", "onboarding_complete", "invoice_created", "estimate_created", "paywall_view",
-            "invoice_sent", "pdf_exported", "share_app_tapped",
+            "invoice_sent", "pdf_exported", "share_app_tap", "share_app_completed", "made_with_duly_changed",
         ])
     }
 
