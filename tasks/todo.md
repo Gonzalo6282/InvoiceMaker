@@ -113,6 +113,10 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 - [ ] Decide: recurring invoices and reports in today's Premium, or the later higher tier (spec: "Premium Level 1")
 - [ ] Superwall: add the placements `recurring_invoice` and `reports` to the campaign (until then the app's own paywall shows)
 - [ ] Native speakers check the German and French app text and listings
+- [ ] French (and later German) Terms of Use and Privacy Policy, in the app and on the website (draft by Claude, then a native speaker; legal wording ideally checked by a lawyer)
+- [x] Privacy Policy and Terms updated for v1.1 (job photos, on-device reminders, Apple Maps address suggestions; recurring drafts never sent automatically). App Store privacy label: no change (photos and reminders stay on the device and in the user's iCloud; address searches go to Apple, not to us)
+- [ ] Rebuild the website legal pages from these texts when v1.1 ships (`python3 website/build.py`)
+- [ ] Ship v1.1 with English and French only; keep German switched off until French works (Build Doc, 27 Oct)
 - [ ] Run a Debug build on your iPhone once, then CloudKit Console > Deploy Schema Changes to Production (new fields: recurring, job photos)
 - [ ] Test on device: recurring copy appears, reminders arrive, photos in the PDF, address suggestions, German and French
 
