@@ -106,7 +106,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$lld factures · %2$@ impayés"
+            "value" : "%1$lld factures · %2$@ à encaisser"
           }
         }
       }
@@ -448,7 +448,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajoutée"
+            "value" : "Ajouté"
           }
         }
       }
@@ -2178,7 +2178,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Date"
+            "value" : "Date d'émission"
           }
         }
       }
@@ -2198,7 +2198,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ligne"
+            "value" : "Article"
           }
         }
       }
@@ -2208,7 +2208,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lignes"
+            "value" : "Articles"
           }
         }
       }
@@ -2704,7 +2704,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prochaine %1$@ · échéance %2$lld jours"
+            "value" : "Prochaine le %1$@ · échéance sous %2$lld jours"
           }
         }
       }
@@ -2834,7 +2834,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aucune"
+            "value" : "Aucun"
           }
         }
       }
@@ -2986,7 +2986,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Désactivée"
+            "value" : "Désactivé"
           }
         }
       }
@@ -2996,7 +2996,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Activée"
+            "value" : "Activé"
           }
         }
       }
@@ -3126,7 +3126,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "On vous doit"
+            "value" : "À encaisser"
           }
         }
       }
@@ -3386,7 +3386,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Plus %@ dus dans d'autres devises"
+            "value" : "Plus %@ à encaisser dans d'autres devises"
           }
         }
       }
@@ -4073,7 +4073,7 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Envoyez des factures qui se font payer"
+            "value" : "Envoyez vos factures, soyez payé"
           }
         }
       }
