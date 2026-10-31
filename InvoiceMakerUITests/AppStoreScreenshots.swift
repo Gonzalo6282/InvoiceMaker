@@ -64,6 +64,20 @@ final class AppStoreScreenshots: XCTestCase {
         sleep(1)
         shot("11-clients")
 
+        // 10. Job photos (v1.1): the photo strip on the invoice, then the photo page of the PDF.
+        launch(hideSidebar: true)
+        open(lang.invoice(7))
+        let addPhotos = app.descendants(matching: .any)["addPhotos"].firstMatch
+        for _ in 0..<8 where !(addPhotos.exists && addPhotos.isHittable) {
+            app.swipeUp(velocity: .slow)
+        }
+        sleep(1)
+        shot("13-photos-editor")
+        tapPreview()
+        for _ in 0..<4 { app.swipeUp() }
+        sleep(2)
+        shot("14-photos-pdf")
+
         // 9. Invoice look (templates and colours) in Settings.
         launch()
         goTo(lang.settings)
@@ -133,6 +147,9 @@ final class AppStoreScreenshots: XCTestCase {
     private func launch(hideSidebar: Bool = false) {
         app?.terminate()
         app = XCUIApplication()
+        // Demo job photos for invoice 0007 (read by DemoData in Debug builds; the simulator shares the Mac's disk).
+        app.launchEnvironment["DEMO_PHOTOS_DIR"] = URL(fileURLWithPath: #filePath)
+            .deletingLastPathComponent().appendingPathComponent("DemoPhotos").path
         app.launchArguments = [
             "-uiTesting", "-skipOnboarding", "-demoData", "-premium", hideSidebar ? "-hideSidebar" : "-showSidebar",
             "-demoRegion", lang.demoRegion, "-AppleLanguages", lang.languages, "-AppleLocale", lang.locale,

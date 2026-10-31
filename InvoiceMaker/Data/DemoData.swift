@@ -21,6 +21,33 @@
         /// receipt for the App Store screenshots (UI test, `-demoData`).
         /// `region: .us` seeds a US electrician ($, sales tax, estimates) for the US App Store set.
         static func seed(_ context: ModelContext, today: Date = .now, screenshots: Bool = false, region: Region = .uk) {
+            seedRegion(context, today: today, screenshots: screenshots, region: region)
+            if screenshots { attachDemoPhotos(context, region: region) }
+        }
+
+        /// Job photos on the first finished invoice (INV-0007 / RE-0007 / FAC-0007) for the
+        /// App Store screenshots. The JPEGs come from the folder in DEMO_PHOTOS_DIR
+        /// (set by the AppStoreScreenshots UI test): `<region>-*.jpg`, e.g. `uk-1.jpg`.
+        static func attachDemoPhotos(_ context: ModelContext, region: Region) {
+            guard let path = ProcessInfo.processInfo.environment["DEMO_PHOTOS_DIR"], !path.isEmpty else { return }
+            let dir = URL(fileURLWithPath: path)
+            let prefix = region.rawValue.lowercased() + "-"
+            let files = ((try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: nil)) ?? [])
+                .filter { $0.lastPathComponent.lowercased().hasPrefix(prefix) && $0.pathExtension.lowercased() == "jpg" }
+                .sorted { $0.lastPathComponent < $1.lastPathComponent }
+            guard !files.isEmpty,
+                let invoice = ((try? context.fetch(FetchDescriptor<Document>())) ?? [])
+                    .first(where: { $0.kindRaw == DocumentKind.invoice.rawValue && $0.number.hasSuffix("0007") })
+            else { return }
+            for (position, file) in files.prefix(4).enumerated() {
+                guard let data = try? Data(contentsOf: file), let jpeg = JobPhotoImage.prepare(data) else { continue }
+                let photo = JobPhoto(position: position, imageData: jpeg)
+                context.insert(photo)
+                photo.document = invoice
+            }
+        }
+
+        private static func seedRegion(_ context: ModelContext, today: Date, screenshots: Bool, region: Region) {
             if region == .us {
                 seedUS(context, today: today, screenshots: screenshots)
                 return

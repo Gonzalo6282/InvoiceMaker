@@ -34,6 +34,14 @@ jobs:
           key: spm-${{ hashFiles('InvoiceMaker.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved', 'InvoiceMaker.xcodeproj/project.pbxproj') }}
           restore-keys: spm-
 
+      - name: Demo job photos
+        run: |
+          cd InvoiceMakerUITests/DemoPhotos
+          grep -v '^#' photos.txt | while read -r file url page; do
+            [ -n "$file" ] && curl -fsSL -o "$file" "$url" || echo "::warning::Could not download $file"
+          done
+          ls -la
+
       - name: Capture
         env:
           DEVICE: ${{ inputs.device }}
