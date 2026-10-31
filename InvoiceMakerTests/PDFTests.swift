@@ -1,5 +1,6 @@
 import Foundation
 import InvoiceKit
+import PDFKit
 import SwiftData
 import Testing
 import UIKit
@@ -92,6 +93,24 @@ struct PDFModelBuilderTests {
             model.paper = .letter
             #expect(PDFPageImage.pageCount(of: PDFRenderer(model: model).render()) == 1, "\(template) letter")
         }
+    }
+
+    /// Regression (INV-0012): the "Made with Duly" link must sit over the line
+    /// at the bottom of the page, not mirrored to the top.
+    @Test func madeWithDulyLinkSitsAtTheBottomOfThePage() throws {
+        let model = InvoicePDFModelBuilder(showsMadeWith: true, today: today, calendar: calendar)
+            .build(document: mockupInvoice(), business: business, taxes: try BusinessSetup.taxes(in: context))
+        let data = PDFRenderer(model: model).render()
+        let pdf = try #require(PDFDocument(data: data))
+        let page = try #require(pdf.page(at: 0))
+        let links = page.annotations.filter { $0.url == MadeWithDuly.url }
+        #expect(links.count == 1)
+        let box = try #require(links.first).bounds
+        // PDF space has its origin at the bottom-left: the line is in the bottom 40 pt.
+        #expect(box.minY >= 0)
+        #expect(box.maxY < 40)
+        #expect(box.midX > page.bounds(for: .mediaBox).width * 0.3)
+        #expect(box.midX < page.bounds(for: .mediaBox).width * 0.7)
     }
 
     @Test func invoiceContent() throws {

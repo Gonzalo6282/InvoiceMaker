@@ -375,7 +375,16 @@ private struct PageLayout {
         let size = (text as NSString).size(withAttributes: [.font: f])
         let rect = CGRect(x: left + (width - size.width) / 2, y: bounds.height - 3.3 * u, width: size.width, height: size.height)
         drawText(text, font: f, color: label, rect: rect, align: .center)
-        context.setURL(MadeWithDuly.url, for: rect.insetBy(dx: -1 * u, dy: -0.5 * u))
+        link(MadeWithDuly.url, rect.insetBy(dx: -1 * u, dy: -0.5 * u))
+    }
+
+    /// Makes `rect` (UIKit coordinates, top-left origin) tappable in the PDF.
+    /// The link rectangle must be in PDF page space (bottom-left origin):
+    /// passing the UIKit rect straight to `context.setURL` put every link
+    /// upside down, at the top of the page (bug found on INV-0012, 1.0.1).
+    private func link(_ url: URL, _ rect: CGRect) {
+        let flipped = CGRect(x: rect.minX, y: bounds.height - rect.maxY, width: rect.width, height: rect.height)
+        context.cgContext.setURL(url as CFURL, for: flipped)
     }
 
     private var qrSize: CGFloat { 14 * u }
@@ -440,14 +449,14 @@ private struct PageLayout {
                     let attrs: [NSAttributedString.Key: Any] = [.font: buttonFont, .foregroundColor: UIColor.white]
                     let size = (button.label as NSString).size(withAttributes: attrs)
                     (button.label as NSString).draw(at: CGPoint(x: frame.midX - size.width / 2, y: frame.midY - size.height / 2), withAttributes: attrs)
-                    if let url = button.url { context.setURL(url, for: frame) }
+                    if let url = button.url { link(url, frame) }
                 }
                 fy += buttonRowsHeight(width: w)
             }
             if let payload = model.qrPayload, let qr = QRCode.image(for: payload) {
                 let rect = CGRect(x: right - qrSize, y: bottom - qrSize, width: qrSize, height: qrSize)
                 qr.draw(in: rect)
-                if let url = URL(string: payload) { context.setURL(url, for: rect) }
+                if let url = URL(string: payload) { link(url, rect) }
             }
         }
         if !model.notes.isEmpty {
