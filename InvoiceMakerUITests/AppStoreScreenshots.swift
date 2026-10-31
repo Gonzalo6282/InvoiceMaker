@@ -135,7 +135,7 @@ final class AppStoreScreenshots: XCTestCase {
             case "MX":
                 Language(
                     demoRegion: "MX", languages: "(es-MX)", locale: "es_MX", firstClient: "Constructora del Valle",
-                    invoicePrefix: "FAC-", clients: "Clientes", settings: "Ajustes", invoiceLook: "Diseño de factura",
+                    invoicePrefix: "FAC-", clients: "Clientes", settings: "Configuración", invoiceLook: "Diseño de factura",
                     preview: "Vista previa", sidebarWords: ["barra lateral", "sidebar"])
             default:
                 Language(

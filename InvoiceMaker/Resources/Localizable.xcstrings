@@ -408,7 +408,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**iCloud está desactivado.** Abre la app Ajustes, toca tu nombre, luego iCloud, e inicia sesión. Mientras tanto, tus facturas solo están en este dispositivo."
+            "value" : "**iCloud está desactivado.** Abre la app Configuración, toca tu nombre, luego iCloud, e inicia sesión. Mientras tanto, tus facturas solo están en este dispositivo."
           }
         },
         "fr" : {
@@ -1202,7 +1202,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apple no pudo confirmar que eres tú. En tu iPhone, abre Ajustes > [tu nombre] > Inicio de sesión y seguridad > Iniciar sesión con Apple > Duly y toca Dejar de usar el ID de Apple. Luego vuelve a Duly e inténtalo de nuevo."
+            "value" : "Apple no pudo confirmar que eres tú. En tu iPhone, abre Configuración > [tu nombre] > Inicio de sesión y seguridad > Iniciar sesión con Apple > Duly y toca Dejar de usar el ID de Apple. Luego vuelve a Duly e inténtalo de nuevo."
           }
         },
         "fr" : {
@@ -3322,7 +3322,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Duly necesita acceso a tus contactos para agregar un cliente desde ellos. Puedes permitirlo en Ajustes o escribir los datos del cliente."
+            "value" : "Duly necesita acceso a tus contactos para agregar un cliente desde ellos. Puedes permitirlo en Configuración o escribir los datos del cliente."
           }
         },
         "fr" : {
@@ -3344,7 +3344,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Duly necesita acceso a tus fotos para agregar tu logo a las facturas. Puedes permitirlo en Ajustes."
+            "value" : "Duly necesita acceso a tus fotos para agregar tu logo a las facturas. Puedes permitirlo en Configuración."
           }
         },
         "fr" : {
@@ -6658,7 +6658,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abrir Ajustes"
+            "value" : "Abrir Configuración"
           }
         },
         "fr" : {
@@ -7230,7 +7230,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Los pagos los gestiona Apple. Abre Ajustes, toca tu nombre y luego Suscripciones. Eliminar la app no cancela la suscripción."
+            "value" : "Los pagos los gestiona Apple. Abre Configuración, toca tu nombre y luego Suscripciones. Eliminar la app no cancela la suscripción."
           }
         },
         "fr" : {
@@ -7252,7 +7252,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Los pagos los gestiona Apple. Para cancelar, abre Ajustes, toca tu nombre y luego Suscripciones. Para pedir un reembolso, ve a reportaproblem.apple.com. Eliminar la app no cancela la suscripción. Si tu suscripción termina, conservas todos tus documentos."
+            "value" : "Los pagos los gestiona Apple. Para cancelar, abre Configuración, toca tu nombre y luego Suscripciones. Para pedir un reembolso, ve a reportaproblem.apple.com. Eliminar la app no cancela la suscripción. Si tu suscripción termina, conservas todos tus documentos."
           }
         },
         "fr" : {
@@ -8171,7 +8171,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Se renueva automáticamente salvo que la canceles al menos 24 horas antes del fin del periodo. Adminístrala o cancélala en Ajustes > [tu nombre] > Suscripciones."
+            "value" : "Se renueva automáticamente salvo que la canceles al menos 24 horas antes del fin del periodo. Adminístrala o cancélala en Configuración > [tu nombre] > Suscripciones."
           }
         },
         "fr" : {
@@ -9161,7 +9161,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ajustes"
+            "value" : "Configuración"
           }
         },
         "fr" : {
@@ -9227,7 +9227,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Comparte datos de uso anónimos e informes de fallos para que podamos corregir problemas y mejorar Duly. Tus facturas y los datos de tus clientes nunca se incluyen. Puedes cambiarlo en cualquier momento en Ajustes."
+            "value" : "Comparte datos de uso anónimos e informes de fallos para que podamos corregir problemas y mejorar Duly. Tus facturas y los datos de tus clientes nunca se incluyen. Puedes cambiarlo en cualquier momento en Configuración."
           }
         },
         "fr" : {
@@ -10399,7 +10399,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esto elimina tu inicio de sesión y desvincula tu suscripción. Tus facturas se quedan en este dispositivo y en tu iCloud; elimina la app para borrarlas. Para dejar de pagar, cancela la suscripción en Ajustes > [tu nombre] > Suscripciones."
+            "value" : "Esto elimina tu inicio de sesión y desvincula tu suscripción. Tus facturas se quedan en este dispositivo y en tu iCloud; elimina la app para borrarlas. Para dejar de pagar, cancela la suscripción en Configuración > [tu nombre] > Suscripciones."
           }
         },
         "fr" : {
@@ -10685,7 +10685,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Actívalas en Ajustes del iPhone > Notificaciones > Duly e inténtalo de nuevo."
+            "value" : "Actívalas en Configuración del iPhone > Notificaciones > Duly e inténtalo de nuevo."
           }
         },
         "fr" : {
