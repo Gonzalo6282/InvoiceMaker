@@ -1,7 +1,7 @@
 import Foundation
 
 /// The countries with tax presets (UK, Australia, Canada and the US in 1.0;
-/// Germany and France in 1.1). Any other country falls back to the UK preset
+/// Germany and France in 1.1; Mexico in 1.2). Any other country falls back to the UK preset
 /// (as in the mockup); the user edits it.
 public enum Region: String, CaseIterable, Sendable, Codable {
     case uk
@@ -10,6 +10,7 @@ public enum Region: String, CaseIterable, Sendable, Codable {
     case us
     case de
     case fr
+    case mx
 
     /// Accepts ISO 3166 alpha-2 or alpha-3 codes (`Storefront.countryCode` is
     /// alpha-3), plus "UK". Returns nil for countries without a preset.
@@ -21,6 +22,7 @@ public enum Region: String, CaseIterable, Sendable, Codable {
         case "US", "USA": self = .us
         case "DE", "DEU": self = .de
         case "FR", "FRA": self = .fr
+        case "MX", "MEX": self = .mx
         default: return nil
         }
     }
@@ -74,6 +76,15 @@ public enum Region: String, CaseIterable, Sendable, Codable {
                     TaxRate(id: "fr-tva10", name: "TVA", rate: 10),
                     TaxRate(id: "fr-tva55", name: "TVA", rate: Decimal(string: "5.5")!),
                     TaxRate(id: "fr-tva0", name: "TVA", rate: 0),
+                ])
+        case .mx:
+            // IVA 16% general, 8% in the northern and southern border zones, 0% (food, exports).
+            RegionPreset(
+                currencyCode: "MXN", localeIdentifier: "es_MX", taxIDLabel: "RFC",
+                taxes: [
+                    TaxRate(id: "mx-iva16", name: "IVA", rate: 16),
+                    TaxRate(id: "mx-iva8", name: "IVA", rate: 8),
+                    TaxRate(id: "mx-iva0", name: "IVA", rate: 0),
                 ])
         }
     }

@@ -22,7 +22,7 @@ SETS = {
     "uk": ("UK", "Job Photos", {"Photos"}, "Show the finished work on every invoice"),
     "au": ("AU", "Job Photos", {"Photos"}, "Show the finished work on every invoice"),
     "ca": ("CA", "Job Photos", {"Photos"}, "Show the finished work on every invoice"),
-    "es": ("US", "Fotos de la obra", {"obra"}, "Muestra el trabajo terminado en cada factura"),
+    "es": ("MX", "Fotos de la obra", {"obra"}, "Muestra el trabajo terminado en cada factura"),
     "fr": ("FR", "Photos du chantier", {"chantier"}, "Montrez le travail fini sur chaque facture"),
     "de": ("DE", "Fotos vom Auftrag", {"Fotos"}, "Zeigen Sie die fertige Arbeit auf jeder Rechnung"),
 }

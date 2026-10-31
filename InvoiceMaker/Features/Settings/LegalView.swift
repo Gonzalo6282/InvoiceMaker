@@ -13,14 +13,14 @@ nonisolated enum LegalDocument: String, Hashable, Sendable {
         }
     }
 
-    /// The bundled text, split into blocks. French or German when the app runs
-    /// in that language (`privacy.fr.txt`, `privacy.de.txt`), otherwise the
+    /// The bundled text, split into blocks. French, German or Spanish when the app
+    /// runs in that language (`privacy.fr.txt`, `.de`, `.es`), otherwise the
     /// English original (which is the binding version).
     var blocks: [LegalBlock] { blocks(language: Bundle.main.preferredLocalizations.first ?? "en") }
 
     func blocks(language: String) -> [LegalBlock] {
         let code = String(language.prefix(2))
-        let names = ["fr", "de"].contains(code) ? ["\(rawValue).\(code)", rawValue] : [rawValue]
+        let names = ["fr", "de", "es"].contains(code) ? ["\(rawValue).\(code)", rawValue] : [rawValue]
         for name in names {
             let url = Bundle.main.url(forResource: name, withExtension: "txt")
                 ?? Bundle.main.url(forResource: name, withExtension: "txt", subdirectory: "Legal")

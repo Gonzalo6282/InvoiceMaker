@@ -26,7 +26,17 @@ struct ServicesTests {
         #expect(headings(terms) == headings(LegalDocument.terms.blocks(language: "en")))
         #expect(headings(privacy) == headings(LegalDocument.privacy.blocks(language: "en")))
         // Other languages get the English original.
-        #expect(LegalDocument.terms.blocks(language: "es").first == .title("Terms of Use"))
+        #expect(LegalDocument.terms.blocks(language: "it").first == .title("Terms of Use"))
+    }
+
+    @Test func spanishLegalTextsShipInTheApp() {
+        let terms = LegalDocument.terms.blocks(language: "es-MX")
+        let privacy = LegalDocument.privacy.blocks(language: "es")
+        #expect(terms.first == .title("Términos de uso"))
+        #expect(privacy.first == .title("Política de privacidad"))
+        let headings = { (b: [LegalBlock]) in b.filter { if case .heading = $0 { true } else { false } }.count }
+        #expect(headings(terms) == headings(LegalDocument.terms.blocks(language: "en")))
+        #expect(headings(privacy) == headings(LegalDocument.privacy.blocks(language: "en")))
     }
 
     @Test func frenchLegalTextsShipInTheApp() {
@@ -109,7 +119,7 @@ struct ServicesTests {
         #expect(AddressCompleter.format(address, homeCountry: "US").hasSuffix("United Kingdom"))
     }
 
-    @Test(arguments: [("fr", "Nouvelle facture", "Devis"), ("de", "Neue Rechnung", "Angebot")])
+    @Test(arguments: [("fr", "Nouvelle facture", "Devis"), ("de", "Neue Rechnung", "Angebot"), ("es", "Nueva factura", "Cotización")])
     func translationsShipInTheApp(language: String, newInvoice: String, quote: String) throws {
         let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: language))
         let table = try #require(NSDictionary(contentsOfFile: path) as? [String: String])
