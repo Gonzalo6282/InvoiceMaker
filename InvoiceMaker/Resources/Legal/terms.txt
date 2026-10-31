@@ -1,6 +1,6 @@
 # Terms of Use
 
-Last updated: 19 October 2026
+Last updated: 29 October 2026
 
 ## Acceptance of Terms
 By downloading, installing or using the Duly: Invoice Maker & Estimate mobile application (the "App"), you agree to these Terms of Use (the "Terms"). If you do not agree, do not use the App.
@@ -11,7 +11,7 @@ These Terms are a binding agreement between you and Slice of Life Ltd, a company
 The App is a business tool for freelancers, sole traders, contractors and small businesses. By using it, you confirm that you are at least 18 years old (or the age of majority where you live) and that you use the App for your trade, business or profession. If you use the App on behalf of a company, you confirm that you are authorised to accept these Terms for it.
 
 ## Description of Service
-Duly lets you create, edit, preview and send invoices, estimates (called quotes in some regions) and receipts. The App may include: client and saved-item lists, named tax rates (for example VAT, GST, PST, HST and sales tax) that you set yourself, discounts, shipping and fees, invoice templates, your business logo and signature, client signatures, payment details, payment links and QR codes printed on your documents, status tracking (draft, sent, paid, overdue), conversion of estimates into invoices, receipts from paid invoices, export of PDFs and CSV data, backup through your own iCloud account, optional Sign in with Apple, and paid Premium features. Features may change, and not all features are available on all devices or in all regions.
+Duly lets you create, edit, preview and send invoices, estimates (called quotes in some regions) and receipts. The App may include: client and saved-item lists, named tax rates (for example VAT, GST, PST, HST and sales tax) that you set yourself, discounts, shipping and fees, invoice templates, your business logo and signature, client signatures, payment details, payment links and QR codes printed on your documents, status tracking (draft, sent, paid, overdue), conversion of estimates into invoices, receipts from paid invoices, recurring invoices, payment reminders on your device, reports, job photos, address suggestions, export of PDFs and CSV data, backup through your own iCloud account, optional Sign in with Apple, and paid Premium features. Features may change, and not all features are available on all devices or in all regions.
 
 ## Free and Premium Features
 Creating, editing and previewing documents, saving clients and items, iCloud backup and exporting your data are free, with no limits. Sending, printing and saving documents as PDF files, premium templates and documents without the "Preview" mark require a Premium subscription. We will tell you clearly in the App which features need Premium before you pay.
@@ -32,6 +32,8 @@ You are solely responsible for the content of the documents you create and send,
 
 The App calculates totals from the prices, quantities, discounts and tax rates that you enter. Tax rates are set by you; the App's suggested rates are a starting point only and may be out of date or not apply to you.
 
+Recurring invoices are prepared as drafts for you to check and send; the App never sends a document by itself. Reminders and notifications are a convenience: they depend on your device settings and may not always arrive, so keep track of your own due dates. Reports add up the documents in the App and are not accounting records.
+
 ## Not Tax, Legal or Accounting Advice
 The App is a document tool. It does not give tax, legal, accounting or financial advice, and it does not check whether your documents meet the legal requirements of your country, such as invoice content, tax registration numbers, numbering rules or e-invoicing obligations. You are responsible for meeting your own tax, invoicing and record-keeping obligations. If you are unsure, ask a qualified accountant or tax adviser.
 
@@ -48,7 +50,7 @@ Your documents are stored on your device and, if iCloud is turned on, in your ow
 You agree not to: use the App unlawfully or to create false, misleading or fraudulent documents; use the App to impersonate another person or business; interfere with or disrupt the App; attempt unauthorised access to our systems; reverse engineer the App except where the law allows; or use the App to infringe the rights of others.
 
 ## Photos, Contacts and Device Features
-If you add a logo, the App asks for permission to access your photos and uses only the image you choose. If you add a client from Contacts, the App asks for permission to access your contacts and uses only the contact you pick. Signatures are drawn on your device. These items stay on your device and in your iCloud unless you choose to send or share a document.
+If you add a logo, the App asks for permission to access your photos and uses only the image you choose. If you add a client from Contacts, the App asks for permission to access your contacts and uses only the contact you pick. Job photos are picked with the iPhone photo picker, which shares only the photos you select. Address suggestions come from Apple Maps. Notifications are scheduled on your device. Signatures are drawn on your device. These items stay on your device and in your iCloud unless you choose to send or share a document.
 
 ## Intellectual Property
 The App, its design, templates and content (excluding your content and third-party materials) are owned by Slice of Life Ltd or its licensors. Duly and its branding are our property. We give you a limited, personal, revocable, non-transferable licence to use the App under these Terms and Apple's Licensed Application End User License Agreement. Your documents, logo and data belong to you.

@@ -12,6 +12,8 @@ enum PaywallPlacement: String, CaseIterable, Sendable {
     case estimateSend = "estimate_send"
     case templatePremium = "template_premium"
     case settingsUpgrade = "settings_upgrade"
+    case recurringInvoice = "recurring_invoice"
+    case reports = "reports"
 
     /// The native paywall's headline for this placement (mockup).
     var headline: String {
@@ -20,6 +22,8 @@ enum PaywallPlacement: String, CaseIterable, Sendable {
         case .estimateSend: String(localized: "Send this estimate")
         case .invoiceExportPDF: String(localized: "Save and print your PDFs")
         case .templatePremium: String(localized: "Unlock every template")
+        case .recurringInvoice: String(localized: "Repeat invoices automatically")
+        case .reports: String(localized: "See what you earn")
         case .onboardingEnd, .settingsUpgrade: String(localized: "Send invoices that get paid")
         }
     }

@@ -14,5 +14,10 @@ nonisolated enum AnalyticsEvent: String, CaseIterable, Sendable {
     case shareAppTapped = "share_app_tap"
     case shareAppCompleted = "share_app_completed"
     case madeWithChanged = "made_with_duly_changed"
+    case recurringSet = "recurring_set"
+    case reportsViewed = "reports_viewed"
+    case reportExported = "report_exported"
+    case remindersChanged = "reminders_changed"
+    case photoAdded = "photo_added"
 }
 

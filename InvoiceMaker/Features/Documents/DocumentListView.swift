@@ -69,7 +69,7 @@ struct DocumentListView: View {
             ToolbarItem(placement: .primaryAction) {
                 Menu {
                     ForEach(DocumentKind.allCases, id: \.self) { k in
-                        Button(String(localized: "New \(business.title(for: k).lowercased())")) { create(k) }
+                        Button(business.newTitle(for: k)) { create(k) }
                     }
                 } label: {
                     Label("New", systemImage: "plus")
@@ -179,7 +179,7 @@ private struct EmptyDocumentsView: View {
                 Button {
                     create(kind)
                 } label: {
-                    Label(String(localized: "New \(business.title(for: kind).lowercased())"), systemImage: "plus")
+                    Label(business.newTitle(for: kind), systemImage: "plus")
                 }
                 .buttonStyle(.primary)
                 .fixedSize()
@@ -194,7 +194,7 @@ private struct EmptyDocumentsView: View {
     private var title: String {
         switch kind {
         case .invoice: String(localized: "Create your first invoice")
-        case .estimate: String(localized: "No \(business.pluralTitle(for: .estimate).lowercased()) yet")
+        case .estimate: business.region == .uk ? String(localized: "No quotes yet") : String(localized: "No estimates yet")
         case .receipt: String(localized: "No receipts yet")
         }
     }

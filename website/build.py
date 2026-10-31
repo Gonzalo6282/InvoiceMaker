@@ -41,7 +41,7 @@ def legal_body(path):
             out.append(f"<h2>{inline(line[3:])}</h2>")
         elif line.startswith("# "):
             title = line[2:]
-        elif line.startswith("Last updated") and not updated:
+        elif line.startswith(("Last updated", "Dernière mise à jour")) and not updated:
             updated = line
         else:
             out.append(f"<p>{inline(line)}</p>")
@@ -50,9 +50,9 @@ def legal_body(path):
     return title, updated, "\n".join(out)
 
 
-def page(title, description, body):
+def page(title, description, body, lang="en"):
     return f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -249,15 +249,17 @@ HELP = f"""<h1>Help guide</h1>
 
 
 def main():
-    for name, src, desc in [
-        ("duly-privacy", "privacy.txt", "How Duly handles your information."),
-        ("duly-terms", "terms.txt", "The terms for using Duly: Invoice Maker & Estimate."),
+    for name, src, desc, lang in [
+        ("duly-privacy", "privacy.txt", "How Duly handles your information.", "en"),
+        ("duly-terms", "terms.txt", "The terms for using Duly: Invoice Maker & Estimate.", "en"),
+        ("duly-privacy-fr", "privacy.fr.txt", "Comment Duly traite vos informations.", "fr"),
+        ("duly-terms-fr", "terms.fr.txt", "Les conditions d'utilisation de Duly: Invoice Maker & Estimate.", "fr"),
     ]:
         title, updated, body = legal_body(LEGAL / src)
         content = f"<h1>{html.escape(title)}</h1>\n<p class=\"updated\">{html.escape(updated)}</p>\n{body}"
         out = ROOT / name / "index.html"
         out.parent.mkdir(exist_ok=True)
-        out.write_text(page(title, desc, content), encoding="utf-8")
+        out.write_text(page(title, desc, content, lang), encoding="utf-8")
         print("wrote", out.relative_to(ROOT))
     out = ROOT / "duly-help" / "index.html"
     out.parent.mkdir(exist_ok=True)

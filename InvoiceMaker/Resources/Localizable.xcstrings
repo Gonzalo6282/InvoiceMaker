@@ -1,6 +1,708 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "%@ a month. " : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ par mois. "
+          }
+        }
+      }
+    },
+    "%@ a year" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ par an"
+          }
+        }
+      }
+    },
+    "%@ a year. " : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ par an. "
+          }
+        }
+      }
+    },
+    "%@ at %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ à %2$@"
+          }
+        }
+      }
+    },
+    "%@ is due in 3 days" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ est à payer dans 3 jours"
+          }
+        }
+      }
+    },
+    "%@ is due today" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ est à payer aujourd'hui"
+          }
+        }
+      }
+    },
+    "%@ template" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modèle %@"
+          }
+        }
+      }
+    },
+    "%@ · next %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ · prochaine le %2$@"
+          }
+        }
+      }
+    },
+    "%lld days free, then %@ a year" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld jours gratuits, puis %2$@ par an"
+          }
+        }
+      }
+    },
+    "%lld documents" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld documents"
+          }
+        }
+      }
+    },
+    "%lld invoices · %@ unpaid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld factures · %2$@ à encaisser"
+          }
+        }
+      }
+    },
+    "%lld invoices · all paid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld factures · toutes payées"
+          }
+        }
+      }
+    },
+    "**Accepted.** Signed by %@." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Accepté.** Signé par %@."
+          }
+        }
+      }
+    },
+    "**Backed up to iCloud.** Your documents, clients, logo and settings sync to your own iCloud." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Sauvegardé dans iCloud.** Vos documents, clients, logo et réglages sont synchronisés avec votre propre iCloud."
+          }
+        }
+      }
+    },
+    "**Free:** create, edit and preview as many invoices as you like. **Premium:** send, print and save PDFs." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Gratuit :** créez, modifiez et prévisualisez autant de factures que vous voulez. **Premium :** envoyez, imprimez et enregistrez vos PDF."
+          }
+        }
+      }
+    },
+    "**Paid on %@.** Send a receipt so your client has proof." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Payée le %@.** Envoyez un reçu à votre client comme preuve."
+          }
+        }
+      }
+    },
+    "**Sent on %@.** Changes save automatically. Send again so %@ has the latest version." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Envoyée le %1$@.** Les modifications sont enregistrées automatiquement. Renvoyez-la pour que %2$@ ait la dernière version."
+          }
+        }
+      }
+    },
+    "**Signed by %@.** The signature is on the PDF." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Signé par %@.** La signature figure sur le PDF."
+          }
+        }
+      }
+    },
+    "**iCloud is off.** Open the Settings app, tap your name, then iCloud, and sign in. Until then your invoices are only on this device." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**iCloud est désactivé.** Ouvrez Réglages, touchez votre nom, puis iCloud, et connectez-vous. D'ici là, vos factures ne sont que sur cet appareil."
+          }
+        }
+      }
+    },
+    "1 document" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 document"
+          }
+        }
+      }
+    },
+    "3 days before and on the due date of each unpaid invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 jours avant et le jour de l'échéance de chaque facture impayée"
+          }
+        }
+      }
+    },
+    "A general payment link can't know the invoice total, so your client types the amount." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un lien de paiement général ne connaît pas le montant de la facture : votre client saisit le montant."
+          }
+        }
+      }
+    },
+    "A small line at the bottom of the page. Thanks for helping others find Duly." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une petite ligne en bas de page. Merci d'aider d'autres personnes à découvrir Duly."
+          }
+        }
+      }
+    },
+    "ABN" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABN"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Accepted" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Accepté"
+          }
+        }
+      }
+    },
+    "Account" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compte"
+          }
+        }
+      }
+    },
+    "Account %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compte %@"
+          }
+        }
+      }
+    },
+    "Account name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titulaire du compte"
+          }
+        }
+      }
+    },
+    "Account number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro de compte"
+          }
+        }
+      }
+    },
+    "Add" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter"
+          }
+        }
+      }
+    },
+    "Add a client before sending." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez un client avant d'envoyer."
+          }
+        }
+      }
+    },
+    "Add a fee" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter des frais"
+          }
+        }
+      }
+    },
+    "Add a tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une taxe"
+          }
+        }
+      }
+    },
+    "Add at least one item with a price." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez au moins une ligne avec un prix."
+          }
+        }
+      }
+    },
+    "Add client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter un client"
+          }
+        }
+      }
+    },
+    "Add from saved items" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter depuis mes articles"
+          }
+        }
+      }
+    },
+    "Add item" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter une ligne"
+          }
+        }
+      }
+    },
+    "Add more photos" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter d'autres photos"
+          }
+        }
+      }
+    },
+    "Add photos" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter des photos"
+          }
+        }
+      }
+    },
+    "Add services and products once, with their price and tax. Then add them to any invoice in one tap." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez vos services et produits une fois, avec leur prix et leur taxe. Puis ajoutez-les à n'importe quelle facture en un geste."
+          }
+        }
+      }
+    },
+    "Add your bank details or payment links in Payment details. They appear on every invoice with a QR code." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez vos coordonnées bancaires ou liens de paiement dans Coordonnées de paiement. Ils figurent sur chaque facture avec un QR code."
+          }
+        }
+      }
+    },
+    "Add your details" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez vos informations"
+          }
+        }
+      }
+    },
+    "Add your first client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajoutez votre premier client"
+          }
+        }
+      }
+    },
+    "Add your logo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouter votre logo"
+          }
+        }
+      }
+    },
+    "Added" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajouté"
+          }
+        }
+      }
+    },
+    "Address" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Adresse"
+          }
+        }
+      }
+    },
+    "All" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toutes"
+          }
+        }
+      }
+    },
+    "All 7 templates with your logo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les 7 modèles avec votre logo"
+          }
+        }
+      }
+    },
+    "Allow" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoriser"
+          }
+        }
+      }
+    },
+    "Allow access to Contacts" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoriser l'accès aux contacts"
+          }
+        }
+      }
+    },
+    "Allow access to Photos" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autoriser l'accès aux photos"
+          }
+        }
+      }
+    },
+    "Amount" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Montant"
+          }
+        }
+      }
+    },
+    "Anonymous analytics" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statistiques anonymes"
+          }
+        }
+      }
+    },
+    "Any other business" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toute autre activité"
+          }
+        }
+      }
+    },
+    "Apple couldn't confirm it's you. On your iPhone, open Settings > [your name] > Sign-In & Security > Sign in with Apple > Duly and tap Stop Using Apple ID. Then come back to Duly and try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple n'a pas pu confirmer votre identité. Sur votre iPhone, ouvrez Réglages > [votre nom] > Connexion et sécurité > Se connecter avec Apple > Duly et touchez « Ne plus utiliser l'identifiant Apple ». Revenez ensuite dans Duly et réessayez."
+          }
+        }
+      }
+    },
+    "Applies in the app and on your PDFs. Each client can have their own currency in their details." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "S'applique dans l'app et sur vos PDF. Chaque client peut avoir sa propre devise dans ses détails."
+          }
+        }
+      }
+    },
+    "Apply tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appliquer la taxe"
+          }
+        }
+      }
+    },
+    "At cost" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Au prix coûtant"
+          }
+        }
+      }
+    },
+    "Available once the app is fully set up" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disponible une fois l'app entièrement configurée"
+          }
+        }
+      }
+    },
+    "BSB" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BSB"
+          }
+        }
+      }
+    },
+    "Back" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retour"
+          }
+        }
+      }
+    },
+    "Backup and sync" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarde et synchronisation"
+          }
+        }
+      }
+    },
+    "Backup status" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "État de la sauvegarde"
+          }
+        }
+      }
+    },
+    "Bank" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banque"
+          }
+        }
+      }
+    },
+    "Bank code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code banque"
+          }
+        }
+      }
+    },
+    "Bank transfer" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Virement bancaire"
+          }
+        }
+      }
+    },
+    "Bill to" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturer à"
+          }
+        }
+      }
+    },
+    "Billed in %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturé en %@"
+          }
+        }
+      }
+    },
+    "Billed monthly, cancel any time" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturé chaque mois, résiliable à tout moment"
+          }
+        }
+      }
+    },
+    "Bold" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audacieux"
+          }
+        }
+      }
+    },
     "Brand colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
@@ -14,6 +716,82 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Brand color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur de marque"
+          }
+        }
+      }
+    },
+    "Brand guidelines" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Charte graphique"
+          }
+        }
+      }
+    },
+    "Builders, plumbers, cleaners, electricians" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Maçons, plombiers, ménage, électriciens"
+          }
+        }
+      }
+    },
+    "Business" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entreprise"
+          }
+        }
+      }
+    },
+    "Business name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom de l'entreprise"
+          }
+        }
+      }
+    },
+    "Business profile" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Profil de l'entreprise"
+          }
+        }
+      }
+    },
+    "By client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par client"
+          }
+        }
+      }
+    },
+    "By month" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par mois"
           }
         }
       }
@@ -32,6 +810,192 @@
             "state" : "translated",
             "value" : "Service call fee"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frais de déplacement"
+          }
+        }
+      }
+    },
+    "Canada: add GST and PST or QST to one invoice, or a single HST. US: sales tax depends on state, county and city, so type your own rate." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canada : ajoutez la TPS et la TVP ou la TVQ sur une facture, ou la seule TVH. États-Unis : la taxe de vente dépend de l'État, du comté et de la ville, saisissez votre propre taux."
+          }
+        }
+      }
+    },
+    "Cancel" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Annuler"
+          }
+        }
+      }
+    },
+    "Change logo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Changer le logo"
+          }
+        }
+      }
+    },
+    "Checking…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vérification…"
+          }
+        }
+      }
+    },
+    "Choose a client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez un client"
+          }
+        }
+      }
+    },
+    "Choose an invoice, or press ⌘N to create one" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez une facture ou appuyez sur ⌘N pour en créer une"
+          }
+        }
+      }
+    },
+    "Classic" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Classique"
+          }
+        }
+      }
+    },
+    "Clean" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Épuré"
+          }
+        }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Effacer"
+          }
+        }
+      }
+    },
+    "Client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Client"
+          }
+        }
+      }
+    },
+    "Client name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du client"
+          }
+        }
+      }
+    },
+    "Client signature" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature du client"
+          }
+        }
+      }
+    },
+    "Client signs" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signature du client"
+          }
+        }
+      }
+    },
+    "Client signs on this device" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le client signe sur cet appareil"
+          }
+        }
+      }
+    },
+    "Client's full name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom complet du client"
+          }
+        }
+      }
+    },
+    "Clients" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clients"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fermer"
+          }
+        }
+      }
+    },
+    "Code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code"
+          }
         }
       }
     },
@@ -48,6 +1012,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur"
           }
         }
       }
@@ -66,6 +1036,1240 @@
             "state" : "translated",
             "value" : "Color %@"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couleur %@"
+          }
+        }
+      }
+    },
+    "Common questions" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Questions fréquentes"
+          }
+        }
+      }
+    },
+    "Company or person" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entreprise ou personne"
+          }
+        }
+      }
+    },
+    "Confirm with Apple to finish:" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirmez avec Apple pour terminer :"
+          }
+        }
+      }
+    },
+    "Contact" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
+        }
+      }
+    },
+    "Continue" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuer"
+          }
+        }
+      }
+    },
+    "Contractor or trades" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artisan ou BTP"
+          }
+        }
+      }
+    },
+    "Country" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pays"
+          }
+        }
+      }
+    },
+    "Country and tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pays et taxes"
+          }
+        }
+      }
+    },
+    "Create and preview free. Send with Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez et prévisualisez gratuitement. Envoyez avec Premium."
+          }
+        }
+      }
+    },
+    "Create and send an invoice in 60 seconds" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez et envoyez une facture en 60 secondes"
+          }
+        }
+      }
+    },
+    "Create your first invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créez votre première facture"
+          }
+        }
+      }
+    },
+    "Creating, editing and previewing is free with no limits. Sending, printing and saving PDFs needs Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer, modifier et prévisualiser est gratuit et illimité. L'envoi, l'impression et l'enregistrement des PDF nécessitent Premium."
+          }
+        }
+      }
+    },
+    "Currency" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devise"
+          }
+        }
+      }
+    },
+    "Currency display" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichage de la devise"
+          }
+        }
+      }
+    },
+    "Default" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par défaut"
+          }
+        }
+      }
+    },
+    "Default currency" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devise par défaut"
+          }
+        }
+      }
+    },
+    "Default tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxe par défaut"
+          }
+        }
+      }
+    },
+    "Default template" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modèle par défaut"
+          }
+        }
+      }
+    },
+    "Defaults" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valeurs par défaut"
+          }
+        }
+      }
+    },
+    "Delete" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer"
+          }
+        }
+      }
+    },
+    "Delete %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %@"
+          }
+        }
+      }
+    },
+    "Delete %@?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer %@ ?"
+          }
+        }
+      }
+    },
+    "Delete account" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le compte"
+          }
+        }
+      }
+    },
+    "Delete client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer le client"
+          }
+        }
+      }
+    },
+    "Delete item" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer la ligne"
+          }
+        }
+      }
+    },
+    "Delete this client?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer ce client ?"
+          }
+        }
+      }
+    },
+    "Delete your account?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Supprimer votre compte ?"
+          }
+        }
+      }
+    },
+    "Delivery" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livraison"
+          }
+        }
+      }
+    },
+    "Description" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Description"
+          }
+        }
+      }
+    },
+    "Design, writing, consulting, photography" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Design, rédaction, conseil, photo"
+          }
+        }
+      }
+    },
+    "Details" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détails"
+          }
+        }
+      }
+    },
+    "Discount" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remise"
+          }
+        }
+      }
+    },
+    "Discount %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remise %@"
+          }
+        }
+      }
+    },
+    "Document" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Document"
+          }
+        }
+      }
+    },
+    "Document type" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type de document"
+          }
+        }
+      }
+    },
+    "Documents" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documents"
+          }
+        }
+      }
+    },
+    "Don't Allow" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Refuser"
+          }
+        }
+      }
+    },
+    "Done" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "OK"
+          }
+        }
+      }
+    },
+    "Draft" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brouillon"
+          }
+        }
+      }
+    },
+    "Drafts" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brouillons"
+          }
+        }
+      }
+    },
+    "Draw again" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Redessiner"
+          }
+        }
+      }
+    },
+    "Draw it once. It goes on your invoices." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dessinez-la une fois. Elle figurera sur vos factures."
+          }
+        }
+      }
+    },
+    "Draw once. It goes on every invoice you send." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dessinez-la une fois. Elle figure sur chaque facture envoyée."
+          }
+        }
+      }
+    },
+    "Draw signature" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dessiner la signature"
+          }
+        }
+      }
+    },
+    "Due" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Échéance"
+          }
+        }
+      }
+    },
+    "Due in %lld days" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À payer dans %lld jours"
+          }
+        }
+      }
+    },
+    "Due in 1 day" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À payer dans 1 jour"
+          }
+        }
+      }
+    },
+    "Due today" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À payer aujourd'hui"
+          }
+        }
+      }
+    },
+    "Duly couldn't open its data" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly n'a pas pu ouvrir ses données"
+          }
+        }
+      }
+    },
+    "Duly needs access to your contacts to add a client from them. You can allow it in Settings, or type the client's details instead." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly a besoin d'accéder à vos contacts pour y prendre un client. Vous pouvez l'autoriser dans Réglages ou saisir les coordonnées vous-même."
+          }
+        }
+      }
+    },
+    "Duly needs access to your photos to add your logo to invoices. You can allow it in Settings." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly a besoin d'accéder à vos photos pour ajouter votre logo aux factures. Vous pouvez l'autoriser dans Réglages."
+          }
+        }
+      }
+    },
+    "Duly report %@ %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapport Duly %1$@ %2$@"
+          }
+        }
+      }
+    },
+    "Duplicate" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dupliquer"
+          }
+        }
+      }
+    },
+    "EIN" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EIN"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Email" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-mail"
+          }
+        }
+      }
+    },
+    "Email or phone" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "E-mail ou téléphone"
+          }
+        }
+      }
+    },
+    "Email us" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous écrire"
+          }
+        }
+      }
+    },
+    "Estimate" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devis"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Estimate prefix" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préfixe des devis"
+          }
+        }
+      }
+    },
+    "Estimate total" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total du devis"
+          }
+        }
+      }
+    },
+    "Estimates" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devis"
+          }
+        }
+      }
+    },
+    "Export CSV" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exporter en CSV"
+          }
+        }
+      }
+    },
+    "Export didn't work" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'export n'a pas fonctionné"
+          }
+        }
+      }
+    },
+    "Export everything" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tout exporter"
+          }
+        }
+      }
+    },
+    "Fee" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frais"
+          }
+        }
+      }
+    },
+    "Fee name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom des frais"
+          }
+        }
+      }
+    },
+    "Fees" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Frais"
+          }
+        }
+      }
+    },
+    "Fills in the address" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remplit l'adresse"
+          }
+        }
+      }
+    },
+    "First item" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Première ligne"
+          }
+        }
+      }
+    },
+    "Footer" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pied de page"
+          }
+        }
+      }
+    },
+    "For" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour"
+          }
+        }
+      }
+    },
+    "For %@. Open Duly to check it and send it." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pour %@. Ouvrez Duly pour la vérifier et l'envoyer."
+          }
+        }
+      }
+    },
+    "Free" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratuit"
+          }
+        }
+      }
+    },
+    "Free plan" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formule gratuite"
+          }
+        }
+      }
+    },
+    "Free until %@, then %@ a year. " : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratuit jusqu'au %1$@, puis %2$@ par an. "
+          }
+        }
+      }
+    },
+    "Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratuit : créez, modifiez et prévisualisez factures, devis et reçus sans limite, sauvegardez-les et exportez-les. Premium : envoyez, imprimez et enregistrez vos PDF."
+          }
+        }
+      }
+    },
+    "Freelancer" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Freelance"
+          }
+        }
+      }
+    },
+    "From" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De"
+          }
+        }
+      }
+    },
+    "From Photos. JPEG, PNG or HEIC. Shown whole, never cropped." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Depuis Photos. JPEG, PNG ou HEIC. Affiché en entier, jamais rogné."
+          }
+        }
+      }
+    },
+    "GST registered" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inscrit à la TPS"
+          }
+        }
+      }
+    },
+    "GST/HST number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro de TPS/TVH"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Get started" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commencer"
+          }
+        }
+      }
+    },
+    "Gift hamper, large" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Panier garni, grand"
+          }
+        }
+      }
+    },
+    "Hand your device to your client. Signing accepts this %@ (or confirms the work on an invoice). Their name and today's date go on the PDF." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tendez votre appareil à votre client. Sa signature accepte le document (%@) (ou confirme les travaux sur une facture). Son nom et la date du jour figurent sur le PDF."
+          }
+        }
+      }
+    },
+    "Help" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aide"
+          }
+        }
+      }
+    },
+    "Help and support" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aide et assistance"
+          }
+        }
+      }
+    },
+    "Help improve Duly?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aider à améliorer Duly ?"
+          }
+        }
+      }
+    },
+    "Helps us fix what's slow or confusing" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous aide à corriger ce qui est lent ou confus"
+          }
+        }
+      }
+    },
+    "Here's your first invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voici votre première facture"
+          }
+        }
+      }
+    },
+    "Hidden" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Masquée"
+          }
+        }
+      }
+    },
+    "How do I cancel?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment résilier ?"
+          }
+        }
+      }
+    },
+    "How do clients pay me?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment mes clients me paient-ils ?"
+          }
+        }
+      }
+    },
+    "How to pay" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comment payer"
+          }
+        }
+      }
+    },
+    "I charge VAT (MwSt.)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je facture la TVA allemande (MwSt.)"
+          }
+        }
+      }
+    },
+    "I charge VAT (TVA)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je facture la TVA"
+          }
+        }
+      }
+    },
+    "I collect sales tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je facture la taxe de vente"
+          }
+        }
+      }
+    },
+    "I send my invoices with Duly. Try it: https://apps.apple.com/app/id6824285908" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "J'envoie mes factures avec Duly. Essaie-la : https://apps.apple.com/app/id6824285908"
+          }
+        }
+      }
+    },
+    "Import from Contacts" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importer des contacts"
+          }
+        }
+      }
+    },
+    "Include app version and device model" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inclure la version de l'app et le modèle d'appareil"
+          }
+        }
+      }
+    },
+    "Includes %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dont %@"
+          }
+        }
+      }
+    },
+    "Invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facture"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Invoice look" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence des factures"
+          }
+        }
+      }
+    },
+    "Invoice prefix" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préfixe des factures"
+          }
+        }
+      }
+    },
+    "Invoiced" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturé"
+          }
+        }
+      }
+    },
+    "Invoiced and paid by month" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturé et payé par mois"
+          }
+        }
+      }
+    },
+    "Invoiced by invoice date, paid by the date the money arrived." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturé selon la date de facture, payé selon la date d'encaissement."
+          }
+        }
+      }
+    },
+    "Invoiced in %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturé en %@"
+          }
+        }
+      }
+    },
+    "Invoices" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factures"
+          }
+        }
+      }
+    },
+    "Invoices already made for this client stay as they are." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les factures déjà créées pour ce client restent inchangées."
+          }
+        }
+      }
+    },
+    "Invoices, estimates and receipts with your logo. Create free. Send with Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factures, devis et reçus avec votre logo. Création gratuite. Envoi avec Premium."
+          }
+        }
+      }
+    },
+    "Invoices, quotes and receipts with your logo. Create free. Send with Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factures, devis et reçus avec votre logo. Création gratuite. Envoi avec Premium."
+          }
+        }
+      }
+    },
+    "Is Duly free?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly est-elle gratuite ?"
+          }
+        }
+      }
+    },
+    "Issued" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Date d'émission"
+          }
+        }
+      }
+    },
+    "It takes about a minute. Creating and previewing is free; sending needs Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cela prend environ une minute. Créer et prévisualiser est gratuit ; l'envoi nécessite Premium."
+          }
+        }
+      }
+    },
+    "Item" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Article"
+          }
+        }
+      }
+    },
+    "Items" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Articles"
+          }
+        }
+      }
+    },
+    "Job" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mission"
+          }
+        }
+      }
+    },
+    "Job or site" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chantier ou mission"
+          }
+        }
+      }
+    },
+    "Job photo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photo du chantier"
+          }
+        }
+      }
+    },
+    "Job photos" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Photos du chantier"
+          }
+        }
+      }
+    },
+    "Job site" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chantier"
+          }
+        }
+      }
+    },
+    "Keep Premium on every device" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gardez Premium sur tous vos appareils"
+          }
         }
       }
     },
@@ -82,6 +2286,372 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Labor"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Main-d'œuvre"
+          }
+        }
+      }
+    },
+    "Last backup" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernière sauvegarde"
+          }
+        }
+      }
+    },
+    "Last restore" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dernière restauration"
+          }
+        }
+      }
+    },
+    "Leave a review on the App Store" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Laisser un avis sur l'App Store"
+          }
+        }
+      }
+    },
+    "Ledger" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registre"
+          }
+        }
+      }
+    },
+    "Legal" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mentions légales"
+          }
+        }
+      }
+    },
+    "Line total" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total de la ligne"
+          }
+        }
+      }
+    },
+    "Links" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Liens"
+          }
+        }
+      }
+    },
+    "Live PDF preview" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu PDF en direct"
+          }
+        }
+      }
+    },
+    "Live PDF preview. The \"Preview\" mark disappears with Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu PDF en direct. La mention « Aperçu » disparaît avec Premium."
+          }
+        }
+      }
+    },
+    "Logo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo"
+          }
+        }
+      }
+    },
+    "Logo added" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo ajouté"
+          }
+        }
+      }
+    },
+    "Logo design" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Création de logo"
+          }
+        }
+      }
+    },
+    "Look" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apparence"
+          }
+        }
+      }
+    },
+    "Looking for your invoices in iCloud…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recherche de vos factures dans iCloud…"
+          }
+        }
+      }
+    },
+    "Looks good" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C'est parfait"
+          }
+        }
+      }
+    },
+    "Made with Duly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créé avec Duly"
+          }
+        }
+      }
+    },
+    "Make default" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Définir par défaut"
+          }
+        }
+      }
+    },
+    "Make receipt" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Créer un reçu"
+          }
+        }
+      }
+    },
+    "Manage subscription" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gérer l'abonnement"
+          }
+        }
+      }
+    },
+    "Mark an invoice as paid and send a receipt. It appears here." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marquez une facture comme payée et envoyez un reçu. Il apparaîtra ici."
+          }
+        }
+      }
+    },
+    "Mark as paid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marquer comme payée"
+          }
+        }
+      }
+    },
+    "Mark as unpaid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marquer comme impayée"
+          }
+        }
+      }
+    },
+    "Materials" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matériaux"
+          }
+        }
+      }
+    },
+    "Micro-entrepreneurs who don't charge VAT: turn this off and add \"TVA non applicable, art. 293 B du CGI\" to the notes." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Micro-entrepreneurs non assujettis : désactivez cette option et ajoutez « TVA non applicable, art. 293 B du CGI » dans les notes."
+          }
+        }
+      }
+    },
+    "Month" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mois"
+          }
+        }
+      }
+    },
+    "Monthly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque mois"
+          }
+        }
+      }
+    },
+    "More actions" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus d'actions"
+          }
+        }
+      }
+    },
+    "My signature" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ma signature"
+          }
+        }
+      }
+    },
+    "Name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom"
+          }
+        }
+      }
+    },
+    "Never" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jamais"
+          }
+        }
+      }
+    },
+    "New" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau"
+          }
+        }
+      }
+    },
+    "New client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau client"
+          }
+        }
+      }
+    },
+    "New client name" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nom du nouveau client"
+          }
+        }
+      }
+    },
+    "New estimate" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau devis"
+          }
+        }
+      }
+    },
+    "New invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouvelle facture"
+          }
+        }
+      }
+    },
+    "New invoices for this client use %@." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les nouvelles factures de ce client sont en %@."
           }
         }
       }
@@ -100,6 +2670,1048 @@
             "state" : "translated",
             "value" : "New invoices use this template and color. You can change them on any invoice."
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les nouvelles factures utilisent ce modèle et cette couleur. Vous pouvez les changer sur chaque facture."
+          }
+        }
+      }
+    },
+    "New quote" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau devis"
+          }
+        }
+      }
+    },
+    "New receipt" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nouveau reçu"
+          }
+        }
+      }
+    },
+    "Next %@ · due in %lld days" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prochaine le %1$@ · échéance sous %2$lld jours"
+          }
+        }
+      }
+    },
+    "Next invoice number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prochain numéro de facture"
+          }
+        }
+      }
+    },
+    "No \"Preview\" mark on your PDFs" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas de mention « Aperçu » sur vos PDF"
+          }
+        }
+      }
+    },
+    "No active subscription found for this Apple ID." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun abonnement actif trouvé pour cet identifiant Apple."
+          }
+        }
+      }
+    },
+    "No client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun client"
+          }
+        }
+      }
+    },
+    "No estimates yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun devis pour l'instant"
+          }
+        }
+      }
+    },
+    "No invoices in %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune facture en %@"
+          }
+        }
+      }
+    },
+    "No items yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune ligne pour l'instant"
+          }
+        }
+      }
+    },
+    "No quotes yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun devis pour l'instant"
+          }
+        }
+      }
+    },
+    "No receipts yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun reçu pour l'instant"
+          }
+        }
+      }
+    },
+    "No sent invoices yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune facture envoyée pour l'instant"
+          }
+        }
+      }
+    },
+    "No signature yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore de signature"
+          }
+        }
+      }
+    },
+    "No tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sans taxe"
+          }
+        }
+      }
+    },
+    "None" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun"
+          }
+        }
+      }
+    },
+    "None added" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rien d'ajouté"
+          }
+        }
+      }
+    },
+    "Not now" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus tard"
+          }
+        }
+      }
+    },
+    "Not opened yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore ouvert"
+          }
+        }
+      }
+    },
+    "Not sent yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore envoyée"
+          }
+        }
+      }
+    },
+    "Not yet" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pas encore"
+          }
+        }
+      }
+    },
+    "Notes" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes"
+          }
+        }
+      }
+    },
+    "Notes on new documents" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notes sur les nouveaux documents"
+          }
+        }
+      }
+    },
+    "Nothing matches. Try another filter or search." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun résultat. Essayez un autre filtre ou une autre recherche."
+          }
+        }
+      }
+    },
+    "Notifications are off for Duly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les notifications de Duly sont désactivées"
+          }
+        }
+      }
+    },
+    "Number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro"
+          }
+        }
+      }
+    },
+    "Numbering" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numérotation"
+          }
+        }
+      }
+    },
+    "Numbers and defaults" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéros et valeurs par défaut"
+          }
+        }
+      }
+    },
+    "Numbers go up by one with each new document. Next: %@." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les numéros augmentent de un à chaque nouveau document. Prochain : %@."
+          }
+        }
+      }
+    },
+    "N° TVA" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° TVA"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Off" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Désactivé"
+          }
+        }
+      }
+    },
+    "On" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activé"
+          }
+        }
+      }
+    },
+    "On total" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur le total"
+          }
+        }
+      }
+    },
+    "On your device and in your own iCloud. We never upload them to our servers." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur votre appareil et dans votre propre iCloud. Nous ne les envoyons jamais sur nos serveurs."
+          }
+        }
+      }
+    },
+    "Only VAT-registered businesses add VAT and show a VAT number." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seules les entreprises assujetties ajoutent la TVA et affichent un numéro de TVA."
+          }
+        }
+      }
+    },
+    "Open Duly to check it and send it." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrez Duly pour la vérifier et l'envoyer."
+          }
+        }
+      }
+    },
+    "Open Settings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les Réglages"
+          }
+        }
+      }
+    },
+    "Opens your payment link when scanned" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvre votre lien de paiement une fois scanné"
+          }
+        }
+      }
+    },
+    "Optional" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facultatif"
+          }
+        }
+      }
+    },
+    "Optional. From Photos." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facultatif. Depuis Photos."
+          }
+        }
+      }
+    },
+    "Other" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre"
+          }
+        }
+      }
+    },
+    "Overdue" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En retard"
+          }
+        }
+      }
+    },
+    "Overdue by %lld days" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En retard de %lld jours"
+          }
+        }
+      }
+    },
+    "Overdue by 1 day" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En retard de 1 jour"
+          }
+        }
+      }
+    },
+    "Owed to you" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "À encaisser"
+          }
+        }
+      }
+    },
+    "PAID" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAYÉE"
+          }
+        }
+      }
+    },
+    "PDF preview" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu PDF"
+          }
+        }
+      }
+    },
+    "PDF preview of %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu PDF de %@"
+          }
+        }
+      }
+    },
+    "PDFs in a ZIP and all data as CSV. Free." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF dans un ZIP et toutes les données en CSV. Gratuit."
+          }
+        }
+      }
+    },
+    "PREVIEW" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "APERÇU"
+          }
+        }
+      }
+    },
+    "Paid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payée"
+          }
+        }
+      }
+    },
+    "Paid %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payée le %@"
+          }
+        }
+      }
+    },
+    "Paid in %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payé en %@"
+          }
+        }
+      }
+    },
+    "Paid on" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payée le"
+          }
+        }
+      }
+    },
+    "Pay link" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lien de paiement"
+          }
+        }
+      }
+    },
+    "Pay online" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Payer en ligne"
+          }
+        }
+      }
+    },
+    "Payment buttons and QR code on invoices" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Boutons de paiement et QR code sur les factures"
+          }
+        }
+      }
+    },
+    "Payment details" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Coordonnées de paiement"
+          }
+        }
+      }
+    },
+    "Payment due in (days)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Délai de paiement (jours)"
+          }
+        }
+      }
+    },
+    "Payment received for %@. Thank you." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Paiement reçu pour %@. Merci."
+          }
+        }
+      }
+    },
+    "Payment reminders" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rappels de paiement"
+          }
+        }
+      }
+    },
+    "Payment terms, thank-you note" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditions de paiement, remerciements"
+          }
+        }
+      }
+    },
+    "Payments are handled by Apple. Open Settings, tap your name, then Subscriptions. Deleting the app does not cancel the subscription." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les paiements sont gérés par Apple. Ouvrez Réglages, touchez votre nom, puis Abonnements. Supprimer l'app ne résilie pas l'abonnement."
+          }
+        }
+      }
+    },
+    "Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription. If your subscription ends you keep every document." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les paiements sont gérés par Apple. Pour résilier, ouvrez Réglages, touchez votre nom, puis Abonnements. Pour demander un remboursement, allez sur reportaproblem.apple.com. Supprimer l'app ne résilie pas l'abonnement. Si votre abonnement se termine, vous gardez tous vos documents."
+          }
+        }
+      }
+    },
+    "Per item" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Par ligne"
+          }
+        }
+      }
+    },
+    "Person" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personne"
+          }
+        }
+      }
+    },
+    "Phone" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Téléphone"
+          }
+        }
+      }
+    },
+    "Pick one or more. Canada: GST plus PST or QST." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez-en une ou plusieurs. Canada : TPS plus TVP ou TVQ."
+          }
+        }
+      }
+    },
+    "Please restart the app. If this keeps happening, contact support from the App Store page." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veuillez redémarrer l'app. Si le problème persiste, contactez l'assistance depuis la page App Store."
+          }
+        }
+      }
+    },
+    "Please try again. If it keeps happening, report a problem in Help." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veuillez réessayer. Si le problème persiste, signalez-le dans Aide."
+          }
+        }
+      }
+    },
+    "Plus %@ owed in other currencies" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus %@ à encaisser dans d'autres devises"
+          }
+        }
+      }
+    },
+    "Premium" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium"
+          }
+        }
+      }
+    },
+    "Premium is active on this device." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium est actif sur cet appareil."
+          }
+        }
+      }
+    },
+    "Premium restored." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium restauré."
+          }
+        }
+      }
+    },
+    "Presets for **%@**. Edit any rate or add your own. Changing a rate never changes invoices you've already sent." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préréglages pour **%@**. Modifiez un taux ou ajoutez les vôtres. Changer un taux ne modifie jamais les factures déjà envoyées."
+          }
+        }
+      }
+    },
+    "Preview" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu"
+          }
+        }
+      }
+    },
+    "Preview of your first invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aperçu de votre première facture"
+          }
+        }
+      }
+    },
+    "Price" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prix"
+          }
+        }
+      }
+    },
+    "Prices" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prix"
+          }
+        }
+      }
+    },
+    "Prices are in %@. On an invoice in another currency, check the price before sending." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les prix sont en %@. Sur une facture dans une autre devise, vérifiez le prix avant d'envoyer."
+          }
+        }
+      }
+    },
+    "Print" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimer"
+          }
+        }
+      }
+    },
+    "Privacy" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confidentialité"
+          }
+        }
+      }
+    },
+    "Privacy Policy" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Politique de confidentialité"
+          }
+        }
+      }
+    },
+    "Privacy and legal" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confidentialité et mentions légales"
+          }
+        }
+      }
+    },
+    "QR code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "QR code"
+          }
+        }
+      }
+    },
+    "Qty" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Qté"
+          }
+        }
+      }
+    },
+    "Quantity" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quantité"
+          }
+        }
+      }
+    },
+    "Quote" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devis"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Quote prefix" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préfixe des devis"
+          }
+        }
+      }
+    },
+    "Quote total" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total du devis"
+          }
+        }
+      }
+    },
+    "Quotes" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Devis"
+          }
+        }
+      }
+    },
+    "Rate" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prix unitaire"
+          }
+        }
+      }
+    },
+    "Rate Duly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noter Duly"
+          }
+        }
+      }
+    },
+    "Receipt" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reçu"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Receipt prefix" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Préfixe des reçus"
+          }
+        }
+      }
+    },
+    "Receipts" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reçus"
+          }
+        }
+      }
+    },
+    "Refresh" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualiser"
+          }
+        }
+      }
+    },
+    "Reminders" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rappels"
+          }
+        }
+      }
+    },
+    "Remove" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer"
+          }
+        }
+      }
+    },
+    "Remove client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer le client"
+          }
+        }
+      }
+    },
+    "Remove fee" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer les frais"
+          }
+        }
+      }
+    },
+    "Remove logo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer le logo"
+          }
+        }
+      }
+    },
+    "Remove photo" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Retirer la photo"
+          }
         }
       }
     },
@@ -116,6 +3728,712 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Renews automatically unless canceled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renouvellement automatique sauf résiliation au moins 24 heures avant la fin de la période. Gérez ou résiliez dans Réglages > [votre nom] > Abonnements."
+          }
+        }
+      }
+    },
+    "Repeat" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répéter"
+          }
+        }
+      }
+    },
+    "Repeat invoices automatically" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répétez vos factures automatiquement"
+          }
+        }
+      }
+    },
+    "Repeat of" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Répétition de"
+          }
+        }
+      }
+    },
+    "Replies within 24 hours" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réponse sous 24 heures"
+          }
+        }
+      }
+    },
+    "Report a problem" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signaler un problème"
+          }
+        }
+      }
+    },
+    "Reports" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rapports"
+          }
+        }
+      }
+    },
+    "Restore" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer"
+          }
+        }
+      }
+    },
+    "Restore %@ presets" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les préréglages : %@"
+          }
+        }
+      }
+    },
+    "Restore presets" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les préréglages"
+          }
+        }
+      }
+    },
+    "Restore purchases" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les achats"
+          }
+        }
+      }
+    },
+    "Restore the preset rates?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurer les taux préréglés ?"
+          }
+        }
+      }
+    },
+    "Restoring…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restauration…"
+          }
+        }
+      }
+    },
+    "Retail, food, products" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Commerce, alimentation, produits"
+          }
+        }
+      }
+    },
+    "Revisions" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Révisions"
+          }
+        }
+      }
+    },
+    "Routing number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro de routage"
+          }
+        }
+      }
+    },
+    "SWIFT / BIC" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SWIFT / BIC"
+          }
+        }
+      }
+    },
+    "Save" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer"
+          }
+        }
+      }
+    },
+    "Save PDF to Files" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer le PDF dans Fichiers"
+          }
+        }
+      }
+    },
+    "Save and print your PDFs" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrez et imprimez vos PDF"
+          }
+        }
+      }
+    },
+    "Save to my items" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrer dans mes articles"
+          }
+        }
+      }
+    },
+    "Save what you charge for" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistrez ce que vous facturez"
+          }
+        }
+      }
+    },
+    "Saved" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistré"
+          }
+        }
+      }
+    },
+    "Saved items" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Articles enregistrés"
+          }
+        }
+      }
+    },
+    "Saved rates" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taux enregistrés"
+          }
+        }
+      }
+    },
+    "Saved to" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enregistré dans"
+          }
+        }
+      }
+    },
+    "Search clients" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un client"
+          }
+        }
+      }
+    },
+    "Search clients or numbers" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rechercher un client ou un numéro"
+          }
+        }
+      }
+    },
+    "See Premium plans" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir les formules Premium"
+          }
+        }
+      }
+    },
+    "See plans" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voir les formules"
+          }
+        }
+      }
+    },
+    "See what you earn" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Voyez ce que vous gagnez"
+          }
+        }
+      }
+    },
+    "Send" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer"
+          }
+        }
+      }
+    },
+    "Send again" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Renvoyer"
+          }
+        }
+      }
+    },
+    "Send by email, Messages or WhatsApp" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoi par e-mail, Messages ou WhatsApp"
+          }
+        }
+      }
+    },
+    "Send invoices that get paid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez vos factures, soyez payé"
+          }
+        }
+      }
+    },
+    "Send receipt" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer le reçu"
+          }
+        }
+      }
+    },
+    "Send report" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer le rapport"
+          }
+        }
+      }
+    },
+    "Send this estimate" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez ce devis"
+          }
+        }
+      }
+    },
+    "Send this invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyez cette facture"
+          }
+        }
+      }
+    },
+    "Sending or PDFs" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoi ou PDF"
+          }
+        }
+      }
+    },
+    "Sending, printing and PDFs are unlocked." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'envoi, l'impression et les PDF sont débloqués."
+          }
+        }
+      }
+    },
+    "Sending, printing and PDFs unlocked." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoi, impression et PDF débloqués."
+          }
+        }
+      }
+    },
+    "Sends your message and app version" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoie votre message et la version de l'app"
+          }
+        }
+      }
+    },
+    "Sent" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyée"
+          }
+        }
+      }
+    },
+    "Service" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prestation"
+          }
+        }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Réglages"
+          }
+        }
+      }
+    },
+    "Share" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager"
+          }
+        }
+      }
+    },
+    "Share Duly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partager Duly"
+          }
+        }
+      }
+    },
+    "Share anonymous usage data and crash reports so we can fix problems and make Duly better. Your invoices and client details are never included. You can change this any time in Settings." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Partagez des données d'utilisation anonymes et des rapports de plantage pour nous aider à corriger les problèmes et à améliorer Duly. Vos factures et les données de vos clients ne sont jamais incluses. Vous pouvez changer cela à tout moment dans Réglages."
+          }
+        }
+      }
+    },
+    "Shipping" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Livraison"
+          }
+        }
+      }
+    },
+    "Show \"Made with Duly\" on PDFs" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher « Créé avec Duly » sur les PDF"
+          }
+        }
+      }
+    },
+    "Show a QR code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher un QR code"
+          }
+        }
+      }
+    },
+    "Show amounts as" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Afficher les montants avec"
+          }
+        }
+      }
+    },
+    "Shown on a page after the invoice. Up to 10." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Affichées sur une page après la facture. 10 au maximum."
+          }
+        }
+      }
+    },
+    "Sign in to link your account across devices. Optional." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connectez-vous pour relier votre compte sur vos appareils. Facultatif."
+          }
+        }
+      }
+    },
+    "Sign in with Apple" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se connecter avec Apple"
+          }
+        }
+      }
+    },
+    "Sign in with Apple didn't finish. Please try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La connexion avec Apple n'a pas abouti. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "Sign in with Apple so your subscription follows you to a new iPhone or iPad. Optional: your invoices stay on your device and iCloud either way." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connectez-vous avec Apple pour retrouver votre abonnement sur un nouvel iPhone ou iPad. Facultatif : vos factures restent sur votre appareil et dans iCloud dans tous les cas."
+          }
+        }
+      }
+    },
+    "Signature area. Draw your signature." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zone de signature. Dessinez votre signature."
+          }
+        }
+      }
+    },
+    "Signed by %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Signé par %@"
+          }
+        }
+      }
+    },
+    "Signed in with Apple" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Connecté avec Apple"
+          }
+        }
+      }
+    },
+    "Skip for now" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plus tard"
+          }
+        }
+      }
+    },
+    "Small businesses under § 19 UStG don't charge VAT: turn this off and say so in the notes." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les petites entreprises (§ 19 UStG) ne facturent pas la TVA : désactivez cette option et indiquez-le dans les notes."
+          }
+        }
+      }
+    },
+    "Small shop" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Petit commerce"
+          }
+        }
+      }
+    },
+    "Something else" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autre chose"
+          }
+        }
+      }
+    },
+    "Something went wrong" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Une erreur s'est produite"
+          }
+        }
+      }
+    },
+    "Sort code" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code guichet"
+          }
+        }
+      }
+    },
+    "Sort code %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code guichet %@"
+          }
+        }
+      }
+    },
+    "Split" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bandeau"
+          }
+        }
+      }
+    },
+    "Start %lld-day free trial" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Essai gratuit de %lld jours"
+          }
+        }
+      }
+    },
+    "Status" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Statut"
           }
         }
       }
@@ -134,6 +4452,204 @@
             "state" : "translated",
             "value" : "Street, city, ZIP code"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rue, code postal, ville"
+          }
+        }
+      }
+    },
+    "Stripe or Square link" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lien Stripe ou Square"
+          }
+        }
+      }
+    },
+    "Studio" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Studio"
+          }
+        }
+      }
+    },
+    "Subscription" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonnement"
+          }
+        }
+      }
+    },
+    "Subscription or billing" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abonnement ou facturation"
+          }
+        }
+      }
+    },
+    "Subtotal" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sous-total"
+          }
+        }
+      }
+    },
+    "Subtotal (incl. tax)" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sous-total (TTC)"
+          }
+        }
+      }
+    },
+    "Symbol" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Symbole"
+          }
+        }
+      }
+    },
+    "Tax" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxe"
+          }
+        }
+      }
+    },
+    "Tax ID" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° fiscal"
+          }
+        }
+      }
+    },
+    "Tax added" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HT (taxe en plus)"
+          }
+        }
+      }
+    },
+    "Tax and discount" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxes et remise"
+          }
+        }
+      }
+    },
+    "Tax included" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TTC (taxe incluse)"
+          }
+        }
+      }
+    },
+    "Tax invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facture"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Tax rates are set by you. This app doesn't give tax advice." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous fixez vous-même les taux de taxe. Cette app ne donne pas de conseil fiscal."
+          }
+        }
+      }
+    },
+    "Taxes" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxes"
+          }
+        }
+      }
+    },
+    "Taxes on the total" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Taxes sur le total"
+          }
+        }
+      }
+    },
+    "Tell a friend about the app" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Parlez de l'app à un ami"
+          }
+        }
+      }
+    },
+    "Tell us what you tapped and what you expected" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dites-nous ce que vous avez touché et ce que vous attendiez"
+          }
+        }
+      }
+    },
+    "Template" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modèle"
+          }
         }
       }
     },
@@ -151,6 +4667,636 @@
             "state" : "translated",
             "value" : "Template and color"
           }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modèle et couleur"
+          }
+        }
+      }
+    },
+    "Terms" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditions"
+          }
+        }
+      }
+    },
+    "Terms of Use" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conditions d'utilisation"
+          }
+        }
+      }
+    },
+    "Thank you for your business." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Merci pour votre confiance."
+          }
+        }
+      }
+    },
+    "The \"Preview\" mark is removed when you send with Premium." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La mention « Aperçu » disparaît quand vous envoyez avec Premium."
+          }
+        }
+      }
+    },
+    "The PDF couldn't be made. Please try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le PDF n'a pas pu être créé. Veuillez réessayer."
+          }
+        }
+      }
+    },
+    "The payment didn't go through and you weren't charged. Check your payment method in the App Store and try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Le paiement n'a pas abouti et vous n'avez pas été débité. Vérifiez votre moyen de paiement dans l'App Store et réessayez."
+          }
+        }
+      }
+    },
+    "These show on your invoices as buttons and a QR code. Clients pay you directly. Duly never touches the money." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elles s'affichent sur vos factures sous forme de boutons et de QR code. Vos clients vous paient directement. Duly ne touche jamais l'argent."
+          }
+        }
+      }
+    },
+    "This can't be undone." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette action est irréversible."
+          }
+        }
+      }
+    },
+    "This deletes your sign-in and unlinks your subscription from it. Your invoices stay on this device and in your iCloud; delete the app to remove them. To stop paying, cancel the subscription in Settings > [your name] > Subscriptions." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cela supprime votre connexion et en détache votre abonnement. Vos factures restent sur cet appareil et dans votre iCloud ; supprimez l'app pour les effacer. Pour ne plus payer, résiliez l'abonnement dans Réglages > [votre nom] > Abonnements."
+          }
+        }
+      }
+    },
+    "This device only: %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sur cet appareil uniquement : %@"
+          }
+        }
+      }
+    },
+    "This document was deleted." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce document a été supprimé."
+          }
+        }
+      }
+    },
+    "This goes at the top of every invoice. You can change it later." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ces informations figurent en haut de chaque facture. Vous pourrez les modifier."
+          }
+        }
+      }
+    },
+    "This plan isn't available right now." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cette formule n'est pas disponible pour le moment."
+          }
+        }
+      }
+    },
+    "This was turned into invoice %@." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ce devis est devenu la facture %@."
+          }
+        }
+      }
+    },
+    "Today at %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aujourd'hui à %@"
+          }
+        }
+      }
+    },
+    "Topic" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sujet"
+          }
+        }
+      }
+    },
+    "Total" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total"
+          }
+        }
+      }
+    },
+    "Total due" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total à payer"
+          }
+        }
+      }
+    },
+    "Totals by month and by client, what's still unpaid, and a CSV for your accountant." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Totaux par mois et par client, ce qui reste impayé, et un CSV pour votre comptable."
+          }
+        }
+      }
+    },
+    "Trades" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Artisan"
+          }
+        }
+      }
+    },
+    "Turn into invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transformer en facture"
+          }
+        }
+      }
+    },
+    "Turn them on in iPhone Settings > Notifications > Duly, then try again." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activez-les dans Réglages > Notifications > Duly, puis réessayez."
+          }
+        }
+      }
+    },
+    "Turned into an invoice" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transformé en facture"
+          }
+        }
+      }
+    },
+    "Type details" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisir les coordonnées"
+          }
+        }
+      }
+    },
+    "Type their details or pick them from your Contacts. Duly only sees the contact you choose." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Saisissez ses coordonnées ou choisissez-le dans vos contacts. Duly ne voit que le contact choisi."
+          }
+        }
+      }
+    },
+    "USt-IdNr." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° TVA DE"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "Unit" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unité"
+          }
+        }
+      }
+    },
+    "Unlock every template" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débloquez tous les modèles"
+          }
+        }
+      }
+    },
+    "Unlock reports" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Débloquer les rapports"
+          }
+        }
+      }
+    },
+    "Unpaid" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impayées"
+          }
+        }
+      }
+    },
+    "Untitled item" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ligne sans titre"
+          }
+        }
+      }
+    },
+    "VAT number" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° TVA"
+          }
+        }
+      },
+      "extractionState" : "manual",
+      "comment" : "Looked up at run time (comes from InvoiceKit)."
+    },
+    "VAT registered" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Assujetti à la TVA"
+          }
+        }
+      }
+    },
+    "Valid until" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valable jusqu'au"
+          }
+        }
+      }
+    },
+    "Valid until %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valable jusqu'au %@"
+          }
+        }
+      }
+    },
+    "We filled in examples. Change anything; the preview updates as you type." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous avons mis des exemples. Modifiez ce que vous voulez ; l'aperçu se met à jour pendant la saisie."
+          }
+        }
+      }
+    },
+    "We reply within 24 hours, every day." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous répondons sous 24 heures, tous les jours."
+          }
+        }
+      }
+    },
+    "We reply within 24 hours. Your invoices are not attached." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous répondons sous 24 heures. Vos factures ne sont pas jointes."
+          }
+        }
+      }
+    },
+    "We'll pick a template and sample items to start you off." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nous choisissons un modèle et des exemples de lignes pour démarrer."
+          }
+        }
+      }
+    },
+    "Weekly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque semaine"
+          }
+        }
+      }
+    },
+    "What do you do?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que faites-vous ?"
+          }
+        }
+      }
+    },
+    "What happened?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Que s'est-il passé ?"
+          }
+        }
+      }
+    },
+    "What's it about?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De quoi s'agit-il ?"
+          }
+        }
+      }
+    },
+    "Where are my invoices stored?" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Où sont stockées mes factures ?"
+          }
+        }
+      }
+    },
+    "Year" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Année"
+          }
+        }
+      }
+    },
+    "Yearly" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chaque année"
+          }
+        }
+      }
+    },
+    "Yesterday at %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hier à %@"
+          }
+        }
+      }
+    },
+    "You're offline. Mail and WhatsApp will send this as soon as you have signal." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vous êtes hors ligne. Mail et WhatsApp l'enverront dès que vous aurez du réseau."
+          }
+        }
+      }
+    },
+    "Your Business" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre entreprise"
+          }
+        }
+      }
+    },
+    "Your business" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre entreprise"
+          }
+        }
+      }
+    },
+    "Your data" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos données"
+          }
+        }
+      }
+    },
+    "Your invoices are saved on this device and in your own iCloud, which only you can read. A new iPhone or iPad signed in to the same Apple ID gets everything back. If your subscription ends you can still open and export every invoice. Only you can delete your data." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos factures sont enregistrées sur cet appareil et dans votre propre iCloud, que vous seul pouvez lire. Un nouvel iPhone ou iPad connecté au même identifiant Apple récupère tout. Si votre abonnement se termine, vous pouvez toujours ouvrir et exporter chaque facture. Vous seul pouvez supprimer vos données."
+          }
+        }
+      }
+    },
+    "Your monthly invoice is ready" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre facture mensuelle est prête"
+          }
+        }
+      }
+    },
+    "Your own rates are removed from the list. Invoices already sent keep their rates." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos propres taux sont retirés de la liste. Les factures déjà envoyées gardent leurs taux."
+          }
+        }
+      }
+    },
+    "Your purchase is waiting for approval. Premium unlocks as soon as it's approved." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre achat attend une approbation. Premium sera débloqué dès qu'il sera approuvé."
+          }
+        }
+      }
+    },
+    "Your signature" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre signature"
+          }
+        }
+      }
+    },
+    "Your totals by month and by client appear here once you send invoices." : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vos totaux par mois et par client apparaîtront ici dès que vous enverrez des factures."
+          }
+        }
+      }
+    },
+    "Your weekly invoice is ready" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre facture hebdomadaire est prête"
+          }
+        }
+      }
+    },
+    "Your yearly invoice is ready" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre facture annuelle est prête"
+          }
+        }
+      }
+    },
+    "a month" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "par mois"
+          }
+        }
+      }
+    },
+    "client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "client"
+          }
+        }
+      }
+    },
+    "e.g. Kestrel Joinery" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ex. Menuiserie Martin"
+          }
         }
       }
     },
@@ -167,6 +5313,92 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "e.g. Labor"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ex. Main-d'œuvre"
+          }
+        }
+      }
+    },
+    "hour, day, item…" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "heure, jour, pièce…"
+          }
+        }
+      }
+    },
+    "iCloud" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud"
+          }
+        }
+      }
+    },
+    "iCloud backup" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sauvegarde iCloud"
+          }
+        }
+      }
+    },
+    "iCloud setup" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuration iCloud"
+          }
+        }
+      }
+    },
+    "name@company.com" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nom@entreprise.fr"
+          }
+        }
+      }
+    },
+    "per %@" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "par %@"
+          }
+        }
+      }
+    },
+    "you@business.com" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "vous@entreprise.fr"
+          }
+        }
+      }
+    },
+    "your client" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "votre client"
           }
         }
       }

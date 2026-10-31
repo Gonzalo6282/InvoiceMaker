@@ -5,14 +5,14 @@ import Testing
 struct RegionTests {
     @Test(arguments: [
         ("GB", Region.uk), ("GBR", .uk), ("uk", .uk), ("AU", .au), ("AUS", .au),
-        ("CA", .ca), ("CAN", .ca), ("US", .us), ("usa", .us),
+        ("CA", .ca), ("CAN", .ca), ("US", .us), ("usa", .us), ("DE", .de), ("deu", .de), ("FR", .fr), ("FRA", .fr),
     ])
     func parsesCountryCodes(code: String, region: Region) {
         #expect(Region(countryCode: code) == region)
     }
 
     @Test func unknownCountryHasNoPresetAndResolvesToUK() {
-        #expect(Region(countryCode: "FR") == nil)
+        #expect(Region(countryCode: "ES") == nil)
         #expect(Region.resolve(countryCode: "IRL") == .uk)
         #expect(Region.resolve(countryCode: nil) == .uk)
         #expect(Region.resolve(countryCode: "CAN") == .ca)
@@ -28,6 +28,11 @@ struct RegionTests {
         #expect(Region.ca.preset.taxes.map(\.label) == ["GST 5%", "PST 7%", "QST 9.975%", "HST 13%", "HST 15%"])
         #expect(Region.us.preset.taxes.map(\.label) == ["Sales tax 8.875%"])
         #expect(Region.us.preset.taxIDLabel == "EIN")
+        #expect(Region.de.preset.taxes.map(\.label) == ["MwSt. 19%", "MwSt. 7%", "MwSt. 0%"])
+        #expect(Region.de.preset.currencyCode == "EUR")
+        #expect(Region.de.preset.localeIdentifier == "de_DE")
+        #expect(Region.fr.preset.taxes.map(\.label) == ["TVA 20%", "TVA 10%", "TVA 5.5%", "TVA 0%"])
+        #expect(Region.fr.preset.taxIDLabel == "N° TVA")
         for region in Region.allCases {
             let ids = region.preset.taxes.map(\.id)
             #expect(Set(ids).count == ids.count)
@@ -43,6 +48,8 @@ struct RegionTests {
         #expect(Region.au.title(for: .invoice, taxRegistered: false) == "Invoice")
         #expect(Region.uk.title(for: .invoice, taxRegistered: true) == "Invoice")
         #expect(Region.ca.title(for: .receipt, taxRegistered: true) == "Receipt")
+        #expect(Region.de.title(for: .estimate, taxRegistered: true) == "Estimate")
+        #expect(Region.fr.title(for: .invoice, taxRegistered: true) == "Invoice")
     }
 
     @Test func paperSizes() {

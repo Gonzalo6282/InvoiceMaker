@@ -9,12 +9,12 @@ import Testing
 @MainActor
 struct CloudKitSchemaTests {
     // Optional binding works whether the API returns an optional or not.
-    let model: NSManagedObjectModel? = NSManagedObjectModel.makeManagedObjectModel(for: SchemaV1.models)
+    let model: NSManagedObjectModel? = NSManagedObjectModel.makeManagedObjectModel(for: CurrentSchema.models)
     var entities: [NSEntityDescription] { model?.entities ?? [] }
 
     @Test func everyModelIsInTheSchema() {
         #expect(model != nil)
-        #expect(Set(entities.compactMap(\.name)) == ["Business", "PaymentDetails", "TaxRateRecord", "Client", "SavedItem", "Document", "LineItem"])
+        #expect(Set(entities.compactMap(\.name)) == ["Business", "PaymentDetails", "TaxRateRecord", "Client", "SavedItem", "Document", "LineItem", "JobPhoto"])
     }
 
     @Test func noUniqueConstraints() {

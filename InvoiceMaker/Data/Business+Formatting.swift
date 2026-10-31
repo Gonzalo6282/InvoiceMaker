@@ -28,8 +28,26 @@ extension Business {
         }
     }
 
+    /// "Invoice", "Quote", "Tax invoice"… in the app's language.
     func title(for kind: DocumentKind) -> String {
-        region.title(for: kind, taxRegistered: taxRegistered)
+        Self.localized(region.title(for: kind, taxRegistered: taxRegistered))
+    }
+
+    /// Whole phrases, so languages with genders read right ("Neue Rechnung", "Neues Angebot").
+    func newTitle(for kind: DocumentKind) -> String {
+        switch kind {
+        case .invoice: String(localized: "New invoice")
+        case .estimate: region == .uk ? String(localized: "New quote") : String(localized: "New estimate")
+        case .receipt: String(localized: "New receipt")
+        }
+    }
+
+    /// The tax ID label ("VAT number", "USt-IdNr.") in the app's language.
+    var taxIDLabel: String { Self.localized(region.preset.taxIDLabel) }
+
+    /// Looks up an English string that comes from InvoiceKit.
+    static func localized(_ english: String) -> String {
+        Bundle.main.localizedString(forKey: english, value: english, table: nil)
     }
 }
 

@@ -1,0 +1,93 @@
+# Conditions d'utilisation
+
+Dernière mise à jour : 29 octobre 2026
+
+Traduction de la version anglaise. En cas de divergence, la version anglaise fait foi.
+
+## Acceptation des Conditions
+En téléchargeant, en installant ou en utilisant l'application mobile Duly: Invoice Maker & Estimate (l'« App »), vous acceptez les présentes Conditions d'utilisation (les « Conditions »). Si vous ne les acceptez pas, n'utilisez pas l'App.
+
+Les présentes Conditions constituent un accord contraignant entre vous et Slice of Life Ltd, société immatriculée au Royaume-Uni (la « Société », « nous », « notre » ou « nos »), concernant votre utilisation de l'App et des services associés.
+
+## À qui s'adresse l'App
+L'App est un outil professionnel destiné aux indépendants, entrepreneurs individuels, artisans et petites entreprises. En l'utilisant, vous confirmez que vous avez au moins 18 ans (ou l'âge de la majorité dans votre pays) et que vous utilisez l'App dans le cadre de votre métier, de votre entreprise ou de votre profession. Si vous utilisez l'App pour le compte d'une société, vous confirmez être autorisé à accepter les présentes Conditions en son nom.
+
+## Description du service
+Duly vous permet de créer, modifier, prévisualiser et envoyer des factures, des devis (appelés « estimates » ou « quotes » selon les régions) et des reçus. L'App peut comprendre : des listes de clients et d'articles enregistrés, des taux de taxe nommés que vous définissez vous-même (par exemple TVA, GST, PST, HST et taxe de vente), des remises, des frais de livraison et autres frais, des modèles de factures, votre logo et votre signature, les signatures de vos clients, vos coordonnées de paiement, des liens de paiement et des QR codes imprimés sur vos documents, le suivi des statuts (brouillon, envoyée, payée, en retard), la transformation de devis en factures, des reçus à partir de factures payées, des factures récurrentes, des rappels de paiement sur votre appareil, des rapports, des photos de chantier, des suggestions d'adresses, l'export de PDF et de données CSV, la sauvegarde via votre propre compte iCloud, la connexion facultative avec Apple et des fonctions Premium payantes. Les fonctions peuvent évoluer, et toutes ne sont pas disponibles sur tous les appareils ni dans toutes les régions.
+
+## Fonctions gratuites et Premium
+La création, la modification et la prévisualisation de documents, l'enregistrement de clients et d'articles, la sauvegarde iCloud et l'export de vos données sont gratuits et illimités. L'envoi, l'impression et l'enregistrement de documents au format PDF, les modèles premium et les documents sans la mention « Aperçu » nécessitent un abonnement Premium. Nous vous indiquons clairement dans l'App quelles fonctions nécessitent Premium avant tout paiement.
+
+## Abonnements, essais gratuits et paiements
+Premium est vendu sous forme d'abonnement à renouvellement automatique via l'App Store d'Apple. Les prix sont affichés dans l'App et sur l'App Store avant l'achat, dans votre devise locale, et peuvent inclure les taxes locales.
+
+Lorsqu'un essai gratuit est proposé, il est indiqué sur l'écran d'achat avec sa date de fin. Sauf résiliation au moins 24 heures avant la fin de l'essai, celui-ci se transforme en abonnement payant et vous êtes débité à cette date.
+
+Les abonnements se renouvellent automatiquement à la fin de chaque période, sauf résiliation au moins 24 heures avant la fin de la période. Le paiement est débité sur votre compte identifiant Apple. Vous pouvez gérer ou résilier votre abonnement dans Réglages > [votre nom] > Abonnements sur votre appareil. La suppression de l'App ne résilie pas l'abonnement.
+
+Les achats, renouvellements, résiliations et remboursements sont gérés par Apple selon ses propres conditions. Nous ne pouvons pas effectuer de remboursement directement ; vous pouvez en demander un à Apple sur reportaproblem.apple.com. Utilisez « Restaurer les achats » dans Réglages ou sur l'écran d'achat si vous réinstallez l'App ou changez d'appareil.
+
+Si un abonnement prend fin, vous conservez un accès complet à tout ce que vous avez créé. Vos documents, clients et articles ne sont jamais supprimés ni verrouillés ; seules les fonctions Premium cessent de fonctionner jusqu'à ce que vous vous abonniez de nouveau.
+
+## Vos documents et votre responsabilité
+Vous êtes seul responsable du contenu des documents que vous créez et envoyez, notamment les noms, adresses, montants, descriptions, dates, numéros de document, coordonnées de paiement et informations fiscales.
+
+L'App calcule les totaux à partir des prix, quantités, remises et taux de taxe que vous saisissez. Les taux de taxe sont définis par vous ; les taux proposés par l'App ne sont qu'un point de départ et peuvent être obsolètes ou ne pas s'appliquer à votre situation.
+
+Les factures récurrentes sont préparées sous forme de brouillons que vous vérifiez et envoyez ; l'App n'envoie jamais un document d'elle-même. Les rappels et notifications sont une simple commodité : ils dépendent des réglages de votre appareil et peuvent ne pas toujours arriver, suivez donc vous-même vos échéances. Les rapports additionnent les documents présents dans l'App et ne constituent pas une comptabilité.
+
+## Ni conseil fiscal, ni juridique, ni comptable
+L'App est un outil de création de documents. Elle ne fournit aucun conseil fiscal, juridique, comptable ou financier et ne vérifie pas si vos documents respectent les exigences légales de votre pays, telles que les mentions obligatoires sur les factures, les numéros d'identification fiscale, les règles de numérotation ou les obligations de facturation électronique. Il vous appartient de respecter vos propres obligations fiscales, de facturation et de conservation des documents. En cas de doute, consultez un expert-comptable ou un conseiller fiscal qualifié.
+
+## Paiements entre vous et vos clients
+L'App ne traite, ne détient et ne transfère aucun argent. Les coordonnées de paiement, liens de paiement et QR codes figurant sur vos documents sont saisis par vous et renvoient vers votre propre banque ou vos propres prestataires de paiement. Nous ne sommes partie à aucune transaction entre vous et vos clients et ne sommes pas responsables du fait que vos clients vous paient, ni du moment ou de la manière dont ils le font, ni des services d'une banque ou d'un prestataire de paiement.
+
+## Compte et connexion avec Apple
+Vous pouvez utiliser l'App sans compte. La connexion avec Apple est facultative et sert à relier votre compte et votre abonnement sur vos appareils. Vous pouvez supprimer votre compte à tout moment dans Réglages > Compte. La suppression de votre compte n'efface pas les documents stockés sur votre appareil ou dans votre iCloud et ne résilie pas votre abonnement.
+
+## Sauvegarde et perte de données
+Vos documents sont stockés sur votre appareil et, si iCloud est activé, dans votre propre espace iCloud privé fourni par Apple. Nous n'y avons pas accès et ne pouvons pas les restaurer. Laissez iCloud activé et exportez régulièrement vos données. Dans la mesure permise par la loi, nous ne sommes pas responsables des pertes de données dues à la perte ou à l'endommagement de votre appareil, à la désactivation ou à la saturation d'iCloud, à la suppression de l'App ou à des problèmes liés aux services d'Apple.
+
+## Utilisation acceptable
+Vous vous engagez à ne pas : utiliser l'App de manière illégale ou pour créer des documents faux, trompeurs ou frauduleux ; utiliser l'App pour usurper l'identité d'une autre personne ou entreprise ; perturber ou entraver le fonctionnement de l'App ; tenter d'accéder sans autorisation à nos systèmes ; procéder à l'ingénierie inverse de l'App, sauf lorsque la loi le permet ; ou utiliser l'App pour porter atteinte aux droits d'autrui.
+
+## Photos, contacts et fonctions de l'appareil
+Si vous ajoutez un logo, l'App vous demande l'autorisation d'accéder à vos photos et n'utilise que l'image que vous choisissez. Si vous ajoutez un client depuis vos contacts, l'App vous demande l'autorisation d'accéder à vos contacts et n'utilise que le contact que vous choisissez. Les photos de chantier sont choisies avec le sélecteur de photos de l'iPhone, qui ne partage que les photos que vous sélectionnez. Les suggestions d'adresses proviennent d'Apple Plans. Les notifications sont planifiées sur votre appareil. Les signatures sont dessinées sur votre appareil. Ces éléments restent sur votre appareil et dans votre iCloud, sauf si vous choisissez d'envoyer ou de partager un document.
+
+## Propriété intellectuelle
+L'App, son design, ses modèles et son contenu (à l'exclusion de votre contenu et des éléments de tiers) appartiennent à Slice of Life Ltd ou à ses concédants de licence. Duly et son identité visuelle sont notre propriété. Nous vous accordons une licence limitée, personnelle, révocable et non transférable pour utiliser l'App conformément aux présentes Conditions et au Contrat de licence d'utilisateur final des applications sous licence d'Apple. Vos documents, votre logo et vos données vous appartiennent.
+
+## Confidentialité
+Notre Politique de confidentialité explique comment nous traitons les données personnelles et fait partie intégrante des présentes Conditions.
+
+## Exclusion de garanties
+DANS TOUTE LA MESURE PERMISE PAR LA LOI, L'APP EST FOURNIE « EN L'ÉTAT » ET « SELON DISPONIBILITÉ », SANS GARANTIE D'AUCUNE SORTE. NOUS NE GARANTISSONS PAS QUE L'APP FONCTIONNERA SANS INTERRUPTION NI ERREUR, QUE LES CALCULS CORRESPONDRONT À VOTRE SITUATION FISCALE, NI QUE VOS CLIENTS VOUS PAIERONT.
+
+## Limitation de responsabilité
+DANS TOUTE LA MESURE PERMISE PAR LA LOI, NOUS NE SOMMES PAS RESPONSABLES DES DOMMAGES INDIRECTS, ACCESSOIRES, SPÉCIAUX, CONSÉCUTIFS OU PUNITIFS, NI DE LA PERTE DE BÉNÉFICES, DE CHIFFRE D'AFFAIRES, D'ACTIVITÉ, DE CLIENTÈLE OU DE DONNÉES, Y COMPRIS LES PERTES CAUSÉES PAR DES ERREURS DANS LES DOCUMENTS QUE VOUS CRÉEZ, DES PÉNALITÉS FISCALES OU DES PAIEMENTS EN RETARD OU NON REÇUS. NOTRE RESPONSABILITÉ TOTALE POUR TOUTE RÉCLAMATION LIÉE À L'APP EST LIMITÉE AU MONTANT QUE VOUS AVEZ PAYÉ POUR L'APP AU COURS DES DOUZE MOIS PRÉCÉDANT LA RÉCLAMATION. Rien dans les présentes Conditions ne limite une responsabilité qui ne peut être limitée par la loi, notamment en cas de décès ou de dommage corporel causé par une négligence, ou en cas de fraude.
+
+## Indemnisation
+Dans la mesure permise par la loi, vous acceptez d'indemniser et de garantir Slice of Life Ltd contre toute réclamation découlant des documents que vous créez ou envoyez, de vos relations avec vos clients ou de votre violation des présentes Conditions.
+
+## Résiliation
+Vous pouvez cesser d'utiliser l'App à tout moment et supprimer votre compte dans Réglages. Nous pouvons suspendre ou mettre fin à l'accès à l'App en cas de manquements graves ou répétés aux présentes Conditions, ou lorsque la loi l'exige.
+
+## Apple
+Les présentes Conditions sont conclues entre vous et Slice of Life Ltd, et non avec Apple. Apple n'est pas responsable de l'App ni de son contenu, n'a aucune obligation d'en assurer la maintenance ou l'assistance et n'est responsable d'aucune réclamation relative à l'App. Apple et ses filiales sont des tiers bénéficiaires des présentes Conditions et peuvent les faire valoir à votre encontre.
+
+## Droit applicable et litiges
+Les présentes Conditions sont régies par le droit de l'Angleterre et du pays de Galles. Les tribunaux d'Angleterre et du pays de Galles sont compétents, sous réserve des protections impératives des consommateurs ou des entreprises applicables dans votre pays de résidence.
+
+## Modifications des présentes Conditions
+Nous pouvons mettre à jour les présentes Conditions. Nous vous informerons de toute modification importante dans l'App ou par tout autre moyen raisonnable. Si vous continuez à utiliser l'App après l'entrée en vigueur d'une modification, vous acceptez les Conditions mises à jour, lorsque la loi le permet.
+
+## Divisibilité
+Si une partie des présentes Conditions est jugée inapplicable, le reste demeure en vigueur.
+
+## Intégralité de l'accord
+Les présentes Conditions et notre Politique de confidentialité constituent l'intégralité de l'accord entre vous et Slice of Life Ltd concernant l'App.
+
+## Contact
+Slice of Life Ltd
+E-mail : info@slice-of-life.uk
+Site web : https://slice-of-life.uk

@@ -8,12 +8,22 @@ struct AppShell: View {
     /// Opened right away (the invoice made during onboarding).
     var initialDocument: PersistentIdentifier?
     @Environment(\.horizontalSizeClass) private var sizeClass
+    @Environment(\.scenePhase) private var scenePhase
+    @Environment(\.modelContext) private var context
 
     var body: some View {
-        if sizeClass == .regular {
-            SplitShell(business: business, documentID: initialDocument)
-        } else {
-            TabShell(business: business, path: initialDocument.map { [$0] } ?? [])
+        Group {
+            if sizeClass == .regular {
+                SplitShell(business: business, documentID: initialDocument)
+            } else {
+                TabShell(business: business, path: initialDocument.map { [$0] } ?? [])
+            }
+        }
+        .onChange(of: scenePhase, initial: true) { _, phase in
+            // Opening: prepare recurring invoices that are due. Opening or
+            // closing: rebuild the reminders from the current data.
+            if phase == .active { RecurringInvoices(context: context).prepareDue(business: business) }
+            if phase != .inactive { Reminders.reschedule(context: context, business: business) }
         }
     }
 }
@@ -21,6 +31,7 @@ struct AppShell: View {
 enum AppSection: Hashable {
     case documents(DocumentKind)
     case clients
+    case reports
     case items
     case settings
 }
@@ -35,7 +46,7 @@ private struct TabShell: View {
     @State var path: [PersistentIdentifier] = []
     @State private var clientPath: [PersistentIdentifier] = []
 
-    enum Tab { case documents, clients, items, settings }
+    enum Tab { case documents, clients, reports, items, settings }
 
     var body: some View {
         TabView(selection: $tab) {
@@ -66,6 +77,10 @@ private struct TabShell: View {
             }
             .tabItem { Label("Clients", systemImage: "person.2") }
             .tag(Tab.clients)
+
+            NavigationStack { ReportsView(business: business) }
+                .tabItem { Label("Reports", systemImage: "chart.bar") }
+                .tag(Tab.reports)
 
             NavigationStack { ItemsView(business: business) }
                 .tabItem { Label("Items", systemImage: "tag") }
@@ -99,6 +114,7 @@ private struct SplitShell: View {
                     Label(business.pluralTitle(for: k), systemImage: icon(for: k)).tag(AppSection.documents(k))
                 }
                 Label("Clients", systemImage: "person.2").tag(AppSection.clients)
+                Label("Reports", systemImage: "chart.bar").tag(AppSection.reports)
                 Label("Items", systemImage: "tag").tag(AppSection.items)
                 Label("Settings", systemImage: "gearshape").tag(AppSection.settings)
             }
@@ -109,6 +125,8 @@ private struct SplitShell: View {
                 DocumentListView(business: business, kind: $kind, open: { documentID = stableID($0, in: context) }, selectedID: documentID)
             case .clients:
                 ClientsView(business: business, openClient: { clientID = stableID($0, in: context) }, selectedID: clientID)
+            case .reports:
+                NavigationStack { ReportsView(business: business) }
             case .items:
                 ItemsView(business: business)
             case .settings:
@@ -156,7 +174,7 @@ private struct SplitShell: View {
             } else {
                 SectionPlaceholder(title: "", message: String(localized: "Choose an invoice, or press ⌘N to create one"))
             }
-        case .items, .settings:
+        case .items, .settings, .reports:
             SectionPlaceholder(title: "", message: "")
         }
     }

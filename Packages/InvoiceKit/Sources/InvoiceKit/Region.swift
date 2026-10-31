@@ -1,12 +1,15 @@
 import Foundation
 
-/// The four countries with tax presets in 1.0. Any other country falls back
-/// to the UK preset (as in the mockup); the user edits it.
+/// The countries with tax presets (UK, Australia, Canada and the US in 1.0;
+/// Germany and France in 1.1). Any other country falls back to the UK preset
+/// (as in the mockup); the user edits it.
 public enum Region: String, CaseIterable, Sendable, Codable {
     case uk
     case au
     case ca
     case us
+    case de
+    case fr
 
     /// Accepts ISO 3166 alpha-2 or alpha-3 codes (`Storefront.countryCode` is
     /// alpha-3), plus "UK". Returns nil for countries without a preset.
@@ -16,6 +19,8 @@ public enum Region: String, CaseIterable, Sendable, Codable {
         case "AU", "AUS": self = .au
         case "CA", "CAN": self = .ca
         case "US", "USA": self = .us
+        case "DE", "DEU": self = .de
+        case "FR", "FRA": self = .fr
         default: return nil
         }
     }
@@ -53,6 +58,23 @@ public enum Region: String, CaseIterable, Sendable, Codable {
             RegionPreset(
                 currencyCode: "USD", localeIdentifier: "en_US", taxIDLabel: "EIN",
                 taxes: [TaxRate(id: "us-sales", name: "Sales tax", rate: Decimal(string: "8.875")!)])
+        case .de:
+            RegionPreset(
+                currencyCode: "EUR", localeIdentifier: "de_DE", taxIDLabel: "USt-IdNr.",
+                taxes: [
+                    TaxRate(id: "de-mwst19", name: "MwSt.", rate: 19),
+                    TaxRate(id: "de-mwst7", name: "MwSt.", rate: 7),
+                    TaxRate(id: "de-mwst0", name: "MwSt.", rate: 0),
+                ])
+        case .fr:
+            RegionPreset(
+                currencyCode: "EUR", localeIdentifier: "fr_FR", taxIDLabel: "N° TVA",
+                taxes: [
+                    TaxRate(id: "fr-tva20", name: "TVA", rate: 20),
+                    TaxRate(id: "fr-tva10", name: "TVA", rate: 10),
+                    TaxRate(id: "fr-tva55", name: "TVA", rate: Decimal(string: "5.5")!),
+                    TaxRate(id: "fr-tva0", name: "TVA", rate: 0),
+                ])
         }
     }
 
