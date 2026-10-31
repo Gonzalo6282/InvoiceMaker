@@ -36,6 +36,10 @@ SCREENS = {
     "07": "12-invoice-look.png",
     "08": "13-photos-editor.png",
 }
+# The iPad UI test stops before Settings (pre-existing), so iPad 07 uses the
+# quote PDF with the template strip, and iPad 03 shows the list next to an
+# open invoice, as in the v1.0 iPad sets.
+SCREENS_IPAD = {**SCREENS, "03": "02-editor.png", "07": "09-quote-pdf.png"}
 
 # listing: capture region and captions (title, green words, subtitle) per image.
 SETS = {
@@ -45,6 +49,16 @@ SETS = {
         "03": ("Cada factura al día", {"Cada"}, "Pagadas, pendientes y vencidas"),
         "04": ("Cobra más rápido", {"rápido"}, "Tu CLABE y PayPal en cada factura"),
         "05": ("Cotizaciones", {"Cotizaciones"}, "Conviértelas en factura con un toque"),
+        "06": ("Recibos", {"Recibos"}, "Marca pagado y envía un recibo"),
+        "07": ("Tu diseño", {"diseño"}, "Personaliza con tu logo"),
+        "08": ("Fotos de la obra", {"obra"}, "Muestra el trabajo terminado en cada factura"),
+    }),
+    "es-ES": ("ES", {
+        "01": ("Crea facturas", {"facturas"}, "Factura a tus clientes en segundos"),
+        "02": ("Factura en la obra", {"en", "la", "obra"}, "Para autónomos y oficios"),
+        "03": ("Cada factura al día", {"Cada"}, "Pagadas, pendientes y vencidas"),
+        "04": ("Cobra más rápido", {"rápido"}, "Tu IBAN y PayPal en cada factura"),
+        "05": ("Presupuestos", {"Presupuestos"}, "Conviértelos en factura con un toque"),
         "06": ("Recibos", {"Recibos"}, "Marca pagado y envía un recibo"),
         "07": ("Tu diseño", {"diseño"}, "Personaliza con tu logo"),
         "08": ("Fotos de la obra", {"obra"}, "Muestra el trabajo terminado en cada factura"),
@@ -98,7 +112,7 @@ def main():
         for device in DEVICES:
             folder = os.path.join(a.out, f"{a.listing}-{device}")
             os.makedirs(folder, exist_ok=True)
-            for n, screen in SCREENS.items():
+            for n, screen in (SCREENS_IPAD if device == "ipad" else SCREENS).items():
                 title, green, subtitle = captions[n]
                 shot = raw(region, device, screen, tmp)
                 target = os.path.join(folder, f"{n}.png")
