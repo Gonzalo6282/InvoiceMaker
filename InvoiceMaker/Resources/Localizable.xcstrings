@@ -279,6 +279,12 @@
             "value" : "**Aceptada.** Firmada por %@."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Aceptado.** Firmado por %@."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -299,6 +305,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "**Respaldado en iCloud.** Tus documentos, clientes, logo y ajustes se sincronizan con tu propio iCloud."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Copia de seguridad en iCloud.** Tus documentos, clientes, logo y ajustes se sincronizan con tu propio iCloud."
           }
         },
         "fr" : {
@@ -411,6 +423,12 @@
             "value" : "**iCloud está desactivado.** Abre la app Configuración, toca tu nombre, luego iCloud, e inicia sesión. Mientras tanto, tus facturas solo están en este dispositivo."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**iCloud está desactivado.** Abre la app Ajustes, toca tu nombre, luego iCloud, e inicia sesión. Mientras tanto, tus facturas solo están en este dispositivo."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -475,6 +493,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Un enlace de pago general no conoce el total de la factura, así que tu cliente escribe el monto."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un enlace de pago general no conoce el total de la factura, así que tu cliente escribe el importe."
           }
         },
         "fr" : {
@@ -543,6 +567,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aceptada"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aceptado"
           }
         },
         "fr" : {
@@ -655,6 +685,12 @@
             "value" : "Agregar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -675,6 +711,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agrega un cliente antes de enviar."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade un cliente antes de enviar."
           }
         },
         "fr" : {
@@ -699,6 +741,12 @@
             "value" : "Agregar un cargo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir un cargo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -719,6 +767,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agregar un impuesto"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir un impuesto"
           }
         },
         "fr" : {
@@ -743,6 +797,12 @@
             "value" : "Agrega al menos un concepto con precio."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade al menos un concepto con precio."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -763,6 +823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agregar cliente"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir cliente"
           }
         },
         "fr" : {
@@ -787,6 +853,12 @@
             "value" : "Agregar de conceptos guardados"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir de conceptos guardados"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -807,6 +879,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agregar concepto"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir concepto"
           }
         },
         "fr" : {
@@ -831,6 +909,12 @@
             "value" : "Agregar más fotos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir más fotos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -851,6 +935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agregar fotos"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir fotos"
           }
         },
         "fr" : {
@@ -875,6 +965,12 @@
             "value" : "Guarda tus servicios y productos una vez, con su precio e impuesto. Luego agrégalos a cualquier factura con un toque."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda tus servicios y productos una vez, con su precio e impuesto. Luego añádelos a cualquier factura con un toque."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -895,6 +991,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agrega tus datos bancarios o enlaces de pago en Datos de pago. Aparecen en cada factura con un código QR."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tus datos bancarios o enlaces de pago en Datos de pago. Aparecen en cada factura con un código QR."
           }
         },
         "fr" : {
@@ -919,6 +1021,12 @@
             "value" : "Agrega tus datos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tus datos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -939,6 +1047,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agrega tu primer cliente"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tu primer cliente"
           }
         },
         "fr" : {
@@ -963,6 +1077,12 @@
             "value" : "Agrega tu logo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade tu logo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -983,6 +1103,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Agregado"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadido"
           }
         },
         "fr" : {
@@ -1139,6 +1265,12 @@
             "value" : "Monto"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importe"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1203,6 +1335,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apple no pudo confirmar que eres tú. En tu iPhone, abre Configuración > [tu nombre] > Inicio de sesión y seguridad > Iniciar sesión con Apple > Duly y toca Dejar de usar el ID de Apple. Luego vuelve a Duly e inténtalo de nuevo."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apple no pudo confirmar que eres tú. En tu iPhone, abre Ajustes > [tu nombre] > Inicio de sesión y seguridad > Iniciar sesión con Apple > Duly y toca Dejar de usar el ID de Apple. Luego vuelve a Duly e inténtalo de nuevo."
           }
         },
         "fr" : {
@@ -1359,6 +1497,12 @@
             "value" : "Respaldo y sincronización"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia de seguridad y sincronización"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1379,6 +1523,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Estado del respaldo"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado de la copia de seguridad"
           }
         },
         "fr" : {
@@ -1614,6 +1764,12 @@
             "value" : "Construcción, plomería, limpieza, electricidad"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Construcción, fontanería, limpieza, electricidad"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1759,6 +1915,12 @@
             "value" : "Cargo por visita"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desplazamiento"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1779,6 +1941,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Canadá: agrega GST y PST o QST a una factura, o solo HST. EE. UU.: el sales tax depende del estado, condado y ciudad, así que escribe tu propia tasa."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canadá: añade GST y PST o QST a una factura, o solo HST. EE. UU.: el sales tax depende del estado, condado y ciudad, así que escribe tu propia tasa."
           }
         },
         "fr" : {
@@ -3325,6 +3493,12 @@
             "value" : "Duly necesita acceso a tus contactos para agregar un cliente desde ellos. Puedes permitirlo en Configuración o escribir los datos del cliente."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly necesita acceso a tus contactos para añadir un cliente desde ellos. Puedes permitirlo en Ajustes o escribir los datos del cliente."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3347,6 +3521,12 @@
             "value" : "Duly necesita acceso a tus fotos para agregar tu logo a las facturas. Puedes permitirlo en Configuración."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly necesita acceso a tus fotos para añadir tu logo a las facturas. Puedes permitirlo en Ajustes."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3367,6 +3547,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reporte de Duly %1$@ %2$@"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informe de Duly %1$@ %2$@"
           }
         },
         "fr" : {
@@ -3505,6 +3691,12 @@
             "value" : "Cotización"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presupuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3525,6 +3717,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prefijo de cotizaciones"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefijo de presupuestos"
           }
         },
         "fr" : {
@@ -3549,6 +3747,12 @@
             "value" : "Total de la cotización"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total del presupuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3569,6 +3773,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cotizaciones"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presupuestos"
           }
         },
         "fr" : {
@@ -3901,6 +4111,12 @@
             "value" : "Gratis: crea, edita y revisa facturas, cotizaciones y recibos sin límite, respáldalos y expórtalos. Premium: envía, imprime y guarda PDF."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis: crea, edita y revisa facturas, presupuestos y recibos sin límite, haz una copia de seguridad y expórtalos. Premium: envía, imprime y guarda PDF."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3921,6 +4137,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Freelancer"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autónomo"
           }
         },
         "fr" : {
@@ -4439,6 +4661,28 @@
         }
       }
     },
+    "IVA is 21%, 10% or 4%. If your work is exempt, turn this off and say so in the notes." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die IVA beträgt 21 %, 10 % oder 4 %. Wenn Ihre Leistung steuerfrei ist, schalten Sie das aus und vermerken Sie es in den Notizen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El IVA es del 21 %, 10 % o 4 %. Si tu actividad está exenta, desactiva esto e indícalo en las notas."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "L'IVA est de 21 %, 10 % ou 4 %. Si votre activité est exonérée, désactivez ceci et indiquez-le dans les notes."
+          }
+        }
+      }
+    },
     "Import from Contacts" : {
       "localizations" : {
         "de" : {
@@ -4719,6 +4963,12 @@
             "value" : "Facturas, cotizaciones y recibos con tu logo. Crea gratis. Envía con Premium."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturas, presupuestos y recibos con tu logo. Crea gratis. Envía con Premium."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4739,6 +4989,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Facturas, cotizaciones y recibos con tu logo. Crea gratis. Envía con Premium."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturas, presupuestos y recibos con tu logo. Crea gratis. Envía con Premium."
           }
         },
         "fr" : {
@@ -5040,6 +5296,12 @@
             "value" : "Último respaldo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última copia de seguridad"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5258,6 +5520,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Logo agregado"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo añadido"
           }
         },
         "fr" : {
@@ -5546,6 +5814,12 @@
             "value" : "Microempresarios que no cobran IVA: desactiva esto y agrega \"TVA non applicable, art. 293 B du CGI\" a las notas."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Microempresarios que no cobran IVA: desactiva esto y añade \"TVA non applicable, art. 293 B du CGI\" a las notas."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5766,6 +6040,12 @@
             "value" : "Nueva cotización"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo presupuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5865,6 +6145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nueva cotización"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo presupuesto"
           }
         },
         "fr" : {
@@ -6021,6 +6307,12 @@
             "value" : "Aún no hay cotizaciones"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay presupuestos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6085,6 +6377,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no hay cotizaciones"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay presupuestos"
           }
         },
         "fr" : {
@@ -6217,6 +6515,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nada agregado"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada añadido"
           }
         },
         "fr" : {
@@ -6659,6 +6963,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abrir Configuración"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abrir Ajustes"
           }
         },
         "fr" : {
@@ -7233,6 +7543,12 @@
             "value" : "Los pagos los gestiona Apple. Abre Configuración, toca tu nombre y luego Suscripciones. Eliminar la app no cancela la suscripción."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los pagos los gestiona Apple. Abre Ajustes, toca tu nombre y luego Suscripciones. Eliminar la app no cancela la suscripción."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7253,6 +7569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Los pagos los gestiona Apple. Para cancelar, abre Configuración, toca tu nombre y luego Suscripciones. Para pedir un reembolso, ve a reportaproblem.apple.com. Eliminar la app no cancela la suscripción. Si tu suscripción termina, conservas todos tus documentos."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los pagos los gestiona Apple. Para cancelar, abre Ajustes, toca tu nombre y luego Suscripciones. Para pedir un reembolso, ve a reportaproblem.apple.com. Eliminar la app no cancela la suscripción. Si tu suscripción termina, conservas todos tus documentos."
           }
         },
         "fr" : {
@@ -7387,6 +7709,12 @@
             "value" : "Inténtalo de nuevo. Si sigue pasando, reporta un problema en Ayuda."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inténtalo de nuevo. Si sigue pasando, informa de un problema en Ayuda."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7495,6 +7823,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tasas predefinidas para **%@**. Edita cualquier tasa o agrega las tuyas. Cambiar una tasa nunca cambia las facturas que ya enviaste."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tasas predefinidas para **%@**. Edita cualquier tasa o añade las tuyas. Cambiar una tasa nunca cambia las facturas que ya enviaste."
           }
         },
         "fr" : {
@@ -7785,6 +8119,12 @@
             "value" : "Cotización"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presupuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7805,6 +8145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prefijo de cotizaciones"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefijo de presupuestos"
           }
         },
         "fr" : {
@@ -7829,6 +8175,12 @@
             "value" : "Total de la cotización"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total del presupuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7849,6 +8201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cotizaciones"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Presupuestos"
           }
         },
         "fr" : {
@@ -7915,6 +8273,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las tasas dependen de la provincia. Puedes agregar dos impuestos a una factura (GST más PST o QST)."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las tasas dependen de la provincia. Puedes añadir dos impuestos a una factura (GST más PST o QST)."
           }
         },
         "fr" : {
@@ -8174,6 +8538,12 @@
             "value" : "Se renueva automáticamente salvo que la canceles al menos 24 horas antes del fin del periodo. Adminístrala o cancélala en Configuración > [tu nombre] > Suscripciones."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se renueva automáticamente salvo que la canceles al menos 24 horas antes del fin del periodo. Adminístrala o cancélala en Ajustes > [tu nombre] > Suscripciones."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8284,6 +8654,12 @@
             "value" : "Reportar un problema"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informar de un problema"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8304,6 +8680,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reportes"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informes"
           }
         },
         "fr" : {
@@ -8966,6 +9348,12 @@
             "value" : "Enviar reporte"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar informe"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8986,6 +9374,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar esta cotización"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar este presupuesto"
           }
         },
         "fr" : {
@@ -9164,6 +9558,12 @@
             "value" : "Configuración"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ajustes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9228,6 +9628,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Comparte datos de uso anónimos e informes de fallos para que podamos corregir problemas y mejorar Duly. Tus facturas y los datos de tus clientes nunca se incluyen. Puedes cambiarlo en cualquier momento en Configuración."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comparte datos de uso anónimos e informes de fallos para que podamos corregir problemas y mejorar Duly. Tus facturas y los datos de tus clientes nunca se incluyen. Puedes cambiarlo en cualquier momento en Ajustes."
           }
         },
         "fr" : {
@@ -9316,6 +9722,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mostrar montos"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar importes"
           }
         },
         "fr" : {
@@ -10402,6 +10814,12 @@
             "value" : "Esto elimina tu inicio de sesión y desvincula tu suscripción. Tus facturas se quedan en este dispositivo y en tu iCloud; elimina la app para borrarlas. Para dejar de pagar, cancela la suscripción en Configuración > [tu nombre] > Suscripciones."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esto elimina tu inicio de sesión y desvincula tu suscripción. Tus facturas se quedan en este dispositivo y en tu iCloud; elimina la app para borrarlas. Para dejar de pagar, cancela la suscripción en Ajustes > [tu nombre] > Suscripciones."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10622,6 +11040,12 @@
             "value" : "Totales por mes y por cliente, lo que falta por cobrar y un CSV para tu contador."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Totales por mes y por cliente, lo que falta por cobrar y un CSV para tu gestoría."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10688,6 +11112,12 @@
             "value" : "Actívalas en Configuración del iPhone > Notificaciones > Duly e inténtalo de nuevo."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actívalas en Ajustes del iPhone > Notificaciones > Duly e inténtalo de nuevo."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10708,6 +11138,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Convertida en factura"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convertido en factura"
           }
         },
         "fr" : {
@@ -10866,6 +11302,12 @@
             "value" : "Desbloquea los reportes"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea los informes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10978,6 +11420,12 @@
             "value" : "Válida hasta"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válido hasta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11000,6 +11448,12 @@
             "value" : "Válida hasta el %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Válido hasta el %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11020,6 +11474,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Llenamos ejemplos. Cambia lo que quieras; la vista previa se actualiza mientras escribes."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rellenamos ejemplos. Cambia lo que quieras; la vista previa se actualiza mientras escribes."
           }
         },
         "fr" : {
@@ -11693,6 +12153,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Respaldo en iCloud"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Copia de seguridad en iCloud"
           }
         },
         "fr" : {

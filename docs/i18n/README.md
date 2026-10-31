@@ -7,6 +7,9 @@ German and Spanish. All app text is in `InvoiceMaker/Resources/Localizable.xcstr
 - v1.2: German back on; Spanish added (Latin American, "tú" like iOS in Mexico,
   "cotización" for estimates). Mexico is a region (MXN, IVA 16/8/0 %, RFC,
   CLABE, US Letter). Duly makes PDF invoices, not CFDI; the app and the Terms say so.
+- Spain: `es-ES` overrides only the words that differ (presupuesto, Ajustes, añadir,
+  importe, informes, copia de seguridad...); everything else falls back to `es`.
+  Spain is a region (EUR, IVA 21/10/4/0 %, NIF, IBAN).
 - Terms and Privacy: `Resources/Legal/*.fr.txt`, `*.de.txt`, `*.es.txt` (formal
   register). The English versions are binding; each translation says so at the top.
 - Test `translationsShipInTheApp` checks each language is in the build.

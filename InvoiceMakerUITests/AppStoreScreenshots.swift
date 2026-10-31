@@ -90,7 +90,7 @@ final class AppStoreScreenshots: XCTestCase {
     // MARK: Helpers
 
     /// SCREENSHOT_REGION: US (default, $ and estimates), UK (£ and quotes),
-    /// AU (A$, GST, quotes), CA (C$, HST, estimates), DE or FR (euros, German or French app text), MX (pesos, IVA, Spanish app text).
+    /// AU (A$, GST, quotes), CA (C$, HST, estimates), DE or FR (euros, German or French app text), MX (pesos, IVA, Spanish app text), ES (euros, IVA, Spain Spanish).
     struct Language {
         let demoRegion: String
         let languages: String
@@ -136,6 +136,11 @@ final class AppStoreScreenshots: XCTestCase {
                 Language(
                     demoRegion: "MX", languages: "(es-MX)", locale: "es_MX", firstClient: "Constructora del Valle",
                     invoicePrefix: "FAC-", clients: "Clientes", settings: "Configuración", invoiceLook: "Diseño de factura",
+                    preview: "Vista previa", sidebarWords: ["barra lateral", "sidebar"])
+            case "ES":
+                Language(
+                    demoRegion: "ES", languages: "(es-ES)", locale: "es_ES", firstClient: "Reformas Levante S.L.",
+                    invoicePrefix: "FAC-", clients: "Clientes", settings: "Ajustes", invoiceLook: "Diseño de factura",
                     preview: "Vista previa", sidebarWords: ["barra lateral", "sidebar"])
             default:
                 Language(

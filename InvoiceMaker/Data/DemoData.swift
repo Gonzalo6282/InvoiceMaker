@@ -56,8 +56,8 @@
                 seedEU(context, region: region, today: today, screenshots: screenshots)
                 return
             }
-            if region == .mx {
-                seedMX(context, today: today, screenshots: screenshots)
+            if region == .mx || region == .es {
+                seedSpanish(context, region: region, today: today, screenshots: screenshots)
                 return
             }
             if region == .au || region == .ca {
@@ -356,74 +356,91 @@
     }
 
     extension DemoData {
-        /// Mexican screenshot business (v1.2): a carpenter in Guadalajara, pesos,
-        /// IVA 16%, CLABE, cotizaciones, Spanish app text.
-        static func seedMX(_ context: ModelContext, today: Date, screenshots: Bool) {
+        /// Spanish-language screenshot businesses (v1.2): a carpenter in
+        /// Guadalajara (pesos, IVA 16%, CLABE, cotizaciones) or in Valencia
+        /// (euros, IVA 21%, IBAN, presupuestos).
+        static func seedSpanish(_ context: ModelContext, region: Region, today: Date, screenshots: Bool) {
             let cal = Calendar.current
             func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
-            let biz = BusinessSetup.create(name: "Carpintería Robles", region: .mx, countryCode: "MX", in: context)
+            let mx = region == .mx
+            let currency = mx ? "MXN" : "EUR"
+            let biz = BusinessSetup.create(
+                name: mx ? "Carpintería Robles" : "Carpintería Soler", region: region,
+                countryCode: mx ? "MX" : "ES", in: context)
             biz.role = "contractor"
-            biz.email = "contacto@carpinteriarobles.mx"
-            biz.phone = "33 5550 1234"
-            biz.address = "Av. Hidalgo 1450, Col. Americana\n44160 Guadalajara, Jal."
-            biz.taxID = "ROGA850312AB1"
+            biz.email = mx ? "contacto@carpinteriarobles.mx" : "hola@carpinteriasoler.es"
+            biz.phone = mx ? "33 5550 1234" : "961 55 01 23"
+            biz.address = mx ? "Av. Hidalgo 1450, Col. Americana\n44160 Guadalajara, Jal." : "Calle de Cádiz 18\n46006 Valencia"
+            biz.taxID = mx ? "ROGA850312AB1" : "B12345678"
             biz.taxRegistered = true
-            biz.defaultNotes = "Gracias por su preferencia. Pago a 15 días."
+            biz.defaultNotes = mx ? "Gracias por su preferencia. Pago a 15 días." : "Gracias por su confianza. Pago a 15 días."
             biz.invoicePrefix = "FAC-"
-            biz.estimatePrefix = "COT-"
+            biz.estimatePrefix = mx ? "COT-" : "PRE-"
             biz.receiptPrefix = "REC-"
             biz.nextInvoiceNumber = 7
             biz.nextEstimateNumber = 3
-            biz.payment?.bankName = "Carpintería Robles"
-            biz.payment?.accountNumber = "012 320 01234567890 1"
-            biz.payment?.payPalMe = "paypal.me/carpinteriarobles"
+            biz.payment?.bankName = biz.name
+            if mx {
+                biz.payment?.accountNumber = "012 320 01234567890 1"
+                biz.payment?.payPalMe = "paypal.me/carpinteriarobles"
+            } else {
+                biz.payment?.iban = "ES91 2100 0418 4502 0005 1332"
+                biz.payment?.swift = "CAIXESBBXXX"
+                biz.payment?.payPalMe = "paypal.me/carpinteriasoler"
+            }
             let tax = biz.defaultTaxID
 
-            let first = Client(name: OnboardingRole.sampleClient(for: .mx), currencyCode: "MXN")
-            first.contactName = "Mariana Ortega"
-            first.email = "mariana@constructoradelvalle.mx"
-            first.address = "Calle Morelos 220\n45040 Zapopan, Jal."
-            let cafe = Client(name: "Café La Paloma", currencyCode: "MXN")
-            cafe.contactName = "Diego Ramírez"
-            cafe.email = "diego@cafelapaloma.mx"
-            let us = Client(name: "Oakridge Landscaping", currencyCode: "USD")
-            us.email = "billing@oakridgelandscaping.com"
-            [first, cafe, us].forEach(context.insert)
+            let first = Client(name: OnboardingRole.sampleClient(for: region), currencyCode: currency)
+            first.contactName = mx ? "Mariana Ortega" : "Lucía Ferrer"
+            first.email = mx ? "mariana@constructoradelvalle.mx" : "lucia@reformaslevante.es"
+            first.address = mx ? "Calle Morelos 220\n45040 Zapopan, Jal." : "Avenida del Puerto 45\n46023 Valencia"
+            let cafe = Client(name: mx ? "Café La Paloma" : "Cafetería El Carmen", currencyCode: currency)
+            cafe.contactName = mx ? "Diego Ramírez" : "Javier Martí"
+            cafe.email = mx ? "diego@cafelapaloma.mx" : "javier@cafeteriaelcarmen.es"
+            let abroad = mx
+                ? Client(name: "Oakridge Landscaping", currencyCode: "USD")
+                : Client(name: "Marlow & Finch Ltd", currencyCode: "GBP")
+            abroad.email = mx ? "billing@oakridgelandscaping.com" : "priya@marlowfinch.co.uk"
+            [first, cafe, abroad].forEach(context.insert)
 
-            context.insert(SavedItem(itemDescription: "Mano de obra", unit: "hora", rate: 450, taxID: tax))
-            context.insert(SavedItem(itemDescription: "Cubierta de parota, instalada", unit: "m", rate: 3800, taxID: tax))
+            context.insert(SavedItem(itemDescription: "Mano de obra", unit: "hora", rate: mx ? 450 : 38, taxID: tax))
+            context.insert(SavedItem(
+                itemDescription: mx ? "Cubierta de parota, instalada" : "Encimera de roble, instalada",
+                unit: "m", rate: mx ? 3800 : 180, taxID: tax))
 
             let actions = DocumentActions(context: context, now: { today })
             let a = actions.create(.invoice, business: biz, client: first)
-            actions.addLineItem(to: a, defaultTaxID: tax).configure("Clóset a la medida, instalado", qty: 1, rate: 24500)
-            actions.addLineItem(to: a, defaultTaxID: tax).configure("Toma de medidas en obra", qty: 1, rate: 1200)
+            actions.addLineItem(to: a, defaultTaxID: tax)
+                .configure(mx ? "Clóset a la medida, instalado" : "Armario empotrado a medida", qty: 1, rate: mx ? 24500 : 1150)
+            actions.addLineItem(to: a, defaultTaxID: tax).configure("Toma de medidas en obra", qty: 1, rate: mx ? 1200 : 60)
             actions.markSent(a)
 
             let b = actions.create(.invoice, business: biz, client: cafe)
             b.issueDate = day(-30)
             b.dueDate = day(-15)
-            actions.addLineItem(to: b, defaultTaxID: tax).configure("Reparación de barra", qty: 1, rate: 9800)
+            actions.addLineItem(to: b, defaultTaxID: tax).configure("Reparación de barra", qty: 1, rate: mx ? 9800 : 520)
             actions.markSent(b)
 
             let c = actions.create(.invoice, business: biz, client: first)
-            actions.addLineItem(to: c, defaultTaxID: tax).configure("Diseño de cocina", qty: 1, rate: 12000)
+            actions.addLineItem(to: c, defaultTaxID: tax).configure("Diseño de cocina", qty: 1, rate: mx ? 12000 : 600)
             actions.markSent(c)
             actions.markPaid(c, on: today)
 
-            let d = actions.create(.invoice, business: biz, client: us)
-            actions.addLineItem(to: d, defaultTaxID: nil).configure("Custom cedar pergola, design", qty: 1, rate: 1400)
+            let d = actions.create(.invoice, business: biz, client: abroad)
+            actions.addLineItem(to: d, defaultTaxID: nil)
+                .configure(mx ? "Custom cedar pergola, design" : "Shop fit-out consultancy", qty: 1, rate: mx ? 1400 : 1200)
             actions.markSent(d)
 
             actions.create(.invoice, business: biz, client: cafe)
 
             let e = actions.create(.estimate, business: biz, client: cafe)
-            actions.addLineItem(to: e, defaultTaxID: tax).configure("Barra nueva de parota", qty: 1, rate: 42000)
+            actions.addLineItem(to: e, defaultTaxID: tax).configure(mx ? "Barra nueva de parota" : "Barra nueva de roble", qty: 1, rate: mx ? 42000 : 2350)
 
             guard screenshots else { return }
-            biz.logoData = DemoArt.logo(initials: "CR")
+            biz.logoData = DemoArt.logo(initials: mx ? "CR" : "CS")
             biz.signatureData = DemoArt.signature()
-            e.job = "Café La Paloma, Av. Chapultepec 120 — barra"
-            if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: "Diego Ramírez") }
+            e.job = mx ? "Café La Paloma, Av. Chapultepec 120 — barra" : "Cafetería El Carmen, Calle Caballeros 8 — barra"
+            if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: mx ? "Diego Ramírez" : "Javier Martí") }
             _ = actions.makeReceipt(for: c, business: biz)
         }
     }

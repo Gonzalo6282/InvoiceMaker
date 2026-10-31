@@ -245,6 +245,7 @@
 				fr,
 				de,
 				es,
+				"es-ES",
 				Base,
 			);
 			mainGroup = 1A0000000000000000000002;
