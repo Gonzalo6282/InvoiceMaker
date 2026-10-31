@@ -58,12 +58,6 @@ final class AppStoreScreenshots: XCTestCase {
         tapPreview()
         shot("10-receipt-pdf")
 
-        // 8. Clients.
-        launch()
-        goTo(lang.clients)
-        sleep(1)
-        shot("11-clients")
-
         // 10. Job photos (v1.1): the photo strip on the invoice, then the photo page of the PDF.
         launch(hideSidebar: true)
         open(lang.invoice(7))
@@ -77,6 +71,12 @@ final class AppStoreScreenshots: XCTestCase {
         for _ in 0..<4 { app.swipeUp() }
         sleep(2)
         shot("14-photos-pdf")
+
+        // 8. Clients.
+        launch()
+        goTo(lang.clients)
+        sleep(1)
+        shot("11-clients")
 
         // 9. Invoice look (templates and colours) in Settings.
         launch()
