@@ -29,6 +29,10 @@
                 seedEU(context, region: region, today: today, screenshots: screenshots)
                 return
             }
+            if region == .au || region == .ca {
+                seedAUCA(context, region: region, today: today, screenshots: screenshots)
+                return
+            }
             let cal = Calendar.current
             func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
 
@@ -166,6 +170,80 @@
     }
 
     extension DemoData {
+        /// Australian (Sydney electrician, GST, "Tax invoice", quotes) and
+        /// Canadian (Toronto plumber, Ontario HST, estimates) screenshot businesses.
+        static func seedAUCA(_ context: ModelContext, region: Region, today: Date, screenshots: Bool) {
+            let cal = Calendar.current
+            func day(_ offset: Int) -> Date { cal.date(byAdding: .day, value: offset, to: today) ?? today }
+            let au = region == .au
+            let biz = BusinessSetup.create(
+                name: au ? "Banksia Electrical" : "Northline Plumbing", region: region, countryCode: au ? "AU" : "CA", in: context)
+            biz.role = "contractor"
+            biz.email = au ? "jobs@banksiaelectrical.com.au" : "hello@northlineplumbing.ca"
+            biz.phone = au ? "0491 570 006" : "(416) 555-0182"
+            biz.address = au ? "14 Wattle Street\nMarrickville NSW 2204" : "220 Queen St E\nToronto ON M5A 1S3"
+            biz.taxID = au ? "51 824 753 556" : "123456789 RT0001"
+            biz.taxRegistered = true
+            if !au { biz.defaultTaxID = "ca-hst13" }  // Ontario
+            biz.defaultNotes = au
+                ? "Thanks for your business. Payment within 14 days, please."
+                : "Thank you for your business. Payment due within 14 days."
+            biz.nextInvoiceNumber = 7
+            biz.nextEstimateNumber = 3
+            biz.payment?.bankName = au ? "Banksia Electrical Pty Ltd" : "Northline Plumbing Inc."
+            biz.payment?.sortCode = au ? "062-000" : "00012-004"
+            biz.payment?.accountNumber = au ? "1234 5678" : "1234567"
+            biz.payment?.payPalMe = au ? "paypal.me/banksiaelectrical" : "paypal.me/northlineplumbing"
+            let tax = biz.defaultTaxID
+
+            let first = Client(name: OnboardingRole.sampleClient(for: region), currencyCode: au ? "AUD" : "CAD")
+            first.contactName = au ? "Mia Nguyen" : "Ethan Clarke"
+            first.email = au ? "mia@harboursidecafe.com.au" : "ethan@mapleridgebuilders.ca"
+            first.address = au ? "3 Circular Quay\nSydney NSW 2000" : "88 King St W\nToronto ON M5H 1A1"
+            let second = Client(name: au ? "Coastline Builders" : "Lakeshore Café", currencyCode: au ? "AUD" : "CAD")
+            second.contactName = au ? "Jack Turner" : "Sofia Romano"
+            second.email = au ? "jack@coastlinebuilders.com.au" : "sofia@lakeshorecafe.ca"
+            let abroad = au ? Client(name: "Kauri Design Studio", currencyCode: "NZD") : Client(name: "Lund Design Studio", currencyCode: "USD")
+            abroad.email = au ? "kia.ora@kauridesign.co.nz" : "hello@lunddesign.com"
+            [first, second, abroad].forEach(context.insert)
+
+            context.insert(SavedItem(itemDescription: au ? "Labour" : "Labour", unit: "hour", rate: au ? 95 : 110, taxID: tax))
+
+            let actions = DocumentActions(context: context, now: { today })
+            let a = actions.create(.invoice, business: biz, client: first)
+            actions.addLineItem(to: a, defaultTaxID: tax)
+                .configure(au ? "Switchboard upgrade, installed" : "Water heater, installed", qty: 1, rate: au ? 1450 : 1680)
+            actions.addLineItem(to: a, defaultTaxID: tax).configure(au ? "Call-out fee" : "Service call", qty: 1, rate: au ? 120 : 140)
+            actions.markSent(a)
+
+            let b = actions.create(.invoice, business: biz, client: second)
+            b.issueDate = day(-30)
+            b.dueDate = day(-16)
+            actions.addLineItem(to: b, defaultTaxID: tax).configure(au ? "Site power, temporary" : "Leak repair", qty: 1, rate: au ? 680 : 520)
+            actions.markSent(b)
+
+            let c = actions.create(.invoice, business: biz, client: first)
+            actions.addLineItem(to: c, defaultTaxID: tax).configure(au ? "Lighting plan" : "Drain inspection", qty: 1, rate: au ? 600 : 450)
+            actions.markSent(c)
+            actions.markPaid(c, on: today)
+
+            let d = actions.create(.invoice, business: biz, client: abroad)
+            actions.addLineItem(to: d, defaultTaxID: nil).configure(au ? "Fit-out consultation" : "Plumbing consultation", qty: 1, rate: 1200)
+            actions.markSent(d)
+
+            actions.create(.invoice, business: biz, client: second)
+
+            let e = actions.create(.estimate, business: biz, client: second)
+            actions.addLineItem(to: e, defaultTaxID: tax).configure(au ? "Rewire, two-storey house" : "Bathroom rough-in", qty: 1, rate: au ? 8900 : 4200)
+
+            guard screenshots else { return }
+            biz.logoData = DemoArt.logo(initials: au ? "BE" : "NP")
+            biz.signatureData = DemoArt.signature()
+            e.job = au ? "12 Ocean Ave, Bondi — rewire" : "41 Beech Ave, The Beaches — bathroom"
+            if let signature = DemoArt.signature() { actions.recordClientSignature(e, image: signature, name: au ? "Jack Turner" : "Sofia Romano") }
+            _ = actions.makeReceipt(for: c, business: biz)
+        }
+
         /// German and French screenshot businesses (v1.1): a joiner in Hamburg
         /// or Lyon, euros, local VAT, IBAN and PayPal, local numbering.
         static func seedEU(_ context: ModelContext, region: Region, today: Date, screenshots: Bool) {

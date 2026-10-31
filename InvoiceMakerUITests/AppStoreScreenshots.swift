@@ -76,7 +76,7 @@ final class AppStoreScreenshots: XCTestCase {
     // MARK: Helpers
 
     /// SCREENSHOT_REGION: US (default, $ and estimates), UK (£ and quotes),
-    /// DE or FR (euros, German or French app text).
+    /// AU (A$, GST, quotes), CA (C$, HST, estimates), DE or FR (euros, German or French app text).
     struct Language {
         let demoRegion: String
         let languages: String
@@ -96,6 +96,16 @@ final class AppStoreScreenshots: XCTestCase {
             case "UK":
                 Language(
                     demoRegion: "GB", languages: "(en-GB)", locale: "en_GB", firstClient: "Marlow & Finch Architects",
+                    invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
+                    preview: "Preview", sidebarWords: ["sidebar"])
+            case "AU":
+                Language(
+                    demoRegion: "AU", languages: "(en-AU)", locale: "en_AU", firstClient: "Harbourside Café Pty Ltd",
+                    invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
+                    preview: "Preview", sidebarWords: ["sidebar"])
+            case "CA":
+                Language(
+                    demoRegion: "CA", languages: "(en-CA)", locale: "en_CA", firstClient: "Maple Ridge Builders",
                     invoicePrefix: "INV-", clients: "Clients", settings: "Settings", invoiceLook: "Invoice look",
                     preview: "Preview", sidebarWords: ["sidebar"])
             case "DE":

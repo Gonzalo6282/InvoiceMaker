@@ -23,7 +23,7 @@ extension Business {
     func pluralTitle(for kind: DocumentKind) -> String {
         switch kind {
         case .invoice: String(localized: "Invoices")
-        case .estimate: region == .uk ? String(localized: "Quotes") : String(localized: "Estimates")
+        case .estimate: region.usesQuote ? String(localized: "Quotes") : String(localized: "Estimates")
         case .receipt: String(localized: "Receipts")
         }
     }

@@ -50,7 +50,7 @@ struct OnboardingView: View {
             Image(systemName: "doc.richtext.fill").font(.system(size: 72)).foregroundStyle(Color.brand)
                 .frame(maxWidth: .infinity).padding(.vertical, 30)
             title("Create and send an invoice in 60 seconds")
-            if region == .uk {
+            if region.usesQuote {
                 lead("Invoices, quotes and receipts with your logo. Create free. Send with Premium.")
             } else {
                 lead("Invoices, estimates and receipts with your logo. Create free. Send with Premium.")

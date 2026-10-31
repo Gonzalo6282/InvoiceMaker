@@ -78,8 +78,11 @@ public enum Region: String, CaseIterable, Sendable, Codable {
         }
     }
 
-    /// What an estimate is called: "Quote" in the UK, "Estimate" elsewhere.
-    public var estimateTitle: String { self == .uk ? "Quote" : "Estimate" }
+    /// "Quote" in the UK and Australia (what people there say and search for), "Estimate" elsewhere.
+    public var usesQuote: Bool { self == .uk || self == .au }
+
+    /// What an estimate is called: "Quote" or "Estimate".
+    public var estimateTitle: String { usesQuote ? "Quote" : "Estimate" }
 
     /// GST-registered Australian businesses must title it "Tax invoice".
     public func invoiceTitle(taxRegistered: Bool) -> String {
