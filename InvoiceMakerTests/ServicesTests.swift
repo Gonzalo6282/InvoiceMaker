@@ -1,3 +1,4 @@
+import Contacts
 import Foundation
 import InvoiceKit
 import SwiftData
@@ -7,12 +8,24 @@ import Testing
 
 struct ServicesTests {
     @Test func legalTextsShipInTheApp() {
-        let terms = LegalDocument.terms.blocks
-        let privacy = LegalDocument.privacy.blocks
+        let terms = LegalDocument.terms.blocks(language: "en")
+        let privacy = LegalDocument.privacy.blocks(language: "en")
         #expect(terms.first == .title("Terms of Use"))
         #expect(terms.contains(.heading("Subscriptions, Free Trials and Payments")))
         #expect(privacy.first == .title("Privacy Policy"))
         #expect(privacy.contains(.subheading("Analytics and Crash Reports (only with your permission)")))
+    }
+
+    @Test func frenchLegalTextsShipInTheApp() {
+        let terms = LegalDocument.terms.blocks(language: "fr")
+        let privacy = LegalDocument.privacy.blocks(language: "fr")
+        #expect(terms.first == .title("Conditions d'utilisation"))
+        #expect(terms.contains(.heading("Abonnements, essais gratuits et paiements")))
+        #expect(privacy.first == .title("Politique de confidentialité"))
+        // Same structure as the English originals.
+        let headings = { (b: [LegalBlock]) in b.filter { if case .heading = $0 { true } else { false } }.count }
+        #expect(headings(terms) == headings(LegalDocument.terms.blocks(language: "en")))
+        #expect(headings(privacy) == headings(LegalDocument.privacy.blocks(language: "en")))
     }
 
     @Test @MainActor func reviewIsAskedAtSpacedHappyMoments() throws {
@@ -52,7 +65,8 @@ struct ServicesTests {
     @Test func eventNamesMatchTheBuildDoc() {
         #expect(AnalyticsEvent.allCases.map(\.rawValue) == [
             "onboarding_step", "onboarding_complete", "invoice_created", "estimate_created", "paywall_view",
-            "invoice_sent", "pdf_exported", "share_app_tap", "share_app_completed", "made_with_duly_changed",
+            "invoice_sent", "pdf_exported", "share_app_tap", "share_app_completed", "made_with_duly_changed", "recurring_set", "reports_viewed",
+            "report_exported", "reminders_changed", "photo_added",
         ])
     }
 
@@ -66,6 +80,34 @@ struct ServicesTests {
         let reset = try #require(AccountService.report(NSError(domain: domain, code: 1000), step: "test"))
         #expect(reset.hasPrefix(AccountService.appleResetHelp))
         #expect(reset.contains("Stop Using Apple ID"))
+    }
+
+    @Test func pickedAddressesDropTheHomeCountry() {
+        let address = CNMutablePostalAddress()
+        address.street = "22 Queen Square"
+        address.city = "Bristol"
+        address.postalCode = "BS1 4ND"
+        address.country = "United Kingdom"
+        address.isoCountryCode = "gb"
+        let home = AddressCompleter.format(address, homeCountry: "GB")
+        #expect(!home.contains("United Kingdom"))
+        #expect(home.hasPrefix("22 Queen Square\n"))
+        #expect(!home.contains("\n\n"))
+        #expect(AddressCompleter.format(address, homeCountry: "US").hasSuffix("United Kingdom"))
+    }
+
+    // v1.1 ships English and French; German is switched off (docs/i18n/README.md).
+    @Test func germanIsSwitchedOff() {
+        #expect(!Bundle.main.localizations.contains("de"))
+    }
+
+    @Test(arguments: [("fr", "Nouvelle facture", "Devis")])
+    func frenchShipsInTheApp(language: String, newInvoice: String, quote: String) throws {
+        let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: language))
+        let table = try #require(NSDictionary(contentsOfFile: path) as? [String: String])
+        #expect(table["New invoice"] == newInvoice)
+        #expect(table["Quote"] == quote)  // looked up at run time from InvoiceKit
+        #expect(table.count > 400)
     }
 
     @Test func usEnglishUsesUSSpelling() throws {
@@ -85,6 +127,7 @@ struct ServicesTests {
     @Test func placementsMatchTheSpec() {
         #expect(PaywallPlacement.allCases.map(\.rawValue) == [
             "onboarding_end", "invoice_send", "invoice_export_pdf", "estimate_send", "template_premium", "settings_upgrade",
+            "recurring_invoice", "reports",
         ])
     }
 

@@ -51,7 +51,7 @@ struct NumberingView: View {
                     RowDivider()
                     FieldRow(label: "Next invoice number") { IntField("1", value: positive(\.nextInvoiceNumber)) }
                     RowDivider()
-                    FieldRow(label: LocalizedStringKey(String(localized: "\(business.title(for: .estimate)) prefix"))) {
+                    FieldRow(label: business.region == .uk ? "Quote prefix" : "Estimate prefix") {
                         TextField("EST-", text: $business.estimatePrefix).autocorrectionDisabled()
                     }
                     RowDivider()

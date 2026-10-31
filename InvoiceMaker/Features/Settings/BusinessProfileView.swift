@@ -22,7 +22,7 @@ struct BusinessProfileView: View {
                     RowDivider()
                     FieldRow(label: "Phone") { TextField("Optional", text: $business.phone).keyboardType(.phonePad) }
                     RowDivider()
-                    FieldRow(label: "Address") { TextField("Street, town, postcode", text: $business.address, axis: .vertical).lineLimit(1...4) }
+                    AddressField(text: $business.address, homeCountry: business.countryCode)
                 }
                 GroupedSection(header: "Country and tax", footer: LocalizedStringKey(note)) {
                     FieldRow(label: "Country") {
@@ -35,7 +35,7 @@ struct BusinessProfileView: View {
                     Toggle(registeredLabel, isOn: $business.taxRegistered).padding(.horizontal, 14).frame(minHeight: 48)
                     if business.taxRegistered {
                         RowDivider()
-                        FieldRow(label: LocalizedStringKey(business.region.preset.taxIDLabel)) { TextField("Optional", text: $business.taxID) }
+                        FieldRow(label: LocalizedStringKey(business.taxIDLabel)) { TextField("Optional", text: $business.taxID) }
                     }
                     RowDivider()
                     FieldRow(label: "Default currency") {
@@ -75,6 +75,8 @@ struct BusinessProfileView: View {
         case .us: "I collect sales tax"
         case .uk: "VAT registered"
         case .au, .ca: "GST registered"
+        case .de: "I charge VAT (MwSt.)"
+        case .fr: "I charge VAT (TVA)"
         }
     }
 
@@ -84,6 +86,8 @@ struct BusinessProfileView: View {
         case .au: String(localized: "GST-registered businesses title the document \"Tax invoice\" and show their ABN.")
         case .ca: String(localized: "Rates depend on the province. You can add two taxes to one invoice (GST plus PST or QST).")
         case .us: String(localized: "US sales tax depends on state, county and city. Type your rate once and it is saved.")
+        case .de: String(localized: "Small businesses under § 19 UStG don't charge VAT: turn this off and say so in the notes.")
+        case .fr: String(localized: "Micro-entrepreneurs who don't charge VAT: turn this off and add \"TVA non applicable, art. 293 B du CGI\" to the notes.")
         }
     }
 
@@ -100,6 +104,8 @@ extension Region {
         case .au: "AU"
         case .ca: "CA"
         case .us: "US"
+        case .de: "DE"
+        case .fr: "FR"
         }
     }
 

@@ -50,7 +50,11 @@ struct OnboardingView: View {
             Image(systemName: "doc.richtext.fill").font(.system(size: 72)).foregroundStyle(Color.brand)
                 .frame(maxWidth: .infinity).padding(.vertical, 30)
             title("Create and send an invoice in 60 seconds")
-            lead("Invoices, \(region.usesQuote ? String(localized: "quotes") : String(localized: "estimates")) and receipts with your logo. Create free. Send with Premium.")
+            if region.usesQuote {
+                lead("Invoices, quotes and receipts with your logo. Create free. Send with Premium.")
+            } else {
+                lead("Invoices, estimates and receipts with your logo. Create free. Send with Premium.")
+            }
         case .role:
             title("What do you do?")
             lead("We'll pick a template and sample items to start you off.")

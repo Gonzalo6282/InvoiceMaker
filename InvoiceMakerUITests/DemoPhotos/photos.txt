@@ -1,0 +1,21 @@
+# Demo job photos for the App Store screenshots (Unsplash licence, free to use).
+# The Screenshots workflow downloads them here before capturing; the JPEGs are not committed.
+# <file> <url> <unsplash photo page>
+us-1.jpg https://images.unsplash.com/photo-1600490819734-6311c5c6f517?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/EKCoj22EC4U
+us-2.jpg https://images.unsplash.com/photo-1791221254274-5b35c0c42fd6?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/wJkajximyVk
+us-3.jpg https://images.unsplash.com/photo-1763543037341-acb3594a09d8?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/_4xt6WOSeaM
+uk-1.jpg https://images.unsplash.com/photo-1593430980369-68efc5a5eb34?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/YbLitAY8bPA
+uk-2.jpg https://images.unsplash.com/photo-1580628881159-4eae247a6bf5?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/8APvVNW5srI
+uk-3.jpg https://images.unsplash.com/photo-1588111948296-83a8e036e004?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/wMaUWhnah7E
+au-1.jpg https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/kK7uPfb2YWU
+au-2.jpg https://images.unsplash.com/photo-1566417110090-6b15a06ec800?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/maXnRLszYY0
+au-3.jpg https://images.unsplash.com/photo-1576446470246-499c738d1c8e?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/oj1zW_PNI4k
+ca-1.jpg https://images.unsplash.com/photo-1694827893591-af9b80361599?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/c5aW5Xy-O7c
+ca-2.jpg https://images.unsplash.com/photo-1697047925927-7a686c7de27e?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/iUDzJKnbXDA
+ca-3.jpg https://images.unsplash.com/photo-1577522892450-868e30731cee?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/DxYTSX-bsuI
+fr-1.jpg https://images.unsplash.com/photo-1558997519-83ea9252edf8?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/3fFBoEHee28
+fr-2.jpg https://images.unsplash.com/photo-1683181181300-44c0c991a2cf?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/O3ZeDMslEJw
+fr-3.jpg https://images.unsplash.com/photo-1722349674028-a148f4364e43?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/6Y3avYzs6os
+de-1.jpg https://images.unsplash.com/photo-1558997519-83ea9252edf8?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/3fFBoEHee28
+de-2.jpg https://images.unsplash.com/photo-1683181181300-44c0c991a2cf?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/O3ZeDMslEJw
+de-3.jpg https://images.unsplash.com/photo-1722349674028-a148f4364e43?ixlib=rb-4.1.0&fm=jpg&q=80&w=1600 https://unsplash.com/photos/6Y3avYzs6os

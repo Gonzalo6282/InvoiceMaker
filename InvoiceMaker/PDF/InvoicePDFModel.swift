@@ -68,6 +68,8 @@ struct InvoicePDFModel: Sendable {
     var signatures: [Signature]
     var paidStamp: Bool
     var watermark: Bool
+    /// Job photos (JPEG), on their own page(s) after the document.
+    var photos: [Data] = []
     /// "Made with Duly" at the bottom of the last page (nil when turned off).
     var madeWith: String?
 

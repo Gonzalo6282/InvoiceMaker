@@ -29,7 +29,7 @@ struct ClientDetailView: View {
                 .padding(.horizontal, 16).padding(.top, 4)
                 HStack(spacing: 10) {
                     Button { create(.invoice) } label: { Label("New invoice", systemImage: "plus") }.buttonStyle(.primary)
-                    Button(String(localized: "New \(business.title(for: .estimate).lowercased())")) { create(.estimate) }.buttonStyle(.ghost)
+                    Button(business.newTitle(for: .estimate)) { create(.estimate) }.buttonStyle(.ghost)
                 }
                 .padding(.horizontal, 16).padding(.top, 14)
 
@@ -45,7 +45,7 @@ struct ClientDetailView: View {
                     RowDivider()
                     FieldRow(label: "Phone") { TextField("Optional", text: $client.phone).keyboardType(.phonePad) }
                     RowDivider()
-                    FieldRow(label: "Address") { TextField("Street, town, postcode", text: $client.address, axis: .vertical).lineLimit(1...4) }
+                    AddressField(text: $client.address, homeCountry: business.countryCode)
                     RowDivider()
                     FieldRow(label: "Tax ID") { TextField("Optional", text: $client.taxID) }
                     RowDivider()

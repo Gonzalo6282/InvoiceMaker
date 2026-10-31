@@ -12,6 +12,8 @@ enum ModelContainerFactory {
         case local
         /// Tests and previews.
         case inMemory
+        /// A store file without sync (migration tests).
+        case file(URL)
     }
 
     /// In-memory store for unit tests, with autosave off: its timer could fire
@@ -25,7 +27,7 @@ enum ModelContainerFactory {
     }
 
     static func make(_ storage: Storage) throws -> ModelContainer {
-        let schema = Schema(versionedSchema: SchemaV1.self)
+        let schema = Schema(versionedSchema: CurrentSchema.self)
         let configuration: ModelConfiguration =
             switch storage {
             case .cloudKit:
@@ -34,6 +36,8 @@ enum ModelContainerFactory {
                 ModelConfiguration(schema: schema, cloudKitDatabase: .none)
             case .inMemory:
                 ModelConfiguration(schema: schema, isStoredInMemoryOnly: true, cloudKitDatabase: .none)
+            case .file(let url):
+                ModelConfiguration(schema: schema, url: url, cloudKitDatabase: .none)
             }
         return try ModelContainer(for: schema, migrationPlan: AppMigrationPlan.self, configurations: configuration)
     }
@@ -50,6 +54,16 @@ enum ModelContainerFactory {
         if arguments.contains("-uiTesting") || environment["XCTestConfigurationFilePath"] != nil {
             return Result { try make(.inMemory) }
         }
+        #if DEBUG
+            if arguments.contains("-initCloudKitSchema") {
+                do {
+                    try CloudKitSchemaInitializer.run(containerID: cloudKitContainerID)
+                    log.notice("CloudKit schema initialised in Development")
+                } catch {
+                    log.error("CloudKit schema init failed: \(error.localizedDescription)")
+                }
+            }
+        #endif
         do {
             let container = try make(.cloudKit)
             Task { @MainActor in CloudImportWatcher.shared.storeDescription = String(localized: "iCloud") }

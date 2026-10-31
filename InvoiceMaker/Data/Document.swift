@@ -2,7 +2,7 @@ import Foundation
 import InvoiceKit
 import SwiftData
 
-extension SchemaV1 {
+extension SchemaV2 {
     /// An invoice, estimate (quote) or receipt.
     @Model
     nonisolated final class Document {
@@ -40,10 +40,22 @@ extension SchemaV1 {
         var createdAt: Date = Date.now
         var updatedAt: Date = Date.now
 
+        /// v2: "" (doesn't repeat) or a `Recurrence` raw value. Set on the
+        /// first invoice of a series; the app prepares the copies.
+        var recurrenceRaw: String = ""
+        /// v2: when the next copy is due to be prepared.
+        var nextRecurrence: Date?
+        /// v2: set on a copy made by a recurring invoice, e.g. "INV-0004".
+        var recurringFromNumber: String?
+
         var client: Client?
 
         @Relationship(deleteRule: .cascade, inverse: \LineItem.document)
         var items: [LineItem]? = []
+
+        /// v2: job photos, added to the PDF after the invoice.
+        @Relationship(deleteRule: .cascade, inverse: \JobPhoto.document)
+        var photos: [JobPhoto]? = []
 
         init(kind: DocumentKind, number: String, issueDate: Date = .now) {
             self.kindRaw = kind.rawValue
@@ -83,6 +95,28 @@ extension SchemaV1 {
 
         /// Line items in the order the user arranged them.
         var sortedItems: [LineItem] { (items ?? []).sorted { $0.position < $1.position } }
+
+        var sortedPhotos: [JobPhoto] { (photos ?? []).sorted { $0.position < $1.position } }
+
+        var recurrence: Recurrence? {
+            get { Recurrence(rawValue: recurrenceRaw) }
+            set { recurrenceRaw = newValue?.rawValue ?? "" }
+        }
+    }
+
+    /// A job photo on a document (contractors' before/after shots).
+    @Model
+    nonisolated final class JobPhoto {
+        var position: Int = 0
+        /// JPEG, at most 1600 px on the long side.
+        @Attribute(.externalStorage) var imageData: Data?
+        var createdAt: Date = Date.now
+        var document: Document?
+
+        init(position: Int, imageData: Data) {
+            self.position = position
+            self.imageData = imageData
+        }
     }
 
     @Model

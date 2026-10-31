@@ -1,7 +1,7 @@
 import Foundation
 import SwiftData
 
-extension SchemaV1 {
+extension SchemaV2 {
     @Model
     nonisolated final class Client {
         var name: String = ""
