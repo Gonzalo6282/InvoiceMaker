@@ -1,0 +1,86 @@
+# Politique de confidentialité
+
+Dernière mise à jour : 29 octobre 2026
+
+Traduction de la version anglaise. En cas de divergence, la version anglaise fait foi.
+
+## Introduction
+La présente Politique de confidentialité explique comment Slice of Life Ltd (« nous », « notre » ou « nos ») traite les informations relatives à une personne physique identifiée ou identifiable (« Données personnelles ») lorsque vous utilisez Duly: Invoice Maker & Estimate (l'« App »).
+
+Slice of Life Ltd, société immatriculée au Royaume-Uni, est le responsable du traitement des Données personnelles décrites dans la présente Politique. Le terme « Données personnelles » a le sens qui lui est donné par le RGPD britannique (UK GDPR), la loi britannique sur la protection des données de 2018 (Data Protection Act 2018), le Règlement général sur la protection des données de l'UE (RGPD), le California Consumer Privacy Act (CCPA) et les autres lois applicables.
+
+Pour toute question concernant la présente Politique, écrivez-nous à info@slice-of-life.uk.
+
+## En bref
+- Vos factures, devis, reçus, clients, articles, logo, signatures et coordonnées de paiement restent sur votre appareil et dans votre propre iCloud privé. Nous ne les envoyons jamais sur nos serveurs et nous ne pouvons pas les voir.
+- La création d'un compte est facultative. Si vous vous connectez avec Apple, nous ne conservons que ce qui est nécessaire pour relier votre compte et votre abonnement.
+- Les statistiques anonymes et les rapports de plantage restent désactivés tant que vous ne les autorisez pas, et vous pouvez les désactiver à tout moment dans Réglages.
+- Nous n'affichons pas de publicité, nous ne collectons pas l'identifiant publicitaire (IDFA) et nous ne vendons ni ne partageons vos Données personnelles à des fins publicitaires.
+
+## Informations qui restent sur votre appareil et dans votre iCloud
+Les documents que vous créez et tout ce qu'ils contiennent, votre profil d'entreprise, votre logo, votre signature, vos coordonnées de paiement, vos taux de taxe, vos clients (y compris leurs noms, adresses e-mail, numéros de téléphone et adresses), vos articles enregistrés, les signatures de vos clients, les photos de chantier et les réglages de l'App sont stockés sur votre appareil. Si iCloud est activé, ils sont également stockés dans votre base de données iCloud privée, qu'Apple met à votre disposition. Nous n'avons pas accès à ces données. Le traitement des données iCloud par Apple est décrit dans la politique de confidentialité d'Apple.
+
+Lorsque vous ajoutez un client depuis vos contacts, l'App vous demande l'autorisation d'accéder à vos contacts et n'utilise que le contact que vous choisissez. Lorsque vous ajoutez un logo, l'App vous demande l'autorisation d'accéder à vos photos et n'utilise que l'image que vous choisissez. Lorsque vous ajoutez des photos de chantier à un document, l'App utilise le sélecteur de photos de l'iPhone, qui ne lui donne que les photos que vous sélectionnez (elle n'accède pas à votre photothèque) ; elles sont stockées avec le document. Lorsque vous envoyez un document, il ne quitte l'App que par l'option de partage que vous choisissez (par exemple Mail, Messages, WhatsApp, AirDrop, Fichiers ou Imprimer).
+
+Lorsque vous saisissez l'adresse d'un client ou de votre entreprise, l'App envoie ce que vous tapez à Apple Plans afin de suggérer des adresses correspondantes. Cette recherche est traitée par Apple conformément à sa politique de confidentialité ; nous ne la recevons pas.
+
+Si vous activez les rappels de paiement ou programmez la répétition d'une facture, l'App planifie des notifications sur votre appareil (par exemple « FAC-0007 est à payer dans 3 jours » avec le nom du client et le montant). Elles sont créées et affichées uniquement par votre appareil ; rien ne nous est envoyé. L'App ne demande l'autorisation d'afficher des notifications que lorsque vous activez l'une de ces fonctions, et vous pouvez les désactiver à tout moment dans Réglages.
+
+## Informations que nous traitons
+
+### Compte (facultatif)
+Si vous utilisez « Se connecter avec Apple », nous traitons un identifiant utilisateur et, si vous choisissez de la partager, votre adresse e-mail (qui peut être une adresse de relais privée Apple). Ce traitement passe par Firebase Authentication (Google) et sert uniquement à relier votre compte et votre abonnement sur vos appareils.
+
+### Achats et abonnements
+Les achats sont traités par Apple. Nous ne recevons pas les données de votre carte de paiement. Pour vérifier l'état de votre abonnement, l'App utilise RevenueCat, qui reçoit un identifiant utilisateur anonyme, l'historique de vos achats et abonnements, le pays de votre App Store et des informations sur votre appareil. Si vous vous connectez, l'identifiant de votre compte est associé à cet enregistrement.
+
+### Écrans d'achat
+Les écrans d'achat sont fournis par Superwall, qui reçoit un identifiant utilisateur anonyme, des informations sur l'appareil et l'App ainsi que des événements, par exemple lorsqu'un écran d'achat est affiché, fermé ou aboutit à un achat. Ces informations servent à afficher le bon écran d'achat et à mesurer son efficacité.
+
+### Statistiques et rapports de plantage (uniquement avec votre autorisation)
+Si vous l'autorisez, nous utilisons Firebase Analytics et Firebase Crashlytics (Google) pour comprendre comment l'App est utilisée et corriger les problèmes. Cela comprend des événements de l'App (par exemple « facture créée » ou « facture envoyée », sans aucun contenu de document), la version de l'App, le modèle d'appareil, le système d'exploitation, le pays de l'App Store et les journaux de plantage. Nous ne collectons pas l'identifiant publicitaire et les fonctions publicitaires sont désactivées. Vous pouvez désactiver ce partage à tout moment dans Réglages > Confidentialité et mentions légales. Nous utilisons également Firebase Remote Config pour modifier certains réglages de l'App sans mise à jour.
+
+### Assistance
+Si vous nous contactez ou utilisez « Signaler un problème », nous recevons votre adresse e-mail, votre message ainsi que la version de l'App et les informations sur l'appareil qui y figurent.
+
+## Comment nous utilisons ces informations
+- Pour fournir l'App et ses fonctions, notamment relier votre compte et votre abonnement sur vos appareils
+- Pour traiter et restaurer les abonnements et afficher les écrans d'achat
+- Pour comprendre l'utilisation de l'App et corriger les plantages et les erreurs, lorsque vous avez autorisé les statistiques
+- Pour répondre aux demandes d'assistance
+- Pour assurer la sécurité de l'App, prévenir la fraude et respecter nos obligations légales
+
+Nous n'utilisons pas vos informations à des fins publicitaires, nous ne les vendons pas et nous ne les partageons pas pour de la publicité comportementale entre contextes.
+
+## Base juridique du traitement
+Nous traitons les Données personnelles pour exécuter notre contrat avec vous (fourniture de l'App et des abonnements) ; avec votre consentement (statistiques, rapports de plantage, accès aux photos et aux contacts) ; pour nos intérêts légitimes (sécurité, prévention de la fraude et amélioration de l'App) ; et pour respecter nos obligations légales. Vous pouvez retirer votre consentement à tout moment dans Réglages.
+
+## Avec qui nous partageons les informations
+Nous ne partageons les Données personnelles qu'avec des prestataires qui nous aident à faire fonctionner l'App et qui sont tenus de les protéger : Apple (achats sur l'App Store, « Se connecter avec Apple », iCloud, suggestions d'adresses dans Apple Plans), Google Firebase (authentification, statistiques, rapports de plantage, configuration à distance), RevenueCat (gestion des abonnements) et Superwall (écrans d'achat). Nous pouvons également partager des informations avec des conseillers professionnels, avec les autorités lorsque la loi l'exige, ou avec un repreneur en cas de cession ou de fusion de notre activité.
+
+## Transferts internationaux
+Nos prestataires peuvent traiter des Données personnelles en dehors du Royaume-Uni et de l'Espace économique européen, notamment aux États-Unis. Lorsque c'est nécessaire, ces transferts sont encadrés par des garanties appropriées, telles que l'International Data Transfer Agreement ou l'Addendum britanniques, les clauses contractuelles types de l'UE ou des décisions d'adéquation.
+
+## Durée de conservation
+Les documents et données stockés sur votre appareil et dans votre iCloud sont conservés jusqu'à ce que vous les supprimiez, que vous supprimiez l'App ou que vous les retiriez d'iCloud. Nous conservons les informations de compte jusqu'à ce que vous supprimiez votre compte dans Réglages > Compte ; la suppression de votre compte efface votre connexion et révoque le lien avec Apple. Les données d'abonnement sont conservées par Apple et RevenueCat aussi longtemps que nécessaire pour les achats et les obligations fiscales et légales. Les données statistiques sont conservées jusqu'à 14 mois et les rapports de plantage jusqu'à 90 jours.
+
+## Sécurité
+Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger les Données personnelles, et vos documents ne passent jamais par nos serveurs. Aucune méthode de stockage ou de transmission n'est totalement sûre.
+
+## Vos droits
+Royaume-Uni et UE : vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition au traitement de vos Données personnelles, d'un droit à la portabilité des données et du droit de retirer votre consentement. Vous pouvez également introduire une réclamation auprès de l'Information Commissioner's Office britannique (ico.org.uk) ou de votre autorité locale de protection des données (en France, la CNIL : cnil.fr).
+
+Californie : vous avez le droit de savoir, d'accéder, de rectifier et de supprimer vos Données personnelles, ainsi que le droit de ne pas faire l'objet de discrimination pour avoir exercé ces droits. Nous ne vendons ni ne partageons de Données personnelles au sens du CCPA.
+
+Vous pouvez exporter tous vos documents et données à tout moment dans Réglages > Exporter. Pour exercer l'un de vos droits, écrivez à info@slice-of-life.uk. Nous vous répondrons dans les délais prévus par la loi.
+
+## Enfants
+L'App est un outil professionnel qui ne s'adresse pas aux enfants. Nous ne collectons pas sciemment de Données personnelles auprès de personnes de moins de 16 ans. Si vous pensez qu'un enfant nous a communiqué des Données personnelles, contactez-nous et nous les supprimerons.
+
+## Modifications de la présente Politique
+Nous pouvons mettre à jour la présente Politique. Nous vous informerons de toute modification importante dans l'App ou par tout autre moyen raisonnable, et la date indiquée en haut correspondra toujours à la dernière version.
+
+## Contact
+Slice of Life Ltd
+E-mail : info@slice-of-life.uk
+Site web : https://slice-of-life.uk

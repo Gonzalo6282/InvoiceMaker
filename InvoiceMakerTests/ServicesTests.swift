@@ -8,12 +8,24 @@ import Testing
 
 struct ServicesTests {
     @Test func legalTextsShipInTheApp() {
-        let terms = LegalDocument.terms.blocks
-        let privacy = LegalDocument.privacy.blocks
+        let terms = LegalDocument.terms.blocks(language: "en")
+        let privacy = LegalDocument.privacy.blocks(language: "en")
         #expect(terms.first == .title("Terms of Use"))
         #expect(terms.contains(.heading("Subscriptions, Free Trials and Payments")))
         #expect(privacy.first == .title("Privacy Policy"))
         #expect(privacy.contains(.subheading("Analytics and Crash Reports (only with your permission)")))
+    }
+
+    @Test func frenchLegalTextsShipInTheApp() {
+        let terms = LegalDocument.terms.blocks(language: "fr")
+        let privacy = LegalDocument.privacy.blocks(language: "fr")
+        #expect(terms.first == .title("Conditions d'utilisation"))
+        #expect(terms.contains(.heading("Abonnements, essais gratuits et paiements")))
+        #expect(privacy.first == .title("Politique de confidentialité"))
+        // Same structure as the English originals.
+        let headings = { (b: [LegalBlock]) in b.filter { if case .heading = $0 { true } else { false } }.count }
+        #expect(headings(terms) == headings(LegalDocument.terms.blocks(language: "en")))
+        #expect(headings(privacy) == headings(LegalDocument.privacy.blocks(language: "en")))
     }
 
     @Test @MainActor func reviewIsAskedAtSpacedHappyMoments() throws {

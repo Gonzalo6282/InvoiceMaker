@@ -13,12 +13,18 @@ nonisolated enum LegalDocument: String, Hashable, Sendable {
         }
     }
 
-    /// The bundled text, split into blocks.
-    var blocks: [LegalBlock] {
-        let url = Bundle.main.url(forResource: rawValue, withExtension: "txt")
-            ?? Bundle.main.url(forResource: rawValue, withExtension: "txt", subdirectory: "Legal")
-        guard let url, let text = try? String(contentsOf: url, encoding: .utf8) else { return [] }
-        return LegalBlock.parse(text)
+    /// The bundled text, split into blocks. French when the app runs in French
+    /// (`privacy.fr.txt`), otherwise the English original.
+    var blocks: [LegalBlock] { blocks(language: Bundle.main.preferredLocalizations.first ?? "en") }
+
+    func blocks(language: String) -> [LegalBlock] {
+        let names = language.hasPrefix("fr") ? ["\(rawValue).fr", rawValue] : [rawValue]
+        for name in names {
+            let url = Bundle.main.url(forResource: name, withExtension: "txt")
+                ?? Bundle.main.url(forResource: name, withExtension: "txt", subdirectory: "Legal")
+            if let url, let text = try? String(contentsOf: url, encoding: .utf8) { return LegalBlock.parse(text) }
+        }
+        return []
     }
 }
 
