@@ -15,6 +15,12 @@
             "value" : "%@ al mes. "
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ al mes. "
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -32,6 +38,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ al año"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ al año"
@@ -59,6 +71,12 @@
             "value" : "%@ al año. "
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ al año. "
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -76,6 +94,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ a las %2$@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ a las %2$@"
@@ -103,6 +127,12 @@
             "value" : "%@ vence en 3 días"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vence en 3 días"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -120,6 +150,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ vence hoy"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ vence hoy"
@@ -147,6 +183,12 @@
             "value" : "Plantilla %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plantilla %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -164,6 +206,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$@ · próxima el %2$@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$@ · próxima el %2$@"
@@ -191,6 +239,12 @@
             "value" : "%1$lld días gratis, luego %2$@ al año"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld días gratis, luego %2$@ al año"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -208,6 +262,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld documentos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld documentos"
@@ -235,6 +295,12 @@
             "value" : "%1$lld facturas · %2$@ por cobrar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld facturas · %2$@ por cobrar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -252,6 +318,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld facturas · todas pagadas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%lld facturas · todas pagadas"
@@ -335,6 +407,12 @@
             "value" : "**Gratis:** crea, edita y revisa todas las facturas que quieras. **Premium:** envía, imprime y guarda PDF."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Gratis:** crea, edita y revisa todas las facturas que quieras. **Premium:** envía, imprime y guarda PDF."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -352,6 +430,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Pagada el %@.** Envía un recibo para que tu cliente tenga un comprobante."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "**Pagada el %@.** Envía un recibo para que tu cliente tenga un comprobante."
@@ -379,6 +463,12 @@
             "value" : "**Enviada el %1$@.** Los cambios se guardan solos. Vuelve a enviarla para que %2$@ tenga la versión más reciente."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Enviada el %1$@.** Los cambios se guardan solos. Vuelve a enviarla para que %2$@ tenga la versión más reciente."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -396,6 +486,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "**Firmada por %@.** La firma aparece en el PDF."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "**Firmada por %@.** La firma aparece en el PDF."
@@ -451,6 +547,12 @@
             "value" : "1 documento"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 documento"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -468,6 +570,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "3 días antes y el día de vencimiento de cada factura por cobrar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "3 días antes y el día de vencimiento de cada factura por cobrar"
@@ -523,6 +631,12 @@
             "value" : "Una línea pequeña al pie de la página. Gracias por ayudar a otros a descubrir Duly."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Una línea pequeña al pie de la página. Gracias por ayudar a otros a descubrir Duly."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -542,6 +656,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ABN"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ABN"
@@ -597,6 +717,12 @@
             "value" : "Cuenta"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -614,6 +740,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuenta %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cuenta %@"
@@ -641,6 +773,12 @@
             "value" : "Titular de la cuenta"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Titular de la cuenta"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -658,6 +796,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de cuenta"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Número de cuenta"
@@ -1133,6 +1277,12 @@
             "value" : "Dirección"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dirección"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1150,6 +1300,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Todas"
@@ -1177,6 +1333,12 @@
             "value" : "Las 7 plantillas con tu logo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las 7 plantillas con tu logo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1194,6 +1356,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permitir"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permitir"
@@ -1221,6 +1389,12 @@
             "value" : "Permitir acceso a Contactos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permitir acceso a Contactos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1238,6 +1412,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Permitir acceso a Fotos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Permitir acceso a Fotos"
@@ -1293,6 +1473,12 @@
             "value" : "Estadísticas anónimas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estadísticas anónimas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1310,6 +1496,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cualquier otro negocio"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cualquier otro negocio"
@@ -1365,6 +1557,12 @@
             "value" : "Se aplica en la app y en tus PDF. Cada cliente puede tener su propia moneda en sus datos."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se aplica en la app y en tus PDF. Cada cliente puede tener su propia moneda en sus datos."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1382,6 +1580,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aplicar impuesto"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aplicar impuesto"
@@ -1409,6 +1613,12 @@
             "value" : "Al costo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Al costo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1426,6 +1636,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disponible cuando la app termine de configurarse"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Disponible cuando la app termine de configurarse"
@@ -1453,6 +1669,12 @@
             "value" : "BSB"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BSB"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1470,6 +1692,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Atrás"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Atrás"
@@ -1553,6 +1781,12 @@
             "value" : "Banco"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Banco"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1570,6 +1804,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código bancario"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Código bancario"
@@ -1597,6 +1837,12 @@
             "value" : "Transferencia bancaria"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transferencia bancaria"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1614,6 +1860,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturar a"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Facturar a"
@@ -1641,6 +1893,12 @@
             "value" : "Facturado en %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturado en %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1663,6 +1921,12 @@
             "value" : "Cobro mensual, cancela cuando quieras"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobro mensual, cancela cuando quieras"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1680,6 +1944,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Audaz"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Audaz"
@@ -1720,6 +1990,12 @@
             "value" : "Color de marca"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de marca"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1737,6 +2013,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guía de marca"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guía de marca"
@@ -1792,6 +2074,12 @@
             "value" : "Negocio"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Negocio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1809,6 +2097,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del negocio"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nombre del negocio"
@@ -1836,6 +2130,12 @@
             "value" : "Perfil del negocio"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perfil del negocio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1858,6 +2158,12 @@
             "value" : "Por cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1875,6 +2181,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por mes"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Por mes"
@@ -1971,6 +2283,12 @@
             "value" : "Cancelar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1988,6 +2306,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cambiar logo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cambiar logo"
@@ -2015,6 +2339,12 @@
             "value" : "Comprobando…"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comprobando…"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2032,6 +2362,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige un cliente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Elige un cliente"
@@ -2059,6 +2395,12 @@
             "value" : "Elige una factura o presiona ⌘N para crear una"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige una factura o presiona ⌘N para crear una"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2076,6 +2418,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clásica"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Clásica"
@@ -2103,6 +2451,12 @@
             "value" : "Limpia"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Limpia"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2120,6 +2474,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Borrar"
@@ -2147,6 +2507,12 @@
             "value" : "Cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2164,6 +2530,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del cliente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nombre del cliente"
@@ -2191,6 +2563,12 @@
             "value" : "Firma del cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firma del cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2208,6 +2586,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cliente firma"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "El cliente firma"
@@ -2235,6 +2619,12 @@
             "value" : "El cliente firma en este dispositivo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El cliente firma en este dispositivo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2252,6 +2642,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre completo del cliente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nombre completo del cliente"
@@ -2279,6 +2675,12 @@
             "value" : "Clientes"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clientes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2301,6 +2703,12 @@
             "value" : "Cerrar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cerrar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2318,6 +2726,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Código"
@@ -2358,6 +2772,12 @@
             "value" : "Color"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2393,6 +2813,12 @@
             "value" : "Color %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2410,6 +2836,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preguntas frecuentes"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Preguntas frecuentes"
@@ -2437,6 +2869,12 @@
             "value" : "Empresa o persona"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empresa o persona"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2454,6 +2892,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Confirme con Apple para terminar:"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Confirme con Apple para terminar:"
@@ -2481,6 +2925,12 @@
             "value" : "Contacto"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contacto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2498,6 +2948,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Continuar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continuar"
@@ -2525,6 +2981,12 @@
             "value" : "Contratista u oficios"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contratista u oficios"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2542,6 +3004,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "País"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "País"
@@ -2569,6 +3037,12 @@
             "value" : "País e impuestos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "País e impuestos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2586,6 +3060,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea y revisa gratis. Envía con Premium."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crea y revisa gratis. Envía con Premium."
@@ -2613,6 +3093,12 @@
             "value" : "Crea y envía una factura en 60 segundos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea y envía una factura en 60 segundos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2630,6 +3116,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crea tu primera factura"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crea tu primera factura"
@@ -2657,6 +3149,12 @@
             "value" : "Crear, editar y revisar es gratis y sin límites. Enviar, imprimir y guardar PDF requiere Premium."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear, editar y revisar es gratis y sin límites. Enviar, imprimir y guardar PDF requiere Premium."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2674,6 +3172,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moneda"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Moneda"
@@ -2701,6 +3205,12 @@
             "value" : "Formato de moneda"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Formato de moneda"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2718,6 +3228,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Predeterminado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Predeterminado"
@@ -2745,6 +3261,12 @@
             "value" : "Moneda predeterminada"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Moneda predeterminada"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2762,6 +3284,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuesto predeterminado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impuesto predeterminado"
@@ -2789,6 +3317,12 @@
             "value" : "Plantilla predeterminada"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plantilla predeterminada"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2806,6 +3340,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Valores predeterminados"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Valores predeterminados"
@@ -2833,6 +3373,12 @@
             "value" : "Eliminar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2850,6 +3396,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar %@"
@@ -2877,6 +3429,12 @@
             "value" : "¿Eliminar %@?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar %@?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2894,6 +3452,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar cuenta"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar cuenta"
@@ -2921,6 +3485,12 @@
             "value" : "Eliminar cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2938,6 +3508,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar concepto"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar concepto"
@@ -2965,6 +3541,12 @@
             "value" : "¿Eliminar este cliente?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar este cliente?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2982,6 +3564,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Eliminar tu cuenta?"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Eliminar tu cuenta?"
@@ -3009,6 +3597,12 @@
             "value" : "Entrega"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Entrega"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3026,6 +3620,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descripción"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descripción"
@@ -3053,6 +3653,12 @@
             "value" : "Diseño, redacción, consultoría, fotografía"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diseño, redacción, consultoría, fotografía"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3070,6 +3676,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detalles"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Detalles"
@@ -3097,6 +3709,12 @@
             "value" : "Descuento"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descuento"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3114,6 +3732,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Descuento %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Descuento %@"
@@ -3141,6 +3765,12 @@
             "value" : "Documento"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documento"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3158,6 +3788,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tipo de documento"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tipo de documento"
@@ -3185,6 +3821,12 @@
             "value" : "Documentos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Documentos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3202,6 +3844,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No permitir"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No permitir"
@@ -3229,6 +3877,12 @@
             "value" : "Listo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3246,6 +3900,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borrador"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Borrador"
@@ -3273,6 +3933,12 @@
             "value" : "Borradores"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borradores"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3290,6 +3956,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volver a dibujar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volver a dibujar"
@@ -3317,6 +3989,12 @@
             "value" : "Dibújala una vez. Aparece en tus facturas."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dibújala una vez. Aparece en tus facturas."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3334,6 +4012,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dibújala una vez. Aparece en cada factura que envíes."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dibújala una vez. Aparece en cada factura que envíes."
@@ -3361,6 +4045,12 @@
             "value" : "Dibujar firma"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dibujar firma"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3378,6 +4068,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vence"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vence"
@@ -3405,6 +4101,12 @@
             "value" : "Vence en %lld días"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vence en %lld días"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3422,6 +4124,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vence en 1 día"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vence en 1 día"
@@ -3449,6 +4157,12 @@
             "value" : "Vence hoy"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vence hoy"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3466,6 +4180,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duly no pudo abrir sus datos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Duly no pudo abrir sus datos"
@@ -3577,6 +4297,12 @@
             "value" : "Duplicar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Duplicar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3596,6 +4322,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "EIN"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "EIN"
@@ -3623,6 +4355,12 @@
             "value" : "Correo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3645,6 +4383,12 @@
             "value" : "Correo o teléfono"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Correo o teléfono"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3662,6 +4406,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escríbenos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escríbenos"
@@ -3803,6 +4553,12 @@
             "value" : "Exportar CSV"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportar CSV"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3820,6 +4576,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo exportar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se pudo exportar"
@@ -3847,6 +4609,12 @@
             "value" : "Exportar todo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Exportar todo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3864,6 +4632,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cargo"
@@ -3891,6 +4665,12 @@
             "value" : "Nombre del cargo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del cargo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3908,6 +4688,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cargos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cargos"
@@ -3935,6 +4721,12 @@
             "value" : "Completa la dirección"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Completa la dirección"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3952,6 +4744,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Primer concepto"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Primer concepto"
@@ -3979,6 +4777,12 @@
             "value" : "Pie de página"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pie de página"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3996,6 +4800,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Para"
@@ -4023,6 +4833,12 @@
             "value" : "Para %@. Abre Duly para revisarla y enviarla."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Para %@. Abre Duly para revisarla y enviarla."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4040,6 +4856,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratis"
@@ -4067,6 +4889,12 @@
             "value" : "Plan gratuito"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plan gratuito"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4084,6 +4912,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gratis hasta el %1$@, luego %2$@ al año. "
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gratis hasta el %1$@, luego %2$@ al año. "
@@ -4167,6 +5001,12 @@
             "value" : "De"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4184,6 +5024,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "De Fotos. JPEG, PNG o HEIC. Se muestra completo, nunca recortado."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "De Fotos. JPEG, PNG o HEIC. Se muestra completo, nunca recortado."
@@ -4211,6 +5057,12 @@
             "value" : "Registrado para GST"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrado para GST"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4228,6 +5080,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los negocios registrados para el GST titulan el documento \"Tax invoice\" y muestran su ABN."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Los negocios registrados para el GST titulan el documento \"Tax invoice\" y muestran su ABN."
@@ -4257,6 +5115,12 @@
             "value" : "Número de GST/HST"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de GST/HST"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4274,6 +5138,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Empezar"
@@ -4301,6 +5171,12 @@
             "value" : "Canasta de regalo, grande"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Canasta de regalo, grande"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4318,6 +5194,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dale tu dispositivo a tu cliente. Al firmar acepta este documento (%@) o confirma el trabajo de una factura. Su nombre y la fecha de hoy aparecen en el PDF."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dale tu dispositivo a tu cliente. Al firmar acepta este documento (%@) o confirma el trabajo de una factura. Su nombre y la fecha de hoy aparecen en el PDF."
@@ -4345,6 +5227,12 @@
             "value" : "Ayuda"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayuda"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4362,6 +5250,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayuda y soporte"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayuda y soporte"
@@ -4389,6 +5283,12 @@
             "value" : "¿Nos ayudas a mejorar Duly?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Nos ayudas a mejorar Duly?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4406,6 +5306,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nos ayuda a corregir lo que es lento o confuso"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nos ayuda a corregir lo que es lento o confuso"
@@ -4433,6 +5339,12 @@
             "value" : "Esta es tu primera factura"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta es tu primera factura"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4450,6 +5362,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oculto"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Oculto"
@@ -4477,6 +5395,12 @@
             "value" : "¿Cómo cancelo?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cómo cancelo?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4494,6 +5418,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Cómo me pagan mis clientes?"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Cómo me pagan mis clientes?"
@@ -4521,6 +5451,12 @@
             "value" : "Cómo pagar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cómo pagar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4538,6 +5474,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobro IVA"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cobro IVA"
@@ -4565,6 +5507,12 @@
             "value" : "Cobro IVA (MwSt.)"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobro IVA (MwSt.)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4582,6 +5530,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobro IVA (TVA)"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cobro IVA (TVA)"
@@ -4609,6 +5563,12 @@
             "value" : "Cobro sales tax"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobro sales tax"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4626,6 +5586,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envío mis facturas con Duly. Pruébala: https://apps.apple.com/app/id6824285908"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envío mis facturas con Duly. Pruébala: https://apps.apple.com/app/id6824285908"
@@ -4653,6 +5619,12 @@
             "value" : "El IVA es del 16 %, o del 8 % en la región fronteriza. Duly crea facturas en PDF para tus clientes; no emite CFDI."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El IVA es del 16 %, o del 8 % en la región fronteriza. Duly crea facturas en PDF para tus clientes; no emite CFDI."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4670,6 +5642,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El IVA es del 21 %, 10 % o 4 %. Si tu actividad está exenta, desactiva esto e indícalo en las notas."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "El IVA es del 21 %, 10 % o 4 %. Si tu actividad está exenta, desactiva esto e indícalo en las notas."
@@ -4697,6 +5675,12 @@
             "value" : "Importar de Contactos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importar de Contactos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4719,6 +5703,12 @@
             "value" : "Incluir versión de la app y modelo del dispositivo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incluir versión de la app y modelo del dispositivo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4736,6 +5726,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Incluye %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Incluye %@"
@@ -4765,6 +5761,12 @@
             "value" : "Factura"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factura"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4782,6 +5784,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diseño de factura"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Diseño de factura"
@@ -4809,6 +5817,12 @@
             "value" : "Prefijo de facturas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefijo de facturas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4826,6 +5840,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Facturado"
@@ -4853,6 +5873,12 @@
             "value" : "Facturado y cobrado por mes"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturado y cobrado por mes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4870,6 +5896,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturado por fecha de factura, cobrado por la fecha en que llegó el dinero."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Facturado por fecha de factura, cobrado por la fecha en que llegó el dinero."
@@ -4897,6 +5929,12 @@
             "value" : "Facturado en %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturado en %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4919,6 +5957,12 @@
             "value" : "Facturas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Facturas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4936,6 +5980,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las facturas ya hechas para este cliente no cambian."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las facturas ya hechas para este cliente no cambian."
@@ -5019,6 +6069,12 @@
             "value" : "¿Duly es gratis?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Duly es gratis?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5036,6 +6092,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fecha"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fecha"
@@ -5063,6 +6125,12 @@
             "value" : "Toma cerca de un minuto. Crear y revisar es gratis; enviar requiere Premium."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toma cerca de un minuto. Crear y revisar es gratis; enviar requiere Premium."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5080,6 +6148,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concepto"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Concepto"
@@ -5107,6 +6181,12 @@
             "value" : "Conceptos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conceptos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5124,6 +6204,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trabajo"
@@ -5151,6 +6237,12 @@
             "value" : "Trabajo u obra"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo u obra"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5168,6 +6260,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Foto de la obra"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Foto de la obra"
@@ -5195,6 +6293,12 @@
             "value" : "Fotos de la obra"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fotos de la obra"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5217,6 +6321,12 @@
             "value" : "Obra"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Obra"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5234,6 +6344,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium en todos tus dispositivos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Premium en todos tus dispositivos"
@@ -5269,6 +6385,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mano de obra"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mano de obra"
@@ -5324,6 +6446,12 @@
             "value" : "Última restauración"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Última restauración"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5341,6 +6469,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribir una reseña en el App Store"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Escribir una reseña en el App Store"
@@ -5368,6 +6502,12 @@
             "value" : "Registro"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registro"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5385,6 +6525,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legal"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Legal"
@@ -5412,6 +6558,12 @@
             "value" : "Total del concepto"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total del concepto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5429,6 +6581,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enlaces"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enlaces"
@@ -5456,6 +6614,12 @@
             "value" : "Vista previa del PDF en vivo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa del PDF en vivo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5478,6 +6642,12 @@
             "value" : "Vista previa del PDF en vivo. La marca \"Vista previa\" desaparece con Premium."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa del PDF en vivo. La marca \"Vista previa\" desaparece con Premium."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5495,6 +6665,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Logo"
@@ -5550,6 +6726,12 @@
             "value" : "Diseño de logo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diseño de logo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5567,6 +6749,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apariencia"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Apariencia"
@@ -5594,6 +6782,12 @@
             "value" : "Buscando tus facturas en iCloud…"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscando tus facturas en iCloud…"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5611,6 +6805,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se ve bien"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Se ve bien"
@@ -5638,6 +6838,12 @@
             "value" : "Hecho con Duly"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hecho con Duly"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5655,6 +6861,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usar como predeterminado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Usar como predeterminado"
@@ -5682,6 +6894,12 @@
             "value" : "Crear recibo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Crear recibo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5699,6 +6917,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Administrar suscripción"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Administrar suscripción"
@@ -5726,6 +6950,12 @@
             "value" : "Marca una factura como pagada y envía un recibo. Aparecerá aquí."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marca una factura como pagada y envía un recibo. Aparecerá aquí."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5743,6 +6973,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como pagada"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Marcar como pagada"
@@ -5770,6 +7006,12 @@
             "value" : "Marcar como por cobrar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Marcar como por cobrar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5787,6 +7029,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Materiales"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Materiales"
@@ -5842,6 +7090,12 @@
             "value" : "Mes"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5859,6 +7113,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mensual"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mensual"
@@ -5886,6 +7146,12 @@
             "value" : "Más acciones"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más acciones"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5903,6 +7169,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mi firma"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mi firma"
@@ -5930,6 +7202,12 @@
             "value" : "Nombre"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5947,6 +7225,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nunca"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nunca"
@@ -5974,6 +7258,12 @@
             "value" : "Nuevo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5996,6 +7286,12 @@
             "value" : "Nuevo cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6013,6 +7309,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del nuevo cliente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nombre del nuevo cliente"
@@ -6068,6 +7370,12 @@
             "value" : "Nueva factura"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nueva factura"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6085,6 +7393,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las nuevas facturas para este cliente usan %@."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las nuevas facturas para este cliente usan %@."
@@ -6120,6 +7434,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las nuevas facturas usan esta plantilla y este color. Puedes cambiarlos en cualquier factura."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las nuevas facturas usan esta plantilla y este color. Puedes cambiarlos en cualquier factura."
@@ -6175,6 +7495,12 @@
             "value" : "Nuevo recibo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nuevo recibo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6192,6 +7518,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próxima %1$@ · vence en %2$lld días"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Próxima %1$@ · vence en %2$lld días"
@@ -6219,6 +7551,12 @@
             "value" : "Próximo número de factura"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo número de factura"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6236,6 +7574,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin la marca \"Vista previa\" en tus PDF"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sin la marca \"Vista previa\" en tus PDF"
@@ -6263,6 +7607,12 @@
             "value" : "No se encontró ninguna suscripción activa para este ID de Apple."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se encontró ninguna suscripción activa para este ID de Apple."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6280,6 +7630,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin cliente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sin cliente"
@@ -6335,6 +7691,12 @@
             "value" : "No hay facturas en %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay facturas en %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6352,6 +7714,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay conceptos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no hay conceptos"
@@ -6407,6 +7775,12 @@
             "value" : "Aún no hay recibos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay recibos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6424,6 +7798,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay facturas enviadas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no hay facturas enviadas"
@@ -6451,6 +7831,12 @@
             "value" : "Aún no hay firma"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay firma"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6473,6 +7859,12 @@
             "value" : "Sin impuesto"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sin impuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6490,6 +7882,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ninguno"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ninguno"
@@ -6545,6 +7943,12 @@
             "value" : "Ahora no"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ahora no"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6562,6 +7966,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no abierta"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aún no abierta"
@@ -6589,6 +7999,12 @@
             "value" : "Aún no enviada"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no enviada"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6606,6 +8022,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todavía no"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Todavía no"
@@ -6633,6 +8055,12 @@
             "value" : "Notas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6650,6 +8078,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Notas en documentos nuevos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Notas en documentos nuevos"
@@ -6677,6 +8111,12 @@
             "value" : "No hay resultados. Prueba otro filtro o búsqueda."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No hay resultados. Prueba otro filtro o búsqueda."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6694,6 +8134,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las notificaciones de Duly están desactivadas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las notificaciones de Duly están desactivadas"
@@ -6721,6 +8167,12 @@
             "value" : "Número"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6738,6 +8190,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numeración"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numeración"
@@ -6765,6 +8223,12 @@
             "value" : "Números y valores predeterminados"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Números y valores predeterminados"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6782,6 +8246,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los números aumentan en uno con cada documento nuevo. Siguiente: %@."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Los números aumentan en uno con cada documento nuevo. Siguiente: %@."
@@ -6811,6 +8281,12 @@
             "value" : "N° TVA"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° TVA"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6828,6 +8304,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desactivado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desactivado"
@@ -6855,6 +8337,12 @@
             "value" : "Activado"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Activado"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6872,6 +8360,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sobre el total"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sobre el total"
@@ -6899,6 +8393,12 @@
             "value" : "En tu dispositivo y en tu propio iCloud. Nunca los subimos a nuestros servidores."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "En tu dispositivo y en tu propio iCloud. Nunca los subimos a nuestros servidores."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6921,6 +8421,12 @@
             "value" : "Solo los negocios registrados para el IVA lo cobran y muestran un número de IVA."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo los negocios registrados para el IVA lo cobran y muestran un número de IVA."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6938,6 +8444,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre Duly para revisarla y enviarla."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abre Duly para revisarla y enviarla."
@@ -6993,6 +8505,12 @@
             "value" : "Abre tu enlace de pago al escanearlo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abre tu enlace de pago al escanearlo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7010,6 +8528,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcional"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Opcional"
@@ -7037,6 +8561,12 @@
             "value" : "Opcional. De Fotos."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opcional. De Fotos."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7054,6 +8584,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otro"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Otro"
@@ -7081,6 +8617,12 @@
             "value" : "Vencida"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vencida"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7098,6 +8640,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vencida hace %lld días"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vencida hace %lld días"
@@ -7125,6 +8673,12 @@
             "value" : "Vencida hace 1 día"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vencida hace 1 día"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7142,6 +8696,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por cobrar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Por cobrar"
@@ -7169,6 +8729,12 @@
             "value" : "PAGADA"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PAGADA"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7186,6 +8752,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa del PDF"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vista previa del PDF"
@@ -7213,6 +8785,12 @@
             "value" : "Vista previa del PDF de %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa del PDF de %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7230,6 +8808,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PDF en un ZIP y todos los datos en CSV. Gratis."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PDF en un ZIP y todos los datos en CSV. Gratis."
@@ -7257,6 +8841,12 @@
             "value" : "VISTA PREVIA"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VISTA PREVIA"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7274,6 +8864,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagada"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Pagada"
@@ -7301,6 +8897,12 @@
             "value" : "Pagada %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagada %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7318,6 +8920,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cobrado en %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cobrado en %@"
@@ -7345,6 +8953,12 @@
             "value" : "Pagada el"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagada el"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7362,6 +8976,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enlace de pago"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enlace de pago"
@@ -7389,6 +9009,12 @@
             "value" : "Pagar en línea"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pagar en línea"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7406,6 +9032,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Botones de pago y código QR en las facturas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Botones de pago y código QR en las facturas"
@@ -7433,6 +9065,12 @@
             "value" : "Datos de pago"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Datos de pago"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7450,6 +9088,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plazo de pago (días)"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plazo de pago (días)"
@@ -7477,6 +9121,12 @@
             "value" : "Pago recibido de %@. Gracias."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pago recibido de %@. Gracias."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7499,6 +9149,12 @@
             "value" : "Recordatorios de pago"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorios de pago"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7516,6 +9172,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Condiciones de pago, nota de agradecimiento"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Condiciones de pago, nota de agradecimiento"
@@ -7599,6 +9261,12 @@
             "value" : "Por concepto"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por concepto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7616,6 +9284,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Persona"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Persona"
@@ -7643,6 +9317,12 @@
             "value" : "Teléfono"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Teléfono"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7665,6 +9345,12 @@
             "value" : "Elige uno o más. Canadá: GST más PST o QST."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige uno o más. Canadá: GST más PST o QST."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7682,6 +9368,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reinicia la app. Si sigue pasando, contacta a soporte desde la página del App Store."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reinicia la app. Si sigue pasando, contacta a soporte desde la página del App Store."
@@ -7737,6 +9429,12 @@
             "value" : "Más %@ por cobrar en otras monedas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Más %@ por cobrar en otras monedas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7754,6 +9452,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Premium"
@@ -7781,6 +9485,12 @@
             "value" : "Premium está activo en este dispositivo."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium está activo en este dispositivo."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7798,6 +9508,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Premium restaurado."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Premium restaurado."
@@ -7853,6 +9569,12 @@
             "value" : "Vista previa"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7870,6 +9592,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vista previa de tu primera factura"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vista previa de tu primera factura"
@@ -7897,6 +9625,12 @@
             "value" : "Precio"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7914,6 +9648,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precios"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Precios"
@@ -7941,6 +9681,12 @@
             "value" : "Los precios están en %@. En una factura en otra moneda, revisa el precio antes de enviar."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Los precios están en %@. En una factura en otra moneda, revisa el precio antes de enviar."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7958,6 +9704,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprimir"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimir"
@@ -7985,6 +9737,12 @@
             "value" : "Privacidad"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacidad"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8002,6 +9760,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Política de privacidad"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Política de privacidad"
@@ -8029,6 +9793,12 @@
             "value" : "Privacidad y legal"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacidad y legal"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8046,6 +9816,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código QR"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Código QR"
@@ -8073,6 +9849,12 @@
             "value" : "Cant."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cant."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8090,6 +9872,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cantidad"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cantidad"
@@ -8231,6 +10019,12 @@
             "value" : "Precio"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Precio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8248,6 +10042,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calificar Duly"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Calificar Duly"
@@ -8305,6 +10105,12 @@
             "value" : "Recibo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8322,6 +10128,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prefijo de recibos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prefijo de recibos"
@@ -8349,6 +10161,12 @@
             "value" : "Recibos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recibos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8366,6 +10184,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Actualizar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Actualizar"
@@ -8393,6 +10217,12 @@
             "value" : "Recordatorios"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorios"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8410,6 +10240,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quitar"
@@ -8437,6 +10273,12 @@
             "value" : "Quitar cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8454,6 +10296,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar cargo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quitar cargo"
@@ -8481,6 +10329,12 @@
             "value" : "Quitar logo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar logo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8498,6 +10352,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Quitar foto"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Quitar foto"
@@ -8566,6 +10426,12 @@
             "value" : "Repetir"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetir"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8583,6 +10449,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetir facturas automáticamente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Repetir facturas automáticamente"
@@ -8610,6 +10482,12 @@
             "value" : "Repetición de"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Repetición de"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8627,6 +10505,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respondemos en 24 horas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Respondemos en 24 horas"
@@ -8710,6 +10594,12 @@
             "value" : "Restaurar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8727,6 +10617,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar tasas de %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Restaurar tasas de %@"
@@ -8754,6 +10650,12 @@
             "value" : "Restaurar tasas predefinidas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar tasas predefinidas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8771,6 +10673,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurar compras"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Restaurar compras"
@@ -8798,6 +10706,12 @@
             "value" : "¿Restaurar las tasas predefinidas?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Restaurar las tasas predefinidas?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8815,6 +10729,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restaurando…"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Restaurando…"
@@ -8842,6 +10762,12 @@
             "value" : "Comercio, comida, productos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comercio, comida, productos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8859,6 +10785,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Revisiones"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Revisiones"
@@ -8886,6 +10818,12 @@
             "value" : "Número de ruta (routing)"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de ruta (routing)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8903,6 +10841,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SWIFT / BIC"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SWIFT / BIC"
@@ -8930,6 +10874,12 @@
             "value" : "Guardar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8947,6 +10897,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar PDF en Archivos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardar PDF en Archivos"
@@ -8974,6 +10930,12 @@
             "value" : "Guarda e imprime tus PDF"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda e imprime tus PDF"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8991,6 +10953,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar en mis conceptos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardar en mis conceptos"
@@ -9018,6 +10986,12 @@
             "value" : "Guarda lo que cobras"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guarda lo que cobras"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9035,6 +11009,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Guardado"
@@ -9062,6 +11042,12 @@
             "value" : "Conceptos guardados"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conceptos guardados"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9079,6 +11065,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tasas guardadas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tasas guardadas"
@@ -9106,6 +11098,12 @@
             "value" : "Guardado en"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardado en"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9123,6 +11121,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar clientes"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Buscar clientes"
@@ -9150,6 +11154,12 @@
             "value" : "Buscar clientes o números"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Buscar clientes o números"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9167,6 +11177,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver planes Premium"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ver planes Premium"
@@ -9194,6 +11210,12 @@
             "value" : "Ver planes"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ver planes"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9211,6 +11233,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ve cuánto ganas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ve cuánto ganas"
@@ -9238,6 +11266,12 @@
             "value" : "Enviar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9255,6 +11289,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Volver a enviar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Volver a enviar"
@@ -9282,6 +11322,12 @@
             "value" : "Envía por correo, Mensajes o WhatsApp"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envía por correo, Mensajes o WhatsApp"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9304,6 +11350,12 @@
             "value" : "Envía facturas y cobra"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envía facturas y cobra"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9321,6 +11373,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar recibo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enviar recibo"
@@ -9404,6 +11462,12 @@
             "value" : "Enviar esta factura"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar esta factura"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9421,6 +11485,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envío o PDF"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envío o PDF"
@@ -9448,6 +11518,12 @@
             "value" : "Envío, impresión y PDF desbloqueados."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envío, impresión y PDF desbloqueados."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9465,6 +11541,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envío, impresión y PDF desbloqueados."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Envío, impresión y PDF desbloqueados."
@@ -9492,6 +11574,12 @@
             "value" : "Envía tu mensaje y la versión de la app"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envía tu mensaje y la versión de la app"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9514,6 +11602,12 @@
             "value" : "Enviada"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviada"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9531,6 +11625,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Servicio"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Servicio"
@@ -9586,6 +11686,12 @@
             "value" : "Compartir"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9603,6 +11709,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Compartir Duly"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Compartir Duly"
@@ -9658,6 +11770,12 @@
             "value" : "Envío"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envío"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9680,6 +11798,12 @@
             "value" : "Mostrar \"Hecho con Duly\" en los PDF"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar \"Hecho con Duly\" en los PDF"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9697,6 +11821,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mostrar un código QR"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mostrar un código QR"
@@ -9752,6 +11882,12 @@
             "value" : "Aparecen en una página después de la factura. Hasta 10."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparecen en una página después de la factura. Hasta 10."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9769,6 +11905,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sesión para vincular tu cuenta entre dispositivos. Opcional."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inicia sesión para vincular tu cuenta entre dispositivos. Opcional."
@@ -9796,6 +11938,12 @@
             "value" : "Iniciar sesión con Apple"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Iniciar sesión con Apple"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9813,6 +11961,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se completó el inicio de sesión con Apple. Inténtalo de nuevo."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se completó el inicio de sesión con Apple. Inténtalo de nuevo."
@@ -9840,6 +11994,12 @@
             "value" : "Inicia sesión con Apple para que tu suscripción te acompañe a un nuevo iPhone o iPad. Opcional: tus facturas se quedan en tu dispositivo e iCloud de todos modos."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicia sesión con Apple para que tu suscripción te acompañe a un nuevo iPhone o iPad. Opcional: tus facturas se quedan en tu dispositivo e iCloud de todos modos."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9857,6 +12017,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Área de firma. Dibuja tu firma."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Área de firma. Dibuja tu firma."
@@ -9884,6 +12050,12 @@
             "value" : "Firmada por %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Firmada por %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9901,6 +12073,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sesión iniciada con Apple"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sesión iniciada con Apple"
@@ -9928,6 +12106,12 @@
             "value" : "Omitir por ahora"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Omitir por ahora"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9945,6 +12129,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las pequeñas empresas acogidas al § 19 UStG no cobran IVA: desactiva esto e indícalo en las notas."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Las pequeñas empresas acogidas al § 19 UStG no cobran IVA: desactiva esto e indícalo en las notas."
@@ -9972,6 +12162,12 @@
             "value" : "Tienda pequeña"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tienda pequeña"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -9989,6 +12185,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otra cosa"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Otra cosa"
@@ -10016,6 +12218,12 @@
             "value" : "Algo salió mal"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Algo salió mal"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10033,6 +12241,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort code"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sort code"
@@ -10060,6 +12274,12 @@
             "value" : "Sort code %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sort code %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10077,6 +12297,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dividida"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dividida"
@@ -10104,6 +12330,12 @@
             "value" : "Empezar prueba gratis de %lld días"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empezar prueba gratis de %lld días"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10121,6 +12353,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estado"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Estado"
@@ -10161,6 +12399,12 @@
             "value" : "Calle, ciudad, código postal"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calle, ciudad, código postal"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10178,6 +12422,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enlace de Stripe o Square"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enlace de Stripe o Square"
@@ -10205,6 +12455,12 @@
             "value" : "Estudio"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estudio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10222,6 +12478,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suscripción"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Suscripción"
@@ -10249,6 +12511,12 @@
             "value" : "Suscripción o cobros"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Suscripción o cobros"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10266,6 +12534,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtotal"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Subtotal"
@@ -10293,6 +12567,12 @@
             "value" : "Subtotal (impuestos incl.)"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Subtotal (impuestos incl.)"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10310,6 +12590,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Símbolo"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Símbolo"
@@ -10337,6 +12623,12 @@
             "value" : "Impuesto"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuesto"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10354,6 +12646,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RFC / ID fiscal"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "RFC / ID fiscal"
@@ -10381,6 +12679,12 @@
             "value" : "Impuestos aparte"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuestos aparte"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10403,6 +12707,12 @@
             "value" : "Impuesto y descuento"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuesto y descuento"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10420,6 +12730,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuestos incluidos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impuestos incluidos"
@@ -10449,6 +12765,12 @@
             "value" : "Factura con impuestos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Factura con impuestos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10466,6 +12788,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tú defines las tasas de impuestos. Esta app no da asesoría fiscal."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tú defines las tasas de impuestos. Esta app no da asesoría fiscal."
@@ -10493,6 +12821,12 @@
             "value" : "Impuestos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuestos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10510,6 +12844,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impuestos sobre el total"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Impuestos sobre el total"
@@ -10537,6 +12877,12 @@
             "value" : "Recomienda la app a un amigo"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recomienda la app a un amigo"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10559,6 +12905,12 @@
             "value" : "Cuéntanos qué tocaste y qué esperabas"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cuéntanos qué tocaste y qué esperabas"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10576,6 +12928,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plantilla"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Plantilla"
@@ -10616,6 +12974,12 @@
             "value" : "Plantilla y color"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plantilla y color"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10633,6 +12997,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Términos"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Términos"
@@ -10660,6 +13030,12 @@
             "value" : "Términos de uso"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Términos de uso"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10677,6 +13053,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gracias por su preferencia."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gracias por su preferencia."
@@ -10704,6 +13086,12 @@
             "value" : "La marca \"Vista previa\" desaparece cuando envía con Premium."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La marca \"Vista previa\" desaparece cuando envía con Premium."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10721,6 +13109,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No se pudo crear el PDF. Inténtalo de nuevo."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "No se pudo crear el PDF. Inténtalo de nuevo."
@@ -10748,6 +13142,12 @@
             "value" : "El pago no se completó y no se te cobró nada. Revisa tu método de pago en el App Store e inténtalo de nuevo."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El pago no se completó y no se te cobró nada. Revisa tu método de pago en el App Store e inténtalo de nuevo."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10770,6 +13170,12 @@
             "value" : "Aparecen en tus facturas como botones y un código QR. Tus clientes te pagan directamente. Duly nunca toca el dinero."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aparecen en tus facturas como botones y un código QR. Tus clientes te pagan directamente. Duly nunca toca el dinero."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10787,6 +13193,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esto no se puede deshacer."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esto no se puede deshacer."
@@ -10842,6 +13254,12 @@
             "value" : "Solo en este dispositivo: %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solo en este dispositivo: %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10859,6 +13277,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este documento se eliminó."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Este documento se eliminó."
@@ -10886,6 +13310,12 @@
             "value" : "Esto aparece arriba en cada factura. Puedes cambiarlo después."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esto aparece arriba en cada factura. Puedes cambiarlo después."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10903,6 +13333,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Este plan no está disponible en este momento."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Este plan no está disponible en este momento."
@@ -10930,6 +13366,12 @@
             "value" : "Se convirtió en la factura %@."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Se convirtió en la factura %@."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10947,6 +13389,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hoy a las %@"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Hoy a las %@"
@@ -10974,6 +13422,12 @@
             "value" : "Tema"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tema"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -10996,6 +13450,12 @@
             "value" : "Total"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11013,6 +13473,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Total a pagar"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Total a pagar"
@@ -11068,6 +13534,12 @@
             "value" : "Oficios"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Oficios"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11085,6 +13557,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Convertir en factura"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Convertir en factura"
@@ -11168,6 +13646,12 @@
             "value" : "Escribir datos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribir datos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11190,6 +13674,12 @@
             "value" : "Escribe sus datos o elígelos de tus Contactos. Duly solo ve el contacto que eliges."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Escribe sus datos o elígelos de tus Contactos. Duly solo ve el contacto que eliges."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11207,6 +13697,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "El sales tax de EE. UU. depende del estado, condado y ciudad. Escribe tu tasa una vez y se guarda."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "El sales tax de EE. UU. depende del estado, condado y ciudad. Escribe tu tasa una vez y se guarda."
@@ -11236,6 +13732,12 @@
             "value" : "USt-IdNr."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "USt-IdNr."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11258,6 +13760,12 @@
             "value" : "Unidad"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unidad"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11275,6 +13783,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Desbloquea todas las plantillas"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Desbloquea todas las plantillas"
@@ -11330,6 +13844,12 @@
             "value" : "Por cobrar"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Por cobrar"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11347,6 +13867,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Concepto sin nombre"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Concepto sin nombre"
@@ -11376,6 +13902,12 @@
             "value" : "Número de IVA"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de IVA"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11393,6 +13925,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registrado para el IVA"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Registrado para el IVA"
@@ -11504,6 +14042,12 @@
             "value" : "Respondemos en 24 horas, todos los días."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respondemos en 24 horas, todos los días."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11521,6 +14065,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Respondemos en 24 horas. Tus facturas no se adjuntan."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Respondemos en 24 horas. Tus facturas no se adjuntan."
@@ -11548,6 +14098,12 @@
             "value" : "Elegiremos una plantilla y conceptos de ejemplo para empezar."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elegiremos una plantilla y conceptos de ejemplo para empezar."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11565,6 +14121,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Semanal"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Semanal"
@@ -11592,6 +14154,12 @@
             "value" : "¿A qué te dedicas?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿A qué te dedicas?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11609,6 +14177,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Qué pasó?"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Qué pasó?"
@@ -11636,6 +14210,12 @@
             "value" : "¿De qué se trata?"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿De qué se trata?"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11653,6 +14233,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "¿Dónde se guardan mis facturas?"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "¿Dónde se guardan mis facturas?"
@@ -11680,6 +14266,12 @@
             "value" : "Año"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Año"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11697,6 +14289,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Anual"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anual"
@@ -11724,6 +14322,12 @@
             "value" : "Ayer a las %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayer a las %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11741,6 +14345,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Estás sin conexión. Mail y WhatsApp lo enviarán en cuanto tengas señal."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Estás sin conexión. Mail y WhatsApp lo enviarán en cuanto tengas señal."
@@ -11768,6 +14378,12 @@
             "value" : "Tu negocio"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu negocio"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11785,6 +14401,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu negocio"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu negocio"
@@ -11812,6 +14434,12 @@
             "value" : "Tus datos"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tus datos"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11829,6 +14457,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tus facturas se guardan en este dispositivo y en tu propio iCloud, que solo tú puedes leer. Un nuevo iPhone o iPad con el mismo ID de Apple recupera todo. Si tu suscripción termina, aún puedes abrir y exportar todas tus facturas. Solo tú puedes eliminar tus datos."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tus facturas se guardan en este dispositivo y en tu propio iCloud, que solo tú puedes leer. Un nuevo iPhone o iPad con el mismo ID de Apple recupera todo. Si tu suscripción termina, aún puedes abrir y exportar todas tus facturas. Solo tú puedes eliminar tus datos."
@@ -11856,6 +14490,12 @@
             "value" : "Tu factura mensual está lista"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu factura mensual está lista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11873,6 +14513,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tus tasas propias se quitan de la lista. Las facturas ya enviadas conservan sus tasas."
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tus tasas propias se quitan de la lista. Las facturas ya enviadas conservan sus tasas."
@@ -11900,6 +14546,12 @@
             "value" : "Tu compra está esperando aprobación. Premium se desbloquea en cuanto se apruebe."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu compra está esperando aprobación. Premium se desbloquea en cuanto se apruebe."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11917,6 +14569,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu firma"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu firma"
@@ -11944,6 +14602,12 @@
             "value" : "Tus totales por mes y por cliente aparecen aquí cuando envíes facturas."
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tus totales por mes y por cliente aparecen aquí cuando envíes facturas."
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -11961,6 +14625,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu factura semanal está lista"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tu factura semanal está lista"
@@ -11988,6 +14658,12 @@
             "value" : "Tu factura anual está lista"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu factura anual está lista"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12005,6 +14681,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "al mes"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "al mes"
@@ -12032,6 +14714,12 @@
             "value" : "cliente"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "cliente"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12049,6 +14737,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "p. ej., Carpintería Robles"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "p. ej., Carpintería Robles"
@@ -12089,6 +14783,12 @@
             "value" : "p. ej., Mano de obra"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "p. ej., Mano de obra"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12111,6 +14811,12 @@
             "value" : "hora, día, pieza…"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hora, día, pieza…"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12128,6 +14834,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloud"
@@ -12183,6 +14895,12 @@
             "value" : "Configuración de iCloud"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuración de iCloud"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12200,6 +14918,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "nombre@empresa.com"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "nombre@empresa.com"
@@ -12227,6 +14951,12 @@
             "value" : "por %@"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "por %@"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12249,6 +14979,12 @@
             "value" : "tu@negocio.com"
           }
         },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tu@negocio.com"
+          }
+        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -12266,6 +15002,12 @@
           }
         },
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "tu cliente"
+          }
+        },
+        "es-ES" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "tu cliente"

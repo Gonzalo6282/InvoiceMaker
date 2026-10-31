@@ -119,7 +119,10 @@ struct ServicesTests {
         #expect(AddressCompleter.format(address, homeCountry: "US").hasSuffix("United Kingdom"))
     }
 
-    @Test(arguments: [("fr", "Nouvelle facture", "Devis"), ("de", "Neue Rechnung", "Angebot"), ("es", "Nueva factura", "Cotización")])
+    @Test(arguments: [
+        ("fr", "Nouvelle facture", "Devis"), ("de", "Neue Rechnung", "Angebot"),
+        ("es", "Nueva factura", "Cotización"), ("es-ES", "Nueva factura", "Presupuesto"),
+    ])
     func translationsShipInTheApp(language: String, newInvoice: String, quote: String) throws {
         let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: language))
         let table = try #require(NSDictionary(contentsOfFile: path) as? [String: String])

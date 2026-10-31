@@ -114,7 +114,13 @@ def main():
             os.makedirs(folder, exist_ok=True)
             for n, screen in (SCREENS_IPAD if device == "ipad" else SCREENS).items():
                 title, green, subtitle = captions[n]
-                shot = raw(region, device, screen, tmp)
+                try:
+                    shot = raw(region, device, screen, tmp)
+                except subprocess.CalledProcessError:
+                    if n != "07":
+                        raise
+                    shot = raw(region, device, "09-quote-pdf.png", tmp)  # run stopped before Settings
+                    print("note: 07 uses the quote PDF for", device)
                 target = os.path.join(folder, f"{n}.png")
                 if n == "02":
                     photo02(device, bases[device], shot, target, title, green, subtitle)
