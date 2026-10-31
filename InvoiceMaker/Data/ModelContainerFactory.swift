@@ -54,6 +54,16 @@ enum ModelContainerFactory {
         if arguments.contains("-uiTesting") || environment["XCTestConfigurationFilePath"] != nil {
             return Result { try make(.inMemory) }
         }
+        #if DEBUG
+            if arguments.contains("-initCloudKitSchema") {
+                do {
+                    try CloudKitSchemaInitializer.run(containerID: cloudKitContainerID)
+                    log.notice("CloudKit schema initialised in Development")
+                } catch {
+                    log.error("CloudKit schema init failed: \(error.localizedDescription)")
+                }
+            }
+        #endif
         do {
             let container = try make(.cloudKit)
             Task { @MainActor in CloudImportWatcher.shared.storeDescription = String(localized: "iCloud") }
