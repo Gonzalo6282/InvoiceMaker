@@ -3,12 +3,6 @@
   "strings" : {
     "%@ a month. " : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ pro Monat. "
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -19,12 +13,6 @@
     },
     "%@ a year" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ pro Jahr"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -35,12 +23,6 @@
     },
     "%@ a year. " : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ pro Jahr. "
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -51,12 +33,6 @@
     },
     "%@ at %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ um %2$@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -67,12 +43,6 @@
     },
     "%@ is due in 3 days" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ ist in 3 Tagen fällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -83,12 +53,6 @@
     },
     "%@ is due today" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ ist heute fällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -99,12 +63,6 @@
     },
     "%@ template" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorlage %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -115,12 +73,6 @@
     },
     "%@ · next %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ · nächste am %2$@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -131,12 +83,6 @@
     },
     "%lld days free, then %@ a year" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld Tage kostenlos, dann %2$@ pro Jahr"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -147,12 +93,6 @@
     },
     "%lld documents" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Dokumente"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -163,12 +103,6 @@
     },
     "%lld invoices · %@ unpaid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld Rechnungen · %2$@ offen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -179,12 +113,6 @@
     },
     "%lld invoices · all paid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Rechnungen · alle bezahlt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -195,12 +123,6 @@
     },
     "**Accepted.** Signed by %@." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**Angenommen.** Unterschrieben von %@."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -211,12 +133,6 @@
     },
     "**Backed up to iCloud.** Your documents, clients, logo and settings sync to your own iCloud." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**In iCloud gesichert.** Ihre Dokumente, Kunden, Ihr Logo und Ihre Einstellungen werden mit Ihrer eigenen iCloud synchronisiert."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -227,12 +143,6 @@
     },
     "**Free:** create, edit and preview as many invoices as you like. **Premium:** send, print and save PDFs." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**Kostenlos:** beliebig viele Rechnungen erstellen, bearbeiten und ansehen. **Premium:** PDFs senden, drucken und sichern."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -243,12 +153,6 @@
     },
     "**Paid on %@.** Send a receipt so your client has proof." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**Bezahlt am %@.** Senden Sie eine Quittung als Nachweis für Ihren Kunden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -259,12 +163,6 @@
     },
     "**Sent on %@.** Changes save automatically. Send again so %@ has the latest version." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**Gesendet am %1$@.** Änderungen werden automatisch gesichert. Senden Sie erneut, damit %2$@ die neueste Version hat."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -275,12 +173,6 @@
     },
     "**Signed by %@.** The signature is on the PDF." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**Unterschrieben von %@.** Die Unterschrift steht auf dem PDF."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -291,12 +183,6 @@
     },
     "**iCloud is off.** Open the Settings app, tap your name, then iCloud, and sign in. Until then your invoices are only on this device." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "**iCloud ist aus.** Öffnen Sie die Einstellungen-App, tippen Sie auf Ihren Namen, dann auf iCloud, und melden Sie sich an. Bis dahin sind Ihre Rechnungen nur auf diesem Gerät."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -307,12 +193,6 @@
     },
     "1 document" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1 Dokument"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -323,12 +203,6 @@
     },
     "3 days before and on the due date of each unpaid invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "3 Tage vorher und am Fälligkeitstag jeder offenen Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -339,12 +213,6 @@
     },
     "A general payment link can't know the invoice total, so your client types the amount." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ein allgemeiner Zahlungslink kennt den Rechnungsbetrag nicht, daher gibt Ihr Kunde den Betrag ein."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -355,12 +223,6 @@
     },
     "A small line at the bottom of the page. Thanks for helping others find Duly." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eine kleine Zeile unten auf der Seite. Danke, dass Sie anderen helfen, Duly zu finden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -371,12 +233,6 @@
     },
     "ABN" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ABN"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -389,12 +245,6 @@
     },
     "Accepted" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angenommen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,12 +255,6 @@
     },
     "Account" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Account"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -421,12 +265,6 @@
     },
     "Account %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Konto %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -437,12 +275,6 @@
     },
     "Account name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kontoinhaber"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -453,12 +285,6 @@
     },
     "Account number" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kontonummer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -469,12 +295,6 @@
     },
     "Add" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -485,12 +305,6 @@
     },
     "Add a client before sending." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fügen Sie vor dem Senden einen Kunden hinzu."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -501,12 +315,6 @@
     },
     "Add a fee" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebühr hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -517,12 +325,6 @@
     },
     "Add a tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuer hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -533,12 +335,6 @@
     },
     "Add at least one item with a price." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fügen Sie mindestens eine Position mit Preis hinzu."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -549,12 +345,6 @@
     },
     "Add client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunde hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -565,12 +355,6 @@
     },
     "Add from saved items" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aus gespeicherten Positionen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -581,12 +365,6 @@
     },
     "Add item" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Position hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -597,12 +375,6 @@
     },
     "Add more photos" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weitere Fotos hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -613,12 +385,6 @@
     },
     "Add photos" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fotos hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -629,12 +395,6 @@
     },
     "Add services and products once, with their price and tax. Then add them to any invoice in one tap." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Legen Sie Leistungen und Produkte einmal mit Preis und Steuer an. Dann fügen Sie sie mit einem Tipp jeder Rechnung hinzu."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -645,12 +405,6 @@
     },
     "Add your bank details or payment links in Payment details. They appear on every invoice with a QR code." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tragen Sie Ihre Bankdaten oder Zahlungslinks unter Zahlungsdaten ein. Sie erscheinen auf jeder Rechnung mit QR-Code."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -661,12 +415,6 @@
     },
     "Add your details" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre Daten hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -677,12 +425,6 @@
     },
     "Add your first client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fügen Sie Ihren ersten Kunden hinzu"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -693,12 +435,6 @@
     },
     "Add your logo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo hinzufügen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -709,12 +445,6 @@
     },
     "Added" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hinzugefügt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -725,12 +455,6 @@
     },
     "Address" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Adresse"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -741,12 +465,6 @@
     },
     "All" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alle"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -757,12 +475,6 @@
     },
     "All 7 templates with your logo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alle 7 Vorlagen mit Ihrem Logo"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -773,12 +485,6 @@
     },
     "Allow" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erlauben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -789,12 +495,6 @@
     },
     "Allow access to Contacts" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zugriff auf Kontakte erlauben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -805,12 +505,6 @@
     },
     "Allow access to Photos" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zugriff auf Fotos erlauben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -821,12 +515,6 @@
     },
     "Amount" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Betrag"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -837,12 +525,6 @@
     },
     "Anonymous analytics" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anonyme Analyse"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -853,12 +535,6 @@
     },
     "Any other business" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jedes andere Unternehmen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -869,12 +545,6 @@
     },
     "Apple couldn't confirm it's you. On your iPhone, open Settings > [your name] > Sign-In & Security > Sign in with Apple > Duly and tap Stop Using Apple ID. Then come back to Duly and try again." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Apple konnte Sie nicht bestätigen. Öffnen Sie auf Ihrem iPhone Einstellungen > [Ihr Name] > Anmelden & Sicherheit > Mit Apple anmelden > Duly und tippen Sie auf „Apple-ID nicht mehr verwenden“. Kommen Sie dann zu Duly zurück und versuchen Sie es erneut."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -885,12 +555,6 @@
     },
     "Applies in the app and on your PDFs. Each client can have their own currency in their details." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gilt in der App und auf Ihren PDFs. Jeder Kunde kann in seinen Details eine eigene Währung haben."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -901,12 +565,6 @@
     },
     "Apply tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuer anwenden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -917,12 +575,6 @@
     },
     "At cost" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zum Selbstkostenpreis"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -933,12 +585,6 @@
     },
     "Available once the app is fully set up" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verfügbar, sobald die App vollständig eingerichtet ist"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -949,12 +595,6 @@
     },
     "BSB" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BSB"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -965,12 +605,6 @@
     },
     "Back" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zurück"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -981,12 +615,6 @@
     },
     "Backup and sync" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Backup und Synchronisierung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -997,12 +625,6 @@
     },
     "Backup status" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Backup-Status"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1013,12 +635,6 @@
     },
     "Bank" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bank"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1029,12 +645,6 @@
     },
     "Bank code" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bankleitzahl"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1045,12 +655,6 @@
     },
     "Bank transfer" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Überweisung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1061,12 +665,6 @@
     },
     "Bill to" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnung an"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1077,12 +675,6 @@
     },
     "Billed in %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abgerechnet in %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1093,12 +685,6 @@
     },
     "Billed monthly, cancel any time" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Monatlich abgerechnet, jederzeit kündbar"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1109,12 +695,6 @@
     },
     "Bold" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kräftig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1126,12 +706,6 @@
     "Brand colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markenfarbe"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1154,12 +728,6 @@
     },
     "Brand guidelines" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markenrichtlinien"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1170,12 +738,6 @@
     },
     "Builders, plumbers, cleaners, electricians" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bau, Sanitär, Reinigung, Elektrik"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1186,12 +748,6 @@
     },
     "Business" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unternehmen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1202,12 +758,6 @@
     },
     "Business name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name des Unternehmens"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1218,12 +768,6 @@
     },
     "Business profile" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unternehmensprofil"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1234,12 +778,6 @@
     },
     "By client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nach Kunde"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1250,12 +788,6 @@
     },
     "By month" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nach Monat"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1267,12 +799,6 @@
     "Call-out fee" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anfahrtspauschale"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1295,12 +821,6 @@
     },
     "Canada: add GST and PST or QST to one invoice, or a single HST. US: sales tax depends on state, county and city, so type your own rate." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kanada: GST und PST oder QST auf eine Rechnung, oder nur HST. USA: Die Sales Tax hängt von Staat, County und Stadt ab, geben Sie Ihren Satz selbst ein."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1311,12 +831,6 @@
     },
     "Cancel" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abbrechen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1327,12 +841,6 @@
     },
     "Change logo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo ändern"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1343,12 +851,6 @@
     },
     "Checking…" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wird geprüft …"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1359,12 +861,6 @@
     },
     "Choose a client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählen Sie einen Kunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1375,12 +871,6 @@
     },
     "Choose an invoice, or press ⌘N to create one" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wählen Sie eine Rechnung oder drücken Sie ⌘N für eine neue"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1391,12 +881,6 @@
     },
     "Classic" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klassisch"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1407,12 +891,6 @@
     },
     "Clean" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klar"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1423,12 +901,6 @@
     },
     "Clear" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Löschen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1439,12 +911,6 @@
     },
     "Client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunde"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1455,12 +921,6 @@
     },
     "Client name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name des Kunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1471,12 +931,6 @@
     },
     "Client signature" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterschrift des Kunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1487,12 +941,6 @@
     },
     "Client signs" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunde unterschreibt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1503,12 +951,6 @@
     },
     "Client signs on this device" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunde unterschreibt auf diesem Gerät"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1519,12 +961,6 @@
     },
     "Client's full name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vollständiger Name des Kunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1535,12 +971,6 @@
     },
     "Clients" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1551,12 +981,6 @@
     },
     "Close" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schließen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1567,12 +991,6 @@
     },
     "Code" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Code"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1584,12 +1002,6 @@
     "Colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farbe"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1613,12 +1025,6 @@
     "Colour %@" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Farbe %@"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1641,12 +1047,6 @@
     },
     "Common questions" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Häufige Fragen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1657,12 +1057,6 @@
     },
     "Company or person" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Firma oder Person"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1673,12 +1067,6 @@
     },
     "Confirm with Apple to finish:" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zum Abschluss mit Apple bestätigen:"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1689,12 +1077,6 @@
     },
     "Contact" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kontakt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1705,12 +1087,6 @@
     },
     "Continue" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weiter"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1721,12 +1097,6 @@
     },
     "Contractor or trades" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Handwerk oder Bau"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1737,12 +1107,6 @@
     },
     "Country" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Land"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1753,12 +1117,6 @@
     },
     "Country and tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Land und Steuer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1769,12 +1127,6 @@
     },
     "Create and preview free. Send with Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kostenlos erstellen und ansehen. Mit Premium senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1785,12 +1137,6 @@
     },
     "Create and send an invoice in 60 seconds" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnung in 60 Sekunden erstellen und senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1801,12 +1147,6 @@
     },
     "Create your first invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellen Sie Ihre erste Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1817,12 +1157,6 @@
     },
     "Creating, editing and previewing is free with no limits. Sending, printing and saving PDFs needs Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellen, Bearbeiten und Ansehen ist unbegrenzt kostenlos. Für Senden, Drucken und Sichern von PDFs brauchen Sie Premium."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1833,12 +1167,6 @@
     },
     "Currency" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Währung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1849,12 +1177,6 @@
     },
     "Currency display" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Währungsanzeige"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1865,12 +1187,6 @@
     },
     "Default" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standard"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1881,12 +1197,6 @@
     },
     "Default currency" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardwährung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1897,12 +1207,6 @@
     },
     "Default tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardsteuer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1913,12 +1217,6 @@
     },
     "Default template" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standardvorlage"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1929,12 +1227,6 @@
     },
     "Defaults" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Standards"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1945,12 +1237,6 @@
     },
     "Delete" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Löschen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1961,12 +1247,6 @@
     },
     "Delete %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ löschen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1977,12 +1257,6 @@
     },
     "Delete %@?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ löschen?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1993,12 +1267,6 @@
     },
     "Delete account" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Account löschen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2009,12 +1277,6 @@
     },
     "Delete client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunden löschen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2025,12 +1287,6 @@
     },
     "Delete item" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Position löschen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2041,12 +1297,6 @@
     },
     "Delete this client?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diesen Kunden löschen?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2057,12 +1307,6 @@
     },
     "Delete your account?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Account löschen?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2073,12 +1317,6 @@
     },
     "Delivery" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lieferung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2089,12 +1327,6 @@
     },
     "Description" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beschreibung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2105,12 +1337,6 @@
     },
     "Design, writing, consulting, photography" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Design, Text, Beratung, Fotografie"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2121,12 +1347,6 @@
     },
     "Details" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Details"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2137,12 +1357,6 @@
     },
     "Discount" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rabatt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2153,12 +1367,6 @@
     },
     "Discount %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rabatt %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2169,12 +1377,6 @@
     },
     "Document" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dokument"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2185,12 +1387,6 @@
     },
     "Document type" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dokumenttyp"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2201,12 +1397,6 @@
     },
     "Documents" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dokumente"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2217,12 +1407,6 @@
     },
     "Don't Allow" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht erlauben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2233,12 +1417,6 @@
     },
     "Done" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fertig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2249,12 +1427,6 @@
     },
     "Draft" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entwurf"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2265,12 +1437,6 @@
     },
     "Drafts" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entwürfe"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2281,12 +1447,6 @@
     },
     "Draw again" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neu zeichnen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2297,12 +1457,6 @@
     },
     "Draw it once. It goes on your invoices." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einmal zeichnen. Sie steht dann auf Ihren Rechnungen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2313,12 +1467,6 @@
     },
     "Draw once. It goes on every invoice you send." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einmal zeichnen. Sie steht auf jeder Rechnung, die Sie senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2329,12 +1477,6 @@
     },
     "Draw signature" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterschrift zeichnen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2345,12 +1487,6 @@
     },
     "Due" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2361,12 +1497,6 @@
     },
     "Due in %lld days" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fällig in %lld Tagen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2377,12 +1507,6 @@
     },
     "Due in 1 day" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fällig in 1 Tag"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2393,12 +1517,6 @@
     },
     "Due today" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heute fällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2409,12 +1527,6 @@
     },
     "Duly couldn't open its data" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly konnte seine Daten nicht öffnen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2425,12 +1537,6 @@
     },
     "Duly needs access to your contacts to add a client from them. You can allow it in Settings, or type the client's details instead." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly braucht Zugriff auf Ihre Kontakte, um daraus einen Kunden hinzuzufügen. Sie können das in den Einstellungen erlauben oder die Daten selbst eingeben."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2441,12 +1547,6 @@
     },
     "Duly needs access to your photos to add your logo to invoices. You can allow it in Settings." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly braucht Zugriff auf Ihre Fotos, um Ihr Logo auf Rechnungen zu setzen. Sie können das in den Einstellungen erlauben."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2457,12 +1557,6 @@
     },
     "Duly report %@ %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly-Bericht %1$@ %2$@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2473,12 +1567,6 @@
     },
     "Duplicate" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duplizieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2489,12 +1577,6 @@
     },
     "EIN" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "EIN"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2507,12 +1589,6 @@
     },
     "Email" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "E-Mail"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2523,12 +1599,6 @@
     },
     "Email or phone" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "E-Mail oder Telefon"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2539,12 +1609,6 @@
     },
     "Email us" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "E-Mail an uns"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2555,12 +1619,6 @@
     },
     "Estimate" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angebot"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2573,12 +1631,6 @@
     },
     "Estimate prefix" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Präfix für Angebote"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2589,12 +1641,6 @@
     },
     "Estimate total" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angebotssumme"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2605,12 +1651,6 @@
     },
     "Estimates" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angebote"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2621,12 +1661,6 @@
     },
     "Export CSV" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "CSV exportieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2637,12 +1671,6 @@
     },
     "Export didn't work" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Export hat nicht geklappt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2653,12 +1681,6 @@
     },
     "Export everything" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alles exportieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2669,12 +1691,6 @@
     },
     "Fee" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebühr"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2685,12 +1701,6 @@
     },
     "Fee name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name der Gebühr"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2701,12 +1711,6 @@
     },
     "Fees" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebühren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2717,12 +1721,6 @@
     },
     "Fills in the address" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Füllt die Adresse aus"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2733,12 +1731,6 @@
     },
     "First item" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erste Position"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2749,12 +1741,6 @@
     },
     "Footer" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fußzeile"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2765,12 +1751,6 @@
     },
     "For" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Für"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2781,12 +1761,6 @@
     },
     "For %@. Open Duly to check it and send it." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Für %@. Öffnen Sie Duly, um sie zu prüfen und zu senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2797,12 +1771,6 @@
     },
     "Free" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kostenlos"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2813,12 +1781,6 @@
     },
     "Free plan" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kostenloser Plan"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2829,12 +1791,6 @@
     },
     "Free until %@, then %@ a year. " : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kostenlos bis %1$@, dann %2$@ pro Jahr. "
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2845,12 +1801,6 @@
     },
     "Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kostenlos: unbegrenzt Rechnungen, Angebote und Quittungen erstellen, bearbeiten, ansehen, sichern und exportieren. Premium: PDFs senden, drucken und sichern."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2861,12 +1811,6 @@
     },
     "Freelancer" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Freiberufler"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2877,12 +1821,6 @@
     },
     "From" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Von"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2893,12 +1831,6 @@
     },
     "From Photos. JPEG, PNG or HEIC. Shown whole, never cropped." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aus Fotos. JPEG, PNG oder HEIC. Wird vollständig gezeigt, nie beschnitten."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2909,12 +1841,6 @@
     },
     "GST registered" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GST-registriert"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2925,12 +1851,6 @@
     },
     "GST/HST number" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GST/HST-Nummer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2943,12 +1863,6 @@
     },
     "Get started" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Los geht's"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2959,12 +1873,6 @@
     },
     "Gift hamper, large" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geschenkkorb, groß"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2975,12 +1883,6 @@
     },
     "Hand your device to your client. Signing accepts this %@ (or confirms the work on an invoice). Their name and today's date go on the PDF." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geben Sie Ihr Gerät Ihrem Kunden. Mit der Unterschrift wird das Dokument (%@) angenommen (bei einer Rechnung die Arbeit bestätigt). Name und heutiges Datum kommen auf das PDF."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2991,12 +1893,6 @@
     },
     "Help" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hilfe"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3007,12 +1903,6 @@
     },
     "Help and support" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hilfe und Support"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3023,12 +1913,6 @@
     },
     "Help improve Duly?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly verbessern helfen?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3039,12 +1923,6 @@
     },
     "Helps us fix what's slow or confusing" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hilft uns, Langsames oder Verwirrendes zu verbessern"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3055,12 +1933,6 @@
     },
     "Here's your first invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hier ist Ihre erste Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3071,12 +1943,6 @@
     },
     "Hidden" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ausgeblendet"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3087,12 +1953,6 @@
     },
     "How do I cancel?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wie kündige ich?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3103,12 +1963,6 @@
     },
     "How do clients pay me?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wie bezahlen mich Kunden?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3119,12 +1973,6 @@
     },
     "How to pay" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "So bezahlen Sie"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3135,12 +1983,6 @@
     },
     "I charge VAT (MwSt.)" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ich berechne Umsatzsteuer (MwSt.)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3151,12 +1993,6 @@
     },
     "I charge VAT (TVA)" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ich berechne Umsatzsteuer (TVA)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3167,12 +2003,6 @@
     },
     "I collect sales tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ich erhebe Umsatzsteuer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3183,12 +2013,6 @@
     },
     "I send my invoices with Duly. Try it: https://apps.apple.com/app/id6824285908" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ich sende meine Rechnungen mit Duly. Probier es aus: https://apps.apple.com/app/id6824285908"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3199,12 +2023,6 @@
     },
     "Import from Contacts" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aus Kontakten importieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3215,12 +2033,6 @@
     },
     "Include app version and device model" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App-Version und Gerätemodell mitsenden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3231,12 +2043,6 @@
     },
     "Includes %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enthält %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3247,12 +2053,6 @@
     },
     "Invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3265,12 +2065,6 @@
     },
     "Invoice look" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnungsdesign"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3281,12 +2075,6 @@
     },
     "Invoice prefix" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Präfix für Rechnungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3297,12 +2085,6 @@
     },
     "Invoiced" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abgerechnet"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3313,12 +2095,6 @@
     },
     "Invoiced and paid by month" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abgerechnet und bezahlt nach Monat"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3329,12 +2105,6 @@
     },
     "Invoiced by invoice date, paid by the date the money arrived." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abgerechnet nach Rechnungsdatum, bezahlt nach Zahlungseingang."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3345,12 +2115,6 @@
     },
     "Invoiced in %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abgerechnet in %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3361,12 +2125,6 @@
     },
     "Invoices" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3377,12 +2135,6 @@
     },
     "Invoices already made for this client stay as they are." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bereits erstellte Rechnungen für diesen Kunden bleiben erhalten."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3393,12 +2145,6 @@
     },
     "Invoices, estimates and receipts with your logo. Create free. Send with Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnungen, Angebote und Quittungen mit Ihrem Logo. Kostenlos erstellen. Mit Premium senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3409,12 +2155,6 @@
     },
     "Invoices, quotes and receipts with your logo. Create free. Send with Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnungen, Angebote und Quittungen mit Ihrem Logo. Kostenlos erstellen. Mit Premium senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3425,12 +2165,6 @@
     },
     "Is Duly free?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ist Duly kostenlos?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3441,12 +2175,6 @@
     },
     "Issued" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datum"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3457,12 +2185,6 @@
     },
     "It takes about a minute. Creating and previewing is free; sending needs Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das dauert etwa eine Minute. Erstellen und Vorschau sind kostenlos; zum Senden brauchen Sie Premium."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3473,12 +2195,6 @@
     },
     "Item" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Position"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3489,12 +2205,6 @@
     },
     "Items" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Positionen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3505,12 +2215,6 @@
     },
     "Job" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auftrag"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3521,12 +2225,6 @@
     },
     "Job or site" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auftrag oder Baustelle"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3537,12 +2235,6 @@
     },
     "Job photo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Foto vom Auftrag"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3553,12 +2245,6 @@
     },
     "Job photos" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fotos vom Auftrag"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3569,12 +2255,6 @@
     },
     "Job site" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Baustelle"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3585,12 +2265,6 @@
     },
     "Keep Premium on every device" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium auf allen Geräten behalten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3602,12 +2276,6 @@
     "Labour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Arbeitszeit"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3630,12 +2298,6 @@
     },
     "Last backup" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Letztes Backup"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3646,12 +2308,6 @@
     },
     "Last restore" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Letzte Wiederherstellung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3662,12 +2318,6 @@
     },
     "Leave a review on the App Store" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bewertung im App Store schreiben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3678,12 +2328,6 @@
     },
     "Ledger" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tabelle"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3694,12 +2338,6 @@
     },
     "Legal" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechtliches"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3710,12 +2348,6 @@
     },
     "Line total" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Positionssumme"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3726,12 +2358,6 @@
     },
     "Links" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Links"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3742,12 +2368,6 @@
     },
     "Live PDF preview" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Live-PDF-Vorschau"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3758,12 +2378,6 @@
     },
     "Live PDF preview. The \"Preview\" mark disappears with Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Live-PDF-Vorschau. Das Wasserzeichen „Vorschau“ verschwindet mit Premium."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3774,12 +2388,6 @@
     },
     "Logo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3790,12 +2398,6 @@
     },
     "Logo added" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo hinzugefügt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3806,12 +2408,6 @@
     },
     "Logo design" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo-Design"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3822,12 +2418,6 @@
     },
     "Look" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aussehen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3838,12 +2428,6 @@
     },
     "Looking for your invoices in iCloud…" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre Rechnungen werden in iCloud gesucht …"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3854,12 +2438,6 @@
     },
     "Looks good" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sieht gut aus"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3870,12 +2448,6 @@
     },
     "Made with Duly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erstellt mit Duly"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3886,12 +2458,6 @@
     },
     "Make default" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Als Standard"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3902,12 +2468,6 @@
     },
     "Make receipt" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quittung erstellen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3918,12 +2478,6 @@
     },
     "Manage subscription" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abo verwalten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3934,12 +2488,6 @@
     },
     "Mark an invoice as paid and send a receipt. It appears here." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Markieren Sie eine Rechnung als bezahlt und senden Sie eine Quittung. Sie erscheint hier."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3950,12 +2498,6 @@
     },
     "Mark as paid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Als bezahlt markieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3966,12 +2508,6 @@
     },
     "Mark as unpaid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Als offen markieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3982,12 +2518,6 @@
     },
     "Materials" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Material"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3998,12 +2528,6 @@
     },
     "Micro-entrepreneurs who don't charge VAT: turn this off and add \"TVA non applicable, art. 293 B du CGI\" to the notes." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleinunternehmer ohne Umsatzsteuer: Schalten Sie das aus und schreiben Sie „TVA non applicable, art. 293 B du CGI“ in die Notizen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4014,12 +2538,6 @@
     },
     "Month" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Monat"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4030,12 +2548,6 @@
     },
     "Monthly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Monatlich"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4046,12 +2558,6 @@
     },
     "More actions" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weitere Aktionen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4062,12 +2568,6 @@
     },
     "My signature" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Meine Unterschrift"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4078,12 +2578,6 @@
     },
     "Name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4094,12 +2588,6 @@
     },
     "Never" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nie"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4110,12 +2598,6 @@
     },
     "New" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neu"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4126,12 +2608,6 @@
     },
     "New client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neuer Kunde"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4142,12 +2618,6 @@
     },
     "New client name" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name des neuen Kunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4158,12 +2628,6 @@
     },
     "New estimate" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neues Angebot"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4174,12 +2638,6 @@
     },
     "New invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neue Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4190,12 +2648,6 @@
     },
     "New invoices for this client use %@." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neue Rechnungen für diesen Kunden sind in %@."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4207,12 +2659,6 @@
     "New invoices use this template and colour. You can change them on any invoice." : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neue Rechnungen nutzen diese Vorlage und Farbe. Sie können sie bei jeder Rechnung ändern."
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4235,12 +2681,6 @@
     },
     "New quote" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neues Angebot"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4251,12 +2691,6 @@
     },
     "New receipt" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Neue Quittung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4267,12 +2701,6 @@
     },
     "Next %@ · due in %lld days" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nächste %1$@ · fällig in %2$lld Tagen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4283,12 +2711,6 @@
     },
     "Next invoice number" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nächste Rechnungsnummer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4299,12 +2721,6 @@
     },
     "No \"Preview\" mark on your PDFs" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Wasserzeichen „Vorschau“ auf Ihren PDFs"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4315,12 +2731,6 @@
     },
     "No active subscription found for this Apple ID." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Für diese Apple-ID wurde kein aktives Abo gefunden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4331,12 +2741,6 @@
     },
     "No client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kein Kunde"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4347,12 +2751,6 @@
     },
     "No estimates yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Angebote"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4363,12 +2761,6 @@
     },
     "No invoices in %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Rechnungen in %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4379,12 +2771,6 @@
     },
     "No items yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Positionen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4395,12 +2781,6 @@
     },
     "No quotes yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Angebote"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4411,12 +2791,6 @@
     },
     "No receipts yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Quittungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4427,12 +2801,6 @@
     },
     "No sent invoices yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine gesendeten Rechnungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4443,12 +2811,6 @@
     },
     "No signature yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch keine Unterschrift"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4459,12 +2821,6 @@
     },
     "No tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ohne Steuer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4475,12 +2831,6 @@
     },
     "None" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4491,12 +2841,6 @@
     },
     "None added" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nichts hinzugefügt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4507,12 +2851,6 @@
     },
     "Not now" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nicht jetzt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4523,12 +2861,6 @@
     },
     "Not opened yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch nicht geöffnet"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4539,12 +2871,6 @@
     },
     "Not sent yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch nicht gesendet"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4555,12 +2881,6 @@
     },
     "Not yet" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Noch nicht"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4571,12 +2891,6 @@
     },
     "Notes" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notizen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4587,12 +2901,6 @@
     },
     "Notes on new documents" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notizen auf neuen Dokumenten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4603,12 +2911,6 @@
     },
     "Nothing matches. Try another filter or search." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keine Treffer. Versuchen Sie einen anderen Filter oder Suchbegriff."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4619,12 +2921,6 @@
     },
     "Notifications are off for Duly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mitteilungen für Duly sind aus"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4635,12 +2931,6 @@
     },
     "Number" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nummer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4651,12 +2941,6 @@
     },
     "Numbering" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nummerierung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4667,12 +2951,6 @@
     },
     "Numbers and defaults" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nummern und Standards"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4683,12 +2961,6 @@
     },
     "Numbers go up by one with each new document. Next: %@." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nummern steigen mit jedem neuen Dokument um eins. Nächste: %@."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4699,12 +2971,6 @@
     },
     "N° TVA" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "USt-IdNr. (FR)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4717,12 +2983,6 @@
     },
     "Off" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aus"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4733,12 +2993,6 @@
     },
     "On" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "An"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4749,12 +3003,6 @@
     },
     "On total" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auf die Summe"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4765,12 +3013,6 @@
     },
     "On your device and in your own iCloud. We never upload them to our servers." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Auf Ihrem Gerät und in Ihrer eigenen iCloud. Wir laden sie nie auf unsere Server."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4781,12 +3023,6 @@
     },
     "Only VAT-registered businesses add VAT and show a VAT number." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nur umsatzsteuerpflichtige Unternehmen berechnen MwSt. und zeigen eine USt-IdNr."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4797,12 +3033,6 @@
     },
     "Open Duly to check it and send it." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Öffnen Sie Duly, um sie zu prüfen und zu senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4813,12 +3043,6 @@
     },
     "Open Settings" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einstellungen öffnen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4829,12 +3053,6 @@
     },
     "Opens your payment link when scanned" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Öffnet beim Scannen Ihren Zahlungslink"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4845,12 +3063,6 @@
     },
     "Optional" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optional"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4861,12 +3073,6 @@
     },
     "Optional. From Photos." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Optional. Aus Fotos."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4877,12 +3083,6 @@
     },
     "Other" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anderes"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4893,12 +3093,6 @@
     },
     "Overdue" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Überfällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4909,12 +3103,6 @@
     },
     "Overdue by %lld days" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Tage überfällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4925,12 +3113,6 @@
     },
     "Overdue by 1 day" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1 Tag überfällig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4941,12 +3123,6 @@
     },
     "Owed to you" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Offene Forderungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4957,12 +3133,6 @@
     },
     "PAID" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BEZAHLT"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4973,12 +3143,6 @@
     },
     "PDF preview" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDF-Vorschau"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4989,12 +3153,6 @@
     },
     "PDF preview of %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDF-Vorschau von %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5005,12 +3163,6 @@
     },
     "PDFs in a ZIP and all data as CSV. Free." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDFs als ZIP und alle Daten als CSV. Kostenlos."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5021,12 +3173,6 @@
     },
     "PREVIEW" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "VORSCHAU"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5037,12 +3183,6 @@
     },
     "Paid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bezahlt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5053,12 +3193,6 @@
     },
     "Paid %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bezahlt %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5069,12 +3203,6 @@
     },
     "Paid in %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bezahlt im %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5085,12 +3213,6 @@
     },
     "Paid on" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bezahlt am"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5101,12 +3223,6 @@
     },
     "Pay link" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungslink"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5117,12 +3233,6 @@
     },
     "Pay online" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Online bezahlen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5133,12 +3243,6 @@
     },
     "Payment buttons and QR code on invoices" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungsbuttons und QR-Code auf Rechnungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5149,12 +3253,6 @@
     },
     "Payment details" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungsdaten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5165,12 +3263,6 @@
     },
     "Payment due in (days)" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungsziel (Tage)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5181,12 +3273,6 @@
     },
     "Payment received for %@. Thank you." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlung für %@ erhalten. Vielen Dank."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5197,12 +3283,6 @@
     },
     "Payment reminders" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungserinnerungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5213,12 +3293,6 @@
     },
     "Payment terms, thank-you note" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungsbedingungen, Dankeszeile"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5229,12 +3303,6 @@
     },
     "Payments are handled by Apple. Open Settings, tap your name, then Subscriptions. Deleting the app does not cancel the subscription." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungen laufen über Apple. Öffnen Sie Einstellungen, tippen Sie auf Ihren Namen und dann auf Abonnements. Das Löschen der App kündigt das Abo nicht."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5245,12 +3313,6 @@
     },
     "Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription. If your subscription ends you keep every document." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zahlungen laufen über Apple. Zum Kündigen öffnen Sie Einstellungen, tippen auf Ihren Namen und dann auf Abonnements. Eine Erstattung beantragen Sie unter reportaproblem.apple.com. Das Löschen der App kündigt das Abo nicht. Wenn Ihr Abo endet, behalten Sie jedes Dokument."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5261,12 +3323,6 @@
     },
     "Per item" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pro Position"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5277,12 +3333,6 @@
     },
     "Person" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Person"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5293,12 +3343,6 @@
     },
     "Phone" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Telefon"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5309,12 +3353,6 @@
     },
     "Pick one or more. Canada: GST plus PST or QST." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eine oder mehrere wählen. Kanada: GST plus PST oder QST."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5325,12 +3363,6 @@
     },
     "Please restart the app. If this keeps happening, contact support from the App Store page." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bitte starten Sie die App neu. Wenn das wieder passiert, kontaktieren Sie den Support über die App-Store-Seite."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5341,12 +3373,6 @@
     },
     "Please try again. If it keeps happening, report a problem in Help." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bitte versuchen Sie es erneut. Wenn es wieder passiert, melden Sie ein Problem unter Hilfe."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5357,12 +3383,6 @@
     },
     "Plus %@ owed in other currencies" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plus %@ offen in anderen Währungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5373,12 +3393,6 @@
     },
     "Premium" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5389,12 +3403,6 @@
     },
     "Premium is active on this device." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium ist auf diesem Gerät aktiv."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5405,12 +3413,6 @@
     },
     "Premium restored." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium wiederhergestellt."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5421,12 +3423,6 @@
     },
     "Presets for **%@**. Edit any rate or add your own. Changing a rate never changes invoices you've already sent." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voreinstellungen für **%@**. Bearbeiten Sie jeden Satz oder fügen Sie eigene hinzu. Eine Änderung betrifft nie bereits gesendete Rechnungen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5437,12 +3433,6 @@
     },
     "Preview" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorschau"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5453,12 +3443,6 @@
     },
     "Preview of your first invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorschau Ihrer ersten Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5469,12 +3453,6 @@
     },
     "Price" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preis"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5485,12 +3463,6 @@
     },
     "Prices" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preise"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5501,12 +3473,6 @@
     },
     "Prices are in %@. On an invoice in another currency, check the price before sending." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preise sind in %@. Prüfen Sie bei einer Rechnung in anderer Währung den Preis vor dem Senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5517,12 +3483,6 @@
     },
     "Print" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drucken"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5533,12 +3493,6 @@
     },
     "Privacy" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datenschutz"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5549,12 +3503,6 @@
     },
     "Privacy Policy" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datenschutzerklärung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5565,12 +3513,6 @@
     },
     "Privacy and legal" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Datenschutz und Rechtliches"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5581,12 +3523,6 @@
     },
     "QR code" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "QR-Code"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5597,12 +3533,6 @@
     },
     "Qty" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Menge"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5613,12 +3543,6 @@
     },
     "Quantity" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Menge"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5629,12 +3553,6 @@
     },
     "Quote" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angebot"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5647,12 +3565,6 @@
     },
     "Quote prefix" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Präfix für Angebote"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5663,12 +3575,6 @@
     },
     "Quote total" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angebotssumme"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5679,12 +3585,6 @@
     },
     "Quotes" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Angebote"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5695,12 +3595,6 @@
     },
     "Rate" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Preis"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5711,12 +3605,6 @@
     },
     "Rate Duly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly bewerten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5727,12 +3615,6 @@
     },
     "Receipt" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quittung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5745,12 +3627,6 @@
     },
     "Receipt prefix" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Präfix für Quittungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5761,12 +3637,6 @@
     },
     "Receipts" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quittungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5777,12 +3647,6 @@
     },
     "Refresh" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Aktualisieren"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5793,12 +3657,6 @@
     },
     "Reminders" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erinnerungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5809,12 +3667,6 @@
     },
     "Remove" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Entfernen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5825,12 +3677,6 @@
     },
     "Remove client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunden entfernen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5841,12 +3687,6 @@
     },
     "Remove fee" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gebühr entfernen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5857,12 +3697,6 @@
     },
     "Remove logo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logo entfernen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5873,12 +3707,6 @@
     },
     "Remove photo" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Foto entfernen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5890,12 +3718,6 @@
     "Renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions." : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Verlängert sich automatisch, wenn nicht mindestens 24 Stunden vor Ende des Zeitraums gekündigt wird. Verwalten oder kündigen unter Einstellungen > [Ihr Name] > Abonnements."
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5918,12 +3740,6 @@
     },
     "Repeat" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wiederholen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5934,12 +3750,6 @@
     },
     "Repeat invoices automatically" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnungen automatisch wiederholen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5950,12 +3760,6 @@
     },
     "Repeat of" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wiederholung von"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5966,12 +3770,6 @@
     },
     "Replies within 24 hours" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Antwort innerhalb von 24 Stunden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5982,12 +3780,6 @@
     },
     "Report a problem" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Problem melden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5998,12 +3790,6 @@
     },
     "Reports" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Berichte"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6014,12 +3800,6 @@
     },
     "Restore" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wiederherstellen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6030,12 +3810,6 @@
     },
     "Restore %@ presets" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voreinstellungen für %@ wiederherstellen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6046,12 +3820,6 @@
     },
     "Restore presets" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voreinstellungen wiederherstellen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6062,12 +3830,6 @@
     },
     "Restore purchases" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Käufe wiederherstellen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6078,12 +3840,6 @@
     },
     "Restore the preset rates?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Voreingestellte Sätze wiederherstellen?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6094,12 +3850,6 @@
     },
     "Restoring…" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wird wiederhergestellt …"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6110,12 +3860,6 @@
     },
     "Retail, food, products" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Handel, Essen, Produkte"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6126,12 +3870,6 @@
     },
     "Revisions" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Überarbeitungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6142,12 +3880,6 @@
     },
     "Routing number" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Routing-Nummer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6158,12 +3890,6 @@
     },
     "SWIFT / BIC" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "SWIFT / BIC"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6174,12 +3900,6 @@
     },
     "Save" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sichern"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6190,12 +3910,6 @@
     },
     "Save PDF to Files" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDF in Dateien sichern"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6206,12 +3920,6 @@
     },
     "Save and print your PDFs" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PDFs sichern und drucken"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6222,12 +3930,6 @@
     },
     "Save to my items" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In meinen Positionen sichern"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6238,12 +3940,6 @@
     },
     "Save what you charge for" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Speichern Sie, was Sie berechnen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6254,12 +3950,6 @@
     },
     "Saved" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gesichert"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6270,12 +3960,6 @@
     },
     "Saved items" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gespeicherte Positionen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6286,12 +3970,6 @@
     },
     "Saved rates" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gespeicherte Sätze"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6302,12 +3980,6 @@
     },
     "Saved to" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gesichert in"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6318,12 +3990,6 @@
     },
     "Search clients" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunden suchen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6334,12 +4000,6 @@
     },
     "Search clients or numbers" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunden oder Nummern suchen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6350,12 +4010,6 @@
     },
     "See Premium plans" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Premium-Pläne ansehen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6366,12 +4020,6 @@
     },
     "See plans" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pläne ansehen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6382,12 +4030,6 @@
     },
     "See what you earn" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sehen Sie, was Sie verdienen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6398,12 +4040,6 @@
     },
     "Send" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6414,12 +4050,6 @@
     },
     "Send again" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erneut senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6430,12 +4060,6 @@
     },
     "Send by email, Messages or WhatsApp" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Per E-Mail, Nachrichten oder WhatsApp senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6446,12 +4070,6 @@
     },
     "Send invoices that get paid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnungen senden, die bezahlt werden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6462,12 +4080,6 @@
     },
     "Send receipt" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quittung senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6478,12 +4090,6 @@
     },
     "Send report" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bericht senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6494,12 +4100,6 @@
     },
     "Send this estimate" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dieses Angebot senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6510,12 +4110,6 @@
     },
     "Send this invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diese Rechnung senden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6526,12 +4120,6 @@
     },
     "Sending or PDFs" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Senden oder PDFs"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6542,12 +4130,6 @@
     },
     "Sending, printing and PDFs are unlocked." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Senden, Drucken und PDFs sind freigeschaltet."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6558,12 +4140,6 @@
     },
     "Sending, printing and PDFs unlocked." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Senden, Drucken und PDFs freigeschaltet."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6574,12 +4150,6 @@
     },
     "Sends your message and app version" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sendet Ihre Nachricht und die App-Version"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6590,12 +4160,6 @@
     },
     "Sent" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gesendet"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6606,12 +4170,6 @@
     },
     "Service" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leistung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6622,12 +4180,6 @@
     },
     "Settings" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einstellungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6638,12 +4190,6 @@
     },
     "Share" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teilen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6654,12 +4200,6 @@
     },
     "Share Duly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Duly teilen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6670,12 +4210,6 @@
     },
     "Share anonymous usage data and crash reports so we can fix problems and make Duly better. Your invoices and client details are never included. You can change this any time in Settings." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teilen Sie anonyme Nutzungsdaten und Absturzberichte, damit wir Probleme beheben und Duly verbessern können. Ihre Rechnungen und Kundendaten sind nie enthalten. Sie können das jederzeit in den Einstellungen ändern."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6686,12 +4220,6 @@
     },
     "Shipping" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Versand"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6702,12 +4230,6 @@
     },
     "Show \"Made with Duly\" on PDFs" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "„Erstellt mit Duly“ auf PDFs zeigen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6718,12 +4240,6 @@
     },
     "Show a QR code" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "QR-Code zeigen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6734,12 +4250,6 @@
     },
     "Show amounts as" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Beträge anzeigen als"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6750,12 +4260,6 @@
     },
     "Shown on a page after the invoice. Up to 10." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Erscheinen auf einer Seite nach der Rechnung. Bis zu 10."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6766,12 +4270,6 @@
     },
     "Sign in to link your account across devices. Optional." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Melden Sie sich an, um Ihren Account geräteübergreifend zu verknüpfen. Optional."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6782,12 +4280,6 @@
     },
     "Sign in with Apple" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mit Apple anmelden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6798,12 +4290,6 @@
     },
     "Sign in with Apple didn't finish. Please try again." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Anmeldung mit Apple wurde nicht abgeschlossen. Bitte versuchen Sie es erneut."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6814,12 +4300,6 @@
     },
     "Sign in with Apple so your subscription follows you to a new iPhone or iPad. Optional: your invoices stay on your device and iCloud either way." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Melden Sie sich mit Apple an, damit Ihr Abo auf ein neues iPhone oder iPad mitkommt. Optional: Ihre Rechnungen bleiben so oder so auf Ihrem Gerät und in iCloud."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6830,12 +4310,6 @@
     },
     "Signature area. Draw your signature." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterschriftsfeld. Zeichnen Sie Ihre Unterschrift."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6846,12 +4320,6 @@
     },
     "Signed by %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unterschrieben von %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6862,12 +4330,6 @@
     },
     "Signed in with Apple" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mit Apple angemeldet"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6878,12 +4340,6 @@
     },
     "Skip for now" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Später"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6894,12 +4350,6 @@
     },
     "Small businesses under § 19 UStG don't charge VAT: turn this off and say so in the notes." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleinunternehmer nach § 19 UStG berechnen keine Umsatzsteuer: Schalten Sie das aus und schreiben Sie „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“ in die Notizen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6910,12 +4360,6 @@
     },
     "Small shop" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kleiner Laden"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6926,12 +4370,6 @@
     },
     "Something else" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Etwas anderes"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6942,12 +4380,6 @@
     },
     "Something went wrong" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Etwas ist schiefgelaufen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6958,12 +4390,6 @@
     },
     "Sort code" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bankleitzahl"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6974,12 +4400,6 @@
     },
     "Sort code %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BLZ %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6990,12 +4410,6 @@
     },
     "Split" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geteilt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7006,12 +4420,6 @@
     },
     "Start %lld-day free trial" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld Tage kostenlos testen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7022,12 +4430,6 @@
     },
     "Status" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Status"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7039,12 +4441,6 @@
     "Street, town, postcode" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Straße, PLZ, Ort"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7067,12 +4463,6 @@
     },
     "Stripe or Square link" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stripe- oder Square-Link"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7083,12 +4473,6 @@
     },
     "Studio" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Studio"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7099,12 +4483,6 @@
     },
     "Subscription" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abo"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7115,12 +4493,6 @@
     },
     "Subscription or billing" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Abo oder Abrechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7131,12 +4503,6 @@
     },
     "Subtotal" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zwischensumme"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7147,12 +4513,6 @@
     },
     "Subtotal (incl. tax)" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zwischensumme (inkl. Steuer)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7163,12 +4523,6 @@
     },
     "Symbol" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Symbol"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7179,12 +4533,6 @@
     },
     "Tax" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7195,12 +4543,6 @@
     },
     "Tax ID" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuernummer"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7211,12 +4553,6 @@
     },
     "Tax added" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Netto (zzgl. Steuer)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7227,12 +4563,6 @@
     },
     "Tax and discount" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuer und Rabatt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7243,12 +4573,6 @@
     },
     "Tax included" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Brutto (inkl. Steuer)"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7259,12 +4583,6 @@
     },
     "Tax invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rechnung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7277,12 +4595,6 @@
     },
     "Tax rates are set by you. This app doesn't give tax advice." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuersätze legen Sie selbst fest. Diese App bietet keine Steuerberatung."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7293,12 +4605,6 @@
     },
     "Taxes" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuern"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7309,12 +4615,6 @@
     },
     "Taxes on the total" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Steuern auf die Summe"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7325,12 +4625,6 @@
     },
     "Tell a friend about the app" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Empfehlen Sie die App weiter"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7341,12 +4635,6 @@
     },
     "Tell us what you tapped and what you expected" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sagen Sie uns, worauf Sie getippt haben und was Sie erwartet haben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7357,12 +4645,6 @@
     },
     "Template" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorlage"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7374,12 +4656,6 @@
     "Template and colour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vorlage und Farbe"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7402,12 +4678,6 @@
     },
     "Terms" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AGB"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7418,12 +4688,6 @@
     },
     "Terms of Use" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nutzungsbedingungen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7434,12 +4698,6 @@
     },
     "Thank you for your business." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Vielen Dank für Ihren Auftrag."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7450,12 +4708,6 @@
     },
     "The \"Preview\" mark is removed when you send with Premium." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das Wasserzeichen „Vorschau“ verschwindet, wenn Sie mit Premium senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7466,12 +4718,6 @@
     },
     "The PDF couldn't be made. Please try again." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das PDF konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7482,12 +4728,6 @@
     },
     "The payment didn't go through and you weren't charged. Check your payment method in the App Store and try again." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Die Zahlung hat nicht geklappt und Ihnen wurde nichts berechnet. Prüfen Sie Ihre Zahlungsmethode im App Store und versuchen Sie es erneut."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7498,12 +4738,6 @@
     },
     "These show on your invoices as buttons and a QR code. Clients pay you directly. Duly never touches the money." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diese erscheinen auf Ihren Rechnungen als Buttons und QR-Code. Kunden zahlen direkt an Sie. Duly berührt das Geld nie."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7514,12 +4748,6 @@
     },
     "This can't be undone." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das kann nicht widerrufen werden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7530,12 +4758,6 @@
     },
     "This deletes your sign-in and unlinks your subscription from it. Your invoices stay on this device and in your iCloud; delete the app to remove them. To stop paying, cancel the subscription in Settings > [your name] > Subscriptions." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Damit wird Ihre Anmeldung gelöscht und Ihr Abo davon getrennt. Ihre Rechnungen bleiben auf diesem Gerät und in Ihrer iCloud; löschen Sie die App, um sie zu entfernen. Um nicht mehr zu zahlen, kündigen Sie das Abo unter Einstellungen > [Ihr Name] > Abonnements."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7546,12 +4768,6 @@
     },
     "This device only: %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nur auf diesem Gerät: %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7562,12 +4778,6 @@
     },
     "This document was deleted." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dieses Dokument wurde gelöscht."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7578,12 +4788,6 @@
     },
     "This goes at the top of every invoice. You can change it later." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Das steht oben auf jeder Rechnung. Sie können es später ändern."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7594,12 +4798,6 @@
     },
     "This plan isn't available right now." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dieses Abo ist gerade nicht verfügbar."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7610,12 +4808,6 @@
     },
     "This was turned into invoice %@." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Daraus wurde Rechnung %@."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7626,12 +4818,6 @@
     },
     "Today at %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Heute um %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7642,12 +4828,6 @@
     },
     "Topic" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Thema"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7658,12 +4838,6 @@
     },
     "Total" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Summe"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7674,12 +4848,6 @@
     },
     "Total due" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Zu zahlen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7690,12 +4858,6 @@
     },
     "Totals by month and by client, what's still unpaid, and a CSV for your accountant." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Summen nach Monat und Kunde, was noch offen ist, und eine CSV für Ihre Steuerberatung."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7706,12 +4868,6 @@
     },
     "Trades" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Handwerk"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7722,12 +4878,6 @@
     },
     "Turn into invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In Rechnung umwandeln"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7738,12 +4888,6 @@
     },
     "Turn them on in iPhone Settings > Notifications > Duly, then try again." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Schalten Sie sie in den iPhone-Einstellungen > Mitteilungen > Duly ein und versuchen Sie es erneut."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7754,12 +4898,6 @@
     },
     "Turned into an invoice" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "In Rechnung umgewandelt"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7770,12 +4908,6 @@
     },
     "Type details" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Daten eingeben"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7786,12 +4918,6 @@
     },
     "Type their details or pick them from your Contacts. Duly only sees the contact you choose." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geben Sie die Daten ein oder wählen Sie sie aus Ihren Kontakten. Duly sieht nur den Kontakt, den Sie auswählen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7802,12 +4928,6 @@
     },
     "USt-IdNr." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "USt-IdNr."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7820,12 +4940,6 @@
     },
     "Unit" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Einheit"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7836,12 +4950,6 @@
     },
     "Unlock every template" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alle Vorlagen freischalten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7852,12 +4960,6 @@
     },
     "Unlock reports" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Berichte freischalten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7868,12 +4970,6 @@
     },
     "Unpaid" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Offen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7884,12 +4980,6 @@
     },
     "Untitled item" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Position ohne Namen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7900,12 +4990,6 @@
     },
     "VAT number" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "USt-IdNr."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7918,12 +5002,6 @@
     },
     "VAT registered" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Umsatzsteuerpflichtig"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7934,12 +5012,6 @@
     },
     "Valid until" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gültig bis"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7950,12 +5022,6 @@
     },
     "Valid until %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gültig bis %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7966,12 +5032,6 @@
     },
     "We filled in examples. Change anything; the preview updates as you type." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wir haben Beispiele eingetragen. Ändern Sie alles; die Vorschau aktualisiert sich beim Tippen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7982,12 +5042,6 @@
     },
     "We reply within 24 hours, every day." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wir antworten innerhalb von 24 Stunden, jeden Tag."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7998,12 +5052,6 @@
     },
     "We reply within 24 hours. Your invoices are not attached." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wir antworten innerhalb von 24 Stunden. Ihre Rechnungen werden nicht angehängt."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8014,12 +5062,6 @@
     },
     "We'll pick a template and sample items to start you off." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wir wählen eine Vorlage und Beispielpositionen für den Start."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8030,12 +5072,6 @@
     },
     "Weekly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wöchentlich"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8046,12 +5082,6 @@
     },
     "What do you do?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Was machen Sie?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8062,12 +5092,6 @@
     },
     "What happened?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Was ist passiert?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8078,12 +5102,6 @@
     },
     "What's it about?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Worum geht es?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8094,12 +5112,6 @@
     },
     "Where are my invoices stored?" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wo sind meine Rechnungen gespeichert?"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8110,12 +5122,6 @@
     },
     "Year" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jahr"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8126,12 +5132,6 @@
     },
     "Yearly" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Jährlich"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8142,12 +5142,6 @@
     },
     "Yesterday at %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gestern um %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8158,12 +5152,6 @@
     },
     "You're offline. Mail and WhatsApp will send this as soon as you have signal." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sie sind offline. Mail und WhatsApp senden es, sobald Sie Empfang haben."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8174,12 +5162,6 @@
     },
     "Your Business" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihr Unternehmen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8190,12 +5172,6 @@
     },
     "Your business" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihr Unternehmen"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8206,12 +5182,6 @@
     },
     "Your data" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre Daten"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8222,12 +5192,6 @@
     },
     "Your invoices are saved on this device and in your own iCloud, which only you can read. A new iPhone or iPad signed in to the same Apple ID gets everything back. If your subscription ends you can still open and export every invoice. Only you can delete your data." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre Rechnungen sind auf diesem Gerät und in Ihrer eigenen iCloud gespeichert, die nur Sie lesen können. Ein neues iPhone oder iPad mit derselben Apple-ID bekommt alles zurück. Wenn Ihr Abo endet, können Sie weiterhin jede Rechnung öffnen und exportieren. Nur Sie können Ihre Daten löschen."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8238,12 +5202,6 @@
     },
     "Your monthly invoice is ready" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre monatliche Rechnung ist bereit"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8254,12 +5212,6 @@
     },
     "Your own rates are removed from the list. Invoices already sent keep their rates." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre eigenen Sätze werden aus der Liste entfernt. Bereits gesendete Rechnungen behalten ihre Sätze."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8270,12 +5222,6 @@
     },
     "Your purchase is waiting for approval. Premium unlocks as soon as it's approved." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihr Kauf wartet auf Freigabe. Premium wird freigeschaltet, sobald er genehmigt ist."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8286,12 +5232,6 @@
     },
     "Your signature" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre Unterschrift"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8302,12 +5242,6 @@
     },
     "Your totals by month and by client appear here once you send invoices." : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre Summen nach Monat und Kunde erscheinen hier, sobald Sie Rechnungen senden."
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8318,12 +5252,6 @@
     },
     "Your weekly invoice is ready" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre wöchentliche Rechnung ist bereit"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8334,12 +5262,6 @@
     },
     "Your yearly invoice is ready" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihre jährliche Rechnung ist bereit"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8350,12 +5272,6 @@
     },
     "a month" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "pro Monat"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8366,12 +5282,6 @@
     },
     "client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kunde"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8382,12 +5292,6 @@
     },
     "e.g. Kestrel Joinery" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "z. B. Tischlerei Falk"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8399,12 +5303,6 @@
     "e.g. Labour" : {
       "comment" : "UK spelling in the source; US English variant for US users.",
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "z. B. Arbeitszeit"
-          }
-        },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8427,12 +5325,6 @@
     },
     "hour, day, item…" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stunde, Tag, Stück …"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8443,12 +5335,6 @@
     },
     "iCloud" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iCloud"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8459,12 +5345,6 @@
     },
     "iCloud backup" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iCloud-Backup"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8475,12 +5355,6 @@
     },
     "iCloud setup" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iCloud-Einrichtung"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8491,12 +5365,6 @@
     },
     "name@company.com" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "name@firma.de"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8507,12 +5375,6 @@
     },
     "per %@" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "pro %@"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8523,12 +5385,6 @@
     },
     "you@business.com" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "sie@firma.de"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8539,12 +5395,6 @@
     },
     "your client" : {
       "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ihr Kunde"
-          }
-        },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",

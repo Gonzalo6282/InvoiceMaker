@@ -1,0 +1,3152 @@
+{
+  "%@ a month. " : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ pro Monat. "
+    }
+  },
+  "%@ a year" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ pro Jahr"
+    }
+  },
+  "%@ a year. " : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ pro Jahr. "
+    }
+  },
+  "%@ at %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%1$@ um %2$@"
+    }
+  },
+  "%@ is due in 3 days" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ ist in 3 Tagen fällig"
+    }
+  },
+  "%@ is due today" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ ist heute fällig"
+    }
+  },
+  "%@ template" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vorlage %@"
+    }
+  },
+  "%@ · next %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%1$@ · nächste am %2$@"
+    }
+  },
+  "%lld days free, then %@ a year" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%1$lld Tage kostenlos, dann %2$@ pro Jahr"
+    }
+  },
+  "%lld documents" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%lld Dokumente"
+    }
+  },
+  "%lld invoices · %@ unpaid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%1$lld Rechnungen · %2$@ offen"
+    }
+  },
+  "%lld invoices · all paid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%lld Rechnungen · alle bezahlt"
+    }
+  },
+  "**Accepted.** Signed by %@." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**Angenommen.** Unterschrieben von %@."
+    }
+  },
+  "**Backed up to iCloud.** Your documents, clients, logo and settings sync to your own iCloud." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**In iCloud gesichert.** Ihre Dokumente, Kunden, Ihr Logo und Ihre Einstellungen werden mit Ihrer eigenen iCloud synchronisiert."
+    }
+  },
+  "**Free:** create, edit and preview as many invoices as you like. **Premium:** send, print and save PDFs." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**Kostenlos:** beliebig viele Rechnungen erstellen, bearbeiten und ansehen. **Premium:** PDFs senden, drucken und sichern."
+    }
+  },
+  "**Paid on %@.** Send a receipt so your client has proof." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**Bezahlt am %@.** Senden Sie eine Quittung als Nachweis für Ihren Kunden."
+    }
+  },
+  "**Sent on %@.** Changes save automatically. Send again so %@ has the latest version." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**Gesendet am %1$@.** Änderungen werden automatisch gesichert. Senden Sie erneut, damit %2$@ die neueste Version hat."
+    }
+  },
+  "**Signed by %@.** The signature is on the PDF." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**Unterschrieben von %@.** Die Unterschrift steht auf dem PDF."
+    }
+  },
+  "**iCloud is off.** Open the Settings app, tap your name, then iCloud, and sign in. Until then your invoices are only on this device." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "**iCloud ist aus.** Öffnen Sie die Einstellungen-App, tippen Sie auf Ihren Namen, dann auf iCloud, und melden Sie sich an. Bis dahin sind Ihre Rechnungen nur auf diesem Gerät."
+    }
+  },
+  "1 document" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "1 Dokument"
+    }
+  },
+  "3 days before and on the due date of each unpaid invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "3 Tage vorher und am Fälligkeitstag jeder offenen Rechnung"
+    }
+  },
+  "A general payment link can't know the invoice total, so your client types the amount." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ein allgemeiner Zahlungslink kennt den Rechnungsbetrag nicht, daher gibt Ihr Kunde den Betrag ein."
+    }
+  },
+  "A small line at the bottom of the page. Thanks for helping others find Duly." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Eine kleine Zeile unten auf der Seite. Danke, dass Sie anderen helfen, Duly zu finden."
+    }
+  },
+  "ABN" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "ABN"
+    }
+  },
+  "Accepted" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angenommen"
+    }
+  },
+  "Account" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Account"
+    }
+  },
+  "Account %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Konto %@"
+    }
+  },
+  "Account name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kontoinhaber"
+    }
+  },
+  "Account number" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kontonummer"
+    }
+  },
+  "Add" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Hinzufügen"
+    }
+  },
+  "Add a client before sending." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fügen Sie vor dem Senden einen Kunden hinzu."
+    }
+  },
+  "Add a fee" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gebühr hinzufügen"
+    }
+  },
+  "Add a tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuer hinzufügen"
+    }
+  },
+  "Add at least one item with a price." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fügen Sie mindestens eine Position mit Preis hinzu."
+    }
+  },
+  "Add client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunde hinzufügen"
+    }
+  },
+  "Add from saved items" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Aus gespeicherten Positionen"
+    }
+  },
+  "Add item" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Position hinzufügen"
+    }
+  },
+  "Add more photos" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Weitere Fotos hinzufügen"
+    }
+  },
+  "Add photos" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fotos hinzufügen"
+    }
+  },
+  "Add services and products once, with their price and tax. Then add them to any invoice in one tap." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Legen Sie Leistungen und Produkte einmal mit Preis und Steuer an. Dann fügen Sie sie mit einem Tipp jeder Rechnung hinzu."
+    }
+  },
+  "Add your bank details or payment links in Payment details. They appear on every invoice with a QR code." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Tragen Sie Ihre Bankdaten oder Zahlungslinks unter Zahlungsdaten ein. Sie erscheinen auf jeder Rechnung mit QR-Code."
+    }
+  },
+  "Add your details" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre Daten hinzufügen"
+    }
+  },
+  "Add your first client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fügen Sie Ihren ersten Kunden hinzu"
+    }
+  },
+  "Add your logo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Logo hinzufügen"
+    }
+  },
+  "Added" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Hinzugefügt"
+    }
+  },
+  "Address" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Adresse"
+    }
+  },
+  "All" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Alle"
+    }
+  },
+  "All 7 templates with your logo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Alle 7 Vorlagen mit Ihrem Logo"
+    }
+  },
+  "Allow" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erlauben"
+    }
+  },
+  "Allow access to Contacts" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zugriff auf Kontakte erlauben"
+    }
+  },
+  "Allow access to Photos" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zugriff auf Fotos erlauben"
+    }
+  },
+  "Amount" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Betrag"
+    }
+  },
+  "Anonymous analytics" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Anonyme Analyse"
+    }
+  },
+  "Any other business" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Jedes andere Unternehmen"
+    }
+  },
+  "Apple couldn't confirm it's you. On your iPhone, open Settings > [your name] > Sign-In & Security > Sign in with Apple > Duly and tap Stop Using Apple ID. Then come back to Duly and try again." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Apple konnte Sie nicht bestätigen. Öffnen Sie auf Ihrem iPhone Einstellungen > [Ihr Name] > Anmelden & Sicherheit > Mit Apple anmelden > Duly und tippen Sie auf „Apple-ID nicht mehr verwenden“. Kommen Sie dann zu Duly zurück und versuchen Sie es erneut."
+    }
+  },
+  "Applies in the app and on your PDFs. Each client can have their own currency in their details." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gilt in der App und auf Ihren PDFs. Jeder Kunde kann in seinen Details eine eigene Währung haben."
+    }
+  },
+  "Apply tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuer anwenden"
+    }
+  },
+  "At cost" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zum Selbstkostenpreis"
+    }
+  },
+  "Available once the app is fully set up" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Verfügbar, sobald die App vollständig eingerichtet ist"
+    }
+  },
+  "BSB" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "BSB"
+    }
+  },
+  "Back" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zurück"
+    }
+  },
+  "Backup and sync" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Backup und Synchronisierung"
+    }
+  },
+  "Backup status" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Backup-Status"
+    }
+  },
+  "Bank" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bank"
+    }
+  },
+  "Bank code" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bankleitzahl"
+    }
+  },
+  "Bank transfer" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Überweisung"
+    }
+  },
+  "Bill to" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnung an"
+    }
+  },
+  "Billed in %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abgerechnet in %@"
+    }
+  },
+  "Billed monthly, cancel any time" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Monatlich abgerechnet, jederzeit kündbar"
+    }
+  },
+  "Bold" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kräftig"
+    }
+  },
+  "Brand colour" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Markenfarbe"
+    }
+  },
+  "Brand guidelines" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Markenrichtlinien"
+    }
+  },
+  "Builders, plumbers, cleaners, electricians" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bau, Sanitär, Reinigung, Elektrik"
+    }
+  },
+  "Business" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Unternehmen"
+    }
+  },
+  "Business name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Name des Unternehmens"
+    }
+  },
+  "Business profile" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Unternehmensprofil"
+    }
+  },
+  "By client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nach Kunde"
+    }
+  },
+  "By month" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nach Monat"
+    }
+  },
+  "Call-out fee" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Anfahrtspauschale"
+    }
+  },
+  "Canada: add GST and PST or QST to one invoice, or a single HST. US: sales tax depends on state, county and city, so type your own rate." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kanada: GST und PST oder QST auf eine Rechnung, oder nur HST. USA: Die Sales Tax hängt von Staat, County und Stadt ab, geben Sie Ihren Satz selbst ein."
+    }
+  },
+  "Cancel" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abbrechen"
+    }
+  },
+  "Change logo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Logo ändern"
+    }
+  },
+  "Checking…" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wird geprüft …"
+    }
+  },
+  "Choose a client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wählen Sie einen Kunden"
+    }
+  },
+  "Choose an invoice, or press ⌘N to create one" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wählen Sie eine Rechnung oder drücken Sie ⌘N für eine neue"
+    }
+  },
+  "Classic" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Klassisch"
+    }
+  },
+  "Clean" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Klar"
+    }
+  },
+  "Clear" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Löschen"
+    }
+  },
+  "Client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunde"
+    }
+  },
+  "Client name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Name des Kunden"
+    }
+  },
+  "Client signature" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Unterschrift des Kunden"
+    }
+  },
+  "Client signs" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunde unterschreibt"
+    }
+  },
+  "Client signs on this device" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunde unterschreibt auf diesem Gerät"
+    }
+  },
+  "Client's full name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vollständiger Name des Kunden"
+    }
+  },
+  "Clients" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunden"
+    }
+  },
+  "Close" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Schließen"
+    }
+  },
+  "Code" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Code"
+    }
+  },
+  "Colour" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Farbe"
+    }
+  },
+  "Colour %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Farbe %@"
+    }
+  },
+  "Common questions" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Häufige Fragen"
+    }
+  },
+  "Company or person" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Firma oder Person"
+    }
+  },
+  "Confirm with Apple to finish:" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zum Abschluss mit Apple bestätigen:"
+    }
+  },
+  "Contact" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kontakt"
+    }
+  },
+  "Continue" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Weiter"
+    }
+  },
+  "Contractor or trades" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Handwerk oder Bau"
+    }
+  },
+  "Country" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Land"
+    }
+  },
+  "Country and tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Land und Steuer"
+    }
+  },
+  "Create and preview free. Send with Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kostenlos erstellen und ansehen. Mit Premium senden."
+    }
+  },
+  "Create and send an invoice in 60 seconds" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnung in 60 Sekunden erstellen und senden"
+    }
+  },
+  "Create your first invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erstellen Sie Ihre erste Rechnung"
+    }
+  },
+  "Creating, editing and previewing is free with no limits. Sending, printing and saving PDFs needs Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erstellen, Bearbeiten und Ansehen ist unbegrenzt kostenlos. Für Senden, Drucken und Sichern von PDFs brauchen Sie Premium."
+    }
+  },
+  "Currency" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Währung"
+    }
+  },
+  "Currency display" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Währungsanzeige"
+    }
+  },
+  "Default" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Standard"
+    }
+  },
+  "Default currency" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Standardwährung"
+    }
+  },
+  "Default tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Standardsteuer"
+    }
+  },
+  "Default template" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Standardvorlage"
+    }
+  },
+  "Defaults" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Standards"
+    }
+  },
+  "Delete" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Löschen"
+    }
+  },
+  "Delete %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ löschen"
+    }
+  },
+  "Delete %@?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%@ löschen?"
+    }
+  },
+  "Delete account" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Account löschen"
+    }
+  },
+  "Delete client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunden löschen"
+    }
+  },
+  "Delete item" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Position löschen"
+    }
+  },
+  "Delete this client?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Diesen Kunden löschen?"
+    }
+  },
+  "Delete your account?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Account löschen?"
+    }
+  },
+  "Delivery" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Lieferung"
+    }
+  },
+  "Description" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Beschreibung"
+    }
+  },
+  "Design, writing, consulting, photography" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Design, Text, Beratung, Fotografie"
+    }
+  },
+  "Details" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Details"
+    }
+  },
+  "Discount" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rabatt"
+    }
+  },
+  "Discount %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rabatt %@"
+    }
+  },
+  "Document" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Dokument"
+    }
+  },
+  "Document type" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Dokumenttyp"
+    }
+  },
+  "Documents" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Dokumente"
+    }
+  },
+  "Don't Allow" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nicht erlauben"
+    }
+  },
+  "Done" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fertig"
+    }
+  },
+  "Draft" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Entwurf"
+    }
+  },
+  "Drafts" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Entwürfe"
+    }
+  },
+  "Draw again" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neu zeichnen"
+    }
+  },
+  "Draw it once. It goes on your invoices." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Einmal zeichnen. Sie steht dann auf Ihren Rechnungen."
+    }
+  },
+  "Draw once. It goes on every invoice you send." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Einmal zeichnen. Sie steht auf jeder Rechnung, die Sie senden."
+    }
+  },
+  "Draw signature" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Unterschrift zeichnen"
+    }
+  },
+  "Due" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fällig"
+    }
+  },
+  "Due in %lld days" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fällig in %lld Tagen"
+    }
+  },
+  "Due in 1 day" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fällig in 1 Tag"
+    }
+  },
+  "Due today" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Heute fällig"
+    }
+  },
+  "Duly couldn't open its data" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly konnte seine Daten nicht öffnen"
+    }
+  },
+  "Duly needs access to your contacts to add a client from them. You can allow it in Settings, or type the client's details instead." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly braucht Zugriff auf Ihre Kontakte, um daraus einen Kunden hinzuzufügen. Sie können das in den Einstellungen erlauben oder die Daten selbst eingeben."
+    }
+  },
+  "Duly needs access to your photos to add your logo to invoices. You can allow it in Settings." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly braucht Zugriff auf Ihre Fotos, um Ihr Logo auf Rechnungen zu setzen. Sie können das in den Einstellungen erlauben."
+    }
+  },
+  "Duly report %@ %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly-Bericht %1$@ %2$@"
+    }
+  },
+  "Duplicate" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duplizieren"
+    }
+  },
+  "EIN" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "EIN"
+    }
+  },
+  "Email" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "E-Mail"
+    }
+  },
+  "Email or phone" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "E-Mail oder Telefon"
+    }
+  },
+  "Email us" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "E-Mail an uns"
+    }
+  },
+  "Estimate" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angebot"
+    }
+  },
+  "Estimate prefix" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Präfix für Angebote"
+    }
+  },
+  "Estimate total" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angebotssumme"
+    }
+  },
+  "Estimates" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angebote"
+    }
+  },
+  "Export CSV" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "CSV exportieren"
+    }
+  },
+  "Export didn't work" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Export hat nicht geklappt"
+    }
+  },
+  "Export everything" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Alles exportieren"
+    }
+  },
+  "Fee" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gebühr"
+    }
+  },
+  "Fee name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Name der Gebühr"
+    }
+  },
+  "Fees" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gebühren"
+    }
+  },
+  "Fills in the address" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Füllt die Adresse aus"
+    }
+  },
+  "First item" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erste Position"
+    }
+  },
+  "Footer" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fußzeile"
+    }
+  },
+  "For" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Für"
+    }
+  },
+  "For %@. Open Duly to check it and send it." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Für %@. Öffnen Sie Duly, um sie zu prüfen und zu senden."
+    }
+  },
+  "Free" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kostenlos"
+    }
+  },
+  "Free plan" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kostenloser Plan"
+    }
+  },
+  "Free until %@, then %@ a year. " : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kostenlos bis %1$@, dann %2$@ pro Jahr. "
+    }
+  },
+  "Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kostenlos: unbegrenzt Rechnungen, Angebote und Quittungen erstellen, bearbeiten, ansehen, sichern und exportieren. Premium: PDFs senden, drucken und sichern."
+    }
+  },
+  "Freelancer" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Freiberufler"
+    }
+  },
+  "From" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Von"
+    }
+  },
+  "From Photos. JPEG, PNG or HEIC. Shown whole, never cropped." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Aus Fotos. JPEG, PNG oder HEIC. Wird vollständig gezeigt, nie beschnitten."
+    }
+  },
+  "GST registered" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "GST-registriert"
+    }
+  },
+  "GST/HST number" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "GST/HST-Nummer"
+    }
+  },
+  "Get started" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Los geht's"
+    }
+  },
+  "Gift hamper, large" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Geschenkkorb, groß"
+    }
+  },
+  "Hand your device to your client. Signing accepts this %@ (or confirms the work on an invoice). Their name and today's date go on the PDF." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Geben Sie Ihr Gerät Ihrem Kunden. Mit der Unterschrift wird das Dokument (%@) angenommen (bei einer Rechnung die Arbeit bestätigt). Name und heutiges Datum kommen auf das PDF."
+    }
+  },
+  "Help" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Hilfe"
+    }
+  },
+  "Help and support" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Hilfe und Support"
+    }
+  },
+  "Help improve Duly?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly verbessern helfen?"
+    }
+  },
+  "Helps us fix what's slow or confusing" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Hilft uns, Langsames oder Verwirrendes zu verbessern"
+    }
+  },
+  "Here's your first invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Hier ist Ihre erste Rechnung"
+    }
+  },
+  "Hidden" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ausgeblendet"
+    }
+  },
+  "How do I cancel?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wie kündige ich?"
+    }
+  },
+  "How do clients pay me?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wie bezahlen mich Kunden?"
+    }
+  },
+  "How to pay" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "So bezahlen Sie"
+    }
+  },
+  "I charge VAT (MwSt.)" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ich berechne Umsatzsteuer (MwSt.)"
+    }
+  },
+  "I charge VAT (TVA)" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ich berechne Umsatzsteuer (TVA)"
+    }
+  },
+  "I collect sales tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ich erhebe Umsatzsteuer"
+    }
+  },
+  "I send my invoices with Duly. Try it: https://apps.apple.com/app/id6824285908" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ich sende meine Rechnungen mit Duly. Probier es aus: https://apps.apple.com/app/id6824285908"
+    }
+  },
+  "Import from Contacts" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Aus Kontakten importieren"
+    }
+  },
+  "Include app version and device model" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "App-Version und Gerätemodell mitsenden"
+    }
+  },
+  "Includes %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Enthält %@"
+    }
+  },
+  "Invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnung"
+    }
+  },
+  "Invoice look" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnungsdesign"
+    }
+  },
+  "Invoice prefix" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Präfix für Rechnungen"
+    }
+  },
+  "Invoiced" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abgerechnet"
+    }
+  },
+  "Invoiced and paid by month" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abgerechnet und bezahlt nach Monat"
+    }
+  },
+  "Invoiced by invoice date, paid by the date the money arrived." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abgerechnet nach Rechnungsdatum, bezahlt nach Zahlungseingang."
+    }
+  },
+  "Invoiced in %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abgerechnet in %@"
+    }
+  },
+  "Invoices" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnungen"
+    }
+  },
+  "Invoices already made for this client stay as they are." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bereits erstellte Rechnungen für diesen Kunden bleiben erhalten."
+    }
+  },
+  "Invoices, estimates and receipts with your logo. Create free. Send with Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnungen, Angebote und Quittungen mit Ihrem Logo. Kostenlos erstellen. Mit Premium senden."
+    }
+  },
+  "Invoices, quotes and receipts with your logo. Create free. Send with Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnungen, Angebote und Quittungen mit Ihrem Logo. Kostenlos erstellen. Mit Premium senden."
+    }
+  },
+  "Is Duly free?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ist Duly kostenlos?"
+    }
+  },
+  "Issued" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Datum"
+    }
+  },
+  "It takes about a minute. Creating and previewing is free; sending needs Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Das dauert etwa eine Minute. Erstellen und Vorschau sind kostenlos; zum Senden brauchen Sie Premium."
+    }
+  },
+  "Item" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Position"
+    }
+  },
+  "Items" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Positionen"
+    }
+  },
+  "Job" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Auftrag"
+    }
+  },
+  "Job or site" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Auftrag oder Baustelle"
+    }
+  },
+  "Job photo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Foto vom Auftrag"
+    }
+  },
+  "Job photos" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Fotos vom Auftrag"
+    }
+  },
+  "Job site" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Baustelle"
+    }
+  },
+  "Keep Premium on every device" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Premium auf allen Geräten behalten"
+    }
+  },
+  "Labour" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Arbeitszeit"
+    }
+  },
+  "Last backup" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Letztes Backup"
+    }
+  },
+  "Last restore" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Letzte Wiederherstellung"
+    }
+  },
+  "Leave a review on the App Store" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bewertung im App Store schreiben"
+    }
+  },
+  "Ledger" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Tabelle"
+    }
+  },
+  "Legal" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechtliches"
+    }
+  },
+  "Line total" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Positionssumme"
+    }
+  },
+  "Links" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Links"
+    }
+  },
+  "Live PDF preview" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Live-PDF-Vorschau"
+    }
+  },
+  "Live PDF preview. The \"Preview\" mark disappears with Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Live-PDF-Vorschau. Das Wasserzeichen „Vorschau“ verschwindet mit Premium."
+    }
+  },
+  "Logo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Logo"
+    }
+  },
+  "Logo added" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Logo hinzugefügt"
+    }
+  },
+  "Logo design" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Logo-Design"
+    }
+  },
+  "Look" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Aussehen"
+    }
+  },
+  "Looking for your invoices in iCloud…" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre Rechnungen werden in iCloud gesucht …"
+    }
+  },
+  "Looks good" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Sieht gut aus"
+    }
+  },
+  "Made with Duly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erstellt mit Duly"
+    }
+  },
+  "Make default" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Als Standard"
+    }
+  },
+  "Make receipt" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Quittung erstellen"
+    }
+  },
+  "Manage subscription" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abo verwalten"
+    }
+  },
+  "Mark an invoice as paid and send a receipt. It appears here." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Markieren Sie eine Rechnung als bezahlt und senden Sie eine Quittung. Sie erscheint hier."
+    }
+  },
+  "Mark as paid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Als bezahlt markieren"
+    }
+  },
+  "Mark as unpaid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Als offen markieren"
+    }
+  },
+  "Materials" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Material"
+    }
+  },
+  "Micro-entrepreneurs who don't charge VAT: turn this off and add \"TVA non applicable, art. 293 B du CGI\" to the notes." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kleinunternehmer ohne Umsatzsteuer: Schalten Sie das aus und schreiben Sie „TVA non applicable, art. 293 B du CGI“ in die Notizen."
+    }
+  },
+  "Month" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Monat"
+    }
+  },
+  "Monthly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Monatlich"
+    }
+  },
+  "More actions" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Weitere Aktionen"
+    }
+  },
+  "My signature" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Meine Unterschrift"
+    }
+  },
+  "Name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Name"
+    }
+  },
+  "Never" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nie"
+    }
+  },
+  "New" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neu"
+    }
+  },
+  "New client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neuer Kunde"
+    }
+  },
+  "New client name" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Name des neuen Kunden"
+    }
+  },
+  "New estimate" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neues Angebot"
+    }
+  },
+  "New invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neue Rechnung"
+    }
+  },
+  "New invoices for this client use %@." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neue Rechnungen für diesen Kunden sind in %@."
+    }
+  },
+  "New invoices use this template and colour. You can change them on any invoice." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neue Rechnungen nutzen diese Vorlage und Farbe. Sie können sie bei jeder Rechnung ändern."
+    }
+  },
+  "New quote" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neues Angebot"
+    }
+  },
+  "New receipt" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Neue Quittung"
+    }
+  },
+  "Next %@ · due in %lld days" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nächste %1$@ · fällig in %2$lld Tagen"
+    }
+  },
+  "Next invoice number" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nächste Rechnungsnummer"
+    }
+  },
+  "No \"Preview\" mark on your PDFs" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kein Wasserzeichen „Vorschau“ auf Ihren PDFs"
+    }
+  },
+  "No active subscription found for this Apple ID." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Für diese Apple-ID wurde kein aktives Abo gefunden."
+    }
+  },
+  "No client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kein Kunde"
+    }
+  },
+  "No estimates yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch keine Angebote"
+    }
+  },
+  "No invoices in %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Keine Rechnungen in %@"
+    }
+  },
+  "No items yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch keine Positionen"
+    }
+  },
+  "No quotes yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch keine Angebote"
+    }
+  },
+  "No receipts yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch keine Quittungen"
+    }
+  },
+  "No sent invoices yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch keine gesendeten Rechnungen"
+    }
+  },
+  "No signature yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch keine Unterschrift"
+    }
+  },
+  "No tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ohne Steuer"
+    }
+  },
+  "None" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Keine"
+    }
+  },
+  "None added" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nichts hinzugefügt"
+    }
+  },
+  "Not now" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nicht jetzt"
+    }
+  },
+  "Not opened yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch nicht geöffnet"
+    }
+  },
+  "Not sent yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch nicht gesendet"
+    }
+  },
+  "Not yet" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Noch nicht"
+    }
+  },
+  "Notes" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Notizen"
+    }
+  },
+  "Notes on new documents" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Notizen auf neuen Dokumenten"
+    }
+  },
+  "Nothing matches. Try another filter or search." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Keine Treffer. Versuchen Sie einen anderen Filter oder Suchbegriff."
+    }
+  },
+  "Notifications are off for Duly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Mitteilungen für Duly sind aus"
+    }
+  },
+  "Number" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nummer"
+    }
+  },
+  "Numbering" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nummerierung"
+    }
+  },
+  "Numbers and defaults" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nummern und Standards"
+    }
+  },
+  "Numbers go up by one with each new document. Next: %@." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nummern steigen mit jedem neuen Dokument um eins. Nächste: %@."
+    }
+  },
+  "N° TVA" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "USt-IdNr. (FR)"
+    }
+  },
+  "Off" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Aus"
+    }
+  },
+  "On" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "An"
+    }
+  },
+  "On total" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Auf die Summe"
+    }
+  },
+  "On your device and in your own iCloud. We never upload them to our servers." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Auf Ihrem Gerät und in Ihrer eigenen iCloud. Wir laden sie nie auf unsere Server."
+    }
+  },
+  "Only VAT-registered businesses add VAT and show a VAT number." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nur umsatzsteuerpflichtige Unternehmen berechnen MwSt. und zeigen eine USt-IdNr."
+    }
+  },
+  "Open Duly to check it and send it." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Öffnen Sie Duly, um sie zu prüfen und zu senden."
+    }
+  },
+  "Open Settings" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Einstellungen öffnen"
+    }
+  },
+  "Opens your payment link when scanned" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Öffnet beim Scannen Ihren Zahlungslink"
+    }
+  },
+  "Optional" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Optional"
+    }
+  },
+  "Optional. From Photos." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Optional. Aus Fotos."
+    }
+  },
+  "Other" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Anderes"
+    }
+  },
+  "Overdue" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Überfällig"
+    }
+  },
+  "Overdue by %lld days" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%lld Tage überfällig"
+    }
+  },
+  "Overdue by 1 day" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "1 Tag überfällig"
+    }
+  },
+  "Owed to you" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Offene Forderungen"
+    }
+  },
+  "PAID" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "BEZAHLT"
+    }
+  },
+  "PDF preview" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "PDF-Vorschau"
+    }
+  },
+  "PDF preview of %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "PDF-Vorschau von %@"
+    }
+  },
+  "PDFs in a ZIP and all data as CSV. Free." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "PDFs als ZIP und alle Daten als CSV. Kostenlos."
+    }
+  },
+  "PREVIEW" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "VORSCHAU"
+    }
+  },
+  "Paid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bezahlt"
+    }
+  },
+  "Paid %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bezahlt %@"
+    }
+  },
+  "Paid in %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bezahlt im %@"
+    }
+  },
+  "Paid on" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bezahlt am"
+    }
+  },
+  "Pay link" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungslink"
+    }
+  },
+  "Pay online" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Online bezahlen"
+    }
+  },
+  "Payment buttons and QR code on invoices" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungsbuttons und QR-Code auf Rechnungen"
+    }
+  },
+  "Payment details" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungsdaten"
+    }
+  },
+  "Payment due in (days)" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungsziel (Tage)"
+    }
+  },
+  "Payment received for %@. Thank you." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlung für %@ erhalten. Vielen Dank."
+    }
+  },
+  "Payment reminders" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungserinnerungen"
+    }
+  },
+  "Payment terms, thank-you note" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungsbedingungen, Dankeszeile"
+    }
+  },
+  "Payments are handled by Apple. Open Settings, tap your name, then Subscriptions. Deleting the app does not cancel the subscription." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungen laufen über Apple. Öffnen Sie Einstellungen, tippen Sie auf Ihren Namen und dann auf Abonnements. Das Löschen der App kündigt das Abo nicht."
+    }
+  },
+  "Payments are handled by Apple. To cancel, open Settings, tap your name, then Subscriptions. To ask for a refund, go to reportaproblem.apple.com. Deleting the app does not cancel the subscription. If your subscription ends you keep every document." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zahlungen laufen über Apple. Zum Kündigen öffnen Sie Einstellungen, tippen auf Ihren Namen und dann auf Abonnements. Eine Erstattung beantragen Sie unter reportaproblem.apple.com. Das Löschen der App kündigt das Abo nicht. Wenn Ihr Abo endet, behalten Sie jedes Dokument."
+    }
+  },
+  "Per item" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Pro Position"
+    }
+  },
+  "Person" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Person"
+    }
+  },
+  "Phone" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Telefon"
+    }
+  },
+  "Pick one or more. Canada: GST plus PST or QST." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Eine oder mehrere wählen. Kanada: GST plus PST oder QST."
+    }
+  },
+  "Please restart the app. If this keeps happening, contact support from the App Store page." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bitte starten Sie die App neu. Wenn das wieder passiert, kontaktieren Sie den Support über die App-Store-Seite."
+    }
+  },
+  "Please try again. If it keeps happening, report a problem in Help." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bitte versuchen Sie es erneut. Wenn es wieder passiert, melden Sie ein Problem unter Hilfe."
+    }
+  },
+  "Plus %@ owed in other currencies" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Plus %@ offen in anderen Währungen"
+    }
+  },
+  "Premium" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Premium"
+    }
+  },
+  "Premium is active on this device." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Premium ist auf diesem Gerät aktiv."
+    }
+  },
+  "Premium restored." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Premium wiederhergestellt."
+    }
+  },
+  "Presets for **%@**. Edit any rate or add your own. Changing a rate never changes invoices you've already sent." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Voreinstellungen für **%@**. Bearbeiten Sie jeden Satz oder fügen Sie eigene hinzu. Eine Änderung betrifft nie bereits gesendete Rechnungen."
+    }
+  },
+  "Preview" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vorschau"
+    }
+  },
+  "Preview of your first invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vorschau Ihrer ersten Rechnung"
+    }
+  },
+  "Price" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Preis"
+    }
+  },
+  "Prices" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Preise"
+    }
+  },
+  "Prices are in %@. On an invoice in another currency, check the price before sending." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Preise sind in %@. Prüfen Sie bei einer Rechnung in anderer Währung den Preis vor dem Senden."
+    }
+  },
+  "Print" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Drucken"
+    }
+  },
+  "Privacy" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Datenschutz"
+    }
+  },
+  "Privacy Policy" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Datenschutzerklärung"
+    }
+  },
+  "Privacy and legal" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Datenschutz und Rechtliches"
+    }
+  },
+  "QR code" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "QR-Code"
+    }
+  },
+  "Qty" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Menge"
+    }
+  },
+  "Quantity" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Menge"
+    }
+  },
+  "Quote" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angebot"
+    }
+  },
+  "Quote prefix" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Präfix für Angebote"
+    }
+  },
+  "Quote total" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angebotssumme"
+    }
+  },
+  "Quotes" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Angebote"
+    }
+  },
+  "Rate" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Preis"
+    }
+  },
+  "Rate Duly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly bewerten"
+    }
+  },
+  "Receipt" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Quittung"
+    }
+  },
+  "Receipt prefix" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Präfix für Quittungen"
+    }
+  },
+  "Receipts" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Quittungen"
+    }
+  },
+  "Refresh" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Aktualisieren"
+    }
+  },
+  "Reminders" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erinnerungen"
+    }
+  },
+  "Remove" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Entfernen"
+    }
+  },
+  "Remove client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunden entfernen"
+    }
+  },
+  "Remove fee" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gebühr entfernen"
+    }
+  },
+  "Remove logo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Logo entfernen"
+    }
+  },
+  "Remove photo" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Foto entfernen"
+    }
+  },
+  "Renews automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel in Settings > [your name] > Subscriptions." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Verlängert sich automatisch, wenn nicht mindestens 24 Stunden vor Ende des Zeitraums gekündigt wird. Verwalten oder kündigen unter Einstellungen > [Ihr Name] > Abonnements."
+    }
+  },
+  "Repeat" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wiederholen"
+    }
+  },
+  "Repeat invoices automatically" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnungen automatisch wiederholen"
+    }
+  },
+  "Repeat of" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wiederholung von"
+    }
+  },
+  "Replies within 24 hours" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Antwort innerhalb von 24 Stunden"
+    }
+  },
+  "Report a problem" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Problem melden"
+    }
+  },
+  "Reports" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Berichte"
+    }
+  },
+  "Restore" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wiederherstellen"
+    }
+  },
+  "Restore %@ presets" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Voreinstellungen für %@ wiederherstellen"
+    }
+  },
+  "Restore presets" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Voreinstellungen wiederherstellen"
+    }
+  },
+  "Restore purchases" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Käufe wiederherstellen"
+    }
+  },
+  "Restore the preset rates?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Voreingestellte Sätze wiederherstellen?"
+    }
+  },
+  "Restoring…" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wird wiederhergestellt …"
+    }
+  },
+  "Retail, food, products" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Handel, Essen, Produkte"
+    }
+  },
+  "Revisions" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Überarbeitungen"
+    }
+  },
+  "Routing number" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Routing-Nummer"
+    }
+  },
+  "SWIFT / BIC" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "SWIFT / BIC"
+    }
+  },
+  "Save" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Sichern"
+    }
+  },
+  "Save PDF to Files" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "PDF in Dateien sichern"
+    }
+  },
+  "Save and print your PDFs" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "PDFs sichern und drucken"
+    }
+  },
+  "Save to my items" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "In meinen Positionen sichern"
+    }
+  },
+  "Save what you charge for" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Speichern Sie, was Sie berechnen"
+    }
+  },
+  "Saved" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gesichert"
+    }
+  },
+  "Saved items" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gespeicherte Positionen"
+    }
+  },
+  "Saved rates" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gespeicherte Sätze"
+    }
+  },
+  "Saved to" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gesichert in"
+    }
+  },
+  "Search clients" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunden suchen"
+    }
+  },
+  "Search clients or numbers" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunden oder Nummern suchen"
+    }
+  },
+  "See Premium plans" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Premium-Pläne ansehen"
+    }
+  },
+  "See plans" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Pläne ansehen"
+    }
+  },
+  "See what you earn" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Sehen Sie, was Sie verdienen"
+    }
+  },
+  "Send" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Senden"
+    }
+  },
+  "Send again" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erneut senden"
+    }
+  },
+  "Send by email, Messages or WhatsApp" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Per E-Mail, Nachrichten oder WhatsApp senden"
+    }
+  },
+  "Send invoices that get paid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnungen senden, die bezahlt werden"
+    }
+  },
+  "Send receipt" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Quittung senden"
+    }
+  },
+  "Send report" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bericht senden"
+    }
+  },
+  "Send this estimate" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Dieses Angebot senden"
+    }
+  },
+  "Send this invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Diese Rechnung senden"
+    }
+  },
+  "Sending or PDFs" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Senden oder PDFs"
+    }
+  },
+  "Sending, printing and PDFs are unlocked." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Senden, Drucken und PDFs sind freigeschaltet."
+    }
+  },
+  "Sending, printing and PDFs unlocked." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Senden, Drucken und PDFs freigeschaltet."
+    }
+  },
+  "Sends your message and app version" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Sendet Ihre Nachricht und die App-Version"
+    }
+  },
+  "Sent" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gesendet"
+    }
+  },
+  "Service" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Leistung"
+    }
+  },
+  "Settings" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Einstellungen"
+    }
+  },
+  "Share" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Teilen"
+    }
+  },
+  "Share Duly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Duly teilen"
+    }
+  },
+  "Share anonymous usage data and crash reports so we can fix problems and make Duly better. Your invoices and client details are never included. You can change this any time in Settings." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Teilen Sie anonyme Nutzungsdaten und Absturzberichte, damit wir Probleme beheben und Duly verbessern können. Ihre Rechnungen und Kundendaten sind nie enthalten. Sie können das jederzeit in den Einstellungen ändern."
+    }
+  },
+  "Shipping" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Versand"
+    }
+  },
+  "Show \"Made with Duly\" on PDFs" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "„Erstellt mit Duly“ auf PDFs zeigen"
+    }
+  },
+  "Show a QR code" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "QR-Code zeigen"
+    }
+  },
+  "Show amounts as" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Beträge anzeigen als"
+    }
+  },
+  "Shown on a page after the invoice. Up to 10." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Erscheinen auf einer Seite nach der Rechnung. Bis zu 10."
+    }
+  },
+  "Sign in to link your account across devices. Optional." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Melden Sie sich an, um Ihren Account geräteübergreifend zu verknüpfen. Optional."
+    }
+  },
+  "Sign in with Apple" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Mit Apple anmelden"
+    }
+  },
+  "Sign in with Apple didn't finish. Please try again." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Die Anmeldung mit Apple wurde nicht abgeschlossen. Bitte versuchen Sie es erneut."
+    }
+  },
+  "Sign in with Apple so your subscription follows you to a new iPhone or iPad. Optional: your invoices stay on your device and iCloud either way." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Melden Sie sich mit Apple an, damit Ihr Abo auf ein neues iPhone oder iPad mitkommt. Optional: Ihre Rechnungen bleiben so oder so auf Ihrem Gerät und in iCloud."
+    }
+  },
+  "Signature area. Draw your signature." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Unterschriftsfeld. Zeichnen Sie Ihre Unterschrift."
+    }
+  },
+  "Signed by %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Unterschrieben von %@"
+    }
+  },
+  "Signed in with Apple" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Mit Apple angemeldet"
+    }
+  },
+  "Skip for now" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Später"
+    }
+  },
+  "Small businesses under § 19 UStG don't charge VAT: turn this off and say so in the notes." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kleinunternehmer nach § 19 UStG berechnen keine Umsatzsteuer: Schalten Sie das aus und schreiben Sie „Gemäß § 19 UStG wird keine Umsatzsteuer berechnet.“ in die Notizen."
+    }
+  },
+  "Small shop" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kleiner Laden"
+    }
+  },
+  "Something else" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Etwas anderes"
+    }
+  },
+  "Something went wrong" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Etwas ist schiefgelaufen"
+    }
+  },
+  "Sort code" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Bankleitzahl"
+    }
+  },
+  "Sort code %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "BLZ %@"
+    }
+  },
+  "Split" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Geteilt"
+    }
+  },
+  "Start %lld-day free trial" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "%lld Tage kostenlos testen"
+    }
+  },
+  "Status" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Status"
+    }
+  },
+  "Street, town, postcode" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Straße, PLZ, Ort"
+    }
+  },
+  "Stripe or Square link" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Stripe- oder Square-Link"
+    }
+  },
+  "Studio" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Studio"
+    }
+  },
+  "Subscription" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abo"
+    }
+  },
+  "Subscription or billing" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Abo oder Abrechnung"
+    }
+  },
+  "Subtotal" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zwischensumme"
+    }
+  },
+  "Subtotal (incl. tax)" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zwischensumme (inkl. Steuer)"
+    }
+  },
+  "Symbol" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Symbol"
+    }
+  },
+  "Tax" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuer"
+    }
+  },
+  "Tax ID" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuernummer"
+    }
+  },
+  "Tax added" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Netto (zzgl. Steuer)"
+    }
+  },
+  "Tax and discount" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuer und Rabatt"
+    }
+  },
+  "Tax included" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Brutto (inkl. Steuer)"
+    }
+  },
+  "Tax invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Rechnung"
+    }
+  },
+  "Tax rates are set by you. This app doesn't give tax advice." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuersätze legen Sie selbst fest. Diese App bietet keine Steuerberatung."
+    }
+  },
+  "Taxes" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuern"
+    }
+  },
+  "Taxes on the total" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Steuern auf die Summe"
+    }
+  },
+  "Tell a friend about the app" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Empfehlen Sie die App weiter"
+    }
+  },
+  "Tell us what you tapped and what you expected" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Sagen Sie uns, worauf Sie getippt haben und was Sie erwartet haben"
+    }
+  },
+  "Template" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vorlage"
+    }
+  },
+  "Template and colour" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vorlage und Farbe"
+    }
+  },
+  "Terms" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "AGB"
+    }
+  },
+  "Terms of Use" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nutzungsbedingungen"
+    }
+  },
+  "Thank you for your business." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Vielen Dank für Ihren Auftrag."
+    }
+  },
+  "The \"Preview\" mark is removed when you send with Premium." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Das Wasserzeichen „Vorschau“ verschwindet, wenn Sie mit Premium senden."
+    }
+  },
+  "The PDF couldn't be made. Please try again." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Das PDF konnte nicht erstellt werden. Bitte versuchen Sie es erneut."
+    }
+  },
+  "The payment didn't go through and you weren't charged. Check your payment method in the App Store and try again." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Die Zahlung hat nicht geklappt und Ihnen wurde nichts berechnet. Prüfen Sie Ihre Zahlungsmethode im App Store und versuchen Sie es erneut."
+    }
+  },
+  "These show on your invoices as buttons and a QR code. Clients pay you directly. Duly never touches the money." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Diese erscheinen auf Ihren Rechnungen als Buttons und QR-Code. Kunden zahlen direkt an Sie. Duly berührt das Geld nie."
+    }
+  },
+  "This can't be undone." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Das kann nicht widerrufen werden."
+    }
+  },
+  "This deletes your sign-in and unlinks your subscription from it. Your invoices stay on this device and in your iCloud; delete the app to remove them. To stop paying, cancel the subscription in Settings > [your name] > Subscriptions." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Damit wird Ihre Anmeldung gelöscht und Ihr Abo davon getrennt. Ihre Rechnungen bleiben auf diesem Gerät und in Ihrer iCloud; löschen Sie die App, um sie zu entfernen. Um nicht mehr zu zahlen, kündigen Sie das Abo unter Einstellungen > [Ihr Name] > Abonnements."
+    }
+  },
+  "This device only: %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Nur auf diesem Gerät: %@"
+    }
+  },
+  "This document was deleted." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Dieses Dokument wurde gelöscht."
+    }
+  },
+  "This goes at the top of every invoice. You can change it later." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Das steht oben auf jeder Rechnung. Sie können es später ändern."
+    }
+  },
+  "This plan isn't available right now." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Dieses Abo ist gerade nicht verfügbar."
+    }
+  },
+  "This was turned into invoice %@." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Daraus wurde Rechnung %@."
+    }
+  },
+  "Today at %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Heute um %@"
+    }
+  },
+  "Topic" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Thema"
+    }
+  },
+  "Total" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Summe"
+    }
+  },
+  "Total due" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Zu zahlen"
+    }
+  },
+  "Totals by month and by client, what's still unpaid, and a CSV for your accountant." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Summen nach Monat und Kunde, was noch offen ist, und eine CSV für Ihre Steuerberatung."
+    }
+  },
+  "Trades" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Handwerk"
+    }
+  },
+  "Turn into invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "In Rechnung umwandeln"
+    }
+  },
+  "Turn them on in iPhone Settings > Notifications > Duly, then try again." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Schalten Sie sie in den iPhone-Einstellungen > Mitteilungen > Duly ein und versuchen Sie es erneut."
+    }
+  },
+  "Turned into an invoice" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "In Rechnung umgewandelt"
+    }
+  },
+  "Type details" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Daten eingeben"
+    }
+  },
+  "Type their details or pick them from your Contacts. Duly only sees the contact you choose." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Geben Sie die Daten ein oder wählen Sie sie aus Ihren Kontakten. Duly sieht nur den Kontakt, den Sie auswählen."
+    }
+  },
+  "USt-IdNr." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "USt-IdNr."
+    }
+  },
+  "Unit" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Einheit"
+    }
+  },
+  "Unlock every template" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Alle Vorlagen freischalten"
+    }
+  },
+  "Unlock reports" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Berichte freischalten"
+    }
+  },
+  "Unpaid" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Offen"
+    }
+  },
+  "Untitled item" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Position ohne Namen"
+    }
+  },
+  "VAT number" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "USt-IdNr."
+    }
+  },
+  "VAT registered" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Umsatzsteuerpflichtig"
+    }
+  },
+  "Valid until" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gültig bis"
+    }
+  },
+  "Valid until %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gültig bis %@"
+    }
+  },
+  "We filled in examples. Change anything; the preview updates as you type." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wir haben Beispiele eingetragen. Ändern Sie alles; die Vorschau aktualisiert sich beim Tippen."
+    }
+  },
+  "We reply within 24 hours, every day." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wir antworten innerhalb von 24 Stunden, jeden Tag."
+    }
+  },
+  "We reply within 24 hours. Your invoices are not attached." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wir antworten innerhalb von 24 Stunden. Ihre Rechnungen werden nicht angehängt."
+    }
+  },
+  "We'll pick a template and sample items to start you off." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wir wählen eine Vorlage und Beispielpositionen für den Start."
+    }
+  },
+  "Weekly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wöchentlich"
+    }
+  },
+  "What do you do?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Was machen Sie?"
+    }
+  },
+  "What happened?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Was ist passiert?"
+    }
+  },
+  "What's it about?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Worum geht es?"
+    }
+  },
+  "Where are my invoices stored?" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Wo sind meine Rechnungen gespeichert?"
+    }
+  },
+  "Year" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Jahr"
+    }
+  },
+  "Yearly" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Jährlich"
+    }
+  },
+  "Yesterday at %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Gestern um %@"
+    }
+  },
+  "You're offline. Mail and WhatsApp will send this as soon as you have signal." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Sie sind offline. Mail und WhatsApp senden es, sobald Sie Empfang haben."
+    }
+  },
+  "Your Business" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihr Unternehmen"
+    }
+  },
+  "Your business" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihr Unternehmen"
+    }
+  },
+  "Your data" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre Daten"
+    }
+  },
+  "Your invoices are saved on this device and in your own iCloud, which only you can read. A new iPhone or iPad signed in to the same Apple ID gets everything back. If your subscription ends you can still open and export every invoice. Only you can delete your data." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre Rechnungen sind auf diesem Gerät und in Ihrer eigenen iCloud gespeichert, die nur Sie lesen können. Ein neues iPhone oder iPad mit derselben Apple-ID bekommt alles zurück. Wenn Ihr Abo endet, können Sie weiterhin jede Rechnung öffnen und exportieren. Nur Sie können Ihre Daten löschen."
+    }
+  },
+  "Your monthly invoice is ready" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre monatliche Rechnung ist bereit"
+    }
+  },
+  "Your own rates are removed from the list. Invoices already sent keep their rates." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre eigenen Sätze werden aus der Liste entfernt. Bereits gesendete Rechnungen behalten ihre Sätze."
+    }
+  },
+  "Your purchase is waiting for approval. Premium unlocks as soon as it's approved." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihr Kauf wartet auf Freigabe. Premium wird freigeschaltet, sobald er genehmigt ist."
+    }
+  },
+  "Your signature" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre Unterschrift"
+    }
+  },
+  "Your totals by month and by client appear here once you send invoices." : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre Summen nach Monat und Kunde erscheinen hier, sobald Sie Rechnungen senden."
+    }
+  },
+  "Your weekly invoice is ready" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre wöchentliche Rechnung ist bereit"
+    }
+  },
+  "Your yearly invoice is ready" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihre jährliche Rechnung ist bereit"
+    }
+  },
+  "a month" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "pro Monat"
+    }
+  },
+  "client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Kunde"
+    }
+  },
+  "e.g. Kestrel Joinery" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "z. B. Tischlerei Falk"
+    }
+  },
+  "e.g. Labour" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "z. B. Arbeitszeit"
+    }
+  },
+  "hour, day, item…" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Stunde, Tag, Stück …"
+    }
+  },
+  "iCloud" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "iCloud"
+    }
+  },
+  "iCloud backup" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "iCloud-Backup"
+    }
+  },
+  "iCloud setup" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "iCloud-Einrichtung"
+    }
+  },
+  "name@company.com" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "name@firma.de"
+    }
+  },
+  "per %@" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "pro %@"
+    }
+  },
+  "you@business.com" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "sie@firma.de"
+    }
+  },
+  "your client" : {
+    "stringUnit" : {
+      "state" : "translated",
+      "value" : "Ihr Kunde"
+    }
+  }
+}
