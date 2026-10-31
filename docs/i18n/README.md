@@ -1,7 +1,12 @@
-# German strings (switched off for v1.1)
+# Translations
 
-v1.1 ships in English and French only (Build Doc, 27 Oct). The German app text
-was taken out of `InvoiceMaker/Resources/Localizable.xcstrings` and kept here
-(`Localizable.de.json`: key -> the catalog's `de` localization). To switch German
-back on, merge each entry into `strings[key].localizations.de` and add `de` to
-`knownRegions` in the project file.
+The app ships in English (UK source, with a US English variant), French and
+German. All app text is in `InvoiceMaker/Resources/Localizable.xcstrings`.
+
+- v1.1: English and French. German was switched off.
+- v1.2: German switched back on (strings reviewed, German Terms and Privacy in
+  `Resources/Legal/*.de.txt`). The test `translationsShipInTheApp` checks each
+  language is in the build.
+
+The English Terms and Privacy Policy are the binding versions; the translations
+say so at the top.

@@ -243,6 +243,7 @@
 				en,
 				"en-US",
 				fr,
+				de,
 				Base,
 			);
 			mainGroup = 1A0000000000000000000002;

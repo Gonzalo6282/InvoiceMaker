@@ -41,7 +41,7 @@ def legal_body(path):
             out.append(f"<h2>{inline(line[3:])}</h2>")
         elif line.startswith("# "):
             title = line[2:]
-        elif line.startswith(("Last updated", "Dernière mise à jour")) and not updated:
+        elif line.startswith(("Last updated", "Dernière mise à jour", "Zuletzt aktualisiert")) and not updated:
             updated = line
         else:
             out.append(f"<p>{inline(line)}</p>")
@@ -254,6 +254,8 @@ def main():
         ("duly-terms", "terms.txt", "The terms for using Duly: Invoice Maker & Estimate.", "en"),
         ("duly-privacy-fr", "privacy.fr.txt", "Comment Duly traite vos informations.", "fr"),
         ("duly-terms-fr", "terms.fr.txt", "Les conditions d'utilisation de Duly: Invoice Maker & Estimate.", "fr"),
+        ("duly-privacy-de", "privacy.de.txt", "Wie Duly mit Ihren Informationen umgeht.", "de"),
+        ("duly-terms-de", "terms.de.txt", "Die Nutzungsbedingungen von Duly: Invoice Maker & Estimate.", "de"),
     ]:
         title, updated, body = legal_body(LEGAL / src)
         content = f"<h1>{html.escape(title)}</h1>\n<p class=\"updated\">{html.escape(updated)}</p>\n{body}"

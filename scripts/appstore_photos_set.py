@@ -24,6 +24,7 @@ SETS = {
     "ca": ("CA", "Job Photos", {"Photos"}, "Show the finished work on every invoice"),
     "es": ("US", "Fotos de la obra", {"obra"}, "Muestra el trabajo terminado en cada factura"),
     "fr": ("FR", "Photos du chantier", {"chantier"}, "Montrez le travail fini sur chaque facture"),
+    "de": ("DE", "Fotos vom Auftrag", {"Fotos"}, "Zeigen Sie die fertige Arbeit auf jeder Rechnung"),
 }
 DEVICES = {"iphone": "iPhone-17-Pro-Max", "ipad": "iPad-Pro-13-inch-(M5)"}
 SCREEN = "13-photos-editor.png"

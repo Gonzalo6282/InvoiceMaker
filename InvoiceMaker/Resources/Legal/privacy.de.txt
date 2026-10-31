@@ -1,0 +1,86 @@
+# Datenschutzerklärung
+
+Zuletzt aktualisiert: 29. Oktober 2026
+
+Übersetzung der englischen Fassung. Bei Abweichungen ist die englische Fassung maßgeblich.
+
+## Einleitung
+Diese Datenschutzerklärung erläutert, wie Slice of Life Ltd („wir“, „uns“ oder „unser“) mit Informationen über eine bestimmte oder bestimmbare natürliche Person („personenbezogene Daten“) umgeht, wenn Sie Duly: Invoice Maker & Estimate (die „App“) nutzen.
+
+Slice of Life Ltd, eine im Vereinigten Königreich eingetragene Gesellschaft, ist Verantwortlicher für die in dieser Erklärung beschriebenen personenbezogenen Daten. Der Begriff „personenbezogene Daten“ hat die Bedeutung nach der UK GDPR, dem britischen Data Protection Act 2018, der EU-Datenschutz-Grundverordnung (DSGVO), dem California Consumer Privacy Act (CCPA) und anderen anwendbaren Gesetzen.
+
+Bei Fragen zu dieser Erklärung schreiben Sie uns an info@slice-of-life.uk.
+
+## Kurz gesagt
+- Ihre Rechnungen, Angebote, Quittungen, Kunden, Positionen, Ihr Logo, Ihre Unterschriften und Zahlungsdaten bleiben auf Ihrem Gerät und in Ihrer eigenen privaten iCloud. Wir laden sie nie auf unsere Server und können sie nicht sehen.
+- Ein Account ist optional. Wenn Sie sich mit Apple anmelden, speichern wir nur, was nötig ist, um Ihren Account und Ihr Abo zu verknüpfen.
+- Anonyme Analysedaten und Absturzberichte sind ausgeschaltet, bis Sie sie erlauben, und Sie können sie jederzeit in den Einstellungen wieder ausschalten.
+- Wir zeigen keine Werbung, erheben keine Werbe-ID (IDFA) und verkaufen oder teilen Ihre personenbezogenen Daten nicht für Werbezwecke.
+
+## Informationen, die auf Ihrem Gerät und in Ihrer iCloud bleiben
+Die von Ihnen erstellten Dokumente und alles darin, Ihr Unternehmensprofil, Logo, Ihre Unterschrift, Zahlungsdaten, Steuersätze, Kunden (einschließlich Namen, E-Mail-Adressen, Telefonnummern und Adressen), gespeicherte Positionen, Unterschriften von Kunden, Fotos vom Auftrag und die Einstellungen der App werden auf Ihrem Gerät gespeichert. Wenn iCloud eingeschaltet ist, werden sie zusätzlich in Ihrer privaten iCloud-Datenbank gespeichert, die Apple Ihnen bereitstellt. Wir haben keinen Zugriff auf diese Daten. Wie Apple mit iCloud-Daten umgeht, ist in der Datenschutzrichtlinie von Apple beschrieben.
+
+Wenn Sie einen Kunden aus Ihren Kontakten hinzufügen, fragt die App nach der Erlaubnis, auf Ihre Kontakte zuzugreifen, und verwendet nur den Kontakt, den Sie auswählen. Wenn Sie ein Logo hinzufügen, fragt die App nach der Erlaubnis, auf Ihre Fotos zuzugreifen, und verwendet nur das Bild, das Sie auswählen. Wenn Sie einem Dokument Fotos vom Auftrag hinzufügen, nutzt die App die Fotoauswahl des iPhone, die ihr nur die ausgewählten Fotos gibt (die App erhält keinen Zugriff auf Ihre Mediathek); sie werden mit dem Dokument gespeichert. Wenn Sie ein Dokument senden, verlässt es die App nur über die Teilen-Option, die Sie wählen (zum Beispiel Mail, Nachrichten, WhatsApp, AirDrop, Dateien oder Drucken).
+
+Wenn Sie eine Adresse für einen Kunden oder Ihr Unternehmen eingeben, sendet die App Ihre Eingabe an Apple Karten, um passende Adressen vorzuschlagen. Diese Suche wird von Apple nach der Datenschutzrichtlinie von Apple verarbeitet; wir erhalten sie nicht.
+
+Wenn Sie Zahlungserinnerungen einschalten oder eine Rechnung wiederholen lassen, plant die App Mitteilungen auf Ihrem Gerät (zum Beispiel „RE-0007 ist in 3 Tagen fällig“ mit dem Namen des Kunden und dem Betrag). Sie werden nur von Ihrem Gerät erstellt und angezeigt; nichts wird an uns gesendet. Die App fragt erst nach der Erlaubnis für Mitteilungen, wenn Sie eine dieser Funktionen einschalten, und Sie können sie jederzeit in den Einstellungen ausschalten.
+
+## Informationen, die wir verarbeiten
+
+### Account (optional)
+Wenn Sie „Mit Apple anmelden“ verwenden, verarbeiten wir eine Benutzerkennung und, falls Sie sie teilen, Ihre E-Mail-Adresse (die eine private Weiterleitungsadresse von Apple sein kann). Dies erfolgt über Firebase Authentication (Google) und dient nur dazu, Ihren Account und Ihr Abo auf Ihren Geräten zu verknüpfen.
+
+### Käufe und Abos
+Käufe werden von Apple abgewickelt. Wir erhalten Ihre Kartendaten nicht. Um den Status Ihres Abos zu prüfen, nutzt die App RevenueCat. RevenueCat erhält eine anonyme App-Benutzerkennung, Ihren Kauf- und Abo-Verlauf, das Land Ihres App Store und Geräteinformationen. Wenn Sie sich anmelden, wird Ihre Account-Kennung mit diesem Datensatz verknüpft.
+
+### Kaufbildschirme
+Kaufbildschirme werden von Superwall bereitgestellt. Superwall erhält eine anonyme Benutzerkennung, Geräte- und App-Informationen sowie Ereignisse, etwa wenn ein Kaufbildschirm angezeigt, geschlossen oder zu einem Kauf führt. Damit wird der passende Kaufbildschirm angezeigt und gemessen, ob er funktioniert.
+
+### Analysedaten und Absturzberichte (nur mit Ihrer Erlaubnis)
+Wenn Sie es erlauben, nutzen wir Firebase Analytics und Firebase Crashlytics (Google), um zu verstehen, wie die App genutzt wird, und um Probleme zu beheben. Dazu gehören App-Ereignisse (zum Beispiel „Rechnung erstellt“ oder „Rechnung gesendet“, ohne Inhalte von Dokumenten), App-Version, Gerätemodell, Betriebssystem, Land des App Store und Absturzprotokolle. Wir erheben keine Werbe-ID, und Werbefunktionen sind ausgeschaltet. Sie können das jederzeit unter Einstellungen > Datenschutz und Rechtliches ausschalten. Außerdem nutzen wir Firebase Remote Config, um einige Einstellungen der App ohne Update zu ändern.
+
+### Support
+Wenn Sie uns kontaktieren oder „Problem melden“ verwenden, erhalten wir Ihre E-Mail-Adresse, Ihre Nachricht sowie die darin enthaltene App-Version und Geräteangaben.
+
+## Wie wir Informationen verwenden
+- Um die App und ihre Funktionen bereitzustellen, einschließlich der Verknüpfung Ihres Accounts und Abos auf Ihren Geräten
+- Um Abos abzuwickeln und wiederherzustellen und Kaufbildschirme anzuzeigen
+- Um die Nutzung zu verstehen und Abstürze und Fehler zu beheben, wenn Sie Analysedaten erlaubt haben
+- Um Support-Anfragen zu beantworten
+- Um die App sicher zu halten, Betrug zu verhindern und unsere rechtlichen Pflichten zu erfüllen
+
+Wir verwenden Ihre Informationen nicht für Werbung, verkaufen sie nicht und teilen sie nicht für kontextübergreifende verhaltensbasierte Werbung.
+
+## Rechtsgrundlage der Verarbeitung
+Wir verarbeiten personenbezogene Daten zur Erfüllung unseres Vertrags mit Ihnen (Bereitstellung der App und der Abos); mit Ihrer Einwilligung (Analysedaten, Absturzberichte, Zugriff auf Fotos und Kontakte); aufgrund unserer berechtigten Interessen (Sicherheit, Betrugsprävention und Verbesserung der App); und zur Erfüllung rechtlicher Pflichten. Sie können Ihre Einwilligung jederzeit in den Einstellungen widerrufen.
+
+## Mit wem wir Informationen teilen
+Wir teilen personenbezogene Daten nur mit Dienstleistern, die uns beim Betrieb der App helfen und zum Schutz der Daten verpflichtet sind: Apple (Käufe im App Store, „Mit Apple anmelden“, iCloud, Adressvorschläge in Apple Karten), Google Firebase (Authentifizierung, Analysedaten, Absturzberichte, Remote-Konfiguration), RevenueCat (Abo-Verwaltung) und Superwall (Kaufbildschirme). Wir können Informationen auch mit professionellen Beratern teilen, mit Behörden, wenn das Gesetz es verlangt, oder mit einem Nachfolger, wenn unser Unternehmen verkauft oder fusioniert wird.
+
+## Internationale Übermittlungen
+Unsere Dienstleister können personenbezogene Daten außerhalb des Vereinigten Königreichs und des Europäischen Wirtschaftsraums verarbeiten, auch in den Vereinigten Staaten. Soweit erforderlich, sind diese Übermittlungen durch geeignete Garantien geschützt, etwa das britische International Data Transfer Agreement oder Addendum, die Standardvertragsklauseln der EU oder Angemessenheitsbeschlüsse.
+
+## Speicherdauer
+Dokumente und Daten auf Ihrem Gerät und in Ihrer iCloud bleiben gespeichert, bis Sie sie löschen, die App löschen oder sie aus iCloud entfernen. Account-Informationen speichern wir, bis Sie Ihren Account unter Einstellungen > Account löschen; dabei werden Ihre Anmeldung entfernt und die Verknüpfung mit Apple aufgehoben. Abo-Daten werden von Apple und RevenueCat so lange gespeichert, wie es für Käufe sowie steuerliche und rechtliche Pflichten nötig ist. Analysedaten werden bis zu 14 Monate und Absturzberichte bis zu 90 Tage gespeichert.
+
+## Sicherheit
+Wir setzen angemessene technische und organisatorische Maßnahmen ein, um personenbezogene Daten zu schützen, und Ihre Dokumente laufen nie über unsere Server. Keine Methode der Speicherung oder Übertragung ist vollständig sicher.
+
+## Ihre Rechte
+Vereinigtes Königreich und EU: Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten, das Recht auf Datenübertragbarkeit und das Recht, Ihre Einwilligung zu widerrufen. Sie können sich auch beim britischen Information Commissioner's Office (ico.org.uk) oder bei Ihrer örtlichen Datenschutzaufsichtsbehörde beschweren (in Deutschland bei der zuständigen Landesdatenschutzbehörde, in Österreich bei der Datenschutzbehörde, in der Schweiz beim EDÖB).
+
+Kalifornien: Sie haben das Recht auf Auskunft, Zugang, Berichtigung und Löschung Ihrer personenbezogenen Daten sowie das Recht, wegen der Ausübung dieser Rechte nicht benachteiligt zu werden. Wir verkaufen oder teilen keine personenbezogenen Daten im Sinne des CCPA.
+
+Sie können alle Ihre Dokumente und Daten jederzeit unter Einstellungen > Exportieren exportieren. Um eines Ihrer Rechte auszuüben, schreiben Sie an info@slice-of-life.uk. Wir antworten innerhalb der gesetzlichen Frist.
+
+## Kinder
+Die App ist ein Werkzeug für Unternehmen und richtet sich nicht an Kinder. Wir erheben nicht wissentlich personenbezogene Daten von Personen unter 16 Jahren. Wenn Sie glauben, dass uns ein Kind personenbezogene Daten gegeben hat, kontaktieren Sie uns und wir löschen sie.
+
+## Änderungen dieser Erklärung
+Wir können diese Erklärung aktualisieren. Über wesentliche Änderungen informieren wir Sie in der App oder auf andere angemessene Weise, und das Datum oben zeigt immer die neueste Fassung.
+
+## Kontakt
+Slice of Life Ltd
+E-Mail: info@slice-of-life.uk
+Website: https://slice-of-life.uk
