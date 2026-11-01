@@ -102,6 +102,31 @@ enum Reminders {
         }
     }
 
+    /// The soonest payment reminder iOS has queued (Settings shows it, so the
+    /// user can see reminders are set up without waiting for 9:00).
+    nonisolated static func nextPaymentReminder() async -> (date: Date, title: String)? {
+        let pending = await UNUserNotificationCenter.current().pendingNotificationRequests()
+        return pending
+            .filter { $0.identifier.hasPrefix("\(idPrefix)due-") }
+            .compactMap { request -> (date: Date, title: String)? in
+                guard let trigger = request.trigger as? UNCalendarNotificationTrigger, let date = trigger.nextTriggerDate() else { return nil }
+                return (date, request.content.title)
+            }
+            .min { $0.date < $1.date }
+    }
+
+    /// Settings > Reminders > "Send a test reminder": arrives in 5 seconds,
+    /// even with the app open (see NotificationPresenter).
+    nonisolated static func sendTest(title: String, body: String) async {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = .default
+        let request = UNNotificationRequest(
+            identifier: "\(idPrefix)test", content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+        try? await UNUserNotificationCenter.current().add(request)
+    }
+
     /// Asks iOS for permission (once; later calls return the saved answer).
     nonisolated static func requestPermission() async -> Bool {
         let center = UNUserNotificationCenter.current()
@@ -110,5 +135,17 @@ enum Reminders {
         case .denied: return false
         default: return (try? await center.requestAuthorization(options: [.alert, .sound, .badge])) ?? false
         }
+    }
+}
+
+/// Without a delegate iOS stays silent when a notification fires while Duly
+/// is open (a 9:00 reminder with the app on screen was simply dropped).
+nonisolated final class NotificationPresenter: NSObject, UNUserNotificationCenterDelegate, Sendable {
+    static let shared = NotificationPresenter()
+
+    func userNotificationCenter(
+        _ center: UNUserNotificationCenter, willPresent notification: UNNotification
+    ) async -> UNNotificationPresentationOptions {
+        [.banner, .list, .sound]
     }
 }

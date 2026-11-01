@@ -6,13 +6,14 @@ struct RegionTests {
     @Test(arguments: [
         ("GB", Region.uk), ("GBR", .uk), ("uk", .uk), ("AU", .au), ("AUS", .au),
         ("CA", .ca), ("CAN", .ca), ("US", .us), ("usa", .us), ("DE", .de), ("deu", .de), ("FR", .fr), ("FRA", .fr),
+        ("MX", .mx), ("mex", .mx), ("ES", .es), ("ESP", .es),
     ])
     func parsesCountryCodes(code: String, region: Region) {
         #expect(Region(countryCode: code) == region)
     }
 
     @Test func unknownCountryHasNoPresetAndResolvesToUK() {
-        #expect(Region(countryCode: "ES") == nil)
+        #expect(Region(countryCode: "IT") == nil)
         #expect(Region.resolve(countryCode: "IRL") == .uk)
         #expect(Region.resolve(countryCode: nil) == .uk)
         #expect(Region.resolve(countryCode: "CAN") == .ca)
@@ -33,6 +34,13 @@ struct RegionTests {
         #expect(Region.de.preset.localeIdentifier == "de_DE")
         #expect(Region.fr.preset.taxes.map(\.label) == ["TVA 20%", "TVA 10%", "TVA 5.5%", "TVA 0%"])
         #expect(Region.fr.preset.taxIDLabel == "N° TVA")
+        #expect(Region.mx.preset.taxes.map(\.label) == ["IVA 16%", "IVA 8%", "IVA 0%"])
+        #expect(Region.mx.preset.currencyCode == "MXN")
+        #expect(Region.mx.preset.taxIDLabel == "RFC")
+        #expect(PaperSize.for(countryCode: "MEX") == .letter)
+        #expect(Region.es.preset.taxes.map(\.label) == ["IVA 21%", "IVA 10%", "IVA 4%", "IVA 0%"])
+        #expect(Region.es.preset.currencyCode == "EUR")
+        #expect(Region.es.preset.taxIDLabel == "NIF")
         for region in Region.allCases {
             let ids = region.preset.taxes.map(\.id)
             #expect(Set(ids).count == ids.count)
@@ -50,6 +58,7 @@ struct RegionTests {
         #expect(Region.ca.title(for: .receipt, taxRegistered: true) == "Receipt")
         #expect(Region.de.title(for: .estimate, taxRegistered: true) == "Estimate")
         #expect(Region.fr.title(for: .invoice, taxRegistered: true) == "Invoice")
+        #expect(Region.mx.title(for: .estimate, taxRegistered: true) == "Estimate")  // "Cotización" in Spanish
     }
 
     @Test func paperSizes() {

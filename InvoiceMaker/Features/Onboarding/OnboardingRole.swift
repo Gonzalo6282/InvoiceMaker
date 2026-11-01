@@ -52,6 +52,8 @@ enum OnboardingRole: String, CaseIterable, Identifiable {
         case .ca: "Maple Ridge Builders"
         case .de: "Lindenhof Gartenbau GmbH"
         case .fr: "Boulangerie des Tilleuls SARL"
+        case .mx: "Constructora del Valle"
+        case .es: "Reformas Levante S.L."
         }
     }
 
