@@ -50,6 +50,27 @@ def legal_body(path):
     return title, updated, "\n".join(out)
 
 
+WP_STYLE = """<style>
+.duly-page{max-width:760px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;color:#1b2430}
+.duly-page h1{font-size:2rem;line-height:1.2;margin:0 0 .25em}
+.duly-page h2{font-size:1.3rem;margin:1.8em 0 .4em}
+.duly-page h3{font-size:1.05rem;margin:1.4em 0 .3em}
+.duly-page p,.duly-page li{font-size:1rem}
+.duly-page .duly-updated{color:#5b6573;font-size:.9rem;margin-bottom:1.5em}
+.duly-page a{color:#3d2bd6}
+</style>"""
+
+
+def wordpress(name, content, lang="en"):
+    """One Custom HTML block per WordPress page: no site header or footer
+    (the theme has its own), styles scoped to .duly-page, site links absolute."""
+    content = content.replace('class="updated"', 'class="duly-updated"').replace('href="../', 'href="/')
+    snippet = f'{WP_STYLE}\n<div class="duly-page" lang="{lang}">\n{content}\n</div>\n'
+    out = ROOT / "wordpress" / f"{name}.html"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(snippet, encoding="utf-8")
+
+
 def page(title, description, body, lang="en"):
     return f"""<!doctype html>
 <html lang="{lang}">
@@ -209,6 +230,8 @@ HELP = f"""<h1>Help guide</h1>
 <p>Seven: Clean, Bold and Ledger are free; Studio, Trades, Classic and Split come with Premium. Pick a default and a brand colour in Settings &gt; Invoice look, or change them on one invoice in Preview.</p>
 <h3>Can I sign my invoices?</h3>
 <p>Yes. Draw your signature once in Settings &gt; My signature and it goes on every invoice.</p>
+<h3>How do I remove "Made with Duly"?</h3>
+<p>Settings &gt; Invoice look &gt; Footer, and turn off Show "Made with Duly" on PDFs. It's the small line at the bottom of your PDFs. Turning it off is free and doesn't need Premium; it applies to every PDF you make from then on.</p>
 
 <h2 id="icloud">iCloud backup and a new phone</h2>
 <h3>Where are my invoices stored?</h3>
@@ -264,14 +287,17 @@ def main():
         out = ROOT / name / "index.html"
         out.parent.mkdir(exist_ok=True)
         out.write_text(page(title, desc, content, lang), encoding="utf-8")
+        wordpress(name, content, lang)
         print("wrote", out.relative_to(ROOT))
     out = ROOT / "duly-help" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page("Help guide", "How to use Duly: invoices, estimates, receipts, payments, iCloud and Premium.", HELP), encoding="utf-8")
+    wordpress("duly-help", HELP)
     print("wrote", out.relative_to(ROOT))
     out = ROOT / "duly-support" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page("Support", "Help with Duly: Invoice Maker & Estimate.", SUPPORT), encoding="utf-8")
+    wordpress("duly-support", SUPPORT)
     print("wrote", out.relative_to(ROOT))
 
 
