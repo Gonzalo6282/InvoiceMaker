@@ -62,6 +62,8 @@ body:has(.duly-page) .site-header,body:has(.duly-page) .site-footer,body:has(.du
 body:has(.duly-page),body:has(.duly-page) .wp-site-blocks,body:has(.duly-page) main,body:has(.duly-page) .entry-content{margin-top:0!important;padding-top:0!important;margin-bottom:0!important;padding-bottom:0!important;max-width:none!important;background:#fff!important}
 body:has(.duly-page) .wp-site-blocks>*,body:has(.duly-page) .entry-content>*{margin-block:0!important;max-width:none!important}
 body:has(.duly-page){overflow-x:clip}
+body:has(.duly-page) main>.wp-block-group:not(:has(.duly-page)){display:none!important}
+body:has(.duly-page) .entry-content,body:has(.duly-page) .has-global-padding:has(.duly-page){padding-left:0!important;padding-right:0!important}
 .duly-page{width:100%!important;max-width:none!important;margin:0!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#061b31;line-height:1.6;-webkit-font-smoothing:antialiased}
 .duly-page *{box-sizing:border-box}
 .duly-page a{color:#533afd}
