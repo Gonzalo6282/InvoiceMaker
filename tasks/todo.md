@@ -116,7 +116,7 @@ One line = one task = one commit + push. Every push is tested by GitHub Actions 
 
 ### Before releasing v1.1 (you)
 - [ ] Decide: recurring invoices and reports in today's Premium, or the later higher tier (spec: "Premium Level 1")
-- [ ] Superwall: add the placements `recurring_invoice` and `reports` to the campaign (until then the app's own paywall shows)
+- [x] Superwall: `recurring_invoice` and `reports` are in the "Premium gate" campaign (checked 1 Nov)
 - [ ] Native speakers check the German and French app text and listings
 - [ ] French (and later German) Terms of Use and Privacy Policy, in the app and on the website (draft by Claude, then a native speaker; legal wording ideally checked by a lawyer)
 - [x] Privacy Policy and Terms updated for v1.1 (job photos, on-device reminders, Apple Maps address suggestions; recurring drafts never sent automatically). App Store privacy label: no change (photos and reminders stay on the device and in the user's iCloud; address searches go to Apple, not to us)
