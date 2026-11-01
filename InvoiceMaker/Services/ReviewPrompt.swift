@@ -1,8 +1,7 @@
 import Foundation
-import StoreKit
-import UIKit
+import SliceRating
 
-/// Asks for an App Store rating at happy moments, spaced out:
+/// Asks for an App Store rating at happy moments, spaced out (SliceRating):
 /// 1. the first document sent;
 /// 2. the first invoice marked paid, at least 30 days after ask 1;
 /// 3. the 10th document sent, at least 90 days after ask 2.
@@ -13,38 +12,37 @@ enum ReviewPrompt {
     enum Moment: Equatable {
         case sent
         case markedPaid
+
+        var rating: RatingMoment {
+            switch self {
+            case .sent: RatingMoment("sent")
+            case .markedPaid: RatingMoment("markedPaid")
+            }
+        }
     }
 
+    /// The saved values keep Duly's v1.0 names: reviewPromptCount, reviewPromptLastDate,
+    /// reviewPromptLastVersion, reviewPromptSentCount.
+    static let keyPrefix = "reviewPrompt"
     static let legacyAskedKey = "reviewPromptShown"  // v1.0: true after the first-send ask
-    static let countKey = "reviewPromptCount"
-    static let lastDateKey = "reviewPromptLastDate"
-    static let lastVersionKey = "reviewPromptLastVersion"
-    static let sentKey = "reviewPromptSentCount"
+
+    static let steps = [
+        RatingStep(after: Moment.sent.rating),
+        RatingStep(after: Moment.markedPaid.rating, daysSinceLastAsk: 30),
+        RatingStep(after: Moment.sent.rating, count: 10, daysSinceLastAsk: 90),
+    ]
+
+    static func prompt(version: String = AppInfo.version, defaults: UserDefaults = .standard) -> RatingPrompt {
+        RatingPrompt(steps: steps, keyPrefix: keyPrefix, defaults: defaults, version: version)
+    }
 
     /// Records the moment and returns true when the rating pop-up should show now.
     static func shouldAsk(
         after moment: Moment, now: Date = .now, version: String = AppInfo.version, defaults: UserDefaults = .standard
     ) -> Bool {
-        migrateLegacy(now: now, defaults: defaults)
-        var sent = defaults.integer(forKey: sentKey)
-        if moment == .sent {
-            sent += 1
-            defaults.set(sent, forKey: sentKey)
-        }
-        let count = defaults.integer(forKey: countKey)
-        guard defaults.string(forKey: lastVersionKey) != version else { return false }
-        let days = (defaults.object(forKey: lastDateKey) as? Date).map { now.timeIntervalSince($0) / 86_400 } ?? .infinity
-        let ask: Bool = switch count {
-        case 0: moment == .sent
-        case 1: moment == .markedPaid && days >= 30
-        case 2: moment == .sent && sent >= 10 && days >= 90
-        default: false
-        }
-        guard ask else { return false }
-        defaults.set(count + 1, forKey: countKey)
-        defaults.set(now, forKey: lastDateKey)
-        defaults.set(version, forKey: lastVersionKey)
-        return true
+        let rating = prompt(version: version, defaults: defaults)
+        migrateLegacy(rating, now: now)
+        return rating.record(moment.rating, now: now)
     }
 
     /// Asks after `moment`, a second later so a closing sheet doesn't hide it.
@@ -52,18 +50,16 @@ enum ReviewPrompt {
         guard shouldAsk(after: moment) else { return }
         Task {
             try? await Task.sleep(for: .seconds(1))
-            guard let scene = UIApplication.shared.connectedScenes
-                .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene
-            else { return }
-            AppStore.requestReview(in: scene)
+            RatingPrompt.requestReview()
         }
     }
 
     /// v1.0 users who were already asked once: count it, and start the 30-day clock now.
-    private static func migrateLegacy(now: Date, defaults: UserDefaults) {
-        guard defaults.bool(forKey: legacyAskedKey), defaults.object(forKey: countKey) == nil else { return }
-        defaults.set(1, forKey: countKey)
-        defaults.set(now, forKey: lastDateKey)
-        defaults.set(1, forKey: sentKey)
+    private static func migrateLegacy(_ rating: RatingPrompt, now: Date) {
+        guard rating.defaults.bool(forKey: legacyAskedKey), rating.defaults.object(forKey: keyPrefix + "Count") == nil
+        else { return }
+        rating.askCount = 1
+        rating.lastAskDate = now
+        rating.setCount(1, of: Moment.sent.rating)
     }
 }

@@ -14,6 +14,8 @@
 		1A00000000000000000000A6 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0000000000000000000096 /* FirebaseRemoteConfig */; };
 		1A00000000000000000000A7 /* RevenueCat in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0000000000000000000097 /* RevenueCat */; };
 		1A00000000000000000000A8 /* SuperwallKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0000000000000000000098 /* SuperwallKit */; };
+		1A00000000000000000000B3 /* SliceQR in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B1 /* SliceQR */; };
+		1A00000000000000000000B4 /* SliceRating in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B2 /* SliceRating */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +86,8 @@
 				1A00000000000000000000A6 /* FirebaseRemoteConfig in Frameworks */,
 				1A00000000000000000000A7 /* RevenueCat in Frameworks */,
 				1A00000000000000000000A8 /* SuperwallKit in Frameworks */,
+				1A00000000000000000000B3 /* SliceQR in Frameworks */,
+				1A00000000000000000000B4 /* SliceRating in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +166,8 @@
 				1A0000000000000000000096 /* FirebaseRemoteConfig */,
 				1A0000000000000000000097 /* RevenueCat */,
 				1A0000000000000000000098 /* SuperwallKit */,
+				1A00000000000000000000B1 /* SliceQR */,
+				1A00000000000000000000B2 /* SliceRating */,
 			);
 			productName = InvoiceMaker;
 			productReference = 1A0000000000000000000010 /* InvoiceMaker.app */;
@@ -255,6 +261,7 @@
 				1A0000000000000000000090 /* XCRemoteSwiftPackageReference */,
 				1A0000000000000000000091 /* XCRemoteSwiftPackageReference */,
 				1A0000000000000000000092 /* XCRemoteSwiftPackageReference */,
+				1A00000000000000000000B0 /* XCRemoteSwiftPackageReference "SliceLibrary" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1A0000000000000000000003 /* Products */;
@@ -709,6 +716,14 @@
 				minimumVersion = 4.18.0;
 			};
 		};
+		1A00000000000000000000B0 /* XCRemoteSwiftPackageReference "SliceLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Gonzalo6282/SliceLibrary";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -745,6 +760,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A0000000000000000000092 /* XCRemoteSwiftPackageReference */;
 			productName = SuperwallKit;
+		};
+		1A00000000000000000000B1 /* SliceQR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A00000000000000000000B0 /* XCRemoteSwiftPackageReference "SliceLibrary" */;
+			productName = SliceQR;
+		};
+		1A00000000000000000000B2 /* SliceRating */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A00000000000000000000B0 /* XCRemoteSwiftPackageReference "SliceLibrary" */;
+			productName = SliceRating;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,6 +1,6 @@
-import CoreImage.CIFilterBuiltins
 import CoreText
 import InvoiceKit
+import SliceQR
 import UIKit
 
 /// Draws an `InvoicePDFModel` as a PDF. Sizes follow the mockup's `.paper`
@@ -453,7 +453,7 @@ private struct PageLayout {
                 }
                 fy += buttonRowsHeight(width: w)
             }
-            if let payload = model.qrPayload, let qr = QRCode.image(for: payload) {
+            if let payload = model.qrPayload, let qr = SliceQR.image(for: payload) {
                 let rect = CGRect(x: right - qrSize, y: bottom - qrSize, width: qrSize, height: qrSize)
                 qr.draw(in: rect)
                 if let url = URL(string: payload) { link(url, rect) }
@@ -600,19 +600,6 @@ private struct PageLayout {
 }
 
 // MARK: - Helpers
-
-enum QRCode {
-    /// A crisp QR code image (nearest-neighbour scaled), or nil if it can't be made.
-    static func image(for payload: String, scale: CGFloat = 12) -> UIImage? {
-        let filter = CIFilter.qrCodeGenerator()
-        filter.message = Data(payload.utf8)
-        filter.correctionLevel = "M"
-        guard let output = filter.outputImage?.transformed(by: CGAffineTransform(scaleX: scale, y: scale)),
-            let cg = CIContext().createCGImage(output, from: output.extent)
-        else { return nil }
-        return UIImage(cgImage: cg)
-    }
-}
 
 enum PDFPageImage {
     static func firstPage(of data: Data, width: CGFloat) -> UIImage? {
