@@ -15,8 +15,8 @@ EMAIL = "slice.of.life.ltd@gmail.com"
 
 def inline(text):
     text = html.escape(text)
-    text = re.sub(r"(https?://[^\s<,)]+)", r'<a href="\1">\1</a>', text)
-    text = re.sub(r"([\w.+-]+@[\w-]+\.[\w.]+)", r'<a href="mailto:\1">\1</a>', text)
+    text = re.sub(r"(https?://[^\s<,)]*[^\s<,).])", r'<a href="\1">\1</a>', text)
+    text = re.sub(r"([\w.+-]+@[\w-]+\.[\w.]*\w)", r'<a href="mailto:\1">\1</a>', text)
     return text
 
 
@@ -50,22 +50,121 @@ def legal_body(path):
     return title, updated, "\n".join(out)
 
 
+LOGO = "data:image/png;base64,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"
+SITE = "https://slice-of-life.uk"
+APP = "https://apps.apple.com/us/app/invoice-maker-estimate-duly/id6824285908"
+
+# Same look and links as the /duly/ landing page (nav pill, footer columns), so
+# every Duly page on WordPress matches it. The theme's own header and footer are
+# hidden on these pages, like on /duly/.
 WP_STYLE = """<style>
-.duly-page{max-width:760px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;color:#1b2430}
-.duly-page h1{font-size:2rem;line-height:1.2;margin:0 0 .25em}
-.duly-page h2{font-size:1.3rem;margin:1.8em 0 .4em}
-.duly-page h3{font-size:1.05rem;margin:1.4em 0 .3em}
-.duly-page p,.duly-page li{font-size:1rem}
-.duly-page .duly-updated{color:#5b6573;font-size:.9rem;margin-bottom:1.5em}
-.duly-page a{color:#3d2bd6}
+body:has(.duly-page) .site-header,body:has(.duly-page) .site-footer,body:has(.duly-page) header.wp-block-template-part,body:has(.duly-page) footer.wp-block-template-part,body:has(.duly-page) .entry-header,body:has(.duly-page) .wp-block-post-title,body:has(.duly-page) .page-header{display:none!important}
+body:has(.duly-page),body:has(.duly-page) .wp-site-blocks,body:has(.duly-page) main,body:has(.duly-page) .entry-content{margin-top:0!important;padding-top:0!important;margin-bottom:0!important;padding-bottom:0!important;max-width:none!important;background:#fff!important}
+body:has(.duly-page) .wp-site-blocks>*,body:has(.duly-page) .entry-content>*{margin-block:0!important;max-width:none!important}
+body:has(.duly-page){overflow-x:clip}
+.duly-page{width:100%!important;max-width:none!important;margin:0!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:#061b31;line-height:1.6;-webkit-font-smoothing:antialiased}
+.duly-page *{box-sizing:border-box}
+.duly-page a{color:#533afd}
+.duly-page .dp-shell{position:sticky;top:12px;z-index:100;padding:0 14px;margin-bottom:-70px}
+.admin-bar .duly-page .dp-shell{top:46px}
+@media(min-width:783px){.admin-bar .duly-page .dp-shell{top:44px}}
+.duly-page .dp-nav{max-width:760px;margin:12px auto 0;height:58px;display:flex;align-items:center;gap:16px;padding:8px 8px 8px 18px;background:rgba(255,255,255,.9);border:1px solid rgba(6,27,49,.08);border-radius:999px;box-shadow:0 8px 28px rgba(6,27,49,.14);-webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5)}
+.duly-page .dp-brand{display:flex;align-items:center;gap:10px;font-size:20.8px;font-weight:800;color:#061b31;text-decoration:none;letter-spacing:-.02em}
+.duly-page .dp-brand img{width:34px;height:34px;border-radius:9px;display:block}
+.duly-page .dp-links{display:flex;flex:1;justify-content:center}
+.duly-page .dp-links a{font-size:14.5px;font-weight:500;color:#50617a;padding:9px 15px;border-radius:999px;text-decoration:none}
+.duly-page .dp-links a:hover{color:#061b31;background:rgba(6,27,49,.05)}
+.duly-page .dp-cta{background:#533afd;color:#fff!important;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:500;text-decoration:none;white-space:nowrap;margin-left:auto}
+.duly-page .dp-cta:hover{background:#4330e0}
+@media(max-width:820px){.duly-page .dp-links{display:none}}
+.duly-page .dp-hero{background:radial-gradient(120% 140% at 0% 0%,#3d2bd6 0%,#1b2a8a 30%,#0a2540 65%);color:#fff;padding:150px 20px 72px}
+.duly-page .dp-hero-in{max-width:720px;margin:0 auto}
+.duly-page .dp-doc>h2:first-child{margin-top:0}
+.duly-page .dp-eyebrow{color:#9fe870;font-size:12.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 14px}
+.duly-page .dp-hero h1{font-size:clamp(40px,7vw,64px);font-weight:900;line-height:.95;letter-spacing:-.045em;text-transform:uppercase;margin:0;color:#fff}
+.duly-page .dp-hero p.dp-updated{color:rgba(255,255,255,.72);font-size:15px;margin:18px 0 0}
+.duly-page .dp-hero p.dp-updated a{color:#9fe870}
+.duly-page .dp-doc{max-width:760px;margin:0 auto;padding:56px 20px 80px}
+.duly-page .dp-doc h2{font-size:1.4rem;line-height:1.25;letter-spacing:-.01em;margin:1.9em 0 .45em;color:#061b31}
+.duly-page .dp-doc h3{font-size:1.06rem;margin:1.5em 0 .3em;color:#061b31}
+.duly-page .dp-doc p,.duly-page .dp-doc li{font-size:16px;color:#33435a}
+.duly-page .dp-doc ul{padding-left:1.2em}
+.duly-page .dp-doc .toc{background:#f8fafd;border:1px solid rgba(6,27,49,.08);border-radius:16px;padding:18px 22px;margin:0 0 8px}
+.duly-page .dp-doc .toc ul{margin:0;padding-left:1.1em}
+.duly-page .dp-foot{background:#f8fafd;padding:72px 20px 32px;border-top:1px solid rgba(6,27,49,.06)}
+.duly-page .dp-foot-in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px}
+.duly-page .dp-foot p{color:#50617a;font-size:15px;margin:14px 0 0;max-width:340px}
+.duly-page .dp-foot h4{font-size:12.5px;font-weight:600;color:#64748d;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 14px}
+.duly-page .dp-foot-col a{display:block;font-size:15px;line-height:22.5px;color:#061b31;text-decoration:none;margin:0 0 10px}
+.duly-page .dp-foot-col a:hover{color:#533afd}
+.duly-page .dp-foot-end{max-width:1120px;margin:48px auto 0;padding-top:24px;border-top:1px solid rgba(6,27,49,.08)}
+.duly-page .dp-foot-end p{max-width:none;font-size:13.5px;margin:0 0 6px}
+.duly-page .dp-foot-end .tiny{font-size:12px;color:#7a8aa3}
+@media(max-width:720px){.duly-page .dp-foot-in{grid-template-columns:1fr 1fr}.duly-page .dp-foot-brand{grid-column:1/-1}}
 </style>"""
 
+WP_NAV = f"""<div class="dp-shell"><div class="dp-nav">
+  <a class="dp-brand" href="{SITE}/duly/" aria-label="Duly home"><img src="{LOGO}" alt="">Duly</a>
+  <nav class="dp-links" aria-label="Main">
+    <a href="{SITE}/duly/#features">Features</a>
+    <a href="{SITE}/duly/#how">How it works</a>
+    <a href="{SITE}/duly/#templates">Templates</a>
+    <a href="{SITE}/duly/#get-paid">Get paid</a>
+    <a href="{SITE}/duly/#faq">FAQ</a>
+  </nav>
+  <a class="dp-cta" href="{APP}" target="_blank" rel="noopener noreferrer">Get the app</a>
+</div></div>"""
 
-def wordpress(name, content, lang="en"):
-    """One Custom HTML block per WordPress page: no site header or footer
-    (the theme has its own), styles scoped to .duly-page, site links absolute."""
-    content = content.replace('class="updated"', 'class="duly-updated"').replace('href="../', 'href="/')
-    snippet = f'{WP_STYLE}\n<div class="duly-page" lang="{lang}">\n{content}\n</div>\n'
+WP_FOOT = f"""<footer class="dp-foot">
+  <div class="dp-foot-in">
+    <div class="dp-foot-brand">
+      <a class="dp-brand" href="{SITE}/duly/"><img src="{LOGO}" alt="">Duly</a>
+      <p>Invoice maker and estimate app for tradespeople, freelancers and small businesses. For iPhone and iPad.</p>
+    </div>
+    <div class="dp-foot-col">
+      <h4>Product</h4>
+      <a href="{SITE}/duly/#features">Features</a>
+      <a href="{SITE}/duly/#how">How it works</a>
+      <a href="{SITE}/duly/#templates">Templates</a>
+      <a href="{SITE}/duly/#plans">What’s included</a>
+      <a href="{SITE}/duly/#faq">FAQ</a>
+    </div>
+    <div class="dp-foot-col">
+      <h4>Company</h4>
+      <a href="{SITE}/duly-privacy/">Privacy Policy</a>
+      <a href="{SITE}/duly-terms/">Terms of Use</a>
+      <a href="{SITE}/duly-support/">Support</a>
+      <a href="mailto:{EMAIL}">Contact</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standard EULA</a>
+    </div>
+  </div>
+  <div class="dp-foot-end">
+    <p>© 2026 Slice of Life Ltd. Duly is published by Slice of Life Ltd.</p>
+    <p class="tiny">Apple, iPhone, iPad, iCloud, AirDrop and App Store are trademarks of Apple Inc.</p>
+  </div>
+</footer>"""
+
+def wordpress(name, content, lang="en", eyebrow="Duly"):
+    """One Custom HTML block per WordPress page, with the /duly/ nav and footer
+    and the styles inside, so it is the only thing to paste."""
+    content = content.replace('href="../', f'href="{SITE}/')
+    m = re.match(r"\s*<h1>(.*?)</h1>\s*(<p class=\"updated\">(.*?)</p>)?", content, re.S)
+    title, updated = m.group(1), m.group(3)
+    body = content[m.end():]
+    upd = f'\n    <p class="dp-updated">{updated}</p>' if updated else ""
+    snippet = f"""{WP_STYLE}
+<div class="duly-page" lang="{lang}">
+{WP_NAV}
+<header class="dp-hero"><div class="dp-hero-in">
+    <p class="dp-eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>{upd}
+</div></header>
+<div class="dp-doc">
+{body.strip()}
+</div>
+{WP_FOOT}
+</div>
+"""
     out = ROOT / "wordpress" / f"{name}.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(snippet, encoding="utf-8")
@@ -91,11 +190,11 @@ def page(title, description, body, lang="en"):
   <div class="wrap">
     <a class="brand" href="../"><img src="../assets/icon-64.png" alt="">Duly</a>
     <nav class="site-nav" aria-label="Main">
-      <a href="../#how">How it works</a>
       <a href="../#features">Features</a>
-      <a href="../#plans">Plans</a>
-      <a href="../duly-help/">Help</a>
-      <a href="../duly-support/">Support</a>
+      <a href="../#how">How it works</a>
+      <a href="../#templates">Templates</a>
+      <a href="../#get-paid">Get paid</a>
+      <a href="../#faq">FAQ</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="https://apps.apple.com/app/id6824285908">Get the app</a>
   </div>
@@ -292,12 +391,12 @@ def main():
     out = ROOT / "duly-help" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page("Help guide", "How to use Duly: invoices, estimates, receipts, payments, iCloud and Premium.", HELP), encoding="utf-8")
-    wordpress("duly-help", HELP)
+
     print("wrote", out.relative_to(ROOT))
     out = ROOT / "duly-support" / "index.html"
     out.parent.mkdir(exist_ok=True)
     out.write_text(page("Support", "Help with Duly: Invoice Maker & Estimate.", SUPPORT), encoding="utf-8")
-    wordpress("duly-support", SUPPORT)
+
     print("wrote", out.relative_to(ROOT))
 
 
