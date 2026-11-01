@@ -11,7 +11,31 @@ struct RemindersRow: View {
     @AppStorage(Reminders.enabledKey) private var remindersOn = false
     @State private var denied = false
 
+    @State private var next: (date: Date, title: String)?
+    @State private var testSent = false
+
     var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            toggle
+            if remindersOn { status }
+        }
+        .padding(.horizontal, 14).padding(.vertical, 10)
+        .task(id: remindersOn) {
+            // Rescheduling runs in the background; give it a moment, then read what iOS has queued.
+            try? await Task.sleep(for: .seconds(1))
+            next = await Reminders.nextPaymentReminder()
+        }
+        .alert("Notifications are off for Duly", isPresented: $denied) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) }
+            }
+            Button("Not now", role: .cancel) {}
+        } message: {
+            Text("Turn them on in iPhone Settings > Notifications > Duly, then try again.")
+        }
+    }
+
+    private var toggle: some View {
         Toggle(isOn: Binding(get: { remindersOn }, set: { change($0) })) {
             HStack(spacing: 12) {
                 IconChip(systemName: "bell.fill", tint: .warn)
@@ -22,16 +46,34 @@ struct RemindersRow: View {
                 }
             }
         }
-        .padding(.horizontal, 14).padding(.vertical, 10)
         .accessibilityIdentifier("paymentReminders")
-        .alert("Notifications are off for Duly", isPresented: $denied) {
-            Button("Open Settings") {
-                if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) }
+    }
+
+    /// When the next reminder fires, and a way to see one now.
+    private var status: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Group {
+                if let next {
+                    Text("Next reminder: \(next.title) · \(next.date.formatted(date: .abbreviated, time: .shortened))")
+                } else {
+                    Text("No reminders scheduled yet. They're set for sent, unpaid invoices that have a due date.")
+                }
             }
-            Button("Not now", role: .cancel) {}
-        } message: {
-            Text("Turn them on in iPhone Settings > Notifications > Duly, then try again.")
+            .font(.footnote).foregroundStyle(Color.ink2)
+            .accessibilityIdentifier("nextReminder")
+            Button(testSent ? "Test reminder sent. It arrives in about 5 seconds." : "Send a test reminder") {
+                Task {
+                    await Reminders.sendTest(
+                        title: String(localized: "Test reminder from Duly"),
+                        body: String(localized: "Payment reminders look like this. They arrive at 9:00."))
+                    testSent = true
+                }
+            }
+            .font(.footnote.weight(.semibold))
+            .disabled(testSent)
+            .accessibilityIdentifier("testReminder")
         }
+        .padding(.leading, 44)
     }
 
     private func change(_ on: Bool) {

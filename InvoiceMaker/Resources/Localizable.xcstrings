@@ -7565,6 +7565,34 @@
         }
       }
     },
+    "Next reminder: %@ · %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nächste Erinnerung: %1$@ · %2$@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo recordatorio: %1$@ · %2$@"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Próximo recordatorio: %1$@ · %2$@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Prochain rappel : %1$@ · %2$@"
+          }
+        }
+      }
+    },
     "No \"Preview\" mark on your PDFs" : {
       "localizations" : {
         "de" : {
@@ -7785,6 +7813,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aucun reçu pour l'instant"
+          }
+        }
+      }
+    },
+    "No reminders scheduled yet. They're set for sent, unpaid invoices that have a due date." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noch keine Erinnerungen geplant. Sie werden für gesendete, offene Rechnungen mit Fälligkeitsdatum angelegt."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay recordatorios. Se programan para facturas enviadas, sin pagar y con fecha de vencimiento."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aún no hay recordatorios. Se programan para facturas enviadas, sin pagar y con fecha de vencimiento."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucun rappel prévu pour l'instant. Ils sont programmés pour les factures envoyées, non payées et avec une échéance."
           }
         }
       }
@@ -9159,6 +9215,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rappels de paiement"
+          }
+        }
+      }
+    },
+    "Payment reminders look like this. They arrive at 9:00." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "So sehen Zahlungserinnerungen aus. Sie kommen um 9:00 Uhr."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Así se ven los recordatorios de pago. Llegan a las 9:00."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Así se ven los recordatorios de pago. Llegan a las 9:00."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les rappels de paiement ressemblent à ceci. Ils arrivent à 9 h."
           }
         }
       }
@@ -11280,6 +11364,34 @@
         }
       }
     },
+    "Send a test reminder" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test-Erinnerung senden"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar un recordatorio de prueba"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enviar un recordatorio de prueba"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Envoyer un rappel test"
+          }
+        }
+      }
+    },
     "Send again" : {
       "localizations" : {
         "de" : {
@@ -13040,6 +13152,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Conditions d'utilisation"
+          }
+        }
+      }
+    },
+    "Test reminder from Duly" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test-Erinnerung von Duly"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorio de prueba de Duly"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorio de prueba de Duly"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rappel test de Duly"
+          }
+        }
+      }
+    },
+    "Test reminder sent. It arrives in about 5 seconds." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Test-Erinnerung gesendet. Sie kommt in etwa 5 Sekunden."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorio de prueba enviado. Llega en unos 5 segundos."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Recordatorio de prueba enviado. Llega en unos 5 segundos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rappel test envoyé. Il arrive dans 5 secondes environ."
           }
         }
       }
