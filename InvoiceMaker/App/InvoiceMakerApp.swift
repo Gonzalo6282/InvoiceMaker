@@ -7,6 +7,7 @@ struct InvoiceMakerApp: App {
     private let store: Result<ModelContainer, Error>
 
     init() {
+        SliceTheme.appDefault = .duly
         CloudImportWatcher.shared.start()
         UNUserNotificationCenter.current().delegate = NotificationPresenter.shared
         store = ModelContainerFactory.forApp()
