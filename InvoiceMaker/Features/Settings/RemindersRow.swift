@@ -49,7 +49,7 @@ struct RemindersRow: View {
         .accessibilityIdentifier("paymentReminders")
     }
 
-    /// When the next reminder fires, and a way to see one now.
+    /// When the next reminder fires (and, in debug builds, a way to see one now).
     private var status: some View {
         VStack(alignment: .leading, spacing: 6) {
             Group {
@@ -61,6 +61,8 @@ struct RemindersRow: View {
             }
             .font(.footnote).foregroundStyle(Color.ink2)
             .accessibilityIdentifier("nextReminder")
+            #if DEBUG
+            // Developer check only (Xcode builds); not in App Store builds.
             Button(testSent ? "Test reminder sent. It arrives in about 5 seconds." : "Send a test reminder") {
                 Task {
                     await Reminders.sendTest(
@@ -72,6 +74,7 @@ struct RemindersRow: View {
             .font(.footnote.weight(.semibold))
             .disabled(testSent)
             .accessibilityIdentifier("testReminder")
+            #endif
         }
         .padding(.leading, 44)
     }
