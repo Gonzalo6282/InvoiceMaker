@@ -14,7 +14,6 @@ enum SettingsPage: Hashable {
 struct SettingsView: View {
     let business: Business
     @State private var purchases = PurchaseManager.shared
-    @State private var account = AccountService.shared
     private var isPremium: Bool { purchases.isPremium }
 
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
@@ -55,7 +54,7 @@ struct SettingsView: View {
                 onShared: { method in AppAnalytics.shared.log(.shareAppCompleted, ["method": method]) }),
             legalFooter: "Tax rates are set by you. This app doesn't give tax advice.",
             header: AnyView(planCard.padding(.horizontal, 16).padding(.top, 4)),
-            account: AnyView(AccountRows(account: account)),
+            account: AnyView(DulyAccount.rows),
             debug: debugSection
         ) {
             GroupedSection(header: "Your business") {

@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1A0000000000000000000082 /* InvoiceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0000000000000000000081 /* InvoiceKit */; };
-		1A00000000000000000000A4 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1A0000000000000000000094 /* FirebaseAuth */; };
 		1A00000000000000000000B8 /* SlicePurchases in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B7 /* SlicePurchases */; };
 		1A00000000000000000000BA /* SliceAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B9 /* SliceAnalytics */; };
+		1A00000000000000000000BC /* SliceAccount in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000BB /* SliceAccount */; };
 		1A00000000000000000000B3 /* SliceQR in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B1 /* SliceQR */; };
 		1A00000000000000000000B4 /* SliceRating in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B2 /* SliceRating */; };
 		1A00000000000000000000B6 /* SliceUI in Frameworks */ = {isa = PBXBuildFile; productRef = 1A00000000000000000000B5 /* SliceUI */; };
@@ -78,12 +78,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0000000000000000000082 /* InvoiceKit in Frameworks */,
-				1A00000000000000000000A4 /* FirebaseAuth in Frameworks */,
 				1A00000000000000000000B3 /* SliceQR in Frameworks */,
 				1A00000000000000000000B4 /* SliceRating in Frameworks */,
 				1A00000000000000000000B6 /* SliceUI in Frameworks */,
 				1A00000000000000000000B8 /* SlicePurchases in Frameworks */,
 				1A00000000000000000000BA /* SliceAnalytics in Frameworks */,
+				1A00000000000000000000BC /* SliceAccount in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,12 +156,12 @@
 			name = InvoiceMaker;
 			packageProductDependencies = (
 				1A0000000000000000000081 /* InvoiceKit */,
-				1A0000000000000000000094 /* FirebaseAuth */,
 				1A00000000000000000000B1 /* SliceQR */,
 				1A00000000000000000000B2 /* SliceRating */,
 				1A00000000000000000000B5 /* SliceUI */,
 				1A00000000000000000000B7 /* SlicePurchases */,
 				1A00000000000000000000B9 /* SliceAnalytics */,
+				1A00000000000000000000BB /* SliceAccount */,
 			);
 			productName = InvoiceMaker;
 			productReference = 1A0000000000000000000010 /* InvoiceMaker.app */;
@@ -696,8 +696,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Gonzalo6282/SliceLibrary";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 0.6.0;
+				branch = "slice-account";
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -706,11 +706,6 @@
 		1A0000000000000000000081 /* InvoiceKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = InvoiceKit;
-		};
-		1A0000000000000000000094 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1A0000000000000000000090 /* XCRemoteSwiftPackageReference */;
-			productName = FirebaseAuth;
 		};
 		1A00000000000000000000B1 /* SliceQR */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -736,6 +731,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1A00000000000000000000B0 /* XCRemoteSwiftPackageReference "SliceLibrary" */;
 			productName = SliceAnalytics;
+		};
+		1A00000000000000000000BB /* SliceAccount */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1A00000000000000000000B0 /* XCRemoteSwiftPackageReference "SliceLibrary" */;
+			productName = SliceAccount;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

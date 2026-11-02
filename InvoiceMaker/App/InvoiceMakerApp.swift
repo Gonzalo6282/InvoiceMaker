@@ -14,7 +14,7 @@ struct InvoiceMakerApp: App {
         // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
         DulyAnalytics.configure()
         DulyPurchases.configure()
-        AccountService.shared.start()
+        DulyAccount.start()
     }
 
     var body: some Scene {
