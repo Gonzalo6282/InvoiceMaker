@@ -7,14 +7,14 @@ struct InvoiceMakerApp: App {
     private let store: Result<ModelContainer, Error>
 
     init() {
+        SliceTheme.appDefault = .duly
         CloudImportWatcher.shared.start()
         UNUserNotificationCenter.current().delegate = NotificationPresenter.shared
         store = ModelContainerFactory.forApp()
         // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
-        AppAnalytics.shared.configure()
-        PurchaseManager.shared.configure()
-        PaywallService.shared.configure()
-        AccountService.shared.start()
+        DulyAnalytics.configure()
+        DulyPurchases.configure()
+        DulyAccount.start()
     }
 
     var body: some Scene {

@@ -3,125 +3,95 @@ import SwiftData
 import SwiftUI
 
 enum SettingsPage: Hashable {
-    case business, taxes, payment, look, signature, numbering, currency, backup, subscription, help, report, terms, privacy
+    case business, taxes, payment, look, signature, numbering, currency, backup
     #if DEBUG
         case designSystem
     #endif
 }
 
-/// Settings root (mockup scrSettings). Account rows arrive with Sign in with Apple (M6).
+/// Settings root (mockup scrSettings): Duly's own sections inside SliceUI's
+/// StandardSettings (Account, Help, Privacy and legal, version line).
 struct SettingsView: View {
     let business: Business
     @State private var purchases = PurchaseManager.shared
-    @State private var account = AccountService.shared
     private var isPremium: Bool { purchases.isPremium }
 
     @Query(sort: \TaxRateRecord.sortIndex) private var taxRecords: [TaxRateRecord]
     @AppStorage(AppPreferences.analyticsKey) private var analyticsOn = false
-    @State private var askingAnalytics = false
-    @State private var sharingApp = false
-    @Environment(\.openURL) private var openURL
-
-    /// Turning analytics on asks first; turning it off doesn't.
-    private var analyticsToggle: Binding<Bool> {
-        Binding(get: { analyticsOn }, set: { on in if on { askingAnalytics = true } else { analyticsOn = false } })
-    }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                planCard.padding(.horizontal, 16).padding(.top, 4)
-                GroupedSection(header: "Your business") {
-                    link(.business, icon: "building.2.fill", title: "Business profile", meta: business.name.isEmpty ? String(localized: "Add your details") : business.name)
-                    RowDivider()
-                    link(.taxes, icon: "percent", tint: .warn, title: "Taxes", meta: activeTaxes.map(\.label).joined(separator: ", "))
-                    RowDivider()
-                    link(.payment, icon: "qrcode", tint: .neutral, title: "Payment details", meta: business.payment?.summary ?? "")
-                    RowDivider()
-                    link(.look, icon: "paintpalette.fill", tint: .due, title: "Invoice look", meta: String(localized: "\(InvoiceTemplate(id: business.templateID).displayName) template"))
-                    RowDivider()
-                    link(.signature, icon: "signature", tint: .paid, title: "My signature", value: business.signatureData == nil ? String(localized: "None") : String(localized: "Added"))
-                    RowDivider()
-                    link(.numbering, icon: "number", tint: .neutral, title: "Numbers and defaults",
-                         meta: String(localized: "Next \(business.numbering.peek(.invoice)) · due in \(business.dueDays) days"))
-                    RowDivider()
-                    link(.currency, icon: "dollarsign.circle.fill", title: "Currency display", value: business.currencyDisplay.title)
-                }
-                GroupedSection(header: "Reminders") {
-                    RemindersRow(business: business)
-                }
-                GroupedSection(header: "Your data") {
-                    link(.backup, icon: "icloud.fill", title: "iCloud backup", value: CloudStatus.isAvailable ? String(localized: "On") : String(localized: "Off"))
-                    RowDivider()
-                    ExportRow(business: business)
-                }
-                GroupedSection(header: "Account") {
-                    AccountRows(account: account)
-                    RowDivider()
-                    link(.subscription, icon: "lock.fill", tint: .neutral, title: "Subscription", value: isPremium ? String(localized: "Premium") : String(localized: "Free"))
-                }
-                GroupedSection(header: "Help") {
-                    link(.help, icon: "questionmark.circle.fill", title: "Help and support", meta: String(localized: "Replies within 24 hours"))
-                    RowDivider()
-                    link(.report, icon: "envelope.fill", tint: .paid, title: "Report a problem")
-                    RowDivider()
-                    Button { openURL(AppLinks.writeReview) } label: {
-                        Row(icon: "star.fill", iconTint: .warn, title: "Rate Duly", meta: String(localized: "Leave a review on the App Store"))
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityIdentifier("rateApp")
-                    RowDivider()
-                    Button {
-                        AppAnalytics.shared.log(.shareAppTapped)
-                        sharingApp = true
-                    } label: {
-                        Row(icon: "square.and.arrow.up", iconTint: .brand, title: "Share Duly", meta: String(localized: "Tell a friend about the app"))
-                    }
-                    .buttonStyle(.plain)
-                    .accessibilityIdentifier("shareApp")
-                }
-                GroupedSection(header: "Privacy and legal", footer: "Tax rates are set by you. This app doesn't give tax advice.") {
-                    Toggle(isOn: analyticsToggle) {
-                        HStack(spacing: 12) {
-                            IconChip(systemName: "chart.bar.fill", tint: .neutral)
-                            VStack(alignment: .leading, spacing: 2) {
-                                Text("Anonymous analytics").font(.callout).foregroundStyle(Color.ink)
-                                Text("Helps us fix what's slow or confusing").font(.footnote).foregroundStyle(Color.ink2)
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 14).padding(.vertical, 10)
-                    RowDivider()
-                    link(.privacy, icon: "hand.raised.fill", tint: .neutral, title: "Privacy Policy")
-                    RowDivider()
-                    link(.terms, icon: "doc.text.fill", tint: .neutral, title: "Terms of Use")
-                }
-                #if DEBUG
-                    GroupedSection(header: "Debug") { link(.designSystem, icon: "swatchpalette", title: "Design system") }
-                #endif
-                Text("Duly \(AppInfo.version) (\(AppInfo.build)) · Slice of Life Ltd")
-                    .font(.caption).foregroundStyle(Color.ink3)
-                    .frame(maxWidth: .infinity).padding(.top, 22)
+        StandardSettings(
+            app: .duly,
+            purchases: SettingsPurchases(
+                isPremium: { PurchaseManager.shared.isPremium },
+                restore: { await PurchaseManager.shared.restore() },
+                upgrade: { PaywallService.shared.gate(.settingsUpgrade) {} },
+                premiumText: "Sending, printing and PDFs are unlocked.",
+                plansText: "Free: create, edit and preview unlimited invoices, estimates and receipts, back them up and export them. Premium: send, print and save PDFs.",
+                cardBackground: .navy,
+                diagnostics: { await PurchaseManager.shared.diagnostics() }),
+            analytics: SettingsAnalytics(
+                isOn: { analyticsOn },
+                setOn: { analyticsOn = $0 },
+                askFirst: .init(
+                    title: AnalyticsConsentText.title, message: AnalyticsConsentText.message,
+                    allow: AnalyticsConsentText.allow, deny: AnalyticsConsentText.deny)),
+            help: SettingsHelp(
+                faqs: [
+                    .init("Is Duly free?", "Creating, editing and previewing is free with no limits. Sending, printing and saving PDFs needs Premium."),
+                    .init("How do I cancel?", "Payments are handled by Apple. Open Settings, tap your name, then Subscriptions. Deleting the app does not cancel the subscription."),
+                    .init("Where are my invoices stored?", "On your device and in your own iCloud. We never upload them to our servers."),
+                    .init("How do clients pay me?", "Add your bank details or payment links in Payment details. They appear on every invoice with a QR code."),
+                ],
+                reportTopics: [
+                    String(localized: "Sending or PDFs"), String(localized: "Subscription or billing"),
+                    String(localized: "Backup and sync"), String(localized: "Something else"),
+                ],
+                reportFooter: "We reply within 24 hours. Your invoices are not attached."),
+            share: SettingsShare(
+                message: ShareDuly.message,
+                onTap: { AppAnalytics.shared.log(.shareAppTapped) },
+                onShared: { method in AppAnalytics.shared.log(.shareAppCompleted, ["method": method]) }),
+            legalFooter: "Tax rates are set by you. This app doesn't give tax advice.",
+            header: AnyView(planCard.padding(.horizontal, 16).padding(.top, 4)),
+            account: AnyView(DulyAccount.rows),
+            debug: debugSection
+        ) {
+            GroupedSection(header: "Your business") {
+                link(.business, icon: "building.2.fill", title: "Business profile", meta: business.name.isEmpty ? String(localized: "Add your details") : business.name)
+                RowDivider()
+                link(.taxes, icon: "percent", tint: .warn, title: "Taxes", meta: activeTaxes.map(\.label).joined(separator: ", "))
+                RowDivider()
+                link(.payment, icon: "qrcode", tint: .neutral, title: "Payment details", meta: business.payment?.summary ?? "")
+                RowDivider()
+                link(.look, icon: "paintpalette.fill", tint: .due, title: "Invoice look", meta: String(localized: "\(InvoiceTemplate(id: business.templateID).displayName) template"))
+                RowDivider()
+                link(.signature, icon: "signature", tint: .paid, title: "My signature", value: business.signatureData == nil ? String(localized: "None") : String(localized: "Added"))
+                RowDivider()
+                link(.numbering, icon: "number", tint: .neutral, title: "Numbers and defaults",
+                     meta: String(localized: "Next \(business.numbering.peek(.invoice)) · due in \(business.dueDays) days"))
+                RowDivider()
+                link(.currency, icon: "dollarsign.circle.fill", title: "Currency display", value: business.currencyDisplay.title)
             }
-            .padding(.bottom, 24)
+            GroupedSection(header: "Reminders") {
+                RemindersRow(business: business)
+            }
+            GroupedSection(header: "Your data") {
+                link(.backup, icon: "icloud.fill", title: "iCloud backup", value: CloudStatus.isAvailable ? String(localized: "On") : String(localized: "Off"))
+                RowDivider()
+                ExportRow(business: business)
+            }
         }
-        .background(Color.canvas)
-        .navigationTitle("Settings")
         .navigationDestination(for: SettingsPage.self) { page in destination(page) }
-        .sheet(isPresented: $sharingApp) {
-            // The share sheet reports whether a share actually went out.
-            ShareSheet(items: [ShareDuly.message]) { completed, activity in
-                if completed { AppAnalytics.shared.log(.shareAppCompleted, ["method": activity?.rawValue ?? "unknown"]) }
-            }
-            .ignoresSafeArea()
-        }
         .onChange(of: analyticsOn) { AppAnalytics.shared.setConsent(analyticsOn) }
-        .alert(AnalyticsConsentText.title, isPresented: $askingAnalytics) {
-            Button(AnalyticsConsentText.allow) { analyticsOn = true }
-            Button(AnalyticsConsentText.deny, role: .cancel) {}
-        } message: {
-            Text(AnalyticsConsentText.message)
-        }
+    }
+
+    private var debugSection: AnyView? {
+        #if DEBUG
+            AnyView(GroupedSection(header: "Debug") { link(.designSystem, icon: "swatchpalette", title: "Design system") })
+        #else
+            nil
+        #endif
     }
 
     private var activeTaxes: [TaxRate] { taxRecords.filter { !$0.isArchived }.map(\.taxRate) }
@@ -168,11 +138,6 @@ struct SettingsView: View {
         case .numbering: NumberingView(business: business)
         case .currency: CurrencyDisplayView(business: business)
         case .backup: BackupView()
-        case .subscription: SubscriptionView()
-        case .help: HelpView()
-        case .report: ReportProblemView(business: business)
-        case .terms: LegalView(document: .terms)
-        case .privacy: LegalView(document: .privacy)
         #if DEBUG
             case .designSystem: DesignGalleryView()
         #endif
@@ -216,6 +181,12 @@ enum AppLinks {
     static let appStore = URL(string: "https://apps.apple.com/app/id6824285908")!  // swiftlint:disable:this force_unwrapping
     static let writeReview = URL(string: "https://apps.apple.com/app/id6824285908?action=write-review")!  // swiftlint:disable:this force_unwrapping
     static let supportEmail = "slice.of.life.ltd@gmail.com"
+}
+
+extension AppIdentity {
+    static let duly = AppIdentity(
+        name: "Duly", company: "Slice of Life Ltd", appStoreID: "6824285908", supportEmail: AppLinks.supportEmail,
+        privacyURL: AppLinks.privacy, termsURL: AppLinks.terms, version: AppInfo.version, build: AppInfo.build)
 }
 
 enum AppInfo {

@@ -21,27 +21,11 @@ struct OnboardingView: View {
     enum Step: Int { case welcome = 1, role, business, first }
 
     var body: some View {
-        VStack(spacing: 0) {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 16) {
-                    if step != .welcome { dots }
-                    content
-                }
-                .padding(24)
-            }
+        OnboardingShell(step: step.rawValue, of: 4, showsProgress: step != .welcome) {
+            content
+        } footer: {
             footer
         }
-        .background(Color.canvas)
-        .animation(.easeInOut(duration: 0.2), value: step)
-    }
-
-    private var dots: some View {
-        HStack(spacing: 6) {
-            ForEach(1...4, id: \.self) { i in
-                Capsule().fill(i == step.rawValue ? Color.brand : Color.line).frame(width: i == step.rawValue ? 18 : 6, height: 6)
-            }
-        }
-        .accessibilityHidden(true)
     }
 
     @ViewBuilder private var content: some View {
@@ -59,22 +43,8 @@ struct OnboardingView: View {
             title("What do you do?")
             lead("We'll pick a template and sample items to start you off.")
             ForEach(OnboardingRole.allCases) { r in
-                Button { role = r } label: {
-                    HStack(spacing: 14) {
-                        IconChip(systemName: r.icon, size: 44)
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(r.title).font(.body.weight(.semibold)).foregroundStyle(Color.ink)
-                            Text(r.detail).font(.subheadline).foregroundStyle(Color.ink2)
-                        }
-                        Spacer()
-                    }
-                    .padding(14)
-                    .background(Color.surface, in: RoundedRectangle(cornerRadius: 16))
-                    .overlay(RoundedRectangle(cornerRadius: 16).strokeBorder(role == r ? Color.brand : Color.line, lineWidth: role == r ? 2 : 1))
-                }
-                .buttonStyle(.plain)
-                .accessibilityIdentifier("role-\(r.rawValue)")
-                .accessibilityAddTraits(role == r ? .isSelected : [])
+                OnboardingChoice(icon: r.icon, title: Text(r.title), detail: Text(r.detail), isSelected: role == r) { role = r }
+                    .accessibilityIdentifier("role-\(r.rawValue)")
             }
         case .business:
             title("Your business")
@@ -121,9 +91,8 @@ struct OnboardingView: View {
         }
     }
 
-    private var footer: some View {
-        VStack(spacing: 8) {
-            switch step {
+    @ViewBuilder private var footer: some View {
+        switch step {
             case .welcome:
                 Button("Get started") { go(.role) }.buttonStyle(.primary).accessibilityIdentifier("onboardingNext")
             case .role:
@@ -132,12 +101,9 @@ struct OnboardingView: View {
             case .business:
                 Button("Continue") { makeBusinessAndDraft() }.buttonStyle(.primary).accessibilityIdentifier("onboardingNext")
                 Button("Skip for now") { name = ""; makeBusinessAndDraft() }.foregroundStyle(Color.brand)
-            case .first:
-                Button("Looks good") { complete() }.buttonStyle(.primary).accessibilityIdentifier("onboardingDone")
-            }
+        case .first:
+            Button("Looks good") { complete() }.buttonStyle(.primary).accessibilityIdentifier("onboardingDone")
         }
-        .padding(.horizontal, 24).padding(.top, 10).padding(.bottom, 12)
-        .background(.bar)
     }
 
     private func go(_ next: Step) {
@@ -197,23 +163,12 @@ struct OnboardingView: View {
         PaywallService.shared.gate(.onboardingEnd, onFinished: { ConsentPrompt.shared.askIfNeeded() }) {}
     }
 
-    private func title(_ text: LocalizedStringKey) -> some View {
-        Text(text).textStyle(.largeTitle).foregroundStyle(Color.ink).fixedSize(horizontal: false, vertical: true)
-    }
+    private func title(_ text: LocalizedStringKey) -> some View { OnboardingTitle(text) }
 
-    private func lead(_ text: LocalizedStringKey) -> some View {
-        Text(text).font(.body).foregroundStyle(Color.ink2).fixedSize(horizontal: false, vertical: true)
-    }
+    private func lead(_ text: LocalizedStringKey) -> some View { OnboardingLead(text) }
 
     private func field<F: View>(_ label: LocalizedStringKey, @ViewBuilder content: () -> F) -> some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(label).font(.footnote.weight(.medium)).foregroundStyle(Color.ink2)
-            content()
-                .padding(12)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(Color.surface, in: RoundedRectangle(cornerRadius: 12))
-                .overlay(RoundedRectangle(cornerRadius: 12).strokeBorder(Color.line))
-        }
+        OnboardingField(label, field: content)
     }
 }
 

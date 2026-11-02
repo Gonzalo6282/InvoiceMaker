@@ -3,7 +3,7 @@ import Foundation
 /// Every Firebase event, named as in the Build Doc (snake_case).
 /// RevenueCat sends trial_start / purchase / trial_converted / cancel / refund
 /// through its Firebase integration, so they aren't logged here.
-nonisolated enum AnalyticsEvent: String, CaseIterable, Sendable {
+nonisolated enum AnalyticsEvent: String, CaseIterable, AnalyticsEventType {
     case onboardingStep = "onboarding_step"
     case onboardingComplete = "onboarding_complete"
     case invoiceCreated = "invoice_created"
