@@ -12,7 +12,7 @@ struct InvoiceMakerApp: App {
         UNUserNotificationCenter.current().delegate = NotificationPresenter.shared
         store = ModelContainerFactory.forApp()
         // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
-        AppAnalytics.shared.configure()
+        DulyAnalytics.configure()
         DulyPurchases.configure()
         AccountService.shared.start()
     }
