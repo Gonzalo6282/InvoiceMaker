@@ -13,8 +13,7 @@ struct InvoiceMakerApp: App {
         store = ModelContainerFactory.forApp()
         // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
         AppAnalytics.shared.configure()
-        PurchaseManager.shared.configure()
-        PaywallService.shared.configure()
+        DulyPurchases.configure()
         AccountService.shared.start()
     }
 
