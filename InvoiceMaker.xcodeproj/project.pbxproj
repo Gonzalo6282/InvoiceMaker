@@ -696,8 +696,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Gonzalo6282/SliceLibrary";
 			requirement = {
-				branch = "slice-analytics";
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.5.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
