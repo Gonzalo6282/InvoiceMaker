@@ -42,7 +42,7 @@ struct RootView: View {
             if synced, phase == .onboarding, !OnboardingState.createdData { phase = .app }
         }
         .sheet(item: $paywalls.nativePaywall) { request in
-            NativePaywallView(placement: request.placement as? PaywallPlacement ?? .settingsUpgrade, onUnlock: request.onUnlock)
+            PaywallTemplate(request: request, content: .duly(request.placement as? PaywallPlacement ?? .settingsUpgrade))
                 .onDisappear { request.onClose() }
         }
         .alert(AnalyticsConsentText.title, isPresented: $consent.isShowing) {
