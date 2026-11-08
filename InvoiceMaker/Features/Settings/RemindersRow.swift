@@ -12,6 +12,7 @@ struct RemindersRow: View {
     @State private var denied = false
 
     @State private var next: (date: Date, title: String)?
+    @State private var notificationsOff = false
     @State private var testSent = false
 
     var body: some View {
@@ -20,10 +21,10 @@ struct RemindersRow: View {
             if remindersOn { status }
         }
         .padding(.horizontal, 14).padding(.vertical, 10)
-        .task(id: remindersOn) {
-            // Rescheduling runs in the background; give it a moment, then read what iOS has queued.
-            try? await Task.sleep(for: .seconds(1))
-            next = await Reminders.nextPaymentReminder()
+        .task(id: remindersOn) { await refresh() }
+        // Back from iPhone Settings (notifications may have been turned on or off).
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+            Task { await refresh() }
         }
         .alert("Notifications are off for Duly", isPresented: $denied) {
             Button("Open Settings") {
@@ -53,22 +54,35 @@ struct RemindersRow: View {
     private var status: some View {
         VStack(alignment: .leading, spacing: 6) {
             Group {
-                if let next {
+                if notificationsOff {
+                    Text("Notifications are off for Duly in iPhone Settings, so reminders can't arrive.")
+                        .foregroundStyle(Color.due)
+                } else if let next {
                     Text("Next reminder: \(next.title) · \(next.date.formatted(date: .abbreviated, time: .shortened))")
                 } else {
                     Text("No reminders scheduled yet. They're set for sent, unpaid invoices that have a due date.")
                 }
             }
-            .font(.footnote).foregroundStyle(Color.ink2)
+            .font(.footnote).foregroundStyle(notificationsOff ? Color.due : Color.ink2)
             .accessibilityIdentifier("nextReminder")
+            if notificationsOff {
+                Button("Open Settings") {
+                    if let url = URL(string: UIApplication.openNotificationSettingsURLString) { openURL(url) }
+                }
+                .font(.footnote.weight(.semibold))
+                .accessibilityIdentifier("openNotificationSettings")
+            }
             #if DEBUG
             // Developer check only (Xcode builds); not in App Store builds.
             Button(testSent ? "Test reminder sent. It arrives in about 5 seconds." : "Send a test reminder") {
                 Task {
-                    await Reminders.sendTest(
+                    let sent = await Reminders.sendTest(
                         title: String(localized: "Test reminder from Duly"),
                         body: String(localized: "Payment reminders look like this. They arrive at 9:00."))
-                    testSent = true
+                    if sent { testSent = true } else { denied = true }
+                    await refresh()
+                    try? await Task.sleep(for: .seconds(8))
+                    testSent = false  // can send another
                 }
             }
             .font(.footnote.weight(.semibold))
@@ -77,6 +91,14 @@ struct RemindersRow: View {
             #endif
         }
         .padding(.leading, 44)
+    }
+
+    /// What iOS has queued, and whether notifications are allowed at all.
+    private func refresh() async {
+        // Rescheduling runs in the background; give it a moment, then read what iOS has queued.
+        try? await Task.sleep(for: .seconds(1))
+        notificationsOff = remindersOn && !(await Reminders.canNotify())
+        next = await Reminders.nextPaymentReminder()
     }
 
     private func change(_ on: Bool) {

@@ -1,6 +1,7 @@
 import Foundation
 import InvoiceKit
 import SwiftData
+import UIKit
 import UserNotifications
 
 /// Local notifications on the user's own phone (v1.1):
@@ -9,12 +10,17 @@ import UserNotifications
 /// - "ready to send" when a recurring invoice's next copy is due.
 /// Permission is asked only when the user turns one of these on.
 /// Everything is rebuilt from the data whenever the app opens or closes, so
-/// a paid, deleted or edited invoice never leaves a stale reminder.
+/// a paid, deleted or edited invoice never leaves a stale reminder. Rebuilding
+/// replaces reminders in place and removes only stale ones, so there is never
+/// a moment with nothing scheduled (iOS can suspend the app mid-way when it
+/// goes to the background).
 @MainActor
 enum Reminders {
     static let enabledKey = "paymentRemindersOn"
     /// Our notifications only (Superwall schedules its own trial reminder).
     nonisolated static let idPrefix = "duly."
+    /// The Settings test reminder: outside `idPrefix`, so rescheduling never removes it.
+    nonisolated static let testID = "duly-test"
     /// iOS keeps 64 pending notifications per app; leave room for Superwall's.
     static let limit = 50
     static let hour = 9
@@ -76,30 +82,58 @@ enum Reminders {
         }
     }
 
-    /// Replaces our pending notifications with the current plan.
+    /// The previous rebuild; each one waits for it, so two never interleave.
+    private static var lastRebuild: Task<Void, Never>?
+
+    /// Brings our pending notifications in line with the current plan.
     static func reschedule(context: ModelContext, business: Business) {
         let documents = (try? context.fetch(FetchDescriptor<Document>())) ?? []
         let taxes = (try? BusinessSetup.taxes(in: context, includingArchived: true)) ?? []
         let planned = plan(documents: documents, business: business, taxes: taxes, paymentReminders: isOn)
-        Task { await apply(planned) }
+        // Closing the app: ask iOS for time to finish before it suspends us.
+        let time = BackgroundTime(name: "Duly reminders")
+        let previous = lastRebuild
+        lastRebuild = Task {
+            await previous?.value
+            await apply(planned)
+            time.end()
+        }
     }
 
-    /// Off the main actor's data: only plain values come in.
+    /// Notifications can show (allowed, or quietly allowed).
+    nonisolated static func canNotify() async -> Bool {
+        switch await UNUserNotificationCenter.current().notificationSettings().authorizationStatus {
+        case .authorized, .provisional, .ephemeral: true
+        default: false
+        }
+    }
+
+    /// Pending reminders that are no longer in the plan (paid, deleted, edited, switched off).
+    nonisolated static func staleIDs(pending: [String], planned: [Planned]) -> [String] {
+        let wanted = Set(planned.map(\.id))
+        return pending.filter { $0.hasPrefix(idPrefix) && !wanted.contains($0) }
+    }
+
+    /// Off the main actor's data: only plain values come in. Adds (or replaces,
+    /// same identifier) everything planned first, then removes what's stale.
     nonisolated private static func apply(_ planned: [Planned]) async {
         let center = UNUserNotificationCenter.current()
-        let pending = await center.pendingNotificationRequests().map(\.identifier).filter { $0.hasPrefix(idPrefix) }
-        center.removePendingNotificationRequests(withIdentifiers: pending)
-        guard await center.notificationSettings().authorizationStatus == .authorized else { return }
-        for item in planned {
-            let content = UNMutableNotificationContent()
-            content.title = item.title
-            content.body = item.body
-            content.sound = .default
-            let parts = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: item.date)
-            let request = UNNotificationRequest(
-                identifier: item.id, content: content, trigger: UNCalendarNotificationTrigger(dateMatching: parts, repeats: false))
-            try? await center.add(request)
+        let allowed = await canNotify()
+        let pending = await center.pendingNotificationRequests().map(\.identifier)
+        if allowed {
+            for item in planned {
+                let content = UNMutableNotificationContent()
+                content.title = item.title
+                content.body = item.body
+                content.sound = .default
+                let parts = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: item.date)
+                let request = UNNotificationRequest(
+                    identifier: item.id, content: content, trigger: UNCalendarNotificationTrigger(dateMatching: parts, repeats: false))
+                try? await center.add(request)
+            }
         }
+        let stale = staleIDs(pending: pending, planned: allowed ? planned : [])
+        if !stale.isEmpty { center.removePendingNotificationRequests(withIdentifiers: stale) }
     }
 
     /// The soonest payment reminder iOS has queued (Settings shows it, so the
@@ -115,16 +149,18 @@ enum Reminders {
             .min { $0.date < $1.date }
     }
 
-    /// Settings > Reminders > "Send a test reminder": arrives in 5 seconds,
-    /// even with the app open (see NotificationPresenter).
-    nonisolated static func sendTest(title: String, body: String) async {
+    /// Settings > Reminders > "Send a test reminder": arrives in 5 seconds, with
+    /// the app open (see NotificationPresenter) or closed. False if notifications are off.
+    nonisolated static func sendTest(title: String, body: String) async -> Bool {
+        guard await requestPermission() else { return false }
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = body
         content.sound = .default
         let request = UNNotificationRequest(
-            identifier: "\(idPrefix)test", content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
+            identifier: testID, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false))
         try? await UNUserNotificationCenter.current().add(request)
+        return true
     }
 
     /// Asks iOS for permission (once; later calls return the saved answer).
@@ -135,6 +171,21 @@ enum Reminders {
         case .denied: return false
         default: return (try? await center.requestAuthorization(options: [.alert, .sound, .badge])) ?? false
         }
+    }
+}
+
+/// A little time from iOS to finish work after the app goes to the background.
+final class BackgroundTime {
+    private var id = UIBackgroundTaskIdentifier.invalid
+
+    init(name: String) {
+        id = UIApplication.shared.beginBackgroundTask(withName: name) { [weak self] in self?.end() }
+    }
+
+    func end() {
+        guard id != .invalid else { return }
+        UIApplication.shared.endBackgroundTask(id)
+        id = .invalid
     }
 }
 
