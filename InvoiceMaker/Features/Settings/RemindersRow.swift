@@ -97,7 +97,8 @@ struct RemindersRow: View {
     private func refresh() async {
         // Rescheduling runs in the background; give it a moment, then read what iOS has queued.
         try? await Task.sleep(for: .seconds(1))
-        notificationsOff = remindersOn && !(await Reminders.canNotify())
+        let allowed = await Reminders.canNotify()
+        notificationsOff = remindersOn && !allowed
         next = await Reminders.nextPaymentReminder()
     }
 
