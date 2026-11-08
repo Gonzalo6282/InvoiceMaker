@@ -104,6 +104,15 @@ struct RecurringAndRemindersTests {
         #expect(planned[1].body == "Marlow & Finch · £120.00")
     }
 
+    @Test func reschedulingRemovesOnlyStaleReminders() {
+        let keep = Reminders.Planned(id: "duly.due-today.INV-0001", date: .now, title: "", body: "")
+        let pending = ["duly.due-today.INV-0001", "duly.due-before.INV-0002", Reminders.testID, "superwall.trial"]
+        // Planned ones are replaced in place, never removed first; the test reminder and Superwall's stay.
+        #expect(Reminders.staleIDs(pending: pending, planned: [keep]) == ["duly.due-before.INV-0002"])
+        #expect(Reminders.staleIDs(pending: pending, planned: []) == ["duly.due-today.INV-0001", "duly.due-before.INV-0002"])
+        #expect(!Reminders.testID.hasPrefix(Reminders.idPrefix))
+    }
+
     @Test func noPaymentRemindersWhenOffPaidOrPast() throws {
         let taxes = try BusinessSetup.taxes(in: context)
         let actions = DocumentActions(context: context, calendar: calendar, now: { day(2026, 10, 1) })

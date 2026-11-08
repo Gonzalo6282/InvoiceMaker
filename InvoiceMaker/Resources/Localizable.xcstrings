@@ -8209,6 +8209,34 @@
         }
       }
     },
+    "Notifications are off for Duly in iPhone Settings, so reminders can't arrive." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mitteilungen für Duly sind in den iPhone-Einstellungen aus, deshalb können keine Erinnerungen ankommen."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las notificaciones de Duly están desactivadas en Configuración del iPhone, así que los recordatorios no pueden llegar."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las notificaciones de Duly están desactivadas en los Ajustes del iPhone, así que los recordatorios no pueden llegar."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les notifications de Duly sont désactivées dans les Réglages de l'iPhone : les rappels ne peuvent pas arriver."
+          }
+        }
+      }
+    },
     "Number" : {
       "localizations" : {
         "de" : {
