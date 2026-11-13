@@ -101,7 +101,7 @@ struct ServicesTests {
         let domain = "com.apple.AuthenticationServices.AuthorizationError"
         #expect(AccountService.report(NSError(domain: domain, code: 1001), step: "test") == nil)
         let reset = try #require(AccountService.report(NSError(domain: domain, code: 1000), step: "test"))
-        #expect(reset.hasPrefix(AccountService.appleResetHelp))
+        #expect(reset.hasPrefix(AccountService.appleResetHelp(appName: "Duly")))
         #expect(reset.contains("Stop Using Apple ID"))
     }
 
