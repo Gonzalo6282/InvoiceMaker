@@ -33,6 +33,41 @@ struct MoneyFormatTests {
     @Test func allCases() {
         #expect(CurrencyDisplay.allCases == [.symbol, .code, .none])
     }
+
+    /// South Africa: the symbol is R (never a hard-coded "ZAR" or "$"), in the
+    /// phone's South African number style (iOS: "R 1 250,00" or "R1,250.00").
+    @Test func rand() {
+        let za = Locale(identifier: Region.za.preset.localeIdentifier)
+        let s = plain(MoneyFormat.string(1250, currencyCode: "ZAR", display: .symbol, locale: za))
+        print("ZAR en_ZA:", s)
+        #expect(s.hasPrefix("R"))
+        #expect(!s.contains("ZAR") && !s.contains("$"))
+        #expect(s.filter(\.isNumber) == "125000")
+        let code = plain(MoneyFormat.string(1250, currencyCode: "ZAR", display: .code, locale: za))
+        #expect(code.contains("ZAR"))
+    }
+}
+
+struct CurrencyListTests {
+    @Test func commonFirstThenEveryOtherCurrency() {
+        let all = CurrencyList.all()
+        #expect(Array(all.prefix(7)) == ["GBP", "USD", "EUR", "ZAR", "AUD", "CAD", "NZD"])
+        #expect(all.count > 100)
+        #expect(Set(all).count == all.count)
+        #expect(all.contains("JPY") && all.contains("CHF") && all.contains("INR"))
+        let rest = Array(all.dropFirst(7))
+        #expect(rest == rest.sorted())
+    }
+
+    @Test func keepsASavedCodeIOSDoesNotList() {
+        #expect(CurrencyList.all(keeping: "XYZ").contains("XYZ"))
+        #expect(CurrencyList.all(keeping: "ZAR").filter { $0 == "ZAR" }.count == 1)
+    }
+
+    @Test func names() {
+        #expect(CurrencyList.name("ZAR", locale: Locale(identifier: "en_GB")) == "South African Rand")
+        #expect(CurrencyList.name("QQQ") == "QQQ")
+    }
 }
 
 struct CSVTests {

@@ -114,8 +114,3 @@ struct ClientsView: View {
         openClient(client)
     }
 }
-
-/// Currencies offered for clients (mockup list).
-enum CurrencyChoices {
-    static let codes = ["GBP", "EUR", "USD", "AUD", "CAD", "NZD", "CHF", "JPY"]
-}

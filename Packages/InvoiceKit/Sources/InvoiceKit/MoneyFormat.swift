@@ -28,3 +28,21 @@ public enum MoneyFormat {
         }
     }
 }
+
+/// Every currency the user can pick: the common ones first, then the rest A–Z by code.
+public enum CurrencyList {
+    public static let common = ["GBP", "USD", "EUR", "ZAR", "AUD", "CAD", "NZD"]
+
+    /// Common ones, then the rest of the ISO currencies iOS knows. `current` is
+    /// kept even if iOS doesn't list it, so a saved choice never disappears.
+    public static func all(keeping current: String? = nil) -> [String] {
+        var rest = Set(Locale.commonISOCurrencyCodes).subtracting(common)
+        if let current, !common.contains(current) { rest.insert(current) }
+        return common + rest.sorted()
+    }
+
+    /// "South African Rand" in the app's language, or the code if unknown.
+    public static func name(_ code: String, locale: Locale = .current) -> String {
+        locale.localizedString(forCurrencyCode: code) ?? code
+    }
+}

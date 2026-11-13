@@ -194,7 +194,7 @@ private struct EmptyDocumentsView: View {
     private var title: String {
         switch kind {
         case .invoice: String(localized: "Create your first invoice")
-        case .estimate: business.region == .uk ? String(localized: "No quotes yet") : String(localized: "No estimates yet")
+        case .estimate: business.region.usesQuote ? String(localized: "No quotes yet") : String(localized: "No estimates yet")
         case .receipt: String(localized: "No receipts yet")
         }
     }

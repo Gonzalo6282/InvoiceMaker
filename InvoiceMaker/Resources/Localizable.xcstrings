@@ -1347,6 +1347,34 @@
         }
       }
     },
+    "All currencies" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Alle Währungen"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las monedas"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Todas las monedas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Toutes les devises"
+          }
+        }
+      }
+    },
     "Allow" : {
       "localizations" : {
         "de" : {
@@ -1959,6 +1987,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Audacieux"
+          }
+        }
+      }
+    },
+    "Branch code" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filialcode"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código de sucursal"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código de sucursal"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code agence"
+          }
+        }
+      }
+    },
+    "Branch code %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Filialcode %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código de sucursal %@"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Código de sucursal %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code agence %@"
           }
         }
       }
@@ -2823,6 +2907,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Couleur %@"
+          }
+        }
+      }
+    },
+    "Common" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Häufig"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunes"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Comunes"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Courantes"
           }
         }
       }
@@ -14082,6 +14194,34 @@
         }
       }
     },
+    "VAT No." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "USt-IdNr."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de IVA"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de IVA"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° TVA"
+          }
+        }
+      }
+    },
     "VAT number" : {
       "comment" : "Looked up at run time (comes from InvoiceKit).",
       "extractionState" : "manual",
@@ -14136,6 +14276,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Assujetti à la TVA"
+          }
+        }
+      }
+    },
+    "VAT-registered businesses title the invoice \"Tax invoice\" and show their VAT number. Not registered for VAT? Turn this off." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Umsatzsteuerpflichtige Unternehmen nennen die Rechnung „Tax invoice“ und zeigen ihre USt-Nummer. Nicht umsatzsteuerpflichtig? Schalte dies aus."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las empresas registradas en el IVA titulan la factura \"Factura con impuestos\" y muestran su número de IVA. ¿No estás registrado en el IVA? Desactiva esta opción."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las empresas registradas en el IVA titulan la factura \"Factura con impuestos\" y muestran su número de IVA. ¿No estás dado de alta en el IVA? Desactiva esta opción."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les entreprises assujetties à la TVA intitulent la facture « Tax invoice » et affichent leur numéro de TVA. Pas assujetti à la TVA ? Désactivez cette option."
           }
         }
       }
