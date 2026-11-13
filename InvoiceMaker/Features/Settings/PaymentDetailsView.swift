@@ -74,7 +74,8 @@ private struct PaymentFields: View {
         switch region {
         case .uk: "Sort code"
         case .au: "BSB"
-        case .us, .ca: "Routing number"
+        case .us: "Routing number"
+        case .ca: "Transit / institution no."
         case .de, .fr, .mx, .es: "Bank code"
         case .za: "Branch code"
         case .nz: "Bank code"  // not shown

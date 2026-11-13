@@ -14,7 +14,7 @@ enum BusinessSetup {
         business.payment = PaymentDetails()
         context.insert(business)
         for (index, tax) in preset.taxes.enumerated() {
-            context.insert(TaxRateRecord(taxID: tax.id, name: tax.name, rate: tax.rate, sortIndex: index))
+            context.insert(TaxRateRecord(taxID: tax.id, name: region.taxName(tax, french: appIsFrench), rate: tax.rate, sortIndex: index))
         }
         return business
     }
@@ -26,6 +26,9 @@ enum BusinessSetup {
         return records.filter { includingArchived || !$0.isArchived }.map(\.taxRate)
     }
 
+    /// The app is showing French (Canadian taxes are then named TPS/TVQ...).
+    static var appIsFrench: Bool { Bundle.main.preferredLocalizations.first == "fr" }
+
     /// Replaces the user's taxes with the region preset (old ones are archived).
     static func restorePresets(for region: Region, business: Business, in context: ModelContext) throws {
         let records = try context.fetch(FetchDescriptor<TaxRateRecord>())
@@ -33,12 +36,12 @@ enum BusinessSetup {
         for record in records where !presetIDs.contains(record.taxID) { record.isArchived = true }
         for (index, tax) in region.preset.taxes.enumerated() {
             if let existing = records.first(where: { $0.taxID == tax.id }) {
-                existing.name = tax.name
+                existing.name = region.taxName(tax, french: appIsFrench)
                 existing.rate = tax.rate
                 existing.sortIndex = index
                 existing.isArchived = false
             } else {
-                context.insert(TaxRateRecord(taxID: tax.id, name: tax.name, rate: tax.rate, sortIndex: index))
+                context.insert(TaxRateRecord(taxID: tax.id, name: region.taxName(tax, french: appIsFrench), rate: tax.rate, sortIndex: index))
             }
         }
         business.defaultTaxID = region.preset.defaultTax?.id

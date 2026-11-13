@@ -82,7 +82,7 @@ struct BusinessProfileView: View {
         switch business.region {
         case .uk: String(localized: "Only VAT-registered businesses add VAT and show a VAT number.")
         case .au: String(localized: "GST-registered businesses title the document \"Tax invoice\" and show their ABN.")
-        case .ca: String(localized: "Rates depend on the province. You can add two taxes to one invoice (GST plus PST or QST).")
+        case .ca: String(localized: "Set your province's rate as the default tax: HST in Ontario and the Atlantic provinces, GST plus PST or QST elsewhere. In Quebec, add your QST number after your GST number.")
         case .us: String(localized: "US sales tax depends on state, county and city. Type your rate once and it is saved.")
         case .de: String(localized: "Small businesses under § 19 UStG don't charge VAT: turn this off and say so in the notes.")
         case .fr: String(localized: "Micro-entrepreneurs who don't charge VAT: turn this off and add \"TVA non applicable, art. 293 B du CGI\" to the notes.")
