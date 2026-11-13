@@ -37,6 +37,7 @@ struct RegionTests {
         #expect(Region.ca.preset.taxes.map { Region.ca.taxName($0, french: true) } == ["TPS", "TVP", "TVP", "TVQ", "TVH", "TVH", "TVH"])
         #expect(Region.ca.taxName(Region.ca.preset.taxes[0], french: false) == "GST")
         #expect(Region.uk.taxName(Region.uk.preset.taxes[0], french: true) == "VAT")
+        #expect(Region.ca.taxName(TaxRate(id: "x", name: "Levy", rate: 1), french: true) == "Levy")
         #expect(Region.us.preset.taxes.map(\.label) == ["Sales tax 8.875%"])
         #expect(Region.us.preset.taxIDLabel == "EIN")
         #expect(Region.de.preset.taxes.map(\.label) == ["MwSt. 19%", "MwSt. 7%", "MwSt. 0%"])
