@@ -1,0 +1,86 @@
+# Política de privacidad
+
+Última actualización: 29 de octubre de 2026
+
+Traducción de la versión en inglés. En caso de diferencias, prevalece la versión en inglés.
+
+## Introducción
+Esta Política de privacidad explica cómo Slice of Life Ltd ("nosotros" o "nuestro") trata la información relativa a una persona física identificada o identificable ("Datos personales") cuando usted usa Duly: Invoice Maker & Estimate (la "App").
+
+Slice of Life Ltd, una empresa registrada en el Reino Unido, es el responsable de los Datos personales descritos en esta Política. "Datos personales" tiene el significado que le dan el UK GDPR, la Data Protection Act 2018 del Reino Unido, el Reglamento General de Protección de Datos de la UE (RGPD), la California Consumer Privacy Act (CCPA) y otras leyes aplicables, incluida, en México, la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+
+Para cualquier pregunta sobre esta Política, escríbanos a info@slice-of-life.uk.
+
+## En resumen
+- Sus facturas, cotizaciones, recibos, clientes, conceptos, logo, firmas y datos de pago se quedan en su dispositivo y en su propio iCloud privado. Nunca los subimos a nuestros servidores y no podemos verlos.
+- La cuenta es opcional. Si inicia sesión con Apple, solo guardamos lo necesario para vincular su cuenta y su suscripción.
+- Las estadísticas anónimas y los informes de fallos están desactivados hasta que usted los permita, y puede desactivarlos en cualquier momento en Configuración.
+- No mostramos anuncios, no recopilamos el identificador de publicidad (IDFA) y no vendemos ni compartimos sus Datos personales con fines publicitarios.
+
+## Información que se queda en su dispositivo y en su iCloud
+Los documentos que usted crea y todo su contenido, su perfil de negocio, logo, firma, datos de pago, tasas de impuestos, clientes (incluidos nombres, correos, teléfonos y direcciones), conceptos guardados, firmas de clientes, fotos de la obra y ajustes de la app se guardan en su dispositivo. Si iCloud está activado, también se guardan en su base de datos privada de iCloud, que Apple le proporciona. No tenemos acceso a estos datos. El tratamiento de los datos de iCloud por parte de Apple se describe en la Política de privacidad de Apple.
+
+Cuando agrega un cliente desde Contactos, la App le pide permiso para acceder a sus contactos y solo usa el contacto que usted elige. Cuando agrega un logo, la App le pide permiso para acceder a sus fotos y solo usa la imagen que usted elige. Cuando agrega fotos de la obra a un documento, la App usa el selector de fotos del iPhone, que solo le da las fotos que usted selecciona (no obtiene acceso a su fototeca); se guardan con el documento. Cuando envía un documento, solo sale de la App por la opción de compartir que usted elige (por ejemplo Mail, Mensajes, WhatsApp, AirDrop, Archivos o Imprimir).
+
+Cuando escribe una dirección de un cliente o de su negocio, la App envía lo que escribe a Apple Mapas para sugerir direcciones. Esta búsqueda la trata Apple según su Política de privacidad; nosotros no la recibimos.
+
+Si activa los recordatorios de pago o programa la repetición de una factura, la App programa notificaciones en su dispositivo (por ejemplo "FAC-0007 vence en 3 días" con el nombre del cliente y el monto). Solo su dispositivo las crea y las muestra; no se nos envía nada. La App solo pide permiso para mostrar notificaciones cuando usted activa una de estas funciones, y puede desactivarlas en cualquier momento en Configuración.
+
+## Información que tratamos
+
+### Cuenta (opcional)
+Si usa "Iniciar sesión con Apple", tratamos un identificador de usuario y, si decide compartirlo, su correo electrónico (que puede ser una dirección de reenvío privada de Apple). Esto se hace mediante Firebase Authentication (Google) y solo sirve para vincular su cuenta y su suscripción entre sus dispositivos.
+
+### Compras y suscripciones
+Apple procesa las compras. No recibimos los datos de su tarjeta. Para comprobar el estado de su suscripción, la App usa RevenueCat, que recibe un identificador de usuario anónimo, su historial de compras y suscripciones, el país de su App Store e información del dispositivo. Si inicia sesión, el identificador de su cuenta se vincula a este registro.
+
+### Pantallas de compra
+Las pantallas de compra las proporciona Superwall, que recibe un identificador de usuario anónimo, información del dispositivo y de la app, y eventos como cuándo se muestra, se cierra o termina en compra una pantalla de compra. Esto sirve para mostrar la pantalla adecuada y medir si funciona.
+
+### Estadísticas e informes de fallos (solo con su permiso)
+Si lo permite, usamos Firebase Analytics y Firebase Crashlytics (Google) para entender cómo se usa la App y corregir problemas. Esto incluye eventos de la App (por ejemplo "factura creada" o "factura enviada", sin ningún contenido de los documentos), versión de la app, modelo del dispositivo, sistema operativo, país del App Store y registros de fallos. No recopilamos el identificador de publicidad y las funciones de publicidad están desactivadas. Puede desactivarlo en cualquier momento en Configuración > Privacidad y legal. También usamos Firebase Remote Config para cambiar algunos ajustes de la App sin una actualización.
+
+### Soporte
+Si nos contacta o usa "Reportar un problema", recibimos su correo electrónico, su mensaje y la versión de la app y los datos del dispositivo incluidos en él.
+
+## Cómo usamos la información
+- Para ofrecer la App y sus funciones, incluida la vinculación de su cuenta y suscripción entre dispositivos
+- Para procesar y restaurar suscripciones y mostrar pantallas de compra
+- Para entender el uso y corregir fallos y errores, cuando usted ha permitido las estadísticas
+- Para responder a solicitudes de soporte
+- Para mantener la App segura, prevenir fraudes y cumplir nuestras obligaciones legales
+
+No usamos su información para publicidad, no la vendemos y no la compartimos para publicidad conductual entre contextos.
+
+## Base legal del tratamiento
+Tratamos los Datos personales para cumplir nuestro contrato con usted (ofrecer la App y las suscripciones); con su consentimiento (estadísticas, informes de fallos, acceso a fotos y contactos); por nuestros intereses legítimos (seguridad, prevención de fraudes y mejora de la App); y para cumplir obligaciones legales. Puede retirar su consentimiento en cualquier momento en Configuración.
+
+## Con quién compartimos la información
+Solo compartimos Datos personales con proveedores que nos ayudan a operar la App y que están obligados a protegerlos: Apple (compras en el App Store, "Iniciar sesión con Apple", iCloud, sugerencias de direcciones en Apple Mapas), Google Firebase (autenticación, estadísticas, informes de fallos, configuración remota), RevenueCat (gestión de suscripciones) y Superwall (pantallas de compra). También podemos compartir información con asesores profesionales, con autoridades cuando la ley lo exija o con un sucesor si nuestro negocio se vende o se fusiona.
+
+## Transferencias internacionales
+Nuestros proveedores pueden tratar Datos personales fuera del Reino Unido y del Espacio Económico Europeo, incluso en Estados Unidos. Cuando es necesario, estas transferencias están protegidas por garantías adecuadas, como el International Data Transfer Agreement o el Addendum del Reino Unido, las cláusulas contractuales tipo de la UE o decisiones de adecuación.
+
+## Conservación de los datos
+Los documentos y datos guardados en su dispositivo y en su iCloud se conservan hasta que usted los elimine, elimine la App o los quite de iCloud. Conservamos la información de la cuenta hasta que elimine su cuenta en Configuración > Cuenta; al eliminarla se borra su inicio de sesión y se revoca el vínculo con Apple. Apple y RevenueCat conservan los registros de suscripción el tiempo necesario para las compras y las obligaciones fiscales y legales. Los datos de estadísticas se conservan hasta 14 meses y los informes de fallos hasta 90 días.
+
+## Seguridad
+Aplicamos medidas técnicas y organizativas adecuadas para proteger los Datos personales, y sus documentos nunca pasan por nuestros servidores. Ningún método de almacenamiento o transmisión es completamente seguro.
+
+## Sus derechos
+Reino Unido y UE: tiene derecho a acceder, rectificar, suprimir, limitar u oponerse al tratamiento de sus Datos personales, derecho a la portabilidad de los datos y derecho a retirar su consentimiento. También puede presentar una reclamación ante la Information Commissioner's Office del Reino Unido (ico.org.uk) o ante su autoridad local de protección de datos. México: puede ejercer sus derechos de acceso, rectificación, cancelación y oposición (derechos ARCO) escribiéndonos a la dirección de abajo.
+
+California: tiene derecho a saber, acceder, corregir y eliminar sus Datos personales, y derecho a no ser discriminado por ejercer estos derechos. No vendemos ni compartimos Datos personales según la definición de la CCPA.
+
+Puede exportar todos sus documentos y datos en cualquier momento en Configuración > Exportar. Para ejercer cualquiera de sus derechos, escriba a info@slice-of-life.uk. Le responderemos en el plazo que exige la ley.
+
+## Menores
+La App es una herramienta para negocios y no está dirigida a menores. No recopilamos a sabiendas Datos personales de menores de 16 años. Si cree que un menor nos ha dado Datos personales, contáctenos y los eliminaremos.
+
+## Cambios a esta Política
+Podemos actualizar esta Política. Le avisaremos de los cambios importantes en la App o por otros medios razonables, y la fecha de arriba siempre mostrará la versión más reciente.
+
+## Contacto
+Slice of Life Ltd
+Correo: info@slice-of-life.uk
+Sitio web: https://slice-of-life.uk

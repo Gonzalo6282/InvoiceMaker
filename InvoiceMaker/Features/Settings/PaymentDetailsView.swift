@@ -31,10 +31,15 @@ private struct PaymentFields: View {
             GroupedSection(header: "Bank transfer") {
                 FieldRow(label: "Account name") { TextField("Optional", text: $payment.bankName) }
                 RowDivider()
-                if !region.usesIBAN {  // Germany and France: IBAN and BIC only
-                    FieldRow(label: sortCodeLabel) { TextField("Optional", text: $payment.sortCode).keyboardType(.numbersAndPunctuation) }
-                    RowDivider()
-                    FieldRow(label: "Account number") { TextField("Optional", text: $payment.accountNumber).keyboardType(.numberPad) }
+                if !region.usesIBAN {  // Euro countries: IBAN and BIC only
+                    // Mexico (18-digit CLABE) and New Zealand (12-3456-0123456-00): bank and branch are in the account number
+                    if region != .mx && region != .nz {
+                        FieldRow(label: sortCodeLabel) { TextField("Optional", text: $payment.sortCode).keyboardType(.numbersAndPunctuation) }
+                        RowDivider()
+                    }
+                    FieldRow(label: region == .mx ? "CLABE" : "Account number") {
+                        TextField("Optional", text: $payment.accountNumber).keyboardType(.numberPad)
+                    }
                     RowDivider()
                 }
                 FieldRow(label: "IBAN") { TextField("Optional", text: $payment.iban).textInputAutocapitalization(.characters) }
@@ -70,7 +75,9 @@ private struct PaymentFields: View {
         case .uk: "Sort code"
         case .au: "BSB"
         case .us, .ca: "Routing number"
-        case .de, .fr: "Bank code"
+        case .de, .fr, .mx, .es: "Bank code"
+        case .za: "Branch code"
+        case .nz: "Bank code"  // not shown
         }
     }
 
@@ -83,6 +90,6 @@ private struct PaymentFields: View {
 }
 
 extension Region {
-    /// Euro countries: bank details are IBAN and BIC.
-    var usesIBAN: Bool { self == .de || self == .fr }
+    /// Euro countries (Germany, France, Spain): bank details are IBAN and BIC.
+    var usesIBAN: Bool { self == .de || self == .fr || self == .es }
 }

@@ -39,10 +39,7 @@ struct BusinessProfileView: View {
                     }
                     RowDivider()
                     FieldRow(label: "Default currency") {
-                        Picker("Default currency", selection: $business.currencyCode) {
-                            ForEach(currencies, id: \.self) { Text($0).tag($0) }
-                        }
-                        .labelsHidden()
+                        CurrencyField(code: $business.currencyCode)
                     }
                     RowDivider()
                     FieldRow(label: "Default tax") {
@@ -73,10 +70,11 @@ struct BusinessProfileView: View {
     private var registeredLabel: LocalizedStringKey {
         switch business.region {
         case .us: "I collect sales tax"
-        case .uk: "VAT registered"
-        case .au, .ca: "GST registered"
+        case .uk, .za: "VAT registered"
+        case .au, .nz, .ca: "GST registered"
         case .de: "I charge VAT (MwSt.)"
         case .fr: "I charge VAT (TVA)"
+        case .mx, .es: "I charge IVA"
         }
     }
 
@@ -88,12 +86,11 @@ struct BusinessProfileView: View {
         case .us: String(localized: "US sales tax depends on state, county and city. Type your rate once and it is saved.")
         case .de: String(localized: "Small businesses under § 19 UStG don't charge VAT: turn this off and say so in the notes.")
         case .fr: String(localized: "Micro-entrepreneurs who don't charge VAT: turn this off and add \"TVA non applicable, art. 293 B du CGI\" to the notes.")
+        case .mx: String(localized: "IVA is 16%, or 8% in the border zones. Duly makes PDF invoices for your clients; it doesn't issue CFDI.")
+        case .es: String(localized: "IVA is 21%, 10% or 4%. If your work is exempt, turn this off and say so in the notes.")
+        case .nz: String(localized: "GST-registered businesses title the invoice \"Tax invoice\" and show their GST number. Not registered for GST? Turn this off.")
+        case .za: String(localized: "VAT-registered businesses title the invoice \"Tax invoice\" and show their VAT number. Not registered for VAT? Turn this off.")
         }
-    }
-
-    private var currencies: [String] {
-        let base = ["GBP", "EUR", "USD", "AUD", "CAD", "NZD"]
-        return base.contains(business.currencyCode) ? base : [business.currencyCode] + base
     }
 }
 
@@ -106,6 +103,10 @@ extension Region {
         case .us: "US"
         case .de: "DE"
         case .fr: "FR"
+        case .mx: "MX"
+        case .es: "ES"
+        case .za: "ZA"
+        case .nz: "NZ"
         }
     }
 

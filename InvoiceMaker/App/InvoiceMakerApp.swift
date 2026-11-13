@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import UserNotifications
 
 @main
 struct InvoiceMakerApp: App {
@@ -7,6 +8,7 @@ struct InvoiceMakerApp: App {
 
     init() {
         CloudImportWatcher.shared.start()
+        UNUserNotificationCenter.current().delegate = NotificationPresenter.shared
         store = ModelContainerFactory.forApp()
         // Order matters: Firebase, then RevenueCat, then Superwall (uses RevenueCat).
         AppAnalytics.shared.configure()

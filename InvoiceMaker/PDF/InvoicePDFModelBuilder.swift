@@ -60,8 +60,8 @@ struct InvoicePDFModelBuilder {
             totalLabel: totalLabel(kind, region: region),
             totalValue: money(totals.total),
             showsPayment: kind == .invoice
-                && (bankLine(business.payment) != nil || !payButtons(business.payment).isEmpty),
-            bankLine: bankLine(business.payment),
+                && (bankLine(business.payment, region: business.region) != nil || !payButtons(business.payment).isEmpty),
+            bankLine: bankLine(business.payment, region: business.region),
             payButtons: payButtons(business.payment),
             qrPayload: qrPayload(business.payment),
             notes: doc.notes,
@@ -141,19 +141,27 @@ struct InvoicePDFModelBuilder {
     private func totalLabel(_ kind: DocumentKind, region: Region) -> String {
         switch kind {
         case .receipt: String(localized: "Paid")
-        case .estimate: region == .uk ? String(localized: "Quote total") : String(localized: "Estimate total")
+        case .estimate: region.usesQuote ? String(localized: "Quote total") : String(localized: "Estimate total")
         case .invoice: String(localized: "Total due")
         }
     }
 
     // MARK: Payment
 
-    private func bankLine(_ p: PaymentDetails?) -> String? {
+    private func bankLine(_ p: PaymentDetails?, region: Region) -> String? {
         guard let p, !p.accountNumber.isEmpty || !p.iban.isEmpty else { return nil }
         var parts = [String(localized: "Bank transfer")]
         if !p.bankName.isEmpty { parts.append(p.bankName) }
-        if !p.sortCode.isEmpty { parts.append(String(localized: "Sort code \(p.sortCode)")) }
-        if !p.accountNumber.isEmpty { parts.append(String(localized: "Account \(p.accountNumber)")) }
+        if !p.sortCode.isEmpty {
+            switch region {
+            case .za: parts.append(String(localized: "Branch code \(p.sortCode)"))
+            case .au: parts.append("BSB \(p.sortCode)")
+            default: parts.append(String(localized: "Sort code \(p.sortCode)"))
+            }
+        }
+        if !p.accountNumber.isEmpty {
+            parts.append(region == .mx ? "CLABE \(p.accountNumber)" : String(localized: "Account \(p.accountNumber)"))
+        }
         if !p.iban.isEmpty { parts.append("IBAN \(p.iban)") }
         if !p.swift.isEmpty { parts.append("SWIFT \(p.swift)") }
         return parts.joined(separator: " · ")

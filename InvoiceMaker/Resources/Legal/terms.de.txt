@@ -1,0 +1,93 @@
+# Nutzungsbedingungen
+
+Zuletzt aktualisiert: 29. Oktober 2026
+
+Übersetzung der englischen Fassung. Bei Abweichungen ist die englische Fassung maßgeblich.
+
+## Annahme der Bedingungen
+Indem Sie die mobile App Duly: Invoice Maker & Estimate (die „App“) herunterladen, installieren oder nutzen, stimmen Sie diesen Nutzungsbedingungen (die „Bedingungen“) zu. Wenn Sie nicht zustimmen, nutzen Sie die App nicht.
+
+Diese Bedingungen sind eine verbindliche Vereinbarung zwischen Ihnen und Slice of Life Ltd, einer im Vereinigten Königreich eingetragenen Gesellschaft („Gesellschaft“, „wir“, „unser“ oder „uns“), über Ihre Nutzung der App und der damit verbundenen Dienste.
+
+## Für wen die App gedacht ist
+Die App ist ein Werkzeug für Freiberufler, Einzelunternehmer, Handwerker und kleine Unternehmen. Mit der Nutzung bestätigen Sie, dass Sie mindestens 18 Jahre alt sind (oder an Ihrem Wohnort volljährig) und die App für Ihr Gewerbe, Ihr Unternehmen oder Ihren Beruf nutzen. Wenn Sie die App für ein Unternehmen nutzen, bestätigen Sie, dass Sie berechtigt sind, diese Bedingungen für das Unternehmen anzunehmen.
+
+## Beschreibung des Dienstes
+Mit Duly können Sie Rechnungen, Angebote (in manchen Regionen „Estimates“ oder „Quotes“ genannt) und Quittungen erstellen, bearbeiten, ansehen und senden. Die App kann Folgendes enthalten: Listen von Kunden und gespeicherten Positionen, benannte Steuersätze (zum Beispiel MwSt., VAT, GST, PST, HST und Sales Tax), die Sie selbst festlegen, Rabatte, Versand und Gebühren, Rechnungsvorlagen, Ihr Logo und Ihre Unterschrift, Unterschriften von Kunden, Zahlungsdaten, Zahlungslinks und QR-Codes auf Ihren Dokumenten, Statusverfolgung (Entwurf, gesendet, bezahlt, überfällig), Umwandlung von Angeboten in Rechnungen, Quittungen aus bezahlten Rechnungen, wiederkehrende Rechnungen, Zahlungserinnerungen auf Ihrem Gerät, Berichte, Fotos vom Auftrag, Adressvorschläge, Export von PDFs und CSV-Daten, Backup über Ihren eigenen iCloud-Account, optional „Mit Apple anmelden“ sowie kostenpflichtige Premium-Funktionen. Funktionen können sich ändern, und nicht alle Funktionen sind auf allen Geräten oder in allen Regionen verfügbar.
+
+## Kostenlose und Premium-Funktionen
+Dokumente erstellen, bearbeiten und ansehen, Kunden und Positionen speichern, iCloud-Backup und der Export Ihrer Daten sind kostenlos und unbegrenzt. Für das Senden, Drucken und Sichern von Dokumenten als PDF, Premium-Vorlagen und Dokumente ohne das Wasserzeichen „Vorschau“ brauchen Sie ein Premium-Abo. Wir zeigen Ihnen in der App deutlich, welche Funktionen Premium erfordern, bevor Sie bezahlen.
+
+## Abos, kostenlose Testzeiträume und Zahlungen
+Premium wird als sich automatisch verlängerndes Abo über den App Store von Apple verkauft. Die Preise werden vor dem Kauf in der App und im App Store in Ihrer Landeswährung angezeigt und können örtliche Steuern enthalten.
+
+Wenn ein kostenloser Testzeitraum angeboten wird, steht er zusammen mit seinem Enddatum auf dem Kaufbildschirm. Wenn Sie nicht mindestens 24 Stunden vor Ende des Testzeitraums kündigen, wird er zu einem kostenpflichtigen Abo, und Ihnen wird an diesem Tag der Preis berechnet.
+
+Abos verlängern sich am Ende jedes Zeitraums automatisch, wenn sie nicht mindestens 24 Stunden vor Ende des Zeitraums gekündigt werden. Die Zahlung wird Ihrem Apple-Account belastet. Sie können Ihr Abo unter Einstellungen > [Ihr Name] > Abonnements auf Ihrem Gerät verwalten oder kündigen. Das Löschen der App kündigt kein Abo.
+
+Käufe, Verlängerungen, Kündigungen und Erstattungen werden von Apple nach den Bedingungen von Apple abgewickelt. Wir können Erstattungen nicht direkt vornehmen; Sie können eine Erstattung bei Apple unter reportaproblem.apple.com beantragen. Verwenden Sie „Käufe wiederherstellen“ in den Einstellungen oder auf dem Kaufbildschirm, wenn Sie die App neu installieren oder das Gerät wechseln.
+
+Wenn ein Abo endet, behalten Sie vollen Zugriff auf alles, was Sie erstellt haben. Ihre Dokumente, Kunden und Positionen werden nie gelöscht oder gesperrt; nur die Premium-Funktionen funktionieren nicht mehr, bis Sie wieder ein Abo abschließen.
+
+## Ihre Dokumente und Ihre Verantwortung
+Sie sind allein für den Inhalt der Dokumente verantwortlich, die Sie erstellen und senden, einschließlich Namen, Adressen, Beträgen, Beschreibungen, Daten, Dokumentnummern, Zahlungsdaten und steuerlichen Angaben.
+
+Die App berechnet Summen aus den Preisen, Mengen, Rabatten und Steuersätzen, die Sie eingeben. Steuersätze legen Sie selbst fest; die von der App vorgeschlagenen Sätze sind nur ein Ausgangspunkt und können veraltet sein oder für Sie nicht gelten.
+
+Wiederkehrende Rechnungen werden als Entwürfe vorbereitet, die Sie prüfen und senden; die App sendet nie selbst ein Dokument. Erinnerungen und Mitteilungen sind eine Hilfe: Sie hängen von Ihren Geräteeinstellungen ab und kommen möglicherweise nicht immer an, also behalten Sie Ihre Fälligkeitstermine selbst im Blick. Berichte summieren die Dokumente in der App und sind keine Buchhaltungsunterlagen.
+
+## Keine Steuer-, Rechts- oder Buchhaltungsberatung
+Die App ist ein Werkzeug für Dokumente. Sie bietet keine Steuer-, Rechts-, Buchhaltungs- oder Finanzberatung und prüft nicht, ob Ihre Dokumente die gesetzlichen Anforderungen Ihres Landes erfüllen, etwa Pflichtangaben auf Rechnungen, Steuernummern, Regeln zur Nummerierung oder Pflichten zur elektronischen Rechnung (E-Rechnung). Sie sind selbst für Ihre steuerlichen Pflichten, Rechnungspflichten und Aufbewahrungspflichten verantwortlich. Wenn Sie unsicher sind, fragen Sie eine Steuerberaterin oder einen Steuerberater.
+
+## Zahlungen zwischen Ihnen und Ihren Kunden
+Die App wickelt kein Geld ab, verwahrt keines und überweist keines. Zahlungsdaten, Zahlungslinks und QR-Codes auf Ihren Dokumenten geben Sie selbst ein, und sie führen zu Ihrer eigenen Bank oder Ihren eigenen Zahlungsanbietern. Wir sind nicht Partei eines Geschäfts zwischen Ihnen und Ihren Kunden und nicht dafür verantwortlich, ob, wann oder wie Ihre Kunden Sie bezahlen, oder für die Dienste einer Bank oder eines Zahlungsanbieters.
+
+## Account und „Mit Apple anmelden“
+Sie können die App ohne Account nutzen. „Mit Apple anmelden“ ist optional und dient dazu, Ihren Account und Ihr Abo auf Ihren Geräten zu verknüpfen. Sie können Ihren Account jederzeit unter Einstellungen > Account löschen. Das Löschen Ihres Accounts löscht keine Dokumente auf Ihrem Gerät oder in Ihrer iCloud und kündigt kein Abo.
+
+## Backup und Datenverlust
+Ihre Dokumente werden auf Ihrem Gerät gespeichert und, wenn iCloud eingeschaltet ist, in Ihrem eigenen privaten iCloud-Speicher, den Apple bereitstellt. Wir haben keinen Zugriff darauf und können sie nicht wiederherstellen. Lassen Sie iCloud eingeschaltet und exportieren Sie Ihre Daten regelmäßig. Soweit gesetzlich zulässig, sind wir nicht verantwortlich für Daten, die durch Verlust oder Beschädigung des Geräts, ausgeschaltete oder volle iCloud, das Löschen der App oder Probleme mit den Diensten von Apple verloren gehen.
+
+## Zulässige Nutzung
+Sie verpflichten sich, die App nicht rechtswidrig zu nutzen oder damit falsche, irreführende oder betrügerische Dokumente zu erstellen; die App nicht zu nutzen, um sich als eine andere Person oder ein anderes Unternehmen auszugeben; die App nicht zu stören oder zu beeinträchtigen; keinen unbefugten Zugriff auf unsere Systeme zu versuchen; die App nicht zurückzuentwickeln, außer wenn das Gesetz es erlaubt; und die App nicht zu nutzen, um Rechte anderer zu verletzen.
+
+## Fotos, Kontakte und Gerätefunktionen
+Wenn Sie ein Logo hinzufügen, fragt die App nach der Erlaubnis, auf Ihre Fotos zuzugreifen, und verwendet nur das Bild, das Sie auswählen. Wenn Sie einen Kunden aus Ihren Kontakten hinzufügen, fragt die App nach der Erlaubnis, auf Ihre Kontakte zuzugreifen, und verwendet nur den Kontakt, den Sie auswählen. Fotos vom Auftrag werden mit der Fotoauswahl des iPhone ausgewählt, die nur die ausgewählten Fotos teilt. Adressvorschläge kommen von Apple Karten. Mitteilungen werden auf Ihrem Gerät geplant. Unterschriften werden auf Ihrem Gerät gezeichnet. Diese Inhalte bleiben auf Ihrem Gerät und in Ihrer iCloud, es sei denn, Sie senden oder teilen ein Dokument.
+
+## Geistiges Eigentum
+Die App, ihr Design, ihre Vorlagen und Inhalte (ausgenommen Ihre Inhalte und Materialien Dritter) gehören Slice of Life Ltd oder deren Lizenzgebern. Duly und die zugehörige Marke sind unser Eigentum. Wir gewähren Ihnen eine eingeschränkte, persönliche, widerrufliche, nicht übertragbare Lizenz zur Nutzung der App gemäß diesen Bedingungen und dem Lizenzvertrag für Endbenutzer von Apple (Licensed Application End User License Agreement). Ihre Dokumente, Ihr Logo und Ihre Daten gehören Ihnen.
+
+## Datenschutz
+Unsere Datenschutzerklärung erläutert, wie wir mit personenbezogenen Daten umgehen, und ist Teil dieser Bedingungen.
+
+## Haftungsausschluss
+DIE APP WIRD, SOWEIT GESETZLICH ZULÄSSIG, „WIE BESEHEN“ UND „WIE VERFÜGBAR“ OHNE GEWÄHRLEISTUNG JEGLICHER ART BEREITGESTELLT. WIR GARANTIEREN NICHT, DASS DIE APP UNTERBRECHUNGS- ODER FEHLERFREI IST, DASS BERECHNUNGEN ZU IHRER STEUERLICHEN SITUATION PASSEN ODER DASS IHRE KUNDEN SIE BEZAHLEN.
+
+## Haftungsbeschränkung
+SOWEIT GESETZLICH ZULÄSSIG, HAFTEN WIR NICHT FÜR INDIREKTE, ZUFÄLLIGE, BESONDERE, FOLGE- ODER STRAFSCHÄDEN ODER FÜR ENTGANGENEN GEWINN, UMSATZ, GESCHÄFTSVERLUST, VERLUST VON FIRMENWERT ODER DATEN, EINSCHLIESSLICH VERLUSTEN DURCH FEHLER IN VON IHNEN ERSTELLTEN DOKUMENTEN, STEUERLICHE SANKTIONEN ODER VERSPÄTETE ODER AUSBLEIBENDE ZAHLUNGEN. UNSERE GESAMTHAFTUNG FÜR ALLE ANSPRÜCHE IM ZUSAMMENHANG MIT DER APP IST AUF DEN BETRAG BESCHRÄNKT, DEN SIE IN DEN ZWÖLF MONATEN VOR DEM ANSPRUCH FÜR DIE APP BEZAHLT HABEN. Nichts in diesen Bedingungen beschränkt eine Haftung, die gesetzlich nicht beschränkt werden kann, einschließlich der Haftung für Tod oder Körperverletzung durch Fahrlässigkeit oder für Betrug.
+
+## Freistellung
+Soweit gesetzlich zulässig, stellen Sie Slice of Life Ltd von Ansprüchen frei, die sich aus den Dokumenten ergeben, die Sie erstellen oder senden, aus Ihren Geschäften mit Ihren Kunden oder aus Ihrem Verstoß gegen diese Bedingungen.
+
+## Beendigung
+Sie können die Nutzung der App jederzeit beenden und Ihren Account in den Einstellungen löschen. Wir können den Zugang zur App bei schweren oder wiederholten Verstößen gegen diese Bedingungen oder wenn das Gesetz es verlangt, sperren oder beenden.
+
+## Apple
+Diese Bedingungen gelten zwischen Ihnen und Slice of Life Ltd, nicht Apple. Apple ist nicht für die App oder ihre Inhalte verantwortlich, nicht zu Wartung oder Support verpflichtet und nicht für Ansprüche im Zusammenhang mit der App verantwortlich. Apple und seine Tochtergesellschaften sind begünstigte Dritte dieser Bedingungen und können sie Ihnen gegenüber durchsetzen.
+
+## Anwendbares Recht und Streitigkeiten
+Diese Bedingungen unterliegen dem Recht von England und Wales. Zuständig sind die Gerichte von England und Wales, vorbehaltlich zwingender Schutzvorschriften für Verbraucher oder Unternehmen an Ihrem Wohnort.
+
+## Änderungen dieser Bedingungen
+Wir können diese Bedingungen aktualisieren. Über wesentliche Änderungen informieren wir Sie in der App oder auf andere angemessene Weise. Wenn Sie die App nach Inkrafttreten einer Änderung weiter nutzen, akzeptieren Sie die aktualisierten Bedingungen, soweit das Gesetz es erlaubt.
+
+## Salvatorische Klausel
+Sollte ein Teil dieser Bedingungen unwirksam sein, bleibt der Rest wirksam.
+
+## Gesamte Vereinbarung
+Diese Bedingungen und unsere Datenschutzerklärung bilden die gesamte Vereinbarung zwischen Ihnen und Slice of Life Ltd über die App.
+
+## Kontakt
+Slice of Life Ltd
+E-Mail: info@slice-of-life.uk
+Website: https://slice-of-life.uk

@@ -16,6 +16,29 @@ struct ServicesTests {
         #expect(privacy.contains(.subheading("Analytics and Crash Reports (only with your permission)")))
     }
 
+    @Test func germanLegalTextsShipInTheApp() {
+        let terms = LegalDocument.terms.blocks(language: "de")
+        let privacy = LegalDocument.privacy.blocks(language: "de")
+        #expect(terms.first == .title("Nutzungsbedingungen"))
+        #expect(terms.contains(.heading("Abos, kostenlose Testzeiträume und Zahlungen")))
+        #expect(privacy.first == .title("Datenschutzerklärung"))
+        let headings = { (b: [LegalBlock]) in b.filter { if case .heading = $0 { true } else { false } }.count }
+        #expect(headings(terms) == headings(LegalDocument.terms.blocks(language: "en")))
+        #expect(headings(privacy) == headings(LegalDocument.privacy.blocks(language: "en")))
+        // Other languages get the English original.
+        #expect(LegalDocument.terms.blocks(language: "it").first == .title("Terms of Use"))
+    }
+
+    @Test func spanishLegalTextsShipInTheApp() {
+        let terms = LegalDocument.terms.blocks(language: "es-MX")
+        let privacy = LegalDocument.privacy.blocks(language: "es")
+        #expect(terms.first == .title("Términos de uso"))
+        #expect(privacy.first == .title("Política de privacidad"))
+        let headings = { (b: [LegalBlock]) in b.filter { if case .heading = $0 { true } else { false } }.count }
+        #expect(headings(terms) == headings(LegalDocument.terms.blocks(language: "en")))
+        #expect(headings(privacy) == headings(LegalDocument.privacy.blocks(language: "en")))
+    }
+
     @Test func frenchLegalTextsShipInTheApp() {
         let terms = LegalDocument.terms.blocks(language: "fr")
         let privacy = LegalDocument.privacy.blocks(language: "fr")
@@ -96,13 +119,11 @@ struct ServicesTests {
         #expect(AddressCompleter.format(address, homeCountry: "US").hasSuffix("United Kingdom"))
     }
 
-    // v1.1 ships English and French; German is switched off (docs/i18n/README.md).
-    @Test func germanIsSwitchedOff() {
-        #expect(!Bundle.main.localizations.contains("de"))
-    }
-
-    @Test(arguments: [("fr", "Nouvelle facture", "Devis")])
-    func frenchShipsInTheApp(language: String, newInvoice: String, quote: String) throws {
+    @Test(arguments: [
+        ("fr", "Nouvelle facture", "Devis"), ("de", "Neue Rechnung", "Angebot"),
+        ("es", "Nueva factura", "Cotización"), ("es-ES", "Nueva factura", "Presupuesto"),
+    ])
+    func translationsShipInTheApp(language: String, newInvoice: String, quote: String) throws {
         let path = try #require(Bundle.main.path(forResource: "Localizable", ofType: "strings", inDirectory: nil, forLocalization: language))
         let table = try #require(NSDictionary(contentsOfFile: path) as? [String: String])
         #expect(table["New invoice"] == newInvoice)

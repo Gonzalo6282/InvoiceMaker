@@ -1,7 +1,7 @@
 import Foundation
 
 /// The countries with tax presets (UK, Australia, Canada and the US in 1.0;
-/// Germany and France in 1.1). Any other country falls back to the UK preset
+/// Germany and France in 1.1; Mexico and Spain in 1.2; South Africa and New Zealand in 1.2). Any other country falls back to the UK preset
 /// (as in the mockup); the user edits it.
 public enum Region: String, CaseIterable, Sendable, Codable {
     case uk
@@ -10,6 +10,10 @@ public enum Region: String, CaseIterable, Sendable, Codable {
     case us
     case de
     case fr
+    case mx
+    case es
+    case za
+    case nz
 
     /// Accepts ISO 3166 alpha-2 or alpha-3 codes (`Storefront.countryCode` is
     /// alpha-3), plus "UK". Returns nil for countries without a preset.
@@ -21,6 +25,10 @@ public enum Region: String, CaseIterable, Sendable, Codable {
         case "US", "USA": self = .us
         case "DE", "DEU": self = .de
         case "FR", "FRA": self = .fr
+        case "MX", "MEX": self = .mx
+        case "ES", "ESP": self = .es
+        case "ZA", "ZAF": self = .za
+        case "NZ", "NZL": self = .nz
         default: return nil
         }
     }
@@ -43,7 +51,10 @@ public enum Region: String, CaseIterable, Sendable, Codable {
         case .au:
             RegionPreset(
                 currencyCode: "AUD", localeIdentifier: "en_AU", taxIDLabel: "ABN",
-                taxes: [TaxRate(id: "au-gst10", name: "GST", rate: 10)])
+                taxes: [
+                    TaxRate(id: "au-gst10", name: "GST", rate: 10),
+                    TaxRate(id: "au-gst0", name: "GST", rate: 0),  // GST-free
+                ])
         case .ca:
             RegionPreset(
                 currencyCode: "CAD", localeIdentifier: "en_CA", taxIDLabel: "GST/HST number",
@@ -75,18 +86,52 @@ public enum Region: String, CaseIterable, Sendable, Codable {
                     TaxRate(id: "fr-tva55", name: "TVA", rate: Decimal(string: "5.5")!),
                     TaxRate(id: "fr-tva0", name: "TVA", rate: 0),
                 ])
+        case .mx:
+            // IVA 16% general, 8% in the northern and southern border zones, 0% (food, exports).
+            RegionPreset(
+                currencyCode: "MXN", localeIdentifier: "es_MX", taxIDLabel: "RFC",
+                taxes: [
+                    TaxRate(id: "mx-iva16", name: "IVA", rate: 16),
+                    TaxRate(id: "mx-iva8", name: "IVA", rate: 8),
+                    TaxRate(id: "mx-iva0", name: "IVA", rate: 0),
+                ])
+        case .es:
+            RegionPreset(
+                currencyCode: "EUR", localeIdentifier: "es_ES", taxIDLabel: "NIF",
+                taxes: [
+                    TaxRate(id: "es-iva21", name: "IVA", rate: 21),
+                    TaxRate(id: "es-iva10", name: "IVA", rate: 10),
+                    TaxRate(id: "es-iva4", name: "IVA", rate: 4),
+                    TaxRate(id: "es-iva0", name: "IVA", rate: 0),
+                ])
+        case .za:
+            // VAT 15% standard, 0% zero-rated (exports, basic foods).
+            RegionPreset(
+                currencyCode: "ZAR", localeIdentifier: "en_ZA", taxIDLabel: "VAT No.",
+                taxes: [
+                    TaxRate(id: "za-vat15", name: "VAT", rate: 15),
+                    TaxRate(id: "za-vat0", name: "VAT", rate: 0),
+                ])
+        case .nz:
+            // GST 15% standard, 0% zero-rated (exports).
+            RegionPreset(
+                currencyCode: "NZD", localeIdentifier: "en_NZ", taxIDLabel: "GST No.",
+                taxes: [
+                    TaxRate(id: "nz-gst15", name: "GST", rate: 15),
+                    TaxRate(id: "nz-gst0", name: "GST", rate: 0),
+                ])
         }
     }
 
-    /// "Quote" in the UK and Australia (what people there say and search for), "Estimate" elsewhere.
-    public var usesQuote: Bool { self == .uk || self == .au }
+    /// "Quote" in the UK, Australia, New Zealand and South Africa (what people there say and search for), "Estimate" elsewhere.
+    public var usesQuote: Bool { [.uk, .au, .nz, .za].contains(self) }
 
     /// What an estimate is called: "Quote" or "Estimate".
     public var estimateTitle: String { usesQuote ? "Quote" : "Estimate" }
 
-    /// GST-registered Australian businesses must title it "Tax invoice".
+    /// GST/VAT-registered businesses in Australia, New Zealand and South Africa title it "Tax invoice".
     public func invoiceTitle(taxRegistered: Bool) -> String {
-        self == .au && taxRegistered ? "Tax invoice" : "Invoice"
+        [.au, .nz, .za].contains(self) && taxRegistered ? "Tax invoice" : "Invoice"
     }
 
     public func title(for kind: DocumentKind, taxRegistered: Bool) -> String {

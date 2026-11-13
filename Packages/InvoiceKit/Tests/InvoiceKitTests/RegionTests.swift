@@ -6,13 +6,14 @@ struct RegionTests {
     @Test(arguments: [
         ("GB", Region.uk), ("GBR", .uk), ("uk", .uk), ("AU", .au), ("AUS", .au),
         ("CA", .ca), ("CAN", .ca), ("US", .us), ("usa", .us), ("DE", .de), ("deu", .de), ("FR", .fr), ("FRA", .fr),
+        ("MX", .mx), ("mex", .mx), ("ES", .es), ("ESP", .es), ("ZA", .za), ("zaf", .za), ("NZ", .nz), ("nzl", .nz),
     ])
     func parsesCountryCodes(code: String, region: Region) {
         #expect(Region(countryCode: code) == region)
     }
 
     @Test func unknownCountryHasNoPresetAndResolvesToUK() {
-        #expect(Region(countryCode: "ES") == nil)
+        #expect(Region(countryCode: "IT") == nil)
         #expect(Region.resolve(countryCode: "IRL") == .uk)
         #expect(Region.resolve(countryCode: nil) == .uk)
         #expect(Region.resolve(countryCode: "CAN") == .ca)
@@ -23,7 +24,14 @@ struct RegionTests {
         #expect(Region.uk.preset.currencyCode == "GBP")
         #expect(Region.uk.preset.taxIDLabel == "VAT number")
         #expect(Region.uk.preset.defaultTax?.id == "uk-vat20")
-        #expect(Region.au.preset.taxes.map(\.label) == ["GST 10%"])
+        #expect(Region.au.preset.taxes.map(\.label) == ["GST 10%", "GST 0%"])
+        #expect(Region.au.preset.defaultTax?.id == "au-gst10")
+        #expect(Region.nz.preset.taxes.map(\.label) == ["GST 15%", "GST 0%"])
+        #expect(Region.nz.preset.defaultTax?.id == "nz-gst15")
+        #expect(Region.nz.preset.currencyCode == "NZD")
+        #expect(Region.nz.preset.localeIdentifier == "en_NZ")
+        #expect(Region.nz.preset.taxIDLabel == "GST No.")
+        #expect(PaperSize.for(countryCode: "NZL") == .a4)
         #expect(Region.au.preset.localeIdentifier == "en_AU")
         #expect(Region.ca.preset.taxes.map(\.label) == ["GST 5%", "PST 7%", "QST 9.975%", "HST 13%", "HST 15%"])
         #expect(Region.us.preset.taxes.map(\.label) == ["Sales tax 8.875%"])
@@ -33,6 +41,19 @@ struct RegionTests {
         #expect(Region.de.preset.localeIdentifier == "de_DE")
         #expect(Region.fr.preset.taxes.map(\.label) == ["TVA 20%", "TVA 10%", "TVA 5.5%", "TVA 0%"])
         #expect(Region.fr.preset.taxIDLabel == "N° TVA")
+        #expect(Region.mx.preset.taxes.map(\.label) == ["IVA 16%", "IVA 8%", "IVA 0%"])
+        #expect(Region.mx.preset.currencyCode == "MXN")
+        #expect(Region.mx.preset.taxIDLabel == "RFC")
+        #expect(PaperSize.for(countryCode: "MEX") == .letter)
+        #expect(Region.es.preset.taxes.map(\.label) == ["IVA 21%", "IVA 10%", "IVA 4%", "IVA 0%"])
+        #expect(Region.es.preset.currencyCode == "EUR")
+        #expect(Region.es.preset.taxIDLabel == "NIF")
+        #expect(Region.za.preset.taxes.map(\.label) == ["VAT 15%", "VAT 0%"])
+        #expect(Region.za.preset.defaultTax?.id == "za-vat15")
+        #expect(Region.za.preset.currencyCode == "ZAR")
+        #expect(Region.za.preset.localeIdentifier == "en_ZA")
+        #expect(Region.za.preset.taxIDLabel == "VAT No.")
+        #expect(PaperSize.for(countryCode: "ZAF") == .a4)
         for region in Region.allCases {
             let ids = region.preset.taxes.map(\.id)
             #expect(Set(ids).count == ids.count)
@@ -50,6 +71,13 @@ struct RegionTests {
         #expect(Region.ca.title(for: .receipt, taxRegistered: true) == "Receipt")
         #expect(Region.de.title(for: .estimate, taxRegistered: true) == "Estimate")
         #expect(Region.fr.title(for: .invoice, taxRegistered: true) == "Invoice")
+        #expect(Region.mx.title(for: .estimate, taxRegistered: true) == "Estimate")  // "Cotización" in Spanish
+        #expect(Region.za.title(for: .invoice, taxRegistered: true) == "Tax invoice")
+        #expect(Region.za.title(for: .invoice, taxRegistered: false) == "Invoice")
+        #expect(Region.za.title(for: .estimate, taxRegistered: false) == "Quote")
+        #expect(Region.nz.title(for: .invoice, taxRegistered: true) == "Tax invoice")
+        #expect(Region.nz.title(for: .invoice, taxRegistered: false) == "Invoice")
+        #expect(Region.nz.title(for: .estimate, taxRegistered: true) == "Quote")
     }
 
     @Test func paperSizes() {
