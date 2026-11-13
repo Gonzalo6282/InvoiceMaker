@@ -46,6 +46,17 @@ struct MoneyFormatTests {
         let code = plain(MoneyFormat.string(1250, currencyCode: "ZAR", display: .code, locale: za))
         #expect(code.contains("ZAR"))
     }
+
+    /// Australia and New Zealand: dollars shown as "$1,250.00" in their own locale.
+    @Test(arguments: [Region.au, Region.nz])
+    func antipodeanDollars(region: Region) {
+        let locale = Locale(identifier: region.preset.localeIdentifier)
+        let s = plain(MoneyFormat.string(1250, currencyCode: region.preset.currencyCode, display: .symbol, locale: locale))
+        print("\(region.preset.currencyCode) \(region.preset.localeIdentifier):", s)
+        #expect(s == "$1,250.00")
+        let code = plain(MoneyFormat.string(1250, currencyCode: region.preset.currencyCode, display: .code, locale: locale))
+        #expect(code.contains(region.preset.currencyCode))
+    }
 }
 
 struct CurrencyListTests {

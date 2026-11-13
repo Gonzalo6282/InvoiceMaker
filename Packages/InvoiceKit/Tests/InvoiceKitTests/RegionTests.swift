@@ -6,7 +6,7 @@ struct RegionTests {
     @Test(arguments: [
         ("GB", Region.uk), ("GBR", .uk), ("uk", .uk), ("AU", .au), ("AUS", .au),
         ("CA", .ca), ("CAN", .ca), ("US", .us), ("usa", .us), ("DE", .de), ("deu", .de), ("FR", .fr), ("FRA", .fr),
-        ("MX", .mx), ("mex", .mx), ("ES", .es), ("ESP", .es), ("ZA", .za), ("zaf", .za),
+        ("MX", .mx), ("mex", .mx), ("ES", .es), ("ESP", .es), ("ZA", .za), ("zaf", .za), ("NZ", .nz), ("nzl", .nz),
     ])
     func parsesCountryCodes(code: String, region: Region) {
         #expect(Region(countryCode: code) == region)
@@ -24,7 +24,14 @@ struct RegionTests {
         #expect(Region.uk.preset.currencyCode == "GBP")
         #expect(Region.uk.preset.taxIDLabel == "VAT number")
         #expect(Region.uk.preset.defaultTax?.id == "uk-vat20")
-        #expect(Region.au.preset.taxes.map(\.label) == ["GST 10%"])
+        #expect(Region.au.preset.taxes.map(\.label) == ["GST 10%", "GST 0%"])
+        #expect(Region.au.preset.defaultTax?.id == "au-gst10")
+        #expect(Region.nz.preset.taxes.map(\.label) == ["GST 15%", "GST 0%"])
+        #expect(Region.nz.preset.defaultTax?.id == "nz-gst15")
+        #expect(Region.nz.preset.currencyCode == "NZD")
+        #expect(Region.nz.preset.localeIdentifier == "en_NZ")
+        #expect(Region.nz.preset.taxIDLabel == "GST No.")
+        #expect(PaperSize.for(countryCode: "NZL") == .a4)
         #expect(Region.au.preset.localeIdentifier == "en_AU")
         #expect(Region.ca.preset.taxes.map(\.label) == ["GST 5%", "PST 7%", "QST 9.975%", "HST 13%", "HST 15%"])
         #expect(Region.us.preset.taxes.map(\.label) == ["Sales tax 8.875%"])
@@ -68,6 +75,9 @@ struct RegionTests {
         #expect(Region.za.title(for: .invoice, taxRegistered: true) == "Tax invoice")
         #expect(Region.za.title(for: .invoice, taxRegistered: false) == "Invoice")
         #expect(Region.za.title(for: .estimate, taxRegistered: false) == "Quote")
+        #expect(Region.nz.title(for: .invoice, taxRegistered: true) == "Tax invoice")
+        #expect(Region.nz.title(for: .invoice, taxRegistered: false) == "Invoice")
+        #expect(Region.nz.title(for: .estimate, taxRegistered: true) == "Quote")
     }
 
     @Test func paperSizes() {

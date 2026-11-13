@@ -32,7 +32,8 @@ private struct PaymentFields: View {
                 FieldRow(label: "Account name") { TextField("Optional", text: $payment.bankName) }
                 RowDivider()
                 if !region.usesIBAN {  // Euro countries: IBAN and BIC only
-                    if region != .mx {  // Mexico: one 18-digit CLABE, kept in the account number
+                    // Mexico (18-digit CLABE) and New Zealand (12-3456-0123456-00): bank and branch are in the account number
+                    if region != .mx && region != .nz {
                         FieldRow(label: sortCodeLabel) { TextField("Optional", text: $payment.sortCode).keyboardType(.numbersAndPunctuation) }
                         RowDivider()
                     }
@@ -76,6 +77,7 @@ private struct PaymentFields: View {
         case .us, .ca: "Routing number"
         case .de, .fr, .mx, .es: "Bank code"
         case .za: "Branch code"
+        case .nz: "Bank code"  // not shown
         }
     }
 
