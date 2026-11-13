@@ -5155,6 +5155,34 @@
         }
       }
     },
+    "GST No." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GST-Nr."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de GST"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de GST"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° GST"
+          }
+        }
+      }
+    },
     "GST registered" : {
       "localizations" : {
         "de" : {
@@ -5207,6 +5235,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Les entreprises inscrites à la GST intitulent le document « Tax invoice » et indiquent leur ABN."
+          }
+        }
+      }
+    },
+    "GST-registered businesses title the invoice \"Tax invoice\" and show their GST number. Not registered for GST? Turn this off." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GST-registrierte Unternehmen nennen die Rechnung „Tax invoice“ und zeigen ihre GST-Nummer. Nicht für GST registriert? Schalte dies aus."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las empresas registradas en el GST titulan la factura \"Factura con impuestos\" y muestran su número de GST. ¿No estás registrado en el GST? Desactiva esta opción."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Las empresas registradas en el GST titulan la factura \"Factura con impuestos\" y muestran su número de GST. ¿No estás dado de alta en el GST? Desactiva esta opción."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Les entreprises inscrites à la GST intitulent la facture « Tax invoice » et affichent leur numéro de GST. Pas inscrit à la GST ? Désactivez cette option."
           }
         }
       }

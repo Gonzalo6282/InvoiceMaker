@@ -472,3 +472,99 @@ struct SouthAfricaPDFTests {
         SnapshotExport.write(image, name: "za-\(template.rawValue)-tax-invoice")
     }
 }
+
+/// New Zealand (NZD, GST 15%, GST No., Tax invoice) and Australia (AUD, GST 10%, ABN, BSB).
+@MainActor
+struct AustraliaNewZealandPDFTests {
+    let container: ModelContainer
+    let context: ModelContext
+    let actions: DocumentActions
+
+    init() throws {
+        container = try ModelContainerFactory.makeForTests()
+        context = container.mainContext
+        actions = DocumentActions(context: context)
+    }
+
+    func setUp(_ region: Region) -> Business {
+        let b = BusinessSetup.create(name: "Tui Electrical", region: region, countryCode: region == .nz ? "NZ" : "AU", in: context)
+        b.taxRegistered = true
+        b.taxID = region == .nz ? "123-456-789" : "51 824 753 556"
+        return b
+    }
+
+    func invoice(_ business: Business) -> Document {
+        let client = Client(name: "Kōwhai Landscaping Ltd", currencyCode: business.currencyCode)
+        context.insert(client)
+        let doc = actions.create(.invoice, business: business, client: client)
+        let a = actions.addLineItem(to: doc, defaultTaxID: business.defaultTaxID)
+        a.itemDescription = "Rewiring"
+        a.quantity = 2
+        a.rate = 87.5
+        let b = actions.addLineItem(to: doc, defaultTaxID: business.defaultTaxID)
+        b.itemDescription = "Call-out fee"
+        b.rate = 52.5
+        return doc
+    }
+
+    func build(_ doc: Document, _ business: Business, template: InvoiceTemplate? = nil) throws -> InvoicePDFModel {
+        InvoicePDFModelBuilder(templateOverride: template).build(document: doc, business: business, taxes: try BusinessSetup.taxes(in: context))
+    }
+
+    private func isDollars(_ s: String) -> Bool {
+        s.hasPrefix("$") && !s.contains("£") && !s.contains("NZD") && !s.contains("AUD")
+    }
+
+    @Test func newZealandTaxInvoiceInNZDWithGST15() throws {
+        let biz = setUp(.nz)
+        #expect(biz.currencyCode == "NZD")
+        #expect(biz.defaultTaxID == "nz-gst15")
+        let m = try build(invoice(biz), biz)
+        #expect(m.title == "Tax invoice")
+        #expect(m.from.lines.contains("GST No. 123-456-789"))
+        #expect(isDollars(m.totalValue))
+        #expect(m.totalValue.filter(\.isNumber) == "26163")  // $227.50 + 15% GST
+        #expect(m.paper == .a4)
+        #expect(try build(actions.create(.estimate, business: biz), biz).title == "Quote")
+    }
+
+    @Test func newZealandBankLineHasNoSortCode() throws {
+        let biz = setUp(.nz)
+        let p = try #require(biz.payment)
+        p.bankName = "Tui Electrical Ltd"
+        p.accountNumber = "12-3456-0123456-00"
+        #expect(try build(invoice(biz), biz).bankLine == "Bank transfer · Tui Electrical Ltd · Account 12-3456-0123456-00")
+    }
+
+    @Test func australiaTaxInvoiceInAUDWithBSB() throws {
+        let biz = setUp(.au)
+        #expect(biz.currencyCode == "AUD")
+        let p = try #require(biz.payment)
+        p.sortCode = "062-000"
+        p.accountNumber = "12345678"
+        let m = try build(invoice(biz), biz)
+        #expect(m.title == "Tax invoice")
+        #expect(m.from.lines.contains("ABN 51 824 753 556"))
+        #expect(isDollars(m.totalValue))
+        #expect(m.totalValue.filter(\.isNumber) == "25025")  // $227.50 + 10% GST
+        #expect(m.bankLine == "Bank transfer · BSB 062-000 · Account 12345678")
+    }
+
+    @Test(arguments: [Region.nz, Region.au])
+    func receiptInDollars(region: Region) throws {
+        let biz = setUp(region)
+        let inv = invoice(biz)
+        actions.markPaid(inv)
+        let r = try build(actions.makeReceipt(for: inv, business: biz), biz)
+        #expect(isDollars(r.totalValue))
+        SnapshotExport.write(try #require(PDFRenderer(model: r).renderFirstPageImage(width: 600)), name: "\(region.rawValue)-receipt")
+    }
+
+    @Test(arguments: InvoiceTemplate.allCases)
+    func everyTemplateInNZD(template: InvoiceTemplate) throws {
+        let biz = setUp(.nz)
+        let m = try build(invoice(biz), biz, template: template)
+        #expect(isDollars(m.totalValue))
+        SnapshotExport.write(try #require(PDFRenderer(model: m).renderFirstPageImage(width: 600)), name: "nz-\(template.rawValue)-tax-invoice")
+    }
+}
