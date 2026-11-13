@@ -50,10 +50,7 @@ struct ClientDetailView: View {
                     FieldRow(label: "Tax ID") { TextField("Optional", text: $client.taxID) }
                     RowDivider()
                     FieldRow(label: "Currency") {
-                        Picker("Currency", selection: $client.currencyCode) {
-                            ForEach(currencies, id: \.self) { Text($0).tag($0) }
-                        }
-                        .labelsHidden()
+                        CurrencyField(code: $client.currencyCode)
                     }
                 }
                 if !docs.isEmpty {
@@ -93,10 +90,6 @@ struct ClientDetailView: View {
                 context.delete(client)
             }
         }
-    }
-
-    private var currencies: [String] {
-        CurrencyChoices.codes.contains(client.currencyCode) ? CurrencyChoices.codes : [client.currencyCode] + CurrencyChoices.codes
     }
 
     private func create(_ kind: DocumentKind) {

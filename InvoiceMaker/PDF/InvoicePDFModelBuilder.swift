@@ -141,7 +141,7 @@ struct InvoicePDFModelBuilder {
     private func totalLabel(_ kind: DocumentKind, region: Region) -> String {
         switch kind {
         case .receipt: String(localized: "Paid")
-        case .estimate: region == .uk ? String(localized: "Quote total") : String(localized: "Estimate total")
+        case .estimate: region.usesQuote ? String(localized: "Quote total") : String(localized: "Estimate total")
         case .invoice: String(localized: "Total due")
         }
     }
@@ -152,7 +152,9 @@ struct InvoicePDFModelBuilder {
         guard let p, !p.accountNumber.isEmpty || !p.iban.isEmpty else { return nil }
         var parts = [String(localized: "Bank transfer")]
         if !p.bankName.isEmpty { parts.append(p.bankName) }
-        if !p.sortCode.isEmpty { parts.append(String(localized: "Sort code \(p.sortCode)")) }
+        if !p.sortCode.isEmpty {
+            parts.append(region == .za ? String(localized: "Branch code \(p.sortCode)") : String(localized: "Sort code \(p.sortCode)"))
+        }
         if !p.accountNumber.isEmpty {
             parts.append(region == .mx ? "CLABE \(p.accountNumber)" : String(localized: "Account \(p.accountNumber)"))
         }

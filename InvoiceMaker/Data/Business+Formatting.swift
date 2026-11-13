@@ -37,7 +37,7 @@ extension Business {
     func newTitle(for kind: DocumentKind) -> String {
         switch kind {
         case .invoice: String(localized: "New invoice")
-        case .estimate: region == .uk ? String(localized: "New quote") : String(localized: "New estimate")
+        case .estimate: region.usesQuote ? String(localized: "New quote") : String(localized: "New estimate")
         case .receipt: String(localized: "New receipt")
         }
     }
