@@ -11112,6 +11112,34 @@
         }
       }
     },
+    "Routing number %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Routing-Nummer %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de ruta %@"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Número de ruta %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Numéro de routage %@"
+          }
+        }
+      }
+    },
     "SWIFT / BIC" : {
       "localizations" : {
         "de" : {
@@ -11948,6 +11976,34 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Prestation"
+          }
+        }
+      }
+    },
+    "Set your province's rate as the default tax: HST in Ontario and the Atlantic provinces, GST plus PST or QST elsewhere. In Quebec, add your QST number after your GST number." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Legen Sie den Steuersatz Ihrer Provinz als Standardsteuer fest: HST in Ontario und den Atlantikprovinzen, sonst GST plus PST oder QST. In Quebec ergänzen Sie Ihre QST-Nummer hinter der GST-Nummer."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige como impuesto predeterminado la tasa de tu provincia: HST en Ontario y las provincias atlánticas, GST más PST o QST en las demás. En Quebec, añade tu número de QST después del de GST."
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elige como impuesto predeterminado el tipo de tu provincia: HST en Ontario y las provincias atlánticas, GST más PST o QST en las demás. En Quebec, añade tu número de QST después del de GST."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Choisissez le taux de votre province comme taxe par défaut : TVH en Ontario et dans les provinces de l'Atlantique, TPS plus TVP ou TVQ ailleurs. Au Québec, ajoutez votre numéro de TVQ après votre numéro de TPS."
           }
         }
       }
@@ -13908,6 +13964,62 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Artisan"
+          }
+        }
+      }
+    },
+    "Transit / institution %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transit/Institut %@"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tránsito / institución %@"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tránsito / institución %@"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transit / institution %@"
+          }
+        }
+      }
+    },
+    "Transit / institution no." : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transit-/Institutsnr."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de tránsito / institución"
+          }
+        },
+        "es-ES" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N.º de tránsito / institución"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "N° de transit / d'institution"
           }
         }
       }

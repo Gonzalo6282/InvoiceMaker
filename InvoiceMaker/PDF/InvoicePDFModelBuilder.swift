@@ -156,6 +156,8 @@ struct InvoicePDFModelBuilder {
             switch region {
             case .za: parts.append(String(localized: "Branch code \(p.sortCode)"))
             case .au: parts.append("BSB \(p.sortCode)")
+            case .us: parts.append(String(localized: "Routing number \(p.sortCode)"))
+            case .ca: parts.append(String(localized: "Transit / institution \(p.sortCode)"))
             default: parts.append(String(localized: "Sort code \(p.sortCode)"))
             }
         }

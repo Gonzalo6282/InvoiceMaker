@@ -568,3 +568,64 @@ struct AustraliaNewZealandPDFTests {
         SnapshotExport.write(try #require(PDFRenderer(model: m).renderFirstPageImage(width: 600)), name: "nz-\(template.rawValue)-tax-invoice")
     }
 }
+
+/// Canada (CAD, GST/HST/PST/QST, transit number) and the US routing number on the PDF.
+@MainActor
+struct CanadaPDFTests {
+    let container: ModelContainer
+    let context: ModelContext
+    let actions: DocumentActions
+
+    init() throws {
+        container = try ModelContainerFactory.makeForTests()
+        context = container.mainContext
+        actions = DocumentActions(context: context)
+    }
+
+    func invoice(_ business: Business, taxID: String?) -> Document {
+        let client = Client(name: "Maple Ridge Builders", currencyCode: business.currencyCode)
+        context.insert(client)
+        let doc = actions.create(.invoice, business: business, client: client)
+        let a = actions.addLineItem(to: doc, defaultTaxID: taxID)
+        a.itemDescription = "Framing"
+        a.quantity = 2
+        a.rate = 87.5
+        let b = actions.addLineItem(to: doc, defaultTaxID: taxID)
+        b.itemDescription = "Site visit"
+        b.rate = 52.5
+        return doc
+    }
+
+    func build(_ doc: Document, _ business: Business) throws -> InvoicePDFModel {
+        InvoicePDFModelBuilder().build(document: doc, business: business, taxes: try BusinessSetup.taxes(in: context))
+    }
+
+    @Test(arguments: [("ca-hst13", "25708"), ("ca-hst14", "25935"), ("ca-hst15", "26163"), ("ca-gst5", "23888")])
+    func provinceRatesInCAD(taxID: String, digits: String) throws {
+        let biz = BusinessSetup.create(name: "Northline Plumbing", region: .ca, countryCode: "CA", in: context)
+        biz.taxRegistered = true
+        biz.taxID = "123456789RT0001"
+        let m = try build(invoice(biz, taxID: taxID), biz)
+        #expect(m.title == "Invoice")
+        #expect(m.totalValue.hasPrefix("$") && !m.totalValue.contains("CAD"))
+        #expect(m.totalValue.filter(\.isNumber) == digits)  // $227.50 + tax
+        #expect(m.from.lines.contains("GST/HST number 123456789RT0001"))
+        #expect(m.paper == .letter)
+    }
+
+    @Test func canadianBankLineUsesTransitNumber() throws {
+        let biz = BusinessSetup.create(name: "Northline Plumbing", region: .ca, countryCode: "CA", in: context)
+        let p = try #require(biz.payment)
+        p.sortCode = "12345-003"
+        p.accountNumber = "1234567"
+        #expect(try build(invoice(biz, taxID: nil), biz).bankLine == "Bank transfer · Transit / institution 12345-003 · Account 1234567")
+    }
+
+    @Test func usBankLineUsesRoutingNumber() throws {
+        let biz = BusinessSetup.create(name: "Oak Street Handyman", region: .us, countryCode: "US", in: context)
+        let p = try #require(biz.payment)
+        p.sortCode = "021000021"
+        p.accountNumber = "123456789"
+        #expect(try build(invoice(biz, taxID: nil), biz).bankLine == "Bank transfer · Routing number 021000021 · Account 123456789")
+    }
+}

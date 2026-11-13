@@ -2,7 +2,12 @@ import Foundation
 import InvoiceKit
 
 extension Business {
-    var locale: Locale { Locale(identifier: region.preset.localeIdentifier) }
+    /// The country's number and date style. Canada follows the app language:
+    /// French (Quebec) shows "1 250,00 $", English "$1,250.00".
+    var locale: Locale {
+        if region == .ca, Bundle.main.preferredLocalizations.first == "fr" { return Locale(identifier: "fr_CA") }
+        return Locale(identifier: region.preset.localeIdentifier)
+    }
 
     /// An amount as the user chose to show currency (symbol / code / none).
     func money(_ amount: Decimal, currency: String? = nil) -> String {

@@ -59,11 +59,13 @@ public enum Region: String, CaseIterable, Sendable, Codable {
             RegionPreset(
                 currencyCode: "CAD", localeIdentifier: "en_CA", taxIDLabel: "GST/HST number",
                 taxes: [
-                    TaxRate(id: "ca-gst5", name: "GST", rate: 5),
-                    TaxRate(id: "ca-pst7", name: "PST", rate: 7),
-                    TaxRate(id: "ca-qst9975", name: "QST", rate: Decimal(string: "9.975")!),
-                    TaxRate(id: "ca-hst13", name: "HST", rate: 13),
-                    TaxRate(id: "ca-hst15", name: "HST", rate: 15),
+                    TaxRate(id: "ca-gst5", name: "GST", rate: 5),  // AB, territories; + PST/QST below
+                    TaxRate(id: "ca-pst7", name: "PST", rate: 7),  // BC, MB
+                    TaxRate(id: "ca-pst6", name: "PST", rate: 6),  // SK
+                    TaxRate(id: "ca-qst9975", name: "QST", rate: Decimal(string: "9.975")!),  // QC
+                    TaxRate(id: "ca-hst13", name: "HST", rate: 13),  // ON
+                    TaxRate(id: "ca-hst14", name: "HST", rate: 14),  // NS (since April 2025)
+                    TaxRate(id: "ca-hst15", name: "HST", rate: 15),  // NB, NL, PE
                 ])
         case .us:
             RegionPreset(
@@ -172,5 +174,14 @@ public enum PaperSize: String, Sendable, Codable, CaseIterable {
             "US", "USA", "CA", "CAN", "MX", "MEX", "PH", "PHL", "CL", "CHL", "CO", "COL", "VE", "VEN", "PR", "PRI",
         ]
         return letter.contains(countryCode?.uppercased() ?? "") ? .letter : .a4
+    }
+}
+
+extension Region {
+    /// A preset tax's name as the user expects to see it. In Canada with the app
+    /// in French (Quebec), GST/HST/PST/QST are TPS/TVH/TVP/TVQ.
+    public func taxName(_ tax: TaxRate, french: Bool) -> String {
+        guard self == .ca, french else { return tax.name }
+        return ["GST": "TPS", "HST": "TVH", "PST": "TVP", "QST": "TVQ"][tax.name] ?? tax.name
     }
 }
