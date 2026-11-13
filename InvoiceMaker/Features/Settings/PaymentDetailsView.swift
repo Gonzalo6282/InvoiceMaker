@@ -75,6 +75,7 @@ private struct PaymentFields: View {
         case .au: "BSB"
         case .us, .ca: "Routing number"
         case .de, .fr, .mx, .es: "Bank code"
+        case .za: "Branch code"
         }
     }
 

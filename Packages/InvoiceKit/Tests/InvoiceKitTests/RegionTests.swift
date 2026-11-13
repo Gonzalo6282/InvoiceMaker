@@ -6,7 +6,7 @@ struct RegionTests {
     @Test(arguments: [
         ("GB", Region.uk), ("GBR", .uk), ("uk", .uk), ("AU", .au), ("AUS", .au),
         ("CA", .ca), ("CAN", .ca), ("US", .us), ("usa", .us), ("DE", .de), ("deu", .de), ("FR", .fr), ("FRA", .fr),
-        ("MX", .mx), ("mex", .mx), ("ES", .es), ("ESP", .es),
+        ("MX", .mx), ("mex", .mx), ("ES", .es), ("ESP", .es), ("ZA", .za), ("zaf", .za),
     ])
     func parsesCountryCodes(code: String, region: Region) {
         #expect(Region(countryCode: code) == region)
@@ -41,6 +41,12 @@ struct RegionTests {
         #expect(Region.es.preset.taxes.map(\.label) == ["IVA 21%", "IVA 10%", "IVA 4%", "IVA 0%"])
         #expect(Region.es.preset.currencyCode == "EUR")
         #expect(Region.es.preset.taxIDLabel == "NIF")
+        #expect(Region.za.preset.taxes.map(\.label) == ["VAT 15%", "VAT 0%"])
+        #expect(Region.za.preset.defaultTax?.id == "za-vat15")
+        #expect(Region.za.preset.currencyCode == "ZAR")
+        #expect(Region.za.preset.localeIdentifier == "en_ZA")
+        #expect(Region.za.preset.taxIDLabel == "VAT No.")
+        #expect(PaperSize.for(countryCode: "ZAF") == .a4)
         for region in Region.allCases {
             let ids = region.preset.taxes.map(\.id)
             #expect(Set(ids).count == ids.count)
@@ -59,6 +65,9 @@ struct RegionTests {
         #expect(Region.de.title(for: .estimate, taxRegistered: true) == "Estimate")
         #expect(Region.fr.title(for: .invoice, taxRegistered: true) == "Invoice")
         #expect(Region.mx.title(for: .estimate, taxRegistered: true) == "Estimate")  // "Cotización" in Spanish
+        #expect(Region.za.title(for: .invoice, taxRegistered: true) == "Tax invoice")
+        #expect(Region.za.title(for: .invoice, taxRegistered: false) == "Invoice")
+        #expect(Region.za.title(for: .estimate, taxRegistered: false) == "Quote")
     }
 
     @Test func paperSizes() {
