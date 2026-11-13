@@ -153,7 +153,11 @@ struct InvoicePDFModelBuilder {
         var parts = [String(localized: "Bank transfer")]
         if !p.bankName.isEmpty { parts.append(p.bankName) }
         if !p.sortCode.isEmpty {
-            parts.append(region == .za ? String(localized: "Branch code \(p.sortCode)") : String(localized: "Sort code \(p.sortCode)"))
+            switch region {
+            case .za: parts.append(String(localized: "Branch code \(p.sortCode)"))
+            case .au: parts.append("BSB \(p.sortCode)")
+            default: parts.append(String(localized: "Sort code \(p.sortCode)"))
+            }
         }
         if !p.accountNumber.isEmpty {
             parts.append(region == .mx ? "CLABE \(p.accountNumber)" : String(localized: "Account \(p.accountNumber)"))
